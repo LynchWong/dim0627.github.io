@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unresolved </title>
+    <link>http://yet.unresolved.xyz/categories/clojure/</link>
+    <language>en-us</language>
+    <author></author>
+    <rights>(C) 2014</rights>
+    <updated>2014-12-31 00:00:00 &#43;0000 UTC</updated>
+
+    
+      
+        <item>
+          <title>clojure-on-docker-and-aws-beanstalk</title>
+          <link>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</link>
+          <pubDate>Wed, 31 Dec 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</guid>
+          <description>
+
+&lt;p&gt;たぶんこういうのはドキュメント読んでもわからないので、とにかく一通りの流れを実践してみる。&lt;/p&gt;
+
+&lt;h2 id=&#34;imageの取得:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;Imageの取得&lt;/h2&gt;
+
+&lt;p&gt;面倒なので&lt;a href=&#34;https://hub.docker.com/account/signup/&#34;&gt;Docker Hub&lt;/a&gt;からClojureが動く環境を持ってくる。&lt;/p&gt;
+
+&lt;p&gt;オフィシャルリポジトリとやらがあったので、それを使います。&lt;/p&gt;
+
+&lt;p&gt;Leiningenとか一式が入ってるみたい。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://registry.hub.docker.com/_/clojure/&#34;&gt;clojure&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;ローカルでの動作確認:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;ローカルでの動作確認&lt;/h2&gt;
+
+&lt;p&gt;とりあえず世界に挨拶が出来るくらいのWebアプリを作っちゃおう。&lt;/p&gt;
+
+&lt;p&gt;アプリ自体は重要じゃないので、とりあえずインタラクティブシェル上でちゃちゃっと作っちゃう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;b2d$  docker run -i -t clojure /bin/bash
+root@e322a11f087d:/home# lein new compojure aws_webapp
+Retrieving compojure/lein-template/0.4.1/lein-template-0.4.1.pom from clojars
+Retrieving compojure/lein-template/0.4.1/lein-template-0.4.1.jar from clojars
+root@e322a11f087d:/home# ls
+aws_webapp
+root@e322a11f087d:/home# cd aws_webapp/
+root@e322a11f087d:/home/aws_webapp# ls
+README.md  project.clj	resources  src	test
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;と思ったらcompojureテンプレート自体がすでにHello Worldを実装してた・・・。&lt;/p&gt;
+
+&lt;p&gt;そのままサーバ起動しちゃうとこんな感じでブラウザの自動起動のとこでエラーしちゃうので、&lt;code&gt;lein ring server-headless&lt;/code&gt;で起動する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;root@e322a11f087d:/home/aws_webapp# lein ring server
+2015-01-01 05:41:35.432:INFO:oejs.Server:jetty-7.6.8.v20121106
+2015-01-01 05:41:35.486:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:3000
+Started server on port 3000
+Exception in thread &amp;quot;main&amp;quot; java.lang.InternalError: Can&#39;t connect to X11 window server using &#39;localhost:0.0&#39; as the value of the DISPLAY variable., compiling:(/tmp/form-init3570254627486988046.clj:1:72)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;あとはデーモンとして起動しちゃえばローカルでの確認が出来る。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;b2d$  docker run -d -t -p 3000:3000 clojure:aws /bin/bash -c &amp;quot;cd /home/aws_webapp; lein ring server-headless&amp;quot;
+e9981a71589918791d52888a0cb503bea133611395be58574047cd498c9e6f76
+b2d$  docker ps
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS                    NAMES
+e9981a715899        clojure:aws         &amp;quot;/bin/bash -c &#39;cd /h   4 seconds ago       Up 3 seconds        0.0.0.0:3000-&amp;gt;3000/tcp   backstabbing_colden
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;起動しているのはboot2dockerの仮想マシン上なので、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;b2d$  boot2docker ip
+192.168.59.103
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;このIPの3000ポートに向けてアクセスすれば、&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-01/webapp.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-01/webapp.png&#34; class=&#34;image&#34; alt=&#34;webapp&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;見れます。&lt;/p&gt;
+
+&lt;p&gt;ringのサーバは起動が遅いので&lt;code&gt;docker logs [names]&lt;/code&gt;で確認しながらやるとよい。&lt;/p&gt;
+
+&lt;h2 id=&#34;elastic-beanstalkで動かす:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;Elastic Beanstalkで動かす&lt;/h2&gt;
+
+&lt;p&gt;大事なことに気づいたんだけど、BeanstalkはDockerfileとか必要なファイル一式をまとめたzipをアップするらしい。&lt;/p&gt;
+
+&lt;p&gt;そもそもソースもイメージに入れちゃうっていうのは考えとしておかしかったね。&lt;/p&gt;
+
+&lt;p&gt;なのでwarを&lt;code&gt;ADD&lt;/code&gt;で置くのが理想的なのかな。&lt;/p&gt;
+
+&lt;p&gt;今回は面倒なので、clojureでWebサーバを立ち上げられる&lt;code&gt;http-kit&lt;/code&gt;というライブラリを使ってやってみます。&lt;/p&gt;
+
+&lt;p&gt;ちょうどBeanstalk用のDockerfileとかも用意してくれる&lt;a href=&#34;https://github.com/mrmcc3/beanstalk-docker-app&#34;&gt;mrmcc3/beanstalk-docker-app&lt;/a&gt;というテンプレートがあったので、これを使わせてもらうことに。&lt;/p&gt;
+
+&lt;h3 id=&#34;mrmcc3-beanstalk-docker-appでwebアプリを構築する:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;mrmcc3/beanstalk-docker-appでWebアプリを構築する&lt;/h3&gt;
+
+&lt;p&gt;何はともあれ&lt;code&gt;new&lt;/code&gt;して作り直し。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;temp$ lein new beanstalk-docker-app superapp
+Generating clojure app for AWS Beanstalk and docker
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こんな感じで作られる。&lt;/p&gt;
+
+&lt;p&gt;jarとかは&lt;code&gt;lein uberjar&lt;/code&gt;で作らなきゃダメかも。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;.
+|-- Dockerfile
+|-- Dockerrun.aws.json
+|-- project.clj
+|-- src
+|   `-- superapp
+|       `-- main.clj
+`-- target
+    |-- classes
+    |   |-- META-INF
+    |   |-- clojure
+    |   |-- org
+    |   `-- superapp
+    |-- production.jar
+    |-- stale
+    |   `-- extract-native.dependencies
+    |-- superapp-0.1.0.jar
+    `-- superapp-0.1.0.zip
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Dockerfileはこんな。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-docker&#34;&gt;# Dockerfile for clojure apps on AWS Elastic Beanstalk
+# v0.0.1
+
+FROM dockerfile/java
+MAINTAINER Michael McClintock, mrmcc3@gmail.com
+ADD target/production.jar /root/
+EXPOSE 8080
+CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/production.jar&amp;quot;]
+
+# SUPPORT JVM OPTS ?
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;動作確認:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;動作確認&lt;/h3&gt;
+
+&lt;p&gt;ローカルでの動作確認はこんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;superapp$ java -jar target/production.jar
+13:33:07.705 [main] INFO  superapp.main - starting superapp
+13:33:07.710 [main] INFO  superapp.main - serving status message
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-01/beanstalkDockerApp.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-01/beanstalkDockerApp.png&#34; class=&#34;image&#34; alt=&#34;beanstalkDockerApp&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;デプロイ:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;デプロイ&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;lein zip&lt;/code&gt;でBeanstalk用のzipが&lt;code&gt;target&lt;/code&gt;配下に作成されるので、それをアップロード。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Dockerrun.aws.json&lt;/code&gt;でポートの指定とかやってるんだけど、こいつもzipに入れてしまうとtimeoutしてしまった。&lt;/p&gt;
+
+&lt;p&gt;まあそれでも動くんだけどちょっと気持ち悪いので除外。&lt;/p&gt;
+
+&lt;p&gt;ポートの指定やらはDockerfileでやってるので問題なく動きます。&lt;/p&gt;
+
+&lt;p&gt;デプロイはこんな感じで成功。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-01/deploy.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-01/deploy.png&#34; class=&#34;image&#34; alt=&#34;deploy&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;しかしデプロイは結構時間かかるなー。&lt;/p&gt;
+
+&lt;p&gt;Javaの起動とかライブラリのダウンロードで食ってるのかな・・・。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考にさせて頂きました:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://wslash.com/?p=5584&#34;&gt;Dockerを勉強するための、Docker解説記事のまとめ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://knowledge.sakura.ad.jp/tech/1811/&#34;&gt;これから始める「DockerでかんたんLAMP環境 for CentOS」&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://nudaygames.squarespace.com/blog/2014/12/13/clojure-websocket-server-on-elastic-beanstalk&#34;&gt;CLOJURE WEBSOCKET SERVER ON ELASTIC BEANSTALK&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://inokara.hateblo.jp/entry/2013/12/29/215322&#34;&gt;Dockerfile の書き方「私的」なベストプラクティス（3）〜サービスの起動について〜&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>does-not-work-lobos-in-heroku</title>
+          <link>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</link>
+          <pubDate>Sun, 21 Dec 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</guid>
+          <description>
+
+&lt;p&gt;ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。&lt;/p&gt;
+
+&lt;h2 id=&#34;何が起きたか:b3814854ab9c35505a0d42182d51f32f&#34;&gt;何が起きたか&lt;/h2&gt;
+
+&lt;p&gt;今だにHerokuの使い方がようわからんのだけど、&lt;/p&gt;
+
+&lt;p&gt;とりあえずローカルから向き先変えるよりもSSHの方がいっかなってことで&lt;code&gt;heroku run bash&lt;/code&gt;してやってます。&lt;/p&gt;
+
+&lt;p&gt;ローカルからだとDBをSSLで接続させないといけないし・・・。&lt;/p&gt;
+
+&lt;p&gt;んでマイグレーションしようとしたら、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;user&amp;gt; (migrate)
+nil
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;何も出ない。&lt;/p&gt;
+
+&lt;p&gt;本当はこんな感じで、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;user=&amp;gt; (migrate)
+add-sites-table
+add-entries-table
+nil
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;作成されたり変更されたテーブルが出てくるはず。&lt;/p&gt;
+
+&lt;h2 id=&#34;原因はなんだったのか:b3814854ab9c35505a0d42182d51f32f&#34;&gt;原因はなんだったのか&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;lobos.migrations&lt;/code&gt;が読まれてない（というかリロードされてない）っぽい。&lt;/p&gt;
+
+&lt;p&gt;そもそも&lt;code&gt;migrate&lt;/code&gt;自体はこんな感じで&lt;code&gt;lobos.migration&lt;/code&gt;の&lt;code&gt;do-migrations&lt;/code&gt;を呼んでます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(defcommand migrate [&amp;amp; names]
+  (let [names (if (empty? names)
+                (mig/pending-migrations db-spec sname)
+                names)]
+    (mig/do-migrations db-spec sname :up names)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;で、&lt;code&gt;do-migrations&lt;/code&gt;はこんな感じで、&lt;code&gt;list-migrations-names&lt;/code&gt;の結果を絞って実行してる。&lt;/p&gt;
+
+&lt;p&gt;たぶんマイグレーション済みのものは除外とかそんな感じなんじゃないだろうか。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(defn do-migrations [db-spec sname with names &amp;amp; [silent]]
+  (let [filter-migs #(only % (list-migrations-names))
+        migrations (-&amp;gt;&amp;gt; names
+                        (map str)
+                        filter-migs
+                        (when-&amp;gt;&amp;gt; (= with :down) reverse)
+                        (map symbol)
+                        (map (partial ns-resolve *migrations-namespace*))
+                        (map var-get))]
+    (binding [*record* nil]
+      (doseq [migration migrations]
+        (let [name (-&amp;gt; migration meta :name)]
+          (when-not silent
+            (println name))
+          (if (= with :up)
+            (do
+              (up migration)
+              (insert-migrations db-spec sname name))
+            (do
+              (down migration)
+              (delete-migrations db-spec sname name))))))))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;で&lt;code&gt;list-migrations-names&lt;/code&gt;の定義がこれ、&lt;code&gt;list-migrations&lt;/code&gt;を呼んでる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(defn list-migrations-names []
+  (map #(-&amp;gt; % meta :name str) (list-migrations)))
+
+(defn list-migrations []
+  (if *reload-migrations*
+    (when (.exists (migrations-file))
+      (swap! migrations (constantly []))
+      (use :reload *migrations-namespace*)
+      @migrations)
+    @migrations))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;この&lt;code&gt;list-migrations&lt;/code&gt;が問題のようで、いや、たぶんHeroku側の環境がよくないんだと思うけど、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;      (use :reload *migrations-namespace*)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;この&lt;code&gt;:reload&lt;/code&gt;が正常に動かなくてマイグレーション対象が取れてない。&lt;/p&gt;
+
+&lt;p&gt;だから&lt;code&gt;list-migrations&lt;/code&gt;を実行した時、1回目はきちんとロードされて、&lt;/p&gt;
+
+&lt;p&gt;2回目は&lt;code&gt;(swap! migrations (constantly []))&lt;/code&gt;で空っぽになったままリロードされてないのが悪かったみたい。&lt;/p&gt;
+
+&lt;p&gt;だからこんな風に、2回目の実行からは空になった&lt;code&gt;migrations&lt;/code&gt;が返ってくる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;user=&amp;gt; (use &#39;lobos.migration)
+WARNING: complement already refers to: #&#39;clojure.core/complement in namespace: user, being replaced by: #&#39;lobos.migration/complement
+nil
+user=&amp;gt; (list-migrations)
+[#&amp;lt;migrations$reify__2390 lobos.migrations$reify__2390@445aed&amp;gt; #&amp;lt;migrations$reify__2392 lobos.migrations$reify__2392@42bfb95d&amp;gt;]
+user=&amp;gt; (list-migrations)
+[]
+user=&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;解決策:b3814854ab9c35505a0d42182d51f32f&#34;&gt;解決策&lt;/h2&gt;
+
+&lt;p&gt;もう正直ここまでで一週間弱悩んだから、lobos使うのやめようかなとも思ったけどまあいい勉強だろうし・・・。&lt;/p&gt;
+
+&lt;p&gt;暫定にしかならないけど、とりあえずリロードさせないようにしよう。&lt;/p&gt;
+
+&lt;p&gt;ソースコードの通り、&lt;code&gt;*reload-migrations*&lt;/code&gt;が&lt;code&gt;true&lt;/code&gt;になっている場合にリロードが走るらしい。&lt;/p&gt;
+
+&lt;p&gt;だからこんな感じで&lt;code&gt;false&lt;/code&gt;で上書いてしまおう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;user=&amp;gt; (use &#39;lobos.migration)
+WARNING: complement already refers to: #&#39;clojure.core/complement in namespace: user, being replaced by: #&#39;lobos.migration/complement
+nil
+user=&amp;gt; (ns lobos.migration)
+
+IllegalStateException defonce already refers to: #&#39;lobos.utils/defonce in namespace: lobos.migration  clojure.lang.Namespace.warnOrFailOnReplace (Namespace.java:88)
+user=&amp;gt; (def ^{:dynamic true} *reload-migrations* false)
+#&#39;lobos.migration/*reload-migrations*
+lobos.migration=&amp;gt; (use &#39;lobos.core)
+WARNING: alter already refers to: #&#39;clojure.core/alter in namespace: lobos.migration, being replaced by: #&#39;lobos.core/alter
+WARNING: drop already refers to: #&#39;clojure.core/drop in namespace: lobos.migration, being replaced by: #&#39;lobos.core/drop
+nil
+lobos.migration=&amp;gt; (migrate)
+add-sites-table
+add-entries-table
+nil
+lobos.migration=&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これじゃない感がすごいけど、とりあえず通った・・・。&lt;/p&gt;
+
+&lt;p&gt;Lobosはもう開発があんまり活発じゃないみたいだなあ。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;lobos.migration&lt;/code&gt;と&lt;code&gt;lobos.migrations&lt;/code&gt;の命名はちょっといけてないような・・・。&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>usage-for-lobos-migration</title>
+          <link>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</link>
+          <pubDate>Thu, 11 Dec 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</guid>
+          <description>
+
+&lt;p&gt;1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。&lt;/p&gt;
+
+&lt;p&gt;というわけでClojureを使ってWeb開発をする際も使いたいので、Lobosというスキーマのマニュピレーション、マイグレーションツールを使ってみます。&lt;/p&gt;
+
+&lt;h2 id=&#34;インストール:a4d3af33140cffc65cf5c9a1e4293067&#34;&gt;インストール&lt;/h2&gt;
+
+&lt;p&gt;本体はここ&lt;a href=&#34;https://github.com/budu/lobos&#34;&gt;budu/lobos&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;project.clj&lt;/code&gt;に&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clj&#34;&gt;:dependencies [[lobos &amp;quot;1.0.0-beta3&amp;quot;]]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;を追加して&lt;code&gt;lein deps&lt;/code&gt;するだけでおーけー。&lt;/p&gt;
+
+&lt;p&gt;Leiningenのプラグインとして使える&lt;a href=&#34;https://github.com/pupeno/lein-lobos&#34;&gt;pupeno/lein-lobos&lt;/a&gt;ってのもあるようだ。&lt;/p&gt;
+
+&lt;p&gt;こっちも使う場合は、&lt;code&gt;ploject.clj&lt;/code&gt;に&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clj&#34;&gt;:plugins [lein-lobos &amp;quot;1.0.0-beta1&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;を追加。&lt;/p&gt;
+
+&lt;p&gt;全体を載っけるとこんな感じに。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clj&#34;&gt;(defproject tpc &amp;quot;0.1.0-SNAPSHOT&amp;quot;
+  :description &amp;quot;FIXME: write description&amp;quot;
+  :url &amp;quot;http://example.com/FIXME&amp;quot;
+  :min-lein-version &amp;quot;2.0.0&amp;quot;
+  :dependencies [[org.clojure/clojure &amp;quot;1.6.0&amp;quot;]
+                 [compojure &amp;quot;1.2.0&amp;quot;]
+                 [ring/ring-defaults &amp;quot;0.1.2&amp;quot;]
+                 [enlive &amp;quot;1.1.5&amp;quot;]
+                 [korma &amp;quot;0.4.0&amp;quot;]
+                 [postgresql &amp;quot;9.1-901.jdbc4&amp;quot;]
+                 [lobos &amp;quot;1.0.0-beta3&amp;quot;]]
+  :plugins [[lein-ring &amp;quot;0.8.13&amp;quot;]
+            [lein-haml-sass &amp;quot;0.2.7-SNAPSHOT&amp;quot;]
+            [lein-lobos &amp;quot;1.0.0-beta1&amp;quot;]]
+  :ring {:handler tpc.core.handler/app}
+  :profiles
+  {:dev {:dependencies [[javax.servlet/servlet-api &amp;quot;2.5&amp;quot;]
+                        [ring-mock &amp;quot;0.1.5&amp;quot;]
+                        [org.xerial/sqlite-jdbc &amp;quot;3.6.16&amp;quot;]]}}
+  :scss {:src &amp;quot;resources/scss&amp;quot;
+         :output-directory &amp;quot;resources/public/css&amp;quot;
+         :output-extension &amp;quot;css&amp;quot;})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;テーブル定義をしてみる:a4d3af33140cffc65cf5c9a1e4293067&#34;&gt;テーブル定義をしてみる&lt;/h2&gt;
+
+&lt;p&gt;今回はSQLiteにて実施。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;src&lt;/code&gt;ディレクトリ直下に&lt;code&gt;lobos&lt;/code&gt;ってディレクトリを作成して、その中にいろいろな設定を突っ込む必要があるらしい。&lt;/p&gt;
+
+&lt;p&gt;このディレクトリの名前は変えてもいいみたいだけど面倒になりそうだからこのままで。&lt;/p&gt;
+
+&lt;p&gt;まずは接続情報を記載する&lt;code&gt;src/lobos/config.clj&lt;/code&gt;。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clj&#34;&gt;(ns lobos.config
+  (:use lobos.connectivity))
+
+(def db_dev
+     {:classname &amp;quot;org.sqlite.JDBC&amp;quot;
+      :subprotocol &amp;quot;sqlite&amp;quot;
+      :subname &amp;quot;./dev.sqlite3&amp;quot;})
+
+(open-global db_dev)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;次にスキーマ操作で使われている(と思われる)ヘルパー、&lt;code&gt;src/lobos/helpers.clj&lt;/code&gt;を定義。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clj&#34;&gt;(ns lobos.helpers
+  (:refer-clojure :exclude [bigint boolean char double float time])
+  (:use (lobos schema)))
+
+(defn surrogate-key [table]
+  (integer table :id :auto-inc :primary-key))
+
+(defn timestamps [table]
+  (-&amp;gt; table
+      (timestamp :updated_on)
+      (timestamp :created_on (default (now)))))
+
+(defn refer-to [table ptable]
+  (let [cname (-&amp;gt; (-&amp;gt;&amp;gt; ptable name butlast (apply str))
+                  (str &amp;quot;_id&amp;quot;)
+                  keyword)]
+    (integer table cname [:refer ptable :id :on-delete :set-null])))
+
+(defmacro tbl [name &amp;amp; elements]
+  `(-&amp;gt; (table ~name)
+       (timestamps)
+       ~@(reverse elements)
+       (surrogate-key)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;で、目的のマイグレーション定義を&lt;code&gt;src/lobos/migrations.clj&lt;/code&gt;に。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clj&#34;&gt;(ns lobos.migrations
+  (:refer-clojure :exclude [alter drop
+                            bigint boolean char double float time])
+  (:use (lobos [migration :only [defmigration]] core schema
+               config helpers)))
+
+(defmigration add-sites-table
+  (up [] (create
+          (tbl :sites
+            (varchar :name 255)
+            (varchar :url 255)
+            (varchar :rss 255)
+            (varchar :image 255)
+            (integer :cat)
+            )))
+  (down [] (drop (table :sites))))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;マイグレーションの実行:a4d3af33140cffc65cf5c9a1e4293067&#34;&gt;マイグレーションの実行&lt;/h2&gt;
+
+&lt;p&gt;ここが結構厄介だった。&lt;/p&gt;
+
+&lt;p&gt;というか、出来たといえば出来たんだけど、もっと正しい方法があるような気が・・・。&lt;/p&gt;
+
+&lt;p&gt;REPLにて以下を実行。&lt;/p&gt;
+
+&lt;p&gt;WARNINGは多分すでに存在するシンボルを置き換えてしまってることの警告だからとりあえず無視。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;tpc git:(master)$ lein repl
+(use &#39;(lobos connectivity core schema))nREPL server started on port 50092 on host 127.0.0.1 - nrepl://127.0.0.1:50092
+REPL-y 0.3.1
+Clojure 1.6.0
+    Docs: (doc function-name-here)
+          (find-doc &amp;quot;part-of-name-here&amp;quot;)
+  Source: (source function-name-here)
+ Javadoc: (javadoc java-object-or-class-here)
+    Exit: Control+D or (exit) or (quit)
+ Results: Stored in vars *1, *2, *3, an exception in *e
+
+user=&amp;gt; (use &#39;(lobos connectivity core schema))
+WARNING: alter already refers to: #&#39;clojure.core/alter in namespace: user, being replaced by: #&#39;lobos.core/alter
+WARNING: drop already refers to: #&#39;clojure.core/drop in namespace: user, being replaced by: #&#39;lobos.core/drop
+WARNING: boolean already refers to: #&#39;clojure.core/boolean in namespace: user, being replaced by: #&#39;lobos.schema/boolean
+WARNING: char already refers to: #&#39;clojure.core/char in namespace: user, being replaced by: #&#39;lobos.schema/char
+WARNING: double already refers to: #&#39;clojure.core/double in namespace: user, being replaced by: #&#39;lobos.schema/double
+WARNING: bigint already refers to: #&#39;clojure.core/bigint in namespace: user, being replaced by: #&#39;lobos.schema/bigint
+WARNING: float already refers to: #&#39;clojure.core/float in namespace: user, being replaced by: #&#39;lobos.schema/float
+WARNING: time already refers to: #&#39;clojure.core/time in namespace: user, being replaced by: #&#39;lobos.schema/time
+nil
+user=&amp;gt; (require &#39;lobos.migrations)
+nil
+user=&amp;gt; (migrate)
+add-sites-table
+nil
+user=&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;確認してみましょう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;tpc git:(master)$ sqlite3 dev.sqlite3
+SQLite version 3.8.5 2014-08-15 22:37:57
+Enter &amp;quot;.help&amp;quot; for usage hints.
+sqlite&amp;gt; .tables
+lobos_migrations  sites
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;できてる！&lt;/p&gt;
+
+&lt;p&gt;まだまだ名前空間とか&lt;code&gt;require&lt;/code&gt;あたりの理解が甘いなー・・・。&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>automatically-compile-the-scss-in-leiningen</title>
+          <link>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</link>
+          <pubDate>Tue, 09 Dec 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</guid>
+          <description>
+
+&lt;p&gt;Clojureを始めて一週間ほどになりまして。&lt;/p&gt;
+
+&lt;p&gt;ようやくWebアプリ開発に着手しました。&lt;/p&gt;
+
+&lt;p&gt;というわけで開発環境を整えます。&lt;/p&gt;
+
+&lt;h2 id=&#34;lein-haml-sassの導入:aea6c6aa18698925cad2fc33bce27d8b&#34;&gt;lein-haml-sassの導入&lt;/h2&gt;
+
+&lt;p&gt;まったく贅沢な名前してんな！&lt;/p&gt;
+
+&lt;p&gt;いえ、&lt;a href=&#34;https://github.com/rtircher/lein-haml-sass&#34;&gt;lein-haml-sass&lt;/a&gt;は素晴らしいプラグインです。&lt;/p&gt;
+
+&lt;p&gt;これを使うとなんとhamlのコンパイルやsass/scssのコンパイルをやってくれます。&lt;/p&gt;
+
+&lt;p&gt;ていうか&lt;strong&gt;sassとscssの違い&lt;/strong&gt;ってなんだっけ？真面目に考えるとわかんないな。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.atmarkit.co.jp/ait/articles/1402/17/news102.html#02&#34;&gt;CSSコーディングで泣かないためのSassの基礎知識と10の利点 (&lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;3&lt;/sub&gt;)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;へえ・・・。&lt;/p&gt;
+
+&lt;p&gt;とりあえず導入します。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;project.clj&lt;/code&gt;に&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clj&#34;&gt;(defproject example &amp;quot;1.2.3&amp;quot;
+  :plugins [[lein-haml-sass &amp;quot;0.2.7-SNAPSHOT&amp;quot;]])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;さらに設定も記述。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;resources/sass/&lt;/code&gt;にscssを、&lt;code&gt;resources/public/css/&lt;/code&gt;にcssを出力する設定。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clj&#34;&gt;(defproject example-project &amp;quot;1.2.3&amp;quot;
+  :haml {:src &amp;quot;resources/haml&amp;quot;
+         :output-directory &amp;quot;resources/public/html&amp;quot;
+         }
+
+  :sass {:src &amp;quot;resources/sass&amp;quot;
+         :output-directory &amp;quot;resources/public/css&amp;quot;
+         }
+
+  :scss {:src &amp;quot;resources/scss&amp;quot;
+         :output-directory &amp;quot;resources/public/css&amp;quot;
+         }
+    )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ここまではコピペだけど、オレのファイル自体はこんな感じに。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clj&#34;&gt;(defproject tpc &amp;quot;0.1.0-SNAPSHOT&amp;quot;
+  :description &amp;quot;FIXME: write description&amp;quot;
+  :url &amp;quot;http://example.com/FIXME&amp;quot;
+  :min-lein-version &amp;quot;2.0.0&amp;quot;
+  :dependencies [[org.clojure/clojure &amp;quot;1.6.0&amp;quot;]
+                 [compojure &amp;quot;1.2.0&amp;quot;]
+                 [ring/ring-defaults &amp;quot;0.1.2&amp;quot;]
+                 [enlive &amp;quot;1.1.5&amp;quot;]]
+  :plugins [[lein-ring &amp;quot;0.8.13&amp;quot;]
+            [lein-haml-sass &amp;quot;0.2.7-SNAPSHOT&amp;quot;]]
+  :ring {:handler tpc.core.handler/app}
+  :profiles
+  {:dev {:dependencies [[javax.servlet/servlet-api &amp;quot;2.5&amp;quot;]
+                        [ring-mock &amp;quot;0.1.5&amp;quot;]]}}
+  :scss {:src &amp;quot;resources/sass&amp;quot;
+         :output-directory &amp;quot;resources/public/css&amp;quot;
+         :output-extension &amp;quot;css&amp;quot;})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;コンパイルする:aea6c6aa18698925cad2fc33bce27d8b&#34;&gt;コンパイルする&lt;/h2&gt;
+
+&lt;p&gt;さっそく&lt;code&gt;lein sass once&lt;/code&gt;してみるも、何も起きない！&lt;/p&gt;
+
+&lt;p&gt;あっ、sassとscssでタスクが違う。&lt;/p&gt;
+
+&lt;p&gt;ていうかsassフォルダにscss置くのってなんか違う気がしてきた！あとで名前変えよう。&lt;/p&gt;
+
+&lt;p&gt;というわけで、&lt;code&gt;lein scss once&lt;/code&gt;で無事動きました。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;lein scss auto&lt;/code&gt;で変更監視できるっぽい。&lt;/p&gt;
+</description>
+        </item>
+      
+    
+
+  </channel>
+</rss>

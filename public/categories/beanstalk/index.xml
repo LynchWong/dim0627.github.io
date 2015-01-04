@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unresolved </title>
+    <link>http://yet.unresolved.xyz/categories/beanstalk/</link>
+    <language>en-us</language>
+    <author></author>
+    <rights>(C) 2014</rights>
+    <updated>2014-12-31 00:00:00 &#43;0000 UTC</updated>
+
+    
+      
+        <item>
+          <title>clojure-on-docker-and-aws-beanstalk</title>
+          <link>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</link>
+          <pubDate>Wed, 31 Dec 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</guid>
+          <description>
+
+&lt;p&gt;たぶんこういうのはドキュメント読んでもわからないので、とにかく一通りの流れを実践してみる。&lt;/p&gt;
+
+&lt;h2 id=&#34;imageの取得:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;Imageの取得&lt;/h2&gt;
+
+&lt;p&gt;面倒なので&lt;a href=&#34;https://hub.docker.com/account/signup/&#34;&gt;Docker Hub&lt;/a&gt;からClojureが動く環境を持ってくる。&lt;/p&gt;
+
+&lt;p&gt;オフィシャルリポジトリとやらがあったので、それを使います。&lt;/p&gt;
+
+&lt;p&gt;Leiningenとか一式が入ってるみたい。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://registry.hub.docker.com/_/clojure/&#34;&gt;clojure&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;ローカルでの動作確認:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;ローカルでの動作確認&lt;/h2&gt;
+
+&lt;p&gt;とりあえず世界に挨拶が出来るくらいのWebアプリを作っちゃおう。&lt;/p&gt;
+
+&lt;p&gt;アプリ自体は重要じゃないので、とりあえずインタラクティブシェル上でちゃちゃっと作っちゃう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;b2d$  docker run -i -t clojure /bin/bash
+root@e322a11f087d:/home# lein new compojure aws_webapp
+Retrieving compojure/lein-template/0.4.1/lein-template-0.4.1.pom from clojars
+Retrieving compojure/lein-template/0.4.1/lein-template-0.4.1.jar from clojars
+root@e322a11f087d:/home# ls
+aws_webapp
+root@e322a11f087d:/home# cd aws_webapp/
+root@e322a11f087d:/home/aws_webapp# ls
+README.md  project.clj	resources  src	test
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;と思ったらcompojureテンプレート自体がすでにHello Worldを実装してた・・・。&lt;/p&gt;
+
+&lt;p&gt;そのままサーバ起動しちゃうとこんな感じでブラウザの自動起動のとこでエラーしちゃうので、&lt;code&gt;lein ring server-headless&lt;/code&gt;で起動する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;root@e322a11f087d:/home/aws_webapp# lein ring server
+2015-01-01 05:41:35.432:INFO:oejs.Server:jetty-7.6.8.v20121106
+2015-01-01 05:41:35.486:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:3000
+Started server on port 3000
+Exception in thread &amp;quot;main&amp;quot; java.lang.InternalError: Can&#39;t connect to X11 window server using &#39;localhost:0.0&#39; as the value of the DISPLAY variable., compiling:(/tmp/form-init3570254627486988046.clj:1:72)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;あとはデーモンとして起動しちゃえばローカルでの確認が出来る。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;b2d$  docker run -d -t -p 3000:3000 clojure:aws /bin/bash -c &amp;quot;cd /home/aws_webapp; lein ring server-headless&amp;quot;
+e9981a71589918791d52888a0cb503bea133611395be58574047cd498c9e6f76
+b2d$  docker ps
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS                    NAMES
+e9981a715899        clojure:aws         &amp;quot;/bin/bash -c &#39;cd /h   4 seconds ago       Up 3 seconds        0.0.0.0:3000-&amp;gt;3000/tcp   backstabbing_colden
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;起動しているのはboot2dockerの仮想マシン上なので、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;b2d$  boot2docker ip
+192.168.59.103
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;このIPの3000ポートに向けてアクセスすれば、&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-01/webapp.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-01/webapp.png&#34; class=&#34;image&#34; alt=&#34;webapp&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;見れます。&lt;/p&gt;
+
+&lt;p&gt;ringのサーバは起動が遅いので&lt;code&gt;docker logs [names]&lt;/code&gt;で確認しながらやるとよい。&lt;/p&gt;
+
+&lt;h2 id=&#34;elastic-beanstalkで動かす:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;Elastic Beanstalkで動かす&lt;/h2&gt;
+
+&lt;p&gt;大事なことに気づいたんだけど、BeanstalkはDockerfileとか必要なファイル一式をまとめたzipをアップするらしい。&lt;/p&gt;
+
+&lt;p&gt;そもそもソースもイメージに入れちゃうっていうのは考えとしておかしかったね。&lt;/p&gt;
+
+&lt;p&gt;なのでwarを&lt;code&gt;ADD&lt;/code&gt;で置くのが理想的なのかな。&lt;/p&gt;
+
+&lt;p&gt;今回は面倒なので、clojureでWebサーバを立ち上げられる&lt;code&gt;http-kit&lt;/code&gt;というライブラリを使ってやってみます。&lt;/p&gt;
+
+&lt;p&gt;ちょうどBeanstalk用のDockerfileとかも用意してくれる&lt;a href=&#34;https://github.com/mrmcc3/beanstalk-docker-app&#34;&gt;mrmcc3/beanstalk-docker-app&lt;/a&gt;というテンプレートがあったので、これを使わせてもらうことに。&lt;/p&gt;
+
+&lt;h3 id=&#34;mrmcc3-beanstalk-docker-appでwebアプリを構築する:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;mrmcc3/beanstalk-docker-appでWebアプリを構築する&lt;/h3&gt;
+
+&lt;p&gt;何はともあれ&lt;code&gt;new&lt;/code&gt;して作り直し。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;temp$ lein new beanstalk-docker-app superapp
+Generating clojure app for AWS Beanstalk and docker
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こんな感じで作られる。&lt;/p&gt;
+
+&lt;p&gt;jarとかは&lt;code&gt;lein uberjar&lt;/code&gt;で作らなきゃダメかも。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;.
+|-- Dockerfile
+|-- Dockerrun.aws.json
+|-- project.clj
+|-- src
+|   `-- superapp
+|       `-- main.clj
+`-- target
+    |-- classes
+    |   |-- META-INF
+    |   |-- clojure
+    |   |-- org
+    |   `-- superapp
+    |-- production.jar
+    |-- stale
+    |   `-- extract-native.dependencies
+    |-- superapp-0.1.0.jar
+    `-- superapp-0.1.0.zip
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Dockerfileはこんな。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-docker&#34;&gt;# Dockerfile for clojure apps on AWS Elastic Beanstalk
+# v0.0.1
+
+FROM dockerfile/java
+MAINTAINER Michael McClintock, mrmcc3@gmail.com
+ADD target/production.jar /root/
+EXPOSE 8080
+CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/production.jar&amp;quot;]
+
+# SUPPORT JVM OPTS ?
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;動作確認:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;動作確認&lt;/h3&gt;
+
+&lt;p&gt;ローカルでの動作確認はこんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;superapp$ java -jar target/production.jar
+13:33:07.705 [main] INFO  superapp.main - starting superapp
+13:33:07.710 [main] INFO  superapp.main - serving status message
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-01/beanstalkDockerApp.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-01/beanstalkDockerApp.png&#34; class=&#34;image&#34; alt=&#34;beanstalkDockerApp&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;デプロイ:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;デプロイ&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;lein zip&lt;/code&gt;でBeanstalk用のzipが&lt;code&gt;target&lt;/code&gt;配下に作成されるので、それをアップロード。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Dockerrun.aws.json&lt;/code&gt;でポートの指定とかやってるんだけど、こいつもzipに入れてしまうとtimeoutしてしまった。&lt;/p&gt;
+
+&lt;p&gt;まあそれでも動くんだけどちょっと気持ち悪いので除外。&lt;/p&gt;
+
+&lt;p&gt;ポートの指定やらはDockerfileでやってるので問題なく動きます。&lt;/p&gt;
+
+&lt;p&gt;デプロイはこんな感じで成功。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-01/deploy.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-01/deploy.png&#34; class=&#34;image&#34; alt=&#34;deploy&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;しかしデプロイは結構時間かかるなー。&lt;/p&gt;
+
+&lt;p&gt;Javaの起動とかライブラリのダウンロードで食ってるのかな・・・。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考にさせて頂きました:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://wslash.com/?p=5584&#34;&gt;Dockerを勉強するための、Docker解説記事のまとめ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://knowledge.sakura.ad.jp/tech/1811/&#34;&gt;これから始める「DockerでかんたんLAMP環境 for CentOS」&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://nudaygames.squarespace.com/blog/2014/12/13/clojure-websocket-server-on-elastic-beanstalk&#34;&gt;CLOJURE WEBSOCKET SERVER ON ELASTIC BEANSTALK&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://inokara.hateblo.jp/entry/2013/12/29/215322&#34;&gt;Dockerfile の書き方「私的」なベストプラクティス（3）〜サービスの起動について〜&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
+    
+
+  </channel>
+</rss>
