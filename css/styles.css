@@ -248,6 +248,10 @@ body>footer a:hover {
     white-space: pre;
 }
 
+ul#urls>li {
+    border: none;
+}
+
 #disqus_thread {
     background-color: #eee;
     padding: 20px;
