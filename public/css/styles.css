@@ -194,18 +194,18 @@ li.list>img {
     display: inline;
 }
 
-footer {
+body>footer {
     text-align: center;
     padding: 50px 0;
     background-color: #000;
     color: #fff;
 }
 
-footer a {
+body>footer a {
     color: #e74c3c;
 }
 
-footer a:hover {
+body>footer a:hover {
     color: #fff;
 }
 
