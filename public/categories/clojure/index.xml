@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved </title>
-    <link>http://localhost:1313/categories/clojure/</link>
+    <link>http://yet.unresolved.xyz/categories/clojure/</link>
     <language>en-us</language>
     <author></author>
     <rights>(C) 2014</rights>
@@ -12,10 +12,10 @@
       
         <item>
           <title>clojure-on-docker-and-aws-beanstalk</title>
-          <link>http://localhost:1313/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</link>
           <pubDate>Wed, 31 Dec 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</guid>
           <description>
 
 &lt;p&gt;たぶんこういうのはドキュメント読んでもわからないので、とにかく一通りの流れを実践してみる。&lt;/p&gt;
@@ -75,7 +75,7 @@ e9981a715899        clojure:aws         &amp;quot;/bin/bash -c &#39;cd /h   4 se
 
 &lt;p&gt;このIPの3000ポートに向けてアクセスすれば、&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2015-01-01/webapp.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2015-01-01/webapp.png&#34; class=&#34;image&#34; alt=&#34;webapp&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-01/webapp.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-01/webapp.png&#34; class=&#34;image&#34; alt=&#34;webapp&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;見れます。&lt;/p&gt;
 
@@ -148,7 +148,7 @@ CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/product
 13:33:07.710 [main] INFO  superapp.main - serving status message
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2015-01-01/beanstalkDockerApp.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2015-01-01/beanstalkDockerApp.png&#34; class=&#34;image&#34; alt=&#34;beanstalkDockerApp&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-01/beanstalkDockerApp.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-01/beanstalkDockerApp.png&#34; class=&#34;image&#34; alt=&#34;beanstalkDockerApp&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;デプロイ:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;デプロイ&lt;/h3&gt;
 
@@ -162,7 +162,7 @@ CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/product
 
 &lt;p&gt;デプロイはこんな感じで成功。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2015-01-01/deploy.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2015-01-01/deploy.png&#34; class=&#34;image&#34; alt=&#34;deploy&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-01/deploy.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-01/deploy.png&#34; class=&#34;image&#34; alt=&#34;deploy&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;しかしデプロイは結構時間かかるなー。&lt;/p&gt;
 
@@ -184,10 +184,10 @@ CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/product
       
         <item>
           <title>does-not-work-lobos-in-heroku</title>
-          <link>http://localhost:1313/blog/2014/12/21/does-not-work-lobos-in-heroku/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</link>
           <pubDate>Sun, 21 Dec 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/12/21/does-not-work-lobos-in-heroku/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</guid>
           <description>
 
 &lt;p&gt;ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。&lt;/p&gt;
@@ -336,10 +336,10 @@ lobos.migration=&amp;gt;
       
         <item>
           <title>usage-for-lobos-migration</title>
-          <link>http://localhost:1313/blog/2014/12/11/usage-for-lobos-migration/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</link>
           <pubDate>Thu, 11 Dec 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/12/11/usage-for-lobos-migration/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</guid>
           <description>
 
 &lt;p&gt;1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。&lt;/p&gt;
@@ -518,10 +518,10 @@ lobos_migrations  sites
       
         <item>
           <title>automatically-compile-the-scss-in-leiningen</title>
-          <link>http://localhost:1313/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</link>
           <pubDate>Tue, 09 Dec 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</guid>
           <description>
 
 &lt;p&gt;Clojureを始めて一週間ほどになりまして。&lt;/p&gt;

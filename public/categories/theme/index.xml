@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved </title>
-    <link>http://localhost:1313/categories/theme/</link>
+    <link>http://yet.unresolved.xyz/categories/theme/</link>
     <language>en-us</language>
     <author></author>
     <rights>(C) 2014</rights>
@@ -12,10 +12,10 @@
       
         <item>
           <title>make-new-theme-flatten</title>
-          <link>http://localhost:1313/blog/2014/09/21/make-new-theme-flatten/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/</link>
           <pubDate>Sun, 21 Sep 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/09/21/make-new-theme-flatten/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/</guid>
           <description>
 
 &lt;p&gt;元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。&lt;/p&gt;

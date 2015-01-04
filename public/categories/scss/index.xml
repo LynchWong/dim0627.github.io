@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved </title>
-    <link>http://localhost:1313/categories/scss/</link>
+    <link>http://yet.unresolved.xyz/categories/scss/</link>
     <language>en-us</language>
     <author></author>
     <rights>(C) 2014</rights>
@@ -12,10 +12,10 @@
       
         <item>
           <title>automatically-compile-the-scss-in-leiningen</title>
-          <link>http://localhost:1313/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</link>
           <pubDate>Tue, 09 Dec 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</guid>
           <description>
 
 &lt;p&gt;Clojureを始めて一週間ほどになりまして。&lt;/p&gt;

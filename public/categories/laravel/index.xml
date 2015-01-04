@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved </title>
-    <link>http://localhost:1313/categories/laravel/</link>
+    <link>http://yet.unresolved.xyz/categories/laravel/</link>
     <language>en-us</language>
     <author></author>
     <rights>(C) 2014</rights>
@@ -12,10 +12,10 @@
       
         <item>
           <title>laravel-array-input</title>
-          <link>http://localhost:1313/blog/2014/09/29/laravel-array-input/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/09/29/laravel-array-input/</link>
           <pubDate>Mon, 29 Sep 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/09/29/laravel-array-input/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/29/laravel-array-input/</guid>
           <description>
 
 &lt;p&gt;テーブルとかに入れた複数のInputを同じ名前にして配列でサーバに飛ばしたい、ってときいつも困る。&lt;/p&gt;

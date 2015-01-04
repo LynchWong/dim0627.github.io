@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved </title>
-    <link>http://localhost:1313/</link>
+    <link>http://yet.unresolved.xyz/</link>
     <language>en-us</language>
     <author></author>
     <rights>(C) 2014</rights>
@@ -12,10 +12,10 @@
       
         <item>
           <title>clojure-on-docker-and-aws-beanstalk</title>
-          <link>http://localhost:1313/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</link>
           <pubDate>Wed, 31 Dec 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</guid>
           <description>
 
 &lt;p&gt;たぶんこういうのはドキュメント読んでもわからないので、とにかく一通りの流れを実践してみる。&lt;/p&gt;
@@ -75,7 +75,7 @@ e9981a715899        clojure:aws         &amp;quot;/bin/bash -c &#39;cd /h   4 se
 
 &lt;p&gt;このIPの3000ポートに向けてアクセスすれば、&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2015-01-01/webapp.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2015-01-01/webapp.png&#34; class=&#34;image&#34; alt=&#34;webapp&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-01/webapp.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-01/webapp.png&#34; class=&#34;image&#34; alt=&#34;webapp&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;見れます。&lt;/p&gt;
 
@@ -148,7 +148,7 @@ CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/product
 13:33:07.710 [main] INFO  superapp.main - serving status message
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2015-01-01/beanstalkDockerApp.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2015-01-01/beanstalkDockerApp.png&#34; class=&#34;image&#34; alt=&#34;beanstalkDockerApp&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-01/beanstalkDockerApp.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-01/beanstalkDockerApp.png&#34; class=&#34;image&#34; alt=&#34;beanstalkDockerApp&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;デプロイ:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;デプロイ&lt;/h3&gt;
 
@@ -162,7 +162,7 @@ CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/product
 
 &lt;p&gt;デプロイはこんな感じで成功。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2015-01-01/deploy.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2015-01-01/deploy.png&#34; class=&#34;image&#34; alt=&#34;deploy&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-01/deploy.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-01/deploy.png&#34; class=&#34;image&#34; alt=&#34;deploy&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;しかしデプロイは結構時間かかるなー。&lt;/p&gt;
 
@@ -184,10 +184,10 @@ CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/product
       
         <item>
           <title>could-not-run-docker-in-mac</title>
-          <link>http://localhost:1313/blog/2014/12/30/could-not-run-docker-in-mac/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/</link>
           <pubDate>Tue, 30 Dec 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/12/30/could-not-run-docker-in-mac/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/</guid>
           <description>
 
 &lt;p&gt;これまでは普通に手で作ったVMのUbuntu上でDockerを触ってたんだけど、なんかあれだしboot2dockerに移行しようかと。&lt;/p&gt;
@@ -323,10 +323,10 @@ For more examples and ideas, visit:
       
         <item>
           <title>does-not-work-lobos-in-heroku</title>
-          <link>http://localhost:1313/blog/2014/12/21/does-not-work-lobos-in-heroku/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</link>
           <pubDate>Sun, 21 Dec 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/12/21/does-not-work-lobos-in-heroku/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</guid>
           <description>
 
 &lt;p&gt;ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。&lt;/p&gt;
@@ -475,10 +475,10 @@ lobos.migration=&amp;gt;
       
         <item>
           <title>usage-for-lobos-migration</title>
-          <link>http://localhost:1313/blog/2014/12/11/usage-for-lobos-migration/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</link>
           <pubDate>Thu, 11 Dec 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/12/11/usage-for-lobos-migration/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</guid>
           <description>
 
 &lt;p&gt;1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。&lt;/p&gt;
@@ -657,10 +657,10 @@ lobos_migrations  sites
       
         <item>
           <title>automatically-compile-the-scss-in-leiningen</title>
-          <link>http://localhost:1313/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</link>
           <pubDate>Tue, 09 Dec 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</guid>
           <description>
 
 &lt;p&gt;Clojureを始めて一週間ほどになりまして。&lt;/p&gt;
@@ -749,10 +749,10 @@ lobos_migrations  sites
       
         <item>
           <title>went-to-startup-weekend-yokohama-2nd</title>
-          <link>http://localhost:1313/blog/2014/12/02/went-to-startup-weekend-yokohama-2nd/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/12/02/went-to-startup-weekend-yokohama-2nd/</link>
           <pubDate>Tue, 02 Dec 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/12/02/went-to-startup-weekend-yokohama-2nd/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/02/went-to-startup-weekend-yokohama-2nd/</guid>
           <description>
 
 &lt;p&gt;この2週間で、Startup Weekend YokohamaとStartup Weekend Tokyoに参加してきました。&lt;/p&gt;
@@ -1037,10 +1037,10 @@ lobos_migrations  sites
       
         <item>
           <title>pass-the-validation-of-w3c</title>
-          <link>http://localhost:1313/blog/2014/11/12/pass-the-validation-of-w3c/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/</link>
           <pubDate>Wed, 12 Nov 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/11/12/pass-the-validation-of-w3c/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/</guid>
           <description>&lt;p&gt;ふと思い立って&lt;a href=&#34;http://validator.w3.org/&#34;&gt;Markup Validation Service&lt;/a&gt;をやってみたら13個もエラーが出たので対応してみるよ。&lt;/p&gt;
 
 &lt;!-- more --&gt;
@@ -1162,7 +1162,7 @@ Flow content, but with no main element descendants.
 
 &lt;p&gt;てことで、&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2014-11-12/green.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2014-11-12/green.png&#34; class=&#34;image&#34; alt=&#34;green&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-11-12/green.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-11-12/green.png&#34; class=&#34;image&#34; alt=&#34;green&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;オールグリーン！&lt;/p&gt;
 
@@ -1174,10 +1174,10 @@ Flow content, but with no main element descendants.
       
         <item>
           <title>learn-docker</title>
-          <link>http://localhost:1313/blog/2014/11/09/learn-docker/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/11/09/learn-docker/</link>
           <pubDate>Sun, 09 Nov 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/11/09/learn-docker/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/11/09/learn-docker/</guid>
           <description>
 
 &lt;p&gt;ちょっとやりたいことがあって、&lt;a href=&#34;http://www.docker.com/&#34;&gt;Docker&lt;/a&gt;を使ってみることに。&lt;/p&gt;
@@ -1380,10 +1380,10 @@ RUN gem install sinatra
       
         <item>
           <title>how-to-use-custom-domain-in-github-pages</title>
-          <link>http://localhost:1313/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/</link>
           <pubDate>Fri, 24 Oct 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/</guid>
           <description>
 
 &lt;p&gt;昨日はGAEで今日はGithubかよって感じだけど、こっちは結構詰まったのでメモしたい。&lt;/p&gt;
@@ -1440,10 +1440,10 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
       
         <item>
           <title>about-sqlserver-clusteredindex-and-nonclustered-index</title>
-          <link>http://localhost:1313/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</link>
           <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</guid>
           <description>
 
 &lt;p&gt;SQL Serverを使ってて、ちょっと曖昧にしかわからんなってところがあったので少し調べてみた。&lt;/p&gt;
@@ -1531,10 +1531,10 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
       
         <item>
           <title>how-to-use-custom-domain-in-google-app-engine</title>
-          <link>http://localhost:1313/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</link>
           <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</guid>
           <description>
 
 &lt;p&gt;簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。&lt;/p&gt;
@@ -1553,11 +1553,11 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 
 &lt;p&gt;はじめにGoogleが、使いたいドメインが君のものか確認したいとのことなので、verifyへ。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2014-10-23/verify.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2014-10-23/verify.png&#34; class=&#34;image&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34; class=&#34;image&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;そうするとこんな画面になるので、&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2014-10-23/input_domain.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2014-10-23/input_domain.png&#34; class=&#34;image&#34; alt=&#34;input_domain&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34; class=&#34;image&#34; alt=&#34;input_domain&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;ここに表示されてるテキストを、ドメインを発行した会社さんのほうからTXTレコードとして追加すればOK。&lt;/p&gt;
 
@@ -1573,7 +1573,7 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 
 &lt;p&gt;でここに入力すればOK。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2014-10-23/input_txt.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2014-10-23/input_txt.png&#34; class=&#34;image&#34; alt=&#34;input_txt&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34; class=&#34;image&#34; alt=&#34;input_txt&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;TYPEはTXTにしてVALUEにさっきのテキストを入力。&lt;/p&gt;
 
@@ -1585,7 +1585,7 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 
 &lt;p&gt;確認が出来たらサブドメインとしてプレフィックスを付けるのかを決める。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2014-10-23/step2.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2014-10-23/step2.png&#34; class=&#34;image&#34; alt=&#34;step2&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34; class=&#34;image&#34; alt=&#34;step2&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;これによって最後のステップが変わるけど、オレは確認の時点でサブドメインとして設定したので、Google側では特に付加せずやってます。&lt;/p&gt;
 
@@ -1595,7 +1595,7 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 
 &lt;p&gt;ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2014-10-23/step3.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2014-10-23/step3.png&#34; class=&#34;image&#34; alt=&#34;step3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34; class=&#34;image&#34; alt=&#34;step3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;あとは待ってればそのうち反映されるはず。&lt;/p&gt;
 </description>
@@ -1605,10 +1605,10 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
       
         <item>
           <title>move-sidebar-at-under-the-article</title>
-          <link>http://localhost:1313/blog/2014/10/22/move-sidebar-at-under-the-article/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/</link>
           <pubDate>Wed, 22 Oct 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/10/22/move-sidebar-at-under-the-article/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/</guid>
           <description>&lt;p&gt;デフォルトのテーマだとサイドバーの表示/非表示の切り替えが出来て、非表示にするとサイドバーは記事の下に落っこちるんだけど、&lt;/p&gt;
 
 &lt;p&gt;常時この状態にした方がかっこいいんでないか？ということで移動させてみることに。&lt;/p&gt;
@@ -1674,10 +1674,10 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
       
         <item>
           <title>build-auriga-server-on-ubuntu</title>
-          <link>http://localhost:1313/blog/2014/10/19/build-auriga-server-on-ubuntu/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/</link>
           <pubDate>Sun, 19 Oct 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/10/19/build-auriga-server-on-ubuntu/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/</guid>
           <description>
 
 &lt;p&gt;今更だがAurigaの構築をやってみる。&lt;/p&gt;
@@ -1799,7 +1799,7 @@ CFLAGS += -DNO_HTTPD
 
 &lt;p&gt;というわけで、&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2014-10-19/httpd.png&#34;&gt;{% img /images/2014-10-19/httpd.png httpd %}&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-19/httpd.png&#34;&gt;{% img /images/2014-10-19/httpd.png httpd %}&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;出来ました。&lt;/p&gt;
 </description>
@@ -1809,10 +1809,10 @@ CFLAGS += -DNO_HTTPD
       
         <item>
           <title>install-nodejs-on-ubuntu</title>
-          <link>http://localhost:1313/blog/2014/10/18/install-nodejs-on-ubuntu/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/10/18/install-nodejs-on-ubuntu/</link>
           <pubDate>Sat, 18 Oct 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/10/18/install-nodejs-on-ubuntu/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/18/install-nodejs-on-ubuntu/</guid>
           <description>
 
 &lt;p&gt;そろそろ新しいことをやらねばなと思うので、node.jsに手を出してみるよ。&lt;/p&gt;
@@ -1904,10 +1904,10 @@ hello world
       
         <item>
           <title>laravel-array-input</title>
-          <link>http://localhost:1313/blog/2014/09/29/laravel-array-input/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/09/29/laravel-array-input/</link>
           <pubDate>Mon, 29 Sep 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/09/29/laravel-array-input/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/29/laravel-array-input/</guid>
           <description>
 
 &lt;p&gt;テーブルとかに入れた複数のInputを同じ名前にして配列でサーバに飛ばしたい、ってときいつも困る。&lt;/p&gt;
@@ -2000,10 +2000,10 @@ hello world
       
         <item>
           <title>learn-git-rm-command</title>
-          <link>http://localhost:1313/blog/2014/09/28/learn-git-rm-command/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/</link>
           <pubDate>Sun, 28 Sep 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/09/28/learn-git-rm-command/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/</guid>
           <description>
 
 &lt;p&gt;ローカル環境でちょこちょこ作ってたやつを本番環境に載せたんだけど、それなりに解決してた環境依存が少し残ってて.gitignoreファイルをちゃんと書くことに。&lt;/p&gt;
@@ -2034,10 +2034,10 @@ hello world
       
         <item>
           <title>could-not-force-push-on-git</title>
-          <link>http://localhost:1313/blog/2014/09/27/could-not-force-push-on-git/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/</link>
           <pubDate>Sat, 27 Sep 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/09/27/could-not-force-push-on-git/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/</guid>
           <description>
 
 &lt;p&gt;typoを直すために&lt;code&gt;rebase -i&lt;/code&gt;やらをやってたんだけど、操作してたのがmasterブランチだったのでどうしてもforce pushがしたかった。&lt;/p&gt;
@@ -2072,11 +2072,51 @@ fast-forwards&#39; section of &#39;git push --help&#39; for details.
     
       
         <item>
-          <title>make-new-theme-flatten</title>
-          <link>http://localhost:1313/blog/2014/09/21/make-new-theme-flatten/</link>
+          <title>description-is-not-set</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</link>
           <pubDate>Sun, 21 Sep 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/09/21/make-new-theme-flatten/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</guid>
+          <description>&lt;p&gt;認識が間違ってるのか、_config.ymlに書いたdescriptionがサイトに反映されない・・・。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;source/_includes/head.html&lt;/code&gt;のコードを見てみるとこんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{% raw %}
+  {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
+  &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ description | strip_html | condense_spaces | truncate:150 }}&amp;quot;&amp;gt;
+  {% if page.keywords %}&amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;{{ page.keywords }}&amp;quot;&amp;gt;{% endif %}
+{% endraw %}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;page.descriptionしか見てない？&lt;/p&gt;
+
+&lt;p&gt;同じことで悩んでる人いないのかな・・・と思ったら居た。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://sweetme.at/2013/08/06/how-to-set-your-octopress-description-and-keyword-meta-tags/&#34;&gt;Make the Magic Happen&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;やっぱり同じ認識のようだ。&lt;/p&gt;
+
+&lt;p&gt;elseifってこう書くんだね。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{% raw %}
+  {% capture description %}{% if page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
+  &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ description | strip_html | condense_spaces | truncate:150 }}&amp;quot;&amp;gt;
+  {% if page.keywords %}&amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;{{ page.keywords }}&amp;quot;&amp;gt;{% endif %}
+{% endraw %}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;worked!&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>make-new-theme-flatten</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/</link>
+          <pubDate>Sun, 21 Sep 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/</guid>
           <description>
 
 &lt;p&gt;元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。&lt;/p&gt;
@@ -2143,40 +2183,50 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
     
       
         <item>
-          <title>description-is-not-set</title>
-          <link>http://localhost:1313/blog/2014/09/21/description-is-not-set/</link>
-          <pubDate>Sun, 21 Sep 2014 00:00:00 UTC</pubDate>
+          <title>git-on-proxy</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</link>
+          <pubDate>Sat, 20 Sep 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/09/21/description-is-not-set/</guid>
-          <description>&lt;p&gt;認識が間違ってるのか、_config.ymlに書いたdescriptionがサイトに反映されない・・・。&lt;/p&gt;
+          <guid>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</guid>
+          <description>
 
-&lt;p&gt;&lt;code&gt;source/_includes/head.html&lt;/code&gt;のコードを見てみるとこんな感じ。&lt;/p&gt;
+&lt;h2 id=&#34;事の発端:ca86a8bf870eabf283b4127081a3d388&#34;&gt;事の発端&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{% raw %}
-  {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
-  &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ description | strip_html | condense_spaces | truncate:150 }}&amp;quot;&amp;gt;
-  {% if page.keywords %}&amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;{{ page.keywords }}&amp;quot;&amp;gt;{% endif %}
-{% endraw %}
+&lt;p&gt;会社ではvimを使ってます。&lt;/p&gt;
+
+&lt;p&gt;plugin管理には&lt;a href=&#34;https://github.com/Shougo/neobundle.vim&#34;&gt;neobundle.vim&lt;/a&gt;使ってます。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;.vimrc&lt;/code&gt;は&lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt;で管理してます。&lt;/p&gt;
+
+&lt;p&gt;neobundle.vimで管理してるpluginは大抵のものがGitHub上で管理されてるから、インストールとかアップデートをするときはneobundle.vimがGitHubまで見に行ってくれるんですね。&lt;/p&gt;
+
+&lt;p&gt;ただ、当然社内はproxyを通していて、gitコマンドが通らない！&lt;/p&gt;
+
+&lt;p&gt;ていうかそもそも&lt;strong&gt;GitHubから&lt;code&gt;.vimrc&lt;/code&gt;を落としてくることすら出来ない！いいやzipで落とせ！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;しかしpluginの導入を手でやるのはだるい・・・。&lt;/p&gt;
+
+&lt;p&gt;マジで？サクラエディタで頑張るしかない？&lt;/p&gt;
+
+&lt;p&gt;いやいやそんなことはない。&lt;/p&gt;
+
+&lt;h2 id=&#34;解決:ca86a8bf870eabf283b4127081a3d388&#34;&gt;解決&lt;/h2&gt;
+
+&lt;p&gt;じゃあこうしようってことで、&lt;code&gt;~/.gitconfig&lt;/code&gt;をこんな感じにしたのよ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;[https]
+        proxy = http://proxy.com:8080
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;page.descriptionしか見てない？&lt;/p&gt;
+&lt;p&gt;ひとまず解決したんです。&lt;/p&gt;
 
-&lt;p&gt;同じことで悩んでる人いないのかな・・・と思ったら居た。&lt;/p&gt;
+&lt;p&gt;そしたら次は&lt;strong&gt;社内のgitに繋がらない！！&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://sweetme.at/2013/08/06/how-to-set-your-octopress-description-and-keyword-meta-tags/&#34;&gt;Make the Magic Happen&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;マジかよじゃあ&lt;code&gt;~/.gitconfig&lt;/code&gt;をちょこちょこ変えるのかよだせえよそれと思ったら既に解決してくれてる人がいた。&lt;/p&gt;
 
-&lt;p&gt;やっぱり同じ認識のようだ。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://tanacasino.hatenablog.com/entry/2013/12/21/003750&#34;&gt;Git の http proxy に関するまとめ&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;elseifってこう書くんだね。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{% raw %}
-  {% capture description %}{% if page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
-  &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ description | strip_html | condense_spaces | truncate:150 }}&amp;quot;&amp;gt;
-  {% if page.keywords %}&amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;{{ page.keywords }}&amp;quot;&amp;gt;{% endif %}
-{% endraw %}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;worked!&lt;/p&gt;
+&lt;p&gt;めんどくさかったけど、個々のpluginの&lt;code&gt;config&lt;/code&gt;にだけproxyの記述を追加することで解決。&lt;/p&gt;
 </description>
         </item>
       
@@ -2184,10 +2234,10 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
       
         <item>
           <title>make-gravatar-sidebar</title>
-          <link>http://localhost:1313/blog/2014/09/20/make-gravatar-sidebar/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/</link>
           <pubDate>Sat, 20 Sep 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/09/20/make-gravatar-sidebar/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/</guid>
           <description>
 
 &lt;h2 id=&#34;octopressのサイドバーってどうなってんの:c73b8990ae6ff308f2649661fb572fc8&#34;&gt;Octopressのサイドバーってどうなってんの？&lt;/h2&gt;
@@ -2310,61 +2360,11 @@ div#urls {
     
       
         <item>
-          <title>git-on-proxy</title>
-          <link>http://localhost:1313/blog/2014/09/20/git-on-proxy/</link>
-          <pubDate>Sat, 20 Sep 2014 00:00:00 UTC</pubDate>
-          <author></author>
-          <guid>http://localhost:1313/blog/2014/09/20/git-on-proxy/</guid>
-          <description>
-
-&lt;h2 id=&#34;事の発端:ca86a8bf870eabf283b4127081a3d388&#34;&gt;事の発端&lt;/h2&gt;
-
-&lt;p&gt;会社ではvimを使ってます。&lt;/p&gt;
-
-&lt;p&gt;plugin管理には&lt;a href=&#34;https://github.com/Shougo/neobundle.vim&#34;&gt;neobundle.vim&lt;/a&gt;使ってます。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;.vimrc&lt;/code&gt;は&lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt;で管理してます。&lt;/p&gt;
-
-&lt;p&gt;neobundle.vimで管理してるpluginは大抵のものがGitHub上で管理されてるから、インストールとかアップデートをするときはneobundle.vimがGitHubまで見に行ってくれるんですね。&lt;/p&gt;
-
-&lt;p&gt;ただ、当然社内はproxyを通していて、gitコマンドが通らない！&lt;/p&gt;
-
-&lt;p&gt;ていうかそもそも&lt;strong&gt;GitHubから&lt;code&gt;.vimrc&lt;/code&gt;を落としてくることすら出来ない！いいやzipで落とせ！&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;しかしpluginの導入を手でやるのはだるい・・・。&lt;/p&gt;
-
-&lt;p&gt;マジで？サクラエディタで頑張るしかない？&lt;/p&gt;
-
-&lt;p&gt;いやいやそんなことはない。&lt;/p&gt;
-
-&lt;h2 id=&#34;解決:ca86a8bf870eabf283b4127081a3d388&#34;&gt;解決&lt;/h2&gt;
-
-&lt;p&gt;じゃあこうしようってことで、&lt;code&gt;~/.gitconfig&lt;/code&gt;をこんな感じにしたのよ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;[https]
-        proxy = http://proxy.com:8080
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ひとまず解決したんです。&lt;/p&gt;
-
-&lt;p&gt;そしたら次は&lt;strong&gt;社内のgitに繋がらない！！&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;マジかよじゃあ&lt;code&gt;~/.gitconfig&lt;/code&gt;をちょこちょこ変えるのかよだせえよそれと思ったら既に解決してくれてる人がいた。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://tanacasino.hatenablog.com/entry/2013/12/21/003750&#34;&gt;Git の http proxy に関するまとめ&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;めんどくさかったけど、個々のpluginの&lt;code&gt;config&lt;/code&gt;にだけproxyの記述を追加することで解決。&lt;/p&gt;
-</description>
-        </item>
-      
-    
-      
-        <item>
           <title>install-the-octopress-on-github-pages</title>
-          <link>http://localhost:1313/blog/2014/09/17/install-the-octopress-on-github-pages/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/</link>
           <pubDate>Wed, 17 Sep 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/09/17/install-the-octopress-on-github-pages/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/</guid>
           <description>
 
 &lt;p&gt;&lt;a href=&#34;https://ja.wordpress.com/&#34;&gt;WordPress.com&lt;/a&gt;を使ってたんだけど、お金払わないと融通がきかないぽいので移行することに。&lt;/p&gt;

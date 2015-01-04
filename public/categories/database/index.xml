@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved </title>
-    <link>http://localhost:1313/categories/database/</link>
+    <link>http://yet.unresolved.xyz/categories/database/</link>
     <language>en-us</language>
     <author></author>
     <rights>(C) 2014</rights>
@@ -12,10 +12,10 @@
       
         <item>
           <title>usage-for-lobos-migration</title>
-          <link>http://localhost:1313/blog/2014/12/11/usage-for-lobos-migration/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</link>
           <pubDate>Thu, 11 Dec 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/12/11/usage-for-lobos-migration/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</guid>
           <description>
 
 &lt;p&gt;1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。&lt;/p&gt;
@@ -194,10 +194,10 @@ lobos_migrations  sites
       
         <item>
           <title>about-sqlserver-clusteredindex-and-nonclustered-index</title>
-          <link>http://localhost:1313/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</link>
           <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://localhost:1313/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</guid>
           <description>
 
 &lt;p&gt;SQL Serverを使ってて、ちょっと曖昧にしかわからんなってところがあったので少し調べてみた。&lt;/p&gt;
