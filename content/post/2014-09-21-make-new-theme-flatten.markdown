@@ -6,11 +6,16 @@ date: 2014-09-21
 comments: true
 categories: [octopress, theme]
 ---
+
 元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。
 
 でもオレはデザイナーじゃないから、あんまりがっつりやるのもやだよね。
 
 てことで元のclassicテーマをパクって作ろう。
+
+Octopressから移行してしまったので、スクリーンショットだけ載せとく。
+
+[<img src="/images/2014-09-21/flatten.png" class="image" alt="flatten">](/images/2014-09-21/flatten.png)
 
 ## テーマの変え方
 
