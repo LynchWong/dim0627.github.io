@@ -29,10 +29,12 @@ pre {
 
 .masthead-title {
     text-align: center;
+    font-size: 1.5em;
 }
 
 .masthead-title a {
     font-family:'Lobster', cursive;
+    text-decoration: none;
 }
 
 .post {
@@ -51,6 +53,10 @@ pre {
     margin-bottom: 1rem;
     font-size: 1.5em;
     font-weight: bold;
+}
+
+.post-title>a {
+    text-decoration: none;
 }
 
 .eyecatch {
