@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unresolved </title>
+    <link>http://yet.unresolved.xyz/categories/html/</link>
+    <language>en-us</language>
+    <author></author>
+    <rights>(C) 2014</rights>
+    <updated>2014-11-12 00:00:00 &#43;0000 UTC</updated>
+
+    
+      
+        <item>
+          <title>pass-the-validation-of-w3c</title>
+          <link>http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/</link>
+          <pubDate>Wed, 12 Nov 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/</guid>
+          <description>&lt;p&gt;ふと思い立って&lt;a href=&#34;http://validator.w3.org/&#34;&gt;Markup Validation Service&lt;/a&gt;をやってみたら13個もエラーが出たので対応してみるよ。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;pre&gt;&lt;code&gt;Error Line 50, Column 32: Element hgroup not allowed as child of element header in this context. (Suppressing further errors from this subtree.)
+  &amp;lt;header role=&amp;quot;banner&amp;quot;&amp;gt;&amp;lt;hgroup&amp;gt;
+Content model for element header:
+Flow content, but with no header, footer, or main element descendants.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;hgroup&lt;/code&gt;は&lt;code&gt;header&lt;/code&gt;タグの中に入れちゃダメだよ。&lt;/p&gt;
+
+&lt;p&gt;次のも関連してる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Error Line 50, Column 32: The hgroup element is obsolete. To mark up subheadings, consider either just putting the subheading into a p element after the h1-h6 element containing the main heading, or else putting the subheading directly within the h1-h6 element containing the main heading, but separated from the main heading by punctuation and/or within, for example, a span class=&amp;quot;subheading&amp;quot; element with differentiated styling. To group headings and subheadings, alternative titles, or taglines, consider using the header or div elements.
+  &amp;lt;header role=&amp;quot;banner&amp;quot;&amp;gt;&amp;lt;hgroup&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;hgorup&lt;/code&gt;タグは非推奨だよ。&lt;/p&gt;
+
+&lt;p&gt;よし、消そう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Error Line 57, Column 72: Bad value subscribe-rss for attribute rel on element a: The string subscribe-rss is not a registered keyword.
+…&amp;gt;&amp;lt;a href=&amp;quot;/atom.xml&amp;quot; rel=&amp;quot;subscribe-rss&amp;quot; title=&amp;quot;subscribe via RSS&amp;quot;&amp;gt;RSS&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+Syntax of list of link-type keywords:
+A whitespace-separated list of link types, with no duplicate keywords in the list. Each link type must be listed as allowed on &amp;lt;a&amp;gt; and &amp;lt;area&amp;gt; in the HTML specification, or must be listed as allowed on &amp;lt;a&amp;gt; and &amp;lt;area&amp;gt; on the Microformats wiki, or must be an absolute URL. You can register link types on the Microformats wiki yourself.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;subscribe-rss&lt;/code&gt;は&lt;code&gt;rel&lt;/code&gt;に入れていいkeywordじゃないよ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; Line 64, Column 81: Attribute results not allowed on element input at this point.
+…  &amp;lt;input class=&amp;quot;search&amp;quot; type=&amp;quot;text&amp;quot; name=&amp;quot;q&amp;quot; results=&amp;quot;0&amp;quot; placeholder=&amp;quot;Search&amp;quot;/&amp;gt;
+Attributes for element input:
+Global attributes
+accept when type is file
+alt when type is image
+autocomplete when type is text, search, url, tel, e-mail, password, datetime, date, month, week, time, datetime-local, number, range, or color
+autofocus
+checked when type is checkbox or radio
+dirname when type is text or search
+disabled
+form
+formaction when type is submit or image
+formenctype when type is submit or image
+formmethod when type is submit or image
+formnovalidate when type is submit or image
+formtarget when type is submit or image
+height when type is image
+list when type is text, search, url, tel, e-mail, datetime, date, month, week, time, datetime-local, number, range, or color
+max when type is datetime, date, month, week, time, datetime-local, number, or range
+maxlength when type is text, search, url, tel, e-mail, or password
+min when type is datetime, date, month, week, time, datetime-local, number, or range
+multiple when type is email or file
+name
+pattern when type is text, search, url, tel, e-mail, or password
+placeholder when type is text, search, url, tel, e-mail, password, or number
+readonly when type is text, search, url, tel, e-mail, password, datetime, date, month, week, time, datetime-local, or number
+required when type is text, search, url, tel, e-mail, password, datetime, date, month, week, time, datetime-local, number, checkbox, radio, or file
+size when type is text, search, url, tel, e-mail, or password
+src when type is image
+step when type is datetime, date, month, week, time, datetime-local, number, or range
+type
+value when type is not file or image
+width when type is image
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;input&lt;/code&gt;タグに&lt;code&gt;results&lt;/code&gt;っていう属性は入れちゃだめだよ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Error Line 110, Column 66: Bad value full-article for attribute rel on element a: The string full-article is not a registered keyword.
+… &amp;lt;a rel=&amp;quot;full-article&amp;quot; href=&amp;quot;/blog/2014/11/09/learn-docker/&amp;quot;&amp;gt;Read on &amp;amp;rarr;&amp;lt;/a&amp;gt;
+Syntax of list of link-type keywords:
+A whitespace-separated list of link types, with no duplicate keywords in the list. Each link type must be listed as allowed on &amp;lt;a&amp;gt; and &amp;lt;area&amp;gt; in the HTML specification, or must be listed as allowed on &amp;lt;a&amp;gt; and &amp;lt;area&amp;gt; on the Microformats wiki, or must be an absolute URL. You can register link types on the Microformats wiki yourself.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;full-article&lt;/code&gt;は&lt;code&gt;rel&lt;/code&gt;に入れていいkeywordじゃないよ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Line 332, Column 100: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+…3/verify.png&amp;quot;&amp;gt;&amp;lt;img src=&amp;quot;/images/2014-10-23/verify.png&amp;quot; title=&amp;quot;verify&amp;quot; &amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;img&lt;/code&gt;タグは&lt;code&gt;alt&lt;/code&gt;属性をつけなきゃだめだよ。&lt;/p&gt;
+
+&lt;p&gt;これが計7個。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Warning Line 511, Column 6: Consider using the h1 element as a top-level heading only (all h1 elements are treated as top-level headings by many screen readers and other tools).
+  &amp;lt;h1&amp;gt;About Me&amp;lt;/h1&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;h1&lt;/code&gt;はトップレベルだけで使ってよ。&lt;/p&gt;
+
+&lt;p&gt;これが計8個。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; Line 513, Column 18: Element img is missing required attribute src.
+  &amp;lt;img id=&amp;quot;photo&amp;quot;&amp;gt;
+Attributes for element img:
+Global attributes
+alt
+src
+crossorigin
+usemap
+ismap
+width
+height
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;img&lt;/code&gt;タグに&lt;code&gt;src&lt;/code&gt;属性がないよ。(Ajaxで書いてたせい。)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Error Line 612, Column 7: Element style not allowed as child of element aside in this context. (Suppressing further errors from this subtree.)
+&amp;lt;style&amp;gt;
+Contexts in which element style may be used:
+If the scoped attribute is absent: where metadata content is expected.
+If the scoped attribute is absent: in a noscript element that is a child of a head element.
+If the scoped attribute is present: where flow content is expected, but before any other flow content other than inter-element whitespace and style elements, and not as the child of an element whose content model is transparent.
+Content model for element aside:
+Flow content, but with no main element descendants.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;aside&lt;/code&gt;タグの中で&lt;code&gt;style&lt;/code&gt;書いちゃだめだよ。&lt;/p&gt;
+
+&lt;p&gt;てことで、&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-11-12/green.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-11-12/green.png&#34; class=&#34;image&#34; alt=&#34;green&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;オールグリーン！&lt;/p&gt;
+
+&lt;p&gt;警告はもうだるいからいいや&lt;/p&gt;
+</description>
+        </item>
+      
+    
+
+  </channel>
+</rss>

@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unresolved </title>
+    <link>http://yet.unresolved.xyz/categories/octopress/</link>
+    <language>en-us</language>
+    <author></author>
+    <rights>(C) 2014</rights>
+    <updated>2014-11-12 00:00:00 &#43;0000 UTC</updated>
+
+    
+      
+        <item>
+          <title>pass-the-validation-of-w3c</title>
+          <link>http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/</link>
+          <pubDate>Wed, 12 Nov 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/</guid>
+          <description>&lt;p&gt;ふと思い立って&lt;a href=&#34;http://validator.w3.org/&#34;&gt;Markup Validation Service&lt;/a&gt;をやってみたら13個もエラーが出たので対応してみるよ。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;pre&gt;&lt;code&gt;Error Line 50, Column 32: Element hgroup not allowed as child of element header in this context. (Suppressing further errors from this subtree.)
+  &amp;lt;header role=&amp;quot;banner&amp;quot;&amp;gt;&amp;lt;hgroup&amp;gt;
+Content model for element header:
+Flow content, but with no header, footer, or main element descendants.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;hgroup&lt;/code&gt;は&lt;code&gt;header&lt;/code&gt;タグの中に入れちゃダメだよ。&lt;/p&gt;
+
+&lt;p&gt;次のも関連してる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Error Line 50, Column 32: The hgroup element is obsolete. To mark up subheadings, consider either just putting the subheading into a p element after the h1-h6 element containing the main heading, or else putting the subheading directly within the h1-h6 element containing the main heading, but separated from the main heading by punctuation and/or within, for example, a span class=&amp;quot;subheading&amp;quot; element with differentiated styling. To group headings and subheadings, alternative titles, or taglines, consider using the header or div elements.
+  &amp;lt;header role=&amp;quot;banner&amp;quot;&amp;gt;&amp;lt;hgroup&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;hgorup&lt;/code&gt;タグは非推奨だよ。&lt;/p&gt;
+
+&lt;p&gt;よし、消そう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Error Line 57, Column 72: Bad value subscribe-rss for attribute rel on element a: The string subscribe-rss is not a registered keyword.
+…&amp;gt;&amp;lt;a href=&amp;quot;/atom.xml&amp;quot; rel=&amp;quot;subscribe-rss&amp;quot; title=&amp;quot;subscribe via RSS&amp;quot;&amp;gt;RSS&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+Syntax of list of link-type keywords:
+A whitespace-separated list of link types, with no duplicate keywords in the list. Each link type must be listed as allowed on &amp;lt;a&amp;gt; and &amp;lt;area&amp;gt; in the HTML specification, or must be listed as allowed on &amp;lt;a&amp;gt; and &amp;lt;area&amp;gt; on the Microformats wiki, or must be an absolute URL. You can register link types on the Microformats wiki yourself.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;subscribe-rss&lt;/code&gt;は&lt;code&gt;rel&lt;/code&gt;に入れていいkeywordじゃないよ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; Line 64, Column 81: Attribute results not allowed on element input at this point.
+…  &amp;lt;input class=&amp;quot;search&amp;quot; type=&amp;quot;text&amp;quot; name=&amp;quot;q&amp;quot; results=&amp;quot;0&amp;quot; placeholder=&amp;quot;Search&amp;quot;/&amp;gt;
+Attributes for element input:
+Global attributes
+accept when type is file
+alt when type is image
+autocomplete when type is text, search, url, tel, e-mail, password, datetime, date, month, week, time, datetime-local, number, range, or color
+autofocus
+checked when type is checkbox or radio
+dirname when type is text or search
+disabled
+form
+formaction when type is submit or image
+formenctype when type is submit or image
+formmethod when type is submit or image
+formnovalidate when type is submit or image
+formtarget when type is submit or image
+height when type is image
+list when type is text, search, url, tel, e-mail, datetime, date, month, week, time, datetime-local, number, range, or color
+max when type is datetime, date, month, week, time, datetime-local, number, or range
+maxlength when type is text, search, url, tel, e-mail, or password
+min when type is datetime, date, month, week, time, datetime-local, number, or range
+multiple when type is email or file
+name
+pattern when type is text, search, url, tel, e-mail, or password
+placeholder when type is text, search, url, tel, e-mail, password, or number
+readonly when type is text, search, url, tel, e-mail, password, datetime, date, month, week, time, datetime-local, or number
+required when type is text, search, url, tel, e-mail, password, datetime, date, month, week, time, datetime-local, number, checkbox, radio, or file
+size when type is text, search, url, tel, e-mail, or password
+src when type is image
+step when type is datetime, date, month, week, time, datetime-local, number, or range
+type
+value when type is not file or image
+width when type is image
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;input&lt;/code&gt;タグに&lt;code&gt;results&lt;/code&gt;っていう属性は入れちゃだめだよ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Error Line 110, Column 66: Bad value full-article for attribute rel on element a: The string full-article is not a registered keyword.
+… &amp;lt;a rel=&amp;quot;full-article&amp;quot; href=&amp;quot;/blog/2014/11/09/learn-docker/&amp;quot;&amp;gt;Read on &amp;amp;rarr;&amp;lt;/a&amp;gt;
+Syntax of list of link-type keywords:
+A whitespace-separated list of link types, with no duplicate keywords in the list. Each link type must be listed as allowed on &amp;lt;a&amp;gt; and &amp;lt;area&amp;gt; in the HTML specification, or must be listed as allowed on &amp;lt;a&amp;gt; and &amp;lt;area&amp;gt; on the Microformats wiki, or must be an absolute URL. You can register link types on the Microformats wiki yourself.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;full-article&lt;/code&gt;は&lt;code&gt;rel&lt;/code&gt;に入れていいkeywordじゃないよ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Line 332, Column 100: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+…3/verify.png&amp;quot;&amp;gt;&amp;lt;img src=&amp;quot;/images/2014-10-23/verify.png&amp;quot; title=&amp;quot;verify&amp;quot; &amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;img&lt;/code&gt;タグは&lt;code&gt;alt&lt;/code&gt;属性をつけなきゃだめだよ。&lt;/p&gt;
+
+&lt;p&gt;これが計7個。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Warning Line 511, Column 6: Consider using the h1 element as a top-level heading only (all h1 elements are treated as top-level headings by many screen readers and other tools).
+  &amp;lt;h1&amp;gt;About Me&amp;lt;/h1&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;h1&lt;/code&gt;はトップレベルだけで使ってよ。&lt;/p&gt;
+
+&lt;p&gt;これが計8個。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; Line 513, Column 18: Element img is missing required attribute src.
+  &amp;lt;img id=&amp;quot;photo&amp;quot;&amp;gt;
+Attributes for element img:
+Global attributes
+alt
+src
+crossorigin
+usemap
+ismap
+width
+height
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;img&lt;/code&gt;タグに&lt;code&gt;src&lt;/code&gt;属性がないよ。(Ajaxで書いてたせい。)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Error Line 612, Column 7: Element style not allowed as child of element aside in this context. (Suppressing further errors from this subtree.)
+&amp;lt;style&amp;gt;
+Contexts in which element style may be used:
+If the scoped attribute is absent: where metadata content is expected.
+If the scoped attribute is absent: in a noscript element that is a child of a head element.
+If the scoped attribute is present: where flow content is expected, but before any other flow content other than inter-element whitespace and style elements, and not as the child of an element whose content model is transparent.
+Content model for element aside:
+Flow content, but with no main element descendants.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;aside&lt;/code&gt;タグの中で&lt;code&gt;style&lt;/code&gt;書いちゃだめだよ。&lt;/p&gt;
+
+&lt;p&gt;てことで、&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-11-12/green.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-11-12/green.png&#34; class=&#34;image&#34; alt=&#34;green&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;オールグリーン！&lt;/p&gt;
+
+&lt;p&gt;警告はもうだるいからいいや&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>move-sidebar-at-under-the-article</title>
+          <link>http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/</link>
+          <pubDate>Wed, 22 Oct 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/</guid>
+          <description>&lt;p&gt;デフォルトのテーマだとサイドバーの表示/非表示の切り替えが出来て、非表示にするとサイドバーは記事の下に落っこちるんだけど、&lt;/p&gt;
+
+&lt;p&gt;常時この状態にした方がかっこいいんでないか？ということで移動させてみることに。&lt;/p&gt;
+
+&lt;p&gt;サイドバーの非表示時に何が起きているかというと、bodyタグにclassが追加されてます。&lt;/p&gt;
+
+&lt;p&gt;具体的な処理は&lt;code&gt;/javascripts/octopress.js&lt;/code&gt;に書いてあるよ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;$(&#39;.toggle-sidebar&#39;).bind(&#39;click&#39;, function(e) {
+  e.preventDefault();
+  if ($(&#39;body&#39;).hasClass(&#39;collapse-sidebar&#39;)) {
+    $(&#39;body&#39;).removeClass(&#39;collapse-sidebar&#39;);
+  } else {
+    $(&#39;body&#39;).addClass(&#39;collapse-sidebar&#39;);
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;bodyタグが&lt;code&gt;collapse-sidebar&lt;/code&gt;クラスに属していれば、サイドバーは勝手に下に落っこちる訳だ。&lt;/p&gt;
+
+&lt;p&gt;bodyを描画するテンプレートは&lt;code&gt;_layouts/default.html&lt;/code&gt;で、こんな記載がある。&lt;/p&gt;
+
+&lt;p&gt;長ったらしいので少し見やすく改行してあります。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;body
+{% if page.body_id %}
+    id=&amp;quot;{{ page.body_id }}&amp;quot;
+{% endif %}
+
+{% if page.sidebar == false %}
+    class=&amp;quot;no-sidebar&amp;quot;
+{% endif %}
+
+{% if page.sidebar == &#39;collapse&#39; or site.sidebar == &#39;collapse&#39; %}
+    class=&amp;quot;collapse-sidebar sidebar-footer&amp;quot;
+{% endif %}
+&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;sidebarが&lt;code&gt;collapse&lt;/code&gt;の場合にclassが追加されるようになってるね。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;sidebar-footer&lt;/code&gt;クラスもレイアウトに必要なものらしい。&lt;/p&gt;
+
+&lt;p&gt;というわけでテンプレートを直に変えるのではなくて、&lt;code&gt;_config.yml&lt;/code&gt;に以下を追加すれば対応出来そうだ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;sidebar: &amp;quot;collapse&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;トグルボタンのスペースが空いてしまうので、&lt;code&gt;custom/_style.css&lt;/code&gt;に以下も追加。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.collapse-sidebar #content {
+    margin-right: 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;大体思い通りになったかな。&lt;/p&gt;
+
+&lt;p&gt;別の部分の問題だろうけど、トップページと記事ページで、少しレイアウトが崩れるのが気になる・・・。&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>description-is-not-set</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</link>
+          <pubDate>Sun, 21 Sep 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</guid>
+          <description>&lt;p&gt;認識が間違ってるのか、_config.ymlに書いたdescriptionがサイトに反映されない・・・。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;source/_includes/head.html&lt;/code&gt;のコードを見てみるとこんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{% raw %}
+  {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
+  &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ description | strip_html | condense_spaces | truncate:150 }}&amp;quot;&amp;gt;
+  {% if page.keywords %}&amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;{{ page.keywords }}&amp;quot;&amp;gt;{% endif %}
+{% endraw %}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;page.descriptionしか見てない？&lt;/p&gt;
+
+&lt;p&gt;同じことで悩んでる人いないのかな・・・と思ったら居た。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://sweetme.at/2013/08/06/how-to-set-your-octopress-description-and-keyword-meta-tags/&#34;&gt;Make the Magic Happen&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;やっぱり同じ認識のようだ。&lt;/p&gt;
+
+&lt;p&gt;elseifってこう書くんだね。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{% raw %}
+  {% capture description %}{% if page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
+  &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ description | strip_html | condense_spaces | truncate:150 }}&amp;quot;&amp;gt;
+  {% if page.keywords %}&amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;{{ page.keywords }}&amp;quot;&amp;gt;{% endif %}
+{% endraw %}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;worked!&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>make-new-theme-flatten</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/</link>
+          <pubDate>Sun, 21 Sep 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/</guid>
+          <description>
+
+&lt;p&gt;元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。&lt;/p&gt;
+
+&lt;p&gt;でもオレはデザイナーじゃないから、あんまりがっつりやるのもやだよね。&lt;/p&gt;
+
+&lt;p&gt;てことで元のclassicテーマをパクって作ろう。&lt;/p&gt;
+
+&lt;h2 id=&#34;テーマの変え方:76235ef2906f03f2c7b92537a8f6cdf7&#34;&gt;テーマの変え方&lt;/h2&gt;
+
+&lt;p&gt;そもそも変え方すら知らない。&lt;/p&gt;
+
+&lt;p&gt;てことで調べた。&lt;/p&gt;
+
+&lt;p&gt;どうやらここにテーマ単位のディレクトリが配置されるらしい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;octopress git:(source)$ ls .themes
+classic
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;で、&lt;code&gt;rake install[theme name]&lt;/code&gt;でインストール。&lt;/p&gt;
+
+&lt;h2 id=&#34;テーマの構成:76235ef2906f03f2c7b92537a8f6cdf7&#34;&gt;テーマの構成&lt;/h2&gt;
+
+&lt;p&gt;作るにも、テーマの定義に何が必要かがわからぬ。&lt;/p&gt;
+
+&lt;p&gt;classicの中を見てみよう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;octopress git:(source)$ ls .themes/classic
+sass   source
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;んん、シンプル。&lt;/p&gt;
+
+&lt;p&gt;察するに&lt;code&gt;sass&lt;/code&gt;がスタイル系で&lt;code&gt;source&lt;/code&gt;がテンプレート系なのかな？&lt;/p&gt;
+
+&lt;p&gt;別にページレイアウトを変えたいとか、そんなたいそうなことは考えてないので、sass内をいじるだけでよさそう。&lt;/p&gt;
+
+&lt;p&gt;sass内はどうなってるのかな？&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;octopress git:(source)$ ls .themes/classic/sass
+_base.scss     _partials.scss base           custom         partials       plugins        screen.scss
+
+octopress git:(source)$ ls .themes/classic/sass/custom
+_colors.scss _fonts.scss  _layout.scss _styles.scss
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;で、&lt;code&gt;.themes/classic/sass/custom/_styles.scss&lt;/code&gt;がオーバーライド用のファイルなわけだな。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;// This File is imported last, and will override other styles in the cascade
+// Add styles here to make changes without digging in too much
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;本当はsassで書きたいけど今その技術は持ち合わせてないし、ちょっと今やるのも面倒なので普通にCSSを書こう・・・。&lt;/p&gt;
+
+&lt;p&gt;ということで出来ました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/dim0627/flatten&#34;&gt;flatten&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;gravatarの件が入っちゃってるから、これは後で分離しなきゃなあ。&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>make-gravatar-sidebar</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/</link>
+          <pubDate>Sat, 20 Sep 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/</guid>
+          <description>
+
+&lt;h2 id=&#34;octopressのサイドバーってどうなってんの:c73b8990ae6ff308f2649661fb572fc8&#34;&gt;Octopressのサイドバーってどうなってんの？&lt;/h2&gt;
+
+&lt;p&gt;そもそもOctopressの構成がまだよくわかってないのでそこから勉強しよう。&lt;/p&gt;
+
+&lt;p&gt;どうやらデフォルトで準備されてるサイドバーはここに格納されているらしい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;octopress git:(source)$ ls source/_includes/asides/
+delicious.html    github.html       googleplus.html   pinboard.html     recent_posts.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;で、自分で作りたい場合はここに格納するっぽい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;octopress git:(source)$ ls source/_includes/custom/asides
+about.html   twitter.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;って&lt;code&gt;_config.yml&lt;/code&gt;に書いてあった。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;# list each of the sidebar modules you want to include, in the order you want them to appear.
+# To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like &#39;custom/asides/custom_aside_name.html&#39;
+default_asides: [custom/asides/about.html, asides/recent_posts.html, custom/asides/twitter.html]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;gravatarの情報って持って来れるの:c73b8990ae6ff308f2649661fb572fc8&#34;&gt;Gravatarの情報って持って来れるの？&lt;/h2&gt;
+
+&lt;p&gt;ちょっとだけ調べてみたらGravatarの画像だけ持ってくるpluginは用意されてるっぽい。&lt;/p&gt;
+
+&lt;p&gt;でもどうせなら自己紹介のところとかも欲しいよね。&lt;/p&gt;
+
+&lt;p&gt;で、Gravatarに&lt;a href=&#34;https://ja.gravatar.com/site/implement/&#34;&gt;開発者向け資料&lt;/a&gt;がありました。&lt;/p&gt;
+
+&lt;p&gt;しっかり読んでないけど、&lt;a href=&#34;https://ja.gravatar.com/site/implement/profiles/json/&#34;&gt;JSONで返せるっぽい&lt;/a&gt;からこれを使えばいいかな。&lt;/p&gt;
+
+&lt;p&gt;ハッシュを指定する必要があるみたいなので、公式から取得しとく。&lt;/p&gt;
+
+&lt;h2 id=&#34;作るぞ:c73b8990ae6ff308f2649661fb572fc8&#34;&gt;作るぞ&lt;/h2&gt;
+
+&lt;p&gt;なんか最初から&lt;code&gt;source/_include/custom/asides&lt;/code&gt;に&lt;code&gt;about.html&lt;/code&gt;ってのがあるし、これにプロフィールを書こうかな。&lt;/p&gt;
+
+&lt;p&gt;まず取得したハッシュを&lt;code&gt;_config.yml&lt;/code&gt;に定義しちゃおう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;# Gravatar
+gravatar_hash: 1e092e9f2cda827deb8623be2e846936
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;で、&lt;code&gt;about.html&lt;/code&gt;からハッシュを参照してJSONを取得しよう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;section id=&amp;quot;about&amp;quot; style=&amp;quot;display: none;&amp;quot;&amp;gt;
+    &amp;lt;h1&amp;gt;About Me&amp;lt;/h1&amp;gt;
+    &amp;lt;br /&amp;gt;
+    &amp;lt;img id=&amp;quot;photo&amp;quot;&amp;gt;
+    &amp;lt;br /&amp;gt;
+    &amp;lt;div id=&amp;quot;displayname&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+    &amp;lt;br /&amp;gt;
+    &amp;lt;div id=&amp;quot;aboutme&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+    &amp;lt;div id=&amp;quot;currentlocation&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+    &amp;lt;br /&amp;gt;
+    &amp;lt;div id=&amp;quot;urls&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/section&amp;gt;
+&amp;lt;script&amp;gt;
+    $(function() {
+        var url = &amp;quot;https://ja.gravatar.com/{% raw %}{{ site.gravatar_hash }}{% endraw %}.json?callback=?&amp;quot;;
+        $.getJSON(url)
+            .done(function(data) {
+                var entry = data.entry[0];
+                $(&amp;quot;#photo&amp;quot;).attr(&amp;quot;src&amp;quot;, entry.photos[0].value);
+                $(&amp;quot;#displayname&amp;quot;).html(entry.displayName);
+                $(&amp;quot;#aboutme&amp;quot;).html(entry.aboutMe);
+                // $(&amp;quot;#currentlocation&amp;quot;).html(entry.currentLocation);
+                entry.urls.forEach(function(el){
+                    $(&amp;quot;#urls&amp;quot;).append($(&amp;quot;&amp;lt;a href=&#39;&amp;quot; + el.value + &amp;quot;&#39;&amp;gt;&amp;quot; + el.title + &amp;quot;&amp;lt;/a&amp;gt;&amp;lt;br /&amp;gt;&amp;quot;));
+                });
+
+                $(&amp;quot;#about&amp;quot;).show();
+            });
+    });
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;あとはCSSにちょちょいとスタイルをつけるだけ。&lt;/p&gt;
+
+&lt;p&gt;独自のスタイルは&lt;code&gt;.themes/classic/sass/custom/_styles.scss&lt;/code&gt;に書けばいいぽい。&lt;/p&gt;
+
+&lt;p&gt;SASSとかも頃合い見て勉強しなきゃいけないかな・・・。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;img#photo {
+    display: block;
+    margin: auto;
+}
+
+div#displayname {
+    text-align: center;
+    font-weight: bold;
+}
+
+div#aboutme {
+}
+
+div#currentlocation {
+    text-align: center;
+}
+
+div#urls {
+    text-align: center;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;とりあえず表示出来たからここまででいいや。&lt;/p&gt;
+
+&lt;p&gt;ついでに自分用のtheme作っちゃったから、ある程度整備出来たらgithubにあげよっかな。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考にさせて頂きました:c73b8990ae6ff308f2649661fb572fc8&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.awairo.net/blog/2013/12/24/octopress-aside-of-getting-profile-from-gravatar/&#34;&gt;Gravatarのプロフィールを表示するOctopressのサイドバー&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>install-the-octopress-on-github-pages</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/</link>
+          <pubDate>Wed, 17 Sep 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/</guid>
+          <description>
+
+&lt;p&gt;&lt;a href=&#34;https://ja.wordpress.com/&#34;&gt;WordPress.com&lt;/a&gt;を使ってたんだけど、お金払わないと融通がきかないぽいので移行することに。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://ja.wikipedia.org/wiki/Markdown&#34;&gt;Markdown&lt;/a&gt;が使ってみたかったのと、カッコいいデザインが多そうな&lt;a href=&#34;http://hatenablog.com/&#34;&gt;Hatena&lt;/a&gt;かなーと思ってたんだけど、&lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt;が面白そうなのでとりあえずノリでこっちにしてみるよ。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h2 id=&#34;github-pages:b7f97f2e97092fbf52749ce6e3f01256&#34;&gt;Github Pages？&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt;は&lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt;に&lt;code&gt;[ユーザ名].github.io&lt;/code&gt;って名前のリポジトリを作るだけで、pushしたページを外部公開出来るサービス。&lt;/p&gt;
+
+&lt;p&gt;そこでよく使われるBlogフレームワーク(?)が&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;らしい。&lt;/p&gt;
+
+&lt;p&gt;どうやらOctopressは&lt;a href=&#34;http://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt;という静的ページジェネレータをさらに活用するためのものとのことで、&lt;/p&gt;
+
+&lt;p&gt;このJekyll(読みはジキル？)はMarkdownとかで書いたテキストファイルを静的ページに変換したりしてくれるものみたい。&lt;/p&gt;
+
+&lt;h2 id=&#34;octopressをインストールする:b7f97f2e97092fbf52749ce6e3f01256&#34;&gt;Octopressをインストールする&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://octopress.org/docs/setup/&#34;&gt;Octopress Setup&lt;/a&gt;が非常に良く書かれているのと、Octopress自体が見通しよく作られているので特に躓くことなく導入出来ました。&lt;/p&gt;
+
+&lt;p&gt;Octopressは記事を書くPCに導入して丸ごとGitHubにpushしてしまう仕組みらしく、まずは個人のPCに導入が必要。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ git clone git://github.com/imathis/octopress.git octopress
+$ cd octopress
+$ gem install bundler
+$ rbenv rehash
+$ bundle install
+$ rake install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;で、次にデプロイする。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://octopress.org/docs/deploying/&#34;&gt;Deploying&lt;/a&gt;を見る限り、GitHub Pagesだけじゃなく、HerokuやRsyncでの利用も出来るっぽい。&lt;/p&gt;
+
+&lt;p&gt;なんかVPSとかでも運用してる人がいるっぽいね。&lt;/p&gt;
+
+&lt;p&gt;前述した通り今回はGitHub Pagesを利用することにしました。&lt;/p&gt;
+
+&lt;p&gt;最初に&lt;code&gt;[ユーザ名].github.io&lt;/code&gt;って名前のリポジトリを作っておく必要があるよ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ rake setup_github_pages
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;リポジトリのURLとかが聞かれるので、表示された説明の通り入力。&lt;/p&gt;
+
+&lt;p&gt;pushしとく必要もあるっぽい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ rake generate
+$ rake deploy
+$ git add .
+$ git commit -m &#39;your message&#39;
+$ git push origin source
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;rake deploy&lt;/code&gt;で乗っかるのは記事とかその辺のファイルだけなのかな？&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In a few seconds you should get an email from Github telling you that your commit has been received and will be published on your site.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;待ってりゃ公開されるぜとのことで、ちょっと待ったら公開されました。&lt;/p&gt;
+
+&lt;h2 id=&#34;記事を書く:b7f97f2e97092fbf52749ce6e3f01256&#34;&gt;記事を書く&lt;/h2&gt;
+
+&lt;p&gt;記事は&lt;code&gt;rake new_post[&amp;quot;title&amp;quot;]&lt;/code&gt;で行けるらしい。&lt;/p&gt;
+
+&lt;p&gt;でもオレは&lt;code&gt;alias rake=&amp;quot;noglob rake&amp;quot;&lt;/code&gt;しとかなきゃダメだった。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://ackintosh.github.io/blog/2013/02/02/cant-create-post/&#34;&gt;Octopressで記事が作れない(zsh)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;どうやらzshを使ってる人は同様の事象になるっぽい？&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;rake new_post[&amp;quot;title&amp;quot;]&lt;/code&gt;で`source/_posts&amp;rsquo;に記事が作成されるのでそれを編集。&lt;/p&gt;
+
+&lt;p&gt;Markdown用にエディタ入れようかな。&lt;/p&gt;
+
+&lt;p&gt;記事を書いたら&lt;code&gt;rake generate&lt;/code&gt;で記事が見れる状態のファイルに変換される。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;rake watch&lt;/code&gt;しとくとファイルの変更を監視して常時generateしてくれる。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;rake preview&lt;/code&gt;でWEBrickが立ち上がってローカルで確認出来る。&lt;/p&gt;
+
+&lt;p&gt;必要なものはすべて揃ってて便利。&lt;/p&gt;
+</description>
+        </item>
+      
+    
+
+  </channel>
+</rss>
