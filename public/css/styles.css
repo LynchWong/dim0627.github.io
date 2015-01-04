@@ -149,6 +149,11 @@ ul.post-categories>li {
     border: 1px solid #9a9a9a;
 }
 
+ul.post-categories>li>a,
+ul.post-categories>li>a:hover {
+    text-decoration: none;
+}
+
 .move {
     margin: 20px 0 50px;
 }
