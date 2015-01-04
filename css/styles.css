@@ -130,6 +130,7 @@ pre {
 ul.post-categories {
     list-style: none;
     padding-left: 0;
+    margin: 0;
 }
 
 ul.post-categories:after {
