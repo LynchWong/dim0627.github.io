@@ -146,6 +146,7 @@ ul.post-categories>li {
     padding: 2px 10px;
     border-radius: 5px;
     font-size: 0.7em;
+    border: 1px solid #9a9a9a;
 }
 
 .move {
