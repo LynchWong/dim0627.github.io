@@ -87,6 +87,10 @@ pre {
     margin-top: 2rem;
 }
 
+.post>pre code {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
 .summary {
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -219,6 +223,7 @@ footer a:hover {
 }
 
 #aboutme #description {
+    font-family: "PT Sans", Helvetica, "Meiryo UI", Arial, sans-serif;
     padding: 0;
     white-space: pre;
 }
