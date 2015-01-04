@@ -1616,6 +1616,80 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
     
       
         <item>
+          <title>how-to-use-custom-domain-in-google-app-engine</title>
+          <link>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</link>
+          <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</guid>
+          <description>
+
+&lt;p&gt;簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。&lt;/p&gt;
+
+&lt;h2 id=&#34;googleによるドメインの確認:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;Googleによるドメインの確認&lt;/h2&gt;
+
+&lt;p&gt;ドメインを持っていない人は先に取得しちゃってね。&lt;/p&gt;
+
+&lt;p&gt;ちなみにオレはGMOさん(&lt;a href=&#34;http://www.onamae.com/&#34;&gt;お名前.com&lt;/a&gt;)で取得しました。&lt;/p&gt;
+
+&lt;p&gt;ていうことで以下の手順にそってやっていきます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/appengine/docs/domain&#34;&gt;Using a Custom Domain - Google App Engine Google Cloud Platform&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;作業は&lt;a href=&#34;https://console.developers.google.com/&#34;&gt;Developers Console&lt;/a&gt;から行います。&lt;/p&gt;
+
+&lt;p&gt;はじめにGoogleが、使いたいドメインが君のものか確認したいとのことなので、verifyへ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34; class=&#34;image&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;そうするとこんな画面になるので、&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34; class=&#34;image&#34; alt=&#34;input_domain&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ここに表示されてるテキストを、ドメインを発行した会社さんのほうからTXTレコードとして追加すればOK。&lt;/p&gt;
+
+&lt;p&gt;なんかこの画面、すごい頻度でChromeがエラー吐きまくったけど、クリックしなければ大丈夫だったのでなんとかしのぎました。&lt;/p&gt;
+
+&lt;p&gt;TXTレコードの追加は、お名前.comであれば&lt;a href=&#34;http://www.onamae.com/navi/domain.html&#34;&gt;ドメインNavi&lt;/a&gt;から&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ドメイン設定&lt;/li&gt;
+&lt;li&gt;DNS関連機能の設定&lt;/li&gt;
+&lt;li&gt;DNSレコード設定を利用する&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;でここに入力すればOK。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34; class=&#34;image&#34; alt=&#34;input_txt&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;TYPEはTXTにしてVALUEにさっきのテキストを入力。&lt;/p&gt;
+
+&lt;p&gt;場所にもよるけど少し待てば反映されるので、それまでGoogle側の画面で確認ボタンを何度か押してみる。&lt;/p&gt;
+
+&lt;p&gt;反映されてたら確認が通るはず。&lt;/p&gt;
+
+&lt;h2 id=&#34;ドメインの選択:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;ドメインの選択&lt;/h2&gt;
+
+&lt;p&gt;確認が出来たらサブドメインとしてプレフィックスを付けるのかを決める。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34; class=&#34;image&#34; alt=&#34;step2&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;これによって最後のステップが変わるけど、オレは確認の時点でサブドメインとして設定したので、Google側では特に付加せずやってます。&lt;/p&gt;
+
+&lt;h2 id=&#34;aレコードとaaaaレコードの追加:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;AレコードとAAAAレコードの追加&lt;/h2&gt;
+
+&lt;p&gt;最後はまたDNSレコードの追加。&lt;/p&gt;
+
+&lt;p&gt;ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34; class=&#34;image&#34; alt=&#34;step3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;あとは待ってればそのうち反映されるはず。&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
           <title>about-sqlserver-clusteredindex-and-nonclustered-index</title>
           <link>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</link>
           <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
@@ -1701,80 +1775,6 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 &lt;/blockquote&gt;
 
 &lt;p&gt;誤った認識があればご指摘を。&lt;/p&gt;
-</description>
-        </item>
-      
-    
-      
-        <item>
-          <title>how-to-use-custom-domain-in-google-app-engine</title>
-          <link>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</link>
-          <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
-          <author></author>
-          <guid>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</guid>
-          <description>
-
-&lt;p&gt;簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。&lt;/p&gt;
-
-&lt;h2 id=&#34;googleによるドメインの確認:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;Googleによるドメインの確認&lt;/h2&gt;
-
-&lt;p&gt;ドメインを持っていない人は先に取得しちゃってね。&lt;/p&gt;
-
-&lt;p&gt;ちなみにオレはGMOさん(&lt;a href=&#34;http://www.onamae.com/&#34;&gt;お名前.com&lt;/a&gt;)で取得しました。&lt;/p&gt;
-
-&lt;p&gt;ていうことで以下の手順にそってやっていきます。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/appengine/docs/domain&#34;&gt;Using a Custom Domain - Google App Engine Google Cloud Platform&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;作業は&lt;a href=&#34;https://console.developers.google.com/&#34;&gt;Developers Console&lt;/a&gt;から行います。&lt;/p&gt;
-
-&lt;p&gt;はじめにGoogleが、使いたいドメインが君のものか確認したいとのことなので、verifyへ。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34; class=&#34;image&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;そうするとこんな画面になるので、&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34; class=&#34;image&#34; alt=&#34;input_domain&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;ここに表示されてるテキストを、ドメインを発行した会社さんのほうからTXTレコードとして追加すればOK。&lt;/p&gt;
-
-&lt;p&gt;なんかこの画面、すごい頻度でChromeがエラー吐きまくったけど、クリックしなければ大丈夫だったのでなんとかしのぎました。&lt;/p&gt;
-
-&lt;p&gt;TXTレコードの追加は、お名前.comであれば&lt;a href=&#34;http://www.onamae.com/navi/domain.html&#34;&gt;ドメインNavi&lt;/a&gt;から&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ドメイン設定&lt;/li&gt;
-&lt;li&gt;DNS関連機能の設定&lt;/li&gt;
-&lt;li&gt;DNSレコード設定を利用する&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;でここに入力すればOK。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34; class=&#34;image&#34; alt=&#34;input_txt&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;TYPEはTXTにしてVALUEにさっきのテキストを入力。&lt;/p&gt;
-
-&lt;p&gt;場所にもよるけど少し待てば反映されるので、それまでGoogle側の画面で確認ボタンを何度か押してみる。&lt;/p&gt;
-
-&lt;p&gt;反映されてたら確認が通るはず。&lt;/p&gt;
-
-&lt;h2 id=&#34;ドメインの選択:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;ドメインの選択&lt;/h2&gt;
-
-&lt;p&gt;確認が出来たらサブドメインとしてプレフィックスを付けるのかを決める。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34; class=&#34;image&#34; alt=&#34;step2&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;これによって最後のステップが変わるけど、オレは確認の時点でサブドメインとして設定したので、Google側では特に付加せずやってます。&lt;/p&gt;
-
-&lt;h2 id=&#34;aレコードとaaaaレコードの追加:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;AレコードとAAAAレコードの追加&lt;/h2&gt;
-
-&lt;p&gt;最後はまたDNSレコードの追加。&lt;/p&gt;
-
-&lt;p&gt;ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34; class=&#34;image&#34; alt=&#34;step3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;あとは待ってればそのうち反映されるはず。&lt;/p&gt;
 </description>
         </item>
       
