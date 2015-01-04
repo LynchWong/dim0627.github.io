@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unresolved </title>
+    <link>http://localhost:1313/categories/laravel/</link>
+    <language>en-us</language>
+    <author></author>
+    <rights>(C) 2014</rights>
+    <updated>2014-09-29 00:00:00 &#43;0000 UTC</updated>
+
+    
+      
+        <item>
+          <title>laravel-array-input</title>
+          <link>http://localhost:1313/blog/2014/09/29/laravel-array-input/</link>
+          <pubDate>Mon, 29 Sep 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>http://localhost:1313/blog/2014/09/29/laravel-array-input/</guid>
+          <description>
+
+&lt;p&gt;テーブルとかに入れた複数のInputを同じ名前にして配列でサーバに飛ばしたい、ってときいつも困る。&lt;/p&gt;
+
+&lt;p&gt;Laravelでやろうとしたときにドキュメントが見つけられなかったのでそれっぽくやってみました。&lt;/p&gt;
+
+&lt;h2 id=&#34;やりたいこと:17a94910862713ed034e7ba70d660860&#34;&gt;やりたいこと&lt;/h2&gt;
+
+&lt;p&gt;こんな感じで同名で複数の値をサーバに渡したいときにどうしたらいいの？っていう話。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;form method=&amp;quot;post&amp;quot; action=&amp;quot;xxx&amp;quot;&amp;gt;
+    &amp;lt;table&amp;gt;
+        &amp;lt;tbody&amp;gt;
+            &amp;lt;tr&amp;gt;
+                &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;name&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+                &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;age&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+            &amp;lt;tr&amp;gt;
+                &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;name&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+                &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;age&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+            &amp;lt;tr&amp;gt;
+                &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;name&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+                &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;age&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+        &amp;lt;/tbody&amp;gt;
+    &amp;lt;/table&amp;gt;
+&amp;lt;/form&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ちなみにこのままだとDOMの最後尾にあるものだけが展開されるぽい。&lt;/p&gt;
+
+&lt;h2 id=&#34;方法1-name-にする:17a94910862713ed034e7ba70d660860&#34;&gt;方法1 name[]にする&lt;/h2&gt;
+
+&lt;p&gt;まあ大体のFWがこんな感じで展開してくれるんだろうけど、Laravelでも出来ました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;form method=&amp;quot;post&amp;quot; action=&amp;quot;xxx&amp;quot;&amp;gt;
+    &amp;lt;table&amp;gt;
+        &amp;lt;tbody&amp;gt;
+            &amp;lt;tr&amp;gt;
+                &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;name[]&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+                &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;age[]&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+            &amp;lt;tr&amp;gt;
+                &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;name[]&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+                &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;age[]&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+            &amp;lt;tr&amp;gt;
+                &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;name[]&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+                &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;age[]&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+        &amp;lt;/tbody&amp;gt;
+    &amp;lt;/table&amp;gt;
+&amp;lt;/form&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;方法2-name-key-にする:17a94910862713ed034e7ba70d660860&#34;&gt;方法2 name[key]にする&lt;/h2&gt;
+
+&lt;p&gt;もちろんこれでも出来た。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;form method=&amp;quot;post&amp;quot; action=&amp;quot;xxx&amp;quot;&amp;gt;
+    &amp;lt;table&amp;gt;
+        &amp;lt;tbody&amp;gt;
+            &amp;lt;tr&amp;gt;
+                &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;name[0]&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+                &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;age[0]&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+            &amp;lt;tr&amp;gt;
+                &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;name[1]&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+                &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;age[1]&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+            &amp;lt;tr&amp;gt;
+                &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;name[2]&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+                &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;age[2]&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+        &amp;lt;/tbody&amp;gt;
+    &amp;lt;/table&amp;gt;
+&amp;lt;/form&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;連想配列になるので、keyはユニークであれば連番じゃなくてもよさそう。&lt;/p&gt;
+
+&lt;p&gt;ためしてないからわからんけど・・・。&lt;/p&gt;
+
+&lt;p&gt;しかし、tableタグにformが入れられなくて困ることが多いんだけど、みんなどうやって解決してんのかなあ。&lt;/p&gt;
+</description>
+        </item>
+      
+    
+
+  </channel>
+</rss>

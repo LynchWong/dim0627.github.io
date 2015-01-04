@@ -1,0 +1,20 @@
+baseurl: "http://yet.unresolved.xyz"
+languageCode: "en-us"
+title: "Unresolved"
+
+params:
+  DateForm: "Mon, Jan 2, 2006"
+  GoogleAnalyticsUserID: "UA-55005303-1"
+  GravatarHash: "1e092e9f2cda827deb8623be2e846936"
+  Facebook: "daisuke.tsuji.735"
+  Twitter: "dim0627"
+  Github: "dim0627"
+
+indexes:
+  category: "categories"
+
+permalinks:
+  post: /blog/:year/:month/:day/:title/
+
+metadataformat: "yaml"
+
