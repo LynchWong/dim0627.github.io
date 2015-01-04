@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unresolved </title>
+    <link>http://yet.unresolved.xyz/categories/golang/</link>
+    <language>en-us</language>
+    <author></author>
+    <rights>(C) 2015</rights>
+    <updated>2015-01-04 00:00:00 &#43;0000 UTC</updated>
+
+    
+      
+        <item>
+          <title>migrate-blog-to-hugo-from-octopress</title>
+          <link>http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/</link>
+          <pubDate>Sun, 04 Jan 2015 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/</guid>
+          <description>
+
+&lt;p&gt;&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;でのブログもずいぶん慣れてきたところで&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;に移行しました。&lt;/p&gt;
+
+&lt;p&gt;一晩徹夜して、カスタマイズからGitHub Pagesでの公開までいけたのでいろいろまとめてみる。&lt;/p&gt;
+
+&lt;h2 id=&#34;なぜ移行:6a8fd8223fd13a59d819b0862af33f03&#34;&gt;なぜ移行？&lt;/h2&gt;
+
+&lt;p&gt;ずっとテーマのカスタマイズをしたいと思ってたんだけど、Octopressのテーマの構成がいつまでたっても理解出来なかったのが一番の理由。&lt;/p&gt;
+
+&lt;p&gt;テーマというか、テンプレートの構成かな・・・。&lt;/p&gt;
+
+&lt;p&gt;Google Adsenseとかも導入したんだけど、そんな些細な修正ですらちょっと辛い感じになってしまってたので、いっそ土台ごと変えることに。&lt;/p&gt;
+
+&lt;h2 id=&#34;hugoに移行するメリット:6a8fd8223fd13a59d819b0862af33f03&#34;&gt;Hugoに移行するメリット&lt;/h2&gt;
+
+&lt;p&gt;せっかくだし移行してみてよかったことをまとめてみます。&lt;/p&gt;
+
+&lt;h3 id=&#34;とにかく早い:6a8fd8223fd13a59d819b0862af33f03&#34;&gt;とにかく早い&lt;/h3&gt;
+
+&lt;p&gt;めちゃくちゃ速い。&lt;/p&gt;
+
+&lt;p&gt;記事数がそんなに多くないからOctopressでも不満はなかったんだけど、今考えればとてつもない遅さだったなあと思う。&lt;/p&gt;
+
+&lt;p&gt;Hugoはほんとに一瞬で記事を生成するし、サーバの起動も一瞬なのでライブリロードがいらないくらい。使ってるけど笑&lt;/p&gt;
+
+&lt;p&gt;HugoはGolangで出来てるそうで、それが要因なのかはわからないけど、これまで触ってきた開発用サーバの中でも類を見ない速さで作業ができます。&lt;/p&gt;
+
+&lt;h3 id=&#34;構造がシンプル:6a8fd8223fd13a59d819b0862af33f03&#34;&gt;構造がシンプル&lt;/h3&gt;
+
+&lt;p&gt;トップページ、記事一覧、記事個別のページ、って感じで綺麗に区分けがされてる。&lt;/p&gt;
+
+&lt;p&gt;テーマがいくつかあるんだけど、どれも必要のないネストとかしてないし、そこからカスタマイズがしやすい。&lt;/p&gt;
+
+&lt;p&gt;あと、カテゴリとかタグみたいに、記事間を横断的に集計したい場合もすごく簡単に出来る。&lt;/p&gt;
+
+&lt;p&gt;すごく簡単すぎてどうなってるのかわからなくなることがあるけど笑&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://gohugo.io/taxonomies/overview/&#34;&gt;Taxonomy Overview&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;無駄な物がない:6a8fd8223fd13a59d819b0862af33f03&#34;&gt;無駄な物がない&lt;/h3&gt;
+
+&lt;p&gt;Hugoは&lt;code&gt;new&lt;/code&gt;で作った時に基礎になるテンプレートがないくらい、標準装備が少ない。&lt;/p&gt;
+
+&lt;p&gt;まあそれじゃテスト実行さえ出来ないからどうなんだっていう人もいると思うけど笑&lt;/p&gt;
+
+&lt;p&gt;オレは結構0から作りたい方なので、これくらいすっきりさせてくれてたほうが嬉しかった。&lt;/p&gt;
+
+&lt;h2 id=&#34;移行によるデメリット:6a8fd8223fd13a59d819b0862af33f03&#34;&gt;移行によるデメリット&lt;/h2&gt;
+
+&lt;p&gt;とはいえ全てがよかったわけではなくて、途中で何度か引き返そうと思う場面もあったので、そこも書いとく。&lt;/p&gt;
+
+&lt;h3 id=&#34;自分でやらなきゃいけないことが多い:6a8fd8223fd13a59d819b0862af33f03&#34;&gt;自分でやらなきゃいけないことが多い&lt;/h3&gt;
+
+&lt;p&gt;やっぱりOctopressはRakeタスクでかなり囲い込みが出来てたなあと思う。&lt;/p&gt;
+
+&lt;p&gt;OctopressをGitHub Pagesで公開する場合、masterとsourceブランチが作成されるんだけど、あれは運用面でも非常に楽だったなあと思う。&lt;/p&gt;
+
+&lt;p&gt;Hugoはデプロイは一切触れずに、本当に静的な資材の生成しかしないから、その辺は自分でやらなきゃいけない。&lt;/p&gt;
+
+&lt;p&gt;だから初めての人には辛いところがあるかも。&lt;/p&gt;
+
+&lt;p&gt;あ、あとDISQUSとかも使えるテーマとか使えないテーマがあったりする。&lt;/p&gt;
+
+&lt;h3 id=&#34;日本語タイトルが使いづらい:6a8fd8223fd13a59d819b0862af33f03&#34;&gt;日本語タイトルが使いづらい&lt;/h3&gt;
+
+&lt;p&gt;Octopressの時は、記事のMarkdownファイルのファイル名は英語にして、ファイル内のtitleで日本語を設定してました。&lt;/p&gt;
+
+&lt;p&gt;Hugoはファイル内のtitleで記事個別ページのURLを生成するから、マルチバイトが入るといろいろ面倒なことになっちゃった。&lt;/p&gt;
+
+&lt;p&gt;あと、これまでのSEOをゼロにしたくないからURLは変えたくなくて、やっぱりURLでは英語のタイトルを使いたい。&lt;/p&gt;
+
+&lt;p&gt;これはもうどうしょうもなくて、ファイル内に英語タイトルと日本語タイトルを設定出来るようにした。&lt;/p&gt;
+
+&lt;p&gt;シェルで一括操作出来るような内容でもないので、ここは手作業。&lt;/p&gt;
+
+&lt;h3 id=&#34;テーマが少ない:6a8fd8223fd13a59d819b0862af33f03&#34;&gt;テーマが少ない&lt;/h3&gt;
+
+&lt;p&gt;あるものでなんとかしたい、って人には深刻かと笑&lt;/p&gt;
+
+&lt;p&gt;ブログ自体に注力せずに記事を書くことに注力したい、って人はOctopressかHexoかそもそもHatenaとかの方がいいのかもしれない。&lt;/p&gt;
+
+&lt;h2 id=&#34;移行において:6a8fd8223fd13a59d819b0862af33f03&#34;&gt;移行において&lt;/h2&gt;
+
+&lt;p&gt;記事の移行と、なるべく移行前と移行後でブログを書く作業が変わらないように工夫した点をまとめる。&lt;/p&gt;
+
+&lt;h3 id=&#34;日付フォーマットの変更:6a8fd8223fd13a59d819b0862af33f03&#34;&gt;日付フォーマットの変更&lt;/h3&gt;
+
+&lt;p&gt;Octopressと違ってHugoでは日付のフォーマットを&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;date: &amp;quot;2013-10-27&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こんな感じにしなきゃいけないので、先人の知恵を使って置換する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ find -type f -exec sed -i &#39;s/\([0-9]\+-[0-9]\+-[0-9]\+\).*$/&amp;quot;\1&amp;quot;/&#39; {} \;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;画像タグの変更:6a8fd8223fd13a59d819b0862af33f03&#34;&gt;画像タグの変更&lt;/h3&gt;
+
+&lt;p&gt;Octopressではこう書いてたけど&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;[{% img /images/2015-01-01/beanstalkDockerApp.png &#39;beanstalkDockerApp&#39; &#39;beanstalkDockerApp&#39; %}](/images/2015-01-01/beanstalkDockerApp.png)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hugoでは画像タグHTMLベタにするので、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ find . -type f -exec sed -i &amp;quot;&amp;quot; -e &#39;s/{%.*img.*\/images\/\(.*\)\/\(.*\) \(.*\) .* %}/&amp;lt;img src=\&amp;quot;\/images\/\1\/\2&amp;quot; class=\&amp;quot;image\&amp;quot; alt=\&amp;quot;\3\&amp;quot;&amp;gt;/g&#39; {} \;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;と思ったら&lt;code&gt;alt&lt;/code&gt;がおかしくなったので、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ find . -type f -exec sed -i &amp;quot;&amp;quot; -e &#39;s/alt=\&amp;quot;&#39;\&#39;&#39;\(.*\)&#39;\&#39;&#39;\&amp;quot;/alt=\&amp;quot;\1\&amp;quot;/g&#39; {} \;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;sedでシングルクォート置換するのってちょっと面倒なんだね・・・。&lt;/p&gt;
+
+&lt;h2 id=&#34;デプロイと記事作成のシェル化:6a8fd8223fd13a59d819b0862af33f03&#34;&gt;デプロイと記事作成のシェル化&lt;/h2&gt;
+
+&lt;p&gt;今回もGitHub Pagesで運用するけど、ブランチ構成は前と変わらず&lt;code&gt;master&lt;/code&gt;と&lt;code&gt;source&lt;/code&gt;でやりたいので、デプロイはシェルにまとめる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;#!/bin/bash
+
+echo -e &amp;quot;\033[0;32mDeploying updates to GitHub...\033[0m&amp;quot;
+
+# Build the project. 
+hugo -t flatten
+
+# Add changes to git.
+git add -A
+
+# Commit changes.
+msg=&amp;quot;rebuilding site `date`&amp;quot;
+if [ $# -eq 1 ]
+  then msg=&amp;quot;$1&amp;quot;
+fi
+git commit -m &amp;quot;$msg&amp;quot;
+
+# Push source and build repos.
+git push origin source
+git subtree push --prefix=public origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;記事のファイル名も日付付与を継続したいので、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;#!/bin/bash
+
+title=`echo $1 | tr &amp;quot;A-Z&amp;quot; &amp;quot;a-z&amp;quot;`
+title=`echo $title | tr &amp;quot; &amp;quot; &amp;quot;-&amp;quot;`
+title=`echo $title | sed &amp;quot;s/\.//g&amp;quot;`
+hugo new post/&amp;quot;`date +%Y-%m-%d`-$title.markdown&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こんな感じで。&lt;/p&gt;
+
+&lt;p&gt;ひと段落したけどまだまだ細々といじらなきゃだろうなー。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考にさせて頂きました:6a8fd8223fd13a59d819b0862af33f03&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://gohugo.io/tutorials/github_pages_blog/&#34;&gt;Hosting on GitHub Pages&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://nathanleclaire.com/blog/2014/12/22/migrating-to-hugo-from-octopress/&#34;&gt;Migrating to Hugo From Octopress&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
+    
+
+  </channel>
+</rss>
