@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lobster);
+@import url(//fonts.googleapis.com/css?family=Lobster);
 
 html {
     font-family: "PT Sans", Helvetica, "Meiryo UI", Arial, sans-serif;
@@ -64,6 +64,10 @@ pre {
 
 .post-title>a {
     text-decoration: none;
+}
+
+.post-content {
+    margin-bottom: 50px;
 }
 
 .eyecatch {
@@ -132,12 +136,22 @@ pre {
 
 .all-entries {
     text-align: center;
+    margin-bottom: 80px;
 }
 
 ul.post-categories {
     list-style: none;
     padding-left: 0;
     margin: 0;
+}
+
+.categories>ul.post-categories {
+    text-align: center;
+}
+
+.categories>ul.post-categories>li {
+    float: none;
+    display: inline-block;
 }
 
 ul.post-categories:after {
@@ -202,47 +216,53 @@ li.list>img {
     display: inline;
 }
 
-body>footer {
+footer.copy {
     text-align: center;
     padding: 50px 0;
     background-color: #000;
     color: #fff;
 }
 
-body>footer a {
+footer.copy a {
     color: #e74c3c;
 }
 
-body>footer a:hover {
+footer.copy a:hover {
     color: #fff;
 }
 
-#aboutme {
-    display: none;
-    margin-top: 100px;
+aside .categories {
+    margin-bottom: 50px;
+}
+
+aside.profile {
     padding: 50px 0;
     background-color: #222;
 }
 
-#aboutme i {
+#profile {
+    display: none;
+}
+
+#profile i {
     color: #fff;
 }
 
-#aboutme,
-#aboutme h1 {
+#profile,
+#profile h1 {
     color: #fff;
 }
 
-#aboutme img {
+#profile img {
     border-radius: 50%;
     border: 1px solid #fff;
 }
 
-#aboutme pre {
+#profile pre {
     background-color: transparent;
 }
 
-#aboutme #description {
+#profile #description {
     font-family: "PT Sans", Helvetica, "Meiryo UI", Arial, sans-serif;
     padding: 0;
     white-space: pre;
@@ -253,7 +273,5 @@ ul#urls>li {
 }
 
 #disqus_thread {
-    background-color: #eee;
-    padding: 20px;
-    border-radius: 5px;
+    margin-bottom: 50px;
 }

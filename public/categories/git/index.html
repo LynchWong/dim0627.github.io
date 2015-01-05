@@ -8,22 +8,20 @@
 <meta property="og:url" content="http://yet.unresolved.xyz">
 
 
-<meta property="og:type" content="article">
-<meta property="og:title" content=" &middot; Unresolved">
-
+<meta property="og:title" content="Unresolved">
 
 <meta property="og:site_name" content="Unresolved">
 
 <title>
     
-     &middot; Unresolved
+    Unresolved
     
 </title>
 
 
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://yandex.st/highlightjs/8.0/styles/solarized_dark.min.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/solarized_dark.min.css">
 <link rel="stylesheet" href="/css/poole.css">
 <link rel="stylesheet" href="/css/syntax.css">
 <link rel="stylesheet" href="/css/lanyon.css">
@@ -35,11 +33,6 @@
 
 
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
-
-<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-
-<script src="https://yandex.st/highlightjs/8.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
 
 
 
@@ -60,31 +53,64 @@
     <h1 class="post-title"></h1>
     <ul id="list">
         
-        <li class="list">
-    Sun, Sep 28, 2014 -
-    
-    <img src="/images/git.png" alt="git管理したくないファイルを除外する">
-    
-    <a href="http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/">git管理したくないファイルを除外する</a>
-</li>
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/"><img src="/images/git.png" alt="git管理したくないファイルを除外する"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Sun, Sep 28, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/">git管理したくないファイルを除外する</a></h1>
+        <div class="summary">ローカル環境でちょこちょこ作ってたやつを本番環境に載せたんだけど、それなりに解決してた環境依存が少し残ってて.gitignoreファイルをちゃんと書くことに。 しかし本番でcloneしてきたファイルをうまいことワーキングには残してインデックスから消すやりかたがわからない！ というわけで少しくらいまともに勉強してみる。 最初につまづいてたのはこのコマンドを連発してたから。 $ git rm filename どうやらこいつはインデックスだけでなくワーキングディレクトリからも消すようだ。 そこでインデックスからだけ消すものはないのかと調べてたらあった。 $ git rm --cached filename 参考にさせて頂きました transitive.info - git rm 使い方</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
 
         
-        <li class="list">
-    Sat, Sep 27, 2014 -
-    
-    <img src="/images/git.png" alt="gitでforce pushが出来ない">
-    
-    <a href="http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/">gitでforce pushが出来ない</a>
-</li>
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/"><img src="/images/git.png" alt="gitでforce pushが出来ない"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Sat, Sep 27, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/">gitでforce pushが出来ない</a></h1>
+        <div class="summary">typoを直すためにrebase -iやらをやってたんだけど、操作してたのがmasterブランチだったのでどうしてもforce pushがしたかった。 一人で使ってたリポジトリだしね。 んだけど、-fをつけても To git://example.com/project1.git ! [rejected] master -&gt; master (non-fast-forward) error: failed to push some refs to 'git://example.com/project1.git' To prevent ... See the 'Note about fast-forwards' section of 'git push --help' for details. こんな感じになってしまう・・・。 解決 gitリポジトリのconfigを見たらこんな項目が、 [receive] denyNonFastforwards = true どうやらこいつをfalseにすればよかったらしい。 最初はtrueになってるもんなのかな・・・。</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
 
         
-        <li class="list">
-    Sat, Sep 20, 2014 -
-    
-    <img src="/images/git.png" alt="gitのリポジトリ単位にproxyの設定をする">
-    
-    <a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/">gitのリポジトリ単位にproxyの設定をする</a>
-</li>
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/"><img src="/images/git.png" alt="gitのリポジトリ単位にproxyの設定をする"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Sat, Sep 20, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/">gitのリポジトリ単位にproxyの設定をする</a></h1>
+        <div class="summary">事の発端 会社ではvimを使ってます。 plugin管理にはneobundle.vim使ってます。 .vimrcはGitHubで管理してます。 neobundle.vimで管理してるpluginは大抵のものがGitHub上で管理されてるから、インストールとかアップデートをするときはneobundle.vimがGitHubまで見に行ってくれるんですね。 ただ、当然社内はproxyを通していて、gitコマンドが通らない！ ていうかそもそもGitHubから.vimrcを落としてくることすら出来ない！いいやzipで落とせ！ しかしpluginの導入を手でやるのはだるい・・・。 マジで？サクラエディタで頑張るしかない？ いやいやそんなことはない。 解決 じゃあこうしようってことで、~/.gitconfigをこんな感じにしたのよ。 [https] proxy = http://proxy.com:8080 ひとまず解決したんです。 そしたら次は社内のgitに繋がらない！！ マジかよじゃあ~/.gitconfigをちょこちょこ変えるのかよだせえよそれと思ったら既に解決してくれてる人がいた。 Git の http proxy に関するまとめ めんどくさかったけど、個々のpluginのconfigにだけproxyの記述を追加することで解決。</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
 
         
     </ul>
@@ -96,28 +122,56 @@
 
 
 
-<div id="aboutme">
+<aside class="profile">
     <div class="container">
-        <div class="eyecatch">
-            <img id="photo" src="/images/nopicture.png" alt="profile">
+        <div id="profile">
+            <div class="eyecatch">
+                <img id="photo" src="/images/nopicture.png" alt="profile">
+            </div>
+            <div class="data">
+                <span class="post-date">Sun, Feb 26, 1989</span>
+                <h1 id="username" class="post-title"></h1>
+                
+                <a href="https://www.facebook.com/daisuke.tsuji.735" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                
+                
+                <a href="https://twitter.com/dim0627" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                
+                
+                <a href="https://github.com/dim0627" target="_blank"><i class="fa fa-github-square"></i></a></p>
+                
+                <pre id="description" class="summary"></pre>
+                <ul id="urls" class="post-categories"></ul>
+            </div>
         </div>
-        <div class="data">
-            <span class="post-date">Sun, Feb 26, 1989</span>
-            <h1 id="username" class="post-title"></h1>
-            
-            <a href="https://www.facebook.com/daisuke.tsuji.735" target="_blank"><i class="fa fa-facebook-square"></i></a>
-            
-            
-            <a href="https://twitter.com/dim0627" target="_blank"><i class="fa fa-twitter-square"></i></a>
-            
-            
-            <a href="https://github.com/dim0627" target="_blank"><i class="fa fa-github-square"></i></a></p>
-            
-            <pre id="description" class="summary"></pre>
-            <ul id="urls" class="post-categories"></ul>
-        </div>
+        
+    </div>
+</aside>
 
-        <script>
+
+
+
+<footer class="copy">
+    <p>&copy; 2015 Daisuke Tsuji
+    <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="//yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-55005303-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+<script>
 $(function() {
     var url = "https://ja.gravatar.com/1e092e9f2cda827deb8623be2e846936.json?callback=?";
     $.getJSON(url)
@@ -129,31 +183,12 @@ $(function() {
             entry.urls.forEach(function(el){
                 $("#urls").append($("<li><a href='" + el.value + "'>" + el.title + "</a></li>"));
             });
-
-            $("#aboutme").show();
+            $("#profile").show();
         });
 });
-        </script>
-
-    </div>
-</div>
-
-
-
-
-<footer>
-    <p>&copy; 2015 Daisuke Tsuji
-    <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>
-</footer>
+</script>
 
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-55005303-1', 'auto');
-  ga('send', 'pageview');
-
+document.write('<script src="//sharebutton.net/plugin/sharebutton.php?type=horizontal&u=' + encodeURIComponent(document.location.href) + '"></scr' + 'ipt>');
 </script>
 
