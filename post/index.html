@@ -8,22 +8,20 @@
 <meta property="og:url" content="http://yet.unresolved.xyz">
 
 
-<meta property="og:type" content="article">
-<meta property="og:title" content=" &middot; Unresolved">
-
+<meta property="og:title" content="All Entries &middot; Unresolved">
 
 <meta property="og:site_name" content="Unresolved">
 
 <title>
     
-     &middot; Unresolved
+    All Entries &middot; Unresolved
     
 </title>
 
 
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://yandex.st/highlightjs/8.0/styles/solarized_dark.min.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/solarized_dark.min.css">
 <link rel="stylesheet" href="/css/poole.css">
 <link rel="stylesheet" href="/css/syntax.css">
 <link rel="stylesheet" href="/css/lanyon.css">
@@ -35,11 +33,6 @@
 
 
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
-
-<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-
-<script src="https://yandex.st/highlightjs/8.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
 
 
 
@@ -58,216 +51,467 @@
 
 <div class="post">
     <h1 class="post-title"></h1>
-    <ul id="list">
         
-        <li class="list">
-    Sun, Jan 4, 2015 -
-    
-    <img src="/images/hugo.png" alt="ブログをOctopressからHugoに移行した">
-    
-    <a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">ブログをOctopressからHugoに移行した</a>
-</li>
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/"><img src="/images/hugo.png" alt="ブログをOctopressからHugoに移行した"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Sun, Jan 4, 2015</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">ブログをOctopressからHugoに移行した</a></h1>
+        <div class="summary">Octopressでのブログもずいぶん慣れてきたところでHugoに移行しました。 一晩徹夜して、カスタマイズからGitHub Pagesでの公開までいけたのでいろいろまとめてみる。 なぜ移行？ ずっとテーマのカスタマイズをしたいと思ってたんだけど、Octopressのテーマの構成がいつまでたっても理解出来なかったのが一番の理由。 テーマというか、テンプレートの構成かな・・・。 Google Adsenseとかも導入したんだけど、そんな些細な修正ですらちょっと辛い感じになってしまってたので、いっそ土台ごと変えることに。 Hugoに移行するメリット せっかくだし移行してみてよかったことをまとめてみます。 とにかくスピーディ 何をするにも動作がめちゃくちゃ速い。 記事数がそんなに多くないからOctopressでも不満はなかったんだけど、今考えればとてつもない遅さだったなあと思う。 Hugoはほんとに一瞬で記事を生成するし、サーバの起動も一瞬なのでライブリロードがいらないくらい。使ってるけど笑 HugoはGolangで出来てるそうで、それが要因なのかはわからないけど、これまで触ってきた開発用サーバの中でも類を見ない速さで作業ができます。 構造がシンプル トップページ、記事一覧、記事個別のページ、って感じで綺麗に区分けがされてる。 テーマがいくつかあるんだけど、どれも必要のないネストとかしてないし、そこからカスタマイズがしやすい。 あと、カテゴリとかタグみたいに、記事間を横断的に集計したい場合もすごく簡単に出来る。 すごく簡単すぎてどうなってるのかわからなくなることがあるけど笑 Taxonomy Overview 無駄な物がない Hugoはnewで作った時に基礎になるテンプレートがないくらい、標準装備が少ない。 まあそれじゃテスト実行さえ出来ないからどうなんだっていう人もいると思うけど笑 オレは結構0から作りたい方なので、これくらいすっきりさせてくれてたほうが嬉しかった。 移行によるデメリット とはいえ全てがよかったわけではなくて、途中で何度か引き返そうと思う場面もあったので、そこも書いとく。 自分でやらなきゃいけないことが多い やっぱりOctopressはRakeタスクでかなり囲い込みが出来てたなあと思う。 OctopressをGitHub Pagesで公開する場合、masterとsourceブランチが作成されるんだけど、あれは運用面でも非常に楽だったなあと思う。 Hugoはデプロイは一切触れずに、本当に静的な資材の生成しかしないから、その辺は自分でやらなきゃいけない。 だから初めての人には辛いところがあるかも。 あ、あとDISQUSとかもテーマによってはIDを指定するだけで使えたり、自分でタグを埋め込まなきゃ使えなかったりする。 記事のカテゴリ分けとかタグ付けについても自分で設定しなきゃいけない。公式に手順はあるけど。 もちろんSNSのリンクも自分で配置。 日本語タイトルが使いづらい Octopressの時は、記事のMarkdownファイルのファイル名は英語にして、ファイル内のtitleで日本語を設定してました。 Hugoはファイル内のtitleで記事個別ページのURLを生成するから、マルチバイトが入るといろいろ面倒なことになっちゃった。 あと、これまでのSEOをゼロにしたくないからURLは変えたくなくて、やっぱりURLでは英語のタイトルを使いたい。 これはもうどうしょうもなくて、ファイル内に英語タイトルと日本語タイトルを設定出来るようにした。 シェルで一括操作出来るような内容でもないので、ここは手作業。 テーマが少ない あるものでなんとかしたい、って人には深刻かと笑 ブログ自体に注力せずに記事を書くことに注力したい、って人はOctopressかHexoかそもそもHatenaとかの方がいいのかもしれない。 移行において 記事の移行と、なるべく移行前と移行後でブログを書く作業が変わらないように工夫した点をまとめる。 日付フォーマットの変更 Octopressと違ってHugoでは日付のフォーマットを date: &quot;2013-10-27&quot; こんな感じにしなきゃいけないので、先人の知恵を使って置換する。 $ find -type f -exec sed -i 's/\([0-9]\+-[0-9]\+-[0-9]\+\).*$/&quot;\1&quot;/' {} \; 画像タグの変更 Octopressではこう書いてたけど [{% img /images/2015-01-01/beanstalkDockerApp.png 'beanstalkDockerApp' 'beanstalkDockerApp' %}](/images/2015-01-01/beanstalkDockerApp.png) Hugoでは画像タグHTMLベタにするので、 $ find .</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
 
         
-        <li class="list">
-    Wed, Dec 31, 2014 -
-    
-    <img src="/images/aws.png" alt="ClojureのWebアプリをDocker &#43; Beanstalkで動かす">
-    
-    <a href="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/">ClojureのWebアプリをDocker &#43; Beanstalkで動かす</a>
-</li>
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/"><img src="/images/aws.png" alt="ClojureのWebアプリをDocker &#43; Beanstalkで動かす"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Wed, Dec 31, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/">ClojureのWebアプリをDocker &#43; Beanstalkで動かす</a></h1>
+        <div class="summary">たぶんこういうのはドキュメント読んでもわからないので、とにかく一通りの流れを実践してみる。 Imageの取得 面倒なのでDocker HubからClojureが動く環境を持ってくる。 オフィシャルリポジトリとやらがあったので、それを使います。 Leiningenとか一式が入ってるみたい。 clojure ローカルでの動作確認 とりあえず世界に挨拶が出来るくらいのWebアプリを作っちゃおう。 アプリ自体は重要じゃないので、とりあえずインタラクティブシェル上でちゃちゃっと作っちゃう。 b2d$ docker run -i -t clojure /bin/bash root@e322a11f087d:/home# lein new compojure aws_webapp Retrieving compojure/lein-template/0.4.1/lein-template-0.4.1.pom from clojars Retrieving compojure/lein-template/0.4.1/lein-template-0.4.1.jar from clojars root@e322a11f087d:/home# ls aws_webapp root@e322a11f087d:/home# cd aws_webapp/ root@e322a11f087d:/home/aws_webapp# ls README.md project.clj resources src test と思ったらcompojureテンプレート自体がすでにHello Worldを実装してた・・・。 そのままサーバ起動しちゃうとこんな感じでブラウザの自動起動のとこでエラーしちゃうので、lein ring server-headlessで起動する。 root@e322a11f087d:/home/aws_webapp# lein ring server 2015-01-01 05:41:35.432:INFO:oejs.Server:jetty-7.6.8.v20121106 2015-01-01 05:41:35.486:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:3000 Started server on port 3000 Exception in thread &quot;main&quot; java.lang.InternalError: Can't connect to X11 window server using 'localhost:0.0' as the value of the DISPLAY variable., compiling:(/tmp/form-init3570254627486988046.clj:1:72) あとはデーモンとして起動しちゃえばローカルでの確認が出来る。 b2d$ docker run -d -t -p 3000:3000 clojure:aws /bin/bash -c &quot;cd /home/aws_webapp; lein ring server-headless&quot; e9981a71589918791d52888a0cb503bea133611395be58574047cd498c9e6f76 b2d$ docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES e9981a715899 clojure:aws &quot;/bin/bash -c 'cd /h 4 seconds ago Up 3 seconds 0.0.0.0:3000-&gt;3000/tcp backstabbing_colden 起動しているのはboot2dockerの仮想マシン上なので、 b2d$ boot2docker ip 192.168.59.103 このIPの3000ポートに向けてアクセスすれば、 見れます。 ringのサーバは起動が遅いのでdocker logs [names]で確認しながらやるとよい。 Elastic Beanstalkで動かす 大事なことに気づいたんだけど、BeanstalkはDockerfileとか必要なファイル一式をまとめたzipをアップするらしい。 そもそもソースもイメージに入れちゃうっていうのは考えとしておかしかったね。 なのでwarをADDで置くのが理想的なのかな。 今回は面倒なので、clojureでWebサーバを立ち上げられるhttp-kitというライブラリを使ってやってみます。 ちょうどBeanstalk用のDockerfileとかも用意してくれるmrmcc3/beanstalk-docker-appというテンプレートがあったので、これを使わせてもらうことに。 mrmcc3/beanstalk-docker-appでWebアプリを構築する 何はともあれnewして作り直し。 temp$ lein new beanstalk-docker-app superapp Generating clojure app for AWS Beanstalk and docker こんな感じで作られる。 jarとかはlein uberjarで作らなきゃダメかも。 .</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
 
         
-        <li class="list">
-    Tue, Dec 30, 2014 -
-    
-    <img src="/images/docker.png" alt="boot2dockerでCannot connect to the Docker daemon">
-    
-    <a href="http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/">boot2dockerでCannot connect to the Docker daemon</a>
-</li>
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/"><img src="/images/docker.png" alt="boot2dockerでCannot connect to the Docker daemon"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Tue, Dec 30, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/">boot2dockerでCannot connect to the Docker daemon</a></h1>
+        <div class="summary">これまでは普通に手で作ったVMのUbuntu上でDockerを触ってたんだけど、なんかあれだしboot2dockerに移行しようかと。 いろいろやってみようとしたら導入から結構躓いた。 boot2dockerの導入 Installing Docker on Mac OS Xに沿って導入してみる。 あ、本体はインストーラじゃなくてbrew install boot2dockerで導入してます。 b2d$ boot2docker init 2014/12/29 22:59:08 Downloading boot2docker ISO image... 2014/12/29 22:59:09 Latest release is v1.4.1 2014/12/29 23:00:17 Success: downloaded https://github.com/boot2docker/boot2docker/releases/download/v1.4.1/boot2docker.iso to /Users/DaisukeTsuji/.boot2docker/boot2docker.iso Generating public/private rsa key pair. Your identification has been saved in /Users/DaisukeTsuji/.ssh/id_boot2docker. Your public key has been saved in /Users/DaisukeTsuji/.ssh/id_boot2docker.pub. The key fingerprint is: 36:99:81:cf:0b:bd:77:3b:30:9d:66:70:ad:90:ac:35 DaisukeTsuji@DaisukeTsujis-MacBook-Air.local The key's randomart image is: +--[ RSA 2048]----+ | | | .</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
 
         
-        <li class="list">
-    Sun, Dec 21, 2014 -
-    
-    <img src="/images/clojure.png" alt="Lobosでマイグレーションができない in Heroku">
-    
-    <a href="http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/">Lobosでマイグレーションができない in Heroku</a>
-</li>
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/"><img src="/images/clojure.png" alt="Lobosでマイグレーションができない in Heroku"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Sun, Dec 21, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/">Lobosでマイグレーションができない in Heroku</a></h1>
+        <div class="summary">ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。 何が起きたか 今だにHerokuの使い方がようわからんのだけど、 とりあえずローカルから向き先変えるよりもSSHの方がいっかなってことでheroku run bashしてやってます。 ローカルからだとDBをSSLで接続させないといけないし・・・。 んでマイグレーションしようとしたら、 user&gt; (migrate) nil 何も出ない。 本当はこんな感じで、 user=&gt; (migrate) add-sites-table add-entries-table nil 作成されたり変更されたテーブルが出てくるはず。 原因はなんだったのか lobos.migrationsが読まれてない（というかリロードされてない）っぽい。 そもそもmigrate自体はこんな感じでlobos.migrationのdo-migrationsを呼んでます。 (defcommand migrate [&amp; names] (let [names (if (empty? names) (mig/pending-migrations db-spec sname) names)] (mig/do-migrations db-spec sname :up names))) で、do-migrationsはこんな感じで、list-migrations-namesの結果を絞って実行してる。 たぶんマイグレーション済みのものは除外とかそんな感じなんじゃないだろうか。 (defn do-migrations [db-spec sname with names &amp; [silent]] (let [filter-migs #(only % (list-migrations-names)) migrations (-&gt;&gt; names (map str) filter-migs (when-&gt;&gt; (= with :down) reverse) (map symbol) (map (partial ns-resolve *migrations-namespace*)) (map var-get))] (binding [*record* nil] (doseq [migration migrations] (let [name (-&gt; migration meta :name)] (when-not silent (println name)) (if (= with :up) (do (up migration) (insert-migrations db-spec sname name)) (do (down migration) (delete-migrations db-spec sname name)))))))) でlist-migrations-namesの定義がこれ、list-migrationsを呼んでる。 (defn list-migrations-names [] (map #(-&gt; % meta :name str) (list-migrations))) (defn list-migrations [] (if *reload-migrations* (when (.exists (migrations-file)) (swap!</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
 
         
-        <li class="list">
-    Thu, Dec 11, 2014 -
-    
-    <img src="/images/clojure.png" alt="Lobosを使ってマイグレーションをする">
-    
-    <a href="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/">Lobosを使ってマイグレーションをする</a>
-</li>
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/"><img src="/images/clojure.png" alt="Lobosを使ってマイグレーションをする"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Thu, Dec 11, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/">Lobosを使ってマイグレーションをする</a></h1>
+        <div class="summary">1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。 というわけでClojureを使ってWeb開発をする際も使いたいので、Lobosというスキーマのマニュピレーション、マイグレーションツールを使ってみます。 インストール 本体はここbudu/lobos。 project.cljに :dependencies [[lobos &quot;1.0.0-beta3&quot;]] を追加してlein depsするだけでおーけー。 Leiningenのプラグインとして使えるpupeno/lein-lobosってのもあるようだ。 こっちも使う場合は、ploject.cljに :plugins [lein-lobos &quot;1.0.0-beta1&quot;] を追加。 全体を載っけるとこんな感じに。 (defproject tpc &quot;0.1.0-SNAPSHOT&quot; :description &quot;FIXME: write description&quot; :url &quot;http://example.com/FIXME&quot; :min-lein-version &quot;2.0.0&quot; :dependencies [[org.clojure/clojure &quot;1.6.0&quot;] [compojure &quot;1.2.0&quot;] [ring/ring-defaults &quot;0.1.2&quot;] [enlive &quot;1.1.5&quot;] [korma &quot;0.4.0&quot;] [postgresql &quot;9.1-901.jdbc4&quot;] [lobos &quot;1.0.0-beta3&quot;]] :plugins [[lein-ring &quot;0.8.13&quot;] [lein-haml-sass &quot;0.2.7-SNAPSHOT&quot;] [lein-lobos &quot;1.0.0-beta1&quot;]] :ring {:handler tpc.core.handler/app} :profiles {:dev {:dependencies [[javax.servlet/servlet-api &quot;2.5&quot;] [ring-mock &quot;0.1.5&quot;] [org.xerial/sqlite-jdbc &quot;3.6.16&quot;]]}} :scss {:src &quot;resources/scss&quot; :output-directory &quot;resources/public/css&quot; :output-extension &quot;css&quot;}) テーブル定義をしてみる 今回はSQLiteにて実施。 srcディレクトリ直下にlobosってディレクトリを作成して、その中にいろいろな設定を突っ込む必要があるらしい。 このディレクトリの名前は変えてもいいみたいだけど面倒になりそうだからこのままで。 まずは接続情報を記載するsrc/lobos/config.clj。 (ns lobos.config (:use lobos.connectivity)) (def db_dev {:classname &quot;org.sqlite.JDBC&quot; :subprotocol &quot;sqlite&quot; :subname &quot;./dev.sqlite3&quot;}) (open-global db_dev) 次にスキーマ操作で使われている(と思われる)ヘルパー、src/lobos/helpers.cljを定義。 (ns lobos.helpers (:refer-clojure :exclude [bigint boolean char double float time]) (:use (lobos schema))) (defn surrogate-key [table] (integer table :id :auto-inc :primary-key)) (defn timestamps [table] (-&gt; table (timestamp :updated_on) (timestamp :created_on (default (now))))) (defn refer-to [table ptable] (let [cname (-&gt; (-&gt;&gt; ptable name butlast (apply str)) (str &quot;_id&quot;) keyword)] (integer table cname [:refer ptable :id :on-delete :set-null]))) (defmacro tbl [name &amp; elements] `(-&gt; (table ~name) (timestamps) ~@(reverse elements) (surrogate-key))) で、目的のマイグレーション定義をsrc/lobos/migrations.cljに。 (ns lobos.migrations (:refer-clojure :exclude [alter drop bigint boolean char double float time]) (:use (lobos [migration :only [defmigration]] core schema config helpers))) (defmigration add-sites-table (up [] (create (tbl :sites (varchar :name 255) (varchar :url 255) (varchar :rss 255) (varchar :image 255) (integer :cat) ))) (down [] (drop (table :sites)))) マイグレーションの実行 ここが結構厄介だった。 というか、出来たといえば出来たんだけど、もっと正しい方法があるような気が・・・。 REPLにて以下を実行。 WARNINGは多分すでに存在するシンボルを置き換えてしまってることの警告だからとりあえず無視。 tpc git:(master)$ lein repl (use '(lobos connectivity core schema))nREPL server started on port 50092 on host 127.0.0.1 - nrepl://127.0.0.1:50092 REPL-y 0.3.1 Clojure 1.6.0 Docs: (doc function-name-here) (find-doc &quot;part-of-name-here&quot;) Source: (source function-name-here) Javadoc: (javadoc java-object-or-class-here) Exit: Control+D or (exit) or (quit) Results: Stored in vars *1, *2, *3, an exception in *e user=&gt; (use '(lobos connectivity core schema)) WARNING: alter already refers to: #'clojure.core/alter in namespace: user, being replaced by: #'lobos.core/alter WARNING: drop already refers to: #'clojure.core/drop in namespace: user, being replaced by: #'lobos.core/drop WARNING: boolean already refers to: #'clojure.core/boolean in namespace: user, being replaced by: #'lobos.schema/boolean WARNING: char already refers to: #'clojure.core/char in namespace: user, being replaced by: #'lobos.schema/char WARNING: double already refers to: #'clojure.core/double in namespace: user, being replaced by: #'lobos.schema/double WARNING: bigint already refers to: #'clojure.core/bigint in namespace: user, being replaced by: #'lobos.schema/bigint WARNING: float already refers to: #'clojure.core/float in namespace: user, being replaced by: #'lobos.schema/float WARNING: time already refers to: #'clojure.core/time in namespace: user, being replaced by: #'lobos.schema/time nil user=&gt; (require 'lobos.migrations) nil user=&gt; (migrate) add-sites-table nil user=&gt; 確認してみましょう。 tpc git:(master)$ sqlite3 dev.sqlite3 SQLite version 3.8.5 2014-08-15 22:37:57 Enter &quot;.help&quot; for usage hints.</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
 
         
-        <li class="list">
-    Tue, Dec 9, 2014 -
-    
-    <img src="/images/clojure.png" alt="LeiningenでSCSSを自動コンパイルする">
-    
-    <a href="http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/">LeiningenでSCSSを自動コンパイルする</a>
-</li>
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/"><img src="/images/clojure.png" alt="LeiningenでSCSSを自動コンパイルする"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Tue, Dec 9, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/">LeiningenでSCSSを自動コンパイルする</a></h1>
+        <div class="summary">Clojureを始めて一週間ほどになりまして。 ようやくWebアプリ開発に着手しました。 というわけで開発環境を整えます。 lein-haml-sassの導入 まったく贅沢な名前してんな！ いえ、lein-haml-sassは素晴らしいプラグインです。 これを使うとなんとhamlのコンパイルやsass/scssのコンパイルをやってくれます。 ていうかsassとscssの違いってなんだっけ？真面目に考えるとわかんないな。 CSSコーディングで泣かないためのSassの基礎知識と10の利点 (1&frasl;3) へえ・・・。 とりあえず導入します。 project.cljに (defproject example &quot;1.2.3&quot; :plugins [[lein-haml-sass &quot;0.2.7-SNAPSHOT&quot;]]) さらに設定も記述。 resources/sass/にscssを、resources/public/css/にcssを出力する設定。 (defproject example-project &quot;1.2.3&quot; :haml {:src &quot;resources/haml&quot; :output-directory &quot;resources/public/html&quot; } :sass {:src &quot;resources/sass&quot; :output-directory &quot;resources/public/css&quot; } :scss {:src &quot;resources/scss&quot; :output-directory &quot;resources/public/css&quot; } ) ここまではコピペだけど、オレのファイル自体はこんな感じに。 (defproject tpc &quot;0.1.0-SNAPSHOT&quot; :description &quot;FIXME: write description&quot; :url &quot;http://example.com/FIXME&quot; :min-lein-version &quot;2.0.0&quot; :dependencies [[org.clojure/clojure &quot;1.6.0&quot;] [compojure &quot;1.2.0&quot;] [ring/ring-defaults &quot;0.1.2&quot;] [enlive &quot;1.1.5&quot;]] :plugins [[lein-ring &quot;0.8.13&quot;] [lein-haml-sass &quot;0.2.7-SNAPSHOT&quot;]] :ring</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
 
         
-        <li class="list">
-    Tue, Dec 2, 2014 -
-    
-    <img src="/images/nopicture.png" alt="no_picture">
-    
-    <a href="http://yet.unresolved.xyz/blog/2014/12/02/went-to-startup-weekend-yokohama-2nd/">HackerにとってのStartup Weekend</a>
-</li>
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2014/12/02/went-to-startup-weekend-yokohama-2nd/"><img src="/images/nopicture.png" alt="no_picture"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Tue, Dec 2, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/12/02/went-to-startup-weekend-yokohama-2nd/">HackerにとってのStartup Weekend</a></h1>
+        <div class="summary">この2週間で、Startup Weekend YokohamaとStartup Weekend Tokyoに参加してきました。 まさかの2週連続の強化合宿！ 様々な経験になったのは確かなので、自分のためにも、今後行く人のためにもまとめてみようと思います。 色々な人が体験談を書いてるから、オレはHackerとしての目線で書こうかな。 Startup Weekend? スタートアップウィークエンド（SW）とは、あたらしいなにかをつくりだす「スタートアップ体験イベント」です。週末だけであなたは、アイディアをカタチにするための方法論を学び、スタートアップをリアルに経験することができます。 SWは金曜の夜、みんながアイディアを発表するピッチから始まります。そしてハスラー・ハッカー・デザイナーでチームを組み、日曜の午後までに、ユーザーエクスペリエンスに沿った必要最小限のビジネスモデルを一気に作り上げます。ハスラーはマネジメントと顧客開発を、ハッカーは機能の開発を、デザイナーは使いやすいデザインを担当します。 どこのブログにも書いてあるんだけど一応。 金曜日の夜から始まって、「こんなもの作りたい」って人とそれに共感した人でチームを作って、日曜夜までの3日間で手や足を動かすイベントです。 ピッチ 金曜日の夜に、アイデアがある人は1分間で発表をします。 オレは、初参加となったYokohamaではしなかった。 様子見したかったのと特にアイデアがなかったので。 あとたぶん、Hackerは「自分で作れるし言いたくない」って人も多いんじゃないかなあ。 Tokyoではピッチしたんだけど、正直言いたくないな、って気持ちも結構あった。 だからピッチは正直そんな重要なことでもない。 後悔するよ、って言う人もいるけど、しなかった回とした回があるオレからすれば、どっちでも良かったかな。 3日間で何をするのか ビジネスモデルを考えて、アンケートを取ったりしてニーズがあるのかを検証して、ティザーサイトやらを作って集客をしてみたり、いっそ本当に動くサービスを作ってみたり。 そのチームのビジネスモデルによってまちまち。 Yokohamaはアイデア自体が結構壮大なものだったので、動くサービスは作れなかった。 ティザーサイトどまりだったからちょっと不完全燃焼だったかな。マークアップは楽しかったけど。 Tokyoは動くものを作ったけど、ビジネスモデルが固まりきらなかったのとWebだけでは完結しない話だったから、作りきったって感じは無かった。 アイデアによってやることは違うから、自分のやりたいことが明確にあるのであれば、それが出来そうなチームに入るのは大事な選択だと思う。 でも、オレはどんなメンバーとやるのか、ってことの方が大事なのかなとも思った。 YokohamaもTokyoもすごくいいメンバーに恵まれました。 だから目標の1つは確実に達成出来た。 参加する前にやったこと Yokohamaが初参加で、何をするのかもよくわかってなかったからとりあえずHackerらしい予習はした。 どうせRailsなんだろと思ってたし、チュートリアルをざーっと読んでRailsが少し好きになった。 実際には使わなかったし、やっぱりあんまり好きじゃねーなって思ったけど笑 Tokyoの時は特に何かしておかなきゃってのは考えてなかったんだけど、ちょうど興味本位で調べてたFacebook認証でのログインと設計が役に立った。 どんなDB設計すんだろうなーとか、そういう話。 まあ、特にやっておくべきことはなかった。少しでもインフラを知っておくと強いかな。どうせティザーか本番は作るし。 このイベントで何がしたかったのか やりたかったことは2個。 なんかプロダクトを作りたかった、知らない人と話したかった。 これまでエセSIみたいなことをやって、転職を経てB2Cの仕事をして、この少ない経験値をなんとかしたいなって気持ちがあった。 もう25歳だし、技術者としてそろそろ独学を離れるべきだと思っていたし、いろいろな価値観だとかノウハウに触れていかなきゃいけないっていう焦りもあったんだと思う。 起業がしたいのか 別にしたくない。 どっちでもいいとかじゃなくて、したくない。忙しそうだし。 でも、したいって人の価値観にも触れてみたかったし、そういう話に乗っかりたい気持ちはあった。 一緒にやる仲間が欲しかったのかも。 技術者ってどこでも生きていけると思っていて、それなら大きな会社にいるのもよし、なんかスリルのある会社にいるのもよしだと思う。 それこそ、起業とか。 Hackerとして参加するメリット どうやらタダ働きになるからやだ、っていう人もいるらしい。 まあ確かにそうだけど・・・ていうか逆にお金払ってるけど・・・。 でもメリットは結構あるよ。 知らない誰かと1つのことをやる 誰かと一緒にものを作るっていうのは結構楽しいことだと思う。 それこそ他のエンジニアとかじゃなくて、そもそも技術とかわかんない人とか、マーケティングの人とか。 普段からデザイナや企画と調整して仕事してるよ、って人ももちろん居ると思う。オレもそうだし。 でもStartup Weekendはもっと距離が近いし、みんなが真剣になって、それぞれの出来ることを発揮して1個のものに取り組むのって、なんか楽しい。 頼って頼られての関係が出来る。 エンジニアとしての立ち位置が見える 3日間っていう短い期間だし、少ないメンバーだし、やらなきゃいけないことはたくさんあるんだけど、実際出来るだけの技量が無かったり。 例えばFacebookのOAuth認証とか、IaaSやPaaSの利用経験とか。 特にOAuthなんてエンジニアなら誰でも出来て当然だと思うけど、オレは経験が無かったから調べながらの作業になった。 別に素で書ける必要は無いんだけど、これまでにやっていればGitHubから持ってきたりしてさっと作れたのになーと思った。 そんな感じでエンジニアとして出来るべきことってのも見えてきたりする。 なんか、デザインも出来るしプログラムも書けるよ、って人が、プログラム一本でやってる人より出来たりするしね笑 人脈が一気に広がる いろんな人に出会ったし名刺も交換したし、何より、エンジニアって足りてないんだなってものすごく感じた笑 ここで知り合った人に勉強会に誘われたり、終わった後もFacebookページでやり取りしたり、たぶん今後もどっかで何かを一緒にやるんじゃないかなーって気はしてる。 というか、やりたいなと思うし。 そんな仲間はきっと仕事をしてるだけじゃ見つからないし、本当に良かったなと思う。 もし何かをするときのために、技術者としてもっと努力しなきゃなってモチベーションにもつながった。 3日間は長い 確かに休みを全部使ってこういうのに参加するのは抵抗があるのかもしれない。 オレも2週連続で参加したせいで、部屋の掃除も出来ないし買い物にも行けないしで結構ぐちゃぐちゃになった笑 エンジニアって結構、勉強しなきゃいけないのはわかってるけど結局しないって人が多いんじゃないかなと思う。 特にオレはそういう焦りがすごくあったから、こういう場に行って、初めましての人となんかしたり、勉強会に誘われて平日の予定を埋めたりするようになったのはすごく良かったな。 HackerはStartup Weekendを楽しめる？ 個人的には、Startup Weekendを一番楽しめるのはHastlerでもなくDesignerでもなくHackerなんじゃないかと思ってる。 オレもやってる最中に、来るの間違えたかなーとか、もう来たくないなーって思う場面も結構あった。 でも終わってみると、すごく楽しくためになる経験だったなって思うし、何よりまた会いたい仲間が出来たことが嬉しかった。 もちろんオレも本業でプログラムをやってるから、お金についての云々は別に考えてないわけじゃないけど、でもみんなに必要とされながら書くプログラムも楽しいもんだと思います。 というわけで来年、Yokohama開催のは都合を合わせて参加したいと思います。 技術的な話 特にこれといってないんだけど、出来たらいいよねレベルで。 勘違いしないでほしいけど、これが出来なきゃ楽しめないとか、活躍出来ないとか、そういうことは一切ないです。 FacebookとかTwitter認証のあれこれ ティザーを作った場合には、何人がテスター登録してくれたかとかその辺を集める必要があるので、結局OAuthを使った認証を書くのが一番らくだよねってことになる。 1度でいいし、PHPでもPythonでもRubyでもなんでもいいから、ざっとロジックを書いたことがあるといいなあと思った。 どういう風なフローで処理をして、どういうデータが取れるのか、とか理解してると楽だからね。 ドメインのあれこれ カスタムドメインを取ることがあります。 正直これは無くても全然問題ないんだけど、あるとチームのテンションが結構あがる。 お金は発生するけど、今の時代ドメインなんて1000円しないんだし、エンジニアならドメインの1つや2つ持っててもいい気はする。 なので、HerokuやGoogle App Engine、AWSでのカスタムドメインの設定とか、CNAMEやAレコードやらの設定が未経験だとちょっと辛いかなと思った。 インフラまわりのあれこれ ティザーとかサービスをどこで動かすかの選択肢は多くあったほうが良いと思う。 例えば本当に静的なページならGitHub Pagesが一番手軽だし、少しでもサーバサイドロジックを書かなきゃいけないならHerokuかGAEだし、本格的に動かしたいならAWSあたりになるし。 また、それに伴うIaaS、PaaSのデプロイ方法とか。手軽さとか。利用できる言語とか。 チームメンバーに自分以外のHackerがいるなら、その人が使える言語に合わせなきゃいけない場合もあると思うので、その辺は柔軟にいけたほうがいいなあと思う。 マークアップの技術 ぶっちゃけStartup WeekendにDesignerは来ません！絶対に来ません！ 理由は知らんけどたぶんHastlerやHackerはCreateの分野に居て、DesignerはDesignの分野っていう点で色々と違うものがあるのかなと思う。 というわけでHackerがマークアップをします。しかしオレを含む9割のエンジニアはデザインが出来ません。 なので良い素材サイトを探しておきましょう。 サーバサイドなオレが良く使うサイトだったり、使おうと思って使わなかったサイトだったりをあげてこの記事をしめます。 フロントエンドをなんとかごまかそう作戦 Iconfinder - 400,000+ free and premium icons アイコン的な画像がたくさん探せる。有料のも無料のもあり。 ロゴなんてこれがあればそれなりに見栄えするものが作れる。 Google Fonts フリーフォント。 ロゴなんてこれがあればそれなりに見栄えするものが作れる。 Bootstrap | The world&rsquo;s most popular mobile-first and responsive front-end framework.</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2014/12/02/went-to-startup-weekend-yokohama-2nd/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
 
         
-        <li class="list">
-    Wed, Nov 12, 2014 -
-    
-    <img src="/images/octopress.png" alt="OctopressをW3Cのバリデーションにパスさせる">
-    
-    <a href="http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/">OctopressをW3Cのバリデーションにパスさせる</a>
-</li>
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/"><img src="/images/octopress.png" alt="OctopressをW3Cのバリデーションにパスさせる"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Wed, Nov 12, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/">OctopressをW3Cのバリデーションにパスさせる</a></h1>
+        <div class="summary">ふと思い立ってMarkup Validation Serviceをやってみたら13個もエラーが出たので対応してみるよ。 Error Line 50, Column 32: Element hgroup not allowed as child of element header in this context. (Suppressing further errors from this subtree.) &lt;header role=&quot;banner&quot;&gt;&lt;hgroup&gt; Content model for element header: Flow content, but with no header, footer, or main element descendants. hgroupはheaderタグの中に入れちゃダメだよ。 次のも関連してる。 Error Line 50, Column 32: The hgroup element is obsolete. To mark up subheadings, consider either just putting the subheading into a p element after the h1-h6 element containing the main heading, or else putting the subheading directly within the h1-h6 element containing the main heading, but separated from the main heading by punctuation and/or within, for example, a span class=&quot;subheading&quot; element with differentiated styling.</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
 
         
-        <li class="list">
-    Sun, Nov 9, 2014 -
-    
-    <img src="/images/docker.png" alt="Docker事始め">
-    
-    <a href="http://yet.unresolved.xyz/blog/2014/11/09/learn-docker/">Docker事始め</a>
-</li>
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2014/11/09/learn-docker/"><img src="/images/docker.png" alt="Docker事始め"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Sun, Nov 9, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/11/09/learn-docker/">Docker事始め</a></h1>
+        <div class="summary">ちょっとやりたいことがあって、Dockerを使ってみることに。 ドキュメントはDockerizing Applications: A &ldquo;Hello world&rdquo;から一通り読んだんだけど、 触りながらやってもちょっと覚えるのが大変そうだからまとめてみる。 何が出来る？何に使う？ Vagrantみたいに仮想環境をバンバン立ち上げることが出来るって認識は合ってそう。 しかしコンテナ型だから速いとかGolangで出来てるとか、各所は難しい話ばっかで何が出来て何に使うってのがいまいち見えてこないんだな。 特にオレみたいに、知識はないけどやってみたい人はそれじゃ理解が進まない！ ちなみにオレの場合、Vagrantはアプリケーション単位に環境を作っています。 開発するときは、ホストで書く-&gt;ゲストで動かす、って感じに動作環境として使ってるんだけど、 その点DockerはWebサーバとかDBサーバとか、そういう単位に仮想環境を作ってそれらを連携させたりするのが容易らしい。 さらに、環境まるごとバージョン管理ができるんだとか。 作っては捨てる環境ってだけじゃなくて、本番環境みたいに継続維持しなきゃいけない環境とかにも使えるんじゃないのかなあ、っていう印象。 ただ、こんな記事がある通り、 [翻訳] Dockerについてよくある勘違い 本番で動かすなら結構な知識が必要だから安易にやるのはちょっとね、ってのが製作陣の考えのよう。 オレは個人的な環境で使いたいだけだから、特に問題はないね。 どんな感じに使う？ ドキュメント通りに理解を進めていこう。 例えば、こんな感じでコンテナを起動した上でechoコマンドを実行したり、 $ sudo docker run ubuntu:14.04 /bin/echo 'Hello world' こんな感じでインタラクティブモードでの起動が出来たりする。 $ sudo docker run -t -i ubuntu:14.04 /bin/bash root@af8bae53bdd3:/# デーモンとして起動したり、 $ sudo docker run -d ubuntu:14.04 /bin/sh -c &quot;while true; do echo hello world; sleep 1; done&quot; 1e5535038e285177d5214659a068137486f96ee5c2e85a4ac52dc83f2ebe4147 起動してるデーモンを1つのプロセスとして確認できたりする。 $ sudo docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES 1e5535038e28 ubuntu:14.04 /bin/sh -c 'while tr 2 minutes ago Up 1 minute insane_babbage CONTAINER_IDとNAMESはコンテナを起動するたびに変わる。 NAMESは自分で決めることも出来るとか？ デーモンとして起動したコンテナの出力を見るにはこんな感じ。 $ sudo docker logs insane_babbage hello world hello world hello world .</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2014/11/09/learn-docker/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
 
         
-        <li class="list">
-    Fri, Oct 24, 2014 -
-    
-    <img src="/images/github.png" alt="GitHub Pagesでカスタムドメインを使う">
-    
-    <a href="http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/">GitHub Pagesでカスタムドメインを使う</a>
-</li>
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/"><img src="/images/github.png" alt="GitHub Pagesでカスタムドメインを使う"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Fri, Oct 24, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/">GitHub Pagesでカスタムドメインを使う</a></h1>
+        <div class="summary">昨日はGAEで今日はGithubかよって感じだけど、こっちは結構詰まったのでメモしたい。 事の発端 このOctopressのblogをカスタムドメインにしてから、rake gen_deployするとGithubからこんなメールが来るようになりました。 [dim0627.github.io] Page build warning The page build completed successfully, but returned the following warning: GitHub Pages recently underwent some improvements (https://github.com/blog/1715-faster-more-awesome-github-pages) to make your site faster and more awesome, but we&rsquo;ve noticed that unresolved.dimspace.xyz isn&rsquo;t properly configured to take advantage of these new features. While your site will continue to work just fine, updating your domain&rsquo;s configuration offers some additional speed and performance benefits. Instructions on updating your site&rsquo;s IP address can be found at https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages, and of course, you can always get in touch with a human at support@github.com.</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
 
         
-        <li class="list">
-    Thu, Oct 23, 2014 -
-    
-    <img src="/images/nopicture.png" alt="no_picture">
-    
-    <a href="http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/">クラスタ化インデックスとかカバリングインデックスについて</a>
-</li>
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/"><img src="/images/nopicture.png" alt="no_picture"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Thu, Oct 23, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/">クラスタ化インデックスとかカバリングインデックスについて</a></h1>
+        <div class="summary">SQL Serverを使ってて、ちょっと曖昧にしかわからんなってところがあったので少し調べてみた。 クラスタ化 / 非クラスタ化インデックスの違い MySQLにも同じ話があったんだね。 そもそもそれを知らない時点でいろいろだめなわけで。 まず参考にしたのはMSDN。 クラスター化インデックスと非クラスター化インデックスの概念 まさにぴったりのタイトルじゃんと思ったんだけどいまいちよくわからない。 いや、わかったっちゃわかったんだけど、だからどうなるとか、だからどうする、っていうところが掴めなかった。 ここでわかったこと ** クラスタ化インデックス ** 1テーブルに1つしか作れない。 これがあると指定されたインデックスの値によってソートされた構造体が出来る。(テーブルの構造ごとそうなる？) クラスタ化インデックスが設定されていないテーブルはヒープと呼ばれる未ソートの状態になる。 ** 非クラスタ化インデックス ** テーブルとは別に構造を持つ。 実データじゃなく、実データへのポインタを持つ。 次に参考にさせてもらったのがこっち。 SQL Serverのインデックス構造（前編） (1&frasl;2) ここは非常にわかりやすかった B-Treeのイメージも、SQL Server上での実装が具体的にイメージ出来たし、非クラスタ化インデックスじゃ結局ランダムI/Oが発生するんだね、ってこともわかった。 ついでにB-Treeの勉強も軽くした。 RDBMSで使われるB木を学ぼう ここでわかったこと B-Treeなのでリーフノードのレベルが全部同じになる。 クラスタ化インデックスを利用したクエリの場合、リーフノードに実データがあるのでランダムI/Oが発生しない。 非クラスタ化インデックスを利用したクエリの場合、リーフノードにはポインタしかないので、ランダムI/Oが発生する。 ちなみにごめんなさいだけど、こっちのページはあまり理解が進まなかった・・・。 SQL Serverの大きな特徴、クラスタ化インデックスを押さえよう！ カバリングインデックス おまえそれも知らねーのかよって言われそうだけど・・・。 正直マルチカラムインデックスと混同してました。 これは結構わかりやすく書いてくれている記事があった。 MySQLのインデックスを学ぶ (1) クエリが必要とするカラムがすべてインデックスに含まれている場合、インデックスだけを読めば良いのでとても速い、というもの。 SQL インデックスを最適化する方法 カバーリング インデックスは、WHERE 句およびクエリ列選択の形態をとるすべての列を含む、非クラスタ化インデックスです。 誤った認識があればご指摘を。</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
 
         
-        <li class="list">
-    Thu, Oct 23, 2014 -
-    
-    <img src="/images/gae.png" alt="Google app engineでカスタムドメインを使う">
-    
-    <a href="http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/">Google app engineでカスタムドメインを使う</a>
-</li>
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/"><img src="/images/gae.png" alt="Google app engineでカスタムドメインを使う"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Thu, Oct 23, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/">Google app engineでカスタムドメインを使う</a></h1>
+        <div class="summary">簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。 Googleによるドメインの確認 ドメインを持っていない人は先に取得しちゃってね。 ちなみにオレはGMOさん(お名前.com)で取得しました。 ていうことで以下の手順にそってやっていきます。 Using a Custom Domain - Google App Engine Google Cloud Platform 作業はDevelopers Consoleから行います。 はじめにGoogleが、使いたいドメインが君のものか確認したいとのことなので、verifyへ。 そうするとこんな画面になるので、 ここに表示されてるテキストを、ドメインを発行した会社さんのほうからTXTレコードとして追加すればOK。 なんかこの画面、すごい頻度でChromeがエラー吐きまくったけど、クリックしなければ大丈夫だったのでなんとかしのぎました。 TXTレコードの追加は、お名前.comであればドメインNaviから ドメイン設定 DNS関連機能の設定 DNSレコード設定を利用する でここに入力すればOK。 TYPEはTXTにしてVALUEにさっきのテキストを入力。 場所にもよるけど少し待てば反映されるので、それまでGoogle側の画面で確認ボタンを何度か押してみる。 反映されてたら確認が通るはず。 ドメインの選択 確認が出来たらサブドメインとしてプレフィックスを付けるのかを決める。 これによって最後のステップが変わるけど、オレは確認の時点でサブドメインとして設定したので、Google側では特に付加せずやってます。 AレコードとAAAAレコードの追加 最後はまたDNSレコードの追加。 ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。 あとは待ってればそのうち反映されるはず。</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
 
         
-        <li class="list">
-    Wed, Oct 22, 2014 -
-    
-    <img src="/images/octopress.png" alt="Octopressのサイドバーを下部に移動する">
-    
-    <a href="http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/">Octopressのサイドバーを下部に移動する</a>
-</li>
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/"><img src="/images/octopress.png" alt="Octopressのサイドバーを下部に移動する"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Wed, Oct 22, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/">Octopressのサイドバーを下部に移動する</a></h1>
+        <div class="summary">デフォルトのテーマだとサイドバーの表示/非表示の切り替えが出来て、非表示にするとサイドバーは記事の下に落っこちるんだけど、 常時この状態にした方がかっこいいんでないか？ということで移動させてみることに。 サイドバーの非表示時に何が起きているかというと、bodyタグにclassが追加されてます。 具体的な処理は/javascripts/octopress.jsに書いてあるよ。 $('.toggle-sidebar').bind('click', function(e) { e.preventDefault(); if ($('body').hasClass('collapse-sidebar')) { $('body').removeClass('collapse-sidebar'); } else { $('body').addClass('collapse-sidebar'); } }); bodyタグがcollapse-sidebarクラスに属していれば、サイドバーは勝手に下に落っこちる訳だ。 bodyを描画するテンプレートは_layouts/default.htmlで、こんな記載がある。 長ったらしいので少し見やすく改行してあります。 &lt;body {% if page.body_id %} id=&quot;{{ page.body_id }}&quot; {% endif %} {% if page.sidebar == false %} class=&quot;no-sidebar&quot; {% endif %} {% if page.sidebar == 'collapse' or site.sidebar == 'collapse' %} class=&quot;collapse-sidebar sidebar-footer&quot; {% endif %} &gt; sidebarがcollapseの場合にclassが追加されるようになってるね。 sidebar-footerクラスもレイアウトに必要なものらしい。 というわけでテンプレートを直に変えるのではなくて、_config.ymlに以下を追加すれば対応出来そうだ。 sidebar: &quot;collapse&quot; トグルボタンのスペースが空いてしまうので、custom/_style.cssに以下も追加。 .collapse-sidebar #content { margin-right: 0; }</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
 
         
-        <li class="list">
-    Sun, Oct 19, 2014 -
-    
-    <img src="/images/ubuntu.png" alt="UbuntuにAurigaを構築してみる">
-    
-    <a href="http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/">UbuntuにAurigaを構築してみる</a>
-</li>
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/"><img src="/images/ubuntu.png" alt="UbuntuにAurigaを構築してみる"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Sun, Oct 19, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/">UbuntuにAurigaを構築してみる</a></h1>
+        <div class="summary">今更だがAurigaの構築をやってみる。 どこもWindows環境での構築方法しか載ってないような印象なんだけどそんなことないのかな。 ソースのダウンロード Auriga Projectからソースを落とす。 言うまでもないけどバージョン番号は最新とかで。 $ wget -O auriga.zip http://auriga.moe.hm/Auriga/snapshotmanager.php?num=1221 $ unzip auriga.zip コンパイル なんか事前の設定とか必要なんだろうけど何も考えずにコンパイルしてみよう。 $ cd Auriga-1221full $ make で、エラーした。 ../common/grfio.c:87:20: fatal error: zlib.h: No such file or directory #include &lt;zlib.h&gt; ^ compilation terminated. make[1]: *** [../common/grfio.o] Error 1 make[1]: Leaving directory `/home/daisuketsuji/Downloads/Auriga-1221Full/src/map' zlibがないらしい。 $ sudo apt-get install zlib1g $ sudo apt-get install zlib1g-dev これで通った。 grfファイルの準備 grfファイルを用意しなきゃいけなかったらしい。 コンパイル前にすることはなかったな。Winならあるのかもね。 とりあえずgrfファイルはクライアント側にあるので、公式のクライアントダウンロードからダウンロード &amp; インストール。 Ubuntuじゃインストール出来ないから、Windowsでインストールして持ってくんのだるかった・・・。 持ってきたらconf/grf-files.txtに追記。 Aurigaと同じフォルダに入れたのでこんな感じに。 grf: ./data.grf 不要な行はコメントアウトで。 サーバ起動 Linuxの場合起動はauriga-startを使うみたい。 解凍直後は実行権限がないのでsudo chmod 744 auriga-startをしとく必要あり。 で、./auriga-start startで起動。 chrif: connection to the char server was closed.</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
 
         
-        <li class="list">
-    Sat, Oct 18, 2014 -
-    
-    <img src="/images/nodejs.png" alt="Ubuntuにnode.jsをインストールする">
-    
-    <a href="http://yet.unresolved.xyz/blog/2014/10/18/install-nodejs-on-ubuntu/">Ubuntuにnode.jsをインストールする</a>
-</li>
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2014/10/18/install-nodejs-on-ubuntu/"><img src="/images/nodejs.png" alt="Ubuntuにnode.jsをインストールする"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Sat, Oct 18, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/10/18/install-nodejs-on-ubuntu/">Ubuntuにnode.jsをインストールする</a></h1>
+        <div class="summary">そろそろ新しいことをやらねばなと思うので、node.jsに手を出してみるよ。 node.jsはmake &amp; make installを推奨しているとのことなので、とりあえずソースを持ってくる。 $ wget http://nodejs.org/dist/v0.10.32/node-v0.10.32.tar.gz $ tar zxvf node-v0.10.32.tar.gz $ make そしてエラー flock: g++: No such file or directory make[1]: * [/home/daisuketsuji/Develop/node/out/Release/openssl-cli] Error 69 make[1]: Leaving directory `/home/daisuketsuji/Develop/node/out' make: * [node] Error 2 g++がない。 build-essentialを使えばいいらしい。 $ sudo apt-get install -y build-essential $ make $ make install またエラー installing /usr/local/bin/node Traceback (most recent call last): File &quot;tools/install.py&quot;, line 191, in &lt;module&gt; run(sys.argv[:]) File &quot;tools/install.py&quot;, line 186, in run if cmd == 'install': return files(install) File &quot;tools/install.py&quot;, line 130, in files action(['out/Release/node'], 'bin/node') File &quot;tools/install.py&quot;, line 79, in install def install(paths, dst): map(lambda path: try_copy(path, dst), paths) File &quot;tools/install.py&quot;, line 79, in &lt;lambda&gt; def install(paths, dst): map(lambda path: try_copy(path, dst), paths) File &quot;tools/install.py&quot;, line 70, in try_copy try_unlink(target_path) # prevent ETXTBSY errors File &quot;tools/install.py&quot;, line 33, in try_unlink os.unlink(path) OSError: [Errno 13] Permission denied: '/usr/local/bin/node' make: *** [install] Error 1 ああ・・・。 $ sudo make install 行けたっぽいのでインタラクティブシェルを起動してみる。 daisuketsuji@daisuketsuji-VirtualBox:~/Develop/node-v0.10.32$ node &gt; console.log(&quot;hello world&quot;) hello world worked!</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2014/10/18/install-nodejs-on-ubuntu/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
 
         
-        <li class="list">
-    Mon, Sep 29, 2014 -
-    
-    <img src="/images/laravel.png" alt="Laravelで配列をリクエストパラメータにする">
-    
-    <a href="http://yet.unresolved.xyz/blog/2014/09/29/laravel-array-input/">Laravelで配列をリクエストパラメータにする</a>
-</li>
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2014/09/29/laravel-array-input/"><img src="/images/laravel.png" alt="Laravelで配列をリクエストパラメータにする"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Mon, Sep 29, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/29/laravel-array-input/">Laravelで配列をリクエストパラメータにする</a></h1>
+        <div class="summary">テーブルとかに入れた複数のInputを同じ名前にして配列でサーバに飛ばしたい、ってときいつも困る。 Laravelでやろうとしたときにドキュメントが見つけられなかったのでそれっぽくやってみました。 やりたいこと こんな感じで同名で複数の値をサーバに渡したいときにどうしたらいいの？っていう話。 &lt;form method=&quot;post&quot; action=&quot;xxx&quot;&gt; &lt;table&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;age&quot;&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;age&quot;&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;age&quot;&gt;&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt; &lt;/form&gt; ちなみにこのままだとDOMの最後尾にあるものだけが展開されるぽい。 方法1 name[]にする まあ大体のFWがこんな感じで展開してくれるんだろうけど、Laravelでも出来ました。 &lt;form method=&quot;post&quot; action=&quot;xxx&quot;&gt; &lt;table&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;name[]&quot;&gt;&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;age[]&quot;&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;name[]&quot;&gt;&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;age[]&quot;&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;name[]&quot;&gt;&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;age[]&quot;&gt;&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt;</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2014/09/29/laravel-array-input/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
 
         
-        <li class="list">
-    Sun, Sep 28, 2014 -
-    
-    <img src="/images/git.png" alt="git管理したくないファイルを除外する">
-    
-    <a href="http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/">git管理したくないファイルを除外する</a>
-</li>
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/"><img src="/images/git.png" alt="git管理したくないファイルを除外する"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Sun, Sep 28, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/">git管理したくないファイルを除外する</a></h1>
+        <div class="summary">ローカル環境でちょこちょこ作ってたやつを本番環境に載せたんだけど、それなりに解決してた環境依存が少し残ってて.gitignoreファイルをちゃんと書くことに。 しかし本番でcloneしてきたファイルをうまいことワーキングには残してインデックスから消すやりかたがわからない！ というわけで少しくらいまともに勉強してみる。 最初につまづいてたのはこのコマンドを連発してたから。 $ git rm filename どうやらこいつはインデックスだけでなくワーキングディレクトリからも消すようだ。 そこでインデックスからだけ消すものはないのかと調べてたらあった。 $ git rm --cached filename 参考にさせて頂きました transitive.info - git rm 使い方</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
 
         
-        <li class="list">
-    Sat, Sep 27, 2014 -
-    
-    <img src="/images/git.png" alt="gitでforce pushが出来ない">
-    
-    <a href="http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/">gitでforce pushが出来ない</a>
-</li>
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/"><img src="/images/git.png" alt="gitでforce pushが出来ない"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Sat, Sep 27, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/">gitでforce pushが出来ない</a></h1>
+        <div class="summary">typoを直すためにrebase -iやらをやってたんだけど、操作してたのがmasterブランチだったのでどうしてもforce pushがしたかった。 一人で使ってたリポジトリだしね。 んだけど、-fをつけても To git://example.com/project1.git ! [rejected] master -&gt; master (non-fast-forward) error: failed to push some refs to 'git://example.com/project1.git' To prevent ... See the 'Note about fast-forwards' section of 'git push --help' for details. こんな感じになってしまう・・・。 解決 gitリポジトリのconfigを見たらこんな項目が、 [receive] denyNonFastforwards = true どうやらこいつをfalseにすればよかったらしい。 最初はtrueになってるもんなのかな・・・。</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
 
         
-        <li class="list">
-    Sun, Sep 21, 2014 -
-    
-    <img src="/images/octopress.png" alt="_config.ymlに書いたdescriptionが設定されない">
-    
-    <a href="http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/">_config.ymlに書いたdescriptionが設定されない</a>
-</li>
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/"><img src="/images/octopress.png" alt="_config.ymlに書いたdescriptionが設定されない"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Sun, Sep 21, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/">_config.ymlに書いたdescriptionが設定されない</a></h1>
+        <div class="summary">認識が間違ってるのか、_config.ymlに書いたdescriptionがサイトに反映されない・・・。 source/_includes/head.htmlのコードを見てみるとこんな感じ。 {% raw %} {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %} &lt;meta name=&quot;description&quot; content=&quot;{{ description | strip_html | condense_spaces | truncate:150 }}&quot;&gt; {% if page.keywords %}&lt;meta name=&quot;keywords&quot; content=&quot;{{ page.keywords }}&quot;&gt;{% endif %} {% endraw %} page.descriptionしか見てない？ 同じことで悩んでる人いないのかな・・・と思ったら居た。 Make the Magic Happen やっぱり同じ認識のようだ。 elseifってこう書くんだね。 {% raw %} {% capture description %}{% if page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %} &lt;meta name=&quot;description&quot; content=&quot;{{ description | strip_html | condense_spaces | truncate:150 }}&quot;&gt; {% if page.keywords %}&lt;meta name=&quot;keywords&quot; content=&quot;{{ page.keywords }}&quot;&gt;{% endif %} {% endraw %} worked!</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
 
         
-        <li class="list">
-    Sun, Sep 21, 2014 -
-    
-    <img src="/images/octopress.png" alt="Octopressのテーマを作ってみる">
-    
-    <a href="http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/">Octopressのテーマを作ってみる</a>
-</li>
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/"><img src="/images/octopress.png" alt="Octopressのテーマを作ってみる"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Sun, Sep 21, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/">Octopressのテーマを作ってみる</a></h1>
+        <div class="summary">元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。 でもオレはデザイナーじゃないから、あんまりがっつりやるのもやだよね。 てことで元のclassicテーマをパクって作ろう。 Octopressから移行してしまったので、スクリーンショットだけ載せとく。 テーマの変え方 そもそも変え方すら知らない。 てことで調べた。 どうやらここにテーマ単位のディレクトリが配置されるらしい。 octopress git:(source)$ ls .themes classic で、rake install[theme name]でインストール。 テーマの構成 作るにも、テーマの定義に何が必要かがわからぬ。 classicの中を見てみよう。 octopress git:(source)$ ls .themes/classic sass source んん、シンプル。 察するにsassがスタイル系でsourceがテンプレート系なのかな？ 別にページレイアウトを変えたいとか、そんなたいそうなことは考えてないので、sass内をいじるだけでよさそう。 sass内はどうなってるのかな？ octopress git:(source)$ ls .themes/classic/sass _base.scss _partials.scss base custom partials plugins screen.scss octopress git:(source)$ ls .themes/classic/sass/custom _colors.scss _fonts.scss _layout.scss _styles.scss で、.themes/classic/sass/custom/_styles.scssがオーバーライド用のファイルなわけだな。 // This File is imported last, and will override other styles in the cascade // Add styles here to make changes</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
 
         
-        <li class="list">
-    Sat, Sep 20, 2014 -
-    
-    <img src="/images/git.png" alt="gitのリポジトリ単位にproxyの設定をする">
-    
-    <a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/">gitのリポジトリ単位にproxyの設定をする</a>
-</li>
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/"><img src="/images/git.png" alt="gitのリポジトリ単位にproxyの設定をする"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Sat, Sep 20, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/">gitのリポジトリ単位にproxyの設定をする</a></h1>
+        <div class="summary">事の発端 会社ではvimを使ってます。 plugin管理にはneobundle.vim使ってます。 .vimrcはGitHubで管理してます。 neobundle.vimで管理してるpluginは大抵のものがGitHub上で管理されてるから、インストールとかアップデートをするときはneobundle.vimがGitHubまで見に行ってくれるんですね。 ただ、当然社内はproxyを通していて、gitコマンドが通らない！ ていうかそもそもGitHubから.vimrcを落としてくることすら出来ない！いいやzipで落とせ！ しかしpluginの導入を手でやるのはだるい・・・。 マジで？サクラエディタで頑張るしかない？ いやいやそんなことはない。 解決 じゃあこうしようってことで、~/.gitconfigをこんな感じにしたのよ。 [https] proxy = http://proxy.com:8080 ひとまず解決したんです。 そしたら次は社内のgitに繋がらない！！ マジかよじゃあ~/.gitconfigをちょこちょこ変えるのかよだせえよそれと思ったら既に解決してくれてる人がいた。 Git の http proxy に関するまとめ めんどくさかったけど、個々のpluginのconfigにだけproxyの記述を追加することで解決。</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
 
         
-        <li class="list">
-    Sat, Sep 20, 2014 -
-    
-    <img src="/images/octopress.png" alt="OctopressのサイドバーにGravatarを表示させる">
-    
-    <a href="http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/">OctopressのサイドバーにGravatarを表示させる</a>
-</li>
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/"><img src="/images/octopress.png" alt="OctopressのサイドバーにGravatarを表示させる"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Sat, Sep 20, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/">OctopressのサイドバーにGravatarを表示させる</a></h1>
+        <div class="summary">Octopressのサイドバーってどうなってんの？ そもそもOctopressの構成がまだよくわかってないのでそこから勉強しよう。 どうやらデフォルトで準備されてるサイドバーはここに格納されているらしい。 octopress git:(source)$ ls source/_includes/asides/ delicious.html github.html googleplus.html pinboard.html recent_posts.html で、自分で作りたい場合はここに格納するっぽい。 octopress git:(source)$ ls source/_includes/custom/asides about.html twitter.html って_config.ymlに書いてあった。 # list each of the sidebar modules you want to include, in the order you want them to appear. # To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like 'custom/asides/custom_aside_name.html' default_asides: [custom/asides/about.html, asides/recent_posts.html, custom/asides/twitter.html] Gravatarの情報って持って来れるの？ ちょっとだけ調べてみたらGravatarの画像だけ持ってくるpluginは用意されてるっぽい。 でもどうせなら自己紹介のところとかも欲しいよね。 で、Gravatarに開発者向け資料がありました。 しっかり読んでないけど、JSONで返せるっぽいからこれを使えばいいかな。 ハッシュを指定する必要があるみたいなので、公式から取得しとく。 作るぞ なんか最初からsource/_include/custom/asidesにabout.htmlってのがあるし、これにプロフィールを書こうかな。 まず取得したハッシュを_config.ymlに定義しちゃおう。 #</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
 
         
-        <li class="list">
-    Wed, Sep 17, 2014 -
-    
-    <img src="/images/octopress.png" alt="GitHub PagesにOctopressをのっけてみる">
-    
-    <a href="http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/">GitHub PagesにOctopressをのっけてみる</a>
-</li>
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/"><img src="/images/octopress.png" alt="GitHub PagesにOctopressをのっけてみる"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Wed, Sep 17, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/">GitHub PagesにOctopressをのっけてみる</a></h1>
+        <div class="summary">WordPress.comを使ってたんだけど、お金払わないと融通がきかないぽいので移行することに。 Markdownが使ってみたかったのと、カッコいいデザインが多そうなHatenaかなーと思ってたんだけど、GitHub Pagesが面白そうなのでとりあえずノリでこっちにしてみるよ。 Github Pages？ GitHub PagesはGitHubに[ユーザ名].github.ioって名前のリポジトリを作るだけで、pushしたページを外部公開出来るサービス。 そこでよく使われるBlogフレームワーク(?)がOctopressらしい。 どうやらOctopressはJekyllという静的ページジェネレータをさらに活用するためのものとのことで、 このJekyll(読みはジキル？)はMarkdownとかで書いたテキストファイルを静的ページに変換したりしてくれるものみたい。 Octopressをインストールする Octopress Setupが非常に良く書かれているのと、Octopress自体が見通しよく作られているので特に躓くことなく導入出来ました。 Octopressは記事を書くPCに導入して丸ごとGitHubにpushしてしまう仕組みらしく、まずは個人のPCに導入が必要。 $ git clone git://github.com/imathis/octopress.git octopress $ cd octopress $ gem install bundler $ rbenv rehash $ bundle install $ rake install で、次にデプロイする。 Deployingを見る限り、GitHub Pagesだけじゃなく、HerokuやRsyncでの利用も出来るっぽい。 なんかVPSとかでも運用してる人がいるっぽいね。 前述した通り今回はGitHub Pagesを利用することにしました。 最初に[ユーザ名].github.ioって名前のリポジトリを作っておく必要があるよ。 $ rake setup_github_pages リポジトリのURLとかが聞かれるので、表示された説明の通り入力。 pushしとく必要もあるっぽい。 $ rake generate $ rake deploy $ git add . $ git commit -m 'your message' $ git push origin source rake deployで乗っかるのは記事とかその辺のファイルだけなのかな？ In a few seconds you should get an email from Github telling you that your commit has been received and will be published on your site.</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
 
         
-    </ul>
 </div>
 
 
@@ -276,28 +520,56 @@
 
 
 
-<div id="aboutme">
+<aside class="profile">
     <div class="container">
-        <div class="eyecatch">
-            <img id="photo" src="/images/nopicture.png" alt="profile">
+        <div id="profile">
+            <div class="eyecatch">
+                <img id="photo" src="/images/nopicture.png" alt="profile">
+            </div>
+            <div class="data">
+                <span class="post-date">Sun, Feb 26, 1989</span>
+                <h1 id="username" class="post-title"></h1>
+                
+                <a href="https://www.facebook.com/daisuke.tsuji.735" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                
+                
+                <a href="https://twitter.com/dim0627" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                
+                
+                <a href="https://github.com/dim0627" target="_blank"><i class="fa fa-github-square"></i></a></p>
+                
+                <pre id="description" class="summary"></pre>
+                <ul id="urls" class="post-categories"></ul>
+            </div>
         </div>
-        <div class="data">
-            <span class="post-date">Sun, Feb 26, 1989</span>
-            <h1 id="username" class="post-title"></h1>
-            
-            <a href="https://www.facebook.com/daisuke.tsuji.735" target="_blank"><i class="fa fa-facebook-square"></i></a>
-            
-            
-            <a href="https://twitter.com/dim0627" target="_blank"><i class="fa fa-twitter-square"></i></a>
-            
-            
-            <a href="https://github.com/dim0627" target="_blank"><i class="fa fa-github-square"></i></a></p>
-            
-            <pre id="description" class="summary"></pre>
-            <ul id="urls" class="post-categories"></ul>
-        </div>
+        
+    </div>
+</aside>
 
-        <script>
+
+
+
+<footer class="copy">
+    <p>&copy; 2015 Daisuke Tsuji
+    <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="//yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-55005303-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+<script>
 $(function() {
     var url = "https://ja.gravatar.com/1e092e9f2cda827deb8623be2e846936.json?callback=?";
     $.getJSON(url)
@@ -309,31 +581,12 @@ $(function() {
             entry.urls.forEach(function(el){
                 $("#urls").append($("<li><a href='" + el.value + "'>" + el.title + "</a></li>"));
             });
-
-            $("#aboutme").show();
+            $("#profile").show();
         });
 });
-        </script>
-
-    </div>
-</div>
-
-
-
-
-<footer>
-    <p>&copy; 2015 Daisuke Tsuji
-    <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>
-</footer>
+</script>
 
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-55005303-1', 'auto');
-  ga('send', 'pageview');
-
+document.write('<script src="//sharebutton.net/plugin/sharebutton.php?type=horizontal&u=' + encodeURIComponent(document.location.href) + '"></scr' + 'ipt>');
 </script>
 

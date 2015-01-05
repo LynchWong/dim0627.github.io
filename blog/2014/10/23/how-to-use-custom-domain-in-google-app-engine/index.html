@@ -23,9 +23,9 @@
 </title>
 
 
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://yandex.st/highlightjs/8.0/styles/solarized_dark.min.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/solarized_dark.min.css">
 <link rel="stylesheet" href="/css/poole.css">
 <link rel="stylesheet" href="/css/syntax.css">
 <link rel="stylesheet" href="/css/lanyon.css">
@@ -37,11 +37,6 @@
 
 
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
-
-<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-
-<script src="https://yandex.st/highlightjs/8.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
 
 
 
@@ -68,7 +63,8 @@
         
     </div>
 
-    
+    <div class="post-content">
+        
 
 <p>簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。</p>
 
@@ -132,6 +128,7 @@
 
 <p>あとは待ってればそのうち反映されるはず。</p>
 
+    </div>
 
     <aside>
         
@@ -302,28 +299,56 @@ var disqus_shortname = 'unresolved';
 
 
 
-<div id="aboutme">
+<aside class="profile">
     <div class="container">
-        <div class="eyecatch">
-            <img id="photo" src="/images/nopicture.png" alt="profile">
+        <div id="profile">
+            <div class="eyecatch">
+                <img id="photo" src="/images/nopicture.png" alt="profile">
+            </div>
+            <div class="data">
+                <span class="post-date">Sun, Feb 26, 1989</span>
+                <h1 id="username" class="post-title"></h1>
+                
+                <a href="https://www.facebook.com/daisuke.tsuji.735" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                
+                
+                <a href="https://twitter.com/dim0627" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                
+                
+                <a href="https://github.com/dim0627" target="_blank"><i class="fa fa-github-square"></i></a></p>
+                
+                <pre id="description" class="summary"></pre>
+                <ul id="urls" class="post-categories"></ul>
+            </div>
         </div>
-        <div class="data">
-            <span class="post-date">Sun, Feb 26, 1989</span>
-            <h1 id="username" class="post-title"></h1>
-            
-            <a href="https://www.facebook.com/daisuke.tsuji.735" target="_blank"><i class="fa fa-facebook-square"></i></a>
-            
-            
-            <a href="https://twitter.com/dim0627" target="_blank"><i class="fa fa-twitter-square"></i></a>
-            
-            
-            <a href="https://github.com/dim0627" target="_blank"><i class="fa fa-github-square"></i></a></p>
-            
-            <pre id="description" class="summary"></pre>
-            <ul id="urls" class="post-categories"></ul>
-        </div>
+        
+    </div>
+</aside>
 
-        <script>
+
+
+
+<footer class="copy">
+    <p>&copy; 2015 Daisuke Tsuji
+    <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="//yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-55005303-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+<script>
 $(function() {
     var url = "https://ja.gravatar.com/1e092e9f2cda827deb8623be2e846936.json?callback=?";
     $.getJSON(url)
@@ -335,31 +360,12 @@ $(function() {
             entry.urls.forEach(function(el){
                 $("#urls").append($("<li><a href='" + el.value + "'>" + el.title + "</a></li>"));
             });
-
-            $("#aboutme").show();
+            $("#profile").show();
         });
 });
-        </script>
-
-    </div>
-</div>
-
-
-
-
-<footer>
-    <p>&copy; 2015 Daisuke Tsuji
-    <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>
-</footer>
+</script>
 
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-55005303-1', 'auto');
-  ga('send', 'pageview');
-
+document.write('<script src="//sharebutton.net/plugin/sharebutton.php?type=horizontal&u=' + encodeURIComponent(document.location.href) + '"></scr' + 'ipt>');
 </script>
 
