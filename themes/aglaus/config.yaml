@@ -1,6 +1,6 @@
-BaseUrl: "http://yet.unresolved.xyz"
+BaseUrl: "http://yet.unresolved.xyz/hugo_theme_aglaus"
 LanguageCode: "en-us"
-Title: "Unresolved"
+Title: "Aglaus"
 
 Params:
   Author: "Daisuke Tsuji"
@@ -13,7 +13,7 @@ Params:
   Github: "dim0627"
 
 Indexes:
-  Tag: "tags"
+  tag: "tags"
 
 PermaLinks:
   Post: /blog/:year/:month/:day/:title/
