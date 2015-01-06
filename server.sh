@@ -1,3 +1,3 @@
 #!/bin/bash
 
-hugo server --watch -t flatten
+hugo server --watch -t aglaus

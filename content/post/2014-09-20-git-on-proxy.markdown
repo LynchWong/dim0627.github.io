@@ -4,7 +4,7 @@ titleja: "gitのリポジトリ単位にproxyの設定をする"
 eyecatch: "git.png"
 date: 2014-09-20
 comments: true
-categories: [git]
+tags: [git]
 ---
 ## 事の発端
 会社ではvimを使ってます。

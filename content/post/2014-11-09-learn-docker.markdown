@@ -4,7 +4,7 @@ titleja: "Docker事始め"
 eyecatch: "docker.png"
 date: 2014-11-09
 comments: true
-categories: [docker]
+tags: [docker]
 ---
 
 ちょっとやりたいことがあって、[Docker](http://www.docker.com/)を使ってみることに。

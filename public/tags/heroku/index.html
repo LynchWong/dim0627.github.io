@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<meta property="og:url" content="http://yet.unresolved.xyz">
+
+
+<meta property="og:title" content="Unresolved">
+
+<meta property="og:site_name" content="Unresolved">
+
+<title>
+    
+    Unresolved
+    
+</title>
+
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/solarized_dark.min.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/custom.css">
+
+
+<link rel="shortcut icon" href="/assets/favicon.ico">
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+
+
+<div class="wrap">
+    <div class="masthead">
+        <div class="container">
+            <h3 class="masthead-title">
+                <a href="/" title="Home">Unresolved</a>
+                <small></small>
+            </h3>
+        </div>
+    </div>
+
+    <div class="container content">
+
+
+<div class="posts">
+    
+    <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/post/2014-12-21-does-not-work-lobos-in-heroku/"><img src="/images/clojure.png" alt="Lobosでマイグレーションができない in Heroku"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Sun, Dec 21, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/post/2014-12-21-does-not-work-lobos-in-heroku/">Lobosでマイグレーションができない in Heroku</a></h1>
+        <div class="summary">ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。 何が起きたか 今だにHerokuの使い方がようわからんのだけど、 とりあえずローカルから向き先変えるよりもSSHの方がいっかなってことでheroku run bashしてやってます。 ローカルからだとDBをSSLで接続させないといけないし・・・。 んでマイグレーションしようとしたら、 user&gt; (migrate) nil 何も出ない。 本当はこんな感じで、 user=&gt; (migrate) add-sites-table add-entries-table nil 作成されたり変更されたテーブルが出てくるはず。 原因はなんだったのか lobos.migrationsが読まれてない（というかリロードされてない）っぽい。 そもそもmigrate自体はこんな感じでlobos.migrationのdo-migrationsを呼んでます。 (defcommand migrate [&amp; names] (let [names (if (empty? names) (mig/pending-migrations db-spec sname) names)] (mig/do-migrations db-spec sname :up names))) で、do-migrationsはこんな感じで、list-migrations-namesの結果を絞って実行してる。 たぶんマイグレーション済みのものは除外とかそんな感じなんじゃないだろうか。 (defn do-migrations [db-spec sname with names &amp; [silent]] (let [filter-migs #(only % (list-migrations-names)) migrations (-&gt;&gt; names (map str) filter-migs (when-&gt;&gt; (= with :down) reverse) (map symbol) (map (partial ns-resolve *migrations-namespace*)) (map var-get))] (binding [*record* nil] (doseq [migration migrations] (let [name (-&gt; migration meta :name)] (when-not silent (println name)) (if (= with :up) (do (up migration) (insert-migrations db-spec sname name)) (do (down migration) (delete-migrations db-spec sname name)))))))) でlist-migrations-namesの定義がこれ、list-migrationsを呼んでる。 (defn list-migrations-names [] (map #(-&gt; % meta :name str) (list-migrations))) (defn list-migrations [] (if *reload-migrations* (when (.exists (migrations-file)) (swap!</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/post/2014-12-21-does-not-work-lobos-in-heroku/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
+
+    
+</div>
+
+
+    </div>
+</div>
+
+
+
+<aside class="sidebar-wrapper">
+    <div class="container">
+        <div id="profile">
+            <div class="eyecatch">
+                <img id="photo" src="/images/nopicture.png" alt="profile">
+            </div>
+            <div class="data">
+                
+                <span class="post-date">Sun, Feb 26, 1989</span>
+                
+                <h1 id="username" class="post-title"></h1>
+                
+                <a href="https://www.facebook.com/daisuke.tsuji.735" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                
+                
+                <a href="https://twitter.com/dim0627" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                
+                
+                <a href="https://github.com/dim0627" target="_blank"><i class="fa fa-github-square"></i></a></p>
+                
+                <pre id="description" class="summary"></pre>
+                <ul id="urls" class="post-tags"></ul>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+<footer class="copy">
+    <p>&copy; 2015  Daisuke Tsuji </p>
+    <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>, Designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="//yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-55005303-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+<script>
+$(function() {
+    var url = "https://ja.gravatar.com/1e092e9f2cda827deb8623be2e846936.json?callback=?";
+    $.getJSON(url)
+        .done(function(data) {
+            var entry = data.entry[0];
+            $("#photo").attr("src", entry.photos[0].value);
+            $("#username").html(entry.name.familyName + " " + entry.name.givenName);
+            $("#description").html(entry.aboutMe);
+            entry.urls.forEach(function(el){
+                $("#urls").append($("<li><a href='" + el.value + "'>" + el.title + "</a></li>"));
+            });
+            $("#profile").show();
+        });
+});
+</script>
+
+<script>
+document.write('<script src="//sharebutton.net/plugin/sharebutton.php?type=horizontal&u=' + encodeURIComponent(document.location.href) + '"></scr' + 'ipt>');
+</script>
+

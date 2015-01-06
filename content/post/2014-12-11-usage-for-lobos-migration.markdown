@@ -4,7 +4,7 @@ titleja: "Lobosを使ってマイグレーションをする"
 eyecatch: "clojure.png"
 date: 2014-12-11
 comments: true
-categories: ["clojure", "lobos", "database", "migration", "leiningen"]
+tags: ["clojure", "lobos", "database", "migration", "leiningen"]
 ---
 
 1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。

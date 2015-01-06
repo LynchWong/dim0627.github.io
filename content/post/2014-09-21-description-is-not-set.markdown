@@ -4,7 +4,7 @@ titleja: "_config.ymlに書いたdescriptionが設定されない"
 eyecatch: "octopress.png"
 date: 2014-09-21
 comments: true
-categories: [octopress]
+tags: [octopress]
 ---
 認識が間違ってるのか、_config.ymlに書いたdescriptionがサイトに反映されない・・・。
 

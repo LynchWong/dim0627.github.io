@@ -1,8 +1,10 @@
-baseurl: "http://yet.unresolved.xyz"
-languageCode: "en-us"
-title: "Unresolved"
+BaseUrl: "http://yet.unresolved.xyz"
+LanguageCode: "en-us"
+Title: "Unresolved"
 
-params:
+Params:
+  Author: "Daisuke Tsuji"
+  Birth: "Sun, Feb 26, 1989"
   DateForm: "Mon, Jan 2, 2006"
   GoogleAnalyticsUserID: "UA-55005303-1"
   GravatarHash: "1e092e9f2cda827deb8623be2e846936"
@@ -10,11 +12,11 @@ params:
   Twitter: "dim0627"
   Github: "dim0627"
 
-indexes:
-  category: "categories"
+Indexes:
+  tag: "tags"
 
-permalinks:
-  post: /blog/:year/:month/:day/:title/
+PermaLinks:
+  Post: /blog/:year/:month/:day/:title/
 
-metadataformat: "yaml"
+MetadataFormat: "yaml"
 

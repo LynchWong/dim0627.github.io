@@ -4,7 +4,7 @@ titleja: "Ubuntuにnode.jsをインストールする"
 eyecatch: "nodejs.png"
 date: 2014-10-18
 comments: true
-categories: [node.js]
+tags: [node.js]
 ---
 
 そろそろ新しいことをやらねばなと思うので、node.jsに手を出してみるよ。

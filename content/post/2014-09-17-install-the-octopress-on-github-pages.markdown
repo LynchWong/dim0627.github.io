@@ -4,7 +4,7 @@ titleja: "GitHub PagesにOctopressをのっけてみる"
 eyecatch: "octopress.png"
 date: 2014-09-17
 comments: true
-categories: [gitHub, octopress, jekyll]
+tags: [gitHub, octopress, jekyll]
 ---
 [WordPress.com](https://ja.wordpress.com/)を使ってたんだけど、お金払わないと融通がきかないぽいので移行することに。
 

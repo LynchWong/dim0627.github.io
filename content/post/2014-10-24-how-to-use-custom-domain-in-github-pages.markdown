@@ -4,7 +4,7 @@ titleja: "GitHub Pagesでカスタムドメインを使う"
 eyecatch: "github.png"
 date: 2014-10-24
 comments: true
-categories: [github, dns]
+tags: [github, dns]
 ---
 
 昨日はGAEで今日はGithubかよって感じだけど、こっちは結構詰まったのでメモしたい。

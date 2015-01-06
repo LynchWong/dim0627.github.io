@@ -4,7 +4,7 @@ titleja: "Google app engineでカスタムドメインを使う"
 eyecatch: "gae.png"
 date: 2014-10-23
 comments: true
-categories: ["google app engine", "dns"]
+tags: ["google app engine", "dns"]
 ---
 
 簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。

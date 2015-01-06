@@ -4,7 +4,7 @@ titleja: "Octopressのテーマを作ってみる"
 eyecatch: "octopress.png"
 date: 2014-09-21
 comments: true
-categories: [octopress, theme]
+tags: [octopress, theme]
 ---
 
 元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。

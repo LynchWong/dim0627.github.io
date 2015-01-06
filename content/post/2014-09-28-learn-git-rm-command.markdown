@@ -4,7 +4,7 @@ titleja: "git管理したくないファイルを除外する"
 eyecatch: "git.png"
 date: 2014-09-28
 comments: true
-categories: [git]
+tags: [git]
 ---
 
 ローカル環境でちょこちょこ作ってたやつを本番環境に載せたんだけど、それなりに解決してた環境依存が少し残ってて.gitignoreファイルをちゃんと書くことに。

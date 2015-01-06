@@ -4,7 +4,7 @@ titleja: "boot2dockerでCannot connect to the Docker daemon"
 eyecatch: "docker.png"
 date: 2014-12-30
 comments: true
-categories: ["docker", "boot2docker"]
+tags: ["docker", "boot2docker"]
 ---
 
 これまでは普通に手で作ったVMのUbuntu上でDockerを触ってたんだけど、なんかあれだしboot2dockerに移行しようかと。

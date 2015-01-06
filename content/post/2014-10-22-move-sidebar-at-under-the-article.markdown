@@ -4,7 +4,7 @@ titleja: "Octopressのサイドバーを下部に移動する"
 eyecatch: "octopress.png"
 date: 2014-10-22
 comments: true
-categories: [octopress]
+tags: [octopress]
 ---
 
 デフォルトのテーマだとサイドバーの表示/非表示の切り替えが出来て、非表示にするとサイドバーは記事の下に落っこちるんだけど、

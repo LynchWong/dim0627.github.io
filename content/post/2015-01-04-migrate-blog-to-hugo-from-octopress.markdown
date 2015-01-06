@@ -1,5 +1,5 @@
 ---
-categories: ["octopress", "hugo", "golang", "ruby"]
+tags: ["octopress", "hugo", "golang", "ruby"]
 comments: true
 date: 2015-01-04
 eyecatch: "hugo.png"

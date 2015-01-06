@@ -4,7 +4,7 @@ titleja: "gitでforce pushが出来ない"
 eyecatch: "git.png"
 date: 2014-09-27
 comments: true
-categories: [git]
+tags: [git]
 ---
 
 typoを直すために`rebase -i`やらをやってたんだけど、操作してたのがmasterブランチだったのでどうしてもforce pushがしたかった。

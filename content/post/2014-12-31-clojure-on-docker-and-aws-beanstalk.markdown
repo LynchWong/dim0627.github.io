@@ -4,7 +4,7 @@ titleja: "ClojureのWebアプリをDocker + Beanstalkで動かす"
 eyecatch: "aws.png"
 date: 2014-12-31
 comments: true
-categories: ["clojure", "docker", "aws", "beanstalk"]
+tags: ["clojure", "docker", "aws", "beanstalk"]
 ---
 
 たぶんこういうのはドキュメント読んでもわからないので、とにかく一通りの流れを実践してみる。
