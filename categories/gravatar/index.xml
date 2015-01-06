@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved </title>
-    <link>http://yet.unresolved.xyz/categories/gravatar/</link>
+    <link>http://localhost:1313/categories/gravatar/</link>
     <language>en-us</language>
     <author></author>
     <rights>(C) 2015</rights>
@@ -12,10 +12,10 @@
       
         <item>
           <title>make-gravatar-sidebar</title>
-          <link>http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/</link>
+          <link>http://localhost:1313/blog/2014/09/20/make-gravatar-sidebar/</link>
           <pubDate>Sat, 20 Sep 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/</guid>
+          <guid>http://localhost:1313/blog/2014/09/20/make-gravatar-sidebar/</guid>
           <description>
 
 &lt;h2 id=&#34;octopressのサイドバーってどうなってんの:c73b8990ae6ff308f2649661fb572fc8&#34;&gt;Octopressのサイドバーってどうなってんの？&lt;/h2&gt;

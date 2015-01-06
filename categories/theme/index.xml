@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved </title>
-    <link>http://yet.unresolved.xyz/categories/theme/</link>
+    <link>http://localhost:1313/categories/theme/</link>
     <language>en-us</language>
     <author></author>
     <rights>(C) 2015</rights>
@@ -12,10 +12,10 @@
       
         <item>
           <title>make-new-theme-flatten</title>
-          <link>http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/</link>
+          <link>http://localhost:1313/blog/2014/09/21/make-new-theme-flatten/</link>
           <pubDate>Sun, 21 Sep 2014 00:00:00 UTC</pubDate>
           <author></author>
-          <guid>http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/</guid>
+          <guid>http://localhost:1313/blog/2014/09/21/make-new-theme-flatten/</guid>
           <description>
 
 &lt;p&gt;元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。&lt;/p&gt;
@@ -26,7 +26,7 @@
 
 &lt;p&gt;Octopressから移行してしまったので、スクリーンショットだけ載せとく。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34; class=&#34;image&#34; alt=&#34;flatten&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2014-09-21/flatten.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2014-09-21/flatten.png&#34; class=&#34;image&#34; alt=&#34;flatten&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;テーマの変え方:76235ef2906f03f2c7b92537a8f6cdf7&#34;&gt;テーマの変え方&lt;/h2&gt;
 

@@ -5,13 +5,13 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-<meta property="og:url" content="http://yet.unresolved.xyz">
+<meta property="og:url" content="http://localhost:1313">
 
 
 <meta property="og:type" content="article">
 <meta property="og:title" content="ClojureのWebアプリをDocker &#43; Beanstalkで動かす &middot; Unresolved">
 
-<meta property="og:image" content="http://yet.unresolved.xyz/images/aws.png">
+<meta property="og:image" content="http://localhost:1313/images/aws.png">
 
 
 <meta property="og:site_name" content="Unresolved">
@@ -26,13 +26,10 @@
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/solarized_dark.min.css">
-<link rel="stylesheet" href="/css/poole.css">
-<link rel="stylesheet" href="/css/syntax.css">
-<link rel="stylesheet" href="/css/lanyon.css">
 <link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/custom.css">
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
 <link rel="shortcut icon" href="/assets/favicon.ico">
 
 
@@ -233,35 +230,7 @@ CMD [&quot;java&quot;, &quot;-jar&quot;, &quot;/root/production.jar&quot;]
         <h3>関連する投稿</h3>
 
         
-        <ul class="post-categories">
-            
-            <li>
-                <a href="http://yet.unresolved.xyz/categories/clojure">
-                    <i class="fa fa-tags"></i>
-                    clojure
-                </a>
-            </li>
-            
-            <li>
-                <a href="http://yet.unresolved.xyz/categories/docker">
-                    <i class="fa fa-tags"></i>
-                    docker
-                </a>
-            </li>
-            
-            <li>
-                <a href="http://yet.unresolved.xyz/categories/aws">
-                    <i class="fa fa-tags"></i>
-                    aws
-                </a>
-            </li>
-            
-            <li>
-                <a href="http://yet.unresolved.xyz/categories/beanstalk">
-                    <i class="fa fa-tags"></i>
-                    beanstalk
-                </a>
-            </li>
+        <ul class="post-tags">
             
         </ul>
 
@@ -280,25 +249,6 @@ CMD [&quot;java&quot;, &quot;-jar&quot;, &quot;/root/production.jar&quot;]
             
             
             
-            <li><a href="http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/">boot2dockerでCannot connect to the Docker daemon</a></li>
-            
-            
-            
-            
-            
-            <li><a href="http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/">Lobosでマイグレーションができない in Heroku</a></li>
-            
-            
-            
-            
-            
-            <li><a href="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/">Lobosを使ってマイグレーションをする</a></li>
-            
-            
-            
-            
-            
-            <li><a href="http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/">LeiningenでSCSSを自動コンパイルする</a></li>
             
             
             
@@ -312,7 +262,16 @@ CMD [&quot;java&quot;, &quot;-jar&quot;, &quot;/root/production.jar&quot;]
             
             
             
-            <li><a href="http://yet.unresolved.xyz/blog/2014/11/09/learn-docker/">Docker事始め</a></li>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
             
             
@@ -379,7 +338,7 @@ CMD [&quot;java&quot;, &quot;-jar&quot;, &quot;/root/production.jar&quot;]
         <div class="move">
             <div class="prev">
                 
-                <a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">
+                <a href="http://localhost:1313/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">
                     <i class="fa fa-chevron-left"></i>
                     ブログをOctopressからHugoに移行した
                 </a>
@@ -387,7 +346,7 @@ CMD [&quot;java&quot;, &quot;-jar&quot;, &quot;/root/production.jar&quot;]
             </div>
             <div class="next">
                 
-                <a href="http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/">
+                <a href="http://localhost:1313/blog/2014/12/30/could-not-run-docker-in-mac/">
                     boot2dockerでCannot connect to the Docker daemon
                     <i class="fa fa-chevron-right"></i>
                 </a>
@@ -419,14 +378,14 @@ var disqus_shortname = 'unresolved';
 
 
 
-<aside class="profile">
+<aside class="sidebar-wrapper">
     <div class="container">
         <div id="profile">
             <div class="eyecatch">
                 <img id="photo" src="/images/nopicture.png" alt="profile">
             </div>
             <div class="data">
-                <span class="post-date">Sun, Feb 26, 1989</span>
+                
                 <h1 id="username" class="post-title"></h1>
                 
                 <a href="https://www.facebook.com/daisuke.tsuji.735" target="_blank"><i class="fa fa-facebook-square"></i></a>
@@ -438,7 +397,7 @@ var disqus_shortname = 'unresolved';
                 <a href="https://github.com/dim0627" target="_blank"><i class="fa fa-github-square"></i></a></p>
                 
                 <pre id="description" class="summary"></pre>
-                <ul id="urls" class="post-categories"></ul>
+                <ul id="urls" class="post-tags"></ul>
             </div>
         </div>
         
@@ -449,8 +408,8 @@ var disqus_shortname = 'unresolved';
 
 
 <footer class="copy">
-    <p>&copy; 2015 Daisuke Tsuji
-    <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>
+    <p>&copy; 2015  Unresolved </p>
+    <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>, Designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
 </footer>
 
 <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>

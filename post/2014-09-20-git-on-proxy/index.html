@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<meta property="og:url" content="http://yet.unresolved.xyz">
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="gitのリポジトリ単位にproxyの設定をする &middot; Unresolved">
+
+<meta property="og:image" content="http://yet.unresolved.xyz/images/git.png">
+
+
+<meta property="og:site_name" content="Unresolved">
+
+<title>
+    
+    gitのリポジトリ単位にproxyの設定をする &middot; Unresolved
+    
+</title>
+
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/solarized_dark.min.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/custom.css">
+
+
+<link rel="shortcut icon" href="/assets/favicon.ico">
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+
+
+<div class="wrap">
+    <div class="masthead">
+        <div class="container">
+            <h3 class="masthead-title">
+                <a href="/" title="Home">Unresolved</a>
+                <small></small>
+            </h3>
+        </div>
+    </div>
+
+    <div class="container content">
+
+
+<article class="post post-single">
+    <span class="post-date">Sat, Sep 20, 2014</span>
+    <h1 class="post-title">gitのリポジトリ単位にproxyの設定をする</h1>
+
+    <div class="eyecatch">
+        
+        <img src="/images/git.png" alt="gitのリポジトリ単位にproxyの設定をする">
+        
+    </div>
+
+    <div class="post-content">
+        
+
+<h2 id="事の発端:ca86a8bf870eabf283b4127081a3d388">事の発端</h2>
+
+<p>会社ではvimを使ってます。</p>
+
+<p>plugin管理には<a href="https://github.com/Shougo/neobundle.vim">neobundle.vim</a>使ってます。</p>
+
+<p><code>.vimrc</code>は<a href="https://github.com/">GitHub</a>で管理してます。</p>
+
+<p>neobundle.vimで管理してるpluginは大抵のものがGitHub上で管理されてるから、インストールとかアップデートをするときはneobundle.vimがGitHubまで見に行ってくれるんですね。</p>
+
+<p>ただ、当然社内はproxyを通していて、gitコマンドが通らない！</p>
+
+<p>ていうかそもそも<strong>GitHubから<code>.vimrc</code>を落としてくることすら出来ない！いいやzipで落とせ！</strong></p>
+
+<p>しかしpluginの導入を手でやるのはだるい・・・。</p>
+
+<p>マジで？サクラエディタで頑張るしかない？</p>
+
+<p>いやいやそんなことはない。</p>
+
+<h2 id="解決:ca86a8bf870eabf283b4127081a3d388">解決</h2>
+
+<p>じゃあこうしようってことで、<code>~/.gitconfig</code>をこんな感じにしたのよ。</p>
+
+<pre><code class="language-sh">[https]
+        proxy = http://proxy.com:8080
+</code></pre>
+
+<p>ひとまず解決したんです。</p>
+
+<p>そしたら次は<strong>社内のgitに繋がらない！！</strong></p>
+
+<p>マジかよじゃあ<code>~/.gitconfig</code>をちょこちょこ変えるのかよだせえよそれと思ったら既に解決してくれてる人がいた。</p>
+
+<p><a href="http://tanacasino.hatenablog.com/entry/2013/12/21/003750">Git の http proxy に関するまとめ</a></p>
+
+<p>めんどくさかったけど、個々のpluginの<code>config</code>にだけproxyの記述を追加することで解決。</p>
+
+    </div>
+
+    <aside>
+        
+        <h3>関連する投稿</h3>
+
+        
+        <ul class="post-tags">
+            
+            <li>
+                <a href="http://yet.unresolved.xyz/tags/git">
+                    <i class="fa fa-tags"></i>
+                    git
+                </a>
+            </li>
+            
+        </ul>
+
+        <ul class="related-post">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <li><a href="http://yet.unresolved.xyz/post/2014-09-28-learn-git-rm-command/">git管理したくないファイルを除外する</a></li>
+            
+            
+            
+            
+            
+            <li><a href="http://yet.unresolved.xyz/post/2014-09-27-could-not-force-push-on-git/">gitでforce pushが出来ない</a></li>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </ul>
+    </aside>
+
+    
+    <footer>
+        <div class="move">
+            <div class="prev">
+                
+                <a href="http://yet.unresolved.xyz/post/2014-09-20-make-gravatar-sidebar/">
+                    <i class="fa fa-chevron-left"></i>
+                    OctopressのサイドバーにGravatarを表示させる
+                </a>
+                
+            </div>
+            <div class="next">
+                
+                <a href="http://yet.unresolved.xyz/post/2014-09-17-install-the-octopress-on-github-pages/">
+                    GitHub PagesにOctopressをのっけてみる
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+                
+            </div>
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+ 
+var disqus_shortname = 'unresolved'; 
+
+ 
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </footer>
+
+</article>
+
+
+    </div>
+</div>
+
+
+
+<aside class="sidebar-wrapper">
+    <div class="container">
+        <div id="profile">
+            <div class="eyecatch">
+                <img id="photo" src="/images/nopicture.png" alt="profile">
+            </div>
+            <div class="data">
+                
+                <span class="post-date">Sun, Feb 26, 1989</span>
+                
+                <h1 id="username" class="post-title"></h1>
+                
+                <a href="https://www.facebook.com/daisuke.tsuji.735" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                
+                
+                <a href="https://twitter.com/dim0627" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                
+                
+                <a href="https://github.com/dim0627" target="_blank"><i class="fa fa-github-square"></i></a></p>
+                
+                <pre id="description" class="summary"></pre>
+                <ul id="urls" class="post-tags"></ul>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+<footer class="copy">
+    <p>&copy; 2015  Daisuke Tsuji </p>
+    <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>, Designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="//yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-55005303-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+<script>
+$(function() {
+    var url = "https://ja.gravatar.com/1e092e9f2cda827deb8623be2e846936.json?callback=?";
+    $.getJSON(url)
+        .done(function(data) {
+            var entry = data.entry[0];
+            $("#photo").attr("src", entry.photos[0].value);
+            $("#username").html(entry.name.familyName + " " + entry.name.givenName);
+            $("#description").html(entry.aboutMe);
+            entry.urls.forEach(function(el){
+                $("#urls").append($("<li><a href='" + el.value + "'>" + el.title + "</a></li>"));
+            });
+            $("#profile").show();
+        });
+});
+</script>
+
+<script>
+document.write('<script src="//sharebutton.net/plugin/sharebutton.php?type=horizontal&u=' + encodeURIComponent(document.location.href) + '"></scr' + 'ipt>');
+</script>
+
