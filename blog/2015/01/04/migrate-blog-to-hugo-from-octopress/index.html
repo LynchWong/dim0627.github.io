@@ -91,6 +91,8 @@
             
             
             
+            
+            
         </div>
     </div>
 
@@ -207,7 +209,7 @@
 
 <p>こんな感じにしなきゃいけないので、先人の知恵を使って置換する。</p>
 
-<pre><code class="language-sh">$ find -type f -exec sed -i 's/\([0-9]\+-[0-9]\+-[0-9]\+\).*$/&quot;\1&quot;/' {} \;
+<pre><code class="language-sh">$ find . -type f -exec sed -i &quot;&quot; -e 's/\([0-9]\+-[0-9]\+-[0-9]\+\).*$/&quot;\1&quot;/' {} \;
 </code></pre>
 
 <h3 id="画像タグの変更:6a8fd8223fd13a59d819b0862af33f03">画像タグの変更</h3>
@@ -322,6 +324,12 @@ hugo new post/&quot;`date +%Y-%m-%d`-$title.markdown&quot;
             
             
             
+            <li><a href="http://yet.unresolved.xyz/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/">Hugoでマルチバイトのタイトルをスマートに使う方法</a></li>
+            
+            
+            
+            
+            
             
             
             
@@ -410,11 +418,11 @@ hugo new post/&quot;`date +%Y-%m-%d`-$title.markdown&quot;
             
             
             
-            
-            
-            
-            
             <li><a href="http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/">OctopressのサイドバーにGravatarを表示させる</a></li>
+            
+            
+            
+            
             
             
             
@@ -431,6 +439,11 @@ hugo new post/&quot;`date +%Y-%m-%d`-$title.markdown&quot;
     <footer>
         <div class="move">
             <div class="prev">
+                
+                <a href="http://yet.unresolved.xyz/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/">
+                    <i class="fa fa-chevron-left"></i>
+                    Hugoでマルチバイトのタイトルをスマートに使う方法
+                </a>
                 
             </div>
             <div class="next">

@@ -115,7 +115,7 @@
 
 &lt;p&gt;こんな感じにしなきゃいけないので、先人の知恵を使って置換する。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ find -type f -exec sed -i &#39;s/\([0-9]\+-[0-9]\+-[0-9]\+\).*$/&amp;quot;\1&amp;quot;/&#39; {} \;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ find . -type f -exec sed -i &amp;quot;&amp;quot; -e &#39;s/\([0-9]\+-[0-9]\+-[0-9]\+\).*$/&amp;quot;\1&amp;quot;/&#39; {} \;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&#34;画像タグの変更:6a8fd8223fd13a59d819b0862af33f03&#34;&gt;画像タグの変更&lt;/h3&gt;

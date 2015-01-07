@@ -9,16 +9,16 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntuにnode.jsをインストールする &middot; Unresolved">
+<meta property="og:title" content="Hugoでマルチバイトのタイトルをスマートに使う方法 &middot; Unresolved">
 
-<meta property="og:image" content="http://yet.unresolved.xyz/images/nodejs.png">
+<meta property="og:image" content="http://yet.unresolved.xyz/images/hugo.png">
 
 
 <meta property="og:site_name" content="Unresolved">
 
 <title>
     
-    Ubuntuにnode.jsをインストールする
+    Hugoでマルチバイトのタイトルをスマートに使う方法
     
 </title>
 
@@ -100,100 +100,63 @@
 
 
 <article class="post post-single">
-    <span class="post-date">Sat, Oct 18, 2014</span>
-    <h1 class="post-title">Ubuntuにnode.jsをインストールする</h1>
+    <span class="post-date">Wed, Jan 7, 2015</span>
+    <h1 class="post-title">Hugoでマルチバイトのタイトルをスマートに使う方法</h1>
 
     <div class="eyecatch">
         
-        <img src="/images/nodejs.png" alt="Ubuntuにnode.jsをインストールする">
+        <img src="/images/hugo.png" alt="Hugoでマルチバイトのタイトルをスマートに使う方法">
         
     </div>
 
     <div class="post-content">
         
 
-<p>そろそろ新しいことをやらねばなと思うので、node.jsに手を出してみるよ。</p>
+<p><a href="http://gohugo.io/">Hugo</a>でちょっと困ったこと。</p>
 
-<p>node.jsはmake &amp; make installを推奨しているとのことなので、とりあえずソースを持ってくる。</p>
+<p>オレは<a href="http://octopress.org/">Octopress</a>から以降してきたからなおさらなんだけど、記事のタイトルがURLにされてしまう。</p>
 
-<pre><code class="language-sh">$ wget http://nodejs.org/dist/v0.10.32/node-v0.10.32.tar.gz
-$ tar zxvf node-v0.10.32.tar.gz
-$ make
+<p>そうすると日本語とかのマルチバイト文字を使うとパーセントエンコードが走って結構悲惨なことになる。</p>
+
+<p>というかオレの環境だとリンクがきちんと飛べなかった・・・。</p>
+
+<p>なので今回やった対処法をメモっとく。</p>
+
+<h2 id="現状整理:305b326c361986ca7e3bc18a2fbce87d">現状整理</h2>
+
+<p>実は以降の時にちょっと手を加えたりしてたんだけど、あんまり綺麗な方法じゃなかったので納得が行ってなかった。</p>
+
+<p>そんな時に公式を読んでたら、<a href="http://gohugo.io/content/organization/">Content Organization</a>の項にこんな図が。</p>
+
+<p><a href="/images/2015-01-07/permalink.png"><img src="/images/2015-01-07/permalink.png" class="image" alt="permalink"></a></p>
+
+<p>どうやらオレが困ってたURLのタイトル部はslugと呼ばれる部分らしい。</p>
+
+<p>ならこんな風に記事内のマークダウンで毎回指定してしまえば綺麗に話が済むのではないか？</p>
+
+<pre><code class="language-markdown">---
+tags: [&quot;hugo&quot;, &quot;golang&quot;]
+comments: true
+date: 2015-01-07T23:56:32+09:00
+eyecatch: &quot;hugo.png&quot;
+slug: &quot;how-to-use-multibyte-title-in-hugo&quot;
+title: &quot;Hugoでマルチバイトのタイトルをスマートに使う方法&quot;
+---
 </code></pre>
 
-<p>そしてエラー</p>
+<p>と思ったらうまくいった。</p>
 
-<pre><code class="language-sh">flock: g++: No such file or directory
+<p><code>config.yaml</code>はこんな感じ。</p>
 
-make[1]: * [/home/daisuketsuji/Develop/node/out/Release/openssl-cli] Error 69
-
-make[1]: Leaving directory `/home/daisuketsuji/Develop/node/out'
-
-make: * [node] Error 2
+<pre><code class="language-yaml">permalinks:
+  post: /blog/:year/:month/:day/:slug/
 </code></pre>
 
-<p>g++がない。</p>
+<p>なのでOctopressから以降した人はこの方法も検討するといいかもしれません。</p>
 
-<p><a href="http://packages.ubuntu.com/lucid/build-essential">build-essential</a>を使えばいいらしい。</p>
+<p><code>hugo new</code>した時に生成されるテンプレートは<code>archetypes</code>ディレクトリに配置出来るから、そこでやっておくとよし。</p>
 
-<pre><code class="language-sh">$ sudo apt-get install -y build-essential
-$ make
-$ make install
-</code></pre>
-
-<p>またエラー</p>
-
-<pre><code class="language-sh">installing /usr/local/bin/node
-Traceback (most recent call last):
-  File &quot;tools/install.py&quot;, line 191, in &lt;module&gt;
-    run(sys.argv[:])
-  File &quot;tools/install.py&quot;, line 186, in run
-    if cmd == 'install': return files(install)
-  File &quot;tools/install.py&quot;, line 130, in files
-    action(['out/Release/node'], 'bin/node')
-  File &quot;tools/install.py&quot;, line 79, in install
-    def install(paths, dst): map(lambda path: try_copy(path, dst), paths)
-  File &quot;tools/install.py&quot;, line 79, in &lt;lambda&gt;
-    def install(paths, dst): map(lambda path: try_copy(path, dst), paths)
-  File &quot;tools/install.py&quot;, line 70, in try_copy
-    try_unlink(target_path) # prevent ETXTBSY errors
-  File &quot;tools/install.py&quot;, line 33, in try_unlink
-    os.unlink(path)
-OSError: [Errno 13] Permission denied: '/usr/local/bin/node'
-make: *** [install] Error 1
-</code></pre>
-
-<p>ああ・・・。</p>
-
-<pre><code class="language-sh">$ sudo make install
-</code></pre>
-
-<p>行けたっぽいのでインタラクティブシェルを起動してみる。</p>
-
-<pre><code class="language-sh">daisuketsuji@daisuketsuji-VirtualBox:~/Develop/node-v0.10.32$ node
-&gt; console.log(&quot;hello world&quot;)
-hello world
-</code></pre>
-
-<p>worked!</p>
-
-<h2 id="そもそもnode-jsって:2001f525b49213f857c10cbda61543d4">そもそもnode.jsって？</h2>
-
-<p>色んなところでこう書いてある。</p>
-
-<blockquote>
-<p>JavaScriptを用いたNon-blocking I/O環境</p>
-
-<p>「イベントループモデルで、ノンブロッキングI/Oを使用している」</p>
-</blockquote>
-
-<p>これらについては以下の記事を参考にさせてもらいました。</p>
-
-<p><a href="http://d.hatena.ne.jp/badatmath/20101020/1287587240">node.js とは何か - I am Bad at Math</a></p>
-
-<p><a href="http://satoshun00.hatenadiary.com/entry/2012/08/02/172936">node.jsの仕組み（ノンブロッキングI/Oとかスレッドとか） - 元リア充エンジニアのメモ</a></p>
-
-<p>nginxが流行ってるのは知ってたし、メモリを食わないっていうのも聞いてはいたけど、そういう背景があったんですね。</p>
+<p>しかし以降時に書き足すのが面倒なんだよなあ。</p>
 
     </div>
 
@@ -206,9 +169,16 @@ hello world
         <ul class="post-tags">
             
             <li>
-                <a href="http://yet.unresolved.xyz/tags/node.js">
+                <a href="http://yet.unresolved.xyz/tags/hugo">
                     <i class="fa fa-tags"></i>
-                    node.js
+                    hugo
+                </a>
+            </li>
+            
+            <li>
+                <a href="http://yet.unresolved.xyz/tags/golang">
+                    <i class="fa fa-tags"></i>
+                    golang
                 </a>
             </li>
             
@@ -224,6 +194,8 @@ hello world
             
             
             
+            
+            <li><a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">ブログをOctopressからHugoに移行した</a></li>
             
             
             
@@ -323,16 +295,11 @@ hello world
         <div class="move">
             <div class="prev">
                 
-                <a href="http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/">
-                    <i class="fa fa-chevron-left"></i>
-                    UbuntuにAurigaを構築してみる
-                </a>
-                
             </div>
             <div class="next">
                 
-                <a href="http://yet.unresolved.xyz/blog/2014/09/29/laravel-array-input/">
-                    Laravelで配列をリクエストパラメータにする
+                <a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">
+                    ブログをOctopressからHugoに移行した
                     <i class="fa fa-chevron-right"></i>
                 </a>
                 

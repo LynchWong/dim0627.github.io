@@ -64,10 +64,6 @@ poweroff
 
 &lt;p&gt;あとは&lt;code&gt;start&lt;/code&gt;すれば使えるのかなと思ったらエラー。&lt;/p&gt;
 
-&lt;p&gt;環境変数&lt;code&gt;$DOCKER_HOST&lt;/code&gt;に&lt;code&gt;tcp://192.168.59.103:2357&lt;/code&gt;が設定されてなきゃいけなかったっぽい。&lt;/p&gt;
-
-&lt;p&gt;これによってboot2dockerで起動したVM中のdockerと接続してるのだろうか？&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;b2d$  boot2docker start
 2014/12/30 20:56:21 Waiting for VM to be started...
 .......
@@ -78,14 +74,20 @@ b2d$ docker run hello-world
 2014/12/30 20:51:16 Post http:///var/run/docker.sock/v1.13/containers/create: dial unix /var/run/docker.sock: no such file or directory
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;環境変数を知ってしてみるもまたエラー。&lt;/p&gt;
+&lt;p&gt;環境変数&lt;code&gt;$DOCKER_HOST&lt;/code&gt;に&lt;code&gt;tcp://192.168.59.103:2357&lt;/code&gt;が設定されてなきゃいけなかったっぽい。&lt;/p&gt;
 
-&lt;p&gt;デーモンと接続できない。&lt;/p&gt;
+&lt;p&gt;これによってboot2dockerで起動したVM中のdockerと接続してるのかな。&lt;/p&gt;
+
+&lt;p&gt;と思ったら、&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;b2d$ export DOCKER_HOST=tcp://192.168.59.103:2375
 b2d$ docker run hello-world
 2014/12/30 20:58:41 Cannot connect to the Docker daemon. Is &#39;docker -d&#39; running on this host?
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;環境変数を設定してみるもまたエラー。&lt;/p&gt;
+
+&lt;p&gt;デーモンと接続できない。&lt;/p&gt;
 
 &lt;p&gt;1時間ほど詰まりましたが最悪な原因でした。&lt;/p&gt;
 

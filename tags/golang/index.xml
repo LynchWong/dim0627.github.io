@@ -6,8 +6,66 @@
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
-    <updated>2015-01-04 00:00:00 &#43;0000 UTC</updated>
+    <updated>2015-01-07 23:56:32 &#43;0900 JST</updated>
 
+    
+      
+        <item>
+          <title>Hugoでマルチバイトのタイトルをスマートに使う方法</title>
+          <link>http://yet.unresolved.xyz/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/</link>
+          <pubDate>Wed, 07 Jan 2015 23:56:32 JST</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/</guid>
+          <description>
+
+&lt;p&gt;&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;でちょっと困ったこと。&lt;/p&gt;
+
+&lt;p&gt;オレは&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;から以降してきたからなおさらなんだけど、記事のタイトルがURLにされてしまう。&lt;/p&gt;
+
+&lt;p&gt;そうすると日本語とかのマルチバイト文字を使うとパーセントエンコードが走って結構悲惨なことになる。&lt;/p&gt;
+
+&lt;p&gt;というかオレの環境だとリンクがきちんと飛べなかった・・・。&lt;/p&gt;
+
+&lt;p&gt;なので今回やった対処法をメモっとく。&lt;/p&gt;
+
+&lt;h2 id=&#34;現状整理:305b326c361986ca7e3bc18a2fbce87d&#34;&gt;現状整理&lt;/h2&gt;
+
+&lt;p&gt;実は以降の時にちょっと手を加えたりしてたんだけど、あんまり綺麗な方法じゃなかったので納得が行ってなかった。&lt;/p&gt;
+
+&lt;p&gt;そんな時に公式を読んでたら、&lt;a href=&#34;http://gohugo.io/content/organization/&#34;&gt;Content Organization&lt;/a&gt;の項にこんな図が。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-07/permalink.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-07/permalink.png&#34; class=&#34;image&#34; alt=&#34;permalink&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;どうやらオレが困ってたURLのタイトル部はslugと呼ばれる部分らしい。&lt;/p&gt;
+
+&lt;p&gt;ならこんな風に記事内のマークダウンで毎回指定してしまえば綺麗に話が済むのではないか？&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;---
+tags: [&amp;quot;hugo&amp;quot;, &amp;quot;golang&amp;quot;]
+comments: true
+date: 2015-01-07T23:56:32+09:00
+eyecatch: &amp;quot;hugo.png&amp;quot;
+slug: &amp;quot;how-to-use-multibyte-title-in-hugo&amp;quot;
+title: &amp;quot;Hugoでマルチバイトのタイトルをスマートに使う方法&amp;quot;
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;と思ったらうまくいった。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;config.yaml&lt;/code&gt;はこんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;permalinks:
+  post: /blog/:year/:month/:day/:slug/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;なのでOctopressから以降した人はこの方法も検討するといいかもしれません。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;hugo new&lt;/code&gt;した時に生成されるテンプレートは&lt;code&gt;archetypes&lt;/code&gt;ディレクトリに配置出来るから、そこでやっておくとよし。&lt;/p&gt;
+
+&lt;p&gt;しかし以降時に書き足すのが面倒なんだよなあ。&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>
@@ -115,7 +173,7 @@
 
 &lt;p&gt;こんな感じにしなきゃいけないので、先人の知恵を使って置換する。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ find -type f -exec sed -i &#39;s/\([0-9]\+-[0-9]\+-[0-9]\+\).*$/&amp;quot;\1&amp;quot;/&#39; {} \;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ find . -type f -exec sed -i &amp;quot;&amp;quot; -e &#39;s/\([0-9]\+-[0-9]\+-[0-9]\+\).*$/&amp;quot;\1&amp;quot;/&#39; {} \;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&#34;画像タグの変更:6a8fd8223fd13a59d819b0862af33f03&#34;&gt;画像タグの変更&lt;/h3&gt;
