@@ -114,7 +114,7 @@
 
 <p><a href="http://gohugo.io/">Hugo</a>でちょっと困ったこと。</p>
 
-<p>オレは<a href="http://octopress.org/">Octopress</a>から以降してきたからなおさらなんだけど、記事のタイトルがURLにされてしまう。</p>
+<p>オレは<a href="http://octopress.org/">Octopress</a>から移行してきたからなおさらなんだけど、記事のタイトルがURLにされてしまう。</p>
 
 <p>そうすると日本語とかのマルチバイト文字を使うとパーセントエンコードが走って結構悲惨なことになる。</p>
 
@@ -130,9 +130,9 @@
 
 <p><a href="/images/2015-01-07/permalink.png"><img src="/images/2015-01-07/permalink.png" class="image" alt="permalink"></a></p>
 
-<p>どうやらオレが困ってたURLのタイトル部はslugと呼ばれる部分らしい。</p>
+<p>どうやらオレが困ってたURLのタイトル部は<code>slug</code>と呼ばれる部分らしい。</p>
 
-<p>ならこんな風に記事内のマークダウンで毎回指定してしまえば綺麗に話が済むのではないか？</p>
+<p>ならこんな風に記事内で毎回指定してしまえば綺麗に話が済むのではないか？</p>
 
 <pre><code class="language-markdown">---
 tags: [&quot;hugo&quot;, &quot;golang&quot;]
@@ -156,7 +156,7 @@ title: &quot;Hugoでマルチバイトのタイトルをスマートに使う方
 
 <p><code>hugo new</code>した時に生成されるテンプレートは<code>archetypes</code>ディレクトリに配置出来るから、そこでやっておくとよし。</p>
 
-<p>しかし以降時に書き足すのが面倒なんだよなあ。</p>
+<p>しかし移行時に書き足すのが面倒なんだよなあ。</p>
 
     </div>
 
