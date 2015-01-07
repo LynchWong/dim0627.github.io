@@ -1,6 +1,6 @@
 ---
 
-titleja: ""
+slug: ""
 eyecatch: ""
 comments: true
 categories: []

@@ -54,10 +54,6 @@ poweroff
 
 あとは`start`すれば使えるのかなと思ったらエラー。
 
-環境変数`$DOCKER_HOST`に`tcp://192.168.59.103:2357`が設定されてなきゃいけなかったっぽい。
-
-これによってboot2dockerで起動したVM中のdockerと接続してるのだろうか？
-
 ``` sh
 b2d$  boot2docker start
 2014/12/30 20:56:21 Waiting for VM to be started...
@@ -69,15 +65,21 @@ b2d$ docker run hello-world
 2014/12/30 20:51:16 Post http:///var/run/docker.sock/v1.13/containers/create: dial unix /var/run/docker.sock: no such file or directory
 ```
 
-環境変数を知ってしてみるもまたエラー。
+環境変数`$DOCKER_HOST`に`tcp://192.168.59.103:2357`が設定されてなきゃいけなかったっぽい。
 
-デーモンと接続できない。
+これによってboot2dockerで起動したVM中のdockerと接続してるのかな。
+
+と思ったら、
 
 ``` sh
 b2d$ export DOCKER_HOST=tcp://192.168.59.103:2375
 b2d$ docker run hello-world
 2014/12/30 20:58:41 Cannot connect to the Docker daemon. Is 'docker -d' running on this host?
 ```
+
+環境変数を設定してみるもまたエラー。
+
+デーモンと接続できない。
 
 1時間ほど詰まりましたが最悪な原因でした。
 

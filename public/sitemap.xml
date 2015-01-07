@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://yet.unresolved.xyz/</loc>
-    <lastmod>2015-01-04T00:00:00+00:00</lastmod>
+    <lastmod>2015-01-07T23:56:32+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://yet.unresolved.xyz/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/</loc>
+    <lastmod>2015-01-07T23:56:32+09:00</lastmod>
   </url>
   
   <url>
@@ -108,12 +113,12 @@
   </url>
   
   <url>
-    <loc>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/</loc>
     <lastmod>2014-09-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</loc>
     <lastmod>2014-09-20T00:00:00+00:00</lastmod>
   </url>
   
