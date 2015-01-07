@@ -1,8 +1,13 @@
 # Aglaus
 
+    Sorry, I do not have a good at English.
+    It is naive English, but please acknowledge.
+
 Aglaus is a single-column theme for [Hugo](http://gohugo.io/).
 
-**IMGIMGIMG**
+![Aglaus Screenshot](https://raw.githubusercontent.com/dim0627/hugo_theme_aglaus/master/images/top.png)
+
+![Aglaus Screenshot](https://raw.githubusercontent.com/dim0627/hugo_theme_aglaus/master/images/bottom.png)
 
 ## Features
 
@@ -71,8 +76,7 @@ Example : [My config.yaml](https://github.com/dim0627/dim0627.github.io/blob/sou
 
 ``` markdown
 ---
-title: "Post title here" # Used in the url.
-titleja: "Display title here" # Display in the post title. Use in such as multi-byte title.
+title: "Post title here"
 eyecatch: "hugo.png" # Eye-cathinc image from [static/images/***]
 date: 2014-09-17
 comments: true
