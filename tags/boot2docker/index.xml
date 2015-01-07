@@ -11,11 +11,11 @@
     
       
         <item>
-          <title>could-not-run-docker-in-mac</title>
-          <link>http://yet.unresolved.xyz/post/2014-12-30-could-not-run-docker-in-mac/</link>
+          <title>boot2dockerでCannot connect to the Docker daemon</title>
+          <link>http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/</link>
           <pubDate>Tue, 30 Dec 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-12-30-could-not-run-docker-in-mac/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/</guid>
           <description>
 
 &lt;p&gt;これまでは普通に手で作ったVMのUbuntu上でDockerを触ってたんだけど、なんかあれだしboot2dockerに移行しようかと。&lt;/p&gt;

@@ -11,11 +11,11 @@
     
       
         <item>
-          <title>clojure-on-docker-and-aws-beanstalk</title>
-          <link>http://yet.unresolved.xyz/post/2014-12-31-clojure-on-docker-and-aws-beanstalk/</link>
+          <title>ClojureのWebアプリをDocker &#43; Beanstalkで動かす</title>
+          <link>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</link>
           <pubDate>Wed, 31 Dec 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-12-31-clojure-on-docker-and-aws-beanstalk/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</guid>
           <description>
 
 &lt;p&gt;たぶんこういうのはドキュメント読んでもわからないので、とにかく一通りの流れを実践してみる。&lt;/p&gt;
@@ -183,11 +183,11 @@ CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/product
     
       
         <item>
-          <title>does-not-work-lobos-in-heroku</title>
-          <link>http://yet.unresolved.xyz/post/2014-12-21-does-not-work-lobos-in-heroku/</link>
+          <title>Lobosでマイグレーションができない in Heroku</title>
+          <link>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</link>
           <pubDate>Sun, 21 Dec 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-12-21-does-not-work-lobos-in-heroku/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</guid>
           <description>
 
 &lt;p&gt;ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。&lt;/p&gt;
@@ -335,11 +335,11 @@ lobos.migration=&amp;gt;
     
       
         <item>
-          <title>usage-for-lobos-migration</title>
-          <link>http://yet.unresolved.xyz/post/2014-12-11-usage-for-lobos-migration/</link>
+          <title>Lobosを使ってマイグレーションをする</title>
+          <link>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</link>
           <pubDate>Thu, 11 Dec 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-12-11-usage-for-lobos-migration/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</guid>
           <description>
 
 &lt;p&gt;1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。&lt;/p&gt;
@@ -517,11 +517,11 @@ lobos_migrations  sites
     
       
         <item>
-          <title>automatically-compile-the-scss-in-leiningen</title>
-          <link>http://yet.unresolved.xyz/post/2014-12-09-automatically-compile-the-scss-in-leiningen/</link>
+          <title>LeiningenでSCSSを自動コンパイルする</title>
+          <link>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</link>
           <pubDate>Tue, 09 Dec 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-12-09-automatically-compile-the-scss-in-leiningen/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</guid>
           <description>
 
 &lt;p&gt;Clojureを始めて一週間ほどになりまして。&lt;/p&gt;

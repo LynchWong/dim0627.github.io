@@ -11,11 +11,11 @@
     
       
         <item>
-          <title>usage-for-lobos-migration</title>
-          <link>http://yet.unresolved.xyz/post/2014-12-11-usage-for-lobos-migration/</link>
+          <title>Lobosを使ってマイグレーションをする</title>
+          <link>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</link>
           <pubDate>Thu, 11 Dec 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-12-11-usage-for-lobos-migration/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</guid>
           <description>
 
 &lt;p&gt;1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。&lt;/p&gt;
@@ -193,11 +193,11 @@ lobos_migrations  sites
     
       
         <item>
-          <title>about-sqlserver-clusteredindex-and-nonclustered-index</title>
-          <link>http://yet.unresolved.xyz/post/2014-10-23-about-sqlserver-clusteredindex-and-nonclustered-index/</link>
+          <title>クラスタ化インデックスとかカバリングインデックスについて</title>
+          <link>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</link>
           <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-10-23-about-sqlserver-clusteredindex-and-nonclustered-index/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</guid>
           <description>
 
 &lt;p&gt;SQL Serverを使ってて、ちょっと曖昧にしかわからんなってところがあったので少し調べてみた。&lt;/p&gt;

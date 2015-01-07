@@ -11,11 +11,11 @@
     
       
         <item>
-          <title>install-nodejs-on-ubuntu</title>
-          <link>http://yet.unresolved.xyz/post/2014-10-18-install-nodejs-on-ubuntu/</link>
+          <title>Ubuntuにnode.jsをインストールする</title>
+          <link>http://yet.unresolved.xyz/blog/2014/10/18/install-nodejs-on-ubuntu/</link>
           <pubDate>Sat, 18 Oct 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-10-18-install-nodejs-on-ubuntu/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/18/install-nodejs-on-ubuntu/</guid>
           <description>
 
 &lt;p&gt;そろそろ新しいことをやらねばなと思うので、node.jsに手を出してみるよ。&lt;/p&gt;

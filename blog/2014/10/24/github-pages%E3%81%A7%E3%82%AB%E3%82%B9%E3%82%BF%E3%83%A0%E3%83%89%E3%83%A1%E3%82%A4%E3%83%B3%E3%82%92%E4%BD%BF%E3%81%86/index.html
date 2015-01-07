@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<meta property="og:url" content="http://localhost:1313">
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="GitHub Pagesでカスタムドメインを使う &middot; Unresolved">
+
+<meta property="og:image" content="http://localhost:1313/images/github.png">
+
+
+<meta property="og:site_name" content="Unresolved">
+
+<title>
+    
+    GitHub Pagesでカスタムドメインを使う
+    
+</title>
+
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/solarized_dark.min.css">
+<link rel="stylesheet" href="http://localhost:1313/css/styles.css">
+<link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+
+<link rel="shortcut icon" href="http://localhost:1313/assets/favicon.ico">
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:1313/atom.xml">
+
+
+
+<div class="wrap">
+    <div class="masthead">
+        <div class="container">
+            <h3 class="masthead-title">
+                <a href="http://localhost:1313" title="Home">Unresolved</a>
+            </h3>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+    </div>
+
+    <div class="container content">
+
+
+<article class="post post-single">
+    <span class="post-date">Fri, Oct 24, 2014</span>
+    <h1 class="post-title">GitHub Pagesでカスタムドメインを使う</h1>
+
+    <div class="eyecatch">
+        
+        <img src="/images/github.png" alt="GitHub Pagesでカスタムドメインを使う">
+        
+    </div>
+
+    <div class="post-content">
+        
+
+<p>昨日はGAEで今日はGithubかよって感じだけど、こっちは結構詰まったのでメモしたい。</p>
+
+<h2 id="事の発端:bd764d28564cc0069e229d086834b342">事の発端</h2>
+
+<p>このOctopressのblogをカスタムドメインにしてから、<code>rake gen_deploy</code>するとGithubからこんなメールが来るようになりました。</p>
+
+<blockquote>
+<p>[dim0627.github.io] Page build warning</p>
+
+<p>The page build completed successfully, but returned the following warning:
+GitHub Pages recently underwent some improvements (<a href="https://github.com/blog/1715-faster-more-awesome-github-pages">https://github.com/blog/1715-faster-more-awesome-github-pages</a>) to make your site faster and more awesome, but we&rsquo;ve noticed that unresolved.dimspace.xyz isn&rsquo;t properly configured to take advantage of these new features. While your site will continue to work just fine, updating your domain&rsquo;s configuration offers some additional speed and performance benefits. Instructions on updating your site&rsquo;s IP address can be found at <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages">https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages</a>, and of course, you can always get in touch with a human at support@github.com. For the more technical minded folks who want to skip the help docs: your site&rsquo;s DNS records are pointed to a deprecated IP address.</p>
+
+<p>For information on troubleshooting Jekyll see:
+ <a href="https://help.github.com/articles/using-jekyll-with-pages#troubleshooting">https://help.github.com/articles/using-jekyll-with-pages#troubleshooting</a></p>
+
+<p>If you have any questions please contact us at <a href="https://github.com/contact">https://github.com/contact</a>.</p>
+</blockquote>
+
+<p>英語かよ後で読もう、と思ってもデプロイするたびにメールが来るのは結構うざい。</p>
+
+<p>ので、しっかり読んでみると、<strong>デプロイは出来たんだけど、もっと速く動作させる方法があるからそっちにしない？</strong>って話らしい。</p>
+
+<p><a href="https://github.com/blog/1715-faster-more-awesome-github-pages">Faster, More Awesome GitHub Pages</a>を参考にすると、以下の手順を踏めばいいとのこと。</p>
+
+<h3 id="username-github-ioみたいなデフォルトurlの人:bd764d28564cc0069e229d086834b342">username.github.ioみたいなデフォルトURLの人</h3>
+
+<p>何もしないでOK</p>
+
+<h3 id="www-example-comみたいなサブドメインの人:bd764d28564cc0069e229d086834b342">www.example.comみたいなサブドメインの人</h3>
+
+<p>DNSプロバイダ側にCNAMEレコードを作って、username.github.ioに向ければOK</p>
+
+<h3 id="example-comみたいにルートドメインの人:bd764d28564cc0069e229d086834b342">example.comみたいにルートドメインの人</h3>
+
+<p>DNSプロバイダ側にAレコードを作って、207.97.227.245か204.232.175.78を向ければOK</p>
+
+<p>ちなみにこの3つめは少し厄介らしく、そもそもDNSプロバイダ側でALIASとやらが設定出来ないとだめなんだとか？</p>
+
+<p>こういう系は知識が浅くてだめだなあ。</p>
+
+<h2 id="これで何が起こるの:bd764d28564cc0069e229d086834b342">これで何が起こるの？</h2>
+
+<p>CDNからの配信になるから速いんだとか。</p>
+
+<p>あとDenial of service attackとかいう攻撃の対策になるらしい。</p>
+
+<p>あ、DOS攻撃のことか。略さずに書かれるとわからんもんだね。</p>
+
+    </div>
+
+    
+
+    
+    <footer>
+        <div class="move">
+            <div class="prev">
+                
+                <a href="http://localhost:1313/blog/2014/11/09/docker%E4%BA%8B%E5%A7%8B%E3%82%81/">
+                    <i class="fa fa-chevron-left"></i>
+                    Docker事始め
+                </a>
+                
+            </div>
+            <div class="next">
+                
+                <a href="http://localhost:1313/blog/2014/10/23/google-app-engine%E3%81%A7%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%A0%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%92%E4%BD%BF%E3%81%86/">
+                    Google app engineでカスタムドメインを使う
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+                
+            </div>
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+ 
+var disqus_shortname = 'unresolved'; 
+
+ 
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </footer>
+
+</article>
+
+
+    </div>
+</div>
+
+
+
+<aside class="sidebar-wrapper">
+    <div class="container">
+        <div id="profile">
+            <div class="eyecatch">
+                <img id="photo" src="/images/nopicture.png" alt="profile">
+            </div>
+            <div class="data">
+                
+                <span class="post-date">Sun, Feb 26, 1989</span>
+                
+                <h1 id="username" class="post-title"></h1>
+                
+                <a href="https://www.facebook.com/daisuke.tsuji.735" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                
+                
+                <a href="https://twitter.com/dim0627" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                
+                
+                <a href="https://github.com/dim0627" target="_blank"><i class="fa fa-github-square"></i></a></p>
+                
+                <pre id="description" class="summary"></pre>
+                <ul id="urls" class="post-tags"></ul>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+<footer class="copy">
+    <p>&copy; 2015  Daisuke Tsuji </p>
+    <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>, Designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="//yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-55005303-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+<script>
+$(function() {
+    var url = "https://ja.gravatar.com/1e092e9f2cda827deb8623be2e846936.json?callback=?";
+    $.getJSON(url)
+        .done(function(data) {
+            var entry = data.entry[0];
+            $("#photo").attr("src", entry.photos[0].value);
+            $("#username").html(entry.name.familyName + " " + entry.name.givenName);
+            $("#description").html(entry.aboutMe);
+            entry.urls.forEach(function(el){
+                $("#urls").append($("<li><a href='" + el.value + "'>" + el.title + "</a></li>"));
+            });
+            $("#profile").show();
+        });
+});
+</script>
+
+<script>
+document.write('<script src="//sharebutton.net/plugin/sharebutton.php?type=horizontal&u=' + encodeURIComponent(document.location.href) + '"></scr' + 'ipt>');
+</script>
+

@@ -11,11 +11,11 @@
     
       
         <item>
-          <title>migrate-blog-to-hugo-from-octopress</title>
-          <link>http://yet.unresolved.xyz/post/2015-01-04-migrate-blog-to-hugo-from-octopress/</link>
+          <title>ブログをOctopressからHugoに移行した</title>
+          <link>http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/</link>
           <pubDate>Sun, 04 Jan 2015 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2015-01-04-migrate-blog-to-hugo-from-octopress/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/</guid>
           <description>
 
 &lt;p&gt;&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;でのブログもずいぶん慣れてきたところで&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;に移行しました。&lt;/p&gt;
@@ -188,11 +188,11 @@ hugo new post/&amp;quot;`date +%Y-%m-%d`-$title.markdown&amp;quot;
     
       
         <item>
-          <title>pass-the-validation-of-w3c</title>
-          <link>http://yet.unresolved.xyz/post/2014-11-12-pass-the-validation-of-w3c/</link>
+          <title>OctopressをW3Cのバリデーションにパスさせる</title>
+          <link>http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/</link>
           <pubDate>Wed, 12 Nov 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-11-12-pass-the-validation-of-w3c/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/</guid>
           <description>&lt;p&gt;ふと思い立って&lt;a href=&#34;http://validator.w3.org/&#34;&gt;Markup Validation Service&lt;/a&gt;をやってみたら13個もエラーが出たので対応してみるよ。&lt;/p&gt;
 
 &lt;!-- more --&gt;
@@ -325,11 +325,11 @@ Flow content, but with no main element descendants.
     
       
         <item>
-          <title>move-sidebar-at-under-the-article</title>
-          <link>http://yet.unresolved.xyz/post/2014-10-22-move-sidebar-at-under-the-article/</link>
+          <title>Octopressのサイドバーを下部に移動する</title>
+          <link>http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/</link>
           <pubDate>Wed, 22 Oct 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-10-22-move-sidebar-at-under-the-article/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/</guid>
           <description>&lt;p&gt;デフォルトのテーマだとサイドバーの表示/非表示の切り替えが出来て、非表示にするとサイドバーは記事の下に落っこちるんだけど、&lt;/p&gt;
 
 &lt;p&gt;常時この状態にした方がかっこいいんでないか？ということで移動させてみることに。&lt;/p&gt;
@@ -394,51 +394,11 @@ Flow content, but with no main element descendants.
     
       
         <item>
-          <title>description-is-not-set</title>
-          <link>http://yet.unresolved.xyz/post/2014-09-21-description-is-not-set/</link>
+          <title>Octopressのテーマを作ってみる</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/</link>
           <pubDate>Sun, 21 Sep 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-09-21-description-is-not-set/</guid>
-          <description>&lt;p&gt;認識が間違ってるのか、_config.ymlに書いたdescriptionがサイトに反映されない・・・。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;source/_includes/head.html&lt;/code&gt;のコードを見てみるとこんな感じ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{% raw %}
-  {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
-  &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ description | strip_html | condense_spaces | truncate:150 }}&amp;quot;&amp;gt;
-  {% if page.keywords %}&amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;{{ page.keywords }}&amp;quot;&amp;gt;{% endif %}
-{% endraw %}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;page.descriptionしか見てない？&lt;/p&gt;
-
-&lt;p&gt;同じことで悩んでる人いないのかな・・・と思ったら居た。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://sweetme.at/2013/08/06/how-to-set-your-octopress-description-and-keyword-meta-tags/&#34;&gt;Make the Magic Happen&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;やっぱり同じ認識のようだ。&lt;/p&gt;
-
-&lt;p&gt;elseifってこう書くんだね。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{% raw %}
-  {% capture description %}{% if page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
-  &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ description | strip_html | condense_spaces | truncate:150 }}&amp;quot;&amp;gt;
-  {% if page.keywords %}&amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;{{ page.keywords }}&amp;quot;&amp;gt;{% endif %}
-{% endraw %}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;worked!&lt;/p&gt;
-</description>
-        </item>
-      
-    
-      
-        <item>
-          <title>make-new-theme-flatten</title>
-          <link>http://yet.unresolved.xyz/post/2014-09-21-make-new-theme-flatten/</link>
-          <pubDate>Sun, 21 Sep 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-09-21-make-new-theme-flatten/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/</guid>
           <description>
 
 &lt;p&gt;元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。&lt;/p&gt;
@@ -509,11 +469,51 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
     
       
         <item>
-          <title>make-gravatar-sidebar</title>
-          <link>http://yet.unresolved.xyz/post/2014-09-20-make-gravatar-sidebar/</link>
+          <title>_config.ymlに書いたdescriptionが設定されない</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</link>
+          <pubDate>Sun, 21 Sep 2014 00:00:00 UTC</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</guid>
+          <description>&lt;p&gt;認識が間違ってるのか、_config.ymlに書いたdescriptionがサイトに反映されない・・・。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;source/_includes/head.html&lt;/code&gt;のコードを見てみるとこんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{% raw %}
+  {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
+  &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ description | strip_html | condense_spaces | truncate:150 }}&amp;quot;&amp;gt;
+  {% if page.keywords %}&amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;{{ page.keywords }}&amp;quot;&amp;gt;{% endif %}
+{% endraw %}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;page.descriptionしか見てない？&lt;/p&gt;
+
+&lt;p&gt;同じことで悩んでる人いないのかな・・・と思ったら居た。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://sweetme.at/2013/08/06/how-to-set-your-octopress-description-and-keyword-meta-tags/&#34;&gt;Make the Magic Happen&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;やっぱり同じ認識のようだ。&lt;/p&gt;
+
+&lt;p&gt;elseifってこう書くんだね。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{% raw %}
+  {% capture description %}{% if page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
+  &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ description | strip_html | condense_spaces | truncate:150 }}&amp;quot;&amp;gt;
+  {% if page.keywords %}&amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;{{ page.keywords }}&amp;quot;&amp;gt;{% endif %}
+{% endraw %}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;worked!&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>OctopressのサイドバーにGravatarを表示させる</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/</link>
           <pubDate>Sat, 20 Sep 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-09-20-make-gravatar-sidebar/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/</guid>
           <description>
 
 &lt;h2 id=&#34;octopressのサイドバーってどうなってんの:c73b8990ae6ff308f2649661fb572fc8&#34;&gt;Octopressのサイドバーってどうなってんの？&lt;/h2&gt;
@@ -636,11 +636,11 @@ div#urls {
     
       
         <item>
-          <title>install-the-octopress-on-github-pages</title>
-          <link>http://yet.unresolved.xyz/post/2014-09-17-install-the-octopress-on-github-pages/</link>
+          <title>GitHub PagesにOctopressをのっけてみる</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/</link>
           <pubDate>Wed, 17 Sep 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-09-17-install-the-octopress-on-github-pages/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/</guid>
           <description>
 
 &lt;p&gt;&lt;a href=&#34;https://ja.wordpress.com/&#34;&gt;WordPress.com&lt;/a&gt;を使ってたんだけど、お金払わないと融通がきかないぽいので移行することに。&lt;/p&gt;

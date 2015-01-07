@@ -37,9 +37,56 @@
     <div class="masthead">
         <div class="container">
             <h3 class="masthead-title">
-                <a href="/" title="Home">Unresolved</a>
-                <small></small>
+                <a href="http://yet.unresolved.xyz" title="Home">Unresolved</a>
             </h3>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         </div>
     </div>
 
@@ -51,16 +98,16 @@
     <article class="post">
     <div class="eyecatch">
         
-        <a href="http://yet.unresolved.xyz/post/2014-10-19-build-auriga-server-on-ubuntu/"><img src="/images/ubuntu.png" alt="UbuntuにAurigaを構築してみる"></a>
+        <a href="http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/"><img src="/images/ubuntu.png" alt="UbuntuにAurigaを構築してみる"></a>
         
     </div>
     <div class="data">
         <span class="post-date">Sun, Oct 19, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/post/2014-10-19-build-auriga-server-on-ubuntu/">UbuntuにAurigaを構築してみる</a></h1>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/">UbuntuにAurigaを構築してみる</a></h1>
         <div class="summary">今更だがAurigaの構築をやってみる。 どこもWindows環境での構築方法しか載ってないような印象なんだけどそんなことないのかな。 ソースのダウンロード Auriga Projectからソースを落とす。 言うまでもないけどバージョン番号は最新とかで。 $ wget -O auriga.zip http://auriga.moe.hm/Auriga/snapshotmanager.php?num=1221 $ unzip auriga.zip コンパイル なんか事前の設定とか必要なんだろうけど何も考えずにコンパイルしてみよう。 $ cd Auriga-1221full $ make で、エラーした。 ../common/grfio.c:87:20: fatal error: zlib.h: No such file or directory #include &lt;zlib.h&gt; ^ compilation terminated. make[1]: *** [../common/grfio.o] Error 1 make[1]: Leaving directory `/home/daisuketsuji/Downloads/Auriga-1221Full/src/map' zlibがないらしい。 $ sudo apt-get install zlib1g $ sudo apt-get install zlib1g-dev これで通った。 grfファイルの準備 grfファイルを用意しなきゃいけなかったらしい。 コンパイル前にすることはなかったな。Winならあるのかもね。 とりあえずgrfファイルはクライアント側にあるので、公式のクライアントダウンロードからダウンロード &amp; インストール。 Ubuntuじゃインストール出来ないから、Windowsでインストールして持ってくんのだるかった・・・。 持ってきたらconf/grf-files.txtに追記。 Aurigaと同じフォルダに入れたのでこんな感じに。 grf: ./data.grf 不要な行はコメントアウトで。 サーバ起動 Linuxの場合起動はauriga-startを使うみたい。 解凍直後は実行権限がないのでsudo chmod 744 auriga-startをしとく必要あり。 で、./auriga-start startで起動。 chrif: connection to the char server was closed.</div>
     </div>
     <footer class="readon">
-        <a href="http://yet.unresolved.xyz/post/2014-10-19-build-auriga-server-on-ubuntu/">
+        <a href="http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/">
             <i class="fa fa-chevron-down"></i>
         </a>
     </footer>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<meta property="og:url" content="http://localhost:1313">
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="UbuntuにAurigaを構築してみる &middot; Unresolved">
+
+<meta property="og:image" content="http://localhost:1313/images/ubuntu.png">
+
+
+<meta property="og:site_name" content="Unresolved">
+
+<title>
+    
+    UbuntuにAurigaを構築してみる
+    
+</title>
+
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/solarized_dark.min.css">
+<link rel="stylesheet" href="http://localhost:1313/css/styles.css">
+<link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+
+<link rel="shortcut icon" href="http://localhost:1313/assets/favicon.ico">
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:1313/atom.xml">
+
+
+
+<div class="wrap">
+    <div class="masthead">
+        <div class="container">
+            <h3 class="masthead-title">
+                <a href="http://localhost:1313" title="Home">Unresolved</a>
+            </h3>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+    </div>
+
+    <div class="container content">
+
+
+<article class="post post-single">
+    <span class="post-date">Sun, Oct 19, 2014</span>
+    <h1 class="post-title">UbuntuにAurigaを構築してみる</h1>
+
+    <div class="eyecatch">
+        
+        <img src="/images/ubuntu.png" alt="UbuntuにAurigaを構築してみる">
+        
+    </div>
+
+    <div class="post-content">
+        
+
+<p>今更だがAurigaの構築をやってみる。</p>
+
+<p>どこもWindows環境での構築方法しか載ってないような印象なんだけどそんなことないのかな。</p>
+
+<h2 id="ソースのダウンロード:877a36750c93f6fdaf9ffc2de1905eb6">ソースのダウンロード</h2>
+
+<p><a href="http://auriga.moe.hm/Auriga/">Auriga Project</a>からソースを落とす。</p>
+
+<p>言うまでもないけどバージョン番号は最新とかで。</p>
+
+<pre><code class="language-sh">$ wget -O auriga.zip http://auriga.moe.hm/Auriga/snapshotmanager.php?num=1221
+$ unzip auriga.zip
+</code></pre>
+
+<h2 id="コンパイル:877a36750c93f6fdaf9ffc2de1905eb6">コンパイル</h2>
+
+<p>なんか事前の設定とか必要なんだろうけど何も考えずにコンパイルしてみよう。</p>
+
+<pre><code class="language-sh">$ cd Auriga-1221full
+$ make
+</code></pre>
+
+<p>で、エラーした。</p>
+
+<pre><code class="language-sh">../common/grfio.c:87:20: fatal error: zlib.h: No such file or directory
+   #include &lt;zlib.h&gt;
+                    ^
+compilation terminated.
+make[1]: *** [../common/grfio.o] Error 1
+make[1]: Leaving directory `/home/daisuketsuji/Downloads/Auriga-1221Full/src/map'
+</code></pre>
+
+<p>zlibがないらしい。</p>
+
+<pre><code class="language-sh">$ sudo apt-get install zlib1g
+$ sudo apt-get install zlib1g-dev
+</code></pre>
+
+<p>これで通った。</p>
+
+<h2 id="grfファイルの準備:877a36750c93f6fdaf9ffc2de1905eb6">grfファイルの準備</h2>
+
+<p>grfファイルを用意しなきゃいけなかったらしい。</p>
+
+<p>コンパイル前にすることはなかったな。Winならあるのかもね。</p>
+
+<p>とりあえずgrfファイルはクライアント側にあるので、公式の<a href="http://ragnarokonline.gungho.jp/beginner/download.html">クライアントダウンロード</a>からダウンロード &amp; インストール。</p>
+
+<p>Ubuntuじゃインストール出来ないから、Windowsでインストールして持ってくんのだるかった・・・。</p>
+
+<p>持ってきたら<code>conf/grf-files.txt</code>に追記。</p>
+
+<p>Aurigaと同じフォルダに入れたのでこんな感じに。</p>
+
+<pre><code class="language-sh">grf: ./data.grf
+</code></pre>
+
+<p>不要な行はコメントアウトで。</p>
+
+<h2 id="サーバ起動:877a36750c93f6fdaf9ffc2de1905eb6">サーバ起動</h2>
+
+<p>Linuxの場合起動は<code>auriga-start</code>を使うみたい。</p>
+
+<p>解凍直後は実行権限がないので<code>sudo chmod 744 auriga-start</code>をしとく必要あり。</p>
+
+<p>で、<code>./auriga-start start</code>で起動。</p>
+
+<pre><code class="language-sh">chrif: connection to the char server was closed. kick all chars
+</code></pre>
+
+<p>そしてエラー。</p>
+
+<p>ここで一日詰まった。</p>
+
+<p>ログをよく見てみるとこんな感じの出力が。</p>
+
+<pre><code class="language-sh">connect login server error : 3
+</code></pre>
+
+<p>プロセスを見てみるとloginサーバが生きててcharサーバが死んでるので、charサーバがloginサーバにつなげずに落ちてるんだろう。</p>
+
+<p><code>log/</code>に出力されるログを見ているとどうやらアカウントの設定が必要らしい。</p>
+
+<p>サーバを一度起動すると、エラーしようがなんだろうが<code>save/</code>以下にセーブデータが作成されるので、そいつを編集する。</p>
+
+<p><code>save/account.txt</code>に以下を追記。</p>
+
+<pre><code class="language-sh">0 s1 p1 - S 0 0 @
+</code></pre>
+
+<p>ちなみに詰まったのは、ここに追記するフォーマットが全然わからなかったから笑</p>
+
+<p>tsvになってるみたいなので、タブ区切りで追加しないと読み込まれません。</p>
+
+<h2 id="httpdに接続してみる:877a36750c93f6fdaf9ffc2de1905eb6">httpdに接続してみる</h2>
+
+<p>サーバが起動してる時は<code>http://127.0.0.1:6900/</code>にアカウント登録用の画面が公開される。</p>
+
+<p>はずなのに表示出来ない。</p>
+
+<pre><code class="language-sh">parse_login : session #5 292 0x4547
+parse_login: unknown packet 0x4547 disconnect session #5
+</code></pre>
+
+<p>結構詰まったんだけど、原因究明の鍵は<code>src/login/login_httpd.c:L38</code>の以下行でした。</p>
+
+<pre><code class="language-c">#ifndef NO_HTTPD
+</code></pre>
+
+<p>makeの時にhttpdを無効にしちゃってたみたい。</p>
+
+<p>なので<code>Makefile</code>の115行目にあるフラグをコメントアウトすればOK。</p>
+
+<pre><code class="language-c"># disable httpd
+CFLAGS += -DNO_HTTPD
+</code></pre>
+
+<p>というわけで、</p>
+
+<p><a href="/images/2014-10-19/httpd.png">{% img /images/2014-10-19/httpd.png httpd %}</a></p>
+
+<p>出来ました。</p>
+
+    </div>
+
+    
+
+    
+    <footer>
+        <div class="move">
+            <div class="prev">
+                
+                <a href="http://localhost:1313/move-sidebar-at-under-the-article">
+                    <i class="fa fa-chevron-left"></i>
+                    Octopressのサイドバーを下部に移動する
+                </a>
+                
+            </div>
+            <div class="next">
+                
+                <a href="http://localhost:1313/install-nodejs-on-ubuntu">
+                    Ubuntuにnode.jsをインストールする
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+                
+            </div>
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+ 
+var disqus_shortname = 'unresolved'; 
+
+ 
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </footer>
+
+</article>
+
+
+    </div>
+</div>
+
+
+
+<aside class="sidebar-wrapper">
+    <div class="container">
+        <div id="profile">
+            <div class="eyecatch">
+                <img id="photo" src="/images/nopicture.png" alt="profile">
+            </div>
+            <div class="data">
+                
+                <span class="post-date">Sun, Feb 26, 1989</span>
+                
+                <h1 id="username" class="post-title"></h1>
+                
+                <a href="https://www.facebook.com/daisuke.tsuji.735" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                
+                
+                <a href="https://twitter.com/dim0627" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                
+                
+                <a href="https://github.com/dim0627" target="_blank"><i class="fa fa-github-square"></i></a></p>
+                
+                <pre id="description" class="summary"></pre>
+                <ul id="urls" class="post-tags"></ul>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+<footer class="copy">
+    <p>&copy; 2015  Daisuke Tsuji </p>
+    <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>, Designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="//yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-55005303-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+<script>
+$(function() {
+    var url = "https://ja.gravatar.com/1e092e9f2cda827deb8623be2e846936.json?callback=?";
+    $.getJSON(url)
+        .done(function(data) {
+            var entry = data.entry[0];
+            $("#photo").attr("src", entry.photos[0].value);
+            $("#username").html(entry.name.familyName + " " + entry.name.givenName);
+            $("#description").html(entry.aboutMe);
+            entry.urls.forEach(function(el){
+                $("#urls").append($("<li><a href='" + el.value + "'>" + el.title + "</a></li>"));
+            });
+            $("#profile").show();
+        });
+});
+</script>
+
+<script>
+document.write('<script src="//sharebutton.net/plugin/sharebutton.php?type=horizontal&u=' + encodeURIComponent(document.location.href) + '"></scr' + 'ipt>');
+</script>
+

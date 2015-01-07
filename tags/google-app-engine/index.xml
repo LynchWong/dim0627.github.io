@@ -11,11 +11,11 @@
     
       
         <item>
-          <title>how-to-use-custom-domain-in-google-app-engine</title>
-          <link>http://yet.unresolved.xyz/post/2014-10-23-how-to-use-custom-domain-in-google-app-engine/</link>
+          <title>Google app engineでカスタムドメインを使う</title>
+          <link>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</link>
           <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-10-23-how-to-use-custom-domain-in-google-app-engine/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</guid>
           <description>
 
 &lt;p&gt;簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。&lt;/p&gt;

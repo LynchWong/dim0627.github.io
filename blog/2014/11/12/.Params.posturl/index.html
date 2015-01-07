@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<meta property="og:url" content="http://localhost:1313">
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="OctopressをW3Cのバリデーションにパスさせる &middot; Unresolved">
+
+<meta property="og:image" content="http://localhost:1313/images/octopress.png">
+
+
+<meta property="og:site_name" content="Unresolved">
+
+<title>
+    
+    OctopressをW3Cのバリデーションにパスさせる
+    
+</title>
+
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/solarized_dark.min.css">
+<link rel="stylesheet" href="http://localhost:1313/css/styles.css">
+<link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+
+<link rel="shortcut icon" href="http://localhost:1313/assets/favicon.ico">
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:1313/atom.xml">
+
+
+
+<div class="wrap">
+    <div class="masthead">
+        <div class="container">
+            <h3 class="masthead-title">
+                <a href="http://localhost:1313" title="Home">Unresolved</a>
+            </h3>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+    </div>
+
+    <div class="container content">
+
+
+<article class="post post-single">
+    <span class="post-date">Wed, Nov 12, 2014</span>
+    <h1 class="post-title">OctopressをW3Cのバリデーションにパスさせる</h1>
+
+    <div class="eyecatch">
+        
+        <img src="/images/octopress.png" alt="OctopressをW3Cのバリデーションにパスさせる">
+        
+    </div>
+
+    <div class="post-content">
+        <p>ふと思い立って<a href="http://validator.w3.org/">Markup Validation Service</a>をやってみたら13個もエラーが出たので対応してみるよ。</p>
+
+<!-- more -->
+
+<pre><code>Error Line 50, Column 32: Element hgroup not allowed as child of element header in this context. (Suppressing further errors from this subtree.)
+  &lt;header role=&quot;banner&quot;&gt;&lt;hgroup&gt;
+Content model for element header:
+Flow content, but with no header, footer, or main element descendants.
+</code></pre>
+
+<p><code>hgroup</code>は<code>header</code>タグの中に入れちゃダメだよ。</p>
+
+<p>次のも関連してる。</p>
+
+<pre><code>Error Line 50, Column 32: The hgroup element is obsolete. To mark up subheadings, consider either just putting the subheading into a p element after the h1-h6 element containing the main heading, or else putting the subheading directly within the h1-h6 element containing the main heading, but separated from the main heading by punctuation and/or within, for example, a span class=&quot;subheading&quot; element with differentiated styling. To group headings and subheadings, alternative titles, or taglines, consider using the header or div elements.
+  &lt;header role=&quot;banner&quot;&gt;&lt;hgroup&gt;
+</code></pre>
+
+<p><code>hgorup</code>タグは非推奨だよ。</p>
+
+<p>よし、消そう。</p>
+
+<pre><code>Error Line 57, Column 72: Bad value subscribe-rss for attribute rel on element a: The string subscribe-rss is not a registered keyword.
+…&gt;&lt;a href=&quot;/atom.xml&quot; rel=&quot;subscribe-rss&quot; title=&quot;subscribe via RSS&quot;&gt;RSS&lt;/a&gt;&lt;/li&gt;
+Syntax of list of link-type keywords:
+A whitespace-separated list of link types, with no duplicate keywords in the list. Each link type must be listed as allowed on &lt;a&gt; and &lt;area&gt; in the HTML specification, or must be listed as allowed on &lt;a&gt; and &lt;area&gt; on the Microformats wiki, or must be an absolute URL. You can register link types on the Microformats wiki yourself.
+</code></pre>
+
+<p><code>subscribe-rss</code>は<code>rel</code>に入れていいkeywordじゃないよ。</p>
+
+<pre><code> Line 64, Column 81: Attribute results not allowed on element input at this point.
+…  &lt;input class=&quot;search&quot; type=&quot;text&quot; name=&quot;q&quot; results=&quot;0&quot; placeholder=&quot;Search&quot;/&gt;
+Attributes for element input:
+Global attributes
+accept when type is file
+alt when type is image
+autocomplete when type is text, search, url, tel, e-mail, password, datetime, date, month, week, time, datetime-local, number, range, or color
+autofocus
+checked when type is checkbox or radio
+dirname when type is text or search
+disabled
+form
+formaction when type is submit or image
+formenctype when type is submit or image
+formmethod when type is submit or image
+formnovalidate when type is submit or image
+formtarget when type is submit or image
+height when type is image
+list when type is text, search, url, tel, e-mail, datetime, date, month, week, time, datetime-local, number, range, or color
+max when type is datetime, date, month, week, time, datetime-local, number, or range
+maxlength when type is text, search, url, tel, e-mail, or password
+min when type is datetime, date, month, week, time, datetime-local, number, or range
+multiple when type is email or file
+name
+pattern when type is text, search, url, tel, e-mail, or password
+placeholder when type is text, search, url, tel, e-mail, password, or number
+readonly when type is text, search, url, tel, e-mail, password, datetime, date, month, week, time, datetime-local, or number
+required when type is text, search, url, tel, e-mail, password, datetime, date, month, week, time, datetime-local, number, checkbox, radio, or file
+size when type is text, search, url, tel, e-mail, or password
+src when type is image
+step when type is datetime, date, month, week, time, datetime-local, number, or range
+type
+value when type is not file or image
+width when type is image
+</code></pre>
+
+<p><code>input</code>タグに<code>results</code>っていう属性は入れちゃだめだよ。</p>
+
+<pre><code>Error Line 110, Column 66: Bad value full-article for attribute rel on element a: The string full-article is not a registered keyword.
+… &lt;a rel=&quot;full-article&quot; href=&quot;/blog/2014/11/09/learn-docker/&quot;&gt;Read on &amp;rarr;&lt;/a&gt;
+Syntax of list of link-type keywords:
+A whitespace-separated list of link types, with no duplicate keywords in the list. Each link type must be listed as allowed on &lt;a&gt; and &lt;area&gt; in the HTML specification, or must be listed as allowed on &lt;a&gt; and &lt;area&gt; on the Microformats wiki, or must be an absolute URL. You can register link types on the Microformats wiki yourself.
+</code></pre>
+
+<p><code>full-article</code>は<code>rel</code>に入れていいkeywordじゃないよ。</p>
+
+<pre><code>Line 332, Column 100: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+…3/verify.png&quot;&gt;&lt;img src=&quot;/images/2014-10-23/verify.png&quot; title=&quot;verify&quot; &gt;&lt;/a&gt;&lt;/p&gt;
+</code></pre>
+
+<p><code>img</code>タグは<code>alt</code>属性をつけなきゃだめだよ。</p>
+
+<p>これが計7個。</p>
+
+<pre><code>Warning Line 511, Column 6: Consider using the h1 element as a top-level heading only (all h1 elements are treated as top-level headings by many screen readers and other tools).
+  &lt;h1&gt;About Me&lt;/h1&gt;
+</code></pre>
+
+<p><code>h1</code>はトップレベルだけで使ってよ。</p>
+
+<p>これが計8個。</p>
+
+<pre><code> Line 513, Column 18: Element img is missing required attribute src.
+  &lt;img id=&quot;photo&quot;&gt;
+Attributes for element img:
+Global attributes
+alt
+src
+crossorigin
+usemap
+ismap
+width
+height
+</code></pre>
+
+<p><code>img</code>タグに<code>src</code>属性がないよ。(Ajaxで書いてたせい。)</p>
+
+<pre><code>Error Line 612, Column 7: Element style not allowed as child of element aside in this context. (Suppressing further errors from this subtree.)
+&lt;style&gt;
+Contexts in which element style may be used:
+If the scoped attribute is absent: where metadata content is expected.
+If the scoped attribute is absent: in a noscript element that is a child of a head element.
+If the scoped attribute is present: where flow content is expected, but before any other flow content other than inter-element whitespace and style elements, and not as the child of an element whose content model is transparent.
+Content model for element aside:
+Flow content, but with no main element descendants.
+</code></pre>
+
+<p><code>aside</code>タグの中で<code>style</code>書いちゃだめだよ。</p>
+
+<p>てことで、</p>
+
+<p><a href="/images/2014-11-12/green.png"><img src="/images/2014-11-12/green.png" class="image" alt="green"></a></p>
+
+<p>オールグリーン！</p>
+
+<p>警告はもうだるいからいいや</p>
+
+    </div>
+
+    
+
+    
+    <footer>
+        <div class="move">
+            <div class="prev">
+                
+                <a href="http://localhost:1313/blog/2014/12/02/.Params.posturl/">
+                    <i class="fa fa-chevron-left"></i>
+                    HackerにとってのStartup Weekend
+                </a>
+                
+            </div>
+            <div class="next">
+                
+                <a href="http://localhost:1313/blog/2014/11/09/.Params.posturl/">
+                    Docker事始め
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+                
+            </div>
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+ 
+var disqus_shortname = 'unresolved'; 
+
+ 
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </footer>
+
+</article>
+
+
+    </div>
+</div>
+
+
+
+<aside class="sidebar-wrapper">
+    <div class="container">
+        <div id="profile">
+            <div class="eyecatch">
+                <img id="photo" src="/images/nopicture.png" alt="profile">
+            </div>
+            <div class="data">
+                
+                <span class="post-date">Sun, Feb 26, 1989</span>
+                
+                <h1 id="username" class="post-title"></h1>
+                
+                <a href="https://www.facebook.com/daisuke.tsuji.735" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                
+                
+                <a href="https://twitter.com/dim0627" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                
+                
+                <a href="https://github.com/dim0627" target="_blank"><i class="fa fa-github-square"></i></a></p>
+                
+                <pre id="description" class="summary"></pre>
+                <ul id="urls" class="post-tags"></ul>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+<footer class="copy">
+    <p>&copy; 2015  Daisuke Tsuji </p>
+    <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>, Designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="//yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-55005303-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+<script>
+$(function() {
+    var url = "https://ja.gravatar.com/1e092e9f2cda827deb8623be2e846936.json?callback=?";
+    $.getJSON(url)
+        .done(function(data) {
+            var entry = data.entry[0];
+            $("#photo").attr("src", entry.photos[0].value);
+            $("#username").html(entry.name.familyName + " " + entry.name.givenName);
+            $("#description").html(entry.aboutMe);
+            entry.urls.forEach(function(el){
+                $("#urls").append($("<li><a href='" + el.value + "'>" + el.title + "</a></li>"));
+            });
+            $("#profile").show();
+        });
+});
+</script>
+
+<script>
+document.write('<script src="//sharebutton.net/plugin/sharebutton.php?type=horizontal&u=' + encodeURIComponent(document.location.href) + '"></scr' + 'ipt>');
+</script>
+

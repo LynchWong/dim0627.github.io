@@ -11,11 +11,11 @@
     
       
         <item>
-          <title>usage-for-lobos-migration</title>
-          <link>http://yet.unresolved.xyz/post/2014-12-11-usage-for-lobos-migration/</link>
+          <title>Lobosを使ってマイグレーションをする</title>
+          <link>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</link>
           <pubDate>Thu, 11 Dec 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-12-11-usage-for-lobos-migration/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</guid>
           <description>
 
 &lt;p&gt;1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。&lt;/p&gt;
@@ -193,11 +193,11 @@ lobos_migrations  sites
     
       
         <item>
-          <title>automatically-compile-the-scss-in-leiningen</title>
-          <link>http://yet.unresolved.xyz/post/2014-12-09-automatically-compile-the-scss-in-leiningen/</link>
+          <title>LeiningenでSCSSを自動コンパイルする</title>
+          <link>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</link>
           <pubDate>Tue, 09 Dec 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-12-09-automatically-compile-the-scss-in-leiningen/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</guid>
           <description>
 
 &lt;p&gt;Clojureを始めて一週間ほどになりまして。&lt;/p&gt;
