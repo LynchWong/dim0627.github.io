@@ -30,7 +30,7 @@
 
 &lt;h2 id=&#34;現状整理:305b326c361986ca7e3bc18a2fbce87d&#34;&gt;現状整理&lt;/h2&gt;
 
-&lt;p&gt;実は以降の時にちょっと手を加えたりしてたんだけど、あんまり綺麗な方法じゃなかったので納得が行ってなかった。&lt;/p&gt;
+&lt;p&gt;実は移行の時にちょっと手を加えたりしてたんだけど、あんまり綺麗な方法じゃなかったので納得が行ってなかった。&lt;/p&gt;
 
 &lt;p&gt;そんな時に公式を読んでたら、&lt;a href=&#34;http://gohugo.io/content/organization/&#34;&gt;Content Organization&lt;/a&gt;の項にこんな図が。&lt;/p&gt;
 
@@ -58,7 +58,7 @@ title: &amp;quot;Hugoでマルチバイトのタイトルをスマートに使�
   post: /blog/:year/:month/:day/:slug/
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;なのでOctopressから以降した人はこの方法も検討するといいかもしれません。&lt;/p&gt;
+&lt;p&gt;なのでOctopressから移行した人はこの方法も検討するといいかもしれません。&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;hugo new&lt;/code&gt;した時に生成されるテンプレートは&lt;code&gt;archetypes&lt;/code&gt;ディレクトリに配置出来るから、そこでやっておくとよし。&lt;/p&gt;
 

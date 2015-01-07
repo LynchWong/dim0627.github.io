@@ -30,7 +30,7 @@
 
 &lt;h2 id=&#34;現状整理:305b326c361986ca7e3bc18a2fbce87d&#34;&gt;現状整理&lt;/h2&gt;
 
-&lt;p&gt;実は以降の時にちょっと手を加えたりしてたんだけど、あんまり綺麗な方法じゃなかったので納得が行ってなかった。&lt;/p&gt;
+&lt;p&gt;実は移行の時にちょっと手を加えたりしてたんだけど、あんまり綺麗な方法じゃなかったので納得が行ってなかった。&lt;/p&gt;
 
 &lt;p&gt;そんな時に公式を読んでたら、&lt;a href=&#34;http://gohugo.io/content/organization/&#34;&gt;Content Organization&lt;/a&gt;の項にこんな図が。&lt;/p&gt;
 
@@ -58,7 +58,7 @@ title: &amp;quot;Hugoでマルチバイトのタイトルをスマートに使�
   post: /blog/:year/:month/:day/:slug/
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;なのでOctopressから以降した人はこの方法も検討するといいかもしれません。&lt;/p&gt;
+&lt;p&gt;なのでOctopressから移行した人はこの方法も検討するといいかもしれません。&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;hugo new&lt;/code&gt;した時に生成されるテンプレートは&lt;code&gt;archetypes&lt;/code&gt;ディレクトリに配置出来るから、そこでやっておくとよし。&lt;/p&gt;
 
@@ -2424,56 +2424,6 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
     
       
         <item>
-          <title>gitのリポジトリ単位にproxyの設定をする</title>
-          <link>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</link>
-          <pubDate>Sat, 20 Sep 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</guid>
-          <description>
-
-&lt;h2 id=&#34;事の発端:ca86a8bf870eabf283b4127081a3d388&#34;&gt;事の発端&lt;/h2&gt;
-
-&lt;p&gt;会社ではvimを使ってます。&lt;/p&gt;
-
-&lt;p&gt;plugin管理には&lt;a href=&#34;https://github.com/Shougo/neobundle.vim&#34;&gt;neobundle.vim&lt;/a&gt;使ってます。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;.vimrc&lt;/code&gt;は&lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt;で管理してます。&lt;/p&gt;
-
-&lt;p&gt;neobundle.vimで管理してるpluginは大抵のものがGitHub上で管理されてるから、インストールとかアップデートをするときはneobundle.vimがGitHubまで見に行ってくれるんですね。&lt;/p&gt;
-
-&lt;p&gt;ただ、当然社内はproxyを通していて、gitコマンドが通らない！&lt;/p&gt;
-
-&lt;p&gt;ていうかそもそも&lt;strong&gt;GitHubから&lt;code&gt;.vimrc&lt;/code&gt;を落としてくることすら出来ない！いいやzipで落とせ！&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;しかしpluginの導入を手でやるのはだるい・・・。&lt;/p&gt;
-
-&lt;p&gt;マジで？サクラエディタで頑張るしかない？&lt;/p&gt;
-
-&lt;p&gt;いやいやそんなことはない。&lt;/p&gt;
-
-&lt;h2 id=&#34;解決:ca86a8bf870eabf283b4127081a3d388&#34;&gt;解決&lt;/h2&gt;
-
-&lt;p&gt;じゃあこうしようってことで、&lt;code&gt;~/.gitconfig&lt;/code&gt;をこんな感じにしたのよ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;[https]
-        proxy = http://proxy.com:8080
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ひとまず解決したんです。&lt;/p&gt;
-
-&lt;p&gt;そしたら次は&lt;strong&gt;社内のgitに繋がらない！！&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;マジかよじゃあ&lt;code&gt;~/.gitconfig&lt;/code&gt;をちょこちょこ変えるのかよだせえよそれと思ったら既に解決してくれてる人がいた。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://tanacasino.hatenablog.com/entry/2013/12/21/003750&#34;&gt;Git の http proxy に関するまとめ&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;めんどくさかったけど、個々のpluginの&lt;code&gt;config&lt;/code&gt;にだけproxyの記述を追加することで解決。&lt;/p&gt;
-</description>
-        </item>
-      
-    
-      
-        <item>
           <title>OctopressのサイドバーにGravatarを表示させる</title>
           <link>http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/</link>
           <pubDate>Sat, 20 Sep 2014 00:00:00 UTC</pubDate>
@@ -2595,6 +2545,56 @@ div#urls {
 &lt;h2 id=&#34;参考にさせて頂きました:c73b8990ae6ff308f2649661fb572fc8&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://blog.awairo.net/blog/2013/12/24/octopress-aside-of-getting-profile-from-gravatar/&#34;&gt;Gravatarのプロフィールを表示するOctopressのサイドバー&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>gitのリポジトリ単位にproxyの設定をする</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</link>
+          <pubDate>Sat, 20 Sep 2014 00:00:00 UTC</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</guid>
+          <description>
+
+&lt;h2 id=&#34;事の発端:ca86a8bf870eabf283b4127081a3d388&#34;&gt;事の発端&lt;/h2&gt;
+
+&lt;p&gt;会社ではvimを使ってます。&lt;/p&gt;
+
+&lt;p&gt;plugin管理には&lt;a href=&#34;https://github.com/Shougo/neobundle.vim&#34;&gt;neobundle.vim&lt;/a&gt;使ってます。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;.vimrc&lt;/code&gt;は&lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt;で管理してます。&lt;/p&gt;
+
+&lt;p&gt;neobundle.vimで管理してるpluginは大抵のものがGitHub上で管理されてるから、インストールとかアップデートをするときはneobundle.vimがGitHubまで見に行ってくれるんですね。&lt;/p&gt;
+
+&lt;p&gt;ただ、当然社内はproxyを通していて、gitコマンドが通らない！&lt;/p&gt;
+
+&lt;p&gt;ていうかそもそも&lt;strong&gt;GitHubから&lt;code&gt;.vimrc&lt;/code&gt;を落としてくることすら出来ない！いいやzipで落とせ！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;しかしpluginの導入を手でやるのはだるい・・・。&lt;/p&gt;
+
+&lt;p&gt;マジで？サクラエディタで頑張るしかない？&lt;/p&gt;
+
+&lt;p&gt;いやいやそんなことはない。&lt;/p&gt;
+
+&lt;h2 id=&#34;解決:ca86a8bf870eabf283b4127081a3d388&#34;&gt;解決&lt;/h2&gt;
+
+&lt;p&gt;じゃあこうしようってことで、&lt;code&gt;~/.gitconfig&lt;/code&gt;をこんな感じにしたのよ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;[https]
+        proxy = http://proxy.com:8080
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ひとまず解決したんです。&lt;/p&gt;
+
+&lt;p&gt;そしたら次は&lt;strong&gt;社内のgitに繋がらない！！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;マジかよじゃあ&lt;code&gt;~/.gitconfig&lt;/code&gt;をちょこちょこ変えるのかよだせえよそれと思ったら既に解決してくれてる人がいた。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://tanacasino.hatenablog.com/entry/2013/12/21/003750&#34;&gt;Git の http proxy に関するまとめ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;めんどくさかったけど、個々のpluginの&lt;code&gt;config&lt;/code&gt;にだけproxyの記述を追加することで解決。&lt;/p&gt;
 </description>
         </item>
       
