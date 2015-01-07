@@ -1,6 +1,6 @@
 ---
-title: "learn-git-rm-command"
-titleja: "git管理したくないファイルを除外する"
+slug: "learn-git-rm-command"
+title: "git管理したくないファイルを除外する"
 eyecatch: "git.png"
 date: 2014-09-28
 comments: true

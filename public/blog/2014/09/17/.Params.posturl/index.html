@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<meta property="og:url" content="http://localhost:1313">
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="GitHub PagesにOctopressをのっけてみる &middot; Unresolved">
+
+<meta property="og:image" content="http://localhost:1313/images/octopress.png">
+
+
+<meta property="og:site_name" content="Unresolved">
+
+<title>
+    
+    GitHub PagesにOctopressをのっけてみる
+    
+</title>
+
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/solarized_dark.min.css">
+<link rel="stylesheet" href="http://localhost:1313/css/styles.css">
+<link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+
+<link rel="shortcut icon" href="http://localhost:1313/assets/favicon.ico">
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:1313/atom.xml">
+
+
+
+<div class="wrap">
+    <div class="masthead">
+        <div class="container">
+            <h3 class="masthead-title">
+                <a href="http://localhost:1313" title="Home">Unresolved</a>
+            </h3>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+    </div>
+
+    <div class="container content">
+
+
+<article class="post post-single">
+    <span class="post-date">Wed, Sep 17, 2014</span>
+    <h1 class="post-title">GitHub PagesにOctopressをのっけてみる</h1>
+
+    <div class="eyecatch">
+        
+        <img src="/images/octopress.png" alt="GitHub PagesにOctopressをのっけてみる">
+        
+    </div>
+
+    <div class="post-content">
+        
+
+<p><a href="https://ja.wordpress.com/">WordPress.com</a>を使ってたんだけど、お金払わないと融通がきかないぽいので移行することに。</p>
+
+<p><a href="http://ja.wikipedia.org/wiki/Markdown">Markdown</a>が使ってみたかったのと、カッコいいデザインが多そうな<a href="http://hatenablog.com/">Hatena</a>かなーと思ってたんだけど、<a href="https://pages.github.com/">GitHub Pages</a>が面白そうなのでとりあえずノリでこっちにしてみるよ。</p>
+
+<!-- more -->
+
+<h2 id="github-pages:b7f97f2e97092fbf52749ce6e3f01256">Github Pages？</h2>
+
+<p><a href="https://pages.github.com/">GitHub Pages</a>は<a href="https://github.com/">GitHub</a>に<code>[ユーザ名].github.io</code>って名前のリポジトリを作るだけで、pushしたページを外部公開出来るサービス。</p>
+
+<p>そこでよく使われるBlogフレームワーク(?)が<a href="http://octopress.org/">Octopress</a>らしい。</p>
+
+<p>どうやらOctopressは<a href="http://jekyllrb.com/">Jekyll</a>という静的ページジェネレータをさらに活用するためのものとのことで、</p>
+
+<p>このJekyll(読みはジキル？)はMarkdownとかで書いたテキストファイルを静的ページに変換したりしてくれるものみたい。</p>
+
+<h2 id="octopressをインストールする:b7f97f2e97092fbf52749ce6e3f01256">Octopressをインストールする</h2>
+
+<p><a href="http://octopress.org/docs/setup/">Octopress Setup</a>が非常に良く書かれているのと、Octopress自体が見通しよく作られているので特に躓くことなく導入出来ました。</p>
+
+<p>Octopressは記事を書くPCに導入して丸ごとGitHubにpushしてしまう仕組みらしく、まずは個人のPCに導入が必要。</p>
+
+<pre><code class="language-sh">$ git clone git://github.com/imathis/octopress.git octopress
+$ cd octopress
+$ gem install bundler
+$ rbenv rehash
+$ bundle install
+$ rake install
+</code></pre>
+
+<p>で、次にデプロイする。</p>
+
+<p><a href="http://octopress.org/docs/deploying/">Deploying</a>を見る限り、GitHub Pagesだけじゃなく、HerokuやRsyncでの利用も出来るっぽい。</p>
+
+<p>なんかVPSとかでも運用してる人がいるっぽいね。</p>
+
+<p>前述した通り今回はGitHub Pagesを利用することにしました。</p>
+
+<p>最初に<code>[ユーザ名].github.io</code>って名前のリポジトリを作っておく必要があるよ。</p>
+
+<pre><code class="language-sh">$ rake setup_github_pages
+</code></pre>
+
+<p>リポジトリのURLとかが聞かれるので、表示された説明の通り入力。</p>
+
+<p>pushしとく必要もあるっぽい。</p>
+
+<pre><code class="language-sh">$ rake generate
+$ rake deploy
+$ git add .
+$ git commit -m 'your message'
+$ git push origin source
+</code></pre>
+
+<p><code>rake deploy</code>で乗っかるのは記事とかその辺のファイルだけなのかな？</p>
+
+<blockquote>
+<p>In a few seconds you should get an email from Github telling you that your commit has been received and will be published on your site.</p>
+</blockquote>
+
+<p>待ってりゃ公開されるぜとのことで、ちょっと待ったら公開されました。</p>
+
+<h2 id="記事を書く:b7f97f2e97092fbf52749ce6e3f01256">記事を書く</h2>
+
+<p>記事は<code>rake new_post[&quot;title&quot;]</code>で行けるらしい。</p>
+
+<p>でもオレは<code>alias rake=&quot;noglob rake&quot;</code>しとかなきゃダメだった。</p>
+
+<p><a href="http://ackintosh.github.io/blog/2013/02/02/cant-create-post/">Octopressで記事が作れない(zsh)</a></p>
+
+<p>どうやらzshを使ってる人は同様の事象になるっぽい？</p>
+
+<p><code>rake new_post[&quot;title&quot;]</code>で`source/_posts&rsquo;に記事が作成されるのでそれを編集。</p>
+
+<p>Markdown用にエディタ入れようかな。</p>
+
+<p>記事を書いたら<code>rake generate</code>で記事が見れる状態のファイルに変換される。</p>
+
+<p><code>rake watch</code>しとくとファイルの変更を監視して常時generateしてくれる。</p>
+
+<p><code>rake preview</code>でWEBrickが立ち上がってローカルで確認出来る。</p>
+
+<p>必要なものはすべて揃ってて便利。</p>
+
+    </div>
+
+    
+
+    
+    <footer>
+        <div class="move">
+            <div class="prev">
+                
+                <a href="http://localhost:1313/blog/2014/09/20/.Params.posturl/">
+                    <i class="fa fa-chevron-left"></i>
+                    OctopressのサイドバーにGravatarを表示させる
+                </a>
+                
+            </div>
+            <div class="next">
+                
+            </div>
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+ 
+var disqus_shortname = 'unresolved'; 
+
+ 
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </footer>
+
+</article>
+
+
+    </div>
+</div>
+
+
+
+<aside class="sidebar-wrapper">
+    <div class="container">
+        <div id="profile">
+            <div class="eyecatch">
+                <img id="photo" src="/images/nopicture.png" alt="profile">
+            </div>
+            <div class="data">
+                
+                <span class="post-date">Sun, Feb 26, 1989</span>
+                
+                <h1 id="username" class="post-title"></h1>
+                
+                <a href="https://www.facebook.com/daisuke.tsuji.735" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                
+                
+                <a href="https://twitter.com/dim0627" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                
+                
+                <a href="https://github.com/dim0627" target="_blank"><i class="fa fa-github-square"></i></a></p>
+                
+                <pre id="description" class="summary"></pre>
+                <ul id="urls" class="post-tags"></ul>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+<footer class="copy">
+    <p>&copy; 2015  Daisuke Tsuji </p>
+    <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>, Designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="//yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-55005303-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+<script>
+$(function() {
+    var url = "https://ja.gravatar.com/1e092e9f2cda827deb8623be2e846936.json?callback=?";
+    $.getJSON(url)
+        .done(function(data) {
+            var entry = data.entry[0];
+            $("#photo").attr("src", entry.photos[0].value);
+            $("#username").html(entry.name.familyName + " " + entry.name.givenName);
+            $("#description").html(entry.aboutMe);
+            entry.urls.forEach(function(el){
+                $("#urls").append($("<li><a href='" + el.value + "'>" + el.title + "</a></li>"));
+            });
+            $("#profile").show();
+        });
+});
+</script>
+
+<script>
+document.write('<script src="//sharebutton.net/plugin/sharebutton.php?type=horizontal&u=' + encodeURIComponent(document.location.href) + '"></scr' + 'ipt>');
+</script>
+

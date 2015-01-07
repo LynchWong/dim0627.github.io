@@ -1,6 +1,6 @@
 ---
-title: "build-auriga-server-on-ubuntu"
-titleja: "UbuntuにAurigaを構築してみる"
+slug: "build-auriga-server-on-ubuntu"
+title: "UbuntuにAurigaを構築してみる"
 eyecatch: "ubuntu.png"
 date: 2014-10-19
 comments: true

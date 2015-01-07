@@ -1,6 +1,6 @@
 ---
-title: "how-to-use-custom-domain-in-github-pages"
-titleja: "GitHub Pagesでカスタムドメインを使う"
+slug: "how-to-use-custom-domain-in-github-pages"
+title: "GitHub Pagesでカスタムドメインを使う"
 eyecatch: "github.png"
 date: 2014-10-24
 comments: true

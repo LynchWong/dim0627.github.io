@@ -1,6 +1,6 @@
 ---
-title: "automatically-compile-the-scss-in-leiningen"
-titleja: "LeiningenでSCSSを自動コンパイルする"
+slug: "automatically-compile-the-scss-in-leiningen"
+title: "LeiningenでSCSSを自動コンパイルする"
 eyecatch: "clojure.png"
 date: 2014-12-09
 comments: true

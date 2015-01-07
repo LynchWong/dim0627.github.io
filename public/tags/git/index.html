@@ -37,9 +37,56 @@
     <div class="masthead">
         <div class="container">
             <h3 class="masthead-title">
-                <a href="/" title="Home">Unresolved</a>
-                <small></small>
+                <a href="http://yet.unresolved.xyz" title="Home">Unresolved</a>
             </h3>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         </div>
     </div>
 
@@ -51,16 +98,16 @@
     <article class="post">
     <div class="eyecatch">
         
-        <a href="http://yet.unresolved.xyz/post/2014-09-28-learn-git-rm-command/"><img src="/images/git.png" alt="git管理したくないファイルを除外する"></a>
+        <a href="http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/"><img src="/images/git.png" alt="git管理したくないファイルを除外する"></a>
         
     </div>
     <div class="data">
         <span class="post-date">Sun, Sep 28, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/post/2014-09-28-learn-git-rm-command/">git管理したくないファイルを除外する</a></h1>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/">git管理したくないファイルを除外する</a></h1>
         <div class="summary">ローカル環境でちょこちょこ作ってたやつを本番環境に載せたんだけど、それなりに解決してた環境依存が少し残ってて.gitignoreファイルをちゃんと書くことに。 しかし本番でcloneしてきたファイルをうまいことワーキングには残してインデックスから消すやりかたがわからない！ というわけで少しくらいまともに勉強してみる。 最初につまづいてたのはこのコマンドを連発してたから。 $ git rm filename どうやらこいつはインデックスだけでなくワーキングディレクトリからも消すようだ。 そこでインデックスからだけ消すものはないのかと調べてたらあった。 $ git rm --cached filename 参考にさせて頂きました transitive.info - git rm 使い方</div>
     </div>
     <footer class="readon">
-        <a href="http://yet.unresolved.xyz/post/2014-09-28-learn-git-rm-command/">
+        <a href="http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/">
             <i class="fa fa-chevron-down"></i>
         </a>
     </footer>
@@ -71,16 +118,16 @@
     <article class="post">
     <div class="eyecatch">
         
-        <a href="http://yet.unresolved.xyz/post/2014-09-27-could-not-force-push-on-git/"><img src="/images/git.png" alt="gitでforce pushが出来ない"></a>
+        <a href="http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/"><img src="/images/git.png" alt="gitでforce pushが出来ない"></a>
         
     </div>
     <div class="data">
         <span class="post-date">Sat, Sep 27, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/post/2014-09-27-could-not-force-push-on-git/">gitでforce pushが出来ない</a></h1>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/">gitでforce pushが出来ない</a></h1>
         <div class="summary">typoを直すためにrebase -iやらをやってたんだけど、操作してたのがmasterブランチだったのでどうしてもforce pushがしたかった。 一人で使ってたリポジトリだしね。 んだけど、-fをつけても To git://example.com/project1.git ! [rejected] master -&gt; master (non-fast-forward) error: failed to push some refs to 'git://example.com/project1.git' To prevent ... See the 'Note about fast-forwards' section of 'git push --help' for details. こんな感じになってしまう・・・。 解決 gitリポジトリのconfigを見たらこんな項目が、 [receive] denyNonFastforwards = true どうやらこいつをfalseにすればよかったらしい。 最初はtrueになってるもんなのかな・・・。</div>
     </div>
     <footer class="readon">
-        <a href="http://yet.unresolved.xyz/post/2014-09-27-could-not-force-push-on-git/">
+        <a href="http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/">
             <i class="fa fa-chevron-down"></i>
         </a>
     </footer>
@@ -91,16 +138,16 @@
     <article class="post">
     <div class="eyecatch">
         
-        <a href="http://yet.unresolved.xyz/post/2014-09-20-git-on-proxy/"><img src="/images/git.png" alt="gitのリポジトリ単位にproxyの設定をする"></a>
+        <a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/"><img src="/images/git.png" alt="gitのリポジトリ単位にproxyの設定をする"></a>
         
     </div>
     <div class="data">
         <span class="post-date">Sat, Sep 20, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/post/2014-09-20-git-on-proxy/">gitのリポジトリ単位にproxyの設定をする</a></h1>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/">gitのリポジトリ単位にproxyの設定をする</a></h1>
         <div class="summary">事の発端 会社ではvimを使ってます。 plugin管理にはneobundle.vim使ってます。 .vimrcはGitHubで管理してます。 neobundle.vimで管理してるpluginは大抵のものがGitHub上で管理されてるから、インストールとかアップデートをするときはneobundle.vimがGitHubまで見に行ってくれるんですね。 ただ、当然社内はproxyを通していて、gitコマンドが通らない！ ていうかそもそもGitHubから.vimrcを落としてくることすら出来ない！いいやzipで落とせ！ しかしpluginの導入を手でやるのはだるい・・・。 マジで？サクラエディタで頑張るしかない？ いやいやそんなことはない。 解決 じゃあこうしようってことで、~/.gitconfigをこんな感じにしたのよ。 [https] proxy = http://proxy.com:8080 ひとまず解決したんです。 そしたら次は社内のgitに繋がらない！！ マジかよじゃあ~/.gitconfigをちょこちょこ変えるのかよだせえよそれと思ったら既に解決してくれてる人がいた。 Git の http proxy に関するまとめ めんどくさかったけど、個々のpluginのconfigにだけproxyの記述を追加することで解決。</div>
     </div>
     <footer class="readon">
-        <a href="http://yet.unresolved.xyz/post/2014-09-20-git-on-proxy/">
+        <a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/">
             <i class="fa fa-chevron-down"></i>
         </a>
     </footer>

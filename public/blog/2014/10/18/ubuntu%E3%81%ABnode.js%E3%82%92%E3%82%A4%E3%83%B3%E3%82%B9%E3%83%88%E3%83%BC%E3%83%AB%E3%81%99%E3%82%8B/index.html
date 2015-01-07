@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<meta property="og:url" content="http://localhost:1313">
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntuにnode.jsをインストールする &middot; Unresolved">
+
+<meta property="og:image" content="http://localhost:1313/images/nodejs.png">
+
+
+<meta property="og:site_name" content="Unresolved">
+
+<title>
+    
+    Ubuntuにnode.jsをインストールする
+    
+</title>
+
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/solarized_dark.min.css">
+<link rel="stylesheet" href="http://localhost:1313/css/styles.css">
+<link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+
+<link rel="shortcut icon" href="http://localhost:1313/assets/favicon.ico">
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:1313/atom.xml">
+
+
+
+<div class="wrap">
+    <div class="masthead">
+        <div class="container">
+            <h3 class="masthead-title">
+                <a href="http://localhost:1313" title="Home">Unresolved</a>
+            </h3>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+    </div>
+
+    <div class="container content">
+
+
+<article class="post post-single">
+    <span class="post-date">Sat, Oct 18, 2014</span>
+    <h1 class="post-title">Ubuntuにnode.jsをインストールする</h1>
+
+    <div class="eyecatch">
+        
+        <img src="/images/nodejs.png" alt="Ubuntuにnode.jsをインストールする">
+        
+    </div>
+
+    <div class="post-content">
+        
+
+<p>そろそろ新しいことをやらねばなと思うので、node.jsに手を出してみるよ。</p>
+
+<p>node.jsはmake &amp; make installを推奨しているとのことなので、とりあえずソースを持ってくる。</p>
+
+<pre><code class="language-sh">$ wget http://nodejs.org/dist/v0.10.32/node-v0.10.32.tar.gz
+$ tar zxvf node-v0.10.32.tar.gz
+$ make
+</code></pre>
+
+<p>そしてエラー</p>
+
+<pre><code class="language-sh">flock: g++: No such file or directory
+
+make[1]: * [/home/daisuketsuji/Develop/node/out/Release/openssl-cli] Error 69
+
+make[1]: Leaving directory `/home/daisuketsuji/Develop/node/out'
+
+make: * [node] Error 2
+</code></pre>
+
+<p>g++がない。</p>
+
+<p><a href="http://packages.ubuntu.com/lucid/build-essential">build-essential</a>を使えばいいらしい。</p>
+
+<pre><code class="language-sh">$ sudo apt-get install -y build-essential
+$ make
+$ make install
+</code></pre>
+
+<p>またエラー</p>
+
+<pre><code class="language-sh">installing /usr/local/bin/node
+Traceback (most recent call last):
+  File &quot;tools/install.py&quot;, line 191, in &lt;module&gt;
+    run(sys.argv[:])
+  File &quot;tools/install.py&quot;, line 186, in run
+    if cmd == 'install': return files(install)
+  File &quot;tools/install.py&quot;, line 130, in files
+    action(['out/Release/node'], 'bin/node')
+  File &quot;tools/install.py&quot;, line 79, in install
+    def install(paths, dst): map(lambda path: try_copy(path, dst), paths)
+  File &quot;tools/install.py&quot;, line 79, in &lt;lambda&gt;
+    def install(paths, dst): map(lambda path: try_copy(path, dst), paths)
+  File &quot;tools/install.py&quot;, line 70, in try_copy
+    try_unlink(target_path) # prevent ETXTBSY errors
+  File &quot;tools/install.py&quot;, line 33, in try_unlink
+    os.unlink(path)
+OSError: [Errno 13] Permission denied: '/usr/local/bin/node'
+make: *** [install] Error 1
+</code></pre>
+
+<p>ああ・・・。</p>
+
+<pre><code class="language-sh">$ sudo make install
+</code></pre>
+
+<p>行けたっぽいのでインタラクティブシェルを起動してみる。</p>
+
+<pre><code class="language-sh">daisuketsuji@daisuketsuji-VirtualBox:~/Develop/node-v0.10.32$ node
+&gt; console.log(&quot;hello world&quot;)
+hello world
+</code></pre>
+
+<p>worked!</p>
+
+<h2 id="そもそもnode-jsって:2001f525b49213f857c10cbda61543d4">そもそもnode.jsって？</h2>
+
+<p>色んなところでこう書いてある。</p>
+
+<blockquote>
+<p>JavaScriptを用いたNon-blocking I/O環境</p>
+
+<p>「イベントループモデルで、ノンブロッキングI/Oを使用している」</p>
+</blockquote>
+
+<p>これらについては以下の記事を参考にさせてもらいました。</p>
+
+<p><a href="http://d.hatena.ne.jp/badatmath/20101020/1287587240">node.js とは何か - I am Bad at Math</a></p>
+
+<p><a href="http://satoshun00.hatenadiary.com/entry/2012/08/02/172936">node.jsの仕組み（ノンブロッキングI/Oとかスレッドとか） - 元リア充エンジニアのメモ</a></p>
+
+<p>nginxが流行ってるのは知ってたし、メモリを食わないっていうのも聞いてはいたけど、そういう背景があったんですね。</p>
+
+    </div>
+
+    
+
+    
+    <footer>
+        <div class="move">
+            <div class="prev">
+                
+                <a href="http://localhost:1313/blog/2014/10/19/ubuntu%E3%81%ABauriga%E3%82%92%E6%A7%8B%E7%AF%89%E3%81%97%E3%81%A6%E3%81%BF%E3%82%8B/">
+                    <i class="fa fa-chevron-left"></i>
+                    UbuntuにAurigaを構築してみる
+                </a>
+                
+            </div>
+            <div class="next">
+                
+                <a href="http://localhost:1313/blog/2014/09/29/laravel%E3%81%A7%E9%85%8D%E5%88%97%E3%82%92%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E3%81%AB%E3%81%99%E3%82%8B/">
+                    Laravelで配列をリクエストパラメータにする
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+                
+            </div>
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+ 
+var disqus_shortname = 'unresolved'; 
+
+ 
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </footer>
+
+</article>
+
+
+    </div>
+</div>
+
+
+
+<aside class="sidebar-wrapper">
+    <div class="container">
+        <div id="profile">
+            <div class="eyecatch">
+                <img id="photo" src="/images/nopicture.png" alt="profile">
+            </div>
+            <div class="data">
+                
+                <span class="post-date">Sun, Feb 26, 1989</span>
+                
+                <h1 id="username" class="post-title"></h1>
+                
+                <a href="https://www.facebook.com/daisuke.tsuji.735" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                
+                
+                <a href="https://twitter.com/dim0627" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                
+                
+                <a href="https://github.com/dim0627" target="_blank"><i class="fa fa-github-square"></i></a></p>
+                
+                <pre id="description" class="summary"></pre>
+                <ul id="urls" class="post-tags"></ul>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+<footer class="copy">
+    <p>&copy; 2015  Daisuke Tsuji </p>
+    <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>, Designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="//yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-55005303-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+<script>
+$(function() {
+    var url = "https://ja.gravatar.com/1e092e9f2cda827deb8623be2e846936.json?callback=?";
+    $.getJSON(url)
+        .done(function(data) {
+            var entry = data.entry[0];
+            $("#photo").attr("src", entry.photos[0].value);
+            $("#username").html(entry.name.familyName + " " + entry.name.givenName);
+            $("#description").html(entry.aboutMe);
+            entry.urls.forEach(function(el){
+                $("#urls").append($("<li><a href='" + el.value + "'>" + el.title + "</a></li>"));
+            });
+            $("#profile").show();
+        });
+});
+</script>
+
+<script>
+document.write('<script src="//sharebutton.net/plugin/sharebutton.php?type=horizontal&u=' + encodeURIComponent(document.location.href) + '"></scr' + 'ipt>');
+</script>
+

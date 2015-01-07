@@ -11,11 +11,11 @@
     
       
         <item>
-          <title>migrate-blog-to-hugo-from-octopress</title>
-          <link>http://yet.unresolved.xyz/post/2015-01-04-migrate-blog-to-hugo-from-octopress/</link>
+          <title>ブログをOctopressからHugoに移行した</title>
+          <link>http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/</link>
           <pubDate>Sun, 04 Jan 2015 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2015-01-04-migrate-blog-to-hugo-from-octopress/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/</guid>
           <description>
 
 &lt;p&gt;&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;でのブログもずいぶん慣れてきたところで&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;に移行しました。&lt;/p&gt;
@@ -188,11 +188,11 @@ hugo new post/&amp;quot;`date +%Y-%m-%d`-$title.markdown&amp;quot;
     
       
         <item>
-          <title>clojure-on-docker-and-aws-beanstalk</title>
-          <link>http://yet.unresolved.xyz/post/2014-12-31-clojure-on-docker-and-aws-beanstalk/</link>
+          <title>ClojureのWebアプリをDocker &#43; Beanstalkで動かす</title>
+          <link>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</link>
           <pubDate>Wed, 31 Dec 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-12-31-clojure-on-docker-and-aws-beanstalk/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</guid>
           <description>
 
 &lt;p&gt;たぶんこういうのはドキュメント読んでもわからないので、とにかく一通りの流れを実践してみる。&lt;/p&gt;
@@ -360,11 +360,11 @@ CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/product
     
       
         <item>
-          <title>could-not-run-docker-in-mac</title>
-          <link>http://yet.unresolved.xyz/post/2014-12-30-could-not-run-docker-in-mac/</link>
+          <title>boot2dockerでCannot connect to the Docker daemon</title>
+          <link>http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/</link>
           <pubDate>Tue, 30 Dec 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-12-30-could-not-run-docker-in-mac/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/</guid>
           <description>
 
 &lt;p&gt;これまでは普通に手で作ったVMのUbuntu上でDockerを触ってたんだけど、なんかあれだしboot2dockerに移行しようかと。&lt;/p&gt;
@@ -499,11 +499,11 @@ For more examples and ideas, visit:
     
       
         <item>
-          <title>does-not-work-lobos-in-heroku</title>
-          <link>http://yet.unresolved.xyz/post/2014-12-21-does-not-work-lobos-in-heroku/</link>
+          <title>Lobosでマイグレーションができない in Heroku</title>
+          <link>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</link>
           <pubDate>Sun, 21 Dec 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-12-21-does-not-work-lobos-in-heroku/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</guid>
           <description>
 
 &lt;p&gt;ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。&lt;/p&gt;
@@ -651,11 +651,11 @@ lobos.migration=&amp;gt;
     
       
         <item>
-          <title>usage-for-lobos-migration</title>
-          <link>http://yet.unresolved.xyz/post/2014-12-11-usage-for-lobos-migration/</link>
+          <title>Lobosを使ってマイグレーションをする</title>
+          <link>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</link>
           <pubDate>Thu, 11 Dec 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-12-11-usage-for-lobos-migration/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</guid>
           <description>
 
 &lt;p&gt;1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。&lt;/p&gt;
@@ -833,11 +833,11 @@ lobos_migrations  sites
     
       
         <item>
-          <title>automatically-compile-the-scss-in-leiningen</title>
-          <link>http://yet.unresolved.xyz/post/2014-12-09-automatically-compile-the-scss-in-leiningen/</link>
+          <title>LeiningenでSCSSを自動コンパイルする</title>
+          <link>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</link>
           <pubDate>Tue, 09 Dec 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-12-09-automatically-compile-the-scss-in-leiningen/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</guid>
           <description>
 
 &lt;p&gt;Clojureを始めて一週間ほどになりまして。&lt;/p&gt;
@@ -925,11 +925,11 @@ lobos_migrations  sites
     
       
         <item>
-          <title>went-to-startup-weekend-yokohama-2nd</title>
-          <link>http://yet.unresolved.xyz/post/2014-12-02-went-to-startup-weekend-yokohama-2nd/</link>
+          <title>HackerにとってのStartup Weekend</title>
+          <link>http://yet.unresolved.xyz/blog/2014/12/02/went-to-startup-weekend-yokohama-2nd/</link>
           <pubDate>Tue, 02 Dec 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-12-02-went-to-startup-weekend-yokohama-2nd/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/02/went-to-startup-weekend-yokohama-2nd/</guid>
           <description>
 
 &lt;p&gt;この2週間で、Startup Weekend YokohamaとStartup Weekend Tokyoに参加してきました。&lt;/p&gt;
@@ -1213,11 +1213,11 @@ lobos_migrations  sites
     
       
         <item>
-          <title>pass-the-validation-of-w3c</title>
-          <link>http://yet.unresolved.xyz/post/2014-11-12-pass-the-validation-of-w3c/</link>
+          <title>OctopressをW3Cのバリデーションにパスさせる</title>
+          <link>http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/</link>
           <pubDate>Wed, 12 Nov 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-11-12-pass-the-validation-of-w3c/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/</guid>
           <description>&lt;p&gt;ふと思い立って&lt;a href=&#34;http://validator.w3.org/&#34;&gt;Markup Validation Service&lt;/a&gt;をやってみたら13個もエラーが出たので対応してみるよ。&lt;/p&gt;
 
 &lt;!-- more --&gt;
@@ -1350,11 +1350,11 @@ Flow content, but with no main element descendants.
     
       
         <item>
-          <title>learn-docker</title>
-          <link>http://yet.unresolved.xyz/post/2014-11-09-learn-docker/</link>
+          <title>Docker事始め</title>
+          <link>http://yet.unresolved.xyz/blog/2014/11/09/learn-docker/</link>
           <pubDate>Sun, 09 Nov 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-11-09-learn-docker/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/11/09/learn-docker/</guid>
           <description>
 
 &lt;p&gt;ちょっとやりたいことがあって、&lt;a href=&#34;http://www.docker.com/&#34;&gt;Docker&lt;/a&gt;を使ってみることに。&lt;/p&gt;
@@ -1556,11 +1556,11 @@ RUN gem install sinatra
     
       
         <item>
-          <title>how-to-use-custom-domain-in-github-pages</title>
-          <link>http://yet.unresolved.xyz/post/2014-10-24-how-to-use-custom-domain-in-github-pages/</link>
+          <title>GitHub Pagesでカスタムドメインを使う</title>
+          <link>http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/</link>
           <pubDate>Fri, 24 Oct 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-10-24-how-to-use-custom-domain-in-github-pages/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/</guid>
           <description>
 
 &lt;p&gt;昨日はGAEで今日はGithubかよって感じだけど、こっちは結構詰まったのでメモしたい。&lt;/p&gt;
@@ -1616,11 +1616,11 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
     
       
         <item>
-          <title>about-sqlserver-clusteredindex-and-nonclustered-index</title>
-          <link>http://yet.unresolved.xyz/post/2014-10-23-about-sqlserver-clusteredindex-and-nonclustered-index/</link>
+          <title>クラスタ化インデックスとかカバリングインデックスについて</title>
+          <link>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</link>
           <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-10-23-about-sqlserver-clusteredindex-and-nonclustered-index/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</guid>
           <description>
 
 &lt;p&gt;SQL Serverを使ってて、ちょっと曖昧にしかわからんなってところがあったので少し調べてみた。&lt;/p&gt;
@@ -1707,11 +1707,11 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
     
       
         <item>
-          <title>how-to-use-custom-domain-in-google-app-engine</title>
-          <link>http://yet.unresolved.xyz/post/2014-10-23-how-to-use-custom-domain-in-google-app-engine/</link>
+          <title>Google app engineでカスタムドメインを使う</title>
+          <link>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</link>
           <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-10-23-how-to-use-custom-domain-in-google-app-engine/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</guid>
           <description>
 
 &lt;p&gt;簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。&lt;/p&gt;
@@ -1781,11 +1781,11 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
     
       
         <item>
-          <title>move-sidebar-at-under-the-article</title>
-          <link>http://yet.unresolved.xyz/post/2014-10-22-move-sidebar-at-under-the-article/</link>
+          <title>Octopressのサイドバーを下部に移動する</title>
+          <link>http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/</link>
           <pubDate>Wed, 22 Oct 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-10-22-move-sidebar-at-under-the-article/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/</guid>
           <description>&lt;p&gt;デフォルトのテーマだとサイドバーの表示/非表示の切り替えが出来て、非表示にするとサイドバーは記事の下に落っこちるんだけど、&lt;/p&gt;
 
 &lt;p&gt;常時この状態にした方がかっこいいんでないか？ということで移動させてみることに。&lt;/p&gt;
@@ -1850,11 +1850,11 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
     
       
         <item>
-          <title>build-auriga-server-on-ubuntu</title>
-          <link>http://yet.unresolved.xyz/post/2014-10-19-build-auriga-server-on-ubuntu/</link>
+          <title>UbuntuにAurigaを構築してみる</title>
+          <link>http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/</link>
           <pubDate>Sun, 19 Oct 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-10-19-build-auriga-server-on-ubuntu/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/</guid>
           <description>
 
 &lt;p&gt;今更だがAurigaの構築をやってみる。&lt;/p&gt;
@@ -1985,11 +1985,11 @@ CFLAGS += -DNO_HTTPD
     
       
         <item>
-          <title>install-nodejs-on-ubuntu</title>
-          <link>http://yet.unresolved.xyz/post/2014-10-18-install-nodejs-on-ubuntu/</link>
+          <title>Ubuntuにnode.jsをインストールする</title>
+          <link>http://yet.unresolved.xyz/blog/2014/10/18/install-nodejs-on-ubuntu/</link>
           <pubDate>Sat, 18 Oct 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-10-18-install-nodejs-on-ubuntu/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/18/install-nodejs-on-ubuntu/</guid>
           <description>
 
 &lt;p&gt;そろそろ新しいことをやらねばなと思うので、node.jsに手を出してみるよ。&lt;/p&gt;
@@ -2080,11 +2080,11 @@ hello world
     
       
         <item>
-          <title>laravel-array-input</title>
-          <link>http://yet.unresolved.xyz/post/2014-09-29-laravel-array-input/</link>
+          <title>Laravelで配列をリクエストパラメータにする</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/29/laravel-array-input/</link>
           <pubDate>Mon, 29 Sep 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-09-29-laravel-array-input/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/29/laravel-array-input/</guid>
           <description>
 
 &lt;p&gt;テーブルとかに入れた複数のInputを同じ名前にして配列でサーバに飛ばしたい、ってときいつも困る。&lt;/p&gt;
@@ -2176,11 +2176,11 @@ hello world
     
       
         <item>
-          <title>learn-git-rm-command</title>
-          <link>http://yet.unresolved.xyz/post/2014-09-28-learn-git-rm-command/</link>
+          <title>git管理したくないファイルを除外する</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/</link>
           <pubDate>Sun, 28 Sep 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-09-28-learn-git-rm-command/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/</guid>
           <description>
 
 &lt;p&gt;ローカル環境でちょこちょこ作ってたやつを本番環境に載せたんだけど、それなりに解決してた環境依存が少し残ってて.gitignoreファイルをちゃんと書くことに。&lt;/p&gt;
@@ -2210,11 +2210,11 @@ hello world
     
       
         <item>
-          <title>could-not-force-push-on-git</title>
-          <link>http://yet.unresolved.xyz/post/2014-09-27-could-not-force-push-on-git/</link>
+          <title>gitでforce pushが出来ない</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/</link>
           <pubDate>Sat, 27 Sep 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-09-27-could-not-force-push-on-git/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/</guid>
           <description>
 
 &lt;p&gt;typoを直すために&lt;code&gt;rebase -i&lt;/code&gt;やらをやってたんだけど、操作してたのがmasterブランチだったのでどうしてもforce pushがしたかった。&lt;/p&gt;
@@ -2249,11 +2249,11 @@ fast-forwards&#39; section of &#39;git push --help&#39; for details.
     
       
         <item>
-          <title>make-new-theme-flatten</title>
-          <link>http://yet.unresolved.xyz/post/2014-09-21-make-new-theme-flatten/</link>
+          <title>Octopressのテーマを作ってみる</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/</link>
           <pubDate>Sun, 21 Sep 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-09-21-make-new-theme-flatten/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/</guid>
           <description>
 
 &lt;p&gt;元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。&lt;/p&gt;
@@ -2324,11 +2324,11 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
     
       
         <item>
-          <title>description-is-not-set</title>
-          <link>http://yet.unresolved.xyz/post/2014-09-21-description-is-not-set/</link>
+          <title>_config.ymlに書いたdescriptionが設定されない</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</link>
           <pubDate>Sun, 21 Sep 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-09-21-description-is-not-set/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</guid>
           <description>&lt;p&gt;認識が間違ってるのか、_config.ymlに書いたdescriptionがサイトに反映されない・・・。&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;source/_includes/head.html&lt;/code&gt;のコードを見てみるとこんな感じ。&lt;/p&gt;
@@ -2364,11 +2364,11 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
     
       
         <item>
-          <title>git-on-proxy</title>
-          <link>http://yet.unresolved.xyz/post/2014-09-20-git-on-proxy/</link>
+          <title>gitのリポジトリ単位にproxyの設定をする</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</link>
           <pubDate>Sat, 20 Sep 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-09-20-git-on-proxy/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</guid>
           <description>
 
 &lt;h2 id=&#34;事の発端:ca86a8bf870eabf283b4127081a3d388&#34;&gt;事の発端&lt;/h2&gt;
@@ -2414,11 +2414,11 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
     
       
         <item>
-          <title>make-gravatar-sidebar</title>
-          <link>http://yet.unresolved.xyz/post/2014-09-20-make-gravatar-sidebar/</link>
+          <title>OctopressのサイドバーにGravatarを表示させる</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/</link>
           <pubDate>Sat, 20 Sep 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-09-20-make-gravatar-sidebar/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/</guid>
           <description>
 
 &lt;h2 id=&#34;octopressのサイドバーってどうなってんの:c73b8990ae6ff308f2649661fb572fc8&#34;&gt;Octopressのサイドバーってどうなってんの？&lt;/h2&gt;
@@ -2541,11 +2541,11 @@ div#urls {
     
       
         <item>
-          <title>install-the-octopress-on-github-pages</title>
-          <link>http://yet.unresolved.xyz/post/2014-09-17-install-the-octopress-on-github-pages/</link>
+          <title>GitHub PagesにOctopressをのっけてみる</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/</link>
           <pubDate>Wed, 17 Sep 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-09-17-install-the-octopress-on-github-pages/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/</guid>
           <description>
 
 &lt;p&gt;&lt;a href=&#34;https://ja.wordpress.com/&#34;&gt;WordPress.com&lt;/a&gt;を使ってたんだけど、お金払わないと融通がきかないぽいので移行することに。&lt;/p&gt;

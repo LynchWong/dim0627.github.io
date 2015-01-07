@@ -1,6 +1,6 @@
 ---
-title: "about-sqlserver-clusteredindex-and-nonclustered-index"
-titleja: "クラスタ化インデックスとかカバリングインデックスについて"
+slug: "about-sqlserver-clusteredindex-and-nonclustered-index"
+title: "クラスタ化インデックスとかカバリングインデックスについて"
 date: 2014-10-23
 comments: true
 tags: ["database", "sql server"]

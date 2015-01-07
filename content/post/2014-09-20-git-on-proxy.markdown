@@ -1,6 +1,6 @@
 ---
-title: "git-on-proxy"
-titleja: "gitのリポジトリ単位にproxyの設定をする"
+slug: "git-on-proxy"
+title: "gitのリポジトリ単位にproxyの設定をする"
 eyecatch: "git.png"
 date: 2014-09-20
 comments: true

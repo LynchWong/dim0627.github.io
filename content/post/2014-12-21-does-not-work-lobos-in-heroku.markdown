@@ -1,6 +1,6 @@
 ---
-title: "does-not-work-lobos-in-heroku"
-titleja: "Lobosでマイグレーションができない in Heroku"
+slug: "does-not-work-lobos-in-heroku"
+title: "Lobosでマイグレーションができない in Heroku"
 eyecatch: "clojure.png"
 date: 2014-12-21
 comments: true

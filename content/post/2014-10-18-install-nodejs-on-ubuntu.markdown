@@ -1,6 +1,6 @@
 ---
-title: "install-nodejs-on-ubuntu"
-titleja: "Ubuntuにnode.jsをインストールする"
+slug: "install-nodejs-on-ubuntu"
+title: "Ubuntuにnode.jsをインストールする"
 eyecatch: "nodejs.png"
 date: 2014-10-18
 comments: true

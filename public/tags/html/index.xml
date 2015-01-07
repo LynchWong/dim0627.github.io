@@ -11,11 +11,11 @@
     
       
         <item>
-          <title>pass-the-validation-of-w3c</title>
-          <link>http://yet.unresolved.xyz/post/2014-11-12-pass-the-validation-of-w3c/</link>
+          <title>OctopressをW3Cのバリデーションにパスさせる</title>
+          <link>http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/</link>
           <pubDate>Wed, 12 Nov 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-11-12-pass-the-validation-of-w3c/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/</guid>
           <description>&lt;p&gt;ふと思い立って&lt;a href=&#34;http://validator.w3.org/&#34;&gt;Markup Validation Service&lt;/a&gt;をやってみたら13個もエラーが出たので対応してみるよ。&lt;/p&gt;
 
 &lt;!-- more --&gt;

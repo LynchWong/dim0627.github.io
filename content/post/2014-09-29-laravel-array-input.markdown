@@ -1,6 +1,6 @@
 ---
-title: "laravel-array-input"
-titleja: "Laravelで配列をリクエストパラメータにする"
+slug: "laravel-array-input"
+title: "Laravelで配列をリクエストパラメータにする"
 eyecatch: "laravel.png"
 date: 2014-09-29
 comments: true

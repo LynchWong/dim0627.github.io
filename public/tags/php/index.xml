@@ -11,11 +11,11 @@
     
       
         <item>
-          <title>laravel-array-input</title>
-          <link>http://yet.unresolved.xyz/post/2014-09-29-laravel-array-input/</link>
+          <title>Laravelで配列をリクエストパラメータにする</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/29/laravel-array-input/</link>
           <pubDate>Mon, 29 Sep 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/post/2014-09-29-laravel-array-input/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/29/laravel-array-input/</guid>
           <description>
 
 &lt;p&gt;テーブルとかに入れた複数のInputを同じ名前にして配列でサーバに飛ばしたい、ってときいつも困る。&lt;/p&gt;

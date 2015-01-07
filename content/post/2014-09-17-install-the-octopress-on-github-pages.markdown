@@ -1,6 +1,6 @@
 ---
-title: "install-the-octopress-on-github-pages"
-titleja: "GitHub PagesにOctopressをのっけてみる"
+slug: "install-the-octopress-on-github-pages"
+title: "GitHub PagesにOctopressをのっけてみる"
 eyecatch: "octopress.png"
 date: 2014-09-17
 comments: true

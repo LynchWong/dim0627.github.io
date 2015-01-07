@@ -1,6 +1,6 @@
 ---
-title: "could-not-force-push-on-git"
-titleja: "gitでforce pushが出来ない"
+slug: "could-not-force-push-on-git"
+title: "gitでforce pushが出来ない"
 eyecatch: "git.png"
 date: 2014-09-27
 comments: true

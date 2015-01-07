@@ -1,6 +1,6 @@
 ---
-title: "make-new-theme-flatten"
-titleja: "Octopressのテーマを作ってみる"
+slug: "make-new-theme-flatten"
+title: "Octopressのテーマを作ってみる"
 eyecatch: "octopress.png"
 date: 2014-09-21
 comments: true

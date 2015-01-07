@@ -1,6 +1,6 @@
 ---
-title: "could-not-run-docker-in-mac"
-titleja: "boot2dockerでCannot connect to the Docker daemon"
+slug: "could-not-run-docker-in-mac"
+title: "boot2dockerでCannot connect to the Docker daemon"
 eyecatch: "docker.png"
 date: 2014-12-30
 comments: true

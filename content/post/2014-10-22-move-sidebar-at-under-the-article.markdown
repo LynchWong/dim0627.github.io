@@ -1,6 +1,6 @@
 ---
-title: "move-sidebar-at-under-the-article"
-titleja: "Octopressのサイドバーを下部に移動する"
+slug: "move-sidebar-at-under-the-article"
+title: "Octopressのサイドバーを下部に移動する"
 eyecatch: "octopress.png"
 date: 2014-10-22
 comments: true

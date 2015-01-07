@@ -1,6 +1,6 @@
 ---
-title: "learn-docker"
-titleja: "Docker事始め"
+slug: "learn-docker"
+title: "Docker事始め"
 eyecatch: "docker.png"
 date: 2014-11-09
 comments: true

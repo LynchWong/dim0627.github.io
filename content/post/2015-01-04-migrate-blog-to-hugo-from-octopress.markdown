@@ -3,8 +3,8 @@ tags: ["octopress", "hugo", "golang", "ruby"]
 comments: true
 date: 2015-01-04
 eyecatch: "hugo.png"
-title: "migrate-blog-to-hugo-from-octopress"
-titleja: "ブログをOctopressからHugoに移行した"
+slug: "migrate-blog-to-hugo-from-octopress"
+title: "ブログをOctopressからHugoに移行した"
 ---
 
 [Octopress](http://octopress.org/)でのブログもずいぶん慣れてきたところで[Hugo](http://gohugo.io/)に移行しました。

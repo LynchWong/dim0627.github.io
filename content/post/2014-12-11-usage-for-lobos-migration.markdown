@@ -1,6 +1,6 @@
 ---
-title: "usage-for-lobos-migration"
-titleja: "Lobosを使ってマイグレーションをする"
+slug: "usage-for-lobos-migration"
+title: "Lobosを使ってマイグレーションをする"
 eyecatch: "clojure.png"
 date: 2014-12-11
 comments: true
