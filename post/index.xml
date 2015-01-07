@@ -22,13 +22,23 @@
 
 &lt;p&gt;オレは&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;から移行してきたからなおさらなんだけど、記事のタイトルがURLにされてしまう。&lt;/p&gt;
 
+&lt;p&gt;あ、オレは&lt;code&gt;config.yaml&lt;/code&gt;に&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;permalinks:
+  post: /blog/:year/:month/:day/:title/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;を設定してるからなんだけど。&lt;/p&gt;
+
 &lt;p&gt;そうすると日本語とかのマルチバイト文字を使うとパーセントエンコードが走って結構悲惨なことになる。&lt;/p&gt;
 
 &lt;p&gt;というかオレの環境だとリンクがきちんと飛べなかった・・・。&lt;/p&gt;
 
+&lt;p&gt;Octopressは記事のファイル名がURLになってたから、ファイル名さえ英語なら問題なかったんだよね。&lt;/p&gt;
+
 &lt;p&gt;なので今回やった対処法をメモっとく。&lt;/p&gt;
 
-&lt;h2 id=&#34;現状整理:305b326c361986ca7e3bc18a2fbce87d&#34;&gt;現状整理&lt;/h2&gt;
+&lt;h2 id=&#34;urlの構成と対応策:305b326c361986ca7e3bc18a2fbce87d&#34;&gt;URLの構成と対応策&lt;/h2&gt;
 
 &lt;p&gt;実は移行の時にちょっと手を加えたりしてたんだけど、あんまり綺麗な方法じゃなかったので納得が行ってなかった。&lt;/p&gt;
 
