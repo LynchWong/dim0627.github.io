@@ -20,7 +20,7 @@
 
 &lt;p&gt;&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;でちょっと困ったこと。&lt;/p&gt;
 
-&lt;p&gt;オレは&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;から以降してきたからなおさらなんだけど、記事のタイトルがURLにされてしまう。&lt;/p&gt;
+&lt;p&gt;オレは&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;から移行してきたからなおさらなんだけど、記事のタイトルがURLにされてしまう。&lt;/p&gt;
 
 &lt;p&gt;そうすると日本語とかのマルチバイト文字を使うとパーセントエンコードが走って結構悲惨なことになる。&lt;/p&gt;
 
@@ -36,9 +36,9 @@
 
 &lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-07/permalink.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-07/permalink.png&#34; class=&#34;image&#34; alt=&#34;permalink&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;どうやらオレが困ってたURLのタイトル部はslugと呼ばれる部分らしい。&lt;/p&gt;
+&lt;p&gt;どうやらオレが困ってたURLのタイトル部は&lt;code&gt;slug&lt;/code&gt;と呼ばれる部分らしい。&lt;/p&gt;
 
-&lt;p&gt;ならこんな風に記事内のマークダウンで毎回指定してしまえば綺麗に話が済むのではないか？&lt;/p&gt;
+&lt;p&gt;ならこんな風に記事内で毎回指定してしまえば綺麗に話が済むのではないか？&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;---
 tags: [&amp;quot;hugo&amp;quot;, &amp;quot;golang&amp;quot;]
@@ -62,7 +62,7 @@ title: &amp;quot;Hugoでマルチバイトのタイトルをスマートに使�
 
 &lt;p&gt;&lt;code&gt;hugo new&lt;/code&gt;した時に生成されるテンプレートは&lt;code&gt;archetypes&lt;/code&gt;ディレクトリに配置出来るから、そこでやっておくとよし。&lt;/p&gt;
 
-&lt;p&gt;しかし以降時に書き足すのが面倒なんだよなあ。&lt;/p&gt;
+&lt;p&gt;しかし移行時に書き足すのが面倒なんだよなあ。&lt;/p&gt;
 </description>
         </item>
       
@@ -1676,6 +1676,80 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
     
       
         <item>
+          <title>Google app engineでカスタムドメインを使う</title>
+          <link>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</link>
+          <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</guid>
+          <description>
+
+&lt;p&gt;簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。&lt;/p&gt;
+
+&lt;h2 id=&#34;googleによるドメインの確認:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;Googleによるドメインの確認&lt;/h2&gt;
+
+&lt;p&gt;ドメインを持っていない人は先に取得しちゃってね。&lt;/p&gt;
+
+&lt;p&gt;ちなみにオレはGMOさん(&lt;a href=&#34;http://www.onamae.com/&#34;&gt;お名前.com&lt;/a&gt;)で取得しました。&lt;/p&gt;
+
+&lt;p&gt;ていうことで以下の手順にそってやっていきます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/appengine/docs/domain&#34;&gt;Using a Custom Domain - Google App Engine Google Cloud Platform&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;作業は&lt;a href=&#34;https://console.developers.google.com/&#34;&gt;Developers Console&lt;/a&gt;から行います。&lt;/p&gt;
+
+&lt;p&gt;はじめにGoogleが、使いたいドメインが君のものか確認したいとのことなので、verifyへ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34; class=&#34;image&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;そうするとこんな画面になるので、&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34; class=&#34;image&#34; alt=&#34;input_domain&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ここに表示されてるテキストを、ドメインを発行した会社さんのほうからTXTレコードとして追加すればOK。&lt;/p&gt;
+
+&lt;p&gt;なんかこの画面、すごい頻度でChromeがエラー吐きまくったけど、クリックしなければ大丈夫だったのでなんとかしのぎました。&lt;/p&gt;
+
+&lt;p&gt;TXTレコードの追加は、お名前.comであれば&lt;a href=&#34;http://www.onamae.com/navi/domain.html&#34;&gt;ドメインNavi&lt;/a&gt;から&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ドメイン設定&lt;/li&gt;
+&lt;li&gt;DNS関連機能の設定&lt;/li&gt;
+&lt;li&gt;DNSレコード設定を利用する&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;でここに入力すればOK。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34; class=&#34;image&#34; alt=&#34;input_txt&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;TYPEはTXTにしてVALUEにさっきのテキストを入力。&lt;/p&gt;
+
+&lt;p&gt;場所にもよるけど少し待てば反映されるので、それまでGoogle側の画面で確認ボタンを何度か押してみる。&lt;/p&gt;
+
+&lt;p&gt;反映されてたら確認が通るはず。&lt;/p&gt;
+
+&lt;h2 id=&#34;ドメインの選択:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;ドメインの選択&lt;/h2&gt;
+
+&lt;p&gt;確認が出来たらサブドメインとしてプレフィックスを付けるのかを決める。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34; class=&#34;image&#34; alt=&#34;step2&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;これによって最後のステップが変わるけど、オレは確認の時点でサブドメインとして設定したので、Google側では特に付加せずやってます。&lt;/p&gt;
+
+&lt;h2 id=&#34;aレコードとaaaaレコードの追加:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;AレコードとAAAAレコードの追加&lt;/h2&gt;
+
+&lt;p&gt;最後はまたDNSレコードの追加。&lt;/p&gt;
+
+&lt;p&gt;ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34; class=&#34;image&#34; alt=&#34;step3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;あとは待ってればそのうち反映されるはず。&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
           <title>クラスタ化インデックスとかカバリングインデックスについて</title>
           <link>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</link>
           <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
@@ -1761,80 +1835,6 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 &lt;/blockquote&gt;
 
 &lt;p&gt;誤った認識があればご指摘を。&lt;/p&gt;
-</description>
-        </item>
-      
-    
-      
-        <item>
-          <title>Google app engineでカスタムドメインを使う</title>
-          <link>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</link>
-          <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</guid>
-          <description>
-
-&lt;p&gt;簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。&lt;/p&gt;
-
-&lt;h2 id=&#34;googleによるドメインの確認:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;Googleによるドメインの確認&lt;/h2&gt;
-
-&lt;p&gt;ドメインを持っていない人は先に取得しちゃってね。&lt;/p&gt;
-
-&lt;p&gt;ちなみにオレはGMOさん(&lt;a href=&#34;http://www.onamae.com/&#34;&gt;お名前.com&lt;/a&gt;)で取得しました。&lt;/p&gt;
-
-&lt;p&gt;ていうことで以下の手順にそってやっていきます。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/appengine/docs/domain&#34;&gt;Using a Custom Domain - Google App Engine Google Cloud Platform&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;作業は&lt;a href=&#34;https://console.developers.google.com/&#34;&gt;Developers Console&lt;/a&gt;から行います。&lt;/p&gt;
-
-&lt;p&gt;はじめにGoogleが、使いたいドメインが君のものか確認したいとのことなので、verifyへ。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34; class=&#34;image&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;そうするとこんな画面になるので、&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34; class=&#34;image&#34; alt=&#34;input_domain&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;ここに表示されてるテキストを、ドメインを発行した会社さんのほうからTXTレコードとして追加すればOK。&lt;/p&gt;
-
-&lt;p&gt;なんかこの画面、すごい頻度でChromeがエラー吐きまくったけど、クリックしなければ大丈夫だったのでなんとかしのぎました。&lt;/p&gt;
-
-&lt;p&gt;TXTレコードの追加は、お名前.comであれば&lt;a href=&#34;http://www.onamae.com/navi/domain.html&#34;&gt;ドメインNavi&lt;/a&gt;から&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ドメイン設定&lt;/li&gt;
-&lt;li&gt;DNS関連機能の設定&lt;/li&gt;
-&lt;li&gt;DNSレコード設定を利用する&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;でここに入力すればOK。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34; class=&#34;image&#34; alt=&#34;input_txt&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;TYPEはTXTにしてVALUEにさっきのテキストを入力。&lt;/p&gt;
-
-&lt;p&gt;場所にもよるけど少し待てば反映されるので、それまでGoogle側の画面で確認ボタンを何度か押してみる。&lt;/p&gt;
-
-&lt;p&gt;反映されてたら確認が通るはず。&lt;/p&gt;
-
-&lt;h2 id=&#34;ドメインの選択:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;ドメインの選択&lt;/h2&gt;
-
-&lt;p&gt;確認が出来たらサブドメインとしてプレフィックスを付けるのかを決める。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34; class=&#34;image&#34; alt=&#34;step2&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;これによって最後のステップが変わるけど、オレは確認の時点でサブドメインとして設定したので、Google側では特に付加せずやってます。&lt;/p&gt;
-
-&lt;h2 id=&#34;aレコードとaaaaレコードの追加:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;AレコードとAAAAレコードの追加&lt;/h2&gt;
-
-&lt;p&gt;最後はまたDNSレコードの追加。&lt;/p&gt;
-
-&lt;p&gt;ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34; class=&#34;image&#34; alt=&#34;step3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;あとは待ってればそのうち反映されるはず。&lt;/p&gt;
 </description>
         </item>
       
@@ -2424,6 +2424,56 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
     
       
         <item>
+          <title>gitのリポジトリ単位にproxyの設定をする</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</link>
+          <pubDate>Sat, 20 Sep 2014 00:00:00 UTC</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</guid>
+          <description>
+
+&lt;h2 id=&#34;事の発端:ca86a8bf870eabf283b4127081a3d388&#34;&gt;事の発端&lt;/h2&gt;
+
+&lt;p&gt;会社ではvimを使ってます。&lt;/p&gt;
+
+&lt;p&gt;plugin管理には&lt;a href=&#34;https://github.com/Shougo/neobundle.vim&#34;&gt;neobundle.vim&lt;/a&gt;使ってます。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;.vimrc&lt;/code&gt;は&lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt;で管理してます。&lt;/p&gt;
+
+&lt;p&gt;neobundle.vimで管理してるpluginは大抵のものがGitHub上で管理されてるから、インストールとかアップデートをするときはneobundle.vimがGitHubまで見に行ってくれるんですね。&lt;/p&gt;
+
+&lt;p&gt;ただ、当然社内はproxyを通していて、gitコマンドが通らない！&lt;/p&gt;
+
+&lt;p&gt;ていうかそもそも&lt;strong&gt;GitHubから&lt;code&gt;.vimrc&lt;/code&gt;を落としてくることすら出来ない！いいやzipで落とせ！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;しかしpluginの導入を手でやるのはだるい・・・。&lt;/p&gt;
+
+&lt;p&gt;マジで？サクラエディタで頑張るしかない？&lt;/p&gt;
+
+&lt;p&gt;いやいやそんなことはない。&lt;/p&gt;
+
+&lt;h2 id=&#34;解決:ca86a8bf870eabf283b4127081a3d388&#34;&gt;解決&lt;/h2&gt;
+
+&lt;p&gt;じゃあこうしようってことで、&lt;code&gt;~/.gitconfig&lt;/code&gt;をこんな感じにしたのよ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;[https]
+        proxy = http://proxy.com:8080
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ひとまず解決したんです。&lt;/p&gt;
+
+&lt;p&gt;そしたら次は&lt;strong&gt;社内のgitに繋がらない！！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;マジかよじゃあ&lt;code&gt;~/.gitconfig&lt;/code&gt;をちょこちょこ変えるのかよだせえよそれと思ったら既に解決してくれてる人がいた。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://tanacasino.hatenablog.com/entry/2013/12/21/003750&#34;&gt;Git の http proxy に関するまとめ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;めんどくさかったけど、個々のpluginの&lt;code&gt;config&lt;/code&gt;にだけproxyの記述を追加することで解決。&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
           <title>OctopressのサイドバーにGravatarを表示させる</title>
           <link>http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/</link>
           <pubDate>Sat, 20 Sep 2014 00:00:00 UTC</pubDate>
@@ -2545,56 +2595,6 @@ div#urls {
 &lt;h2 id=&#34;参考にさせて頂きました:c73b8990ae6ff308f2649661fb572fc8&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://blog.awairo.net/blog/2013/12/24/octopress-aside-of-getting-profile-from-gravatar/&#34;&gt;Gravatarのプロフィールを表示するOctopressのサイドバー&lt;/a&gt;&lt;/p&gt;
-</description>
-        </item>
-      
-    
-      
-        <item>
-          <title>gitのリポジトリ単位にproxyの設定をする</title>
-          <link>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</link>
-          <pubDate>Sat, 20 Sep 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</guid>
-          <description>
-
-&lt;h2 id=&#34;事の発端:ca86a8bf870eabf283b4127081a3d388&#34;&gt;事の発端&lt;/h2&gt;
-
-&lt;p&gt;会社ではvimを使ってます。&lt;/p&gt;
-
-&lt;p&gt;plugin管理には&lt;a href=&#34;https://github.com/Shougo/neobundle.vim&#34;&gt;neobundle.vim&lt;/a&gt;使ってます。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;.vimrc&lt;/code&gt;は&lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt;で管理してます。&lt;/p&gt;
-
-&lt;p&gt;neobundle.vimで管理してるpluginは大抵のものがGitHub上で管理されてるから、インストールとかアップデートをするときはneobundle.vimがGitHubまで見に行ってくれるんですね。&lt;/p&gt;
-
-&lt;p&gt;ただ、当然社内はproxyを通していて、gitコマンドが通らない！&lt;/p&gt;
-
-&lt;p&gt;ていうかそもそも&lt;strong&gt;GitHubから&lt;code&gt;.vimrc&lt;/code&gt;を落としてくることすら出来ない！いいやzipで落とせ！&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;しかしpluginの導入を手でやるのはだるい・・・。&lt;/p&gt;
-
-&lt;p&gt;マジで？サクラエディタで頑張るしかない？&lt;/p&gt;
-
-&lt;p&gt;いやいやそんなことはない。&lt;/p&gt;
-
-&lt;h2 id=&#34;解決:ca86a8bf870eabf283b4127081a3d388&#34;&gt;解決&lt;/h2&gt;
-
-&lt;p&gt;じゃあこうしようってことで、&lt;code&gt;~/.gitconfig&lt;/code&gt;をこんな感じにしたのよ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;[https]
-        proxy = http://proxy.com:8080
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ひとまず解決したんです。&lt;/p&gt;
-
-&lt;p&gt;そしたら次は&lt;strong&gt;社内のgitに繋がらない！！&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;マジかよじゃあ&lt;code&gt;~/.gitconfig&lt;/code&gt;をちょこちょこ変えるのかよだせえよそれと思ったら既に解決してくれてる人がいた。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://tanacasino.hatenablog.com/entry/2013/12/21/003750&#34;&gt;Git の http proxy に関するまとめ&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;めんどくさかったけど、個々のpluginの&lt;code&gt;config&lt;/code&gt;にだけproxyの記述を追加することで解決。&lt;/p&gt;
 </description>
         </item>
       
