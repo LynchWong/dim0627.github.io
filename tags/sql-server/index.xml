@@ -36,7 +36,7 @@
 
 &lt;h3 id=&#34;ここでわかったこと:c92488df51ae62a183920f8a12e0e585&#34;&gt;ここでわかったこと&lt;/h3&gt;
 
-&lt;p&gt;** クラスタ化インデックス **&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;クラスタ化インデックス&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;1テーブルに1つしか作れない。&lt;/li&gt;
@@ -44,7 +44,7 @@
 &lt;li&gt;クラスタ化インデックスが設定されていないテーブルはヒープと呼ばれる未ソートの状態になる。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;** 非クラスタ化インデックス **&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;非クラスタ化インデックス&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;テーブルとは別に構造を持つ。&lt;/li&gt;
