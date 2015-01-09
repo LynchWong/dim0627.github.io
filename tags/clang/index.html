@@ -5,7 +5,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-<meta property="og:url" content="http://yet.unresolved.xyz">
+<meta property="og:url" content="http://localhost:1313">
 
 
 <meta property="og:title" content="Unresolved">
@@ -22,14 +22,14 @@
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/solarized_dark.min.css">
-<link rel="stylesheet" href="http://yet.unresolved.xyz/css/styles.css">
-<link rel="stylesheet" href="http://yet.unresolved.xyz/css/custom.css">
+<link rel="stylesheet" href="http://localhost:1313/css/styles.css">
+<link rel="stylesheet" href="http://localhost:1313/css/custom.css">
 
 
-<link rel="shortcut icon" href="http://yet.unresolved.xyz/assets/favicon.ico">
+<link rel="shortcut icon" href="http://localhost:1313/assets/favicon.ico">
 
 
-<link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:1313/index.xml">
 
 
 
@@ -37,7 +37,7 @@
     <div class="masthead">
         <div class="container">
             <h3 class="masthead-title">
-                <a href="http://yet.unresolved.xyz" title="Home">Unresolved</a>
+                <a href="http://localhost:1313" title="Home">Unresolved</a>
             </h3>
             
             
@@ -100,16 +100,16 @@
     <article class="post">
     <div class="eyecatch">
         
-        <a href="http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/"><img src="http://yet.unresolved.xyz/images/ubuntu.png" alt="UbuntuにAurigaを構築してみる"></a>
+        <a href="http://localhost:1313/blog/2014/10/19/build-auriga-server-on-ubuntu/"><img src="http://localhost:1313/images/ubuntu.png" alt="UbuntuにAurigaを構築してみる"></a>
         
     </div>
     <div class="data">
         <span class="post-date">Sun, Oct 19, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/">UbuntuにAurigaを構築してみる</a></h1>
+        <h1 class="post-title"><a href="http://localhost:1313/blog/2014/10/19/build-auriga-server-on-ubuntu/">UbuntuにAurigaを構築してみる</a></h1>
         <div class="summary">今更だがAurigaの構築をやってみる。 どこもWindows環境での構築方法しか載ってないような印象なんだけどそんなことないのかな。 ソースのダウンロード Auriga Projectからソースを落とす。 言うまでもないけどバージョン番号は最新とかで。 $ wget -O auriga.zip http://auriga.moe.hm/Auriga/snapshotmanager.php?num=1221 $ unzip auriga.zip コンパイル なんか事前の設定とか必要なんだろうけど何も考えずにコンパイルしてみよう。 $ cd Auriga-1221full $ make で、エラーした。 ../common/grfio.c:87:20: fatal error: zlib.h: No such file or directory #include &lt;zlib.h&gt; ^ compilation terminated. make[1]: *** [../common/grfio.o] Error 1 make[1]: Leaving directory `/home/daisuketsuji/Downloads/Auriga-1221Full/src/map' zlibがないらしい。 $ sudo apt-get install zlib1g $ sudo apt-get install zlib1g-dev これで通った。 grfファイルの準備 grfファイルを用意しなきゃいけなかったらしい。 コンパイル前にすることはなかったな。Winならあるのかもね。 とりあえずgrfファイルはクライアント側にあるので、公式のクライアントダウンロードからダウンロード &amp; インストール。 Ubuntuじゃインストール出来ないから、Windowsでインストールして持ってくんのだるかった・・・。 持ってきたらconf/grf-files.txtに追記。 Aurigaと同じフォルダに入れたのでこんな感じに。 grf: ./data.grf 不要な行はコメントアウトで。 サーバ起動 Linuxの場合起動はauriga-startを使うみたい。 解凍直後は実行権限がないのでsudo chmod 744 auriga-startをしとく必要あり。 で、./auriga-start startで起動。 chrif: connection to the char server was closed.</div>
     </div>
     <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/">
+        <a href="http://localhost:1313/blog/2014/10/19/build-auriga-server-on-ubuntu/">
             <i class="fa fa-chevron-down"></i>
         </a>
     </footer>
@@ -124,279 +124,10 @@
 </div>
 
 
+
 <aside class="sidebar-wrapper">
     <div class="container">
-        
-        <div class="tags tag-cloud">
-            <h2>Tags</h2>
-            <ul class="post-tags">
-                
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/auriga">
-                        auriga
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/aws">
-                        aws
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/beanstalk">
-                        beanstalk
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/boot2docker">
-                        boot2docker
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/clang">
-                        clang
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/clojure">
-                        clojure
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/database">
-                        database
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/dns">
-                        dns
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/docker">
-                        docker
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/git">
-                        git
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/github">
-                        github
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/golang">
-                        golang
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/google-app-engine">
-                        google-app-engine
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/gravatar">
-                        gravatar
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/heroku">
-                        heroku
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/html">
-                        html
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/hugo">
-                        hugo
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/jekyll">
-                        jekyll
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/laravel">
-                        laravel
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/leiningen">
-                        leiningen
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/linux">
-                        linux
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/lobos">
-                        lobos
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/migration">
-                        migration
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/node.js">
-                        node.js
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/octopress">
-                        octopress
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/php">
-                        php
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/postgres">
-                        postgres
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/ruby">
-                        ruby
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/sass">
-                        sass
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/scss">
-                        scss
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/sql-server">
-                        sql-server
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/startup-weekend">
-                        startup-weekend
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/sw">
-                        sw
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/swt">
-                        swt
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/swy">
-                        swy
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/theme">
-                        theme
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/ubuntu">
-                        ubuntu
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-        
-        
-        <div id="profile" class="profile">
-            <h2>Profile</h2>
+        <div id="profile">
             <div class="eyecatch">
                 <img id="photo" src="/images/nopicture.png" alt="profile">
             </div>
@@ -421,6 +152,8 @@
         
     </div>
 </aside>
+
+
 
 
 <footer class="copy">
