@@ -5,7 +5,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-<meta property="og:url" content="http://yet.unresolved.xyz">
+<meta property="og:url" content="http://localhost:1313">
 
 
 <meta property="og:title" content="Unresolved">
@@ -22,14 +22,14 @@
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/solarized_dark.min.css">
-<link rel="stylesheet" href="http://yet.unresolved.xyz/css/styles.css">
-<link rel="stylesheet" href="http://yet.unresolved.xyz/css/custom.css">
+<link rel="stylesheet" href="http://localhost:1313/css/styles.css">
+<link rel="stylesheet" href="http://localhost:1313/css/custom.css">
 
 
-<link rel="shortcut icon" href="http://yet.unresolved.xyz/assets/favicon.ico">
+<link rel="shortcut icon" href="http://localhost:1313/assets/favicon.ico">
 
 
-<link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:1313/index.xml">
 
 
 
@@ -37,7 +37,7 @@
     <div class="masthead">
         <div class="container">
             <h3 class="masthead-title">
-                <a href="http://yet.unresolved.xyz" title="Home">Unresolved</a>
+                <a href="http://localhost:1313" title="Home">Unresolved</a>
             </h3>
             
             
@@ -100,16 +100,16 @@
     <article class="post">
     <div class="eyecatch">
         
-        <a href="http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/"><img src="http://yet.unresolved.xyz/images/clojure.png" alt="LeiningenでSCSSを自動コンパイルする"></a>
+        <a href="http://localhost:1313/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/"><img src="http://localhost:1313/images/clojure.png" alt="LeiningenでSCSSを自動コンパイルする"></a>
         
     </div>
     <div class="data">
         <span class="post-date">Tue, Dec 9, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/">LeiningenでSCSSを自動コンパイルする</a></h1>
+        <h1 class="post-title"><a href="http://localhost:1313/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/">LeiningenでSCSSを自動コンパイルする</a></h1>
         <div class="summary">Clojureを始めて一週間ほどになりまして。 ようやくWebアプリ開発に着手しました。 というわけで開発環境を整えます。 lein-haml-sassの導入 まったく贅沢な名前してんな！ いえ、lein-haml-sassは素晴らしいプラグインです。 これを使うとなんとhamlのコンパイルやsass/scssのコンパイルをやってくれます。 ていうかsassとscssの違いってなんだっけ？真面目に考えるとわかんないな。 CSSコーディングで泣かないためのSassの基礎知識と10の利点 (1&frasl;3) へえ・・・。 とりあえず導入します。 project.cljに (defproject example &quot;1.2.3&quot; :plugins [[lein-haml-sass &quot;0.2.7-SNAPSHOT&quot;]]) さらに設定も記述。 resources/sass/にscssを、resources/public/css/にcssを出力する設定。 (defproject example-project &quot;1.2.3&quot; :haml {:src &quot;resources/haml&quot; :output-directory &quot;resources/public/html&quot; } :sass {:src &quot;resources/sass&quot; :output-directory &quot;resources/public/css&quot; } :scss {:src &quot;resources/scss&quot; :output-directory &quot;resources/public/css&quot; } ) ここまではコピペだけど、オレのファイル自体はこんな感じに。 (defproject tpc &quot;0.1.0-SNAPSHOT&quot; :description &quot;FIXME: write description&quot; :url &quot;http://example.com/FIXME&quot; :min-lein-version &quot;2.0.0&quot; :dependencies [[org.clojure/clojure &quot;1.6.0&quot;] [compojure &quot;1.2.0&quot;] [ring/ring-defaults &quot;0.1.2&quot;] [enlive &quot;1.1.5&quot;]] :plugins [[lein-ring &quot;0.8.13&quot;] [lein-haml-sass &quot;0.2.7-SNAPSHOT&quot;]] :ring</div>
     </div>
     <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/">
+        <a href="http://localhost:1313/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/">
             <i class="fa fa-chevron-down"></i>
         </a>
     </footer>
@@ -124,279 +124,10 @@
 </div>
 
 
+
 <aside class="sidebar-wrapper">
     <div class="container">
-        
-        <div class="tags tag-cloud">
-            <h2>Tags</h2>
-            <ul class="post-tags">
-                
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/auriga">
-                        auriga
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/aws">
-                        aws
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/beanstalk">
-                        beanstalk
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/boot2docker">
-                        boot2docker
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/clang">
-                        clang
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/clojure">
-                        clojure
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/database">
-                        database
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/dns">
-                        dns
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/docker">
-                        docker
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/git">
-                        git
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/github">
-                        github
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/golang">
-                        golang
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/google-app-engine">
-                        google-app-engine
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/gravatar">
-                        gravatar
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/heroku">
-                        heroku
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/html">
-                        html
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/hugo">
-                        hugo
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/jekyll">
-                        jekyll
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/laravel">
-                        laravel
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/leiningen">
-                        leiningen
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/linux">
-                        linux
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/lobos">
-                        lobos
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/migration">
-                        migration
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/node.js">
-                        node.js
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/octopress">
-                        octopress
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/php">
-                        php
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/postgres">
-                        postgres
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/ruby">
-                        ruby
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/sass">
-                        sass
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/scss">
-                        scss
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/sql-server">
-                        sql-server
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/startup-weekend">
-                        startup-weekend
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/sw">
-                        sw
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/swt">
-                        swt
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/swy">
-                        swy
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/theme">
-                        theme
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/ubuntu">
-                        ubuntu
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-        
-        
-        <div id="profile" class="profile">
-            <h2>Profile</h2>
+        <div id="profile">
             <div class="eyecatch">
                 <img id="photo" src="/images/nopicture.png" alt="profile">
             </div>
@@ -421,6 +152,8 @@
         
     </div>
 </aside>
+
+
 
 
 <footer class="copy">

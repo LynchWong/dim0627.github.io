@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved </title>
-    <link>http://yet.unresolved.xyz/tags/dns/</link>
+    <link>http://localhost:1313/tags/dns/</link>
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
@@ -12,10 +12,10 @@
       
         <item>
           <title>GitHub Pagesでカスタムドメインを使う</title>
-          <link>http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/</link>
+          <link>http://localhost:1313/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/</link>
           <pubDate>Fri, 24 Oct 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/</guid>
+          <guid>http://localhost:1313/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/</guid>
           <description>
 
 &lt;p&gt;昨日はGAEで今日はGithubかよって感じだけど、こっちは結構詰まったのでメモしたい。&lt;/p&gt;
@@ -72,10 +72,10 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
       
         <item>
           <title>Google app engineでカスタムドメインを使う</title>
-          <link>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</link>
+          <link>http://localhost:1313/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</link>
           <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</guid>
+          <guid>http://localhost:1313/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</guid>
           <description>
 
 &lt;p&gt;簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。&lt;/p&gt;
@@ -94,11 +94,11 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 
 &lt;p&gt;はじめにGoogleが、使いたいドメインが君のものか確認したいとのことなので、verifyへ。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34; class=&#34;image&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2014-10-23/verify.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2014-10-23/verify.png&#34; class=&#34;image&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;そうするとこんな画面になるので、&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34; class=&#34;image&#34; alt=&#34;input_domain&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2014-10-23/input_domain.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2014-10-23/input_domain.png&#34; class=&#34;image&#34; alt=&#34;input_domain&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;ここに表示されてるテキストを、ドメインを発行した会社さんのほうからTXTレコードとして追加すればOK。&lt;/p&gt;
 
@@ -114,7 +114,7 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 
 &lt;p&gt;でここに入力すればOK。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34; class=&#34;image&#34; alt=&#34;input_txt&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2014-10-23/input_txt.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2014-10-23/input_txt.png&#34; class=&#34;image&#34; alt=&#34;input_txt&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;TYPEはTXTにしてVALUEにさっきのテキストを入力。&lt;/p&gt;
 
@@ -126,7 +126,7 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 
 &lt;p&gt;確認が出来たらサブドメインとしてプレフィックスを付けるのかを決める。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34; class=&#34;image&#34; alt=&#34;step2&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2014-10-23/step2.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2014-10-23/step2.png&#34; class=&#34;image&#34; alt=&#34;step2&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;これによって最後のステップが変わるけど、オレは確認の時点でサブドメインとして設定したので、Google側では特に付加せずやってます。&lt;/p&gt;
 
@@ -136,7 +136,7 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 
 &lt;p&gt;ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34; class=&#34;image&#34; alt=&#34;step3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2014-10-23/step3.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2014-10-23/step3.png&#34; class=&#34;image&#34; alt=&#34;step3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;あとは待ってればそのうち反映されるはず。&lt;/p&gt;
 </description>
