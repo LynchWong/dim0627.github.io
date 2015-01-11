@@ -6,8 +6,72 @@
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
-    <updated>2014-10-23 00:00:00 &#43;0000 UTC</updated>
+    <updated>2015-01-12 00:19:33 &#43;0900 JST</updated>
 
+    
+      
+        <item>
+          <title>Python on GAEで3rdパーティライブラリを使う</title>
+          <link>http://yet.unresolved.xyz/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/</link>
+          <pubDate>Mon, 12 Jan 2015 00:19:33 JST</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/</guid>
+          <description>
+
+&lt;p&gt;ひさびさに&lt;a href=&#34;https://cloud.google.com/appengine/&#34;&gt;Google App Engine&lt;/a&gt;を使おうとしたらGoogle Cloud Platformだかなんだかでいろいろと変わってて戸惑った。&lt;/p&gt;
+
+&lt;p&gt;何かっていうと3rd Partyのライブラリを使うときにどうやるんだっけなっていうこと。&lt;/p&gt;
+
+&lt;p&gt;昔は&lt;code&gt;requirements.txt&lt;/code&gt;でうまいことやってくれなかったけ？違う？&lt;/p&gt;
+
+&lt;p&gt;普通にBeautifulSoupとか使った気するんだけど、どうやってたんだろうか・・・。&lt;/p&gt;
+
+&lt;h2 id=&#34;標準で使えるライブラリ:02454e4cc49b95e0abcafafbdc302335&#34;&gt;標準で使えるライブラリ&lt;/h2&gt;
+
+&lt;p&gt;Google App Engine側に導入されてるライブラリがこれ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/appengine/docs/python/tools/libraries27&#34;&gt;Third-party Libraries in Python 2.7 - Python — Google Cloud Platform&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;基本的なやつとかWAFで使うやつしか入ってないみたい。&lt;/p&gt;
+
+&lt;h2 id=&#34;載ってないやつは使えない:02454e4cc49b95e0abcafafbdc302335&#34;&gt;載ってないやつは使えない？&lt;/h2&gt;
+
+&lt;p&gt;そんなことはない。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine&#34;&gt;How to include third party Python libraries in Google App Engine? - Stack Overflow&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;でもずいぶん原始的な方法で、libディレクトリを作ってそこに入れなよって見解らしい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;default git:(master)$ tree -L 2
+.
+|-- CONTRIB.md
+|-- LICENSE
+|-- README.md
+|-- app.yaml
+|-- cron.yaml
+|-- favicon.ico
+|-- lib
+|   |-- feedparser.egg-info
+|   |-- feedparser.py
+|   |-- feedparser.pyc
+|   |-- feedparsertest.py
+|   |-- sgmllib3.py
+|   `-- tests
+|-- main.py
+|-- main.pyc
+`-- temp.py
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;パスも追加&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import sys
+sys.path.insert(0, &#39;lib&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;今回は手動でzip落として入れちゃったけど、&lt;code&gt;pip install -t lib&lt;/code&gt;で入れてくのが楽かな。&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>

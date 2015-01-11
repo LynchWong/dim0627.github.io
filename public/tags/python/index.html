@@ -102,16 +102,16 @@
     <article class="post">
     <div class="eyecatch">
         
-        <a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/"><img src="http://yet.unresolved.xyz/images/hugo.png" alt="ブログをOctopressからHugoに移行した"></a>
+        <a href="http://yet.unresolved.xyz/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/"><img src="http://yet.unresolved.xyz/images/python.png" alt="Python on GAEで3rdパーティライブラリを使う"></a>
         
     </div>
     <div class="data">
-        <span class="post-date">Sun, Jan 4, 2015</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">ブログをOctopressからHugoに移行した</a></h1>
-        <div class="summary">Octopressでのブログもずいぶん慣れてきたところでHugoに移行しました。 一晩徹夜して、カスタマイズからGitHub Pagesでの公開までいけたのでいろいろまとめてみる。 なぜ移行？ ずっとテーマのカスタマイズをしたいと思ってたんだけど、Octopressのテーマの構成がいつまでたっても理解出来なかったのが一番の理由。 テーマというか、テンプレートの構成かな・・・。 Google Adsenseとかも導入したんだけど、そんな些細な修正ですらちょっと辛い感じになってしまってたので、いっそ土台ごと変えることに。 Hugoに移行するメリット せっかくだし移行してみてよかったことをまとめてみます。 とにかくスピーディ 何をするにも動作がめちゃくちゃ速い。 記事数がそんなに多くないからOctopressでも不満はなかったんだけど、今考えればとてつもない遅さだったなあと思う。 Hugoはほんとに一瞬で記事を生成するし、サーバの起動も一瞬なのでライブリロードがいらないくらい。使ってるけど笑 HugoはGolangで出来てるそうで、それが要因なのかはわからないけど、これまで触ってきた開発用サーバの中でも類を見ない速さで作業ができます。 構造がシンプル トップページ、記事一覧、記事個別のページ、って感じで綺麗に区分けがされてる。 テーマがいくつかあるんだけど、どれも必要のないネストとかしてないし、そこからカスタマイズがしやすい。 あと、カテゴリとかタグみたいに、記事間を横断的に集計したい場合もすごく簡単に出来る。 すごく簡単すぎてどうなってるのかわからなくなることがあるけど笑 Taxonomy Overview 無駄な物がない Hugoはnewで作った時に基礎になるテンプレートがないくらい、標準装備が少ない。 まあそれじゃテスト実行さえ出来ないからどうなんだっていう人もいると思うけど笑 オレは結構0から作りたい方なので、これくらいすっきりさせてくれてたほうが嬉しかった。 移行によるデメリット とはいえ全てがよかったわけではなくて、途中で何度か引き返そうと思う場面もあったので、そこも書いとく。 自分でやらなきゃいけないことが多い やっぱりOctopressはRakeタスクでかなり囲い込みが出来てたなあと思う。 OctopressをGitHub Pagesで公開する場合、masterとsourceブランチが作成されるんだけど、あれは運用面でも非常に楽だったなあと思う。 Hugoはデプロイは一切触れずに、本当に静的な資材の生成しかしないから、その辺は自分でやらなきゃいけない。 だから初めての人には辛いところがあるかも。 あ、あとDISQUSとかもテーマによってはIDを指定するだけで使えたり、自分でタグを埋め込まなきゃ使えなかったりする。 記事のカテゴリ分けとかタグ付けについても自分で設定しなきゃいけない。公式に手順はあるけど。 もちろんSNSのリンクも自分で配置。 日本語タイトルが使いづらい Octopressの時は、記事のMarkdownファイルのファイル名は英語にして、ファイル内のtitleで日本語を設定してました。 Hugoはファイル内のtitleで記事個別ページのURLを生成するから、マルチバイトが入るといろいろ面倒なことになっちゃった。 あと、これまでのSEOをゼロにしたくないからURLは変えたくなくて、やっぱりURLでは英語のタイトルを使いたい。 これはもうどうしょうもなくて、ファイル内に英語タイトルと日本語タイトルを設定出来るようにした。 シェルで一括操作出来るような内容でもないので、ここは手作業。 テーマが少ない あるものでなんとかしたい、って人には深刻かと笑 ブログ自体に注力せずに記事を書くことに注力したい、って人はOctopressかHexoかそもそもHatenaとかの方がいいのかもしれない。 移行において 記事の移行と、なるべく移行前と移行後でブログを書く作業が変わらないように工夫した点をまとめる。 日付フォーマットの変更 Octopressと違ってHugoでは日付のフォーマットを date: &quot;2013-10-27&quot; こんな感じにしなきゃいけないので、先人の知恵を使って置換する。 $ find . -type f -exec sed -i &quot;&quot; -e 's/\([0-9]\+-[0-9]\+-[0-9]\+\).*$/&quot;\1&quot;/' {} \; 画像タグの変更 Octopressではこう書いてたけど [{% img /images/2015-01-01/beanstalkDockerApp.png 'beanstalkDockerApp' 'beanstalkDockerApp' %}](/images/2015-01-01/beanstalkDockerApp.png) Hugoでは画像タグHTMLベタにするので、 $ find .</div>
+        <span class="post-date">Mon, Jan 12, 2015</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/">Python on GAEで3rdパーティライブラリを使う</a></h1>
+        <div class="summary">ひさびさにGoogle App Engineを使おうとしたらGoogle Cloud Platformだかなんだかでいろいろと変わってて戸惑った。 何かっていうと3rd Partyのライブラリを使うときにどうやるんだっけなっていうこと。 昔はrequirements.txtでうまいことやってくれなかったけ？違う？ 普通にBeautifulSoupとか使った気するんだけど、どうやってたんだろうか・・・。 標準で使えるライブラリ Google App Engine側に導入されてるライブラリがこれ。 Third-party Libraries in Python 2.7 - Python — Google Cloud Platform 基本的なやつとかWAFで使うやつしか入ってないみたい。 載ってないやつは使えない？ そんなことはない。 How to include third party Python libraries in Google App Engine? - Stack Overflow でもずいぶん原始的な方法で、libディレクトリを作ってそこに入れなよって見解らしい。 default git:(master)$ tree -L 2 . |-- CONTRIB.md |-- LICENSE |-- README.md |-- app.yaml |-- cron.yaml |-- favicon.ico |-- lib | |-- feedparser.egg-info | |-- feedparser.py | |--</div>
     </div>
     <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">
+        <a href="http://yet.unresolved.xyz/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/">
             <i class="fa fa-chevron-down"></i>
         </a>
     </footer>

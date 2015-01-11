@@ -3,5 +3,5 @@
 slug: ""
 eyecatch: ""
 comments: true
-categories: []
+tags: []
 ---
