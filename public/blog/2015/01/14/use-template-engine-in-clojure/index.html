@@ -8,13 +8,17 @@
 <meta property="og:url" content="http://yet.unresolved.xyz">
 
 
-<meta property="og:title" content="Unresolved">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Clojureのテンプレートエンジンについて &middot; Unresolved">
+
+<meta property="og:image" content="http://yet.unresolved.xyz/images/clojure.png">
+
 
 <meta property="og:site_name" content="Unresolved">
 
 <title>
     
-    Unresolved
+    Clojureのテンプレートエンジンについて
     
 </title>
 
@@ -99,69 +103,294 @@
     <div class="container content">
 
 
-<div class="posts">
-    
-    <article class="post">
+<article class="post post-single">
+    <span class="post-date">Wed, Jan 14, 2015</span>
+    <h1 class="post-title">Clojureのテンプレートエンジンについて</h1>
+
     <div class="eyecatch">
         
-        <a href="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/"><img src="http://yet.unresolved.xyz/images/aws.png" alt="ClojureのWebアプリをDocker &#43; Beanstalkで動かす"></a>
+        <img src="http://yet.unresolved.xyz/images/clojure.png" alt="Clojureのテンプレートエンジンについて">
         
     </div>
-    <div class="data">
-        <span class="post-date">Wed, Dec 31, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/">ClojureのWebアプリをDocker &#43; Beanstalkで動かす</a></h1>
-        <div class="summary">たぶんこういうのはドキュメント読んでもわからないので、とにかく一通りの流れを実践してみる。 Imageの取得 面倒なのでDocker HubからClojureが動く環境を持ってくる。 オフィシャルリポジトリとやらがあったので、それを使います。 Leiningenとか一式が入ってるみたい。 clojure ローカルでの動作確認 とりあえず世界に挨拶が出来るくらいのWebアプリを作っちゃおう。 アプリ自体は重要じゃないので、とりあえずインタラクティブシェル上でちゃちゃっと作っちゃう。 b2d$ docker run -i -t clojure /bin/bash root@e322a11f087d:/home# lein new compojure aws_webapp Retrieving compojure/lein-template/0.4.1/lein-template-0.4.1.pom from clojars Retrieving compojure/lein-template/0.4.1/lein-template-0.4.1.jar from clojars root@e322a11f087d:/home# ls aws_webapp root@e322a11f087d:/home# cd aws_webapp/ root@e322a11f087d:/home/aws_webapp# ls README.md project.clj resources src test と思ったらcompojureテンプレート自体がすでにHello Worldを実装してた・・・。 そのままサーバ起動しちゃうとこんな感じでブラウザの自動起動のとこでエラーしちゃうので、lein ring server-headlessで起動する。 root@e322a11f087d:/home/aws_webapp# lein ring server 2015-01-01 05:41:35.432:INFO:oejs.Server:jetty-7.6.8.v20121106 2015-01-01 05:41:35.486:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:3000 Started server on port 3000 Exception in thread &quot;main&quot; java.lang.InternalError: Can't connect to X11 window server using 'localhost:0.0' as the value of the DISPLAY variable., compiling:(/tmp/form-init3570254627486988046.clj:1:72) あとはデーモンとして起動しちゃえばローカルでの確認が出来る。 b2d$ docker run -d -t -p 3000:3000 clojure:aws /bin/bash -c &quot;cd /home/aws_webapp; lein ring server-headless&quot; e9981a71589918791d52888a0cb503bea133611395be58574047cd498c9e6f76 b2d$ docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES e9981a715899 clojure:aws &quot;/bin/bash -c 'cd /h 4 seconds ago Up 3 seconds 0.0.0.0:3000-&gt;3000/tcp backstabbing_colden 起動しているのはboot2dockerの仮想マシン上なので、 b2d$ boot2docker ip 192.168.59.103 このIPの3000ポートに向けてアクセスすれば、 見れます。 ringのサーバは起動が遅いのでdocker logs [names]で確認しながらやるとよい。 Elastic Beanstalkで動かす 大事なことに気づいたんだけど、BeanstalkはDockerfileとか必要なファイル一式をまとめたzipをアップするらしい。 そもそもソースもイメージに入れちゃうっていうのは考えとしておかしかったね。 なのでwarをADDで置くのが理想的なのかな。 今回は面倒なので、clojureでWebサーバを立ち上げられるhttp-kitというライブラリを使ってやってみます。 ちょうどBeanstalk用のDockerfileとかも用意してくれるmrmcc3/beanstalk-docker-appというテンプレートがあったので、これを使わせてもらうことに。 mrmcc3/beanstalk-docker-appでWebアプリを構築する 何はともあれnewして作り直し。 temp$ lein new beanstalk-docker-app superapp Generating clojure app for AWS Beanstalk and docker こんな感じで作られる。 jarとかはlein uberjarで作らなきゃダメかも。 .</div>
+
+    <div class="post-content">
+        
+
+<p>練習のためにClojureでいくつかのWebアプリを作ってみたんだけど、どの言語でもなんだかんだ手間になるテンプレートの扱いについてまとめてみる。</p>
+
+<h2 id="enlive-https-github-com-cgrand-enlive:d03bd055194b84467476c0228f17c156"><a href="https://github.com/cgrand/enlive">Enlive</a></h2>
+
+<p><a href="http://www.amazon.co.jp/gp/product/B007Q4T040/ref=as_li_tf_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B007Q4T040&linkCode=as2&tag=unresolved-22">Clojure Programming</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=B007Q4T040" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;display:inline;" />を執筆されたChristophe Grand氏のライブラリ。</p>
+
+<p>CSSのセレクタでバインドを行うという、すごく画期的な方法でテンプレート機能を実現させてる。</p>
+
+<p>例えばこんな感じでテンプレートのHTMLがあれば、</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;title&gt;This is a title placeholder&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>こうやってバインドできる。</p>
+
+<pre><code class="language-clojure">(html/deftemplate main-template &quot;templates/application.html&quot;
+  []
+  [:head :title] (html/content &quot;Enlive starter kit&quot;))
+</code></pre>
+
+<p>HTLMが素でかけるから、デザイナさんとの協業がすごく捗りそう。</p>
+
+<p>サンプルのHTMLをそのまま使って、Clojure側でサンプルの値を置き換えたりリピートさせたりすれば済んじゃう。</p>
+
+<p>今回は一人で使ったからそういう場面はなかったけど、サーバを起動しなくてもデザインが見れる &amp; 直せるっていうのは便利な場面があるかなあと。</p>
+
+<p>ただ、結構CSSを書いたりしてるほうだけど、バインドの学習コストは意外と高いなと思った。</p>
+
+<p>効率的に手早くバインドさせるには、Enliveを使う想定のHTML構造にする必要がありそうな印象だった。</p>
+
+<p>覚えてしまえばものすごく活躍しそう。</p>
+
+<h2 id="hiccup-https-github-com-weavejester-hiccup:d03bd055194b84467476c0228f17c156"><a href="https://github.com/weavejester/hiccup">Hiccup</a></h2>
+
+<p><a href="https://github.com/weavejester/compojure">Compojure</a>や<a href="https://github.com/weavejester/environ">Environ</a>、<a href="https://github.com/weavejester/lein-ring">Ring</a>などの作者、James Reeves氏のライブラリ。</p>
+
+<p>HTMLを完全にClojureでラップしてるので、ClojureだけでWebアプリを完結させられる。</p>
+
+<p>こんな感じ。</p>
+
+<pre><code class="language-clojure">user=&gt; (html [:script])
+&quot;&lt;script&gt;&lt;/script&gt;&quot;
+user=&gt; (html [:p])
+&quot;&lt;p /&gt;&quot;
+</code></pre>
+
+<p>Clojureのコンパイルが走るので、タグの不整合(閉じタグがないとか)が一切起こらないっていうのは魅力だと思う。</p>
+
+<p>欠点を挙げるとすれば、改行なしでHTMLが出力されるからブラウザからソースを見るのが厳しい。ていうか無理。</p>
+
+<p>設定でなんとか出来るんだろうか？</p>
+
+<p>でもChromeの開発者ツールとか使えばフォーマットして表示してくれるし、全然クリティカルな問題じゃない。</p>
+
+<p>もう1点は、例えば広告のスクリプトみたいにコピペで貼り付けたい文字列とかの出力がちょっとめんどう。</p>
+
+<p>Hiccupの世界にただのタグを入れるのは見栄えも悪いし、オレはこんな感じで外だしすることで対応した。</p>
+
+<pre><code class="language-clojure">(def partial-ad-big (str &quot;&lt;script async src=&quot;&quot;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;&quot;&gt;&lt;/script&gt;
+&lt;ins class=&quot;&quot;adsbygoogle&quot;&quot;
+     style=&quot;&quot;display:inline-block;width:728px;height:90px&quot;&quot;
+     data-ad-client=&quot;&quot;ca-pub-421xxxxxxxxxx76&quot;&quot;
+     data-ad-slot=&quot;&quot;111xxxxxxxx42&quot;&quot;&gt;&lt;/ins&gt;
+&lt;script&gt;
+(adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;&quot;))
+</code></pre>
+
+<p>個人的にはHiccupのほうがさくっと理解できてさくっと書けたかな。</p>
+
+<p>ループ処理もClojureがかければそのまま書けちゃうし。</p>
+
+<p>ClojureとHTMLの親和性はすごく高いと思っていて、Hiccupはそれを最大限に活用することが出来てるなあという感じ。</p>
+
+<p>ある言語を他の言語でラップするのって再学習が必要だし非効率で嫌いだったんだけど、HiccupはHTMLの冗長さが減るし、学習する価値のあるライブラリだと思った。</p>
+
+<p>ゆくゆくはどっちもしっかり使えるようになりたい。</p>
+
     </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
 
     
-    <article class="post">
-    <div class="eyecatch">
+    <aside>
         
-        <a href="http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/"><img src="http://yet.unresolved.xyz/images/docker.png" alt="boot2dockerでCannot connect to the Docker daemon"></a>
+        <h3>Related Post</h3>
+
         
-    </div>
-    <div class="data">
-        <span class="post-date">Tue, Dec 30, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/">boot2dockerでCannot connect to the Docker daemon</a></h1>
-        <div class="summary">これまでは普通に手で作ったVMのUbuntu上でDockerを触ってたんだけど、なんかあれだしboot2dockerに移行しようかと。 いろいろやってみようとしたら導入から結構躓いた。 boot2dockerの導入 Installing Docker on Mac OS Xに沿って導入してみる。 あ、本体はインストーラじゃなくてbrew install boot2dockerで導入してます。 b2d$ boot2docker init 2014/12/29 22:59:08 Downloading boot2docker ISO image... 2014/12/29 22:59:09 Latest release is v1.4.1 2014/12/29 23:00:17 Success: downloaded https://github.com/boot2docker/boot2docker/releases/download/v1.4.1/boot2docker.iso to /Users/DaisukeTsuji/.boot2docker/boot2docker.iso Generating public/private rsa key pair. Your identification has been saved in /Users/DaisukeTsuji/.ssh/id_boot2docker. Your public key has been saved in /Users/DaisukeTsuji/.ssh/id_boot2docker.pub. The key fingerprint is: 36:99:81:cf:0b:bd:77:3b:30:9d:66:70:ad:90:ac:35 DaisukeTsuji@DaisukeTsujis-MacBook-Air.local The key's randomart image is: +--[ RSA 2048]----+ | | | .</div>
-    </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
+        <ul class="post-tags">
+            
+            <li>
+                <a href="http://yet.unresolved.xyz/tags/clojure">
+                    <i class="fa fa-tags"></i>
+                    clojure
+                </a>
+            </li>
+            
+            <li>
+                <a href="http://yet.unresolved.xyz/tags/enlive">
+                    <i class="fa fa-tags"></i>
+                    enlive
+                </a>
+            </li>
+            
+            <li>
+                <a href="http://yet.unresolved.xyz/tags/hiccup">
+                    <i class="fa fa-tags"></i>
+                    hiccup
+                </a>
+            </li>
+            
+        </ul>
+
+        <ul class="related-post">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <li><a href="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/">ClojureのWebアプリをDocker &#43; Beanstalkで動かす</a></li>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <li><a href="http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/">Lobosでマイグレーションができない in Heroku</a></li>
+            
+            
+            
+            
+            
+            <li><a href="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/">Lobosを使ってマイグレーションをする</a></li>
+            
+            
+            
+            
+            
+            <li><a href="http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/">LeiningenでSCSSを自動コンパイルする</a></li>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </ul>
+    </aside>
+    
 
     
-    <article class="post">
-    <div class="eyecatch">
-        
-        <a href="http://yet.unresolved.xyz/blog/2014/11/09/learn-docker/"><img src="http://yet.unresolved.xyz/images/docker.png" alt="Docker事始め"></a>
-        
-    </div>
-    <div class="data">
-        <span class="post-date">Sun, Nov 9, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/11/09/learn-docker/">Docker事始め</a></h1>
-        <div class="summary">ちょっとやりたいことがあって、Dockerを使ってみることに。 ドキュメントはDockerizing Applications: A &ldquo;Hello world&rdquo;から一通り読んだんだけど、 触りながらやってもちょっと覚えるのが大変そうだからまとめてみる。 何が出来る？何に使う？ Vagrantみたいに仮想環境をバンバン立ち上げることが出来るって認識は合ってそう。 しかしコンテナ型だから速いとかGolangで出来てるとか、各所は難しい話ばっかで何が出来て何に使うってのがいまいち見えてこないんだな。 特にオレみたいに、知識はないけどやってみたい人はそれじゃ理解が進まない！ ちなみにオレの場合、Vagrantはアプリケーション単位に環境を作っています。 開発するときは、ホストで書く-&gt;ゲストで動かす、って感じに動作環境として使ってるんだけど、 その点DockerはWebサーバとかDBサーバとか、そういう単位に仮想環境を作ってそれらを連携させたりするのが容易らしい。 さらに、環境まるごとバージョン管理ができるんだとか。 作っては捨てる環境ってだけじゃなくて、本番環境みたいに継続維持しなきゃいけない環境とかにも使えるんじゃないのかなあ、っていう印象。 ただ、こんな記事がある通り、 [翻訳] Dockerについてよくある勘違い 本番で動かすなら結構な知識が必要だから安易にやるのはちょっとね、ってのが製作陣の考えのよう。 オレは個人的な環境で使いたいだけだから、特に問題はないね。 どんな感じに使う？ ドキュメント通りに理解を進めていこう。 例えば、こんな感じでコンテナを起動した上でechoコマンドを実行したり、 $ sudo docker run ubuntu:14.04 /bin/echo 'Hello world' こんな感じでインタラクティブモードでの起動が出来たりする。 $ sudo docker run -t -i ubuntu:14.04 /bin/bash root@af8bae53bdd3:/# デーモンとして起動したり、 $ sudo docker run -d ubuntu:14.04 /bin/sh -c &quot;while true; do echo hello world; sleep 1; done&quot; 1e5535038e285177d5214659a068137486f96ee5c2e85a4ac52dc83f2ebe4147 起動してるデーモンを1つのプロセスとして確認できたりする。 $ sudo docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES 1e5535038e28 ubuntu:14.04 /bin/sh -c 'while tr 2 minutes ago Up 1 minute insane_babbage CONTAINER_IDとNAMESはコンテナを起動するたびに変わる。 NAMESは自分で決めることも出来るとか？ デーモンとして起動したコンテナの出力を見るにはこんな感じ。 $ sudo docker logs insane_babbage hello world hello world hello world .</div>
-    </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2014/11/09/learn-docker/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
+    <footer>
+        <div class="move">
+            <div class="prev">
+                
+            </div>
+            <div class="next">
+                
+                <a href="http://yet.unresolved.xyz/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/">
+                    Python on GAEで3rdパーティライブラリを使う
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+                
+            </div>
+        </div>
 
-    
-</div>
+        
+        
+        
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+ 
+var disqus_shortname = 'unresolved'; 
+
+ 
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        
+        
+    </footer>
+
+</article>
 
 
     </div>

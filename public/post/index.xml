@@ -6,8 +6,105 @@
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
-    <updated>2015-01-12 00:19:33 &#43;0900 JST</updated>
+    <updated>2015-01-14 01:01:39 &#43;0900 JST</updated>
 
+    
+      
+        <item>
+          <title>Clojureのテンプレートエンジンについて</title>
+          <link>http://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/</link>
+          <pubDate>Wed, 14 Jan 2015 01:01:39 JST</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/</guid>
+          <description>
+
+&lt;p&gt;練習のためにClojureでいくつかのWebアプリを作ってみたんだけど、どの言語でもなんだかんだ手間になるテンプレートの扱いについてまとめてみる。&lt;/p&gt;
+
+&lt;h2 id=&#34;enlive-https-github-com-cgrand-enlive:d03bd055194b84467476c0228f17c156&#34;&gt;&lt;a href=&#34;https://github.com/cgrand/enlive&#34;&gt;Enlive&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/gp/product/B007Q4T040/ref=as_li_tf_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B007Q4T040&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;Clojure Programming&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=B007Q4T040&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display:inline;&#34; /&gt;を執筆されたChristophe Grand氏のライブラリ。&lt;/p&gt;
+
+&lt;p&gt;CSSのセレクタでバインドを行うという、すごく画期的な方法でテンプレート機能を実現させてる。&lt;/p&gt;
+
+&lt;p&gt;例えばこんな感じでテンプレートのHTMLがあれば、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;title&amp;gt;This is a title placeholder&amp;lt;/title&amp;gt;
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こうやってバインドできる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(html/deftemplate main-template &amp;quot;templates/application.html&amp;quot;
+  []
+  [:head :title] (html/content &amp;quot;Enlive starter kit&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;HTLMが素でかけるから、デザイナさんとの協業がすごく捗りそう。&lt;/p&gt;
+
+&lt;p&gt;サンプルのHTMLをそのまま使って、Clojure側でサンプルの値を置き換えたりリピートさせたりすれば済んじゃう。&lt;/p&gt;
+
+&lt;p&gt;今回は一人で使ったからそういう場面はなかったけど、サーバを起動しなくてもデザインが見れる &amp;amp; 直せるっていうのは便利な場面があるかなあと。&lt;/p&gt;
+
+&lt;p&gt;ただ、結構CSSを書いたりしてるほうだけど、バインドの学習コストは意外と高いなと思った。&lt;/p&gt;
+
+&lt;p&gt;効率的に手早くバインドさせるには、Enliveを使う想定のHTML構造にする必要がありそうな印象だった。&lt;/p&gt;
+
+&lt;p&gt;覚えてしまえばものすごく活躍しそう。&lt;/p&gt;
+
+&lt;h2 id=&#34;hiccup-https-github-com-weavejester-hiccup:d03bd055194b84467476c0228f17c156&#34;&gt;&lt;a href=&#34;https://github.com/weavejester/hiccup&#34;&gt;Hiccup&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/weavejester/compojure&#34;&gt;Compojure&lt;/a&gt;や&lt;a href=&#34;https://github.com/weavejester/environ&#34;&gt;Environ&lt;/a&gt;、&lt;a href=&#34;https://github.com/weavejester/lein-ring&#34;&gt;Ring&lt;/a&gt;などの作者、James Reeves氏のライブラリ。&lt;/p&gt;
+
+&lt;p&gt;HTMLを完全にClojureでラップしてるので、ClojureだけでWebアプリを完結させられる。&lt;/p&gt;
+
+&lt;p&gt;こんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;user=&amp;gt; (html [:script])
+&amp;quot;&amp;lt;script&amp;gt;&amp;lt;/script&amp;gt;&amp;quot;
+user=&amp;gt; (html [:p])
+&amp;quot;&amp;lt;p /&amp;gt;&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Clojureのコンパイルが走るので、タグの不整合(閉じタグがないとか)が一切起こらないっていうのは魅力だと思う。&lt;/p&gt;
+
+&lt;p&gt;欠点を挙げるとすれば、改行なしでHTMLが出力されるからブラウザからソースを見るのが厳しい。ていうか無理。&lt;/p&gt;
+
+&lt;p&gt;設定でなんとか出来るんだろうか？&lt;/p&gt;
+
+&lt;p&gt;でもChromeの開発者ツールとか使えばフォーマットして表示してくれるし、全然クリティカルな問題じゃない。&lt;/p&gt;
+
+&lt;p&gt;もう1点は、例えば広告のスクリプトみたいにコピペで貼り付けたい文字列とかの出力がちょっとめんどう。&lt;/p&gt;
+
+&lt;p&gt;Hiccupの世界にただのタグを入れるのは見栄えも悪いし、オレはこんな感じで外だしすることで対応した。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def partial-ad-big (str &amp;quot;&amp;lt;script async src=&amp;quot;&amp;quot;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&amp;quot;&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;ins class=&amp;quot;&amp;quot;adsbygoogle&amp;quot;&amp;quot;
+     style=&amp;quot;&amp;quot;display:inline-block;width:728px;height:90px&amp;quot;&amp;quot;
+     data-ad-client=&amp;quot;&amp;quot;ca-pub-421xxxxxxxxxx76&amp;quot;&amp;quot;
+     data-ad-slot=&amp;quot;&amp;quot;111xxxxxxxx42&amp;quot;&amp;quot;&amp;gt;&amp;lt;/ins&amp;gt;
+&amp;lt;script&amp;gt;
+(adsbygoogle = window.adsbygoogle || []).push({});
+&amp;lt;/script&amp;gt;&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;個人的にはHiccupのほうがさくっと理解できてさくっと書けたかな。&lt;/p&gt;
+
+&lt;p&gt;ループ処理もClojureがかければそのまま書けちゃうし。&lt;/p&gt;
+
+&lt;p&gt;ClojureとHTMLの親和性はすごく高いと思っていて、Hiccupはそれを最大限に活用することが出来てるなあという感じ。&lt;/p&gt;
+
+&lt;p&gt;ある言語を他の言語でラップするのって再学習が必要だし非効率で嫌いだったんだけど、HiccupはHTMLの冗長さが減るし、学習する価値のあるライブラリだと思った。&lt;/p&gt;
+
+&lt;p&gt;ゆくゆくはどっちもしっかり使えるようになりたい。&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>
