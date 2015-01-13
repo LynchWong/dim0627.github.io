@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://yet.unresolved.xyz/</loc>
-    <lastmod>2015-01-12T00:19:33+09:00</lastmod>
+    <lastmod>2015-01-14T01:01:39+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/</loc>
+    <lastmod>2015-01-14T01:01:39+09:00</lastmod>
   </url>
   
   <url>
@@ -68,12 +73,12 @@
   </url>
   
   <url>
-    <loc>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</loc>
     <lastmod>2014-10-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</loc>
     <lastmod>2014-10-23T00:00:00+00:00</lastmod>
   </url>
   
@@ -118,12 +123,12 @@
   </url>
   
   <url>
-    <loc>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/</loc>
     <lastmod>2014-09-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</loc>
     <lastmod>2014-09-20T00:00:00+00:00</lastmod>
   </url>
   
