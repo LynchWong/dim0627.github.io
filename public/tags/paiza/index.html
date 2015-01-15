@@ -7,19 +7,14 @@
 
 
 
-<meta property="og:type" content="article">
-<meta property="og:title" content="_config.ymlに書いたdescriptionが設定されない | Unresolved">
-<meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/">
-<meta property="og:description" content="認識が間違ってるのか、_config.ymlに書いたdescriptionがサイトに反映されない・・・。 source/_includes/head.htmlのコードを見てみるとこんな感じ。 {% raw %} {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %} &lt;meta name=&quot;description&quot; content=&quot;{{ description | strip_html | condense_spaces | truncate:150 }}&quot;&gt; {% if page.keywords %}&lt;meta name=&quot;keywords&quot; content=&quot;{{ page.keywords }}&quot;&gt;{% endif %} {% endraw %} page.descriptionしか見てない？ 同じことで悩んでる人いないのかな・・・と思ったら居た。 Make the Magic Happen やっぱり同じ認識のようだ。 elseifってこう書くんだね。 {% raw %} {% capture description %}{% if page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %} &lt;meta name=&quot;description&quot; content=&quot;{{ description | strip_html | condense_spaces | truncate:150 }}&quot;&gt; {% if page.keywords %}&lt;meta name=&quot;keywords&quot; content=&quot;{{ page.keywords }}&quot;&gt;{% endif %} {% endraw %} worked!">
-
-<meta property="og:image" content="http://yet.unresolved.xyz/images/octopress.png">
-
+<meta property="og:title" content="Unresolved">
+<meta property="og:url" content="http://yet.unresolved.xyz">
 
 <meta property="og:site_name" content="Unresolved">
 
 <title>
     
-    _config.ymlに書いたdescriptionが設定されない | Unresolved
+    Tags | Unresolved
     
 </title>
 
@@ -106,236 +101,29 @@
     <div class="container content">
 
 
-<article class="post post-single">
-    <span class="post-date">Sun, Sep 21, 2014</span>
-    <h1 class="post-title">_config.ymlに書いたdescriptionが設定されない</h1>
-
+<div class="posts">
+    
+    <article class="post">
     <div class="eyecatch">
         
-        <img src="http://yet.unresolved.xyz/images/octopress.png" alt="_config.ymlに書いたdescriptionが設定されない">
+        <a href="http://yet.unresolved.xyz/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/"><img src="http://yet.unresolved.xyz/images/clojure.png" alt="Clojureで新卒の女の子を射止めた話"></a>
         
     </div>
-
-    <div class="post-content">
-        <p>認識が間違ってるのか、_config.ymlに書いたdescriptionがサイトに反映されない・・・。</p>
-
-<p><code>source/_includes/head.html</code>のコードを見てみるとこんな感じ。</p>
-
-<pre><code class="language-html">{% raw %}
-  {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
-  &lt;meta name=&quot;description&quot; content=&quot;{{ description | strip_html | condense_spaces | truncate:150 }}&quot;&gt;
-  {% if page.keywords %}&lt;meta name=&quot;keywords&quot; content=&quot;{{ page.keywords }}&quot;&gt;{% endif %}
-{% endraw %}
-</code></pre>
-
-<p>page.descriptionしか見てない？</p>
-
-<p>同じことで悩んでる人いないのかな・・・と思ったら居た。</p>
-
-<p><a href="http://sweetme.at/2013/08/06/how-to-set-your-octopress-description-and-keyword-meta-tags/">Make the Magic Happen</a></p>
-
-<p>やっぱり同じ認識のようだ。</p>
-
-<p>elseifってこう書くんだね。</p>
-
-<pre><code class="language-html">{% raw %}
-  {% capture description %}{% if page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
-  &lt;meta name=&quot;description&quot; content=&quot;{{ description | strip_html | condense_spaces | truncate:150 }}&quot;&gt;
-  {% if page.keywords %}&lt;meta name=&quot;keywords&quot; content=&quot;{{ page.keywords }}&quot;&gt;{% endif %}
-{% endraw %}
-</code></pre>
-
-<p>worked!</p>
-
+    <div class="data">
+        <span class="post-date">Thu, Jan 15, 2015</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/">Clojureで新卒の女の子を射止めた話</a></h1>
+        <div class="summary">何やらプログラムの問題を解くと可愛い女の子とハネムーンにいけるとかいう企画をpaizaが開催していたらしい。 マンガ版「エンジニアでも恋がしたい！」〜転職初日にぶつかった女の子が同僚だった件〜｜paizaオンラインハッカソン4 Lite 会社の子からすすめられたのをずっと放置してたんだけど実際やってみたらなかなか面白かった。 ちなみに実際に手に入るのはハネムーンじゃなくてねるねるねるねかラズパイだったらしい。 ねるねるねるね・・・。 Problem 1 在庫計算プログラムを作成してください。改行区切りで N 個の商品の各在庫数 S が入力されるので、その合計を出力して下さい。 解答次第でこの後のストーリーが変わります！！ 入力される値 入力は標準入力にて以下のフォーマットで与えられます。 N S_1 S_2 ・ ・ S_N 条件 すべてのテストケースにおいて、以下の条件をみたします。 1 ≦ N ≦ 100 0 ≦ S_i ≦ 100 期待する出力 全ての商品の在庫数を足した数を出力してください。最後は改行し、余計な文字、空行を含んではいけません。 ふむふむ。 ちなみにpaizaで使えるClojureのREPLはベータ版とのことで、変な挙動をするかも〜とのこと。 入力の受け方はこんな感じ。 (def in (line-seq (java.io.BufferedReader. *in*))) オレの回答はこんな感じ。 (def in (line-seq (java.io.BufferedReader. *in*))) (defn p1 [] (reduce + (map #(Integer/parseInt %) (rest in)))) (print (p1)) 普通にreduceで回しただけ。 Problem 2 改行区切りで N 個の各商品の在庫数 S が入力されるので、その合計を出力して下さい。 入力される値 入力は以下のフォーマットで与えられる。 N T_1 S_1 P_1 T_2 S_2 P_2 ・ ・ ・ T_N S_N P_N 条件 すべてのテストケースにおいて、以下の条件をみたします。 1 ≦ N ≦ 100 1 ≦ T_i ≦ 100 0 ≦ S_i ≦ 100 1 ≦ P_i ≦ 10,000 期待する出力 在庫数を最低限必要な在庫数を満たすために必要な金額の合計を出力してください。 最後は改行し、余計な文字、空行を含んではいけません。 問題文をよく読まずに解いて何度かミスりました。 (def in (line-seq (java.io.BufferedReader.</div>
     </div>
-
-    
-    <aside>
-        
-        <h3>Related Post</h3>
-
-        
-        <ul class="post-tags">
-            
-            <li>
-                <a href="http://yet.unresolved.xyz/tags/octopress">
-                    <i class="fa fa-tags"></i>
-                    octopress
-                </a>
-            </li>
-            
-        </ul>
-
-        <ul class="related-post">
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            <li><a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">ブログをOctopressからHugoに移行した</a></li>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            <li><a href="http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/">OctopressをW3Cのバリデーションにパスさせる</a></li>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            <li><a href="http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/">Octopressのサイドバーを下部に移動する</a></li>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            <li><a href="http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/">Octopressのテーマを作ってみる</a></li>
-            
-            
-            
-            
-            
-            <li><a href="http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/">OctopressのサイドバーにGravatarを表示させる</a></li>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            <li><a href="http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/">GitHub PagesにOctopressをのっけてみる</a></li>
-            
-            
-        </ul>
-    </aside>
-    
-
-    
-    <footer>
-        <div class="move">
-            <div class="prev">
-                
-                <a href="http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/">
-                    <i class="fa fa-chevron-left"></i>
-                    gitでforce pushが出来ない
-                </a>
-                
-            </div>
-            <div class="next">
-                
-                <a href="http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/">
-                    Octopressのテーマを作ってみる
-                    <i class="fa fa-chevron-right"></i>
-                </a>
-                
-            </div>
-        </div>
-
-        
-        
-        
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
- 
-var disqus_shortname = 'unresolved'; 
-
- 
-(function() {
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        
-        
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
     </footer>
-
 </article>
+<hr>
+
+    
+</div>
 
 
     </div>

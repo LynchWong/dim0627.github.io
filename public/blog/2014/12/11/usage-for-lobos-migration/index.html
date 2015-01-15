@@ -5,11 +5,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-<meta property="og:url" content="http://yet.unresolved.xyz">
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="Lobosを使ってマイグレーションをする &middot; Unresolved">
+<meta property="og:title" content="Lobosを使ってマイグレーションをする | Unresolved">
+<meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/">
+<meta property="og:description" content="1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。 というわけでClojureを使ってWeb開発をする際も使いたいので、Lobosというスキーマのマニュピレーション、マイグレーションツールを使ってみます。 インストール 本体はここbudu/lobos。 project.cljに :dependencies [[lobos &quot;1.0.0-beta3&quot;]] を追加してlein depsするだけでおーけー。 Leiningenのプラグインとして使えるpupeno/lein-lobosってのもあるようだ。 こっちも使う場合は、ploject.cljに :plugins [lein-lobos &quot;1.0.0-beta1&quot;] を追加。 全体を載っけるとこんな感じに。 (defproject tpc &quot;0.1.0-SNAPSHOT&quot; :description &quot;FIXME: write description&quot; :url &quot;http://example.com/FIXME&quot; :min-lein-version &quot;2.0.0&quot; :dependencies [[org.clojure/clojure &quot;1.6.0&quot;] [compojure &quot;1.2.0&quot;] [ring/ring-defaults &quot;0.1.2&quot;] [enlive &quot;1.1.5&quot;] [korma &quot;0.4.0&quot;] [postgresql &quot;9.1-901.jdbc4&quot;] [lobos &quot;1.0.0-beta3&quot;]] :plugins [[lein-ring &quot;0.8.13&quot;] [lein-haml-sass &quot;0.2.7-SNAPSHOT&quot;] [lein-lobos &quot;1.0.0-beta1&quot;]] :ring {:handler tpc.core.handler/app} :profiles {:dev {:dependencies [[javax.servlet/servlet-api &quot;2.5&quot;] [ring-mock &quot;0.1.5&quot;] [org.xerial/sqlite-jdbc &quot;3.6.16&quot;]]}} :scss {:src &quot;resources/scss&quot; :output-directory &quot;resources/public/css&quot; :output-extension &quot;css&quot;}) テーブル定義をしてみる 今回はSQLiteにて実施。 srcディレクトリ直下にlobosってディレクトリを作成して、その中にいろいろな設定を突っ込む必要があるらしい。 このディレクトリの名前は変えてもいいみたいだけど面倒になりそうだからこのままで。 まずは接続情報を記載するsrc/lobos/config.clj。 (ns lobos.config (:use lobos.connectivity)) (def db_dev {:classname &quot;org.sqlite.JDBC&quot; :subprotocol &quot;sqlite&quot; :subname &quot;./dev.sqlite3&quot;}) (open-global db_dev) 次にスキーマ操作で使われている(と思われる)ヘルパー、src/lobos/helpers.cljを定義。 (ns lobos.helpers (:refer-clojure :exclude [bigint boolean char double float time]) (:use (lobos schema))) (defn surrogate-key [table] (integer table :id :auto-inc :primary-key)) (defn timestamps [table] (-&gt; table (timestamp :updated_on) (timestamp :created_on (default (now))))) (defn refer-to [table ptable] (let [cname (-&gt; (-&gt;&gt; ptable name butlast (apply str)) (str &quot;_id&quot;) keyword)] (integer table cname [:refer ptable :id :on-delete :set-null]))) (defmacro tbl [name &amp; elements] `(-&gt; (table ~name) (timestamps) ~@(reverse elements) (surrogate-key))) で、目的のマイグレーション定義をsrc/lobos/migrations.cljに。 (ns lobos.migrations (:refer-clojure :exclude [alter drop bigint boolean char double float time]) (:use (lobos [migration :only [defmigration]] core schema config helpers))) (defmigration add-sites-table (up [] (create (tbl :sites (varchar :name 255) (varchar :url 255) (varchar :rss 255) (varchar :image 255) (integer :cat) ))) (down [] (drop (table :sites)))) マイグレーションの実行 ここが結構厄介だった。 というか、出来たといえば出来たんだけど、もっと正しい方法があるような気が・・・。 REPLにて以下を実行。 WARNINGは多分すでに存在するシンボルを置き換えてしまってることの警告だからとりあえず無視。 tpc git:(master)$ lein repl (use &#39;(lobos connectivity core schema))nREPL server started on port 50092 on host 127.0.0.1 - nrepl://127.0.0.1:50092 REPL-y 0.3.1 Clojure 1.6.0 Docs: (doc function-name-here) (find-doc &quot;part-of-name-here&quot;) Source: (source function-name-here) Javadoc: (javadoc java-object-or-class-here) Exit: Control&#43;D or (exit) or (quit) Results: Stored in vars *1, *2, *3, an exception in *e user=&gt; (use &#39;(lobos connectivity core schema)) WARNING: alter already refers to: #&#39;clojure.core/alter in namespace: user, being replaced by: #&#39;lobos.core/alter WARNING: drop already refers to: #&#39;clojure.core/drop in namespace: user, being replaced by: #&#39;lobos.core/drop WARNING: boolean already refers to: #&#39;clojure.core/boolean in namespace: user, being replaced by: #&#39;lobos.schema/boolean WARNING: char already refers to: #&#39;clojure.core/char in namespace: user, being replaced by: #&#39;lobos.schema/char WARNING: double already refers to: #&#39;clojure.core/double in namespace: user, being replaced by: #&#39;lobos.schema/double WARNING: bigint already refers to: #&#39;clojure.core/bigint in namespace: user, being replaced by: #&#39;lobos.schema/bigint WARNING: float already refers to: #&#39;clojure.core/float in namespace: user, being replaced by: #&#39;lobos.schema/float WARNING: time already refers to: #&#39;clojure.core/time in namespace: user, being replaced by: #&#39;lobos.schema/time nil user=&gt; (require &#39;lobos.migrations) nil user=&gt; (migrate) add-sites-table nil user=&gt; 確認してみましょう。 tpc git:(master)$ sqlite3 dev.sqlite3 SQLite version 3.8.5 2014-08-15 22:37:57 Enter &quot;.help&quot; for usage hints.">
 
 <meta property="og:image" content="http://yet.unresolved.xyz/images/clojure.png">
 
@@ -18,7 +19,7 @@
 
 <title>
     
-    Lobosを使ってマイグレーションをする
+    Lobosを使ってマイグレーションをする | Unresolved
     
 </title>
 
@@ -43,6 +44,8 @@
             <h3 class="masthead-title">
                 <a href="http://yet.unresolved.xyz" title="Home">Unresolved</a>
             </h3>
+            
+            
             
             
             
@@ -340,6 +343,12 @@ lobos_migrations  sites
             
             
             
+            <li><a href="http://yet.unresolved.xyz/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/">Clojureで新卒の女の子を射止めた話</a></li>
+            
+            
+            
+            
+            
             <li><a href="http://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/">Clojureのテンプレートエンジンについて</a></li>
             
             
@@ -618,6 +627,13 @@ var disqus_shortname = 'unresolved';
                 
                 <li>
                     
+                    <a href="http://yet.unresolved.xyz/tags/hackathon">
+                        hackathon
+                    </a>
+                </li>
+                
+                <li>
+                    
                     <a href="http://yet.unresolved.xyz/tags/heroku">
                         heroku
                     </a>
@@ -697,6 +713,13 @@ var disqus_shortname = 'unresolved';
                     
                     <a href="http://yet.unresolved.xyz/tags/octopress">
                         octopress
+                    </a>
+                </li>
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz/tags/paiza">
+                        paiza
                     </a>
                 </li>
                 

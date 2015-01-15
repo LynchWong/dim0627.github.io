@@ -5,11 +5,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-<meta property="og:url" content="http://yet.unresolved.xyz">
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="GitHub PagesにOctopressをのっけてみる &middot; Unresolved">
+<meta property="og:title" content="GitHub PagesにOctopressをのっけてみる | Unresolved">
+<meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/">
+<meta property="og:description" content="WordPress.comを使ってたんだけど、お金払わないと融通がきかないぽいので移行することに。 Markdownが使ってみたかったのと、カッコいいデザインが多そうなHatenaかなーと思ってたんだけど、GitHub Pagesが面白そうなのでとりあえずノリでこっちにしてみるよ。 Github Pages？ GitHub PagesはGitHubに[ユーザ名].github.ioって名前のリポジトリを作るだけで、pushしたページを外部公開出来るサービス。 そこでよく使われるBlogフレームワーク(?)がOctopressらしい。 どうやらOctopressはJekyllという静的ページジェネレータをさらに活用するためのものとのことで、 このJekyll(読みはジキル？)はMarkdownとかで書いたテキストファイルを静的ページに変換したりしてくれるものみたい。 Octopressをインストールする Octopress Setupが非常に良く書かれているのと、Octopress自体が見通しよく作られているので特に躓くことなく導入出来ました。 Octopressは記事を書くPCに導入して丸ごとGitHubにpushしてしまう仕組みらしく、まずは個人のPCに導入が必要。 $ git clone git://github.com/imathis/octopress.git octopress $ cd octopress $ gem install bundler $ rbenv rehash $ bundle install $ rake install で、次にデプロイする。 Deployingを見る限り、GitHub Pagesだけじゃなく、HerokuやRsyncでの利用も出来るっぽい。 なんかVPSとかでも運用してる人がいるっぽいね。 前述した通り今回はGitHub Pagesを利用することにしました。 最初に[ユーザ名].github.ioって名前のリポジトリを作っておく必要があるよ。 $ rake setup_github_pages リポジトリのURLとかが聞かれるので、表示された説明の通り入力。 pushしとく必要もあるっぽい。 $ rake generate $ rake deploy $ git add . $ git commit -m &#39;your message&#39; $ git push origin source rake deployで乗っかるのは記事とかその辺のファイルだけなのかな？ In a few seconds you should get an email from Github telling you that your commit has been received and will be published on your site.">
 
 <meta property="og:image" content="http://yet.unresolved.xyz/images/octopress.png">
 
@@ -18,7 +19,7 @@
 
 <title>
     
-    GitHub PagesにOctopressをのっけてみる
+    GitHub PagesにOctopressをのっけてみる | Unresolved
     
 </title>
 
@@ -43,6 +44,8 @@
             <h3 class="masthead-title">
                 <a href="http://yet.unresolved.xyz" title="Home">Unresolved</a>
             </h3>
+            
+            
             
             
             
@@ -252,6 +255,10 @@ $ git push origin source
             
             
             
+            
+            
+            
+            
             <li><a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">ブログをOctopressからHugoに移行した</a></li>
             
             
@@ -344,11 +351,11 @@ $ git push origin source
             
             
             
-            
-            
-            
-            
             <li><a href="http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/">OctopressのサイドバーにGravatarを表示させる</a></li>
+            
+            
+            
+            
             
             
             
@@ -364,9 +371,9 @@ $ git push origin source
         <div class="move">
             <div class="prev">
                 
-                <a href="http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/">
+                <a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/">
                     <i class="fa fa-chevron-left"></i>
-                    OctopressのサイドバーにGravatarを表示させる
+                    gitのリポジトリ単位にproxyの設定をする
                 </a>
                 
             </div>
@@ -517,6 +524,13 @@ var disqus_shortname = 'unresolved';
                 
                 <li>
                     
+                    <a href="http://yet.unresolved.xyz/tags/hackathon">
+                        hackathon
+                    </a>
+                </li>
+                
+                <li>
+                    
                     <a href="http://yet.unresolved.xyz/tags/heroku">
                         heroku
                     </a>
@@ -596,6 +610,13 @@ var disqus_shortname = 'unresolved';
                     
                     <a href="http://yet.unresolved.xyz/tags/octopress">
                         octopress
+                    </a>
+                </li>
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz/tags/paiza">
+                        paiza
                     </a>
                 </li>
                 

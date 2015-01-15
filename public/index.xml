@@ -6,8 +6,199 @@
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
-    <updated>2015-01-14 01:01:39 &#43;0900 JST</updated>
+    <updated>2015-01-15 21:12:52 &#43;0900 JST</updated>
 
+    
+      
+        <item>
+          <title>Clojureで新卒の女の子を射止めた話</title>
+          <link>http://yet.unresolved.xyz/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/</link>
+          <pubDate>Thu, 15 Jan 2015 21:12:52 JST</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/</guid>
+          <description>
+
+&lt;p&gt;何やらプログラムの問題を解くと可愛い女の子とハネムーンにいけるとかいう企画を&lt;a href=&#34;http://paiza.jp/&#34;&gt;paiza&lt;/a&gt;が開催していたらしい。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://paiza.jp/poh/enkoi&#34;&gt;マンガ版「エンジニアでも恋がしたい！」〜転職初日にぶつかった女の子が同僚だった件〜｜paizaオンラインハッカソン4 Lite&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;会社の子からすすめられたのをずっと放置してたんだけど実際やってみたらなかなか面白かった。&lt;/p&gt;
+
+&lt;p&gt;ちなみに実際に手に入るのはハネムーンじゃなくてねるねるねるねかラズパイだったらしい。&lt;/p&gt;
+
+&lt;p&gt;ねるねるねるね・・・。&lt;/p&gt;
+
+&lt;h2 id=&#34;problem-1:efdfd34ee3c2df97a027c1bccd3ee9c8&#34;&gt;Problem 1&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;在庫計算プログラムを作成してください。改行区切りで N 個の商品の各在庫数 S が入力されるので、その合計を出力して下さい。
+解答次第でこの後のストーリーが変わります！！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;入力される値&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;入力は標準入力にて以下のフォーマットで与えられます。
+N
+S_1
+S_2
+・
+・
+S_N&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;条件&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;すべてのテストケースにおいて、以下の条件をみたします。
+1 ≦ N ≦ 100
+0 ≦ S_i ≦ 100&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;期待する出力&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;全ての商品の在庫数を足した数を出力してください。最後は改行し、余計な文字、空行を含んではいけません。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ふむふむ。&lt;/p&gt;
+
+&lt;p&gt;ちなみにpaizaで使えるClojureのREPLはベータ版とのことで、変な挙動をするかも〜とのこと。&lt;/p&gt;
+
+&lt;p&gt;入力の受け方はこんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def in (line-seq (java.io.BufferedReader. *in*)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;オレの回答はこんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def in (line-seq (java.io.BufferedReader. *in*)))
+(defn p1 [] (reduce + (map #(Integer/parseInt %) (rest in))))
+(print (p1))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;普通に&lt;code&gt;reduce&lt;/code&gt;で回しただけ。&lt;/p&gt;
+
+&lt;h2 id=&#34;problem-2:efdfd34ee3c2df97a027c1bccd3ee9c8&#34;&gt;Problem 2&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;改行区切りで N 個の各商品の在庫数 S が入力されるので、その合計を出力して下さい。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;入力される値&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;入力は以下のフォーマットで与えられる。
+N
+T_1 S_1 P_1
+T_2 S_2 P_2
+・
+・
+・
+T_N S_N P_N&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;条件&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;すべてのテストケースにおいて、以下の条件をみたします。
+1 ≦ N ≦ 100
+1 ≦ T_i ≦ 100
+0 ≦ S_i ≦ 100
+1 ≦ P_i ≦ 10,000&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;期待する出力&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;在庫数を最低限必要な在庫数を満たすために必要な金額の合計を出力してください。
+最後は改行し、余計な文字、空行を含んではいけません。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;問題文をよく読まずに解いて何度かミスりました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def in (line-seq (java.io.BufferedReader. *in*)))
+(defn p2 []
+  (let [in (map #(.split % &amp;quot; &amp;quot;) (rest in))]
+    (loop [l in res 0]
+              (if (empty? l) res
+                (let [[t s p] (map #(Integer/parseInt %) (first l))]
+                  (recur (rest l) (+ res (if (&amp;gt; t s) (* (- t s) p) 0))))))))
+(print (p2))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;単純に&lt;code&gt;if&lt;/code&gt;で条件かけながら再帰させた。&lt;/p&gt;
+
+&lt;h2 id=&#34;problem-3:efdfd34ee3c2df97a027c1bccd3ee9c8&#34;&gt;Problem 3&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;区間合計点数の最大値を出力するプログラムを作成して、ゲームを完成させてください。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;入力される値&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;入力は以下のフォーマットで与えられる。
+t n
+m_1
+m_2
+m_3
+&amp;hellip;
+m_n&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;条件&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;すべてのテストケースにおいて、以下の条件をみたします。
+1 ≦ t ≦ n ≦ 300,000
+0 ≦ m_i ≦ 10,000&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;期待する出力&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;区間合計点数の最大値を出力せよ。
+最後は改行し、余計な文字、空行を含んではならない。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;これはタイムアウトで何度も苦しんだ。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;partition-all&lt;/code&gt;で分割したものを&lt;code&gt;map&lt;/code&gt; &amp;amp; &lt;code&gt;reduce&lt;/code&gt;で合算して&lt;code&gt;apply&lt;/code&gt; &amp;amp; &lt;code&gt;max&lt;/code&gt;っていう何も考えなさすぎるロジックにしたのが悪いんだけど・・・。&lt;/p&gt;
+
+&lt;p&gt;通ったのはこれ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def in (line-seq (java.io.BufferedReader. *in*)))
+(defn p3 []
+  (let [[len c] (map #(Integer/parseInt %) (.split (first in) &amp;quot; &amp;quot;))
+        smr (reductions + (map #(Integer/parseInt %) (rest in)))]
+    (if (= len c) (last smr)
+      (loop [l smr sfxl (drop len l) res 0]
+        (if (empty? sfxl) res
+          (recur (rest l) (rest sfxl) (max (- (first sfxl) (first l)) res)))))))
+(print (p3))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;無理だなーって&lt;a href=&#34;http://clojure.org/cheatsheet&#34;&gt;Clojure - cheatsheet&lt;/a&gt;見ながらぐだぐだしてたら&lt;code&gt;reductions&lt;/code&gt;でなんとかなりそうな事に気づいた。&lt;/p&gt;
+
+&lt;p&gt;最初にどっと重い処理になるんじゃないかなと思って不安もあったけど、そんなことないのかな。無事通ったので良かったです。&lt;/p&gt;
+
+&lt;p&gt;計算結果だしちゃえばあとは再帰させながら区間合計を算出 &amp;amp; 最大値を抽出でなんとか。&lt;/p&gt;
+
+&lt;h2 id=&#34;やってみて:efdfd34ee3c2df97a027c1bccd3ee9c8&#34;&gt;やってみて&lt;/h2&gt;
+
+&lt;p&gt;Clojureを始めてからずっと感じてる事だけど、アルゴリズムを考える力が弱いなあと思う。&lt;/p&gt;
+
+&lt;p&gt;Webだとそれで乗り切れる部分が多かったんだろうけど、こういった問題を解いて地力をつけることも大切だなあと感じた。&lt;/p&gt;
+
+&lt;p&gt;多分Clojureの界隈で有名な方々が組む答えはまた違うんだろうなあ。&lt;/p&gt;
+
+&lt;p&gt;ぜひそういうのも見てみたいけど、調べてみたらあんまり解いてる人とか公開してる人がいない感じだった。&lt;/p&gt;
+
+&lt;p&gt;ちなみにラズパイとかは期間が過ぎてるのでもらえません。&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>
@@ -2595,56 +2786,6 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
     
       
         <item>
-          <title>gitのリポジトリ単位にproxyの設定をする</title>
-          <link>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</link>
-          <pubDate>Sat, 20 Sep 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</guid>
-          <description>
-
-&lt;h2 id=&#34;事の発端:ca86a8bf870eabf283b4127081a3d388&#34;&gt;事の発端&lt;/h2&gt;
-
-&lt;p&gt;会社ではvimを使ってます。&lt;/p&gt;
-
-&lt;p&gt;plugin管理には&lt;a href=&#34;https://github.com/Shougo/neobundle.vim&#34;&gt;neobundle.vim&lt;/a&gt;使ってます。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;.vimrc&lt;/code&gt;は&lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt;で管理してます。&lt;/p&gt;
-
-&lt;p&gt;neobundle.vimで管理してるpluginは大抵のものがGitHub上で管理されてるから、インストールとかアップデートをするときはneobundle.vimがGitHubまで見に行ってくれるんですね。&lt;/p&gt;
-
-&lt;p&gt;ただ、当然社内はproxyを通していて、gitコマンドが通らない！&lt;/p&gt;
-
-&lt;p&gt;ていうかそもそも&lt;strong&gt;GitHubから&lt;code&gt;.vimrc&lt;/code&gt;を落としてくることすら出来ない！いいやzipで落とせ！&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;しかしpluginの導入を手でやるのはだるい・・・。&lt;/p&gt;
-
-&lt;p&gt;マジで？サクラエディタで頑張るしかない？&lt;/p&gt;
-
-&lt;p&gt;いやいやそんなことはない。&lt;/p&gt;
-
-&lt;h2 id=&#34;解決:ca86a8bf870eabf283b4127081a3d388&#34;&gt;解決&lt;/h2&gt;
-
-&lt;p&gt;じゃあこうしようってことで、&lt;code&gt;~/.gitconfig&lt;/code&gt;をこんな感じにしたのよ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;[https]
-        proxy = http://proxy.com:8080
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ひとまず解決したんです。&lt;/p&gt;
-
-&lt;p&gt;そしたら次は&lt;strong&gt;社内のgitに繋がらない！！&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;マジかよじゃあ&lt;code&gt;~/.gitconfig&lt;/code&gt;をちょこちょこ変えるのかよだせえよそれと思ったら既に解決してくれてる人がいた。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://tanacasino.hatenablog.com/entry/2013/12/21/003750&#34;&gt;Git の http proxy に関するまとめ&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;めんどくさかったけど、個々のpluginの&lt;code&gt;config&lt;/code&gt;にだけproxyの記述を追加することで解決。&lt;/p&gt;
-</description>
-        </item>
-      
-    
-      
-        <item>
           <title>OctopressのサイドバーにGravatarを表示させる</title>
           <link>http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/</link>
           <pubDate>Sat, 20 Sep 2014 00:00:00 UTC</pubDate>
@@ -2766,6 +2907,56 @@ div#urls {
 &lt;h2 id=&#34;参考にさせて頂きました:c73b8990ae6ff308f2649661fb572fc8&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://blog.awairo.net/blog/2013/12/24/octopress-aside-of-getting-profile-from-gravatar/&#34;&gt;Gravatarのプロフィールを表示するOctopressのサイドバー&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>gitのリポジトリ単位にproxyの設定をする</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</link>
+          <pubDate>Sat, 20 Sep 2014 00:00:00 UTC</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</guid>
+          <description>
+
+&lt;h2 id=&#34;事の発端:ca86a8bf870eabf283b4127081a3d388&#34;&gt;事の発端&lt;/h2&gt;
+
+&lt;p&gt;会社ではvimを使ってます。&lt;/p&gt;
+
+&lt;p&gt;plugin管理には&lt;a href=&#34;https://github.com/Shougo/neobundle.vim&#34;&gt;neobundle.vim&lt;/a&gt;使ってます。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;.vimrc&lt;/code&gt;は&lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt;で管理してます。&lt;/p&gt;
+
+&lt;p&gt;neobundle.vimで管理してるpluginは大抵のものがGitHub上で管理されてるから、インストールとかアップデートをするときはneobundle.vimがGitHubまで見に行ってくれるんですね。&lt;/p&gt;
+
+&lt;p&gt;ただ、当然社内はproxyを通していて、gitコマンドが通らない！&lt;/p&gt;
+
+&lt;p&gt;ていうかそもそも&lt;strong&gt;GitHubから&lt;code&gt;.vimrc&lt;/code&gt;を落としてくることすら出来ない！いいやzipで落とせ！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;しかしpluginの導入を手でやるのはだるい・・・。&lt;/p&gt;
+
+&lt;p&gt;マジで？サクラエディタで頑張るしかない？&lt;/p&gt;
+
+&lt;p&gt;いやいやそんなことはない。&lt;/p&gt;
+
+&lt;h2 id=&#34;解決:ca86a8bf870eabf283b4127081a3d388&#34;&gt;解決&lt;/h2&gt;
+
+&lt;p&gt;じゃあこうしようってことで、&lt;code&gt;~/.gitconfig&lt;/code&gt;をこんな感じにしたのよ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;[https]
+        proxy = http://proxy.com:8080
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ひとまず解決したんです。&lt;/p&gt;
+
+&lt;p&gt;そしたら次は&lt;strong&gt;社内のgitに繋がらない！！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;マジかよじゃあ&lt;code&gt;~/.gitconfig&lt;/code&gt;をちょこちょこ変えるのかよだせえよそれと思ったら既に解決してくれてる人がいた。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://tanacasino.hatenablog.com/entry/2013/12/21/003750&#34;&gt;Git の http proxy に関するまとめ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;めんどくさかったけど、個々のpluginの&lt;code&gt;config&lt;/code&gt;にだけproxyの記述を追加することで解決。&lt;/p&gt;
 </description>
         </item>
       

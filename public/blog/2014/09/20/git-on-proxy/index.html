@@ -5,11 +5,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-<meta property="og:url" content="http://yet.unresolved.xyz">
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="gitのリポジトリ単位にproxyの設定をする &middot; Unresolved">
+<meta property="og:title" content="gitのリポジトリ単位にproxyの設定をする | Unresolved">
+<meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/">
+<meta property="og:description" content="事の発端 会社ではvimを使ってます。 plugin管理にはneobundle.vim使ってます。 .vimrcはGitHubで管理してます。 neobundle.vimで管理してるpluginは大抵のものがGitHub上で管理されてるから、インストールとかアップデートをするときはneobundle.vimがGitHubまで見に行ってくれるんですね。 ただ、当然社内はproxyを通していて、gitコマンドが通らない！ ていうかそもそもGitHubから.vimrcを落としてくることすら出来ない！いいやzipで落とせ！ しかしpluginの導入を手でやるのはだるい・・・。 マジで？サクラエディタで頑張るしかない？ いやいやそんなことはない。 解決 じゃあこうしようってことで、~/.gitconfigをこんな感じにしたのよ。 [https] proxy = http://proxy.com:8080 ひとまず解決したんです。 そしたら次は社内のgitに繋がらない！！ マジかよじゃあ~/.gitconfigをちょこちょこ変えるのかよだせえよそれと思ったら既に解決してくれてる人がいた。 Git の http proxy に関するまとめ めんどくさかったけど、個々のpluginのconfigにだけproxyの記述を追加することで解決。">
 
 <meta property="og:image" content="http://yet.unresolved.xyz/images/git.png">
 
@@ -18,7 +19,7 @@
 
 <title>
     
-    gitのリポジトリ単位にproxyの設定をする
+    gitのリポジトリ単位にproxyの設定をする | Unresolved
     
 </title>
 
@@ -43,6 +44,8 @@
             <h3 class="masthead-title">
                 <a href="http://yet.unresolved.xyz" title="Home">Unresolved</a>
             </h3>
+            
+            
             
             
             
@@ -256,6 +259,10 @@
             
             
             
+            
+            
+            
+            
             <li><a href="http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/">git管理したくないファイルを除外する</a></li>
             
             
@@ -294,16 +301,16 @@
         <div class="move">
             <div class="prev">
                 
-                <a href="http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/">
+                <a href="http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/">
                     <i class="fa fa-chevron-left"></i>
-                    Octopressのテーマを作ってみる
+                    OctopressのサイドバーにGravatarを表示させる
                 </a>
                 
             </div>
             <div class="next">
                 
-                <a href="http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/">
-                    OctopressのサイドバーにGravatarを表示させる
+                <a href="http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/">
+                    GitHub PagesにOctopressをのっけてみる
                     <i class="fa fa-chevron-right"></i>
                 </a>
                 
@@ -452,6 +459,13 @@ var disqus_shortname = 'unresolved';
                 
                 <li>
                     
+                    <a href="http://yet.unresolved.xyz/tags/hackathon">
+                        hackathon
+                    </a>
+                </li>
+                
+                <li>
+                    
                     <a href="http://yet.unresolved.xyz/tags/heroku">
                         heroku
                     </a>
@@ -531,6 +545,13 @@ var disqus_shortname = 'unresolved';
                     
                     <a href="http://yet.unresolved.xyz/tags/octopress">
                         octopress
+                    </a>
+                </li>
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz/tags/paiza">
+                        paiza
                     </a>
                 </li>
                 

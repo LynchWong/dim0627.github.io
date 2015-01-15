@@ -5,11 +5,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-<meta property="og:url" content="http://yet.unresolved.xyz">
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="gitでforce pushが出来ない &middot; Unresolved">
+<meta property="og:title" content="gitでforce pushが出来ない | Unresolved">
+<meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/">
+<meta property="og:description" content="typoを直すためにrebase -iやらをやってたんだけど、操作してたのがmasterブランチだったのでどうしてもforce pushがしたかった。 一人で使ってたリポジトリだしね。 んだけど、-fをつけても To git://example.com/project1.git ! [rejected] master -&gt; master (non-fast-forward) error: failed to push some refs to &#39;git://example.com/project1.git&#39; To prevent ... See the &#39;Note about fast-forwards&#39; section of &#39;git push --help&#39; for details. こんな感じになってしまう・・・。 解決 gitリポジトリのconfigを見たらこんな項目が、 [receive] denyNonFastforwards = true どうやらこいつをfalseにすればよかったらしい。 最初はtrueになってるもんなのかな・・・。">
 
 <meta property="og:image" content="http://yet.unresolved.xyz/images/git.png">
 
@@ -18,7 +19,7 @@
 
 <title>
     
-    gitでforce pushが出来ない
+    gitでforce pushが出来ない | Unresolved
     
 </title>
 
@@ -43,6 +44,8 @@
             <h3 class="masthead-title">
                 <a href="http://yet.unresolved.xyz" title="Home">Unresolved</a>
             </h3>
+            
+            
             
             
             
@@ -245,6 +248,10 @@ fast-forwards' section of 'git push --help' for details.
             
             
             
+            
+            
+            
+            
             <li><a href="http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/">git管理したくないファイルを除外する</a></li>
             
             
@@ -263,11 +270,11 @@ fast-forwards' section of 'git push --help' for details.
             
             
             
+            
+            
+            
+            
             <li><a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/">gitのリポジトリ単位にproxyの設定をする</a></li>
-            
-            
-            
-            
             
             
             
@@ -441,6 +448,13 @@ var disqus_shortname = 'unresolved';
                 
                 <li>
                     
+                    <a href="http://yet.unresolved.xyz/tags/hackathon">
+                        hackathon
+                    </a>
+                </li>
+                
+                <li>
+                    
                     <a href="http://yet.unresolved.xyz/tags/heroku">
                         heroku
                     </a>
@@ -520,6 +534,13 @@ var disqus_shortname = 'unresolved';
                     
                     <a href="http://yet.unresolved.xyz/tags/octopress">
                         octopress
+                    </a>
+                </li>
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz/tags/paiza">
+                        paiza
                     </a>
                 </li>
                 

@@ -5,11 +5,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-<meta property="og:url" content="http://yet.unresolved.xyz">
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="git管理したくないファイルを除外する &middot; Unresolved">
+<meta property="og:title" content="git管理したくないファイルを除外する | Unresolved">
+<meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/">
+<meta property="og:description" content="ローカル環境でちょこちょこ作ってたやつを本番環境に載せたんだけど、それなりに解決してた環境依存が少し残ってて.gitignoreファイルをちゃんと書くことに。 しかし本番でcloneしてきたファイルをうまいことワーキングには残してインデックスから消すやりかたがわからない！ というわけで少しくらいまともに勉強してみる。 最初につまづいてたのはこのコマンドを連発してたから。 $ git rm filename どうやらこいつはインデックスだけでなくワーキングディレクトリからも消すようだ。 そこでインデックスからだけ消すものはないのかと調べてたらあった。 $ git rm --cached filename 参考にさせて頂きました transitive.info - git rm 使い方">
 
 <meta property="og:image" content="http://yet.unresolved.xyz/images/git.png">
 
@@ -18,7 +19,7 @@
 
 <title>
     
-    git管理したくないファイルを除外する
+    git管理したくないファイルを除外する | Unresolved
     
 </title>
 
@@ -43,6 +44,8 @@
             <h3 class="masthead-title">
                 <a href="http://yet.unresolved.xyz" title="Home">Unresolved</a>
             </h3>
+            
+            
             
             
             
@@ -244,6 +247,10 @@
             
             
             
+            
+            
+            
+            
             <li><a href="http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/">gitでforce pushが出来ない</a></li>
             
             
@@ -258,11 +265,11 @@
             
             
             
+            
+            
+            
+            
             <li><a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/">gitのリポジトリ単位にproxyの設定をする</a></li>
-            
-            
-            
-            
             
             
             
@@ -436,6 +443,13 @@ var disqus_shortname = 'unresolved';
                 
                 <li>
                     
+                    <a href="http://yet.unresolved.xyz/tags/hackathon">
+                        hackathon
+                    </a>
+                </li>
+                
+                <li>
+                    
                     <a href="http://yet.unresolved.xyz/tags/heroku">
                         heroku
                     </a>
@@ -515,6 +529,13 @@ var disqus_shortname = 'unresolved';
                     
                     <a href="http://yet.unresolved.xyz/tags/octopress">
                         octopress
+                    </a>
+                </li>
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz/tags/paiza">
+                        paiza
                     </a>
                 </li>
                 

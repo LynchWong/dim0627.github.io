@@ -5,11 +5,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-<meta property="og:url" content="http://yet.unresolved.xyz">
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="ClojureのWebアプリをDocker &#43; Beanstalkで動かす &middot; Unresolved">
+<meta property="og:title" content="ClojureのWebアプリをDocker &#43; Beanstalkで動かす | Unresolved">
+<meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/">
+<meta property="og:description" content="たぶんこういうのはドキュメント読んでもわからないので、とにかく一通りの流れを実践してみる。 Imageの取得 面倒なのでDocker HubからClojureが動く環境を持ってくる。 オフィシャルリポジトリとやらがあったので、それを使います。 Leiningenとか一式が入ってるみたい。 clojure ローカルでの動作確認 とりあえず世界に挨拶が出来るくらいのWebアプリを作っちゃおう。 アプリ自体は重要じゃないので、とりあえずインタラクティブシェル上でちゃちゃっと作っちゃう。 b2d$ docker run -i -t clojure /bin/bash root@e322a11f087d:/home# lein new compojure aws_webapp Retrieving compojure/lein-template/0.4.1/lein-template-0.4.1.pom from clojars Retrieving compojure/lein-template/0.4.1/lein-template-0.4.1.jar from clojars root@e322a11f087d:/home# ls aws_webapp root@e322a11f087d:/home# cd aws_webapp/ root@e322a11f087d:/home/aws_webapp# ls README.md project.clj resources src test と思ったらcompojureテンプレート自体がすでにHello Worldを実装してた・・・。 そのままサーバ起動しちゃうとこんな感じでブラウザの自動起動のとこでエラーしちゃうので、lein ring server-headlessで起動する。 root@e322a11f087d:/home/aws_webapp# lein ring server 2015-01-01 05:41:35.432:INFO:oejs.Server:jetty-7.6.8.v20121106 2015-01-01 05:41:35.486:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:3000 Started server on port 3000 Exception in thread &quot;main&quot; java.lang.InternalError: Can&#39;t connect to X11 window server using &#39;localhost:0.0&#39; as the value of the DISPLAY variable., compiling:(/tmp/form-init3570254627486988046.clj:1:72) あとはデーモンとして起動しちゃえばローカルでの確認が出来る。 b2d$ docker run -d -t -p 3000:3000 clojure:aws /bin/bash -c &quot;cd /home/aws_webapp; lein ring server-headless&quot; e9981a71589918791d52888a0cb503bea133611395be58574047cd498c9e6f76 b2d$ docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES e9981a715899 clojure:aws &quot;/bin/bash -c &#39;cd /h 4 seconds ago Up 3 seconds 0.0.0.0:3000-&gt;3000/tcp backstabbing_colden 起動しているのはboot2dockerの仮想マシン上なので、 b2d$ boot2docker ip 192.168.59.103 このIPの3000ポートに向けてアクセスすれば、 見れます。 ringのサーバは起動が遅いのでdocker logs [names]で確認しながらやるとよい。 Elastic Beanstalkで動かす 大事なことに気づいたんだけど、BeanstalkはDockerfileとか必要なファイル一式をまとめたzipをアップするらしい。 そもそもソースもイメージに入れちゃうっていうのは考えとしておかしかったね。 なのでwarをADDで置くのが理想的なのかな。 今回は面倒なので、clojureでWebサーバを立ち上げられるhttp-kitというライブラリを使ってやってみます。 ちょうどBeanstalk用のDockerfileとかも用意してくれるmrmcc3/beanstalk-docker-appというテンプレートがあったので、これを使わせてもらうことに。 mrmcc3/beanstalk-docker-appでWebアプリを構築する 何はともあれnewして作り直し。 temp$ lein new beanstalk-docker-app superapp Generating clojure app for AWS Beanstalk and docker こんな感じで作られる。 jarとかはlein uberjarで作らなきゃダメかも。 .">
 
 <meta property="og:image" content="http://yet.unresolved.xyz/images/aws.png">
 
@@ -18,7 +19,7 @@
 
 <title>
     
-    ClojureのWebアプリをDocker &#43; Beanstalkで動かす
+    ClojureのWebアプリをDocker &#43; Beanstalkで動かす | Unresolved
     
 </title>
 
@@ -43,6 +44,8 @@
             <h3 class="masthead-title">
                 <a href="http://yet.unresolved.xyz" title="Home">Unresolved</a>
             </h3>
+            
+            
             
             
             
@@ -318,6 +321,12 @@ CMD [&quot;java&quot;, &quot;-jar&quot;, &quot;/root/production.jar&quot;]
 
         <ul class="related-post">
             
+            
+            
+            
+            
+            
+            <li><a href="http://yet.unresolved.xyz/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/">Clojureで新卒の女の子を射止めた話</a></li>
             
             
             
@@ -603,6 +612,13 @@ var disqus_shortname = 'unresolved';
                 
                 <li>
                     
+                    <a href="http://yet.unresolved.xyz/tags/hackathon">
+                        hackathon
+                    </a>
+                </li>
+                
+                <li>
+                    
                     <a href="http://yet.unresolved.xyz/tags/heroku">
                         heroku
                     </a>
@@ -682,6 +698,13 @@ var disqus_shortname = 'unresolved';
                     
                     <a href="http://yet.unresolved.xyz/tags/octopress">
                         octopress
+                    </a>
+                </li>
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz/tags/paiza">
+                        paiza
                     </a>
                 </li>
                 

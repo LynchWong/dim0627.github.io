@@ -5,11 +5,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-<meta property="og:url" content="http://yet.unresolved.xyz">
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="OctopressのサイドバーにGravatarを表示させる &middot; Unresolved">
+<meta property="og:title" content="OctopressのサイドバーにGravatarを表示させる | Unresolved">
+<meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/">
+<meta property="og:description" content="Octopressのサイドバーってどうなってんの？ そもそもOctopressの構成がまだよくわかってないのでそこから勉強しよう。 どうやらデフォルトで準備されてるサイドバーはここに格納されているらしい。 octopress git:(source)$ ls source/_includes/asides/ delicious.html github.html googleplus.html pinboard.html recent_posts.html で、自分で作りたい場合はここに格納するっぽい。 octopress git:(source)$ ls source/_includes/custom/asides about.html twitter.html って_config.ymlに書いてあった。 # list each of the sidebar modules you want to include, in the order you want them to appear. # To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like &#39;custom/asides/custom_aside_name.html&#39; default_asides: [custom/asides/about.html, asides/recent_posts.html, custom/asides/twitter.html] Gravatarの情報って持って来れるの？ ちょっとだけ調べてみたらGravatarの画像だけ持ってくるpluginは用意されてるっぽい。 でもどうせなら自己紹介のところとかも欲しいよね。 で、Gravatarに開発者向け資料がありました。 しっかり読んでないけど、JSONで返せるっぽいからこれを使えばいいかな。 ハッシュを指定する必要があるみたいなので、公式から取得しとく。 作るぞ なんか最初からsource/_include/custom/asidesにabout.htmlってのがあるし、これにプロフィールを書こうかな。 まず取得したハッシュを_config.ymlに定義しちゃおう。 #">
 
 <meta property="og:image" content="http://yet.unresolved.xyz/images/octopress.png">
 
@@ -18,7 +19,7 @@
 
 <title>
     
-    OctopressのサイドバーにGravatarを表示させる
+    OctopressのサイドバーにGravatarを表示させる | Unresolved
     
 </title>
 
@@ -43,6 +44,8 @@
             <h3 class="masthead-title">
                 <a href="http://yet.unresolved.xyz" title="Home">Unresolved</a>
             </h3>
+            
+            
             
             
             
@@ -276,6 +279,10 @@ div#urls {
             
             
             
+            
+            
+            
+            
             <li><a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">ブログをOctopressからHugoに移行した</a></li>
             
             
@@ -386,16 +393,16 @@ div#urls {
         <div class="move">
             <div class="prev">
                 
-                <a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/">
+                <a href="http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/">
                     <i class="fa fa-chevron-left"></i>
-                    gitのリポジトリ単位にproxyの設定をする
+                    Octopressのテーマを作ってみる
                 </a>
                 
             </div>
             <div class="next">
                 
-                <a href="http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/">
-                    GitHub PagesにOctopressをのっけてみる
+                <a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/">
+                    gitのリポジトリ単位にproxyの設定をする
                     <i class="fa fa-chevron-right"></i>
                 </a>
                 
@@ -544,6 +551,13 @@ var disqus_shortname = 'unresolved';
                 
                 <li>
                     
+                    <a href="http://yet.unresolved.xyz/tags/hackathon">
+                        hackathon
+                    </a>
+                </li>
+                
+                <li>
+                    
                     <a href="http://yet.unresolved.xyz/tags/heroku">
                         heroku
                     </a>
@@ -623,6 +637,13 @@ var disqus_shortname = 'unresolved';
                     
                     <a href="http://yet.unresolved.xyz/tags/octopress">
                         octopress
+                    </a>
+                </li>
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz/tags/paiza">
+                        paiza
                     </a>
                 </li>
                 

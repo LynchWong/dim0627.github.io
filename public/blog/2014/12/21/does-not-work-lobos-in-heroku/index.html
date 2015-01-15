@@ -5,11 +5,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-<meta property="og:url" content="http://yet.unresolved.xyz">
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="Lobosでマイグレーションができない in Heroku &middot; Unresolved">
+<meta property="og:title" content="Lobosでマイグレーションができない in Heroku | Unresolved">
+<meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/">
+<meta property="og:description" content="ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。 何が起きたか 今だにHerokuの使い方がようわからんのだけど、 とりあえずローカルから向き先変えるよりもSSHの方がいっかなってことでheroku run bashしてやってます。 ローカルからだとDBをSSLで接続させないといけないし・・・。 んでマイグレーションしようとしたら、 user&gt; (migrate) nil 何も出ない。 本当はこんな感じで、 user=&gt; (migrate) add-sites-table add-entries-table nil 作成されたり変更されたテーブルが出てくるはず。 原因はなんだったのか lobos.migrationsが読まれてない（というかリロードされてない）っぽい。 そもそもmigrate自体はこんな感じでlobos.migrationのdo-migrationsを呼んでます。 (defcommand migrate [&amp; names] (let [names (if (empty? names) (mig/pending-migrations db-spec sname) names)] (mig/do-migrations db-spec sname :up names))) で、do-migrationsはこんな感じで、list-migrations-namesの結果を絞って実行してる。 たぶんマイグレーション済みのものは除外とかそんな感じなんじゃないだろうか。 (defn do-migrations [db-spec sname with names &amp; [silent]] (let [filter-migs #(only % (list-migrations-names)) migrations (-&gt;&gt; names (map str) filter-migs (when-&gt;&gt; (= with :down) reverse) (map symbol) (map (partial ns-resolve *migrations-namespace*)) (map var-get))] (binding [*record* nil] (doseq [migration migrations] (let [name (-&gt; migration meta :name)] (when-not silent (println name)) (if (= with :up) (do (up migration) (insert-migrations db-spec sname name)) (do (down migration) (delete-migrations db-spec sname name)))))))) でlist-migrations-namesの定義がこれ、list-migrationsを呼んでる。 (defn list-migrations-names [] (map #(-&gt; % meta :name str) (list-migrations))) (defn list-migrations [] (if *reload-migrations* (when (.exists (migrations-file)) (swap!">
 
 <meta property="og:image" content="http://yet.unresolved.xyz/images/clojure.png">
 
@@ -18,7 +19,7 @@
 
 <title>
     
-    Lobosでマイグレーションができない in Heroku
+    Lobosでマイグレーションができない in Heroku | Unresolved
     
 </title>
 
@@ -43,6 +44,8 @@
             <h3 class="masthead-title">
                 <a href="http://yet.unresolved.xyz" title="Home">Unresolved</a>
             </h3>
+            
+            
             
             
             
@@ -305,6 +308,12 @@ lobos.migration=&gt;
 
         <ul class="related-post">
             
+            
+            
+            
+            
+            
+            <li><a href="http://yet.unresolved.xyz/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/">Clojureで新卒の女の子を射止めた話</a></li>
             
             
             
@@ -586,6 +595,13 @@ var disqus_shortname = 'unresolved';
                 
                 <li>
                     
+                    <a href="http://yet.unresolved.xyz/tags/hackathon">
+                        hackathon
+                    </a>
+                </li>
+                
+                <li>
+                    
                     <a href="http://yet.unresolved.xyz/tags/heroku">
                         heroku
                     </a>
@@ -665,6 +681,13 @@ var disqus_shortname = 'unresolved';
                     
                     <a href="http://yet.unresolved.xyz/tags/octopress">
                         octopress
+                    </a>
+                </li>
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz/tags/paiza">
+                        paiza
                     </a>
                 </li>
                 
