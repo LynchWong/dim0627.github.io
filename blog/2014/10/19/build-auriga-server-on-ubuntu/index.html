@@ -5,11 +5,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-<meta property="og:url" content="http://yet.unresolved.xyz">
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="UbuntuにAurigaを構築してみる &middot; Unresolved">
+<meta property="og:title" content="UbuntuにAurigaを構築してみる | Unresolved">
+<meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/">
+<meta property="og:description" content="今更だがAurigaの構築をやってみる。 どこもWindows環境での構築方法しか載ってないような印象なんだけどそんなことないのかな。 ソースのダウンロード Auriga Projectからソースを落とす。 言うまでもないけどバージョン番号は最新とかで。 $ wget -O auriga.zip http://auriga.moe.hm/Auriga/snapshotmanager.php?num=1221 $ unzip auriga.zip コンパイル なんか事前の設定とか必要なんだろうけど何も考えずにコンパイルしてみよう。 $ cd Auriga-1221full $ make で、エラーした。 ../common/grfio.c:87:20: fatal error: zlib.h: No such file or directory #include &lt;zlib.h&gt; ^ compilation terminated. make[1]: *** [../common/grfio.o] Error 1 make[1]: Leaving directory `/home/daisuketsuji/Downloads/Auriga-1221Full/src/map&#39; zlibがないらしい。 $ sudo apt-get install zlib1g $ sudo apt-get install zlib1g-dev これで通った。 grfファイルの準備 grfファイルを用意しなきゃいけなかったらしい。 コンパイル前にすることはなかったな。Winならあるのかもね。 とりあえずgrfファイルはクライアント側にあるので、公式のクライアントダウンロードからダウンロード &amp; インストール。 Ubuntuじゃインストール出来ないから、Windowsでインストールして持ってくんのだるかった・・・。 持ってきたらconf/grf-files.txtに追記。 Aurigaと同じフォルダに入れたのでこんな感じに。 grf: ./data.grf 不要な行はコメントアウトで。 サーバ起動 Linuxの場合起動はauriga-startを使うみたい。 解凍直後は実行権限がないのでsudo chmod 744 auriga-startをしとく必要あり。 で、./auriga-start startで起動。 chrif: connection to the char server was closed.">
 
 <meta property="og:image" content="http://yet.unresolved.xyz/images/ubuntu.png">
 
@@ -18,7 +19,7 @@
 
 <title>
     
-    UbuntuにAurigaを構築してみる
+    UbuntuにAurigaを構築してみる | Unresolved
     
 </title>
 
@@ -43,6 +44,8 @@
             <h3 class="masthead-title">
                 <a href="http://yet.unresolved.xyz" title="Home">Unresolved</a>
             </h3>
+            
+            
             
             
             
@@ -387,6 +390,10 @@ CFLAGS += -DNO_HTTPD
             
             
             
+            
+            
+            
+            
         </ul>
     </aside>
     
@@ -554,6 +561,13 @@ var disqus_shortname = 'unresolved';
                 
                 <li>
                     
+                    <a href="http://yet.unresolved.xyz/tags/hackathon">
+                        hackathon
+                    </a>
+                </li>
+                
+                <li>
+                    
                     <a href="http://yet.unresolved.xyz/tags/heroku">
                         heroku
                     </a>
@@ -633,6 +647,13 @@ var disqus_shortname = 'unresolved';
                     
                     <a href="http://yet.unresolved.xyz/tags/octopress">
                         octopress
+                    </a>
+                </li>
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz/tags/paiza">
+                        paiza
                     </a>
                 </li>
                 

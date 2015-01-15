@@ -5,11 +5,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-<meta property="og:url" content="http://yet.unresolved.xyz">
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="Octopressのテーマを作ってみる &middot; Unresolved">
+<meta property="og:title" content="Octopressのテーマを作ってみる | Unresolved">
+<meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/">
+<meta property="og:description" content="元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。 でもオレはデザイナーじゃないから、あんまりがっつりやるのもやだよね。 てことで元のclassicテーマをパクって作ろう。 Octopressから移行してしまったので、スクリーンショットだけ載せとく。 テーマの変え方 そもそも変え方すら知らない。 てことで調べた。 どうやらここにテーマ単位のディレクトリが配置されるらしい。 octopress git:(source)$ ls .themes classic で、rake install[theme name]でインストール。 テーマの構成 作るにも、テーマの定義に何が必要かがわからぬ。 classicの中を見てみよう。 octopress git:(source)$ ls .themes/classic sass source んん、シンプル。 察するにsassがスタイル系でsourceがテンプレート系なのかな？ 別にページレイアウトを変えたいとか、そんなたいそうなことは考えてないので、sass内をいじるだけでよさそう。 sass内はどうなってるのかな？ octopress git:(source)$ ls .themes/classic/sass _base.scss _partials.scss base custom partials plugins screen.scss octopress git:(source)$ ls .themes/classic/sass/custom _colors.scss _fonts.scss _layout.scss _styles.scss で、.themes/classic/sass/custom/_styles.scssがオーバーライド用のファイルなわけだな。 // This File is imported last, and will override other styles in the cascade // Add styles here to make changes">
 
 <meta property="og:image" content="http://yet.unresolved.xyz/images/octopress.png">
 
@@ -18,7 +19,7 @@
 
 <title>
     
-    Octopressのテーマを作ってみる
+    Octopressのテーマを作ってみる | Unresolved
     
 </title>
 
@@ -43,6 +44,8 @@
             <h3 class="masthead-title">
                 <a href="http://yet.unresolved.xyz" title="Home">Unresolved</a>
             </h3>
+            
+            
             
             
             
@@ -224,6 +227,10 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
             
             
             
+            
+            
+            
+            
             <li><a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">ブログをOctopressからHugoに移行した</a></li>
             
             
@@ -312,11 +319,11 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
             
             
             
-            
-            
-            
-            
             <li><a href="http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/">OctopressのサイドバーにGravatarを表示させる</a></li>
+            
+            
+            
+            
             
             
             
@@ -342,8 +349,8 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
             </div>
             <div class="next">
                 
-                <a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/">
-                    gitのリポジトリ単位にproxyの設定をする
+                <a href="http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/">
+                    OctopressのサイドバーにGravatarを表示させる
                     <i class="fa fa-chevron-right"></i>
                 </a>
                 
@@ -492,6 +499,13 @@ var disqus_shortname = 'unresolved';
                 
                 <li>
                     
+                    <a href="http://yet.unresolved.xyz/tags/hackathon">
+                        hackathon
+                    </a>
+                </li>
+                
+                <li>
+                    
                     <a href="http://yet.unresolved.xyz/tags/heroku">
                         heroku
                     </a>
@@ -571,6 +585,13 @@ var disqus_shortname = 'unresolved';
                     
                     <a href="http://yet.unresolved.xyz/tags/octopress">
                         octopress
+                    </a>
+                </li>
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz/tags/paiza">
+                        paiza
                     </a>
                 </li>
                 

@@ -5,11 +5,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-<meta property="og:url" content="http://yet.unresolved.xyz">
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="Laravelで配列をリクエストパラメータにする &middot; Unresolved">
+<meta property="og:title" content="Laravelで配列をリクエストパラメータにする | Unresolved">
+<meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/09/29/laravel-array-input/">
+<meta property="og:description" content="テーブルとかに入れた複数のInputを同じ名前にして配列でサーバに飛ばしたい、ってときいつも困る。 Laravelでやろうとしたときにドキュメントが見つけられなかったのでそれっぽくやってみました。 やりたいこと こんな感じで同名で複数の値をサーバに渡したいときにどうしたらいいの？っていう話。 &lt;form method=&quot;post&quot; action=&quot;xxx&quot;&gt; &lt;table&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;age&quot;&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;age&quot;&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;age&quot;&gt;&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt; &lt;/form&gt; ちなみにこのままだとDOMの最後尾にあるものだけが展開されるぽい。 方法1 name[]にする まあ大体のFWがこんな感じで展開してくれるんだろうけど、Laravelでも出来ました。 &lt;form method=&quot;post&quot; action=&quot;xxx&quot;&gt; &lt;table&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;name[]&quot;&gt;&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;age[]&quot;&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;name[]&quot;&gt;&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;age[]&quot;&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;name[]&quot;&gt;&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;age[]&quot;&gt;&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt;">
 
 <meta property="og:image" content="http://yet.unresolved.xyz/images/laravel.png">
 
@@ -18,7 +19,7 @@
 
 <title>
     
-    Laravelで配列をリクエストパラメータにする
+    Laravelで配列をリクエストパラメータにする | Unresolved
     
 </title>
 
@@ -43,6 +44,8 @@
             <h3 class="masthead-title">
                 <a href="http://yet.unresolved.xyz" title="Home">Unresolved</a>
             </h3>
+            
+            
             
             
             
@@ -334,6 +337,10 @@
             
             
             
+            
+            
+            
+            
         </ul>
     </aside>
     
@@ -501,6 +508,13 @@ var disqus_shortname = 'unresolved';
                 
                 <li>
                     
+                    <a href="http://yet.unresolved.xyz/tags/hackathon">
+                        hackathon
+                    </a>
+                </li>
+                
+                <li>
+                    
                     <a href="http://yet.unresolved.xyz/tags/heroku">
                         heroku
                     </a>
@@ -580,6 +594,13 @@ var disqus_shortname = 'unresolved';
                     
                     <a href="http://yet.unresolved.xyz/tags/octopress">
                         octopress
+                    </a>
+                </li>
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz/tags/paiza">
+                        paiza
                     </a>
                 </li>
                 
