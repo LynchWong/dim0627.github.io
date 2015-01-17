@@ -83,6 +83,15 @@ a.fixed-link {
     margin-bottom: 50px;
 }
 
+.post-related {
+    margin-bottom: 30px;
+}
+
+.post-add {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
 .eyecatch {
     float: left;
     padding: 10px;
@@ -298,10 +307,23 @@ ul#urls>li {
     margin-bottom: 50px;
 }
 
+.sp {
+    display: none;
+}
+
 @media (max-width: 38rem) {
     .post-title:after {
         content: "";
         clear: both;
         display: block;
     }
+
+    .pc {
+        display: none;
+    }
+
+    .sp {
+        display: block;
+    }
+
 }
