@@ -4,7 +4,7 @@ title: "LeiningenでSCSSを自動コンパイルする"
 eyecatch: "clojure.png"
 date: 2014-12-09
 comments: true
-tags: ["design", "scss", "sass", "clojure", "leiningen"]
+tags: ["css", "scss", "sass", "clojure", "leiningen"]
 ---
 
 Clojureを始めて一週間ほどになりまして。
