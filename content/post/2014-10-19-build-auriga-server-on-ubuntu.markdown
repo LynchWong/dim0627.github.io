@@ -4,7 +4,7 @@ title: "UbuntuにAurigaを構築してみる"
 eyecatch: "ubuntu.png"
 date: 2014-10-19
 comments: true
-tags: [auriga, clang, linux, ubuntu]
+tags: [linux, auriga, clang, ubuntu]
 ---
 
 今更だがAurigaの構築をやってみる。

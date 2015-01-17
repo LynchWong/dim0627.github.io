@@ -4,7 +4,7 @@ title: "OctopressをW3Cのバリデーションにパスさせる"
 eyecatch: "octopress.png"
 date: 2014-11-12
 comments: true
-tags: ["octopress", "html"]
+tags: ["html", "octopress"]
 ---
 
 ふと思い立って[Markup Validation Service](http://validator.w3.org/)をやってみたら13個もエラーが出たので対応してみるよ。

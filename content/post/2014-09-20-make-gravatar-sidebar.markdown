@@ -4,7 +4,7 @@ title: "OctopressのサイドバーにGravatarを表示させる"
 eyecatch: "octopress.png"
 date: 2014-09-20
 comments: true
-tags: [gravatar, octopress]
+tags: [ruby, gravatar, octopress]
 ---
 ## Octopressのサイドバーってどうなってんの？
 

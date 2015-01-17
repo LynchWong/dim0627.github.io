@@ -3,7 +3,7 @@ comments: true
 date: 2015-01-15T21:12:52+09:00
 eyecatch: "clojure.png"
 slug: "challenged-to-online-hackathon-of-paiza"
-tags: ["paiza", "clojure", "hackathon"]
+tags: ["clojure", "paiza", "hackathon"]
 title: "Clojureで新卒の女の子を射止めた話"
 ---
 

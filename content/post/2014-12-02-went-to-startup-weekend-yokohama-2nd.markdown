@@ -3,7 +3,7 @@ slug: "went-to-startup-weekend-yokohama-2nd"
 title: "HackerにとってのStartup Weekend"
 date: 2014-12-02
 comments: true
-tags: ["startup weekend", "swy", "swt", "sw"]
+tags: ["startup", "startup weekend"]
 ---
 
 この2週間で、Startup Weekend YokohamaとStartup Weekend Tokyoに参加してきました。

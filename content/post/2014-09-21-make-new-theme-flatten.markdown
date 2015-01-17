@@ -4,7 +4,7 @@ title: "Octopressのテーマを作ってみる"
 eyecatch: "octopress.png"
 date: 2014-09-21
 comments: true
-tags: [octopress, theme]
+tags: [ruby, octopress, design]
 ---
 
 元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。

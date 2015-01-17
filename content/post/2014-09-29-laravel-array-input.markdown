@@ -4,7 +4,7 @@ title: "Laravelで配列をリクエストパラメータにする"
 eyecatch: "laravel.png"
 date: 2014-09-29
 comments: true
-tags: [php, laravel]
+tags: [laravel, php]
 ---
 テーブルとかに入れた複数のInputを同じ名前にして配列でサーバに飛ばしたい、ってときいつも困る。
 

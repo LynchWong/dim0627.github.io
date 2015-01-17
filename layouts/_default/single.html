@@ -16,6 +16,14 @@
         {{ .Content }}
     </div>
 
+    <aside class="post-ad pc">
+        <iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=48&l=st1&mode=books-jp&search={{ range first 1 .Params.tags }}{{ . }}{{ end }}&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="728" height="90" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+    </aside>
+
+    <aside class="post-ad sp">
+<iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=12&l=st1&mode=books-jp&search={{ range first 1 .Params.tags }}{{ . }}{{ end }}&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="300" height="250" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+    </aside>
+
     {{ if .Site.Params.ShowRelatedPost }}
     <aside class="post-related">
         <!-- Related post. -->
@@ -46,18 +54,6 @@
         </ul>
     </aside>
     {{ end }}
-
-    <aside class="post-ad pc">
-<script type="text/javascript"><!--
-amazon_ad_tag = "unresolved-22"; amazon_ad_width = "728"; amazon_ad_height = "90"; amazon_ad_logo = "hide"; amazon_ad_link_target = "new"; amazon_ad_border = "hide"; amazon_color_border = "FFFFFF"; amazon_color_link = "000000"; amazon_color_price = "000000"; amazon_color_logo = "000000"; amazon_ad_categories = "a";//--></script>
-<script type="text/javascript" src="http://ir-jp.amazon-adsystem.com/s/ads.js"></script>
-    </aside>
-
-    <aside class="post-ad sp">
-<script type="text/javascript"><!--
-amazon_ad_tag = "unresolved-22"; amazon_ad_width = "300"; amazon_ad_height = "250"; amazon_ad_logo = "hide"; amazon_ad_link_target = "new"; amazon_ad_border = "hide"; amazon_color_border = "FFFFFF"; amazon_color_link = "000000"; amazon_color_price = "000000"; amazon_color_logo = "000000"; amazon_ad_categories = "a";//--></script>
-<script type="text/javascript" src="http://ir-jp.amazon-adsystem.com/s/ads.js"></script>
-    </aside>
 
     <!-- Pagination. -->
     <footer>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unresolved </title>
+    <link>http://yet.unresolved.xyz/tags/javascript/</link>
+    <language>en-us</language>
+    <author>Daisuke Tsuji</author>
+    <rights>(C) 2015</rights>
+    <updated>2014-10-18 00:00:00 &#43;0000 UTC</updated>
+
+    
+      
+        <item>
+          <title>Ubuntuにnode.jsをインストールする</title>
+          <link>http://yet.unresolved.xyz/blog/2014/10/18/install-nodejs-on-ubuntu/</link>
+          <pubDate>Sat, 18 Oct 2014 00:00:00 UTC</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/18/install-nodejs-on-ubuntu/</guid>
+          <description>
+
+&lt;p&gt;そろそろ新しいことをやらねばなと思うので、node.jsに手を出してみるよ。&lt;/p&gt;
+
+&lt;p&gt;node.jsはmake &amp;amp; make installを推奨しているとのことなので、とりあえずソースを持ってくる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ wget http://nodejs.org/dist/v0.10.32/node-v0.10.32.tar.gz
+$ tar zxvf node-v0.10.32.tar.gz
+$ make
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;そしてエラー&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;flock: g++: No such file or directory
+
+make[1]: * [/home/daisuketsuji/Develop/node/out/Release/openssl-cli] Error 69
+
+make[1]: Leaving directory `/home/daisuketsuji/Develop/node/out&#39;
+
+make: * [node] Error 2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;g++がない。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://packages.ubuntu.com/lucid/build-essential&#34;&gt;build-essential&lt;/a&gt;を使えばいいらしい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ sudo apt-get install -y build-essential
+$ make
+$ make install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;またエラー&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;installing /usr/local/bin/node
+Traceback (most recent call last):
+  File &amp;quot;tools/install.py&amp;quot;, line 191, in &amp;lt;module&amp;gt;
+    run(sys.argv[:])
+  File &amp;quot;tools/install.py&amp;quot;, line 186, in run
+    if cmd == &#39;install&#39;: return files(install)
+  File &amp;quot;tools/install.py&amp;quot;, line 130, in files
+    action([&#39;out/Release/node&#39;], &#39;bin/node&#39;)
+  File &amp;quot;tools/install.py&amp;quot;, line 79, in install
+    def install(paths, dst): map(lambda path: try_copy(path, dst), paths)
+  File &amp;quot;tools/install.py&amp;quot;, line 79, in &amp;lt;lambda&amp;gt;
+    def install(paths, dst): map(lambda path: try_copy(path, dst), paths)
+  File &amp;quot;tools/install.py&amp;quot;, line 70, in try_copy
+    try_unlink(target_path) # prevent ETXTBSY errors
+  File &amp;quot;tools/install.py&amp;quot;, line 33, in try_unlink
+    os.unlink(path)
+OSError: [Errno 13] Permission denied: &#39;/usr/local/bin/node&#39;
+make: *** [install] Error 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ああ・・・。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;行けたっぽいのでインタラクティブシェルを起動してみる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;daisuketsuji@daisuketsuji-VirtualBox:~/Develop/node-v0.10.32$ node
+&amp;gt; console.log(&amp;quot;hello world&amp;quot;)
+hello world
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;worked!&lt;/p&gt;
+
+&lt;h2 id=&#34;そもそもnode-jsって:2001f525b49213f857c10cbda61543d4&#34;&gt;そもそもnode.jsって？&lt;/h2&gt;
+
+&lt;p&gt;色んなところでこう書いてある。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;JavaScriptを用いたNon-blocking I/O環境&lt;/p&gt;
+
+&lt;p&gt;「イベントループモデルで、ノンブロッキングI/Oを使用している」&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;これらについては以下の記事を参考にさせてもらいました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://d.hatena.ne.jp/badatmath/20101020/1287587240&#34;&gt;node.js とは何か - I am Bad at Math&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://satoshun00.hatenadiary.com/entry/2012/08/02/172936&#34;&gt;node.jsの仕組み（ノンブロッキングI/Oとかスレッドとか） - 元リア充エンジニアのメモ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;nginxが流行ってるのは知ってたし、メモリを食わないっていうのも聞いてはいたけど、そういう背景があったんですね。&lt;/p&gt;
+</description>
+        </item>
+      
+    
+
+  </channel>
+</rss>

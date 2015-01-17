@@ -106,16 +106,16 @@
     <article class="post">
     <div class="eyecatch">
         
-        <a href="http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/"><img src="http://yet.unresolved.xyz/images/octopress.png" alt="Octopressのテーマを作ってみる"></a>
+        <a href="http://yet.unresolved.xyz/blog/2014/10/18/install-nodejs-on-ubuntu/"><img src="http://yet.unresolved.xyz/images/nodejs.png" alt="Ubuntuにnode.jsをインストールする"></a>
         
     </div>
     <div class="data">
-        <span class="post-date">Sun, Sep 21, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/">Octopressのテーマを作ってみる</a></h1>
-        <div class="summary">元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。 でもオレはデザイナーじゃないから、あんまりがっつりやるのもやだよね。 てことで元のclassicテーマをパクって作ろう。 Octopressから移行してしまったので、スクリーンショットだけ載せとく。 テーマの変え方 そもそも変え方すら知らない。 てことで調べた。 どうやらここにテーマ単位のディレクトリが配置されるらしい。 octopress git:(source)$ ls .themes classic で、rake install[theme name]でインストール。 テーマの構成 作るにも、テーマの定義に何が必要かがわからぬ。 classicの中を見てみよう。 octopress git:(source)$ ls .themes/classic sass source んん、シンプル。 察するにsassがスタイル系でsourceがテンプレート系なのかな？ 別にページレイアウトを変えたいとか、そんなたいそうなことは考えてないので、sass内をいじるだけでよさそう。 sass内はどうなってるのかな？ octopress git:(source)$ ls .themes/classic/sass _base.scss _partials.scss base custom partials plugins screen.scss octopress git:(source)$ ls .themes/classic/sass/custom _colors.scss _fonts.scss _layout.scss _styles.scss で、.themes/classic/sass/custom/_styles.scssがオーバーライド用のファイルなわけだな。 // This File is imported last, and will override other styles in the cascade // Add styles here to make changes</div>
+        <span class="post-date">Sat, Oct 18, 2014</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/10/18/install-nodejs-on-ubuntu/">Ubuntuにnode.jsをインストールする</a></h1>
+        <div class="summary">そろそろ新しいことをやらねばなと思うので、node.jsに手を出してみるよ。 node.jsはmake &amp; make installを推奨しているとのことなので、とりあえずソースを持ってくる。 $ wget http://nodejs.org/dist/v0.10.32/node-v0.10.32.tar.gz $ tar zxvf node-v0.10.32.tar.gz $ make そしてエラー flock: g++: No such file or directory make[1]: * [/home/daisuketsuji/Develop/node/out/Release/openssl-cli] Error 69 make[1]: Leaving directory `/home/daisuketsuji/Develop/node/out' make: * [node] Error 2 g++がない。 build-essentialを使えばいいらしい。 $ sudo apt-get install -y build-essential $ make $ make install またエラー installing /usr/local/bin/node Traceback (most recent call last): File &quot;tools/install.py&quot;, line 191, in &lt;module&gt; run(sys.argv[:]) File &quot;tools/install.py&quot;, line 186, in run if cmd == 'install': return files(install) File &quot;tools/install.py&quot;, line 130, in files action(['out/Release/node'], 'bin/node') File &quot;tools/install.py&quot;, line 79, in install def install(paths, dst): map(lambda path: try_copy(path, dst), paths) File &quot;tools/install.py&quot;, line 79, in &lt;lambda&gt; def install(paths, dst): map(lambda path: try_copy(path, dst), paths) File &quot;tools/install.py&quot;, line 70, in try_copy try_unlink(target_path) # prevent ETXTBSY errors File &quot;tools/install.py&quot;, line 33, in try_unlink os.unlink(path) OSError: [Errno 13] Permission denied: '/usr/local/bin/node' make: *** [install] Error 1 ああ・・・。 $ sudo make install 行けたっぽいのでインタラクティブシェルを起動してみる。 daisuketsuji@daisuketsuji-VirtualBox:~/Develop/node-v0.10.32$ node &gt; console.log(&quot;hello world&quot;) hello world worked!</div>
     </div>
     <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/">
+        <a href="http://yet.unresolved.xyz/blog/2014/10/18/install-nodejs-on-ubuntu/">
             <i class="fa fa-chevron-down"></i>
         </a>
     </footer>
@@ -197,6 +197,13 @@
                     
                     <a href="http://yet.unresolved.xyz/tags/database">
                         database
+                    </a>
+                </li>
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz/tags/design">
+                        design
                     </a>
                 </li>
                 
@@ -288,6 +295,13 @@
                     
                     <a href="http://yet.unresolved.xyz/tags/hugo">
                         hugo
+                    </a>
+                </li>
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz/tags/javascript">
+                        javascript
                     </a>
                 </li>
                 
@@ -405,36 +419,15 @@
                 
                 <li>
                     
+                    <a href="http://yet.unresolved.xyz/tags/startup">
+                        startup
+                    </a>
+                </li>
+                
+                <li>
+                    
                     <a href="http://yet.unresolved.xyz/tags/startup-weekend">
                         startup-weekend
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/sw">
-                        sw
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/swt">
-                        swt
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/swy">
-                        swy
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz/tags/theme">
-                        theme
                     </a>
                 </li>
                 

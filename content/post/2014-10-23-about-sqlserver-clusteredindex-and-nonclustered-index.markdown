@@ -3,7 +3,7 @@ slug: "about-sqlserver-clusteredindex-and-nonclustered-index"
 title: "クラスタ化インデックスとかカバリングインデックスについて"
 date: 2014-10-23
 comments: true
-tags: ["database", "sql server"]
+tags: ["sql server", "database"]
 ---
 
 SQL Serverを使ってて、ちょっと曖昧にしかわからんなってところがあったので少し調べてみた。
