@@ -19,8 +19,8 @@ ClojureのWebアプリがとりあえず動くところまで行ったんだけ�
 
 んでマイグレーションしようとしたら、
 
-``` sh
-user> (migrate)
+``` clojure-repl
+user=> (migrate)
 nil
 ```
 
@@ -28,7 +28,7 @@ nil
 
 本当はこんな感じで、
 
-``` sh
+``` clojure-repl
 user=> (migrate)
 add-sites-table
 add-entries-table
@@ -108,7 +108,7 @@ nil
 
 だからこんな風に、2回目の実行からは空になった`migrations`が返ってくる。
 
-``` sh
+``` clojure-repl
 user=> (use 'lobos.migration)
 WARNING: complement already refers to: #'clojure.core/complement in namespace: user, being replaced by: #'lobos.migration/complement
 nil
@@ -129,7 +129,7 @@ user=>
 
 だからこんな感じで`false`で上書いてしまおう。
 
-``` sh
+``` clojure-repl
 user=> (use 'lobos.migration)
 WARNING: complement already refers to: #'clojure.core/complement in namespace: user, being replaced by: #'lobos.migration/complement
 nil

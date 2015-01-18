@@ -141,7 +141,7 @@ REPLにて以下を実行。
 
 WARNINGは多分すでに存在するシンボルを置き換えてしまってることの警告だからとりあえず無視。
 
-``` sh
+``` clojure-repl
 tpc git:(master)$ lein repl
 (use '(lobos connectivity core schema))nREPL server started on port 50092 on host 127.0.0.1 - nrepl://127.0.0.1:50092
 REPL-y 0.3.1

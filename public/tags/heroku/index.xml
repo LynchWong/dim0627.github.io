@@ -30,7 +30,7 @@
 
 &lt;p&gt;んでマイグレーションしようとしたら、&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;user&amp;gt; (migrate)
+&lt;pre&gt;&lt;code class=&#34;language-clojure-repl&#34;&gt;user=&amp;gt; (migrate)
 nil
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -38,7 +38,7 @@ nil
 
 &lt;p&gt;本当はこんな感じで、&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;user=&amp;gt; (migrate)
+&lt;pre&gt;&lt;code class=&#34;language-clojure-repl&#34;&gt;user=&amp;gt; (migrate)
 add-sites-table
 add-entries-table
 nil
@@ -113,7 +113,7 @@ nil
 
 &lt;p&gt;だからこんな風に、2回目の実行からは空になった&lt;code&gt;migrations&lt;/code&gt;が返ってくる。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;user=&amp;gt; (use &#39;lobos.migration)
+&lt;pre&gt;&lt;code class=&#34;language-clojure-repl&#34;&gt;user=&amp;gt; (use &#39;lobos.migration)
 WARNING: complement already refers to: #&#39;clojure.core/complement in namespace: user, being replaced by: #&#39;lobos.migration/complement
 nil
 user=&amp;gt; (list-migrations)
@@ -133,7 +133,7 @@ user=&amp;gt;
 
 &lt;p&gt;だからこんな感じで&lt;code&gt;false&lt;/code&gt;で上書いてしまおう。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;user=&amp;gt; (use &#39;lobos.migration)
+&lt;pre&gt;&lt;code class=&#34;language-clojure-repl&#34;&gt;user=&amp;gt; (use &#39;lobos.migration)
 WARNING: complement already refers to: #&#39;clojure.core/complement in namespace: user, being replaced by: #&#39;lobos.migration/complement
 nil
 user=&amp;gt; (ns lobos.migration)
