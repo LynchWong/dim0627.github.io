@@ -9,10 +9,10 @@
 
 <meta property="og:type" content="article">
 <meta property="og:title" content="Octopressのテーマを作ってみる | Unresolved">
-<meta property="og:url" content="http://localhost:1313/blog/2014/09/21/make-new-theme-flatten/">
+<meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/">
 <meta property="og:description" content="元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。 でもオレはデザイナーじゃないから、あんまりがっつりやるのもやだよね。 てことで元のclassicテーマをパクって作ろう。 Octopressから移行してしまったので、スクリーンショットだけ載せとく。 テーマの変え方 そもそも変え方すら知らない。 てことで調べた。 どうやらここにテーマ単位のディレクトリが配置されるらしい。 octopress git:(source)$ ls .themes classic で、rake install[theme name]でインストール。 テーマの構成 作るにも、テーマの定義に何が必要かがわからぬ。 classicの中を見てみよう。 octopress git:(source)$ ls .themes/classic sass source んん、シンプル。 察するにsassがスタイル系でsourceがテンプレート系なのかな？ 別にページレイアウトを変えたいとか、そんなたいそうなことは考えてないので、sass内をいじるだけでよさそう。 sass内はどうなってるのかな？ octopress git:(source)$ ls .themes/classic/sass _base.scss _partials.scss base custom partials plugins screen.scss octopress git:(source)$ ls .themes/classic/sass/custom _colors.scss _fonts.scss _layout.scss _styles.scss で、.themes/classic/sass/custom/_styles.scssがオーバーライド用のファイルなわけだな。 // This File is imported last, and will override other styles in the cascade // Add styles here to make changes">
 
-<meta property="og:image" content="http://localhost:1313/images/octopress.png">
+<meta property="og:image" content="http://yet.unresolved.xyz/images/octopress.png">
 
 
 <meta property="og:site_name" content="Unresolved">
@@ -27,15 +27,15 @@
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_light.min.css">
-<link rel="stylesheet" href="http://localhost:1313/css/base.css">
-<link rel="stylesheet" href="http://localhost:1313/css/styles.css">
-<link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+<link rel="stylesheet" href="http://yet.unresolved.xyz/css/base.css">
+<link rel="stylesheet" href="http://yet.unresolved.xyz/css/styles.css">
+<link rel="stylesheet" href="http://yet.unresolved.xyz/css/custom.css">
 
 
-<link rel="shortcut icon" href="http://localhost:1313/assets/favicon.ico">
+<link rel="shortcut icon" href="http://yet.unresolved.xyz/assets/favicon.ico">
 
 
-<link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:1313/index.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
 
 
@@ -43,7 +43,7 @@
     <div class="masthead">
         <div class="container">
             <h3 class="masthead-title">
-                <a href="http://localhost:1313" title="Home">Unresolved</a>
+                <a href="http://yet.unresolved.xyz" title="Home">Unresolved</a>
             </h3>
             
             
@@ -113,7 +113,7 @@
 
     <div class="eyecatch">
         
-        <img src="http://localhost:1313/images/octopress.png" alt="Octopressのテーマを作ってみる">
+        <img src="http://yet.unresolved.xyz/images/octopress.png" alt="Octopressのテーマを作ってみる">
         
     </div>
 
@@ -202,21 +202,21 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
         <ul class="post-tags">
             
             <li>
-                <a href="http://localhost:1313/tags/ruby">
+                <a href="http://yet.unresolved.xyz/tags/ruby">
                     <i class="fa fa-tags"></i>
                     ruby
                 </a>
             </li>
             
             <li>
-                <a href="http://localhost:1313/tags/octopress">
+                <a href="http://yet.unresolved.xyz/tags/octopress">
                     <i class="fa fa-tags"></i>
                     octopress
                 </a>
             </li>
             
             <li>
-                <a href="http://localhost:1313/tags/design">
+                <a href="http://yet.unresolved.xyz/tags/design">
                     <i class="fa fa-tags"></i>
                     design
                 </a>
@@ -247,7 +247,7 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
             
             
             
-            <li><a href="http://localhost:1313/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">ブログをOctopressからHugoに移行した</a></li>
+            <li><a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">ブログをOctopressからHugoに移行した</a></li>
             
             
             
@@ -277,7 +277,7 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
             
             
             
-            <li><a href="http://localhost:1313/blog/2014/11/12/pass-the-validation-of-w3c/">OctopressをW3Cのバリデーションにパスさせる</a></li>
+            <li><a href="http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/">OctopressをW3Cのバリデーションにパスさせる</a></li>
             
             
             
@@ -299,7 +299,7 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
             
             
             
-            <li><a href="http://localhost:1313/blog/2014/10/22/move-sidebar-at-under-the-article/">Octopressのサイドバーを下部に移動する</a></li>
+            <li><a href="http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/">Octopressのサイドバーを下部に移動する</a></li>
             
             
             
@@ -325,7 +325,7 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
             
             
             
-            <li><a href="http://localhost:1313/blog/2014/09/21/description-is-not-set/">_config.ymlに書いたdescriptionが設定されない</a></li>
+            <li><a href="http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/">_config.ymlに書いたdescriptionが設定されない</a></li>
             
             
             
@@ -339,13 +339,13 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
             
             
             
-            <li><a href="http://localhost:1313/blog/2014/09/20/make-gravatar-sidebar/">OctopressのサイドバーにGravatarを表示させる</a></li>
+            <li><a href="http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/">OctopressのサイドバーにGravatarを表示させる</a></li>
             
             
             
             
             
-            <li><a href="http://localhost:1313/blog/2014/09/17/install-the-octopress-on-github-pages/">GitHub PagesにOctopressをのっけてみる</a></li>
+            <li><a href="http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/">GitHub PagesにOctopressをのっけてみる</a></li>
             
             
         </ul>
@@ -357,7 +357,7 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
         <div class="move">
             <div class="prev">
                 
-                <a href="http://localhost:1313/blog/2014/09/21/description-is-not-set/">
+                <a href="http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/">
                     <i class="fa fa-chevron-left"></i>
                     _config.ymlに書いたdescriptionが設定されない
                 </a>
@@ -365,7 +365,7 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
             </div>
             <div class="next">
                 
-                <a href="http://localhost:1313/blog/2014/09/20/git-on-proxy/">
+                <a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/">
                     gitのリポジトリ単位にproxyの設定をする
                     <i class="fa fa-chevron-right"></i>
                 </a>
@@ -423,294 +423,294 @@ var disqus_shortname = 'unresolved';
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/auriga">
+                    <a href="http://yet.unresolved.xyz/tags/auriga">
                         auriga
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/aws">
+                    <a href="http://yet.unresolved.xyz/tags/aws">
                         aws
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/beanstalk">
+                    <a href="http://yet.unresolved.xyz/tags/beanstalk">
                         beanstalk
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/boot2docker">
+                    <a href="http://yet.unresolved.xyz/tags/boot2docker">
                         boot2docker
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/clang">
+                    <a href="http://yet.unresolved.xyz/tags/clang">
                         clang
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/clojure">
+                    <a href="http://yet.unresolved.xyz/tags/clojure">
                         clojure
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/css">
+                    <a href="http://yet.unresolved.xyz/tags/css">
                         css
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/database">
+                    <a href="http://yet.unresolved.xyz/tags/database">
                         database
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/design">
+                    <a href="http://yet.unresolved.xyz/tags/design">
                         design
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/dns">
+                    <a href="http://yet.unresolved.xyz/tags/dns">
                         dns
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/docker">
+                    <a href="http://yet.unresolved.xyz/tags/docker">
                         docker
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/enlive">
+                    <a href="http://yet.unresolved.xyz/tags/enlive">
                         enlive
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/git">
+                    <a href="http://yet.unresolved.xyz/tags/git">
                         git
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/github">
+                    <a href="http://yet.unresolved.xyz/tags/github">
                         github
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/golang">
+                    <a href="http://yet.unresolved.xyz/tags/golang">
                         golang
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/google-app-engine">
+                    <a href="http://yet.unresolved.xyz/tags/google-app-engine">
                         google-app-engine
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/gravatar">
+                    <a href="http://yet.unresolved.xyz/tags/gravatar">
                         gravatar
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/hackathon">
+                    <a href="http://yet.unresolved.xyz/tags/hackathon">
                         hackathon
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/heroku">
+                    <a href="http://yet.unresolved.xyz/tags/heroku">
                         heroku
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/hiccup">
+                    <a href="http://yet.unresolved.xyz/tags/hiccup">
                         hiccup
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/html">
+                    <a href="http://yet.unresolved.xyz/tags/html">
                         html
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/hugo">
+                    <a href="http://yet.unresolved.xyz/tags/hugo">
                         hugo
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/javascript">
+                    <a href="http://yet.unresolved.xyz/tags/javascript">
                         javascript
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/jekyll">
+                    <a href="http://yet.unresolved.xyz/tags/jekyll">
                         jekyll
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/laravel">
+                    <a href="http://yet.unresolved.xyz/tags/laravel">
                         laravel
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/leiningen">
+                    <a href="http://yet.unresolved.xyz/tags/leiningen">
                         leiningen
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/linux">
+                    <a href="http://yet.unresolved.xyz/tags/linux">
                         linux
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/lobos">
+                    <a href="http://yet.unresolved.xyz/tags/lobos">
                         lobos
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/migration">
+                    <a href="http://yet.unresolved.xyz/tags/migration">
                         migration
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/node.js">
+                    <a href="http://yet.unresolved.xyz/tags/node.js">
                         node.js
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/octopress">
+                    <a href="http://yet.unresolved.xyz/tags/octopress">
                         octopress
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/paiza">
+                    <a href="http://yet.unresolved.xyz/tags/paiza">
                         paiza
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/php">
+                    <a href="http://yet.unresolved.xyz/tags/php">
                         php
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/postgres">
+                    <a href="http://yet.unresolved.xyz/tags/postgres">
                         postgres
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/python">
+                    <a href="http://yet.unresolved.xyz/tags/python">
                         python
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/ruby">
+                    <a href="http://yet.unresolved.xyz/tags/ruby">
                         ruby
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/sass">
+                    <a href="http://yet.unresolved.xyz/tags/sass">
                         sass
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/scss">
+                    <a href="http://yet.unresolved.xyz/tags/scss">
                         scss
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/sql-server">
+                    <a href="http://yet.unresolved.xyz/tags/sql-server">
                         sql-server
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/startup">
+                    <a href="http://yet.unresolved.xyz/tags/startup">
                         startup
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/startup-weekend">
+                    <a href="http://yet.unresolved.xyz/tags/startup-weekend">
                         startup-weekend
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://localhost:1313/tags/ubuntu">
+                    <a href="http://yet.unresolved.xyz/tags/ubuntu">
                         ubuntu
                     </a>
                 </li>
@@ -754,7 +754,7 @@ var disqus_shortname = 'unresolved';
 
 <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-<script src="http://localhost:1313/js/highlight.pack.js"></script>
+<script src="http://yet.unresolved.xyz/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 <script>
