@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved </title>
-    <link>http://localhost:1313/tags/hiccup/</link>
+    <link>http://yet.unresolved.xyz/tags/hiccup/</link>
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
@@ -12,10 +12,10 @@
       
         <item>
           <title>Clojureのテンプレートエンジンについて</title>
-          <link>http://localhost:1313/blog/2015/01/14/use-template-engine-in-clojure/</link>
+          <link>http://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/</link>
           <pubDate>Wed, 14 Jan 2015 01:01:39 JST</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://localhost:1313/blog/2015/01/14/use-template-engine-in-clojure/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/</guid>
           <description>
 
 &lt;p&gt;練習のためにClojureでいくつかのWebアプリを作ってみたんだけど、どの言語でもなんだかんだ手間になるテンプレートの扱いについてまとめてみる。&lt;/p&gt;

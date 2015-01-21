@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved </title>
-    <link>http://localhost:1313/tags/ruby/</link>
+    <link>http://yet.unresolved.xyz/tags/ruby/</link>
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
@@ -12,10 +12,10 @@
       
         <item>
           <title>ブログをOctopressからHugoに移行した</title>
-          <link>http://localhost:1313/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/</link>
+          <link>http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/</link>
           <pubDate>Sun, 04 Jan 2015 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://localhost:1313/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/</guid>
           <description>
 
 &lt;p&gt;&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;でのブログもずいぶん慣れてきたところで&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;に移行しました。&lt;/p&gt;
@@ -189,10 +189,10 @@ hugo new post/&amp;quot;`date +%Y-%m-%d`-$title.markdown&amp;quot;
       
         <item>
           <title>Octopressのサイドバーを下部に移動する</title>
-          <link>http://localhost:1313/blog/2014/10/22/move-sidebar-at-under-the-article/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/</link>
           <pubDate>Wed, 22 Oct 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://localhost:1313/blog/2014/10/22/move-sidebar-at-under-the-article/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/</guid>
           <description>&lt;p&gt;デフォルトのテーマだとサイドバーの表示/非表示の切り替えが出来て、非表示にするとサイドバーは記事の下に落っこちるんだけど、&lt;/p&gt;
 
 &lt;p&gt;常時この状態にした方がかっこいいんでないか？ということで移動させてみることに。&lt;/p&gt;
@@ -258,10 +258,10 @@ hugo new post/&amp;quot;`date +%Y-%m-%d`-$title.markdown&amp;quot;
       
         <item>
           <title>Octopressのテーマを作ってみる</title>
-          <link>http://localhost:1313/blog/2014/09/21/make-new-theme-flatten/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/</link>
           <pubDate>Sun, 21 Sep 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://localhost:1313/blog/2014/09/21/make-new-theme-flatten/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/</guid>
           <description>
 
 &lt;p&gt;元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。&lt;/p&gt;
@@ -272,7 +272,7 @@ hugo new post/&amp;quot;`date +%Y-%m-%d`-$title.markdown&amp;quot;
 
 &lt;p&gt;Octopressから移行してしまったので、スクリーンショットだけ載せとく。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2014-09-21/flatten.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2014-09-21/flatten.png&#34; class=&#34;image&#34; alt=&#34;flatten&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34; class=&#34;image&#34; alt=&#34;flatten&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;テーマの変え方:76235ef2906f03f2c7b92537a8f6cdf7&#34;&gt;テーマの変え方&lt;/h2&gt;
 
@@ -333,10 +333,10 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
       
         <item>
           <title>_config.ymlに書いたdescriptionが設定されない</title>
-          <link>http://localhost:1313/blog/2014/09/21/description-is-not-set/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</link>
           <pubDate>Sun, 21 Sep 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://localhost:1313/blog/2014/09/21/description-is-not-set/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</guid>
           <description>&lt;p&gt;認識が間違ってるのか、_config.ymlに書いたdescriptionがサイトに反映されない・・・。&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;source/_includes/head.html&lt;/code&gt;のコードを見てみるとこんな感じ。&lt;/p&gt;
@@ -373,10 +373,10 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
       
         <item>
           <title>OctopressのサイドバーにGravatarを表示させる</title>
-          <link>http://localhost:1313/blog/2014/09/20/make-gravatar-sidebar/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/</link>
           <pubDate>Sat, 20 Sep 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://localhost:1313/blog/2014/09/20/make-gravatar-sidebar/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/</guid>
           <description>
 
 &lt;h2 id=&#34;octopressのサイドバーってどうなってんの:c73b8990ae6ff308f2649661fb572fc8&#34;&gt;Octopressのサイドバーってどうなってんの？&lt;/h2&gt;
