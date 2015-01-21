@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved </title>
-    <link>http://localhost:1313/tags/javascript/</link>
+    <link>http://yet.unresolved.xyz/tags/javascript/</link>
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
@@ -12,10 +12,10 @@
       
         <item>
           <title>Ubuntuにnode.jsをインストールする</title>
-          <link>http://localhost:1313/blog/2014/10/18/install-nodejs-on-ubuntu/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/10/18/install-nodejs-on-ubuntu/</link>
           <pubDate>Sat, 18 Oct 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://localhost:1313/blog/2014/10/18/install-nodejs-on-ubuntu/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/18/install-nodejs-on-ubuntu/</guid>
           <description>
 
 &lt;p&gt;そろそろ新しいことをやらねばなと思うので、node.jsに手を出してみるよ。&lt;/p&gt;
