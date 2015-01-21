@@ -8,7 +8,7 @@
 
 
 <meta property="og:title" content="Unresolved">
-<meta property="og:url" content="http://yet.unresolved.xyz">
+<meta property="og:url" content="http://localhost:1313">
 
 <meta property="og:site_name" content="Unresolved">
 
@@ -22,15 +22,15 @@
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_light.min.css">
-<link rel="stylesheet" href="http://yet.unresolved.xyz/css/base.css">
-<link rel="stylesheet" href="http://yet.unresolved.xyz/css/styles.css">
-<link rel="stylesheet" href="http://yet.unresolved.xyz/css/custom.css">
+<link rel="stylesheet" href="http://localhost:1313/css/base.css">
+<link rel="stylesheet" href="http://localhost:1313/css/styles.css">
+<link rel="stylesheet" href="http://localhost:1313/css/custom.css">
 
 
-<link rel="shortcut icon" href="http://yet.unresolved.xyz/assets/favicon.ico">
+<link rel="shortcut icon" href="http://localhost:1313/assets/favicon.ico">
 
 
-<link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:1313/index.xml">
 
 
 
@@ -38,7 +38,7 @@
     <div class="masthead">
         <div class="container">
             <h3 class="masthead-title">
-                <a href="http://yet.unresolved.xyz" title="Home">Unresolved</a>
+                <a href="http://localhost:1313" title="Home">Unresolved</a>
             </h3>
             
             
@@ -107,16 +107,16 @@
     <article class="post">
     <div class="eyecatch">
         
-        <a href="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/"><img src="http://yet.unresolved.xyz/images/clojure.png" alt="Lobosを使ってマイグレーションをする"></a>
+        <a href="http://localhost:1313/blog/2014/12/11/usage-for-lobos-migration/"><img src="http://localhost:1313/images/clojure.png" alt="Lobosを使ってマイグレーションをする"></a>
         
     </div>
     <div class="data">
         <span class="post-date">Thu, Dec 11, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/">Lobosを使ってマイグレーションをする</a></h1>
+        <h1 class="post-title"><a href="http://localhost:1313/blog/2014/12/11/usage-for-lobos-migration/">Lobosを使ってマイグレーションをする</a></h1>
         <div class="summary">1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。 というわけでClojureを使ってWeb開発をする際も使いたいので、Lobosというスキーマのマニュピレーション、マイグレーションツールを使ってみます。 インストール 本体はここbudu/lobos。 project.cljに :dependencies [[lobos &quot;1.0.0-beta3&quot;]] を追加してlein depsするだけでおーけー。 Leiningenのプラグインとして使えるpupeno/lein-lobosってのもあるようだ。 こっちも使う場合は、ploject.cljに :plugins [lein-lobos &quot;1.0.0-beta1&quot;] を追加。 全体を載っけるとこんな感じに。 (defproject tpc &quot;0.1.0-SNAPSHOT&quot; :description &quot;FIXME: write description&quot; :url &quot;http://example.com/FIXME&quot; :min-lein-version &quot;2.0.0&quot; :dependencies [[org.clojure/clojure &quot;1.6.0&quot;] [compojure &quot;1.2.0&quot;] [ring/ring-defaults &quot;0.1.2&quot;] [enlive &quot;1.1.5&quot;] [korma &quot;0.4.0&quot;] [postgresql &quot;9.1-901.jdbc4&quot;] [lobos &quot;1.0.0-beta3&quot;]] :plugins [[lein-ring &quot;0.8.13&quot;] [lein-haml-sass &quot;0.2.7-SNAPSHOT&quot;] [lein-lobos &quot;1.0.0-beta1&quot;]] :ring {:handler tpc.core.handler/app} :profiles {:dev {:dependencies [[javax.servlet/servlet-api &quot;2.5&quot;] [ring-mock &quot;0.1.5&quot;] [org.xerial/sqlite-jdbc &quot;3.6.16&quot;]]}} :scss {:src &quot;resources/scss&quot; :output-directory &quot;resources/public/css&quot; :output-extension &quot;css&quot;}) テーブル定義をしてみる 今回はSQLiteにて実施。 srcディレクトリ直下にlobosってディレクトリを作成して、その中にいろいろな設定を突っ込む必要があるらしい。 このディレクトリの名前は変えてもいいみたいだけど面倒になりそうだからこのままで。 まずは接続情報を記載するsrc/lobos/config.clj。 (ns lobos.config (:use lobos.connectivity)) (def db_dev {:classname &quot;org.sqlite.JDBC&quot; :subprotocol &quot;sqlite&quot; :subname &quot;./dev.sqlite3&quot;}) (open-global db_dev) 次にスキーマ操作で使われている(と思われる)ヘルパー、src/lobos/helpers.cljを定義。 (ns lobos.helpers (:refer-clojure :exclude [bigint boolean char double float time]) (:use (lobos schema))) (defn surrogate-key [table] (integer table :id :auto-inc :primary-key)) (defn timestamps [table] (-&gt; table (timestamp :updated_on) (timestamp :created_on (default (now))))) (defn refer-to [table ptable] (let [cname (-&gt; (-&gt;&gt; ptable name butlast (apply str)) (str &quot;_id&quot;) keyword)] (integer table cname [:refer ptable :id :on-delete :set-null]))) (defmacro tbl [name &amp; elements] `(-&gt; (table ~name) (timestamps) ~@(reverse elements) (surrogate-key))) で、目的のマイグレーション定義をsrc/lobos/migrations.cljに。 (ns lobos.migrations (:refer-clojure :exclude [alter drop bigint boolean char double float time]) (:use (lobos [migration :only [defmigration]] core schema config helpers))) (defmigration add-sites-table (up [] (create (tbl :sites (varchar :name 255) (varchar :url 255) (varchar :rss 255) (varchar :image 255) (integer :cat) ))) (down [] (drop (table :sites)))) マイグレーションの実行 ここが結構厄介だった。 というか、出来たといえば出来たんだけど、もっと正しい方法があるような気が・・・。 REPLにて以下を実行。 WARNINGは多分すでに存在するシンボルを置き換えてしまってることの警告だからとりあえず無視。 tpc git:(master)$ lein repl (use '(lobos connectivity core schema))nREPL server started on port 50092 on host 127.0.0.1 - nrepl://127.0.0.1:50092 REPL-y 0.3.1 Clojure 1.6.0 Docs: (doc function-name-here) (find-doc &quot;part-of-name-here&quot;) Source: (source function-name-here) Javadoc: (javadoc java-object-or-class-here) Exit: Control+D or (exit) or (quit) Results: Stored in vars *1, *2, *3, an exception in *e user=&gt; (use '(lobos connectivity core schema)) WARNING: alter already refers to: #'clojure.core/alter in namespace: user, being replaced by: #'lobos.core/alter WARNING: drop already refers to: #'clojure.core/drop in namespace: user, being replaced by: #'lobos.core/drop WARNING: boolean already refers to: #'clojure.core/boolean in namespace: user, being replaced by: #'lobos.schema/boolean WARNING: char already refers to: #'clojure.core/char in namespace: user, being replaced by: #'lobos.schema/char WARNING: double already refers to: #'clojure.core/double in namespace: user, being replaced by: #'lobos.schema/double WARNING: bigint already refers to: #'clojure.core/bigint in namespace: user, being replaced by: #'lobos.schema/bigint WARNING: float already refers to: #'clojure.core/float in namespace: user, being replaced by: #'lobos.schema/float WARNING: time already refers to: #'clojure.core/time in namespace: user, being replaced by: #'lobos.schema/time nil user=&gt; (require 'lobos.migrations) nil user=&gt; (migrate) add-sites-table nil user=&gt; 確認してみましょう。 tpc git:(master)$ sqlite3 dev.sqlite3 SQLite version 3.8.5 2014-08-15 22:37:57 Enter &quot;.help&quot; for usage hints.</div>
     </div>
     <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/">
+        <a href="http://localhost:1313/blog/2014/12/11/usage-for-lobos-migration/">
             <i class="fa fa-chevron-down"></i>
         </a>
     </footer>
@@ -127,16 +127,16 @@
     <article class="post">
     <div class="eyecatch">
         
-        <a href="http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/"><img src="http://yet.unresolved.xyz/images/nopicture.png" alt="no_picture"></a>
+        <a href="http://localhost:1313/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/"><img src="http://localhost:1313/images/nopicture.png" alt="no_picture"></a>
         
     </div>
     <div class="data">
         <span class="post-date">Thu, Oct 23, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/">クラスタ化インデックスとかカバリングインデックスについて</a></h1>
+        <h1 class="post-title"><a href="http://localhost:1313/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/">クラスタ化インデックスとかカバリングインデックスについて</a></h1>
         <div class="summary">SQL Serverを使ってて、ちょっと曖昧にしかわからんなってところがあったので少し調べてみた。 クラスタ化 / 非クラスタ化インデックスの違い MySQLにも同じ話があったんだね。 そもそもそれを知らない時点でいろいろだめなわけで。 まず参考にしたのはMSDN。 クラスター化インデックスと非クラスター化インデックスの概念 まさにぴったりのタイトルじゃんと思ったんだけどいまいちよくわからない。 いや、わかったっちゃわかったんだけど、だからどうなるとか、だからどうする、っていうところが掴めなかった。 ここでわかったこと クラスタ化インデックス 1テーブルに1つしか作れない。 これがあると指定されたインデックスの値によってソートされた構造体が出来る。(テーブルの構造ごとそうなる？) クラスタ化インデックスが設定されていないテーブルはヒープと呼ばれる未ソートの状態になる。 非クラスタ化インデックス テーブルとは別に構造を持つ。 実データじゃなく、実データへのポインタを持つ。 次に参考にさせてもらったのがこっち。 SQL Serverのインデックス構造（前編） (1&frasl;2) ここは非常にわかりやすかった B-Treeのイメージも、SQL Server上での実装が具体的にイメージ出来たし、非クラスタ化インデックスじゃ結局ランダムI/Oが発生するんだね、ってこともわかった。 ついでにB-Treeの勉強も軽くした。 RDBMSで使われるB木を学ぼう ここでわかったこと B-Treeなのでリーフノードのレベルが全部同じになる。 クラスタ化インデックスを利用したクエリの場合、リーフノードに実データがあるのでランダムI/Oが発生しない。 非クラスタ化インデックスを利用したクエリの場合、リーフノードにはポインタしかないので、ランダムI/Oが発生する。 ちなみにごめんなさいだけど、こっちのページはあまり理解が進まなかった・・・。 SQL Serverの大きな特徴、クラスタ化インデックスを押さえよう！ カバリングインデックス おまえそれも知らねーのかよって言われそうだけど・・・。 正直マルチカラムインデックスと混同してました。 これは結構わかりやすく書いてくれている記事があった。 MySQLのインデックスを学ぶ (1) クエリが必要とするカラムがすべてインデックスに含まれている場合、インデックスだけを読めば良いのでとても速い、というもの。 SQL インデックスを最適化する方法 カバーリング インデックスは、WHERE 句およびクエリ列選択の形態をとるすべての列を含む、非クラスタ化インデックスです。 誤った認識があればご指摘を。</div>
     </div>
     <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/">
+        <a href="http://localhost:1313/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/">
             <i class="fa fa-chevron-down"></i>
         </a>
     </footer>
@@ -174,294 +174,294 @@
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/auriga">
+                    <a href="http://localhost:1313/tags/auriga">
                         auriga
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/aws">
+                    <a href="http://localhost:1313/tags/aws">
                         aws
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/beanstalk">
+                    <a href="http://localhost:1313/tags/beanstalk">
                         beanstalk
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/boot2docker">
+                    <a href="http://localhost:1313/tags/boot2docker">
                         boot2docker
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/clang">
+                    <a href="http://localhost:1313/tags/clang">
                         clang
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/clojure">
+                    <a href="http://localhost:1313/tags/clojure">
                         clojure
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/css">
+                    <a href="http://localhost:1313/tags/css">
                         css
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/database">
+                    <a href="http://localhost:1313/tags/database">
                         database
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/design">
+                    <a href="http://localhost:1313/tags/design">
                         design
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/dns">
+                    <a href="http://localhost:1313/tags/dns">
                         dns
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/docker">
+                    <a href="http://localhost:1313/tags/docker">
                         docker
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/enlive">
+                    <a href="http://localhost:1313/tags/enlive">
                         enlive
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/git">
+                    <a href="http://localhost:1313/tags/git">
                         git
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/github">
+                    <a href="http://localhost:1313/tags/github">
                         github
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/golang">
+                    <a href="http://localhost:1313/tags/golang">
                         golang
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/google-app-engine">
+                    <a href="http://localhost:1313/tags/google-app-engine">
                         google-app-engine
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/gravatar">
+                    <a href="http://localhost:1313/tags/gravatar">
                         gravatar
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/hackathon">
+                    <a href="http://localhost:1313/tags/hackathon">
                         hackathon
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/heroku">
+                    <a href="http://localhost:1313/tags/heroku">
                         heroku
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/hiccup">
+                    <a href="http://localhost:1313/tags/hiccup">
                         hiccup
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/html">
+                    <a href="http://localhost:1313/tags/html">
                         html
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/hugo">
+                    <a href="http://localhost:1313/tags/hugo">
                         hugo
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/javascript">
+                    <a href="http://localhost:1313/tags/javascript">
                         javascript
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/jekyll">
+                    <a href="http://localhost:1313/tags/jekyll">
                         jekyll
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/laravel">
+                    <a href="http://localhost:1313/tags/laravel">
                         laravel
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/leiningen">
+                    <a href="http://localhost:1313/tags/leiningen">
                         leiningen
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/linux">
+                    <a href="http://localhost:1313/tags/linux">
                         linux
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/lobos">
+                    <a href="http://localhost:1313/tags/lobos">
                         lobos
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/migration">
+                    <a href="http://localhost:1313/tags/migration">
                         migration
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/node.js">
+                    <a href="http://localhost:1313/tags/node.js">
                         node.js
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/octopress">
+                    <a href="http://localhost:1313/tags/octopress">
                         octopress
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/paiza">
+                    <a href="http://localhost:1313/tags/paiza">
                         paiza
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/php">
+                    <a href="http://localhost:1313/tags/php">
                         php
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/postgres">
+                    <a href="http://localhost:1313/tags/postgres">
                         postgres
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/python">
+                    <a href="http://localhost:1313/tags/python">
                         python
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/ruby">
+                    <a href="http://localhost:1313/tags/ruby">
                         ruby
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/sass">
+                    <a href="http://localhost:1313/tags/sass">
                         sass
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/scss">
+                    <a href="http://localhost:1313/tags/scss">
                         scss
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/sql-server">
+                    <a href="http://localhost:1313/tags/sql-server">
                         sql-server
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/startup">
+                    <a href="http://localhost:1313/tags/startup">
                         startup
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/startup-weekend">
+                    <a href="http://localhost:1313/tags/startup-weekend">
                         startup-weekend
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/ubuntu">
+                    <a href="http://localhost:1313/tags/ubuntu">
                         ubuntu
                     </a>
                 </li>
@@ -488,7 +488,7 @@
                 
                 <a href="https://github.com/dim0627" target="_blank"><i class="fa fa-github-square"></i></a>
                 
-                <pre id="description" class="summary"></pre>
+                <pre id="description"></pre>
                 <ul id="urls" class="post-tags"></ul>
             </div>
         </div>
@@ -505,7 +505,7 @@
 
 <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-<script src="http://yet.unresolved.xyz/js/highlight.pack.js"></script>
+<script src="http://localhost:1313/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 <script>
