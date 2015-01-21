@@ -2,143 +2,143 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://yet.unresolved.xyz/</loc>
     <lastmod>2015-01-15T21:12:52+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/</loc>
     <lastmod>2015-01-15T21:12:52+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2015/01/14/use-template-engine-in-clojure/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/</loc>
     <lastmod>2015-01-14T01:01:39+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/</loc>
     <lastmod>2015-01-12T00:19:33+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/</loc>
     <lastmod>2015-01-07T23:56:32+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/</loc>
     <lastmod>2015-01-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</loc>
     <lastmod>2014-12-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2014/12/30/could-not-run-docker-in-mac/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/</loc>
     <lastmod>2014-12-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2014/12/21/does-not-work-lobos-in-heroku/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</loc>
     <lastmod>2014-12-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2014/12/11/usage-for-lobos-migration/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</loc>
     <lastmod>2014-12-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</loc>
     <lastmod>2014-12-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2014/12/02/went-to-startup-weekend-yokohama-2nd/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/12/02/went-to-startup-weekend-yokohama-2nd/</loc>
     <lastmod>2014-12-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2014/11/12/pass-the-validation-of-w3c/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/</loc>
     <lastmod>2014-11-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2014/11/09/learn-docker/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/11/09/learn-docker/</loc>
     <lastmod>2014-11-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/</loc>
     <lastmod>2014-10-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</loc>
     <lastmod>2014-10-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</loc>
     <lastmod>2014-10-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2014/10/22/move-sidebar-at-under-the-article/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/</loc>
     <lastmod>2014-10-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2014/10/19/build-auriga-server-on-ubuntu/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/</loc>
     <lastmod>2014-10-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2014/10/18/install-nodejs-on-ubuntu/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/10/18/install-nodejs-on-ubuntu/</loc>
     <lastmod>2014-10-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2014/09/29/laravel-array-input/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/09/29/laravel-array-input/</loc>
     <lastmod>2014-09-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2014/09/28/learn-git-rm-command/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2014/09/27/could-not-force-push-on-git/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/</loc>
     <lastmod>2014-09-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2014/09/21/description-is-not-set/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/</loc>
     <lastmod>2014-09-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2014/09/21/make-new-theme-flatten/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</loc>
     <lastmod>2014-09-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2014/09/20/make-gravatar-sidebar/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</loc>
     <lastmod>2014-09-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2014/09/20/git-on-proxy/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/</loc>
     <lastmod>2014-09-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2014/09/17/install-the-octopress-on-github-pages/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/</loc>
     <lastmod>2014-09-17T00:00:00+00:00</lastmod>
   </url>
   
