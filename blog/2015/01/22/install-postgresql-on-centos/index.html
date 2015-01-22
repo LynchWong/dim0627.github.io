@@ -7,14 +7,19 @@
 
 
 
-<meta property="og:title" content="Unresolved">
-<meta property="og:url" content="http://yet.unresolved.xyz">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vagrant &#43; CentOS &#43; PostgreSQLを最速で構築 | Unresolved">
+<meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/01/22/install-postgresql-on-centos/">
+<meta property="og:description" content="herokuにのっけるアプリを作るとき、ローカルではSQLite使ってたんだけどもう色々つらい。 なんか整数で定義したカラムに文字列入るし！ なんかオートインクリメントの設定の仕方がPostgreSQLと違うし！ なのでもうさっとPostgreSQLだけ入った仮想環境を作ってホスト側から繋げるようにしたい。 PostgreSQLの導入 [vagrant@localhost ~]$ sudo yum install postgresql [vagrant@localhost ~]$ sudo yum install postgresql-server [vagrant@localhost ~]$ sudo yum install postgresql-contrib さくっと入るやん！ どうやって繋ぐのかな もうほんとPostgreSQLの使い方がわかんない、MySQLばっか触ってたからわかんない。 そもそもサービス名はなによ。 [vagrant@localhost ~]$ service postgresql Usage: /etc/init.d/postgresql {start|stop|status|restart|condrestart|try-restart|reload|force-reload|initdb} [vagrant@localhost ~]$ service postgresql status postmaster is stopped [vagrant@localhost ~]$ sudo service postgresql start /var/lib/pgsql/data is missing. Use &quot;service postgresql initdb&quot; to initialize the cluster first. [FAILED] postgresqlか、でもなんか起動しないね。 なんかinitdbとやらで初期化をしなきゃいけないらしい。 [vagrant@localhost ~]$ sudo -u postgres /usr/bin/initdb -D /var/lib/pgsql/data could not change directory to &quot;/home/vagrant&quot; The files belonging to this database system will be owned by user &quot;postgres&quot;.">
+
+<meta property="og:image" content="http://yet.unresolved.xyz/images/vagrant.png">
+
 
 <meta property="og:site_name" content="Unresolved">
 
 <title>
     
-    Tags | Unresolved
+    Vagrant &#43; CentOS &#43; PostgreSQLを最速で構築 | Unresolved
     
 </title>
 
@@ -104,49 +109,358 @@
     <div class="container content">
 
 
-<div class="posts">
-    
-    <article class="post">
+<article class="post post-single">
+    <span class="post-date">Thu, Jan 22, 2015</span>
+    <h1 class="post-title">Vagrant &#43; CentOS &#43; PostgreSQLを最速で構築</h1>
+
     <div class="eyecatch">
         
-        <a href="http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/"><img src="http://yet.unresolved.xyz/images/github.png" alt="GitHub Pagesでカスタムドメインを使う"></a>
+        <img src="http://yet.unresolved.xyz/images/vagrant.png" alt="Vagrant &#43; CentOS &#43; PostgreSQLを最速で構築">
         
     </div>
-    <div class="data">
-        <span class="post-date">Fri, Oct 24, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/">GitHub Pagesでカスタムドメインを使う</a></h1>
-        <div class="summary">昨日はGAEで今日はGithubかよって感じだけど、こっちは結構詰まったのでメモしたい。 事の発端 このOctopressのblogをカスタムドメインにしてから、rake gen_deployするとGithubからこんなメールが来るようになりました。 [dim0627.github.io] Page build warning The page build completed successfully, but returned the following warning: GitHub Pages recently underwent some improvements (https://github.com/blog/1715-faster-more-awesome-github-pages) to make your site faster and more awesome, but we&rsquo;ve noticed that unresolved.dimspace.xyz isn&rsquo;t properly configured to take advantage of these new features. While your site will continue to work just fine, updating your domain&rsquo;s configuration offers some additional speed and performance benefits. Instructions on updating your site&rsquo;s IP address can be found at https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages, and of course, you can always get in touch with a human at support@github.com.</div>
+
+    <div class="post-content">
+        
+
+<p>herokuにのっけるアプリを作るとき、ローカルではSQLite使ってたんだけどもう色々つらい。</p>
+
+<p>なんか整数で定義したカラムに文字列入るし！</p>
+
+<p>なんかオートインクリメントの設定の仕方がPostgreSQLと違うし！</p>
+
+<p>なのでもうさっとPostgreSQLだけ入った仮想環境を作ってホスト側から繋げるようにしたい。</p>
+
+<h2 id="postgresqlの導入:0c4c654ebb9e6ebcd35111a51a896918">PostgreSQLの導入</h2>
+
+<pre><code>[vagrant@localhost ~]$ sudo yum install postgresql
+[vagrant@localhost ~]$ sudo yum install postgresql-server
+[vagrant@localhost ~]$ sudo yum install postgresql-contrib
+</code></pre>
+
+<p>さくっと入るやん！</p>
+
+<h2 id="どうやって繋ぐのかな:0c4c654ebb9e6ebcd35111a51a896918">どうやって繋ぐのかな</h2>
+
+<p>もうほんとPostgreSQLの使い方がわかんない、MySQLばっか触ってたからわかんない。</p>
+
+<p>そもそもサービス名はなによ。</p>
+
+<pre><code>[vagrant@localhost ~]$ service postgresql
+Usage: /etc/init.d/postgresql {start|stop|status|restart|condrestart|try-restart|reload|force-reload|initdb}
+[vagrant@localhost ~]$ service postgresql status
+postmaster is stopped
+[vagrant@localhost ~]$ sudo service postgresql start
+
+/var/lib/pgsql/data is missing. Use &quot;service postgresql initdb&quot; to initialize the cluster first.
+                                                           [FAILED]
+</code></pre>
+
+<p><code>postgresql</code>か、でもなんか起動しないね。</p>
+
+<p>なんか<code>initdb</code>とやらで初期化をしなきゃいけないらしい。</p>
+
+<pre><code>[vagrant@localhost ~]$ sudo -u postgres /usr/bin/initdb -D /var/lib/pgsql/data
+could not change directory to &quot;/home/vagrant&quot;
+The files belonging to this database system will be owned by user &quot;postgres&quot;.
+This user must also own the server process.
+
+The database cluster will be initialized with locale en_US.UTF-8.
+The default database encoding has accordingly been set to UTF8.
+The default text search configuration will be set to &quot;english&quot;.
+
+fixing permissions on existing directory /var/lib/pgsql/data ... ok
+creating subdirectories ... ok
+selecting default max_connections ... 100
+selecting default shared_buffers ... 32MB
+creating configuration files ... ok
+creating template1 database in /var/lib/pgsql/data/base/1 ... ok
+initializing pg_authid ... ok
+initializing dependencies ... ok
+creating system views ... ok
+loading system objects' descriptions ... ok
+creating conversions ... ok
+creating dictionaries ... ok
+setting privileges on built-in objects ... ok
+creating information schema ... ok
+vacuuming database template1 ... ok
+copying template1 to template0 ... ok
+copying template1 to postgres ... ok
+
+WARNING: enabling &quot;trust&quot; authentication for local connections
+You can change this by editing pg_hba.conf or using the -A option the
+next time you run initdb.
+
+Success. You can now start the database server using:
+
+    /usr/bin/postgres -D /var/lib/pgsql/data
+or
+    /usr/bin/pg_ctl -D /var/lib/pgsql/data -l logfile start
+</code></pre>
+
+<p>んん？<code>/usr/bin/postgres -D /var/lib/pgsql/data</code>で起動出来るの？</p>
+
+<p>でも<code>service</code>でやるよ！</p>
+
+<pre><code>[vagrant@localhost ~]$ sudo service postgresql start
+Starting postgresql service:                               [  OK  ]
+</code></pre>
+
+<p>出来るやん！</p>
+
+<p>ゲスト内で繋がるかな。</p>
+
+<pre><code>[vagrant@localhost ~]$ psql -U postgres
+psql (8.4.20)
+Type &quot;help&quot; for help.
+
+postgres=# \q
+</code></pre>
+
+<p>出来るやん！</p>
+
+<p>ホスト側からいけるかな。</p>
+
+<pre><code>~/Develop/clj_rss$ psql -h 192.168.33.10 -U postgres
+psql: could not connect to server: Connection refused
+	Is the server running on host &quot;192.168.33.10&quot; and accepting
+	TCP/IP connections on port 5432?
+</code></pre>
+
+<p>いけないね。</p>
+
+<h2 id="接続の設定:0c4c654ebb9e6ebcd35111a51a896918">接続の設定</h2>
+
+<p><code>/var/lib/pgsql/data/postgresql.conf</code>をコメントアウト外したり<code>*</code>にしたりこんな感じに。</p>
+
+<pre><code>listen_addresses = '*'          # what IP address(es) to listen on;
+                                        # comma-separated list of addresses;
+                                        # defaults to 'localhost', '*' = all
+                                        # (change requires restart)
+port = 5432                             # (change requires restart)
+</code></pre>
+
+<p><code>/var/lib/pgsql/data/pg_hba.conf</code>にこれを追加する感じに。</p>
+
+<pre><code>host    all         all         0.0.0.0/0             trust
+</code></pre>
+
+<p>いけるかな？</p>
+
+<pre><code>~/Develop/clj_rss$ psql -h 192.168.33.10 -U postgres                                                                                               (master✱)
+psql (9.3.5, server 8.4.20)
+Type &quot;help&quot; for help.
+
+postgres=# \q
+</code></pre>
+
+<p>いけた！</p>
+
+<h2 id="参考にさせて頂きました:0c4c654ebb9e6ebcd35111a51a896918">参考にさせて頂きました</h2>
+
+<p><a href="http://iwa4.hatenablog.com/entry/2014/05/30/190000">Vagrant で Windows に Postgres on CentOS 環境を構築 - 弘法にも筆の誤り</a></p>
+
+<p><a href="http://www.dbonline.jp/postgresql/connect/index2.html">PostgreSQLへの接続 - PostgreSQLへの接続と切断 - PostgreSQLの使い方</a></p>
+
     </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
+
+    <aside class="post-ad pc">
+        <iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=48&l=st1&mode=books-jp&search=linux&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="728" height="90" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+    </aside>
+
+    <aside class="post-ad sp">
+<iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=12&l=st1&mode=books-jp&search=linux&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="300" height="250" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+    </aside>
 
     
-    <article class="post">
-    <div class="eyecatch">
+    <aside class="post-related">
         
-        <a href="http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/"><img src="http://yet.unresolved.xyz/images/octopress.png" alt="GitHub PagesにOctopressをのっけてみる"></a>
+        <h3>Related Post</h3>
+
         
-    </div>
-    <div class="data">
-        <span class="post-date">Wed, Sep 17, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/">GitHub PagesにOctopressをのっけてみる</a></h1>
-        <div class="summary">WordPress.comを使ってたんだけど、お金払わないと融通がきかないぽいので移行することに。 Markdownが使ってみたかったのと、カッコいいデザインが多そうなHatenaかなーと思ってたんだけど、GitHub Pagesが面白そうなのでとりあえずノリでこっちにしてみるよ。 Github Pages？ GitHub PagesはGitHubに[ユーザ名].github.ioって名前のリポジトリを作るだけで、pushしたページを外部公開出来るサービス。 そこでよく使われるBlogフレームワーク(?)がOctopressらしい。 どうやらOctopressはJekyllという静的ページジェネレータをさらに活用するためのものとのことで、 このJekyll(読みはジキル？)はMarkdownとかで書いたテキストファイルを静的ページに変換したりしてくれるものみたい。 Octopressをインストールする Octopress Setupが非常に良く書かれているのと、Octopress自体が見通しよく作られているので特に躓くことなく導入出来ました。 Octopressは記事を書くPCに導入して丸ごとGitHubにpushしてしまう仕組みらしく、まずは個人のPCに導入が必要。 $ git clone git://github.com/imathis/octopress.git octopress $ cd octopress $ gem install bundler $ rbenv rehash $ bundle install $ rake install で、次にデプロイする。 Deployingを見る限り、GitHub Pagesだけじゃなく、HerokuやRsyncでの利用も出来るっぽい。 なんかVPSとかでも運用してる人がいるっぽいね。 前述した通り今回はGitHub Pagesを利用することにしました。 最初に[ユーザ名].github.ioって名前のリポジトリを作っておく必要があるよ。 $ rake setup_github_pages リポジトリのURLとかが聞かれるので、表示された説明の通り入力。 pushしとく必要もあるっぽい。 $ rake generate $ rake deploy $ git add . $ git commit -m 'your message' $ git push origin source rake deployで乗っかるのは記事とかその辺のファイルだけなのかな？ In a few seconds you should get an email from Github telling you that your commit has been received and will be published on your site.</div>
-    </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
+        <ul class="post-tags">
+            
+            <li>
+                <a href="http://yet.unresolved.xyz/tags/linux">
+                    <i class="fa fa-tags"></i>
+                    linux
+                </a>
+            </li>
+            
+            <li>
+                <a href="http://yet.unresolved.xyz/tags/postgresql">
+                    <i class="fa fa-tags"></i>
+                    postgresql
+                </a>
+            </li>
+            
+            <li>
+                <a href="http://yet.unresolved.xyz/tags/centos">
+                    <i class="fa fa-tags"></i>
+                    centos
+                </a>
+            </li>
+            
+        </ul>
+
+        <ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <li><a href="http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/">UbuntuにAurigaを構築してみる</a></li>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </ul>
+    </aside>
+    
 
     
-</div>
+    <footer>
+        <div class="move">
+            <div class="prev">
+                
+            </div>
+            <div class="next">
+                
+                <a href="http://yet.unresolved.xyz/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/">
+                    Clojureで新卒の女の子を射止めた話
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+                
+            </div>
+        </div>
+
+        
+        
+        
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+ 
+var disqus_shortname = 'unresolved'; 
+
+ 
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        
+        
+    </footer>
+
+</article>
 
 
     </div>
