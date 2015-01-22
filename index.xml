@@ -28,6 +28,21 @@
 
 &lt;p&gt;なのでもう、さっとPostgreSQLだけ入った仮想環境を作ってホスト側から繋げるようにしたい。&lt;/p&gt;
 
+&lt;h2 id=&#34;vagrantfileの設定:0c4c654ebb9e6ebcd35111a51a896918&#34;&gt;Vagrantfileの設定&lt;/h2&gt;
+
+&lt;p&gt;もう面倒なのはいやなのでCentOSとIPの設定だけやるよ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = &amp;quot;2&amp;quot;
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = &amp;quot;chef/centos-6.5&amp;quot;
+  config.vm.network &amp;quot;private_network&amp;quot;, ip: &amp;quot;192.168.33.10&amp;quot;
+end
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;h2 id=&#34;postgresqlの導入:0c4c654ebb9e6ebcd35111a51a896918&#34;&gt;PostgreSQLの導入&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;[vagrant@localhost ~]$ sudo yum install postgresql
