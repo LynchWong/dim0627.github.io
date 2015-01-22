@@ -168,6 +168,8 @@ postgres=# \q
 
 &lt;p&gt;いけた！&lt;/p&gt;
 
+&lt;p&gt;そのうちshellにまとめてprovisioning出来るようにしよう・・・。&lt;/p&gt;
+
 &lt;h2 id=&#34;参考にさせて頂きました:0c4c654ebb9e6ebcd35111a51a896918&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://iwa4.hatenablog.com/entry/2014/05/30/190000&#34;&gt;Vagrant で Windows に Postgres on CentOS 環境を構築 - 弘法にも筆の誤り&lt;/a&gt;&lt;/p&gt;

@@ -167,6 +167,8 @@ postgres=# \q
 
 いけた！
 
+そのうちshellにまとめてprovisioning出来るようにしよう・・・。
+
 ## 参考にさせて頂きました
 
 [Vagrant で Windows に Postgres on CentOS 環境を構築 - 弘法にも筆の誤り](http://iwa4.hatenablog.com/entry/2014/05/30/190000)
