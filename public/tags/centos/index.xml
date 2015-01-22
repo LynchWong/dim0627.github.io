@@ -128,7 +128,7 @@ psql: could not connect to server: Connection refused
 
 &lt;h2 id=&#34;接続の設定:0c4c654ebb9e6ebcd35111a51a896918&#34;&gt;接続の設定&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;/var/lib/pgsql/data/postgresql.conf&lt;/code&gt;をコメントアウト外したり&lt;code&gt;*&lt;/code&gt;にしたりこんな感じに。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;/var/lib/pgsql/data/postgresql.conf&lt;/code&gt;のコメントアウトを外したり&lt;code&gt;*&lt;/code&gt;にしたりこんな感じに。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;listen_addresses = &#39;*&#39;          # what IP address(es) to listen on;
                                         # comma-separated list of addresses;

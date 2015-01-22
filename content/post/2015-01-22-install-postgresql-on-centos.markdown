@@ -123,7 +123,7 @@ psql: could not connect to server: Connection refused
 
 ## 接続の設定
 
-`/var/lib/pgsql/data/postgresql.conf`をコメントアウト外したり`*`にしたりこんな感じに。
+`/var/lib/pgsql/data/postgresql.conf`のコメントアウトを外したり`*`にしたりこんな感じに。
 
 ```
 listen_addresses = '*'          # what IP address(es) to listen on;
