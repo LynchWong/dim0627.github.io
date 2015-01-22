@@ -159,7 +159,7 @@ port = 5432                             # (change requires restart)
 
 &lt;p&gt;いけるかな？&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;~/Develop/clj_rss$ psql -h 192.168.33.10 -U postgres                                                                                               (master✱)
+&lt;pre&gt;&lt;code&gt;~/Develop/clj_rss$ psql -h 192.168.33.10 -U postgres
 psql (9.3.5, server 8.4.20)
 Type &amp;quot;help&amp;quot; for help.
 
