@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unresolved </title>
+    <link>http://yet.unresolved.xyz/tags/sqlite/</link>
+    <language>en-us</language>
+    <author>Daisuke Tsuji</author>
+    <rights>(C) 2015</rights>
+    <updated>2015-01-22 15:37:14 &#43;0900 JST</updated>
+
+    
+      
+        <item>
+          <title>Vagrant &#43; CentOS &#43; PostgreSQLを最速で構築</title>
+          <link>http://yet.unresolved.xyz/blog/2015/01/22/install-postgresql-on-centos/</link>
+          <pubDate>Thu, 22 Jan 2015 15:37:14 JST</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2015/01/22/install-postgresql-on-centos/</guid>
+          <description>
+
+&lt;p&gt;herokuにのっけるアプリを作るとき、ローカルではSQLite使ってたんだけどもう色々つらい。&lt;/p&gt;
+
+&lt;p&gt;なんか整数で定義したカラムに文字列入るし！&lt;/p&gt;
+
+&lt;p&gt;なんかオートインクリメントの設定の仕方がPostgreSQLと違うし！&lt;/p&gt;
+
+&lt;p&gt;つらい。&lt;/p&gt;
+
+&lt;p&gt;なのでもう、さっとPostgreSQLだけ入った仮想環境を作ってホスト側から繋げるようにしたい。&lt;/p&gt;
+
+&lt;h2 id=&#34;vagrantfileの設定:0c4c654ebb9e6ebcd35111a51a896918&#34;&gt;Vagrantfileの設定&lt;/h2&gt;
+
+&lt;p&gt;もう面倒なのはいやなのでCentOSとIPの設定だけやるよ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = &amp;quot;2&amp;quot;
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = &amp;quot;chef/centos-6.5&amp;quot;
+  config.vm.network &amp;quot;private_network&amp;quot;, ip: &amp;quot;192.168.33.10&amp;quot;
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;postgresqlの導入:0c4c654ebb9e6ebcd35111a51a896918&#34;&gt;PostgreSQLの導入&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;[vagrant@localhost ~]$ sudo yum install postgresql
+[vagrant@localhost ~]$ sudo yum install postgresql-server
+[vagrant@localhost ~]$ sudo yum install postgresql-contrib
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;さくっと入るやん！&lt;/p&gt;
+
+&lt;h2 id=&#34;どうやって繋ぐのかな:0c4c654ebb9e6ebcd35111a51a896918&#34;&gt;どうやって繋ぐのかな&lt;/h2&gt;
+
+&lt;p&gt;もうほんとPostgreSQLの使い方がわかんない、MySQLばっか触ってたからわかんない。&lt;/p&gt;
+
+&lt;p&gt;そもそもサービス名はなによ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[vagrant@localhost ~]$ service postgresql
+Usage: /etc/init.d/postgresql {start|stop|status|restart|condrestart|try-restart|reload|force-reload|initdb}
+[vagrant@localhost ~]$ service postgresql status
+postmaster is stopped
+[vagrant@localhost ~]$ sudo service postgresql start
+
+/var/lib/pgsql/data is missing. Use &amp;quot;service postgresql initdb&amp;quot; to initialize the cluster first.
+                                                           [FAILED]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;postgresql&lt;/code&gt;か、でもなんか起動しないね。&lt;/p&gt;
+
+&lt;p&gt;なんか&lt;code&gt;initdb&lt;/code&gt;とやらで初期化をしなきゃいけないらしい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[vagrant@localhost ~]$ sudo -u postgres /usr/bin/initdb -D /var/lib/pgsql/data
+could not change directory to &amp;quot;/home/vagrant&amp;quot;
+The files belonging to this database system will be owned by user &amp;quot;postgres&amp;quot;.
+This user must also own the server process.
+
+The database cluster will be initialized with locale en_US.UTF-8.
+The default database encoding has accordingly been set to UTF8.
+The default text search configuration will be set to &amp;quot;english&amp;quot;.
+
+fixing permissions on existing directory /var/lib/pgsql/data ... ok
+creating subdirectories ... ok
+selecting default max_connections ... 100
+selecting default shared_buffers ... 32MB
+creating configuration files ... ok
+creating template1 database in /var/lib/pgsql/data/base/1 ... ok
+initializing pg_authid ... ok
+initializing dependencies ... ok
+creating system views ... ok
+loading system objects&#39; descriptions ... ok
+creating conversions ... ok
+creating dictionaries ... ok
+setting privileges on built-in objects ... ok
+creating information schema ... ok
+vacuuming database template1 ... ok
+copying template1 to template0 ... ok
+copying template1 to postgres ... ok
+
+WARNING: enabling &amp;quot;trust&amp;quot; authentication for local connections
+You can change this by editing pg_hba.conf or using the -A option the
+next time you run initdb.
+
+Success. You can now start the database server using:
+
+    /usr/bin/postgres -D /var/lib/pgsql/data
+or
+    /usr/bin/pg_ctl -D /var/lib/pgsql/data -l logfile start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;んん？&lt;code&gt;/usr/bin/postgres -D /var/lib/pgsql/data&lt;/code&gt;で起動出来るの？&lt;/p&gt;
+
+&lt;p&gt;でも&lt;code&gt;service&lt;/code&gt;でやるよ！&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[vagrant@localhost ~]$ sudo service postgresql start
+Starting postgresql service:                               [  OK  ]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;出来るやん！&lt;/p&gt;
+
+&lt;p&gt;ゲスト内で繋がるかな。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[vagrant@localhost ~]$ psql -U postgres
+psql (8.4.20)
+Type &amp;quot;help&amp;quot; for help.
+
+postgres=# \q
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;出来るやん！&lt;/p&gt;
+
+&lt;p&gt;ホスト側からいけるかな。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/Develop/clj_rss$ psql -h 192.168.33.10 -U postgres
+psql: could not connect to server: Connection refused
+	Is the server running on host &amp;quot;192.168.33.10&amp;quot; and accepting
+	TCP/IP connections on port 5432?
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;いけないね。&lt;/p&gt;
+
+&lt;h2 id=&#34;接続の設定:0c4c654ebb9e6ebcd35111a51a896918&#34;&gt;接続の設定&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;/var/lib/pgsql/data/postgresql.conf&lt;/code&gt;のコメントアウトを外したり&lt;code&gt;*&lt;/code&gt;にしたりこんな感じに。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;listen_addresses = &#39;*&#39;          # what IP address(es) to listen on;
+                                        # comma-separated list of addresses;
+                                        # defaults to &#39;localhost&#39;, &#39;*&#39; = all
+                                        # (change requires restart)
+port = 5432                             # (change requires restart)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;/var/lib/pgsql/data/pg_hba.conf&lt;/code&gt;にこれを追加する感じに。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;host    all         all         0.0.0.0/0             trust
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;いけるかな？&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/Develop/clj_rss$ psql -h 192.168.33.10 -U postgres                                                                                               (master✱)
+psql (9.3.5, server 8.4.20)
+Type &amp;quot;help&amp;quot; for help.
+
+postgres=# \q
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;いけた！&lt;/p&gt;
+
+&lt;p&gt;そのうちshellにまとめてprovisioning出来るようにしよう・・・。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考にさせて頂きました:0c4c654ebb9e6ebcd35111a51a896918&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://iwa4.hatenablog.com/entry/2014/05/30/190000&#34;&gt;Vagrant で Windows に Postgres on CentOS 環境を構築 - 弘法にも筆の誤り&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.dbonline.jp/postgresql/connect/index2.html&#34;&gt;PostgreSQLへの接続 - PostgreSQLへの接続と切断 - PostgreSQLの使い方&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
+    
+
+  </channel>
+</rss>
