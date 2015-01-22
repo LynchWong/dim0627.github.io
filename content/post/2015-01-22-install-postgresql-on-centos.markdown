@@ -17,6 +17,22 @@ herokuにのっけるアプリを作るとき、ローカルではSQLite使っ�
 
 なのでもう、さっとPostgreSQLだけ入った仮想環境を作ってホスト側から繋げるようにしたい。
 
+## Vagrantfileの設定
+
+もう面倒なのはいやなのでCentOSとIPの設定だけやるよ。
+
+``` ruby
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = "chef/centos-6.5"
+  config.vm.network "private_network", ip: "192.168.33.10"
+end
+```
+
 ## PostgreSQLの導入
 
 ```
