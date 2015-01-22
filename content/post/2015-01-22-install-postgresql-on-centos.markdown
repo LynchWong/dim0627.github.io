@@ -158,7 +158,7 @@ host    all         all         0.0.0.0/0             trust
 いけるかな？
 
 ```
-~/Develop/clj_rss$ psql -h 192.168.33.10 -U postgres                                                                                               (master✱)
+~/Develop/clj_rss$ psql -h 192.168.33.10 -U postgres
 psql (9.3.5, server 8.4.20)
 Type "help" for help.
 
