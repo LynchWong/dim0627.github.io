@@ -8,9 +8,9 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="Octopressのテーマを作ってみる | Unresolved">
-<meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/">
-<meta property="og:description" content="元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。 でもオレはデザイナーじゃないから、あんまりがっつりやるのもやだよね。 てことで元のclassicテーマをパクって作ろう。 Octopressから移行してしまったので、スクリーンショットだけ載せとく。 テーマの変え方 そもそも変え方すら知らない。 てことで調べた。 どうやらここにテーマ単位のディレクトリが配置されるらしい。 octopress git:(source)$ ls .themes classic で、rake install[theme name]でインストール。 テーマの構成 作るにも、テーマの定義に何が必要かがわからぬ。 classicの中を見てみよう。 octopress git:(source)$ ls .themes/classic sass source んん、シンプル。 察するにsassがスタイル系でsourceがテンプレート系なのかな？ 別にページレイアウトを変えたいとか、そんなたいそうなことは考えてないので、sass内をいじるだけでよさそう。 sass内はどうなってるのかな？ octopress git:(source)$ ls .themes/classic/sass _base.scss _partials.scss base custom partials plugins screen.scss octopress git:(source)$ ls .themes/classic/sass/custom _colors.scss _fonts.scss _layout.scss _styles.scss で、.themes/classic/sass/custom/_styles.scssがオーバーライド用のファイルなわけだな。 // This File is imported last, and will override other styles in the cascade // Add styles here to make changes">
+<meta property="og:title" content="OctopressのサイドバーにGravatarを表示させる | Unresolved">
+<meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/">
+<meta property="og:description" content="Octopressのサイドバーってどうなってんの？ そもそもOctopressの構成がまだよくわかってないのでそこから勉強しよう。 どうやらデフォルトで準備されてるサイドバーはここに格納されているらしい。 octopress git:(source)$ ls source/_includes/asides/ delicious.html github.html googleplus.html pinboard.html recent_posts.html で、自分で作りたい場合はここに格納するっぽい。 octopress git:(source)$ ls source/_includes/custom/asides about.html twitter.html って_config.ymlに書いてあった。 # list each of the sidebar modules you want to include, in the order you want them to appear. # To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like &#39;custom/asides/custom_aside_name.html&#39; default_asides: [custom/asides/about.html, asides/recent_posts.html, custom/asides/twitter.html] Gravatarの情報って持って来れるの？ ちょっとだけ調べてみたらGravatarの画像だけ持ってくるpluginは用意されてるっぽい。 でもどうせなら自己紹介のところとかも欲しいよね。 で、Gravatarに開発者向け資料がありました。 しっかり読んでないけど、JSONで返せるっぽいからこれを使えばいいかな。 ハッシュを指定する必要があるみたいなので、公式から取得しとく。 作るぞ なんか最初からsource/_include/custom/asidesにabout.htmlってのがあるし、これにプロフィールを書こうかな。 まず取得したハッシュを_config.ymlに定義しちゃおう。 #">
 
 <meta property="og:image" content="http://yet.unresolved.xyz/images/octopress.png">
 
@@ -19,7 +19,7 @@
 
 <title>
     
-    Octopressのテーマを作ってみる | Unresolved
+    OctopressのサイドバーにGravatarを表示させる | Unresolved
     
 </title>
 
@@ -103,6 +103,10 @@
             
             
             
+            
+            
+            
+            
         </div>
     </div>
 
@@ -110,80 +114,132 @@
 
 
 <article class="post post-single">
-    <span class="post-date">Sun, Sep 21, 2014</span>
-    <h1 class="post-title">Octopressのテーマを作ってみる</h1>
+    <span class="post-date">Sat, Sep 20, 2014</span>
+    <h1 class="post-title">OctopressのサイドバーにGravatarを表示させる</h1>
 
     <div class="eyecatch">
         
-        <img src="http://yet.unresolved.xyz/images/octopress.png" alt="Octopressのテーマを作ってみる">
+        <img src="http://yet.unresolved.xyz/images/octopress.png" alt="OctopressのサイドバーにGravatarを表示させる">
         
     </div>
 
     <div class="post-content">
         
 
-<p>元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。</p>
+<h2 id="octopressのサイドバーってどうなってんの:61eb03e5faeba6147c5a5cd44e5e95a1">Octopressのサイドバーってどうなってんの？</h2>
 
-<p>でもオレはデザイナーじゃないから、あんまりがっつりやるのもやだよね。</p>
+<p>そもそもOctopressの構成がまだよくわかってないのでそこから勉強しよう。</p>
 
-<p>てことで元のclassicテーマをパクって作ろう。</p>
+<p>どうやらデフォルトで準備されてるサイドバーはここに格納されているらしい。</p>
 
-<p>Octopressから移行してしまったので、スクリーンショットだけ載せとく。</p>
-
-<p><a href="/images/2014-09-21/flatten.png"><img src="/images/2014-09-21/flatten.png" class="image" alt="flatten"></a></p>
-
-<h2 id="テーマの変え方:76235ef2906f03f2c7b92537a8f6cdf7">テーマの変え方</h2>
-
-<p>そもそも変え方すら知らない。</p>
-
-<p>てことで調べた。</p>
-
-<p>どうやらここにテーマ単位のディレクトリが配置されるらしい。</p>
-
-<pre><code class="language-sh">octopress git:(source)$ ls .themes
-classic
+<pre><code class="language-sh">octopress git:(source)$ ls source/_includes/asides/
+delicious.html    github.html       googleplus.html   pinboard.html     recent_posts.html
 </code></pre>
 
-<p>で、<code>rake install[theme name]</code>でインストール。</p>
+<p>で、自分で作りたい場合はここに格納するっぽい。</p>
 
-<h2 id="テーマの構成:76235ef2906f03f2c7b92537a8f6cdf7">テーマの構成</h2>
-
-<p>作るにも、テーマの定義に何が必要かがわからぬ。</p>
-
-<p>classicの中を見てみよう。</p>
-
-<pre><code class="language-sh">octopress git:(source)$ ls .themes/classic
-sass   source
+<pre><code class="language-sh">octopress git:(source)$ ls source/_includes/custom/asides
+about.html   twitter.html
 </code></pre>
 
-<p>んん、シンプル。</p>
+<p>って<code>_config.yml</code>に書いてあった。</p>
 
-<p>察するに<code>sass</code>がスタイル系で<code>source</code>がテンプレート系なのかな？</p>
-
-<p>別にページレイアウトを変えたいとか、そんなたいそうなことは考えてないので、sass内をいじるだけでよさそう。</p>
-
-<p>sass内はどうなってるのかな？</p>
-
-<pre><code class="language-sh">octopress git:(source)$ ls .themes/classic/sass
-_base.scss     _partials.scss base           custom         partials       plugins        screen.scss
-
-octopress git:(source)$ ls .themes/classic/sass/custom
-_colors.scss _fonts.scss  _layout.scss _styles.scss
+<pre><code class="language-yml"># list each of the sidebar modules you want to include, in the order you want them to appear.
+# To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like 'custom/asides/custom_aside_name.html'
+default_asides: [custom/asides/about.html, asides/recent_posts.html, custom/asides/twitter.html]
 </code></pre>
 
-<p>で、<code>.themes/classic/sass/custom/_styles.scss</code>がオーバーライド用のファイルなわけだな。</p>
+<h2 id="gravatarの情報って持って来れるの:61eb03e5faeba6147c5a5cd44e5e95a1">Gravatarの情報って持って来れるの？</h2>
 
-<pre><code class="language-css">// This File is imported last, and will override other styles in the cascade
-// Add styles here to make changes without digging in too much
+<p>ちょっとだけ調べてみたらGravatarの画像だけ持ってくるpluginは用意されてるっぽい。</p>
+
+<p>でもどうせなら自己紹介のところとかも欲しいよね。</p>
+
+<p>で、Gravatarに<a href="https://ja.gravatar.com/site/implement/">開発者向け資料</a>がありました。</p>
+
+<p>しっかり読んでないけど、<a href="https://ja.gravatar.com/site/implement/profiles/json/">JSONで返せるっぽい</a>からこれを使えばいいかな。</p>
+
+<p>ハッシュを指定する必要があるみたいなので、公式から取得しとく。</p>
+
+<h2 id="作るぞ:61eb03e5faeba6147c5a5cd44e5e95a1">作るぞ</h2>
+
+<p>なんか最初から<code>source/_include/custom/asides</code>に<code>about.html</code>ってのがあるし、これにプロフィールを書こうかな。</p>
+
+<p>まず取得したハッシュを<code>_config.yml</code>に定義しちゃおう。</p>
+
+<pre><code class="language-ruby"># Gravatar
+gravatar_hash: 1e092e9f2cda827deb8623be2e846936
 </code></pre>
 
-<p>本当はsassで書きたいけど今その技術は持ち合わせてないし、ちょっと今やるのも面倒なので普通にCSSを書こう・・・。</p>
+<p>で、<code>about.html</code>からハッシュを参照してJSONを取得しよう。</p>
 
-<p>ということで出来ました。</p>
+<pre><code class="language-html">&lt;section id=&quot;about&quot; style=&quot;display: none;&quot;&gt;
+    &lt;h1&gt;About Me&lt;/h1&gt;
+    &lt;br /&gt;
+    &lt;img id=&quot;photo&quot;&gt;
+    &lt;br /&gt;
+    &lt;div id=&quot;displayname&quot;&gt;&lt;/div&gt;
+    &lt;br /&gt;
+    &lt;div id=&quot;aboutme&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;currentlocation&quot;&gt;&lt;/div&gt;
+    &lt;br /&gt;
+    &lt;div id=&quot;urls&quot;&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;script&gt;
+    $(function() {
+        var url = &quot;https://ja.gravatar.com/{% raw %}{{ site.gravatar_hash }}{% endraw %}.json?callback=?&quot;;
+        $.getJSON(url)
+            .done(function(data) {
+                var entry = data.entry[0];
+                $(&quot;#photo&quot;).attr(&quot;src&quot;, entry.photos[0].value);
+                $(&quot;#displayname&quot;).html(entry.displayName);
+                $(&quot;#aboutme&quot;).html(entry.aboutMe);
+                // $(&quot;#currentlocation&quot;).html(entry.currentLocation);
+                entry.urls.forEach(function(el){
+                    $(&quot;#urls&quot;).append($(&quot;&lt;a href='&quot; + el.value + &quot;'&gt;&quot; + el.title + &quot;&lt;/a&gt;&lt;br /&gt;&quot;));
+                });
 
-<p><a href="https://github.com/dim0627/flatten">flatten</a></p>
+                $(&quot;#about&quot;).show();
+            });
+    });
+&lt;/script&gt;
+</code></pre>
 
-<p>gravatarの件が入っちゃってるから、これは後で分離しなきゃなあ。</p>
+<p>あとはCSSにちょちょいとスタイルをつけるだけ。</p>
+
+<p>独自のスタイルは<code>.themes/classic/sass/custom/_styles.scss</code>に書けばいいぽい。</p>
+
+<p>SASSとかも頃合い見て勉強しなきゃいけないかな・・・。</p>
+
+<pre><code class="language-css">img#photo {
+    display: block;
+    margin: auto;
+}
+
+div#displayname {
+    text-align: center;
+    font-weight: bold;
+}
+
+div#aboutme {
+}
+
+div#currentlocation {
+    text-align: center;
+}
+
+div#urls {
+    text-align: center;
+}
+</code></pre>
+
+<p>とりあえず表示出来たからここまででいいや。</p>
+
+<p>ついでに自分用のtheme作っちゃったから、ある程度整備出来たらgithubにあげよっかな。</p>
+
+<h2 id="参考にさせて頂きました:61eb03e5faeba6147c5a5cd44e5e95a1">参考にさせて頂きました</h2>
+
+<p><a href="http://blog.awairo.net/blog/2013/12/24/octopress-aside-of-getting-profile-from-gravatar/">Gravatarのプロフィールを表示するOctopressのサイドバー</a></p>
 
     </div>
 
@@ -211,22 +267,30 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
             </li>
             
             <li>
+                <a href="http://yet.unresolved.xyz/tags/gravatar">
+                    <i class="fa fa-tags"></i>
+                    gravatar
+                </a>
+            </li>
+            
+            <li>
                 <a href="http://yet.unresolved.xyz/tags/octopress">
                     <i class="fa fa-tags"></i>
                     octopress
                 </a>
             </li>
             
-            <li>
-                <a href="http://yet.unresolved.xyz/tags/design">
-                    <i class="fa fa-tags"></i>
-                    design
-                </a>
-            </li>
-            
         </ul>
 
         <ul>
+            
+            
+            
+            
+            
+            
+            
+            
             
             
             
@@ -337,6 +401,7 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
             
             
             
+            <li><a href="http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/">Octopressのテーマを作ってみる</a></li>
             
             
             
@@ -345,7 +410,6 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
             
             
             
-            <li><a href="http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/">OctopressのサイドバーにGravatarを表示させる</a></li>
             
             
             
@@ -363,16 +427,16 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
         <div class="move">
             <div class="prev">
                 
-                <a href="http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/">
+                <a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/">
                     <i class="fa fa-chevron-left"></i>
-                    _config.ymlに書いたdescriptionが設定されない
+                    gitのリポジトリ単位にproxyの設定をする
                 </a>
                 
             </div>
             <div class="next">
                 
-                <a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/">
-                    gitのリポジトリ単位にproxyの設定をする
+                <a href="http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/">
+                    GitHub PagesにOctopressをのっけてみる
                     <i class="fa fa-chevron-right"></i>
                 </a>
                 
@@ -660,6 +724,13 @@ var disqus_shortname = 'unresolved';
                 
                 <li>
                     
+                    <a href="http://yet.unresolved.xyz/tags/paizaio">
+                        paizaio
+                    </a>
+                </li>
+                
+                <li>
+                    
                     <a href="http://yet.unresolved.xyz/tags/php">
                         php
                     </a>
@@ -704,6 +775,13 @@ var disqus_shortname = 'unresolved';
                     
                     <a href="http://yet.unresolved.xyz/tags/scss">
                         scss
+                    </a>
+                </li>
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz/tags/slack">
+                        slack
                     </a>
                 </li>
                 
