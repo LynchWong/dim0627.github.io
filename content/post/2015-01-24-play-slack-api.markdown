@@ -54,11 +54,11 @@ SlackBotに喋らせたり出来る。ちょうかわいい。
 
 [https://my.slack.com/services/new/slash-commands](https://my.slack.com/services/new/slash-commands)
 
-[<img src="/images/2015-01-24/new_command.png" class="image" alt="new_command">](/images/2015-01-24/new_command.png)
+[<img src="/images/2015-01-25/new_command.png" class="image" alt="new_command">](/images/2015-01-25/new_command.png)
 
 herokuでさくっとHello World作って試してみようかな。
 
-[<img src="/images/2015-01-24/command_test.png" class="image" alt="command_test">](/images/2015-01-24/command_test.png)
+[<img src="/images/2015-01-25/command_test.png" class="image" alt="command_test">](/images/2015-01-25/command_test.png)
 
 おお、出るじゃん！でも`Only you can see this message`って出てる、オレしか見れないんだね。
 
@@ -70,11 +70,13 @@ herokuでさくっとHello World作って試してみようかな。
 
 まあとりあえず、作ったばっかの[paiza.IO](https://paiza.io/)のAPIを叩くあれを導入してみる。
 
+[paiza.ioのAPIを使ってreplを作る | Unresolved](http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/)
+
 スラッシュコマンドAPIは`/command args`って感じにやると、指定したURLに`text`ってパラメータ名で`args`が飛ばされるみたい。
 
 なので`/repl ruby:p "hello"`って感じで実行できるようにしようかな。
 
-[<img src="/images/2015-01-24/slack_repl.png" class="image" alt="slack_repl">](/images/2015-01-24/slack_repl.png)
+[<img src="/images/2015-01-25/slack_repl.png" class="image" alt="slack_repl">](/images/2015-01-25/slack_repl.png)
 
 別にURL出してもいいんだけど・・・。
 
@@ -92,7 +94,7 @@ herokuでさくっとHello World作って試してみようかな。
 
 さっき書いた通り、`/repl ruby:p "hello"`でいけるかな。
 
-[<img src="/images/2015-01-24/slack_repl_run.png" class="image" alt="slack_repl_run">](/images/2015-01-24/slack_repl_run.png)
+[<img src="/images/2015-01-25/slack_repl_run.png" class="image" alt="slack_repl_run">](/images/2015-01-25/slack_repl_run.png)
 
 いけるやん！
 
