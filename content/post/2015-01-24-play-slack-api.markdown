@@ -16,7 +16,7 @@ title: "SlackAPIで遊ぶ"
 
 SlackのAPIはいくつか種類があるんだね、トリガになるパターンが違うのかな？
 
-2015/01/24時点でのAPIをまとめてみる。
+2015年01月24日時点でのAPIをまとめてみる。
 
 ### [Slack Web API](https://api.slack.com/web)
 
@@ -100,7 +100,7 @@ herokuでさくっとHello World作って試してみようかな。
 
 Javaだる！
 
-## コードの全貌
+## コード
 
 やばい`project.clj`とかherokuから持ってきたままだしリファクタリングもしてないし超適当だ
 

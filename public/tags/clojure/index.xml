@@ -27,7 +27,7 @@
 
 &lt;p&gt;SlackのAPIはいくつか種類があるんだね、トリガになるパターンが違うのかな？&lt;/p&gt;
 
-&lt;p&gt;&lt;sup&gt;2015&lt;/sup&gt;&amp;frasl;&lt;sub&gt;01&lt;/sub&gt;/24時点でのAPIをまとめてみる。&lt;/p&gt;
+&lt;p&gt;2015年01月24日時点でのAPIをまとめてみる。&lt;/p&gt;
 
 &lt;h3 id=&#34;slack-web-api-https-api-slack-com-web:4800906b877996c3dc902a23f48b0c5e&#34;&gt;&lt;a href=&#34;https://api.slack.com/web&#34;&gt;Slack Web API&lt;/a&gt;&lt;/h3&gt;
 
@@ -110,7 +110,7 @@
 
 &lt;p&gt;Javaだる！&lt;/p&gt;
 
-&lt;h2 id=&#34;コードの全貌:4800906b877996c3dc902a23f48b0c5e&#34;&gt;コードの全貌&lt;/h2&gt;
+&lt;h2 id=&#34;コード:4800906b877996c3dc902a23f48b0c5e&#34;&gt;コード&lt;/h2&gt;
 
 &lt;p&gt;やばい&lt;code&gt;project.clj&lt;/code&gt;とかherokuから持ってきたままだしリファクタリングもしてないし超適当だ&lt;/p&gt;
 
