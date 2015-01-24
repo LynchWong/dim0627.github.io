@@ -65,11 +65,11 @@
 
 &lt;p&gt;&lt;a href=&#34;https://my.slack.com/services/new/slash-commands&#34;&gt;https://my.slack.com/services/new/slash-commands&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-24/new_command.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-24/new_command.png&#34; class=&#34;image&#34; alt=&#34;new_command&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-25/new_command.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-25/new_command.png&#34; class=&#34;image&#34; alt=&#34;new_command&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;herokuでさくっとHello World作って試してみようかな。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-24/command_test.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-24/command_test.png&#34; class=&#34;image&#34; alt=&#34;command_test&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-25/command_test.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-25/command_test.png&#34; class=&#34;image&#34; alt=&#34;command_test&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;おお、出るじゃん！でも&lt;code&gt;Only you can see this message&lt;/code&gt;って出てる、オレしか見れないんだね。&lt;/p&gt;
 
@@ -81,11 +81,13 @@
 
 &lt;p&gt;まあとりあえず、作ったばっかの&lt;a href=&#34;https://paiza.io/&#34;&gt;paiza.IO&lt;/a&gt;のAPIを叩くあれを導入してみる。&lt;/p&gt;
 
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/&#34;&gt;paiza.ioのAPIを使ってreplを作る | Unresolved&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;スラッシュコマンドAPIは&lt;code&gt;/command args&lt;/code&gt;って感じにやると、指定したURLに&lt;code&gt;text&lt;/code&gt;ってパラメータ名で&lt;code&gt;args&lt;/code&gt;が飛ばされるみたい。&lt;/p&gt;
 
 &lt;p&gt;なので&lt;code&gt;/repl ruby:p &amp;quot;hello&amp;quot;&lt;/code&gt;って感じで実行できるようにしようかな。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-24/slack_repl.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-24/slack_repl.png&#34; class=&#34;image&#34; alt=&#34;slack_repl&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-25/slack_repl.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-25/slack_repl.png&#34; class=&#34;image&#34; alt=&#34;slack_repl&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;別にURL出してもいいんだけど・・・。&lt;/p&gt;
 
@@ -102,7 +104,7 @@
 
 &lt;p&gt;さっき書いた通り、&lt;code&gt;/repl ruby:p &amp;quot;hello&amp;quot;&lt;/code&gt;でいけるかな。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-24/slack_repl_run.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-24/slack_repl_run.png&#34; class=&#34;image&#34; alt=&#34;slack_repl_run&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-25/slack_repl_run.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-25/slack_repl_run.png&#34; class=&#34;image&#34; alt=&#34;slack_repl_run&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;いけるやん！&lt;/p&gt;
 
