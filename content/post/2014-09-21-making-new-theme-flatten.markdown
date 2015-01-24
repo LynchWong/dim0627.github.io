@@ -1,5 +1,5 @@
 ---
-slug: "make-new-theme-flatten"
+slug: "making-new-theme-flatten"
 title: "Octopressのテーマを作ってみる"
 eyecatch: "octopress.png"
 date: 2014-09-21

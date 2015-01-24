@@ -1,5 +1,5 @@
 ---
-slug: "make-gravatar-sidebar"
+slug: "making-gravatar-sidebar"
 title: "OctopressのサイドバーにGravatarを表示させる"
 eyecatch: "octopress.png"
 date: 2014-09-20

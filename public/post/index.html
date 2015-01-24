@@ -98,6 +98,10 @@
             
             
             
+            
+            
+            
+            
         </div>
     </div>
 
@@ -105,6 +109,46 @@
 
 
 <div class="post">
+        
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/"><img src="http://yet.unresolved.xyz/images/slack.png" alt="SlackAPIで遊ぶ"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Sun, Jan 25, 2015</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/">SlackAPIで遊ぶ</a></h1>
+        <div class="summary">最近 ふつうのLinuxプログラミングを読んでます。知りたいことが書かれてて楽しい！ でもずっと本読むのは飽きるよね。なのでSlackのAPIとか触ってみる。 SlackAPIの種類 SlackのAPIはいくつか種類があるんだね、トリガになるパターンが違うのかな？ 2015&frasl;01/24時点でのAPIをまとめてみる。 Slack Web API 指定したチャンネルの履歴とかユーザの一覧とか、Slackの情報を取得出来る。 Web APIなので、URLベースでの取得。 Real Time Messaging API Web Socketベースのリアルタイムチャット機能を提供する？ bot userがどうのこうのっていうのがよくわからない。 Slackbot Remote Control SlackBotに喋らせたり出来る。ちょうかわいい。 Incoming Webhooks 指定したチャンネルに投稿出来る。 Outgoing Webhooks 指定した単語に応じて指定したURLを叩ける。 Slash Commands 指定したスラッシュで始まる単語に応じてURLを叩けて、レスポンスがそのまま投稿される。 今回は発言のタイミングで発火するSlash Commandsを使ってみようかな！ スラッシュコマンドの追加 ここから新しくコマンドの追加が出来る。 https://my.slack.com/services/new/slash-commands herokuでさくっとHello World作って試してみようかな。 おお、出るじゃん！でもOnly you can see this messageって出てる、オレしか見れないんだね。 REPLを作ろう なんかSlack上でプログラム打つと実行結果が返ってくるみたいなやつ誰かが作ってたよね？ あれ調べても出ないんだけどなんでなんだろう。 まあとりあえず、作ったばっかのpaiza.IOのAPIを叩くあれを導入してみる。 スラッシュコマンドAPIは/command argsって感じにやると、指定したURLにtextってパラメータ名でargsが飛ばされるみたい。 なので/repl ruby:p &quot;hello&quot;って感じで実行できるようにしようかな。 別にURL出してもいいんだけど・・・。 compojureのルーティングはこんな。 (defroutes app-routes (GET &quot;/&quot; [text] (if (empty? text) &quot;Invalid input.&quot; (let [[language source]</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
+
+        
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/"><img src="http://yet.unresolved.xyz/images/paizaio.png" alt="paiza.ioのAPIを使ってreplを作る"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Sun, Jan 25, 2015</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/">paiza.ioのAPIを使ってreplを作る</a></h1>
+        <div class="summary">paizaが面白いAPIを公開してたから、そのうち使ってみたいと思ってたんだよね。 ブラウザでプログラミング・実行ができる「オンライン実行環境」| paiza.IO ちょっとSlackAPIで使ってみたいからこの機会に軽くだけ触ってみる。 何が出来る？ たくさんの言語のREPLが使える！すごい！ ただ、コンパイル言語はそんな気軽に使える感じではないみたい。 例えばJavaで言えば、System.out.println(&quot;Hello&quot;);だけじゃなくてクラス定義から含めなきゃいけないみたいに。 どうやって使う？ どうやらSwaggerっていうOSSを使ってるみたい。 paiza.io上でのデモも使える。 Swagger UI なんか動かないなと思ったらhttpsでhttpのリソースを参照してたみたいで、ブロックされてた。 Mixed Content: The page at 'https://api.paiza.io/docs/swagger/#!/runners/' was loaded over HTTPS, but requested an insecure XMLHttpRequest endpoint 'http://api.paiza.io/docs/swagger-docs/runners.json?api_key=guest'. This request has been blocked; the content must be served over HTTPS. 評価パターンは3つあるみたい。 runners/create コードの実行が出来る。 レスポンスにidとstatusが返ってきて、このidを使って実行結果とかを見る。 runners/get_status 実行結果を見ることが出来る。 completedとかそういうレベル。 runners/get_details 実行結果として出力された値とかを見ることが出来る。 runners/createで実行してrunners/get_detailsで結果を見る感じ。 Clojureから叩こう 使い方はわかったしURL叩けば済む話だしさっさと作っちゃう。 HTTPアクセスはJavaのクラス使おうかなと思ったけど、dakrone/clj-httpっていうすごく優秀！なライブラリがあったのでこれを使います。 まずrunners/get/createを実行するところ。 (defn repl [language source] (let [run-id (-&gt; (httpc/post &quot;http://api.paiza.io/runners/create&quot; {:form-params {:source_code source :language</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
+
         
         <article class="post">
     <div class="eyecatch">
@@ -569,16 +613,16 @@
         <article class="post">
     <div class="eyecatch">
         
-        <a href="http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/"><img src="http://yet.unresolved.xyz/images/octopress.png" alt="Octopressのテーマを作ってみる"></a>
+        <a href="http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/"><img src="http://yet.unresolved.xyz/images/octopress.png" alt="Octopressのテーマを作ってみる"></a>
         
     </div>
     <div class="data">
         <span class="post-date">Sun, Sep 21, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/">Octopressのテーマを作ってみる</a></h1>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/">Octopressのテーマを作ってみる</a></h1>
         <div class="summary">元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。 でもオレはデザイナーじゃないから、あんまりがっつりやるのもやだよね。 てことで元のclassicテーマをパクって作ろう。 Octopressから移行してしまったので、スクリーンショットだけ載せとく。 テーマの変え方 そもそも変え方すら知らない。 てことで調べた。 どうやらここにテーマ単位のディレクトリが配置されるらしい。 octopress git:(source)$ ls .themes classic で、rake install[theme name]でインストール。 テーマの構成 作るにも、テーマの定義に何が必要かがわからぬ。 classicの中を見てみよう。 octopress git:(source)$ ls .themes/classic sass source んん、シンプル。 察するにsassがスタイル系でsourceがテンプレート系なのかな？ 別にページレイアウトを変えたいとか、そんなたいそうなことは考えてないので、sass内をいじるだけでよさそう。 sass内はどうなってるのかな？ octopress git:(source)$ ls .themes/classic/sass _base.scss _partials.scss base custom partials plugins screen.scss octopress git:(source)$ ls .themes/classic/sass/custom _colors.scss _fonts.scss _layout.scss _styles.scss で、.themes/classic/sass/custom/_styles.scssがオーバーライド用のファイルなわけだな。 // This File is imported last, and will override other styles in the cascade // Add styles here to make changes</div>
     </div>
     <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/">
+        <a href="http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/">
             <i class="fa fa-chevron-down"></i>
         </a>
     </footer>
@@ -609,16 +653,16 @@
         <article class="post">
     <div class="eyecatch">
         
-        <a href="http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/"><img src="http://yet.unresolved.xyz/images/octopress.png" alt="OctopressのサイドバーにGravatarを表示させる"></a>
+        <a href="http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/"><img src="http://yet.unresolved.xyz/images/octopress.png" alt="OctopressのサイドバーにGravatarを表示させる"></a>
         
     </div>
     <div class="data">
         <span class="post-date">Sat, Sep 20, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/">OctopressのサイドバーにGravatarを表示させる</a></h1>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/">OctopressのサイドバーにGravatarを表示させる</a></h1>
         <div class="summary">Octopressのサイドバーってどうなってんの？ そもそもOctopressの構成がまだよくわかってないのでそこから勉強しよう。 どうやらデフォルトで準備されてるサイドバーはここに格納されているらしい。 octopress git:(source)$ ls source/_includes/asides/ delicious.html github.html googleplus.html pinboard.html recent_posts.html で、自分で作りたい場合はここに格納するっぽい。 octopress git:(source)$ ls source/_includes/custom/asides about.html twitter.html って_config.ymlに書いてあった。 # list each of the sidebar modules you want to include, in the order you want them to appear. # To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like 'custom/asides/custom_aside_name.html' default_asides: [custom/asides/about.html, asides/recent_posts.html, custom/asides/twitter.html] Gravatarの情報って持って来れるの？ ちょっとだけ調べてみたらGravatarの画像だけ持ってくるpluginは用意されてるっぽい。 でもどうせなら自己紹介のところとかも欲しいよね。 で、Gravatarに開発者向け資料がありました。 しっかり読んでないけど、JSONで返せるっぽいからこれを使えばいいかな。 ハッシュを指定する必要があるみたいなので、公式から取得しとく。 作るぞ なんか最初からsource/_include/custom/asidesにabout.htmlってのがあるし、これにプロフィールを書こうかな。 まず取得したハッシュを_config.ymlに定義しちゃおう。 #</div>
     </div>
     <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/">
+        <a href="http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/">
             <i class="fa fa-chevron-down"></i>
         </a>
     </footer>
@@ -927,6 +971,13 @@
                 
                 <li>
                     
+                    <a href="http://yet.unresolved.xyz/tags/paizaio">
+                        paizaio
+                    </a>
+                </li>
+                
+                <li>
+                    
                     <a href="http://yet.unresolved.xyz/tags/php">
                         php
                     </a>
@@ -971,6 +1022,13 @@
                     
                     <a href="http://yet.unresolved.xyz/tags/scss">
                         scss
+                    </a>
+                </li>
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz/tags/slack">
+                        slack
                     </a>
                 </li>
                 

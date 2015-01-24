@@ -395,10 +395,10 @@ Flow content, but with no main element descendants.
       
         <item>
           <title>Octopressのテーマを作ってみる</title>
-          <link>http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/</link>
           <pubDate>Sun, 21 Sep 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/</guid>
           <description>
 
 &lt;p&gt;元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。&lt;/p&gt;
@@ -411,7 +411,7 @@ Flow content, but with no main element descendants.
 
 &lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34; class=&#34;image&#34; alt=&#34;flatten&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;テーマの変え方:76235ef2906f03f2c7b92537a8f6cdf7&#34;&gt;テーマの変え方&lt;/h2&gt;
+&lt;h2 id=&#34;テーマの変え方:04d1c6053c5be0425bfb88e610b78a00&#34;&gt;テーマの変え方&lt;/h2&gt;
 
 &lt;p&gt;そもそも変え方すら知らない。&lt;/p&gt;
 
@@ -425,7 +425,7 @@ classic
 
 &lt;p&gt;で、&lt;code&gt;rake install[theme name]&lt;/code&gt;でインストール。&lt;/p&gt;
 
-&lt;h2 id=&#34;テーマの構成:76235ef2906f03f2c7b92537a8f6cdf7&#34;&gt;テーマの構成&lt;/h2&gt;
+&lt;h2 id=&#34;テーマの構成:04d1c6053c5be0425bfb88e610b78a00&#34;&gt;テーマの構成&lt;/h2&gt;
 
 &lt;p&gt;作るにも、テーマの定義に何が必要かがわからぬ。&lt;/p&gt;
 
@@ -510,13 +510,13 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
       
         <item>
           <title>OctopressのサイドバーにGravatarを表示させる</title>
-          <link>http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/</link>
           <pubDate>Sat, 20 Sep 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/</guid>
           <description>
 
-&lt;h2 id=&#34;octopressのサイドバーってどうなってんの:c73b8990ae6ff308f2649661fb572fc8&#34;&gt;Octopressのサイドバーってどうなってんの？&lt;/h2&gt;
+&lt;h2 id=&#34;octopressのサイドバーってどうなってんの:61eb03e5faeba6147c5a5cd44e5e95a1&#34;&gt;Octopressのサイドバーってどうなってんの？&lt;/h2&gt;
 
 &lt;p&gt;そもそもOctopressの構成がまだよくわかってないのでそこから勉強しよう。&lt;/p&gt;
 
@@ -539,7 +539,7 @@ about.html   twitter.html
 default_asides: [custom/asides/about.html, asides/recent_posts.html, custom/asides/twitter.html]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;gravatarの情報って持って来れるの:c73b8990ae6ff308f2649661fb572fc8&#34;&gt;Gravatarの情報って持って来れるの？&lt;/h2&gt;
+&lt;h2 id=&#34;gravatarの情報って持って来れるの:61eb03e5faeba6147c5a5cd44e5e95a1&#34;&gt;Gravatarの情報って持って来れるの？&lt;/h2&gt;
 
 &lt;p&gt;ちょっとだけ調べてみたらGravatarの画像だけ持ってくるpluginは用意されてるっぽい。&lt;/p&gt;
 
@@ -551,7 +551,7 @@ default_asides: [custom/asides/about.html, asides/recent_posts.html, custom/asid
 
 &lt;p&gt;ハッシュを指定する必要があるみたいなので、公式から取得しとく。&lt;/p&gt;
 
-&lt;h2 id=&#34;作るぞ:c73b8990ae6ff308f2649661fb572fc8&#34;&gt;作るぞ&lt;/h2&gt;
+&lt;h2 id=&#34;作るぞ:61eb03e5faeba6147c5a5cd44e5e95a1&#34;&gt;作るぞ&lt;/h2&gt;
 
 &lt;p&gt;なんか最初から&lt;code&gt;source/_include/custom/asides&lt;/code&gt;に&lt;code&gt;about.html&lt;/code&gt;ってのがあるし、これにプロフィールを書こうかな。&lt;/p&gt;
 
@@ -627,7 +627,7 @@ div#urls {
 
 &lt;p&gt;ついでに自分用のtheme作っちゃったから、ある程度整備出来たらgithubにあげよっかな。&lt;/p&gt;
 
-&lt;h2 id=&#34;参考にさせて頂きました:c73b8990ae6ff308f2649661fb572fc8&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
+&lt;h2 id=&#34;参考にさせて頂きました:61eb03e5faeba6147c5a5cd44e5e95a1&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://blog.awairo.net/blog/2013/12/24/octopress-aside-of-getting-profile-from-gravatar/&#34;&gt;Gravatarのプロフィールを表示するOctopressのサイドバー&lt;/a&gt;&lt;/p&gt;
 </description>

@@ -11,9 +11,9 @@
 <meta property="og:url" content="http://yet.unresolved.xyz">
 <meta property="og:title" content="Unresolved">
 
-<meta property="og:description" content="herokuにのっけるアプリを作るとき、ローカルではSQLite使ってたんだけどもう色々つらい。 なんか整数で定義したカラムに文字列入るし！ なんかオートインクリメントの設定の仕方がPostgreSQLと違うし！ つらい。 なのでもう、さっとPostgreSQLだけ入った仮想環境を作ってホスト側から繋げるようにしたい。 Vagrantfileの設定 もう面倒なのはいやなのでCentOSとIPの設定だけやるよ。 # -*- mode: ruby -*- # vi: set ft=ruby : VAGRANTFILE_API_VERSION = &quot;2&quot; Vagrant.configure(VAGRANTFILE_API_VERSION) do |config| config.vm.box = &quot;chef/centos-6.5&quot; config.vm.network &quot;private_network&quot;, ip: &quot;192.168.33.10&quot; end PostgreSQLの導入 [vagrant@localhost ~]$ sudo yum install postgresql [vagrant@localhost ~]$ sudo yum install postgresql-server [vagrant@localhost ~]$ sudo yum install postgresql-contrib さくっと入るやん！ どうやって繋ぐのかな もうほんとPostgreSQLの使い方がわかんない、MySQLばっか触ってたからわかんない。 そもそもサービス名はなによ。 [vagrant@localhost ~]$ service postgresql Usage: /etc/init.d/postgresql {start|stop|status|restart|condrestart|try-restart|reload|force-reload|initdb} [vagrant@localhost ~]$ service postgresql status postmaster is stopped [vagrant@localhost ~]$ sudo service postgresql start /var/lib/pgsql/data is missing.">
+<meta property="og:description" content="最近 ふつうのLinuxプログラミングを読んでます。知りたいことが書かれてて楽しい！ でもずっと本読むのは飽きるよね。なのでSlackのAPIとか触ってみる。 SlackAPIの種類 SlackのAPIはいくつか種類があるんだね、トリガになるパターンが違うのかな？ 2015&frasl;01/24時点でのAPIをまとめてみる。 Slack Web API 指定したチャンネルの履歴とかユーザの一覧とか、Slackの情報を取得出来る。 Web APIなので、URLベースでの取得。 Real Time Messaging API Web Socketベースのリアルタイムチャット機能を提供する？ bot userがどうのこうのっていうのがよくわからない。 Slackbot Remote Control SlackBotに喋らせたり出来る。ちょうかわいい。 Incoming Webhooks 指定したチャンネルに投稿出来る。 Outgoing Webhooks 指定した単語に応じて指定したURLを叩ける。 Slash Commands 指定したスラッシュで始まる単語に応じてURLを叩けて、レスポンスがそのまま投稿される。 今回は発言のタイミングで発火するSlash Commandsを使ってみようかな！ スラッシュコマンドの追加 ここから新しくコマンドの追加が出来る。 https://my.slack.com/services/new/slash-commands herokuでさくっとHello World作って試してみようかな。 おお、出るじゃん！でもOnly you can see this messageって出てる、オレしか見れないんだね。 REPLを作ろう なんかSlack上でプログラム打つと実行結果が返ってくるみたいなやつ誰かが作ってたよね？ あれ調べても出ないんだけどなんでなんだろう。 まあとりあえず、作ったばっかのpaiza.IOのAPIを叩くあれを導入してみる。 スラッシュコマンドAPIは/command argsって感じにやると、指定したURLにtextってパラメータ名でargsが飛ばされるみたい。 なので/repl ruby:p &quot;hello&quot;って感じで実行できるようにしようかな。 別にURL出してもいいんだけど・・・。 compojureのルーティングはこんな。 (defroutes app-routes (GET &quot;/&quot; [text] (if (empty? text) &quot;Invalid input.&quot; (let [[language source]">
 
-<meta property="og:image" content="http://yet.unresolved.xyz/images/vagrant.png">
+<meta property="og:image" content="http://yet.unresolved.xyz/images/slack.png">
 
 
 
@@ -105,6 +105,10 @@
             
             
             
+            
+            
+            
+            
         </div>
     </div>
 
@@ -114,6 +118,50 @@
 
 
 <div class="posts">
+    
+    
+    <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/"><img src="http://yet.unresolved.xyz/images/slack.png" alt="SlackAPIで遊ぶ"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Sun, Jan 25, 2015</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/">SlackAPIで遊ぶ</a></h1>
+        <div class="summary">最近 ふつうのLinuxプログラミングを読んでます。知りたいことが書かれてて楽しい！ でもずっと本読むのは飽きるよね。なのでSlackのAPIとか触ってみる。 SlackAPIの種類 SlackのAPIはいくつか種類があるんだね、トリガになるパターンが違うのかな？ 2015&frasl;01/24時点でのAPIをまとめてみる。 Slack Web API 指定したチャンネルの履歴とかユーザの一覧とか、Slackの情報を取得出来る。 Web APIなので、URLベースでの取得。 Real Time Messaging API Web Socketベースのリアルタイムチャット機能を提供する？ bot userがどうのこうのっていうのがよくわからない。 Slackbot Remote Control SlackBotに喋らせたり出来る。ちょうかわいい。 Incoming Webhooks 指定したチャンネルに投稿出来る。 Outgoing Webhooks 指定した単語に応じて指定したURLを叩ける。 Slash Commands 指定したスラッシュで始まる単語に応じてURLを叩けて、レスポンスがそのまま投稿される。 今回は発言のタイミングで発火するSlash Commandsを使ってみようかな！ スラッシュコマンドの追加 ここから新しくコマンドの追加が出来る。 https://my.slack.com/services/new/slash-commands herokuでさくっとHello World作って試してみようかな。 おお、出るじゃん！でもOnly you can see this messageって出てる、オレしか見れないんだね。 REPLを作ろう なんかSlack上でプログラム打つと実行結果が返ってくるみたいなやつ誰かが作ってたよね？ あれ調べても出ないんだけどなんでなんだろう。 まあとりあえず、作ったばっかのpaiza.IOのAPIを叩くあれを導入してみる。 スラッシュコマンドAPIは/command argsって感じにやると、指定したURLにtextってパラメータ名でargsが飛ばされるみたい。 なので/repl ruby:p &quot;hello&quot;って感じで実行できるようにしようかな。 別にURL出してもいいんだけど・・・。 compojureのルーティングはこんな。 (defroutes app-routes (GET &quot;/&quot; [text] (if (empty? text) &quot;Invalid input.&quot; (let [[language source]</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
+
+    
+    
+    
+    <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/"><img src="http://yet.unresolved.xyz/images/paizaio.png" alt="paiza.ioのAPIを使ってreplを作る"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Sun, Jan 25, 2015</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/">paiza.ioのAPIを使ってreplを作る</a></h1>
+        <div class="summary">paizaが面白いAPIを公開してたから、そのうち使ってみたいと思ってたんだよね。 ブラウザでプログラミング・実行ができる「オンライン実行環境」| paiza.IO ちょっとSlackAPIで使ってみたいからこの機会に軽くだけ触ってみる。 何が出来る？ たくさんの言語のREPLが使える！すごい！ ただ、コンパイル言語はそんな気軽に使える感じではないみたい。 例えばJavaで言えば、System.out.println(&quot;Hello&quot;);だけじゃなくてクラス定義から含めなきゃいけないみたいに。 どうやって使う？ どうやらSwaggerっていうOSSを使ってるみたい。 paiza.io上でのデモも使える。 Swagger UI なんか動かないなと思ったらhttpsでhttpのリソースを参照してたみたいで、ブロックされてた。 Mixed Content: The page at 'https://api.paiza.io/docs/swagger/#!/runners/' was loaded over HTTPS, but requested an insecure XMLHttpRequest endpoint 'http://api.paiza.io/docs/swagger-docs/runners.json?api_key=guest'. This request has been blocked; the content must be served over HTTPS. 評価パターンは3つあるみたい。 runners/create コードの実行が出来る。 レスポンスにidとstatusが返ってきて、このidを使って実行結果とかを見る。 runners/get_status 実行結果を見ることが出来る。 completedとかそういうレベル。 runners/get_details 実行結果として出力された値とかを見ることが出来る。 runners/createで実行してrunners/get_detailsで結果を見る感じ。 Clojureから叩こう 使い方はわかったしURL叩けば済む話だしさっさと作っちゃう。 HTTPアクセスはJavaのクラス使おうかなと思ったけど、dakrone/clj-httpっていうすごく優秀！なライブラリがあったのでこれを使います。 まずrunners/get/createを実行するところ。 (defn repl [language source] (let [run-id (-&gt; (httpc/post &quot;http://api.paiza.io/runners/create&quot; {:form-params {:source_code source :language</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
+
+    
     
     
     <article class="post">
@@ -283,50 +331,6 @@
     </div>
     <footer class="readon">
         <a href="http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
-
-    
-    
-    
-    <article class="post">
-    <div class="eyecatch">
-        
-        <a href="http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/"><img src="http://yet.unresolved.xyz/images/clojure.png" alt="Lobosでマイグレーションができない in Heroku"></a>
-        
-    </div>
-    <div class="data">
-        <span class="post-date">Sun, Dec 21, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/">Lobosでマイグレーションができない in Heroku</a></h1>
-        <div class="summary">ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。 何が起きたか 今だにHerokuの使い方がようわからんのだけど、 とりあえずローカルから向き先変えるよりもSSHの方がいっかなってことでheroku run bashしてやってます。 ローカルからだとDBをSSLで接続させないといけないし・・・。 んでマイグレーションしようとしたら、 user=&gt; (migrate) nil 何も出ない。 本当はこんな感じで、 user=&gt; (migrate) add-sites-table add-entries-table nil 作成されたり変更されたテーブルが出てくるはず。 原因はなんだったのか lobos.migrationsが読まれてない（というかリロードされてない）っぽい。 そもそもmigrate自体はこんな感じでlobos.migrationのdo-migrationsを呼んでます。 (defcommand migrate [&amp; names] (let [names (if (empty? names) (mig/pending-migrations db-spec sname) names)] (mig/do-migrations db-spec sname :up names))) で、do-migrationsはこんな感じで、list-migrations-namesの結果を絞って実行してる。 たぶんマイグレーション済みのものは除外とかそんな感じなんじゃないだろうか。 (defn do-migrations [db-spec sname with names &amp; [silent]] (let [filter-migs #(only % (list-migrations-names)) migrations (-&gt;&gt; names (map str) filter-migs (when-&gt;&gt; (= with :down) reverse) (map symbol) (map (partial ns-resolve *migrations-namespace*)) (map var-get))] (binding [*record* nil] (doseq [migration migrations] (let [name (-&gt; migration meta :name)] (when-not silent (println name)) (if (= with :up) (do (up migration) (insert-migrations db-spec sname name)) (do (down migration) (delete-migrations db-spec sname name)))))))) でlist-migrations-namesの定義がこれ、list-migrationsを呼んでる。 (defn list-migrations-names [] (map #(-&gt; % meta :name str) (list-migrations))) (defn list-migrations [] (if *reload-migrations* (when (.exists (migrations-file)) (swap!</div>
-    </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
-
-    
-    
-    
-    <article class="post">
-    <div class="eyecatch">
-        
-        <a href="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/"><img src="http://yet.unresolved.xyz/images/clojure.png" alt="Lobosを使ってマイグレーションをする"></a>
-        
-    </div>
-    <div class="data">
-        <span class="post-date">Thu, Dec 11, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/">Lobosを使ってマイグレーションをする</a></h1>
-        <div class="summary">1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。 というわけでClojureを使ってWeb開発をする際も使いたいので、Lobosというスキーマのマニュピレーション、マイグレーションツールを使ってみます。 インストール 本体はここbudu/lobos。 project.cljに :dependencies [[lobos &quot;1.0.0-beta3&quot;]] を追加してlein depsするだけでおーけー。 Leiningenのプラグインとして使えるpupeno/lein-lobosってのもあるようだ。 こっちも使う場合は、ploject.cljに :plugins [lein-lobos &quot;1.0.0-beta1&quot;] を追加。 全体を載っけるとこんな感じに。 (defproject tpc &quot;0.1.0-SNAPSHOT&quot; :description &quot;FIXME: write description&quot; :url &quot;http://example.com/FIXME&quot; :min-lein-version &quot;2.0.0&quot; :dependencies [[org.clojure/clojure &quot;1.6.0&quot;] [compojure &quot;1.2.0&quot;] [ring/ring-defaults &quot;0.1.2&quot;] [enlive &quot;1.1.5&quot;] [korma &quot;0.4.0&quot;] [postgresql &quot;9.1-901.jdbc4&quot;] [lobos &quot;1.0.0-beta3&quot;]] :plugins [[lein-ring &quot;0.8.13&quot;] [lein-haml-sass &quot;0.2.7-SNAPSHOT&quot;] [lein-lobos &quot;1.0.0-beta1&quot;]] :ring {:handler tpc.core.handler/app} :profiles {:dev {:dependencies [[javax.servlet/servlet-api &quot;2.5&quot;] [ring-mock &quot;0.1.5&quot;] [org.xerial/sqlite-jdbc &quot;3.6.16&quot;]]}} :scss {:src &quot;resources/scss&quot; :output-directory &quot;resources/public/css&quot; :output-extension &quot;css&quot;}) テーブル定義をしてみる 今回はSQLiteにて実施。 srcディレクトリ直下にlobosってディレクトリを作成して、その中にいろいろな設定を突っ込む必要があるらしい。 このディレクトリの名前は変えてもいいみたいだけど面倒になりそうだからこのままで。 まずは接続情報を記載するsrc/lobos/config.clj。 (ns lobos.config (:use lobos.connectivity)) (def db_dev {:classname &quot;org.sqlite.JDBC&quot; :subprotocol &quot;sqlite&quot; :subname &quot;./dev.sqlite3&quot;}) (open-global db_dev) 次にスキーマ操作で使われている(と思われる)ヘルパー、src/lobos/helpers.cljを定義。 (ns lobos.helpers (:refer-clojure :exclude [bigint boolean char double float time]) (:use (lobos schema))) (defn surrogate-key [table] (integer table :id :auto-inc :primary-key)) (defn timestamps [table] (-&gt; table (timestamp :updated_on) (timestamp :created_on (default (now))))) (defn refer-to [table ptable] (let [cname (-&gt; (-&gt;&gt; ptable name butlast (apply str)) (str &quot;_id&quot;) keyword)] (integer table cname [:refer ptable :id :on-delete :set-null]))) (defmacro tbl [name &amp; elements] `(-&gt; (table ~name) (timestamps) ~@(reverse elements) (surrogate-key))) で、目的のマイグレーション定義をsrc/lobos/migrations.cljに。 (ns lobos.migrations (:refer-clojure :exclude [alter drop bigint boolean char double float time]) (:use (lobos [migration :only [defmigration]] core schema config helpers))) (defmigration add-sites-table (up [] (create (tbl :sites (varchar :name 255) (varchar :url 255) (varchar :rss 255) (varchar :image 255) (integer :cat) ))) (down [] (drop (table :sites)))) マイグレーションの実行 ここが結構厄介だった。 というか、出来たといえば出来たんだけど、もっと正しい方法があるような気が・・・。 REPLにて以下を実行。 WARNINGは多分すでに存在するシンボルを置き換えてしまってることの警告だからとりあえず無視。 tpc git:(master)$ lein repl (use '(lobos connectivity core schema))nREPL server started on port 50092 on host 127.0.0.1 - nrepl://127.0.0.1:50092 REPL-y 0.3.1 Clojure 1.6.0 Docs: (doc function-name-here) (find-doc &quot;part-of-name-here&quot;) Source: (source function-name-here) Javadoc: (javadoc java-object-or-class-here) Exit: Control+D or (exit) or (quit) Results: Stored in vars *1, *2, *3, an exception in *e user=&gt; (use '(lobos connectivity core schema)) WARNING: alter already refers to: #'clojure.core/alter in namespace: user, being replaced by: #'lobos.core/alter WARNING: drop already refers to: #'clojure.core/drop in namespace: user, being replaced by: #'lobos.core/drop WARNING: boolean already refers to: #'clojure.core/boolean in namespace: user, being replaced by: #'lobos.schema/boolean WARNING: char already refers to: #'clojure.core/char in namespace: user, being replaced by: #'lobos.schema/char WARNING: double already refers to: #'clojure.core/double in namespace: user, being replaced by: #'lobos.schema/double WARNING: bigint already refers to: #'clojure.core/bigint in namespace: user, being replaced by: #'lobos.schema/bigint WARNING: float already refers to: #'clojure.core/float in namespace: user, being replaced by: #'lobos.schema/float WARNING: time already refers to: #'clojure.core/time in namespace: user, being replaced by: #'lobos.schema/time nil user=&gt; (require 'lobos.migrations) nil user=&gt; (migrate) add-sites-table nil user=&gt; 確認してみましょう。 tpc git:(master)$ sqlite3 dev.sqlite3 SQLite version 3.8.5 2014-08-15 22:37:57 Enter &quot;.help&quot; for usage hints.</div>
-    </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/">
             <i class="fa fa-chevron-down"></i>
         </a>
     </footer>
@@ -599,6 +603,13 @@
                 
                 <li>
                     
+                    <a href="http://yet.unresolved.xyz/tags/paizaio">
+                        paizaio
+                    </a>
+                </li>
+                
+                <li>
+                    
                     <a href="http://yet.unresolved.xyz/tags/php">
                         php
                     </a>
@@ -643,6 +654,13 @@
                     
                     <a href="http://yet.unresolved.xyz/tags/scss">
                         scss
+                    </a>
+                </li>
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz/tags/slack">
+                        slack
                     </a>
                 </li>
                 

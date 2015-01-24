@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unresolved </title>
+    <link>http://yet.unresolved.xyz/tags/slack/</link>
+    <language>en-us</language>
+    <author>Daisuke Tsuji</author>
+    <rights>(C) 2015</rights>
+    <updated>2015-01-25 20:52:46 &#43;0900 JST</updated>
+
+    
+      
+        <item>
+          <title>SlackAPIで遊ぶ</title>
+          <link>http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/</link>
+          <pubDate>Sun, 25 Jan 2015 20:52:46 JST</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/</guid>
+          <description>
+
+&lt;p&gt;最近
+&lt;a href=&#34;http://www.amazon.co.jp/gp/product/4797328355/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4797328355&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;ふつうのLinuxプログラミング&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=4797328355&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important; display:inline;&#34; /&gt;を読んでます。知りたいことが書かれてて楽しい！&lt;/p&gt;
+
+&lt;p&gt;でもずっと本読むのは飽きるよね。なのでSlackのAPIとか触ってみる。&lt;/p&gt;
+
+&lt;h2 id=&#34;slackapiの種類:4800906b877996c3dc902a23f48b0c5e&#34;&gt;SlackAPIの種類&lt;/h2&gt;
+
+&lt;p&gt;SlackのAPIはいくつか種類があるんだね、トリガになるパターンが違うのかな？&lt;/p&gt;
+
+&lt;p&gt;&lt;sup&gt;2015&lt;/sup&gt;&amp;frasl;&lt;sub&gt;01&lt;/sub&gt;/24時点でのAPIをまとめてみる。&lt;/p&gt;
+
+&lt;h3 id=&#34;slack-web-api-https-api-slack-com-web:4800906b877996c3dc902a23f48b0c5e&#34;&gt;&lt;a href=&#34;https://api.slack.com/web&#34;&gt;Slack Web API&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;指定したチャンネルの履歴とかユーザの一覧とか、Slackの情報を取得出来る。&lt;/p&gt;
+
+&lt;p&gt;Web APIなので、URLベースでの取得。&lt;/p&gt;
+
+&lt;h3 id=&#34;real-time-messaging-api-https-api-slack-com-rtm:4800906b877996c3dc902a23f48b0c5e&#34;&gt;&lt;a href=&#34;https://api.slack.com/rtm&#34;&gt;Real Time Messaging API&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Web Socketベースのリアルタイムチャット機能を提供する？&lt;/p&gt;
+
+&lt;p&gt;bot userがどうのこうのっていうのがよくわからない。&lt;/p&gt;
+
+&lt;h3 id=&#34;slackbot-remote-control-https-api-slack-com-slackbot:4800906b877996c3dc902a23f48b0c5e&#34;&gt;&lt;a href=&#34;https://api.slack.com/slackbot&#34;&gt;Slackbot Remote Control&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;SlackBotに喋らせたり出来る。ちょうかわいい。&lt;/p&gt;
+
+&lt;h3 id=&#34;incoming-webhooks-https-api-slack-com-incoming-webhooks:4800906b877996c3dc902a23f48b0c5e&#34;&gt;&lt;a href=&#34;https://api.slack.com/incoming-webhooks&#34;&gt;Incoming Webhooks&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;指定したチャンネルに投稿出来る。&lt;/p&gt;
+
+&lt;h3 id=&#34;outgoing-webhooks-https-api-slack-com-outgoing-webhooks:4800906b877996c3dc902a23f48b0c5e&#34;&gt;&lt;a href=&#34;https://api.slack.com/outgoing-webhooks&#34;&gt;Outgoing Webhooks&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;指定した単語に応じて指定したURLを叩ける。&lt;/p&gt;
+
+&lt;h3 id=&#34;slash-commands-https-api-slack-com-slash-commands:4800906b877996c3dc902a23f48b0c5e&#34;&gt;&lt;a href=&#34;https://api.slack.com/slash-commands&#34;&gt;Slash Commands&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;指定したスラッシュで始まる単語に応じてURLを叩けて、レスポンスがそのまま投稿される。&lt;/p&gt;
+
+&lt;p&gt;今回は発言のタイミングで発火する&lt;a href=&#34;https://api.slack.com/slash-commands&#34;&gt;Slash Commands&lt;/a&gt;を使ってみようかな！&lt;/p&gt;
+
+&lt;h2 id=&#34;スラッシュコマンドの追加:4800906b877996c3dc902a23f48b0c5e&#34;&gt;スラッシュコマンドの追加&lt;/h2&gt;
+
+&lt;p&gt;ここから新しくコマンドの追加が出来る。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://my.slack.com/services/new/slash-commands&#34;&gt;https://my.slack.com/services/new/slash-commands&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-24/new_command.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-24/new_command.png&#34; class=&#34;image&#34; alt=&#34;new_command&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;herokuでさくっとHello World作って試してみようかな。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-24/command_test.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-24/command_test.png&#34; class=&#34;image&#34; alt=&#34;command_test&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;おお、出るじゃん！でも&lt;code&gt;Only you can see this message&lt;/code&gt;って出てる、オレしか見れないんだね。&lt;/p&gt;
+
+&lt;h2 id=&#34;replを作ろう:4800906b877996c3dc902a23f48b0c5e&#34;&gt;REPLを作ろう&lt;/h2&gt;
+
+&lt;p&gt;なんかSlack上でプログラム打つと実行結果が返ってくるみたいなやつ誰かが作ってたよね？&lt;/p&gt;
+
+&lt;p&gt;あれ調べても出ないんだけどなんでなんだろう。&lt;/p&gt;
+
+&lt;p&gt;まあとりあえず、作ったばっかの&lt;a href=&#34;https://paiza.io/&#34;&gt;paiza.IO&lt;/a&gt;のAPIを叩くあれを導入してみる。&lt;/p&gt;
+
+&lt;p&gt;スラッシュコマンドAPIは&lt;code&gt;/command args&lt;/code&gt;って感じにやると、指定したURLに&lt;code&gt;text&lt;/code&gt;ってパラメータ名で&lt;code&gt;args&lt;/code&gt;が飛ばされるみたい。&lt;/p&gt;
+
+&lt;p&gt;なので&lt;code&gt;/repl ruby:p &amp;quot;hello&amp;quot;&lt;/code&gt;って感じで実行できるようにしようかな。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-24/slack_repl.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-24/slack_repl.png&#34; class=&#34;image&#34; alt=&#34;slack_repl&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;別にURL出してもいいんだけど・・・。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;compojure&lt;/code&gt;のルーティングはこんな。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(defroutes app-routes
+  (GET &amp;quot;/&amp;quot; [text]
+       (if (empty? text) &amp;quot;Invalid input.&amp;quot;
+         (let [[language source] (seq (.split text &amp;quot;:&amp;quot;))]
+           (str &amp;quot;[&amp;quot; language &amp;quot;] &amp;quot; source &amp;quot;\r\n-&amp;gt; &amp;quot; (repl language source))))))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;実行してみる:4800906b877996c3dc902a23f48b0c5e&#34;&gt;実行してみる&lt;/h2&gt;
+
+&lt;p&gt;さっき書いた通り、&lt;code&gt;/repl ruby:p &amp;quot;hello&amp;quot;&lt;/code&gt;でいけるかな。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-24/slack_repl_run.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-24/slack_repl_run.png&#34; class=&#34;image&#34; alt=&#34;slack_repl_run&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;いけるやん！&lt;/p&gt;
+
+&lt;p&gt;Javaだる！&lt;/p&gt;
+
+&lt;h2 id=&#34;コードの全貌:4800906b877996c3dc902a23f48b0c5e&#34;&gt;コードの全貌&lt;/h2&gt;
+
+&lt;p&gt;やばい&lt;code&gt;project.clj&lt;/code&gt;とかherokuから持ってきたままだしリファクタリングもしてないし超適当だ&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/dim0627/slack_repl&#34;&gt;dim0627/slack_repl&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
+    
+
+  </channel>
+</rss>

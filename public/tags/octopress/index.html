@@ -98,6 +98,10 @@
             
             
             
+            
+            
+            
+            
         </div>
     </div>
 
@@ -169,16 +173,16 @@
     <article class="post">
     <div class="eyecatch">
         
-        <a href="http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/"><img src="http://yet.unresolved.xyz/images/octopress.png" alt="Octopressのテーマを作ってみる"></a>
+        <a href="http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/"><img src="http://yet.unresolved.xyz/images/octopress.png" alt="Octopressのテーマを作ってみる"></a>
         
     </div>
     <div class="data">
         <span class="post-date">Sun, Sep 21, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/">Octopressのテーマを作ってみる</a></h1>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/">Octopressのテーマを作ってみる</a></h1>
         <div class="summary">元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。 でもオレはデザイナーじゃないから、あんまりがっつりやるのもやだよね。 てことで元のclassicテーマをパクって作ろう。 Octopressから移行してしまったので、スクリーンショットだけ載せとく。 テーマの変え方 そもそも変え方すら知らない。 てことで調べた。 どうやらここにテーマ単位のディレクトリが配置されるらしい。 octopress git:(source)$ ls .themes classic で、rake install[theme name]でインストール。 テーマの構成 作るにも、テーマの定義に何が必要かがわからぬ。 classicの中を見てみよう。 octopress git:(source)$ ls .themes/classic sass source んん、シンプル。 察するにsassがスタイル系でsourceがテンプレート系なのかな？ 別にページレイアウトを変えたいとか、そんなたいそうなことは考えてないので、sass内をいじるだけでよさそう。 sass内はどうなってるのかな？ octopress git:(source)$ ls .themes/classic/sass _base.scss _partials.scss base custom partials plugins screen.scss octopress git:(source)$ ls .themes/classic/sass/custom _colors.scss _fonts.scss _layout.scss _styles.scss で、.themes/classic/sass/custom/_styles.scssがオーバーライド用のファイルなわけだな。 // This File is imported last, and will override other styles in the cascade // Add styles here to make changes</div>
     </div>
     <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/">
+        <a href="http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/">
             <i class="fa fa-chevron-down"></i>
         </a>
     </footer>
@@ -209,16 +213,16 @@
     <article class="post">
     <div class="eyecatch">
         
-        <a href="http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/"><img src="http://yet.unresolved.xyz/images/octopress.png" alt="OctopressのサイドバーにGravatarを表示させる"></a>
+        <a href="http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/"><img src="http://yet.unresolved.xyz/images/octopress.png" alt="OctopressのサイドバーにGravatarを表示させる"></a>
         
     </div>
     <div class="data">
         <span class="post-date">Sat, Sep 20, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/">OctopressのサイドバーにGravatarを表示させる</a></h1>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/">OctopressのサイドバーにGravatarを表示させる</a></h1>
         <div class="summary">Octopressのサイドバーってどうなってんの？ そもそもOctopressの構成がまだよくわかってないのでそこから勉強しよう。 どうやらデフォルトで準備されてるサイドバーはここに格納されているらしい。 octopress git:(source)$ ls source/_includes/asides/ delicious.html github.html googleplus.html pinboard.html recent_posts.html で、自分で作りたい場合はここに格納するっぽい。 octopress git:(source)$ ls source/_includes/custom/asides about.html twitter.html って_config.ymlに書いてあった。 # list each of the sidebar modules you want to include, in the order you want them to appear. # To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like 'custom/asides/custom_aside_name.html' default_asides: [custom/asides/about.html, asides/recent_posts.html, custom/asides/twitter.html] Gravatarの情報って持って来れるの？ ちょっとだけ調べてみたらGravatarの画像だけ持ってくるpluginは用意されてるっぽい。 でもどうせなら自己紹介のところとかも欲しいよね。 で、Gravatarに開発者向け資料がありました。 しっかり読んでないけど、JSONで返せるっぽいからこれを使えばいいかな。 ハッシュを指定する必要があるみたいなので、公式から取得しとく。 作るぞ なんか最初からsource/_include/custom/asidesにabout.htmlってのがあるし、これにプロフィールを書こうかな。 まず取得したハッシュを_config.ymlに定義しちゃおう。 #</div>
     </div>
     <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/">
+        <a href="http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/">
             <i class="fa fa-chevron-down"></i>
         </a>
     </footer>
@@ -507,6 +511,13 @@
                 
                 <li>
                     
+                    <a href="http://yet.unresolved.xyz/tags/paizaio">
+                        paizaio
+                    </a>
+                </li>
+                
+                <li>
+                    
                     <a href="http://yet.unresolved.xyz/tags/php">
                         php
                     </a>
@@ -551,6 +562,13 @@
                     
                     <a href="http://yet.unresolved.xyz/tags/scss">
                         scss
+                    </a>
+                </li>
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz/tags/slack">
+                        slack
                     </a>
                 </li>
                 

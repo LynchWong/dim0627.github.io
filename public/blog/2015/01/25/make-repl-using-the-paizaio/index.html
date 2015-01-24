@@ -8,18 +8,18 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="OctopressのサイドバーにGravatarを表示させる | Unresolved">
-<meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/">
-<meta property="og:description" content="Octopressのサイドバーってどうなってんの？ そもそもOctopressの構成がまだよくわかってないのでそこから勉強しよう。 どうやらデフォルトで準備されてるサイドバーはここに格納されているらしい。 octopress git:(source)$ ls source/_includes/asides/ delicious.html github.html googleplus.html pinboard.html recent_posts.html で、自分で作りたい場合はここに格納するっぽい。 octopress git:(source)$ ls source/_includes/custom/asides about.html twitter.html って_config.ymlに書いてあった。 # list each of the sidebar modules you want to include, in the order you want them to appear. # To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like &#39;custom/asides/custom_aside_name.html&#39; default_asides: [custom/asides/about.html, asides/recent_posts.html, custom/asides/twitter.html] Gravatarの情報って持って来れるの？ ちょっとだけ調べてみたらGravatarの画像だけ持ってくるpluginは用意されてるっぽい。 でもどうせなら自己紹介のところとかも欲しいよね。 で、Gravatarに開発者向け資料がありました。 しっかり読んでないけど、JSONで返せるっぽいからこれを使えばいいかな。 ハッシュを指定する必要があるみたいなので、公式から取得しとく。 作るぞ なんか最初からsource/_include/custom/asidesにabout.htmlってのがあるし、これにプロフィールを書こうかな。 まず取得したハッシュを_config.ymlに定義しちゃおう。 #">
+<meta property="og:title" content="paiza.ioのAPIを使ってreplを作る | Unresolved">
+<meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/">
+<meta property="og:description" content="paizaが面白いAPIを公開してたから、そのうち使ってみたいと思ってたんだよね。 ブラウザでプログラミング・実行ができる「オンライン実行環境」| paiza.IO ちょっとSlackAPIで使ってみたいからこの機会に軽くだけ触ってみる。 何が出来る？ たくさんの言語のREPLが使える！すごい！ ただ、コンパイル言語はそんな気軽に使える感じではないみたい。 例えばJavaで言えば、System.out.println(&quot;Hello&quot;);だけじゃなくてクラス定義から含めなきゃいけないみたいに。 どうやって使う？ どうやらSwaggerっていうOSSを使ってるみたい。 paiza.io上でのデモも使える。 Swagger UI なんか動かないなと思ったらhttpsでhttpのリソースを参照してたみたいで、ブロックされてた。 Mixed Content: The page at &#39;https://api.paiza.io/docs/swagger/#!/runners/&#39; was loaded over HTTPS, but requested an insecure XMLHttpRequest endpoint &#39;http://api.paiza.io/docs/swagger-docs/runners.json?api_key=guest&#39;. This request has been blocked; the content must be served over HTTPS. 評価パターンは3つあるみたい。 runners/create コードの実行が出来る。 レスポンスにidとstatusが返ってきて、このidを使って実行結果とかを見る。 runners/get_status 実行結果を見ることが出来る。 completedとかそういうレベル。 runners/get_details 実行結果として出力された値とかを見ることが出来る。 runners/createで実行してrunners/get_detailsで結果を見る感じ。 Clojureから叩こう 使い方はわかったしURL叩けば済む話だしさっさと作っちゃう。 HTTPアクセスはJavaのクラス使おうかなと思ったけど、dakrone/clj-httpっていうすごく優秀！なライブラリがあったのでこれを使います。 まずrunners/get/createを実行するところ。 (defn repl [language source] (let [run-id (-&gt; (httpc/post &quot;http://api.paiza.io/runners/create&quot; {:form-params {:source_code source :language">
 
-<meta property="og:image" content="http://yet.unresolved.xyz/images/octopress.png">
+<meta property="og:image" content="http://yet.unresolved.xyz/images/paizaio.png">
 
 
 <meta property="og:site_name" content="Unresolved">
 
 <title>
     
-    OctopressのサイドバーにGravatarを表示させる | Unresolved
+    paiza.ioのAPIを使ってreplを作る | Unresolved
     
 </title>
 
@@ -103,6 +103,10 @@
             
             
             
+            
+            
+            
+            
         </div>
     </div>
 
@@ -110,141 +114,112 @@
 
 
 <article class="post post-single">
-    <span class="post-date">Sat, Sep 20, 2014</span>
-    <h1 class="post-title">OctopressのサイドバーにGravatarを表示させる</h1>
+    <span class="post-date">Sun, Jan 25, 2015</span>
+    <h1 class="post-title">paiza.ioのAPIを使ってreplを作る</h1>
 
     <div class="eyecatch">
         
-        <img src="http://yet.unresolved.xyz/images/octopress.png" alt="OctopressのサイドバーにGravatarを表示させる">
+        <img src="http://yet.unresolved.xyz/images/paizaio.png" alt="paiza.ioのAPIを使ってreplを作る">
         
     </div>
 
     <div class="post-content">
         
 
-<h2 id="octopressのサイドバーってどうなってんの:c73b8990ae6ff308f2649661fb572fc8">Octopressのサイドバーってどうなってんの？</h2>
+<p><a href="http://paiza.jp/">paiza</a>が面白いAPIを公開してたから、そのうち使ってみたいと思ってたんだよね。</p>
 
-<p>そもそもOctopressの構成がまだよくわかってないのでそこから勉強しよう。</p>
+<p><a href="https://paiza.io/">ブラウザでプログラミング・実行ができる「オンライン実行環境」| paiza.IO</a></p>
 
-<p>どうやらデフォルトで準備されてるサイドバーはここに格納されているらしい。</p>
+<p>ちょっとSlackAPIで使ってみたいからこの機会に軽くだけ触ってみる。</p>
 
-<pre><code class="language-sh">octopress git:(source)$ ls source/_includes/asides/
-delicious.html    github.html       googleplus.html   pinboard.html     recent_posts.html
+<h2 id="何が出来る:263a1859984e07d4bd8e496e6113e0fc">何が出来る？</h2>
+
+<p>たくさんの言語のREPLが使える！すごい！</p>
+
+<p>ただ、コンパイル言語はそんな気軽に使える感じではないみたい。</p>
+
+<p>例えばJavaで言えば、<code>System.out.println(&quot;Hello&quot;);</code>だけじゃなくてクラス定義から含めなきゃいけないみたいに。</p>
+
+<h2 id="どうやって使う:263a1859984e07d4bd8e496e6113e0fc">どうやって使う？</h2>
+
+<p>どうやら<a href="http://swagger.io/">Swagger</a>っていうOSSを使ってるみたい。</p>
+
+<p>paiza.io上でのデモも使える。</p>
+
+<p><a href="http://api.paiza.io/docs/swagger/#!/runners/">Swagger UI</a></p>
+
+<p>なんか動かないなと思ったら<code>https</code>で<code>http</code>のリソースを参照してたみたいで、ブロックされてた。</p>
+
+<pre><code>Mixed Content: The page at 'https://api.paiza.io/docs/swagger/#!/runners/' was loaded over HTTPS, but requested an insecure XMLHttpRequest endpoint 'http://api.paiza.io/docs/swagger-docs/runners.json?api_key=guest'. This request has been blocked; the content must be served over HTTPS.
 </code></pre>
 
-<p>で、自分で作りたい場合はここに格納するっぽい。</p>
+<p>評価パターンは3つあるみたい。</p>
 
-<pre><code class="language-sh">octopress git:(source)$ ls source/_includes/custom/asides
-about.html   twitter.html
+<h3 id="runners-create:263a1859984e07d4bd8e496e6113e0fc">runners/create</h3>
+
+<p>コードの実行が出来る。</p>
+
+<p>レスポンスに<code>id</code>と<code>status</code>が返ってきて、この<code>id</code>を使って実行結果とかを見る。</p>
+
+<h3 id="runners-get-status:263a1859984e07d4bd8e496e6113e0fc">runners/get_status</h3>
+
+<p>実行結果を見ることが出来る。</p>
+
+<p><code>completed</code>とかそういうレベル。</p>
+
+<h3 id="runners-get-details:263a1859984e07d4bd8e496e6113e0fc">runners/get_details</h3>
+
+<p>実行結果として出力された値とかを見ることが出来る。</p>
+
+<p><code>runners/create</code>で実行して<code>runners/get_details</code>で結果を見る感じ。</p>
+
+<h2 id="clojureから叩こう:263a1859984e07d4bd8e496e6113e0fc">Clojureから叩こう</h2>
+
+<p>使い方はわかったしURL叩けば済む話だしさっさと作っちゃう。</p>
+
+<p>HTTPアクセスはJavaのクラス使おうかなと思ったけど、<a href="https://github.com/dakrone/clj-http">dakrone/clj-http</a>っていうすごく優秀！なライブラリがあったのでこれを使います。</p>
+
+<p>まず<code>runners/get/create</code>を実行するところ。</p>
+
+<pre><code class="language-clojure">(defn repl [language source]
+  (let [run-id (-&gt; (httpc/post &quot;http://api.paiza.io/runners/create&quot;
+                               {:form-params {:source_code source
+                                              :language language
+                                              :api_key &quot;guest&quot;}
+                                :as :json})
+                   :body
+                   :id)]
+    (get-res run-id)))
 </code></pre>
 
-<p>って<code>_config.yml</code>に書いてあった。</p>
+<p><code>get-res</code>は後述。<code>get_details</code>を実行するための関数。</p>
 
-<pre><code class="language-yml"># list each of the sidebar modules you want to include, in the order you want them to appear.
-# To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like 'custom/asides/custom_aside_name.html'
-default_asides: [custom/asides/about.html, asides/recent_posts.html, custom/asides/twitter.html]
+<p><code>api_key</code>ってこれでいいのだろうか。</p>
+
+<p>とりあえず動いてはいる！</p>
+
+<p>実行結果の取得はこんな感じ。</p>
+
+<pre><code class="language-clojure">(defn get-res [run-id]
+  (let [res (httpc/get (str &quot;http://api.paiza.io/runners/get_details?id=&quot; run-id &quot;&amp;api_key=guest&quot;)
+                           {:as :json})]
+    (if (= (-&gt; res :body :status) &quot;running&quot;)
+      (do (Thread/sleep 100) (recur run-id))
+      (-&gt; res :body :stdout))))
 </code></pre>
 
-<h2 id="gravatarの情報って持って来れるの:c73b8990ae6ff308f2649661fb572fc8">Gravatarの情報って持って来れるの？</h2>
+<p><code>runners/create</code>を実行した直後は<code>status</code>が<code>running</code>なので、結果が取得できなかった。</p>
 
-<p>ちょっとだけ調べてみたらGravatarの画像だけ持ってくるpluginは用意されてるっぽい。</p>
-
-<p>でもどうせなら自己紹介のところとかも欲しいよね。</p>
-
-<p>で、Gravatarに<a href="https://ja.gravatar.com/site/implement/">開発者向け資料</a>がありました。</p>
-
-<p>しっかり読んでないけど、<a href="https://ja.gravatar.com/site/implement/profiles/json/">JSONで返せるっぽい</a>からこれを使えばいいかな。</p>
-
-<p>ハッシュを指定する必要があるみたいなので、公式から取得しとく。</p>
-
-<h2 id="作るぞ:c73b8990ae6ff308f2649661fb572fc8">作るぞ</h2>
-
-<p>なんか最初から<code>source/_include/custom/asides</code>に<code>about.html</code>ってのがあるし、これにプロフィールを書こうかな。</p>
-
-<p>まず取得したハッシュを<code>_config.yml</code>に定義しちゃおう。</p>
-
-<pre><code class="language-ruby"># Gravatar
-gravatar_hash: 1e092e9f2cda827deb8623be2e846936
-</code></pre>
-
-<p>で、<code>about.html</code>からハッシュを参照してJSONを取得しよう。</p>
-
-<pre><code class="language-html">&lt;section id=&quot;about&quot; style=&quot;display: none;&quot;&gt;
-    &lt;h1&gt;About Me&lt;/h1&gt;
-    &lt;br /&gt;
-    &lt;img id=&quot;photo&quot;&gt;
-    &lt;br /&gt;
-    &lt;div id=&quot;displayname&quot;&gt;&lt;/div&gt;
-    &lt;br /&gt;
-    &lt;div id=&quot;aboutme&quot;&gt;&lt;/div&gt;
-    &lt;div id=&quot;currentlocation&quot;&gt;&lt;/div&gt;
-    &lt;br /&gt;
-    &lt;div id=&quot;urls&quot;&gt;&lt;/div&gt;
-&lt;/section&gt;
-&lt;script&gt;
-    $(function() {
-        var url = &quot;https://ja.gravatar.com/{% raw %}{{ site.gravatar_hash }}{% endraw %}.json?callback=?&quot;;
-        $.getJSON(url)
-            .done(function(data) {
-                var entry = data.entry[0];
-                $(&quot;#photo&quot;).attr(&quot;src&quot;, entry.photos[0].value);
-                $(&quot;#displayname&quot;).html(entry.displayName);
-                $(&quot;#aboutme&quot;).html(entry.aboutMe);
-                // $(&quot;#currentlocation&quot;).html(entry.currentLocation);
-                entry.urls.forEach(function(el){
-                    $(&quot;#urls&quot;).append($(&quot;&lt;a href='&quot; + el.value + &quot;'&gt;&quot; + el.title + &quot;&lt;/a&gt;&lt;br /&gt;&quot;));
-                });
-
-                $(&quot;#about&quot;).show();
-            });
-    });
-&lt;/script&gt;
-</code></pre>
-
-<p>あとはCSSにちょちょいとスタイルをつけるだけ。</p>
-
-<p>独自のスタイルは<code>.themes/classic/sass/custom/_styles.scss</code>に書けばいいぽい。</p>
-
-<p>SASSとかも頃合い見て勉強しなきゃいけないかな・・・。</p>
-
-<pre><code class="language-css">img#photo {
-    display: block;
-    margin: auto;
-}
-
-div#displayname {
-    text-align: center;
-    font-weight: bold;
-}
-
-div#aboutme {
-}
-
-div#currentlocation {
-    text-align: center;
-}
-
-div#urls {
-    text-align: center;
-}
-</code></pre>
-
-<p>とりあえず表示出来たからここまででいいや。</p>
-
-<p>ついでに自分用のtheme作っちゃったから、ある程度整備出来たらgithubにあげよっかな。</p>
-
-<h2 id="参考にさせて頂きました:c73b8990ae6ff308f2649661fb572fc8">参考にさせて頂きました</h2>
-
-<p><a href="http://blog.awairo.net/blog/2013/12/24/octopress-aside-of-getting-profile-from-gravatar/">Gravatarのプロフィールを表示するOctopressのサイドバー</a></p>
+<p>なのでスリープかけながら<code>running</code>から外れるまで回す苦しい感じに・・・。</p>
 
     </div>
 
     <aside class="post-ad pc">
-        <iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=48&l=st1&mode=books-jp&search=ruby&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="728" height="90" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+        <iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=48&l=st1&mode=books-jp&search=heroku&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="728" height="90" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
     </aside>
 
     <aside class="post-ad sp">
-<iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=12&l=st1&mode=books-jp&search=ruby&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="300" height="250" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+<iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=12&l=st1&mode=books-jp&search=heroku&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="300" height="250" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
     </aside>
 
     
@@ -256,23 +231,23 @@ div#urls {
         <ul class="post-tags">
             
             <li>
-                <a href="http://yet.unresolved.xyz/tags/ruby">
+                <a href="http://yet.unresolved.xyz/tags/heroku">
                     <i class="fa fa-tags"></i>
-                    ruby
+                    heroku
                 </a>
             </li>
             
             <li>
-                <a href="http://yet.unresolved.xyz/tags/gravatar">
+                <a href="http://yet.unresolved.xyz/tags/paizaio">
                     <i class="fa fa-tags"></i>
-                    gravatar
+                    paizaio
                 </a>
             </li>
             
             <li>
-                <a href="http://yet.unresolved.xyz/tags/octopress">
+                <a href="http://yet.unresolved.xyz/tags/clojure">
                     <i class="fa fa-tags"></i>
-                    octopress
+                    clojure
                 </a>
             </li>
             
@@ -285,6 +260,7 @@ div#urls {
             
             
             
+            <li><a href="http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/">SlackAPIで遊ぶ</a></li>
             
             
             
@@ -298,14 +274,15 @@ div#urls {
             
             
             
+            <li><a href="http://yet.unresolved.xyz/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/">Clojureで新卒の女の子を射止めた話</a></li>
             
             
             
             
             
+            <li><a href="http://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/">Clojureのテンプレートエンジンについて</a></li>
             
             
-            <li><a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">ブログをOctopressからHugoに移行した</a></li>
             
             
             
@@ -321,6 +298,7 @@ div#urls {
             
             
             
+            <li><a href="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/">ClojureのWebアプリをDocker &#43; Beanstalkで動かす</a></li>
             
             
             
@@ -330,17 +308,19 @@ div#urls {
             
             
             
+            <li><a href="http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/">Lobosでマイグレーションができない in Heroku</a></li>
             
             
             
             
             
-            <li><a href="http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/">OctopressをW3Cのバリデーションにパスさせる</a></li>
+            <li><a href="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/">Lobosを使ってマイグレーションをする</a></li>
             
             
             
             
             
+            <li><a href="http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/">LeiningenでSCSSを自動コンパイルする</a></li>
             
             
             
@@ -357,7 +337,6 @@ div#urls {
             
             
             
-            <li><a href="http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/">Octopressのサイドバーを下部に移動する</a></li>
             
             
             
@@ -383,13 +362,11 @@ div#urls {
             
             
             
-            <li><a href="http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/">_config.ymlに書いたdescriptionが設定されない</a></li>
             
             
             
             
             
-            <li><a href="http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/">Octopressのテーマを作ってみる</a></li>
             
             
             
@@ -403,7 +380,15 @@ div#urls {
             
             
             
-            <li><a href="http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/">GitHub PagesにOctopressをのっけてみる</a></li>
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
             
         </ul>
@@ -415,16 +400,16 @@ div#urls {
         <div class="move">
             <div class="prev">
                 
-                <a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/">
+                <a href="http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/">
                     <i class="fa fa-chevron-left"></i>
-                    gitのリポジトリ単位にproxyの設定をする
+                    SlackAPIで遊ぶ
                 </a>
                 
             </div>
             <div class="next">
                 
-                <a href="http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/">
-                    GitHub PagesにOctopressをのっけてみる
+                <a href="http://yet.unresolved.xyz/blog/2015/01/22/install-postgresql-on-centos/">
+                    Vagrant &#43; CentOS &#43; PostgreSQLを最速で構築
                     <i class="fa fa-chevron-right"></i>
                 </a>
                 
@@ -712,6 +697,13 @@ var disqus_shortname = 'unresolved';
                 
                 <li>
                     
+                    <a href="http://yet.unresolved.xyz/tags/paizaio">
+                        paizaio
+                    </a>
+                </li>
+                
+                <li>
+                    
                     <a href="http://yet.unresolved.xyz/tags/php">
                         php
                     </a>
@@ -756,6 +748,13 @@ var disqus_shortname = 'unresolved';
                     
                     <a href="http://yet.unresolved.xyz/tags/scss">
                         scss
+                    </a>
+                </li>
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz/tags/slack">
+                        slack
                     </a>
                 </li>
                 

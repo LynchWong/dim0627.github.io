@@ -3,8 +3,18 @@
   
   <url>
     <loc>http://yet.unresolved.xyz/</loc>
-    <lastmod>2015-01-22T15:37:14+09:00</lastmod>
+    <lastmod>2015-01-25T20:52:46+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/</loc>
+    <lastmod>2015-01-25T20:52:46+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/</loc>
+    <lastmod>2015-01-25T00:58:15+09:00</lastmod>
   </url>
   
   <url>
@@ -83,12 +93,12 @@
   </url>
   
   <url>
-    <loc>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</loc>
     <lastmod>2014-10-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</loc>
     <lastmod>2014-10-23T00:00:00+00:00</lastmod>
   </url>
   
@@ -128,7 +138,7 @@
   </url>
   
   <url>
-    <loc>http://yet.unresolved.xyz/blog/2014/09/21/make-new-theme-flatten/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/</loc>
     <lastmod>2014-09-21T00:00:00+00:00</lastmod>
   </url>
   
@@ -138,7 +148,7 @@
   </url>
   
   <url>
-    <loc>http://yet.unresolved.xyz/blog/2014/09/20/make-gravatar-sidebar/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/</loc>
     <lastmod>2014-09-20T00:00:00+00:00</lastmod>
   </url>
   
