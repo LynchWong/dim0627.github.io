@@ -13,7 +13,7 @@ Params:
   Github: "dim0627"
   ShowRelatedPost: True
   Disqus: "unresolved"
-  SyntaxHighlightTheme: "solarized_light.min.css"
+  SyntaxHighlightTheme: "solarized_dark.min.css"
   ShowTagCloud: True
 
 Indexes:
