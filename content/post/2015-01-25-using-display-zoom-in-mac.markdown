@@ -4,7 +4,7 @@ date: 2015-01-25T23:02:59+09:00
 eyecatch: "osx.png"
 slug: "using-display-zoom-in-mac"
 tags: ["os x", "mac", "util"]
-title: "Macで画面をズームする"
+title: "Macで画面の一部をズームする"
 ---
 
 Macを操作しながらプレゼンする人って、たまに画面の一部だけをズームしたりするよね。
