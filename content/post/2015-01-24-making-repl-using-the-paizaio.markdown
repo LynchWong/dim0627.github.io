@@ -59,7 +59,7 @@ paiza.IO上でのデモも使える。
 
 HTTPアクセスはJavaのクラスを使おうかなと思ったけど、[dakrone/clj-http](https://github.com/dakrone/clj-http)っていうすごく優秀！なライブラリがあったのでこれを使います。
 
-まず`runners/get/create`を実行するところ。
+まず`runners/create`を実行するところ。
 
 ``` clojure
 (defn repl [language source]
