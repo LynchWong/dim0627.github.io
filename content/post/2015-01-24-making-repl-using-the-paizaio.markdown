@@ -4,7 +4,7 @@ date: 2015-01-25T00:58:15+09:00
 eyecatch: "paizaio.png"
 slug: "make-repl-using-the-paizaio"
 tags: ["heroku", "paizaio", "clojure"]
-title: "paiza.ioのAPIを使ってreplを作る"
+title: "paiza.IOのAPIを使ってreplを作る"
 ---
 
 [paiza](http://paiza.jp/)が面白いAPIを公開してたから、そのうち使ってみたいと思ってたんだよね。
@@ -25,7 +25,7 @@ title: "paiza.ioのAPIを使ってreplを作る"
 
 どうやら[Swagger](http://swagger.io/)っていうOSSを使ってるみたい。
 
-paiza.io上でのデモも使える。
+paiza.IO上でのデモも使える。
 
 [Swagger UI](http://api.paiza.io/docs/swagger/#!/runners/)
 
@@ -57,7 +57,7 @@ paiza.io上でのデモも使える。
 
 使い方はわかったしURL叩けば済む話だしさっさと作っちゃう。
 
-HTTPアクセスはJavaのクラス使おうかなと思ったけど、[dakrone/clj-http](https://github.com/dakrone/clj-http)っていうすごく優秀！なライブラリがあったのでこれを使います。
+HTTPアクセスはJavaのクラスを使おうかなと思ったけど、[dakrone/clj-http](https://github.com/dakrone/clj-http)っていうすごく優秀！なライブラリがあったのでこれを使います。
 
 まず`runners/get/create`を実行するところ。
 

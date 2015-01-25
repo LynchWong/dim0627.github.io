@@ -11,7 +11,7 @@
     
       
         <item>
-          <title>paiza.ioのAPIを使ってreplを作る</title>
+          <title>paiza.IOのAPIを使ってreplを作る</title>
           <link>http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/</link>
           <pubDate>Sun, 25 Jan 2015 00:58:15 JST</pubDate>
           <author>Daisuke Tsuji</author>
@@ -36,7 +36,7 @@
 
 &lt;p&gt;どうやら&lt;a href=&#34;http://swagger.io/&#34;&gt;Swagger&lt;/a&gt;っていうOSSを使ってるみたい。&lt;/p&gt;
 
-&lt;p&gt;paiza.io上でのデモも使える。&lt;/p&gt;
+&lt;p&gt;paiza.IO上でのデモも使える。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://api.paiza.io/docs/swagger/#!/runners/&#34;&gt;Swagger UI&lt;/a&gt;&lt;/p&gt;
 
@@ -69,7 +69,7 @@
 
 &lt;p&gt;使い方はわかったしURL叩けば済む話だしさっさと作っちゃう。&lt;/p&gt;
 
-&lt;p&gt;HTTPアクセスはJavaのクラス使おうかなと思ったけど、&lt;a href=&#34;https://github.com/dakrone/clj-http&#34;&gt;dakrone/clj-http&lt;/a&gt;っていうすごく優秀！なライブラリがあったのでこれを使います。&lt;/p&gt;
+&lt;p&gt;HTTPアクセスはJavaのクラスを使おうかなと思ったけど、&lt;a href=&#34;https://github.com/dakrone/clj-http&#34;&gt;dakrone/clj-http&lt;/a&gt;っていうすごく優秀！なライブラリがあったのでこれを使います。&lt;/p&gt;
 
 &lt;p&gt;まず&lt;code&gt;runners/get/create&lt;/code&gt;を実行するところ。&lt;/p&gt;
 
