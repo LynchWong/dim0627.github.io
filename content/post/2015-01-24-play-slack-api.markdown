@@ -3,7 +3,7 @@ comments: true
 date: 2015-01-25T20:52:46+09:00
 eyecatch: "slack.png"
 slug: "play-slack-api"
-tags: ["slack", "heroku", "clojure"]
+tags: ["heroku", "slack"]
 title: "SlackAPIで遊ぶ"
 ---
 
