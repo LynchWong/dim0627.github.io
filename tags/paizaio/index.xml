@@ -71,7 +71,7 @@
 
 &lt;p&gt;HTTPアクセスはJavaのクラスを使おうかなと思ったけど、&lt;a href=&#34;https://github.com/dakrone/clj-http&#34;&gt;dakrone/clj-http&lt;/a&gt;っていうすごく優秀！なライブラリがあったのでこれを使います。&lt;/p&gt;
 
-&lt;p&gt;まず&lt;code&gt;runners/get/create&lt;/code&gt;を実行するところ。&lt;/p&gt;
+&lt;p&gt;まず&lt;code&gt;runners/create&lt;/code&gt;を実行するところ。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(defn repl [language source]
   (let [run-id (-&amp;gt; (httpc/post &amp;quot;http://api.paiza.io/runners/create&amp;quot;

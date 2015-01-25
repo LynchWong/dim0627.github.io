@@ -10,7 +10,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="paiza.IOのAPIを使ってreplを作る | Unresolved">
 <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/">
-<meta property="og:description" content="paizaが面白いAPIを公開してたから、そのうち使ってみたいと思ってたんだよね。 ブラウザでプログラミング・実行ができる「オンライン実行環境」| paiza.IO ちょっとSlackAPIで使ってみたいからこの機会に軽くだけ触ってみる。 何が出来る？ たくさんの言語のREPLが使える！すごい！ ただ、コンパイル言語はそんな気軽に使える感じではないみたい。 例えばJavaで言えば、System.out.println(&quot;Hello&quot;);だけじゃなくてクラス定義から含めなきゃいけないみたいに。 どうやって使う？ どうやらSwaggerっていうOSSを使ってるみたい。 paiza.IO上でのデモも使える。 Swagger UI なんか動かないなと思ったらhttpsでhttpのリソースを参照してたみたいで、ブロックされてた。 Mixed Content: The page at &#39;https://api.paiza.io/docs/swagger/#!/runners/&#39; was loaded over HTTPS, but requested an insecure XMLHttpRequest endpoint &#39;http://api.paiza.io/docs/swagger-docs/runners.json?api_key=guest&#39;. This request has been blocked; the content must be served over HTTPS. 評価パターンは3つあるみたい。 runners/create コードの実行が出来る。 レスポンスにidとstatusが返ってきて、このidを使って実行結果とかを見る。 runners/get_status 実行結果を見ることが出来る。 completedとかそういうレベル。 runners/get_details 実行結果として出力された値とかを見ることが出来る。 runners/createで実行してrunners/get_detailsで結果を見る感じ。 Clojureから叩こう 使い方はわかったしURL叩けば済む話だしさっさと作っちゃう。 HTTPアクセスはJavaのクラスを使おうかなと思ったけど、dakrone/clj-httpっていうすごく優秀！なライブラリがあったのでこれを使います。 まずrunners/get/createを実行するところ。 (defn repl [language source] (let [run-id (-&gt; (httpc/post &quot;http://api.paiza.io/runners/create&quot; {:form-params {:source_code source :language">
+<meta property="og:description" content="paizaが面白いAPIを公開してたから、そのうち使ってみたいと思ってたんだよね。 ブラウザでプログラミング・実行ができる「オンライン実行環境」| paiza.IO ちょっとSlackAPIで使ってみたいからこの機会に軽くだけ触ってみる。 何が出来る？ たくさんの言語のREPLが使える！すごい！ ただ、コンパイル言語はそんな気軽に使える感じではないみたい。 例えばJavaで言えば、System.out.println(&quot;Hello&quot;);だけじゃなくてクラス定義から含めなきゃいけないみたいに。 どうやって使う？ どうやらSwaggerっていうOSSを使ってるみたい。 paiza.IO上でのデモも使える。 Swagger UI なんか動かないなと思ったらhttpsでhttpのリソースを参照してたみたいで、ブロックされてた。 Mixed Content: The page at &#39;https://api.paiza.io/docs/swagger/#!/runners/&#39; was loaded over HTTPS, but requested an insecure XMLHttpRequest endpoint &#39;http://api.paiza.io/docs/swagger-docs/runners.json?api_key=guest&#39;. This request has been blocked; the content must be served over HTTPS. 評価パターンは3つあるみたい。 runners/create コードの実行が出来る。 レスポンスにidとstatusが返ってきて、このidを使って実行結果とかを見る。 runners/get_status 実行結果を見ることが出来る。 completedとかそういうレベル。 runners/get_details 実行結果として出力された値とかを見ることが出来る。 runners/createで実行してrunners/get_detailsで結果を見る感じ。 Clojureから叩こう 使い方はわかったしURL叩けば済む話だしさっさと作っちゃう。 HTTPアクセスはJavaのクラスを使おうかなと思ったけど、dakrone/clj-httpっていうすごく優秀！なライブラリがあったのでこれを使います。 まずrunners/createを実行するところ。 (defn repl [language source] (let [run-id (-&gt; (httpc/post &quot;http://api.paiza.io/runners/create&quot; {:form-params {:source_code source :language">
 
 <meta property="og:image" content="http://yet.unresolved.xyz/images/paizaio.png">
 
@@ -179,7 +179,7 @@
 
 <p>HTTPアクセスはJavaのクラスを使おうかなと思ったけど、<a href="https://github.com/dakrone/clj-http">dakrone/clj-http</a>っていうすごく優秀！なライブラリがあったのでこれを使います。</p>
 
-<p>まず<code>runners/get/create</code>を実行するところ。</p>
+<p>まず<code>runners/create</code>を実行するところ。</p>
 
 <pre><code class="language-clojure">(defn repl [language source]
   (let [run-id (-&gt; (httpc/post &quot;http://api.paiza.io/runners/create&quot;
