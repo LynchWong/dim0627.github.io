@@ -11,9 +11,9 @@
 <meta property="og:url" content="http://yet.unresolved.xyz">
 <meta property="og:title" content="Unresolved">
 
-<meta property="og:description" content="Macを操作しながらプレゼンする人って、たまに画面の一部だけをズームしたりするよね。 あれどうやるのか気になってたんだけど、標準の機能で出来るっぽい。 設定画面から、 でこれ。 コントロールキー押しながらスクロールするとズームする！ Macのショートカットキーの表記が未だに慣れない。">
+<meta property="og:description" content="ふつうのLinuxプログラミング Linuxの仕組みから学べるgccプログラミングの王道 読もうと思ったきっかけ Ruby書かないくせにるびまのインタビューの奴が好きで、著者である青木さんの記事を見てた時に知った。 Rubyist Magazine - Rubyist Hotlinks 【第 17 回】 青木峰郎さん Kernelとかいつかは触れたいけど実際どこから入ればいいかわからない、って人、結構いると思うんだよね。 オレもその一人で、この本はなんか、その入り口になるんじゃないかなって期待があった。 実際評判も良かったし。 前提 C言語、書けないんだよね。 高校の頃に書いたっきり、1行も、いや！1文字も書いてない！ 他人のコードを読む場面もなかったわけじゃないけど、ほぼ初心者としてこの本を読みました。 プロトタイプ宣言やらヘッダファイルやらを理解してたくらい。 ちなみに対象読者は、 構造体とポインタくらいはわかる って書いてあるんだけど、「とにかくプログラミング！」な本ではないので、そこまで必要はなさそう。 あ、唯一困ったのはLinkedListを使うところで出てきた-&gt;演算子・・・。 第 11 章 ポインタとリスト構造 この本に書いてあること Linuxの構造と、その上でのC言語っていう2本軸がある。 Linuxについては3つの概念をあげていて、 ファイルシステム プロセス ストリーム これをベースに、Linuxが動いてる仕組みを歴史とか思想をまじえて説明がされてる。 で、それらをC言語で扱う上での作法とか、注意点とか、プログラムを書く上での話に繋がっていくんだけど、 APIの紹介だけじゃなくて、「これはこういう理由で使ってはいけません」って話があるのはすごく良かった。 実際に何か作るってとき、大抵どの界隈でも暗黙の了解とかルールがあると思っていて、 そういうのをきちんとした文献で知ることが出来るのは入門者にとってはありがたいと思う。 この本を読んで得られたもの まとめは最後に書くとして、読んでる中で納得したところとか課題が解決した点を章立てにしてみる。 Linuxの構造について 本書では一貫して前述した3つの概念をベースに説明しているから、思考がブレずに読みやすい。 また、Linux上でのC言語プログラミング、っていうだけじゃなくて、FHSとか、CPUとメモリについてまでも言及されてる。 Linuxのディレクトリ構成みたいになんとなく理解しちゃうところが説明されてるのは嬉しい。 LinuxでC言語を書くためのノウハウ 言語本ではないからC言語がどうのこうのっていう話はそこまで書いてない。 ただ、API仕様についてはしっかり書いてあるから、実際にプログラムを書くときにまた読み直したいと思った。 あと、プログラムを書くだけじゃなくてその周辺技術(manやgdb)についても述べていて、 どういうタイミングでどういう風に使ったらいいか、っていうノウハウが得られる。 プロセスとは何か プロセスについてはハードウェアと合わせて1つ章が切られていて、結構細かく説明されてる。 個人的にそうなんだって思ったのは、マルチタスクを実現する上でのCPUとメモリの扱いについて。 仮想CPU(初めて聞いた)と仮想メモリの概念とどうやって実現してるかについてはなるほどなと思った。 物理アドレスと論理アドレスっていう物自体は知っていたけど、必要性とかそういう観点で説明されているから理解しやすい。 ビルド周りの話 C言語のビルドについて、 プリプロセス コンパイル アセンブル リンク にわけて説明されてる。 コンパイルとリンクについては知ってたけどそれ以外については知らなかったし、 リンクについてはもう少ししっかり理解したいと思ってたから、この章はその理解に役立った。 スタティックリンクとダイナミックリンクの説明と、どちらを使うべきか、っていう話も載ってる。 シグナルについて プロセスを殺すとかは普段からやるけど、それをプログラム側で見た場合の話がされてる。 シグナルを送信する側の実装とか、受ける上での実装とか、さらに注意点までまとめられてるのは良かった。 ちなみに関数ポインタの存在はここで初めて知った。">
 
-<meta property="og:image" content="http://yet.unresolved.xyz/images/osx.png">
+<meta property="og:image" content="http://yet.unresolved.xyz/images/linux.png">
 
 
 
@@ -111,6 +111,8 @@
             
             
             
+            
+            
         </div>
     </div>
 
@@ -120,6 +122,28 @@
 
 
 <div class="posts">
+    
+    
+    <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2015/01/26/ordinary-linux-programming/"><img src="http://yet.unresolved.xyz/images/linux.png" alt="ふつうのLinuxプログラミングを読んだ"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Mon, Jan 26, 2015</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/01/26/ordinary-linux-programming/">ふつうのLinuxプログラミングを読んだ</a></h1>
+        <div class="summary">ふつうのLinuxプログラミング Linuxの仕組みから学べるgccプログラミングの王道 読もうと思ったきっかけ Ruby書かないくせにるびまのインタビューの奴が好きで、著者である青木さんの記事を見てた時に知った。 Rubyist Magazine - Rubyist Hotlinks 【第 17 回】 青木峰郎さん Kernelとかいつかは触れたいけど実際どこから入ればいいかわからない、って人、結構いると思うんだよね。 オレもその一人で、この本はなんか、その入り口になるんじゃないかなって期待があった。 実際評判も良かったし。 前提 C言語、書けないんだよね。 高校の頃に書いたっきり、1行も、いや！1文字も書いてない！ 他人のコードを読む場面もなかったわけじゃないけど、ほぼ初心者としてこの本を読みました。 プロトタイプ宣言やらヘッダファイルやらを理解してたくらい。 ちなみに対象読者は、 構造体とポインタくらいはわかる って書いてあるんだけど、「とにかくプログラミング！」な本ではないので、そこまで必要はなさそう。 あ、唯一困ったのはLinkedListを使うところで出てきた-&gt;演算子・・・。 第 11 章 ポインタとリスト構造 この本に書いてあること Linuxの構造と、その上でのC言語っていう2本軸がある。 Linuxについては3つの概念をあげていて、 ファイルシステム プロセス ストリーム これをベースに、Linuxが動いてる仕組みを歴史とか思想をまじえて説明がされてる。 で、それらをC言語で扱う上での作法とか、注意点とか、プログラムを書く上での話に繋がっていくんだけど、 APIの紹介だけじゃなくて、「これはこういう理由で使ってはいけません」って話があるのはすごく良かった。 実際に何か作るってとき、大抵どの界隈でも暗黙の了解とかルールがあると思っていて、 そういうのをきちんとした文献で知ることが出来るのは入門者にとってはありがたいと思う。 この本を読んで得られたもの まとめは最後に書くとして、読んでる中で納得したところとか課題が解決した点を章立てにしてみる。 Linuxの構造について 本書では一貫して前述した3つの概念をベースに説明しているから、思考がブレずに読みやすい。 また、Linux上でのC言語プログラミング、っていうだけじゃなくて、FHSとか、CPUとメモリについてまでも言及されてる。 Linuxのディレクトリ構成みたいになんとなく理解しちゃうところが説明されてるのは嬉しい。 LinuxでC言語を書くためのノウハウ 言語本ではないからC言語がどうのこうのっていう話はそこまで書いてない。 ただ、API仕様についてはしっかり書いてあるから、実際にプログラムを書くときにまた読み直したいと思った。 あと、プログラムを書くだけじゃなくてその周辺技術(manやgdb)についても述べていて、 どういうタイミングでどういう風に使ったらいいか、っていうノウハウが得られる。 プロセスとは何か プロセスについてはハードウェアと合わせて1つ章が切られていて、結構細かく説明されてる。 個人的にそうなんだって思ったのは、マルチタスクを実現する上でのCPUとメモリの扱いについて。 仮想CPU(初めて聞いた)と仮想メモリの概念とどうやって実現してるかについてはなるほどなと思った。 物理アドレスと論理アドレスっていう物自体は知っていたけど、必要性とかそういう観点で説明されているから理解しやすい。 ビルド周りの話 C言語のビルドについて、 プリプロセス コンパイル アセンブル リンク にわけて説明されてる。 コンパイルとリンクについては知ってたけどそれ以外については知らなかったし、 リンクについてはもう少ししっかり理解したいと思ってたから、この章はその理解に役立った。 スタティックリンクとダイナミックリンクの説明と、どちらを使うべきか、っていう話も載ってる。 シグナルについて プロセスを殺すとかは普段からやるけど、それをプログラム側で見た場合の話がされてる。 シグナルを送信する側の実装とか、受ける上での実装とか、さらに注意点までまとめられてるのは良かった。 ちなみに関数ポインタの存在はここで初めて知った。</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2015/01/26/ordinary-linux-programming/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
+
+    
     
     
     <article class="post">
@@ -319,28 +343,6 @@
 
     
     
-    
-    <article class="post">
-    <div class="eyecatch">
-        
-        <a href="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/"><img src="http://yet.unresolved.xyz/images/aws.png" alt="ClojureのWebアプリをDocker &#43; Beanstalkで動かす"></a>
-        
-    </div>
-    <div class="data">
-        <span class="post-date">Wed, Dec 31, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/">ClojureのWebアプリをDocker &#43; Beanstalkで動かす</a></h1>
-        <div class="summary">たぶんこういうのはドキュメント読んでもわからないので、とにかく一通りの流れを実践してみる。 Imageの取得 面倒なのでDocker HubからClojureが動く環境を持ってくる。 オフィシャルリポジトリとやらがあったので、それを使います。 Leiningenとか一式が入ってるみたい。 clojure ローカルでの動作確認 とりあえず世界に挨拶が出来るくらいのWebアプリを作っちゃおう。 アプリ自体は重要じゃないので、とりあえずインタラクティブシェル上でちゃちゃっと作っちゃう。 b2d$ docker run -i -t clojure /bin/bash root@e322a11f087d:/home# lein new compojure aws_webapp Retrieving compojure/lein-template/0.4.1/lein-template-0.4.1.pom from clojars Retrieving compojure/lein-template/0.4.1/lein-template-0.4.1.jar from clojars root@e322a11f087d:/home# ls aws_webapp root@e322a11f087d:/home# cd aws_webapp/ root@e322a11f087d:/home/aws_webapp# ls README.md project.clj resources src test と思ったらcompojureテンプレート自体がすでにHello Worldを実装してた・・・。 そのままサーバ起動しちゃうとこんな感じでブラウザの自動起動のとこでエラーしちゃうので、lein ring server-headlessで起動する。 root@e322a11f087d:/home/aws_webapp# lein ring server 2015-01-01 05:41:35.432:INFO:oejs.Server:jetty-7.6.8.v20121106 2015-01-01 05:41:35.486:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:3000 Started server on port 3000 Exception in thread &quot;main&quot; java.lang.InternalError: Can't connect to X11 window server using 'localhost:0.0' as the value of the DISPLAY variable., compiling:(/tmp/form-init3570254627486988046.clj:1:72) あとはデーモンとして起動しちゃえばローカルでの確認が出来る。 b2d$ docker run -d -t -p 3000:3000 clojure:aws /bin/bash -c &quot;cd /home/aws_webapp; lein ring server-headless&quot; e9981a71589918791d52888a0cb503bea133611395be58574047cd498c9e6f76 b2d$ docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES e9981a715899 clojure:aws &quot;/bin/bash -c 'cd /h 4 seconds ago Up 3 seconds 0.0.0.0:3000-&gt;3000/tcp backstabbing_colden 起動しているのはboot2dockerの仮想マシン上なので、 b2d$ boot2docker ip 192.168.59.103 このIPの3000ポートに向けてアクセスすれば、 見れます。 ringのサーバは起動が遅いのでdocker logs [names]で確認しながらやるとよい。 Elastic Beanstalkで動かす 大事なことに気づいたんだけど、BeanstalkはDockerfileとか必要なファイル一式をまとめたzipをアップするらしい。 そもそもソースもイメージに入れちゃうっていうのは考えとしておかしかったね。 なのでwarをADDで置くのが理想的なのかな。 今回は面倒なので、clojureでWebサーバを立ち上げられるhttp-kitというライブラリを使ってやってみます。 ちょうどBeanstalk用のDockerfileとかも用意してくれるmrmcc3/beanstalk-docker-appというテンプレートがあったので、これを使わせてもらうことに。 mrmcc3/beanstalk-docker-appでWebアプリを構築する 何はともあれnewして作り直し。 temp$ lein new beanstalk-docker-app superapp Generating clojure app for AWS Beanstalk and docker こんな感じで作られる。 jarとかはlein uberjarで作らなきゃダメかも。 .</div>
-    </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
-
-    
-    
     <div class="all-entries">
         <a href="http://yet.unresolved.xyz/post">All Entries</a>
     </div>
@@ -390,6 +392,13 @@
                     
                     <a href="http://yet.unresolved.xyz/tags/beanstalk">
                         beanstalk
+                    </a>
+                </li>
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz/tags/book">
+                        book
                     </a>
                 </li>
                 
