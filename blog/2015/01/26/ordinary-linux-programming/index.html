@@ -8,18 +8,18 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hugoでマルチバイトのタイトルをスマートに使う方法 | Unresolved">
-<meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/">
-<meta property="og:description" content="Hugoでちょっと困ったこと。 オレはOctopressから移行してきたからなおさらなんだけど、記事のタイトルがURLにされてしまう。 あ、オレはconfig.yamlに permalinks: post: /blog/:year/:month/:day/:title/ を設定してるからなんだけど。 そうすると日本語とかのマルチバイト文字を使うとパーセントエンコードが走って結構悲惨なことになる。 というかオレの環境だとリンクがきちんと飛べなかった・・・。 Octopressは記事のファイル名がURLになってたから、ファイル名さえ英語なら問題なかったんだよね。 なので今回やった対処法をメモっとく。 URLの構成と対応策 実は移行の時にちょっと手を加えたりしてたんだけど、あんまり綺麗な方法じゃなかったので納得が行ってなかった。 そんな時に公式を読んでたら、Content Organizationの項にこんな図が。 どうやらオレが困ってたURLのタイトル部はslugと呼ばれる部分らしい。 ならこんな風に記事内で毎回指定してしまえば綺麗に話が済むのではないか？ --- tags: [&quot;hugo&quot;, &quot;golang&quot;] comments: true date: 2015-01-07T23:56:32&#43;09:00 eyecatch: &quot;hugo.png&quot; slug: &quot;how-to-use-multibyte-title-in-hugo&quot; title: &quot;Hugoでマルチバイトのタイトルをスマートに使う方法&quot; --- と思ったらうまくいった。 config.yamlはこんな感じ。 permalinks: post: /blog/:year/:month/:day/:slug/ なのでOctopressから移行した人はこの方法も検討するといいかもしれません。 hugo newした時に生成されるテンプレートはarchetypesディレクトリに配置出来るから、そこでやっておくとよし。 しかし移行時に書き足すのが面倒なんだよなあ。">
+<meta property="og:title" content="ふつうのLinuxプログラミングを読んだ | Unresolved">
+<meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/01/26/ordinary-linux-programming/">
+<meta property="og:description" content="ふつうのLinuxプログラミング Linuxの仕組みから学べるgccプログラミングの王道 読もうと思ったきっかけ Ruby書かないくせにるびまのインタビューの奴が好きで、著者である青木さんの記事を見てた時に知った。 Rubyist Magazine - Rubyist Hotlinks 【第 17 回】 青木峰郎さん Kernelとかいつかは触れたいけど実際どこから入ればいいかわからない、って人、結構いると思うんだよね。 オレもその一人で、この本はなんか、その入り口になるんじゃないかなって期待があった。 実際評判も良かったし。 前提 C言語、書けないんだよね。 高校の頃に書いたっきり、1行も、いや！1文字も書いてない！ 他人のコードを読む場面もなかったわけじゃないけど、ほぼ初心者としてこの本を読みました。 プロトタイプ宣言やらヘッダファイルやらを理解してたくらい。 ちなみに対象読者は、 構造体とポインタくらいはわかる って書いてあるんだけど、「とにかくプログラミング！」な本ではないので、そこまで必要はなさそう。 あ、唯一困ったのはLinkedListを使うところで出てきた-&gt;演算子・・・。 第 11 章 ポインタとリスト構造 この本に書いてあること Linuxの構造と、その上でのC言語っていう2本軸がある。 Linuxについては3つの概念をあげていて、 ファイルシステム プロセス ストリーム これをベースに、Linuxが動いてる仕組みを歴史とか思想をまじえて説明がされてる。 で、それらをC言語で扱う上での作法とか、注意点とか、プログラムを書く上での話に繋がっていくんだけど、 APIの紹介だけじゃなくて、「これはこういう理由で使ってはいけません」って話があるのはすごく良かった。 実際に何か作るってとき、大抵どの界隈でも暗黙の了解とかルールがあると思っていて、 そういうのをきちんとした文献で知ることが出来るのは入門者にとってはありがたいと思う。 この本を読んで得られたもの まとめは最後に書くとして、読んでる中で納得したところとか課題が解決した点を章立てにしてみる。 Linuxの構造について 本書では一貫して前述した3つの概念をベースに説明しているから、思考がブレずに読みやすい。 また、Linux上でのC言語プログラミング、っていうだけじゃなくて、FHSとか、CPUとメモリについてまでも言及されてる。 Linuxのディレクトリ構成みたいになんとなく理解しちゃうところが説明されてるのは嬉しい。 LinuxでC言語を書くためのノウハウ 言語本ではないからC言語がどうのこうのっていう話はそこまで書いてない。 ただ、API仕様についてはしっかり書いてあるから、実際にプログラムを書くときにまた読み直したいと思った。 あと、プログラムを書くだけじゃなくてその周辺技術(manやgdb)についても述べていて、 どういうタイミングでどういう風に使ったらいいか、っていうノウハウが得られる。 プロセスとは何か プロセスについてはハードウェアと合わせて1つ章が切られていて、結構細かく説明されてる。 個人的にそうなんだって思ったのは、マルチタスクを実現する上でのCPUとメモリの扱いについて。 仮想CPU(初めて聞いた)と仮想メモリの概念とどうやって実現してるかについてはなるほどなと思った。 物理アドレスと論理アドレスっていう物自体は知っていたけど、必要性とかそういう観点で説明されているから理解しやすい。 ビルド周りの話 C言語のビルドについて、 プリプロセス コンパイル アセンブル リンク にわけて説明されてる。 コンパイルとリンクについては知ってたけどそれ以外については知らなかったし、 リンクについてはもう少ししっかり理解したいと思ってたから、この章はその理解に役立った。 スタティックリンクとダイナミックリンクの説明と、どちらを使うべきか、っていう話も載ってる。 シグナルについて プロセスを殺すとかは普段からやるけど、それをプログラム側で見た場合の話がされてる。 シグナルを送信する側の実装とか、受ける上での実装とか、さらに注意点までまとめられてるのは良かった。 ちなみに関数ポインタの存在はここで初めて知った。">
 
-<meta property="og:image" content="http://yet.unresolved.xyz/images/hugo.png">
+<meta property="og:image" content="http://yet.unresolved.xyz/images/linux.png">
 
 
 <meta property="og:site_name" content="Unresolved">
 
 <title>
     
-    Hugoでマルチバイトのタイトルをスマートに使う方法 | Unresolved
+    ふつうのLinuxプログラミングを読んだ | Unresolved
     
 </title>
 
@@ -118,82 +118,169 @@
 
 
 <article class="post post-single">
-    <span class="post-date">Wed, Jan 7, 2015</span>
-    <h1 class="post-title">Hugoでマルチバイトのタイトルをスマートに使う方法</h1>
+    <span class="post-date">Mon, Jan 26, 2015</span>
+    <h1 class="post-title">ふつうのLinuxプログラミングを読んだ</h1>
 
     <div class="eyecatch">
         
-        <img src="http://yet.unresolved.xyz/images/hugo.png" alt="Hugoでマルチバイトのタイトルをスマートに使う方法">
+        <img src="http://yet.unresolved.xyz/images/linux.png" alt="ふつうのLinuxプログラミングを読んだ">
         
     </div>
 
     <div class="post-content">
         
 
-<p><a href="http://gohugo.io/">Hugo</a>でちょっと困ったこと。</p>
+<p><a href="http://www.amazon.co.jp/gp/product/4797328355/ref=as_li_tf_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4797328355&linkCode=as2&tag=unresolved-22">ふつうのLinuxプログラミング Linuxの仕組みから学べるgccプログラミングの王道</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=4797328355" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important; display: inline;" /></p>
 
-<p>オレは<a href="http://octopress.org/">Octopress</a>から移行してきたからなおさらなんだけど、記事のタイトルがURLにされてしまう。</p>
+<h2 id="読もうと思ったきっかけ:4c81d64344bd445def23c23666be1353">読もうと思ったきっかけ</h2>
 
-<p>あ、オレは<code>config.yaml</code>に</p>
+<p>Ruby書かないくせにるびまのインタビューの奴が好きで、著者である青木さんの記事を見てた時に知った。</p>
 
-<pre><code class="language-yaml">permalinks:
-  post: /blog/:year/:month/:day/:title/
-</code></pre>
+<p><a href="http://magazine.rubyist.net/?0017-Hotlinks#l7">Rubyist Magazine - Rubyist Hotlinks 【第 17 回】 青木峰郎さん</a></p>
 
-<p>を設定してるからなんだけど。</p>
+<p>Kernelとかいつかは触れたいけど実際どこから入ればいいかわからない、って人、結構いると思うんだよね。</p>
 
-<p>そうすると日本語とかのマルチバイト文字を使うとパーセントエンコードが走って結構悲惨なことになる。</p>
+<p>オレもその一人で、この本はなんか、その入り口になるんじゃないかなって期待があった。</p>
 
-<p>というかオレの環境だとリンクがきちんと飛べなかった・・・。</p>
+<p>実際評判も良かったし。</p>
 
-<p>Octopressは記事のファイル名がURLになってたから、ファイル名さえ英語なら問題なかったんだよね。</p>
+<h2 id="前提:4c81d64344bd445def23c23666be1353">前提</h2>
 
-<p>なので今回やった対処法をメモっとく。</p>
+<p>C言語、書けないんだよね。</p>
 
-<h2 id="urlの構成と対応策:305b326c361986ca7e3bc18a2fbce87d">URLの構成と対応策</h2>
+<p>高校の頃に書いたっきり、1行も、いや！1文字も書いてない！</p>
 
-<p>実は移行の時にちょっと手を加えたりしてたんだけど、あんまり綺麗な方法じゃなかったので納得が行ってなかった。</p>
+<p>他人のコードを読む場面もなかったわけじゃないけど、ほぼ初心者としてこの本を読みました。</p>
 
-<p>そんな時に公式を読んでたら、<a href="http://gohugo.io/content/organization/">Content Organization</a>の項にこんな図が。</p>
+<p>プロトタイプ宣言やらヘッダファイルやらを理解してたくらい。</p>
 
-<p><a href="/images/2015-01-07/permalink.png"><img src="/images/2015-01-07/permalink.png" class="image" alt="permalink"></a></p>
+<p>ちなみに対象読者は、</p>
 
-<p>どうやらオレが困ってたURLのタイトル部は<code>slug</code>と呼ばれる部分らしい。</p>
+<blockquote>
+<p>構造体とポインタくらいはわかる</p>
+</blockquote>
 
-<p>ならこんな風に記事内で毎回指定してしまえば綺麗に話が済むのではないか？</p>
+<p>って書いてあるんだけど、「とにかくプログラミング！」な本ではないので、そこまで必要はなさそう。</p>
 
-<pre><code class="language-markdown">---
-tags: [&quot;hugo&quot;, &quot;golang&quot;]
-comments: true
-date: 2015-01-07T23:56:32+09:00
-eyecatch: &quot;hugo.png&quot;
-slug: &quot;how-to-use-multibyte-title-in-hugo&quot;
-title: &quot;Hugoでマルチバイトのタイトルをスマートに使う方法&quot;
----
-</code></pre>
+<p>あ、唯一困ったのはLinkedListを使うところで出てきた<code>-&gt;</code>演算子・・・。</p>
 
-<p>と思ったらうまくいった。</p>
+<p><a href="http://www.is.titech.ac.jp/compview/clang/chap11.html">第 11 章　ポインタとリスト構造</a></p>
 
-<p><code>config.yaml</code>はこんな感じ。</p>
+<h2 id="この本に書いてあること:4c81d64344bd445def23c23666be1353">この本に書いてあること</h2>
 
-<pre><code class="language-yaml">permalinks:
-  post: /blog/:year/:month/:day/:slug/
-</code></pre>
+<p>Linuxの構造と、その上でのC言語っていう2本軸がある。</p>
 
-<p>なのでOctopressから移行した人はこの方法も検討するといいかもしれません。</p>
+<p>Linuxについては3つの概念をあげていて、</p>
 
-<p><code>hugo new</code>した時に生成されるテンプレートは<code>archetypes</code>ディレクトリに配置出来るから、そこでやっておくとよし。</p>
+<ul>
+<li>ファイルシステム</li>
+<li>プロセス</li>
+<li>ストリーム</li>
+</ul>
 
-<p>しかし移行時に書き足すのが面倒なんだよなあ。</p>
+<p>これをベースに、Linuxが動いてる仕組みを歴史とか思想をまじえて説明がされてる。</p>
+
+<p>で、それらをC言語で扱う上での作法とか、注意点とか、プログラムを書く上での話に繋がっていくんだけど、</p>
+
+<p>APIの紹介だけじゃなくて、「これはこういう理由で使ってはいけません」って話があるのはすごく良かった。</p>
+
+<p>実際に何か作るってとき、大抵どの界隈でも暗黙の了解とかルールがあると思っていて、</p>
+
+<p>そういうのをきちんとした文献で知ることが出来るのは入門者にとってはありがたいと思う。</p>
+
+<h2 id="この本を読んで得られたもの:4c81d64344bd445def23c23666be1353">この本を読んで得られたもの</h2>
+
+<p>まとめは最後に書くとして、読んでる中で納得したところとか課題が解決した点を章立てにしてみる。</p>
+
+<h3 id="linuxの構造について:4c81d64344bd445def23c23666be1353">Linuxの構造について</h3>
+
+<p>本書では一貫して前述した3つの概念をベースに説明しているから、思考がブレずに読みやすい。</p>
+
+<p>また、Linux上でのC言語プログラミング、っていうだけじゃなくて、FHSとか、CPUとメモリについてまでも言及されてる。</p>
+
+<p>Linuxのディレクトリ構成みたいになんとなく理解しちゃうところが説明されてるのは嬉しい。</p>
+
+<h3 id="linuxでc言語を書くためのノウハウ:4c81d64344bd445def23c23666be1353">LinuxでC言語を書くためのノウハウ</h3>
+
+<p>言語本ではないからC言語がどうのこうのっていう話はそこまで書いてない。</p>
+
+<p>ただ、API仕様についてはしっかり書いてあるから、実際にプログラムを書くときにまた読み直したいと思った。</p>
+
+<p>あと、プログラムを書くだけじゃなくてその周辺技術(manやgdb)についても述べていて、</p>
+
+<p>どういうタイミングでどういう風に使ったらいいか、っていうノウハウが得られる。</p>
+
+<h3 id="プロセスとは何か:4c81d64344bd445def23c23666be1353">プロセスとは何か</h3>
+
+<p>プロセスについてはハードウェアと合わせて1つ章が切られていて、結構細かく説明されてる。</p>
+
+<p>個人的にそうなんだって思ったのは、マルチタスクを実現する上でのCPUとメモリの扱いについて。</p>
+
+<p>仮想CPU(初めて聞いた)と仮想メモリの概念とどうやって実現してるかについてはなるほどなと思った。</p>
+
+<p>物理アドレスと論理アドレスっていう物自体は知っていたけど、必要性とかそういう観点で説明されているから理解しやすい。</p>
+
+<h3 id="ビルド周りの話:4c81d64344bd445def23c23666be1353">ビルド周りの話</h3>
+
+<p>C言語のビルドについて、</p>
+
+<ul>
+<li>プリプロセス</li>
+<li>コンパイル</li>
+<li>アセンブル</li>
+<li>リンク</li>
+</ul>
+
+<p>にわけて説明されてる。</p>
+
+<p>コンパイルとリンクについては知ってたけどそれ以外については知らなかったし、</p>
+
+<p>リンクについてはもう少ししっかり理解したいと思ってたから、この章はその理解に役立った。</p>
+
+<p>スタティックリンクとダイナミックリンクの説明と、どちらを使うべきか、っていう話も載ってる。</p>
+
+<h3 id="シグナルについて:4c81d64344bd445def23c23666be1353">シグナルについて</h3>
+
+<p>プロセスを殺すとかは普段からやるけど、それをプログラム側で見た場合の話がされてる。</p>
+
+<p>シグナルを送信する側の実装とか、受ける上での実装とか、さらに注意点までまとめられてるのは良かった。</p>
+
+<p>ちなみに関数ポインタの存在はここで初めて知った。</p>
+
+<p><kbd>Ctrl</kbd> + <kbd>C</kbd>で何が起きているかとかの説明も、普段意識しないで使ってるから新鮮。</p>
+
+<h3 id="ネットワーク系の話:4c81d64344bd445def23c23666be1353">ネットワーク系の話</h3>
+
+<p>HTTPサーバを作る実演があるんだけど、ネットワークについてもネットワーク本に負けないくらい説明がされてる。</p>
+
+<p>TCPやDNSについても説明があって、プログラム目線で「なぜ必要なのか」っていう切り口で書いてあるから読みやすい。</p>
+
+<p>ネットワーク本もいくつか読んだし概念については理解してたけど、この本の方がわかりやすかった気がする・・・。</p>
+
+<h2 id="終わりに:4c81d64344bd445def23c23666be1353">終わりに</h2>
+
+<p>そのうち勉強したいと思ってモヤモヤしてた部分を解決してくれる本でした。</p>
+
+<p>C言語のAPIについては結構がっつり書かれてて、正直読みながら理解するのは無駄だなと思って読み飛ばす部分もあった。</p>
+
+<p>ただ、実際にプログラムを書くときにはコマンドライン引数だとか標準入出力をしっかり扱わなきゃいけないわけで、</p>
+
+<p>この本にはその点がしっかりまとめられてるので、今後も手元に置いてたまに読み直すと思う。</p>
+
+<p>あと、書籍案内が豊富。</p>
+
+<p>分野に分けておすすめの本を紹介されてるので、これは今後読んでいく予定。</p>
+
+<p><a href="http://www.amazon.co.jp/gp/product/4797328355/ref=as_li_tf_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4797328355&linkCode=as2&tag=unresolved-22">ふつうのLinuxプログラミング Linuxの仕組みから学べるgccプログラミングの王道</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=4797328355" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important; display: inline;" /></p>
 
     </div>
 
     <aside class="post-ad pc">
-        <iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=48&l=st1&mode=books-jp&search=golang&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="728" height="90" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+        <iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=48&l=st1&mode=books-jp&search=linux&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="728" height="90" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
     </aside>
 
     <aside class="post-ad sp">
-<iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=12&l=st1&mode=books-jp&search=golang&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="300" height="250" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+<iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=12&l=st1&mode=books-jp&search=linux&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="300" height="250" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
     </aside>
 
     
@@ -205,16 +292,16 @@ title: &quot;Hugoでマルチバイトのタイトルをスマートに使う方
         <ul class="post-tags">
             
             <li>
-                <a href="http://yet.unresolved.xyz/tags/golang">
+                <a href="http://yet.unresolved.xyz/tags/linux">
                     <i class="fa fa-tags"></i>
-                    golang
+                    linux
                 </a>
             </li>
             
             <li>
-                <a href="http://yet.unresolved.xyz/tags/hugo">
+                <a href="http://yet.unresolved.xyz/tags/book">
                     <i class="fa fa-tags"></i>
-                    hugo
+                    book
                 </a>
             </li>
             
@@ -243,6 +330,7 @@ title: &quot;Hugoでマルチバイトのタイトルをスマートに使う方
             
             
             
+            <li><a href="http://yet.unresolved.xyz/blog/2015/01/22/install-postgresql-on-centos/">Vagrant &#43; CentOS &#43; PostgreSQLを最速で構築</a></li>
             
             
             
@@ -263,7 +351,6 @@ title: &quot;Hugoでマルチバイトのタイトルをスマートに使う方
             
             
             
-            <li><a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">ブログをOctopressからHugoに移行した</a></li>
             
             
             
@@ -316,6 +403,8 @@ title: &quot;Hugoでマルチバイトのタイトルをスマートに使う方
             
             
             
+            
+            <li><a href="http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/">UbuntuにAurigaを構築してみる</a></li>
             
             
             
@@ -363,16 +452,11 @@ title: &quot;Hugoでマルチバイトのタイトルをスマートに使う方
         <div class="move">
             <div class="prev">
                 
-                <a href="http://yet.unresolved.xyz/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/">
-                    <i class="fa fa-chevron-left"></i>
-                    Python on GAEで3rdパーティライブラリを使う
-                </a>
-                
             </div>
             <div class="next">
                 
-                <a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">
-                    ブログをOctopressからHugoに移行した
+                <a href="http://yet.unresolved.xyz/blog/2015/01/25/using-display-zoom-in-mac/">
+                    Macで画面の一部をズームする
                     <i class="fa fa-chevron-right"></i>
                 </a>
                 
