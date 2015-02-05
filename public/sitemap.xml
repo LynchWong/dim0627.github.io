@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://yet.unresolved.xyz/</loc>
-    <lastmod>2015-01-26T14:17:29+09:00</lastmod>
+    <lastmod>2015-02-05T21:36:25+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/</loc>
+    <lastmod>2015-02-05T21:36:25+09:00</lastmod>
   </url>
   
   <url>
@@ -153,12 +158,12 @@
   </url>
   
   <url>
-    <loc>http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</loc>
     <lastmod>2014-09-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/</loc>
     <lastmod>2014-09-20T00:00:00+00:00</lastmod>
   </url>
   
