@@ -6,8 +6,61 @@
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
-    <updated>2014-09-29 00:00:00 &#43;0000 UTC</updated>
+    <updated>2015-02-05 21:36:25 &#43;0900 JST</updated>
 
+    
+      
+        <item>
+          <title>PHPファイルの定数に触るとvimがフリーズする</title>
+          <link>http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/</link>
+          <pubDate>Thu, 05 Feb 2015 21:36:25 JST</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/</guid>
+          <description>
+
+&lt;p&gt;意外と日が空いたね。&lt;/p&gt;
+
+&lt;p&gt;最近はPHPを書いてます。つってもほんと最近からだけど。&lt;/p&gt;
+
+&lt;p&gt;そんな最中、さあ書くぞーって時にvimがフリーズしたことがありました。&lt;/p&gt;
+
+&lt;p&gt;vimが止まったのは人生初の経験だったので焦りました。&lt;/p&gt;
+
+&lt;p&gt;もうほんと困った！&lt;/p&gt;
+
+&lt;h2 id=&#34;原因:fd4f21eb55d20dc5d298df72f4a01bea&#34;&gt;原因&lt;/h2&gt;
+
+&lt;p&gt;ほとんどコピペで作った&lt;code&gt;.vimrc&lt;/code&gt;のせいで何が悪いのかがわからない・・・。&lt;/p&gt;
+
+&lt;p&gt;ていうか未だに書き方がようわからない・・・。&lt;/p&gt;
+
+&lt;p&gt;というわけで&lt;strong&gt;とりあえず色々消してみて軽くなるパターンを探す&lt;/strong&gt;方法で行くしかなかった。&lt;/p&gt;
+
+&lt;p&gt;原始的最強。&lt;/p&gt;
+
+&lt;p&gt;結論を言いますと&lt;code&gt;neocomplcache&lt;/code&gt;の設定が甘かったです。&lt;/p&gt;
+
+&lt;p&gt;この設定が原因でした。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;let g:neocomplcache_omni_patterns.php = &#39;[^. \t]-&amp;gt;\h\w*\|\h\w*::&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Shougoさんのプラグインを適当に使ってたオレが悪かったんです。&lt;/p&gt;
+
+&lt;p&gt;実はこの件に関してはShougoさん本人がまとめててくださってました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://vim-jp.org/vim-users-jp/2011/01/06/Hack-193.html&#34;&gt;vim-jp » Hack #193: neocomplcacheの設定について知る　後編&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;g:neocomplcache_omni_patternsは、neocomplcacheがオムニ補完の関数を呼び出すためのキーワードパターンを設定します。 主な言語にはデフォルトで対応していますが、RubyやPHPなど重いものは無効化されています。 設定例のようにすれば有効化できますが、Vimがフリーズする可能性もあります。自己責任で使用してください。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;いいタイミングだし、0から書き直すかな・・・。&lt;/p&gt;
+
+&lt;p&gt;そしてHappy Vim Lifeを&amp;hellip;&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>

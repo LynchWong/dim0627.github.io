@@ -8,15 +8,20 @@
 
 
 
-<meta property="og:title" content="Unresolved">
-<meta property="og:url" content="http://yet.unresolved.xyz">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHPファイルの定数に触るとvimがフリーズする | Unresolved">
+<meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/">
+<meta property="og:description" content="意外と日が空いたね。 最近はPHPを書いてます。つってもほんと最近からだけど。 そんな最中、さあ書くぞーって時にvimがフリーズしたことがありました。 vimが止まったのは人生初の経験だったので焦りました。 もうほんと困った！ 原因 ほとんどコピペで作った.vimrcのせいで何が悪いのかがわからない・・・。 ていうか未だに書き方がようわからない・・・。 というわけでとりあえず色々消してみて軽くなるパターンを探す方法で行くしかなかった。 原始的最強。 結論を言いますとneocomplcacheの設定が甘かったです。 この設定が原因でした。 let g:neocomplcache_omni_patterns.php = &#39;[^. \t]-&gt;\h\w*\|\h\w*::&#39; Shougoさんのプラグインを適当に使ってたオレが悪かったんです。 実はこの件に関してはShougoさん本人がまとめててくださってました。 vim-jp » Hack #193: neocomplcacheの設定について知る 後編 g:neocomplcache_omni_patternsは、neocomplcacheがオムニ補完の関数を呼び出すためのキーワードパターンを設定します。 主な言語にはデフォルトで対応していますが、RubyやPHPなど重いものは無効化されています。 設定例のようにすれば有効化できますが、Vimがフリーズする可能性もあります。自己責任で使用してください。 いいタイミングだし、0から書き直すかな・・・。 そしてHappy Vim Lifeを&hellip;">
+
+<meta property="og:image" content="http://yet.unresolved.xyz/images/vim.png">
+
 
 <meta property="og:site_name" content="Unresolved">
 <meta name="google-site-verification" content="SLxungm5o9WvGwPUEGZCspbMBAsLBjOxAHNyjIBUuSI" />
 
 <title>
     
-    Tags | Unresolved
+    PHPファイルの定数に触るとvimがフリーズする | Unresolved
     
 </title>
 
@@ -117,49 +122,284 @@
     <div class="container content">
 
 
-<div class="posts">
-    
-    <article class="post">
+<article class="post post-single">
+    <span class="post-date">Thu, Feb 5, 2015</span>
+    <h1 class="post-title">PHPファイルの定数に触るとvimがフリーズする</h1>
+
     <div class="eyecatch">
         
-        <a href="http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/"><img src="http://yet.unresolved.xyz/images/clojure.png" alt="Lobosでマイグレーションができない in Heroku"></a>
+        <img src="http://yet.unresolved.xyz/images/vim.png" alt="PHPファイルの定数に触るとvimがフリーズする">
         
     </div>
-    <div class="data">
-        <span class="post-date">Sun, Dec 21, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/">Lobosでマイグレーションができない in Heroku</a></h1>
-        <div class="summary">ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。 何が起きたか 今だにHerokuの使い方がようわからんのだけど、 とりあえずローカルから向き先変えるよりもSSHの方がいっかなってことでheroku run bashしてやってます。 ローカルからだとDBをSSLで接続させないといけないし・・・。 んでマイグレーションしようとしたら、 user=&gt; (migrate) nil 何も出ない。 本当はこんな感じで、 user=&gt; (migrate) add-sites-table add-entries-table nil 作成されたり変更されたテーブルが出てくるはず。 原因はなんだったのか lobos.migrationsが読まれてない（というかリロードされてない）っぽい。 そもそもmigrate自体はこんな感じでlobos.migrationのdo-migrationsを呼んでます。 (defcommand migrate [&amp; names] (let [names (if (empty? names) (mig/pending-migrations db-spec sname) names)] (mig/do-migrations db-spec sname :up names))) で、do-migrationsはこんな感じで、list-migrations-namesの結果を絞って実行してる。 たぶんマイグレーション済みのものは除外とかそんな感じなんじゃないだろうか。 (defn do-migrations [db-spec sname with names &amp; [silent]] (let [filter-migs #(only % (list-migrations-names)) migrations (-&gt;&gt; names (map str) filter-migs (when-&gt;&gt; (= with :down) reverse) (map symbol) (map (partial ns-resolve *migrations-namespace*)) (map var-get))] (binding [*record* nil] (doseq [migration migrations] (let [name (-&gt; migration meta :name)] (when-not silent (println name)) (if (= with :up) (do (up migration) (insert-migrations db-spec sname name)) (do (down migration) (delete-migrations db-spec sname name)))))))) でlist-migrations-namesの定義がこれ、list-migrationsを呼んでる。 (defn list-migrations-names [] (map #(-&gt; % meta :name str) (list-migrations))) (defn list-migrations [] (if *reload-migrations* (when (.exists (migrations-file)) (swap!</div>
+
+    <div class="post-content">
+        
+
+<p>意外と日が空いたね。</p>
+
+<p>最近はPHPを書いてます。つってもほんと最近からだけど。</p>
+
+<p>そんな最中、さあ書くぞーって時にvimがフリーズしたことがありました。</p>
+
+<p>vimが止まったのは人生初の経験だったので焦りました。</p>
+
+<p>もうほんと困った！</p>
+
+<h2 id="原因:fd4f21eb55d20dc5d298df72f4a01bea">原因</h2>
+
+<p>ほとんどコピペで作った<code>.vimrc</code>のせいで何が悪いのかがわからない・・・。</p>
+
+<p>ていうか未だに書き方がようわからない・・・。</p>
+
+<p>というわけで<strong>とりあえず色々消してみて軽くなるパターンを探す</strong>方法で行くしかなかった。</p>
+
+<p>原始的最強。</p>
+
+<p>結論を言いますと<code>neocomplcache</code>の設定が甘かったです。</p>
+
+<p>この設定が原因でした。</p>
+
+<pre><code>let g:neocomplcache_omni_patterns.php = '[^. \t]-&gt;\h\w*\|\h\w*::'
+</code></pre>
+
+<p>Shougoさんのプラグインを適当に使ってたオレが悪かったんです。</p>
+
+<p>実はこの件に関してはShougoさん本人がまとめててくださってました。</p>
+
+<p><a href="http://vim-jp.org/vim-users-jp/2011/01/06/Hack-193.html">vim-jp » Hack #193: neocomplcacheの設定について知る　後編</a></p>
+
+<blockquote>
+<p>g:neocomplcache_omni_patternsは、neocomplcacheがオムニ補完の関数を呼び出すためのキーワードパターンを設定します。 主な言語にはデフォルトで対応していますが、RubyやPHPなど重いものは無効化されています。 設定例のようにすれば有効化できますが、Vimがフリーズする可能性もあります。自己責任で使用してください。</p>
+</blockquote>
+
+<p>いいタイミングだし、0から書き直すかな・・・。</p>
+
+<p>そしてHappy Vim Lifeを&hellip;</p>
+
     </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
+
+    <aside class="post-ad pc">
+        <iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=48&l=st1&mode=books-jp&search=php&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="728" height="90" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+    </aside>
+
+    <aside class="post-ad sp">
+<iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=12&l=st1&mode=books-jp&search=php&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="300" height="250" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+    </aside>
+
+    <aside>
+        <div class="post-share">
+            <h3>Share</h3>
+            <a id="share-fb" href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f05%2fvim-freezed-in-editting-a-php-file%2f&t=PHP%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%ae%e5%ae%9a%e6%95%b0%e3%81%ab%e8%a7%a6%e3%82%8b%e3%81%a8vim%e3%81%8c%e3%83%95%e3%83%aa%e3%83%bc%e3%82%ba%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/facebook.png" alt="Facebook"/></a>
+            <a id="share-twitter" href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f05%2fvim-freezed-in-editting-a-php-file%2f&text=PHP%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%ae%e5%ae%9a%e6%95%b0%e3%81%ab%e8%a7%a6%e3%82%8b%e3%81%a8vim%e3%81%8c%e3%83%95%e3%83%aa%e3%83%bc%e3%82%ba%e3%81%99%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/twitter.png" alt="Twitter"/></a>
+            <a id="share-googleplus" href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f05%2fvim-freezed-in-editting-a-php-file%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/googleplus.png" alt="Google+"/></a>
+            <a id="share-hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f05%2fvim-freezed-in-editting-a-php-file%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/hatena.png" alt="Hatena"/></a>
+            <a id="share-pocket" href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f05%2fvim-freezed-in-editting-a-php-file%2f&title=PHP%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%ae%e5%ae%9a%e6%95%b0%e3%81%ab%e8%a7%a6%e3%82%8b%e3%81%a8vim%e3%81%8c%e3%83%95%e3%83%aa%e3%83%bc%e3%82%ba%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/pocket.png" alt="Pocket"/></a>
+        </div>
+
+        
+        
+
+        
+        <div class="post-related">
+            <h3>Related Post</h3>
+            <ul class="post-tags">
+                
+                <li>
+                    <a href="http://yet.unresolved.xyz/tags/php">
+                        <i class="fa fa-tags"></i>
+                        php
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="http://yet.unresolved.xyz/tags/vim">
+                        <i class="fa fa-tags"></i>
+                        vim
+                    </a>
+                </li>
+                
+            </ul>
+
+            <ul>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="http://yet.unresolved.xyz/blog/2014/09/29/laravel-array-input/">Laravelで配列をリクエストパラメータにする</a></li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ul>
+        </div>
+        
+    </aside>
 
     
-    <article class="post">
-    <div class="eyecatch">
-        
-        <a href="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/"><img src="http://yet.unresolved.xyz/images/clojure.png" alt="Lobosを使ってマイグレーションをする"></a>
-        
-    </div>
-    <div class="data">
-        <span class="post-date">Thu, Dec 11, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/">Lobosを使ってマイグレーションをする</a></h1>
-        <div class="summary">1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。 というわけでClojureを使ってWeb開発をする際も使いたいので、Lobosというスキーマのマニュピレーション、マイグレーションツールを使ってみます。 インストール 本体はここbudu/lobos。 project.cljに :dependencies [[lobos &quot;1.0.0-beta3&quot;]] を追加してlein depsするだけでおーけー。 Leiningenのプラグインとして使えるpupeno/lein-lobosってのもあるようだ。 こっちも使う場合は、ploject.cljに :plugins [lein-lobos &quot;1.0.0-beta1&quot;] を追加。 全体を載っけるとこんな感じに。 (defproject tpc &quot;0.1.0-SNAPSHOT&quot; :description &quot;FIXME: write description&quot; :url &quot;http://example.com/FIXME&quot; :min-lein-version &quot;2.0.0&quot; :dependencies [[org.clojure/clojure &quot;1.6.0&quot;] [compojure &quot;1.2.0&quot;] [ring/ring-defaults &quot;0.1.2&quot;] [enlive &quot;1.1.5&quot;] [korma &quot;0.4.0&quot;] [postgresql &quot;9.1-901.jdbc4&quot;] [lobos &quot;1.0.0-beta3&quot;]] :plugins [[lein-ring &quot;0.8.13&quot;] [lein-haml-sass &quot;0.2.7-SNAPSHOT&quot;] [lein-lobos &quot;1.0.0-beta1&quot;]] :ring {:handler tpc.core.handler/app} :profiles {:dev {:dependencies [[javax.servlet/servlet-api &quot;2.5&quot;] [ring-mock &quot;0.1.5&quot;] [org.xerial/sqlite-jdbc &quot;3.6.16&quot;]]}} :scss {:src &quot;resources/scss&quot; :output-directory &quot;resources/public/css&quot; :output-extension &quot;css&quot;}) テーブル定義をしてみる 今回はSQLiteにて実施。 srcディレクトリ直下にlobosってディレクトリを作成して、その中にいろいろな設定を突っ込む必要があるらしい。 このディレクトリの名前は変えてもいいみたいだけど面倒になりそうだからこのままで。 まずは接続情報を記載するsrc/lobos/config.clj。 (ns lobos.config (:use lobos.connectivity)) (def db_dev {:classname &quot;org.sqlite.JDBC&quot; :subprotocol &quot;sqlite&quot; :subname &quot;./dev.sqlite3&quot;}) (open-global db_dev) 次にスキーマ操作で使われている(と思われる)ヘルパー、src/lobos/helpers.cljを定義。 (ns lobos.helpers (:refer-clojure :exclude [bigint boolean char double float time]) (:use (lobos schema))) (defn surrogate-key [table] (integer table :id :auto-inc :primary-key)) (defn timestamps [table] (-&gt; table (timestamp :updated_on) (timestamp :created_on (default (now))))) (defn refer-to [table ptable] (let [cname (-&gt; (-&gt;&gt; ptable name butlast (apply str)) (str &quot;_id&quot;) keyword)] (integer table cname [:refer ptable :id :on-delete :set-null]))) (defmacro tbl [name &amp; elements] `(-&gt; (table ~name) (timestamps) ~@(reverse elements) (surrogate-key))) で、目的のマイグレーション定義をsrc/lobos/migrations.cljに。 (ns lobos.migrations (:refer-clojure :exclude [alter drop bigint boolean char double float time]) (:use (lobos [migration :only [defmigration]] core schema config helpers))) (defmigration add-sites-table (up [] (create (tbl :sites (varchar :name 255) (varchar :url 255) (varchar :rss 255) (varchar :image 255) (integer :cat) ))) (down [] (drop (table :sites)))) マイグレーションの実行 ここが結構厄介だった。 というか、出来たといえば出来たんだけど、もっと正しい方法があるような気が・・・。 REPLにて以下を実行。 WARNINGは多分すでに存在するシンボルを置き換えてしまってることの警告だからとりあえず無視。 tpc git:(master)$ lein repl (use '(lobos connectivity core schema))nREPL server started on port 50092 on host 127.0.0.1 - nrepl://127.0.0.1:50092 REPL-y 0.3.1 Clojure 1.6.0 Docs: (doc function-name-here) (find-doc &quot;part-of-name-here&quot;) Source: (source function-name-here) Javadoc: (javadoc java-object-or-class-here) Exit: Control+D or (exit) or (quit) Results: Stored in vars *1, *2, *3, an exception in *e user=&gt; (use '(lobos connectivity core schema)) WARNING: alter already refers to: #'clojure.core/alter in namespace: user, being replaced by: #'lobos.core/alter WARNING: drop already refers to: #'clojure.core/drop in namespace: user, being replaced by: #'lobos.core/drop WARNING: boolean already refers to: #'clojure.core/boolean in namespace: user, being replaced by: #'lobos.schema/boolean WARNING: char already refers to: #'clojure.core/char in namespace: user, being replaced by: #'lobos.schema/char WARNING: double already refers to: #'clojure.core/double in namespace: user, being replaced by: #'lobos.schema/double WARNING: bigint already refers to: #'clojure.core/bigint in namespace: user, being replaced by: #'lobos.schema/bigint WARNING: float already refers to: #'clojure.core/float in namespace: user, being replaced by: #'lobos.schema/float WARNING: time already refers to: #'clojure.core/time in namespace: user, being replaced by: #'lobos.schema/time nil user=&gt; (require 'lobos.migrations) nil user=&gt; (migrate) add-sites-table nil user=&gt; 確認してみましょう。 tpc git:(master)$ sqlite3 dev.sqlite3 SQLite version 3.8.5 2014-08-15 22:37:57 Enter &quot;.help&quot; for usage hints.</div>
-    </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
+    <footer>
+        <div class="move">
+            <div class="prev">
+                
+            </div>
+            <div class="next">
+                
+                <a href="http://yet.unresolved.xyz/blog/2015/01/26/ordinary-linux-programming/">
+                    「ふつうのLinuxプログラミング」を読んだ
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+                
+            </div>
+        </div>
 
-    
-</div>
+        
+        
+        
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+ 
+var disqus_shortname = 'unresolved'; 
+
+ 
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        
+        
+    </footer>
+
+</article>
 
 
     </div>

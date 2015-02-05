@@ -109,6 +109,8 @@
             
             
             
+            
+            
         </div>
     </div>
 
@@ -116,6 +118,26 @@
 
 
 <div class="post">
+        
+        <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/"><img src="http://yet.unresolved.xyz/images/vim.png" alt="PHPファイルの定数に触るとvimがフリーズする"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Thu, Feb 5, 2015</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/">PHPファイルの定数に触るとvimがフリーズする</a></h1>
+        <div class="summary">意外と日が空いたね。 最近はPHPを書いてます。つってもほんと最近からだけど。 そんな最中、さあ書くぞーって時にvimがフリーズしたことがありました。 vimが止まったのは人生初の経験だったので焦りました。 もうほんと困った！ 原因 ほとんどコピペで作った.vimrcのせいで何が悪いのかがわからない・・・。 ていうか未だに書き方がようわからない・・・。 というわけでとりあえず色々消してみて軽くなるパターンを探す方法で行くしかなかった。 原始的最強。 結論を言いますとneocomplcacheの設定が甘かったです。 この設定が原因でした。 let g:neocomplcache_omni_patterns.php = '[^. \t]-&gt;\h\w*\|\h\w*::' Shougoさんのプラグインを適当に使ってたオレが悪かったんです。 実はこの件に関してはShougoさん本人がまとめててくださってました。 vim-jp » Hack #193: neocomplcacheの設定について知る 後編 g:neocomplcache_omni_patternsは、neocomplcacheがオムニ補完の関数を呼び出すためのキーワードパターンを設定します。 主な言語にはデフォルトで対応していますが、RubyやPHPなど重いものは無効化されています。 設定例のようにすれば有効化できますが、Vimがフリーズする可能性もあります。自己責任で使用してください。 いいタイミングだし、0から書き直すかな・・・。 そしてHappy Vim Lifeを&hellip;</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
+
         
         <article class="post">
     <div class="eyecatch">
@@ -1146,6 +1168,13 @@
                     
                     <a href="http://yet.unresolved.xyz/tags/vagrant">
                         vagrant
+                    </a>
+                </li>
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz/tags/vim">
+                        vim
                     </a>
                 </li>
                 
