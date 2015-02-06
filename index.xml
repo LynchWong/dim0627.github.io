@@ -6,8 +6,96 @@
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
-    <updated>2015-02-05 21:36:25 &#43;0900 JST</updated>
+    <updated>2015-02-06 20:50:35 &#43;0900 JST</updated>
 
+    
+      
+        <item>
+          <title>今だからやるvimコマンド再学習</title>
+          <link>http://yet.unresolved.xyz/blog/2015/02/06/learning-vim-again/</link>
+          <pubDate>Fri, 06 Feb 2015 20:50:35 JST</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2015/02/06/learning-vim-again/</guid>
+          <description>
+
+&lt;p&gt;ちょうど1年ほど前からvimを使ってるんだけど、&lt;/p&gt;
+
+&lt;p&gt;例に漏れずオレも使い始めの頃にこのサイトを参考にさせて頂きました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.jnito.com/entry/20120101/1325420213&#34;&gt;僕がサクラエディタからVimに乗り換えるまで - give IT a try&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2012年公開の記事なんだね、意外と最近。&lt;/p&gt;
+
+&lt;p&gt;ずっとずっとやれないで居たんだけど、いずれやろうと思っていたこの記事の一節があります。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;そんなこんなで2〜3日ぐらい「Vim縛り」をやっていると、徐々にVim恐怖症は消えてくると思います。
+おめでとうございます！これであなたも立派なVimmerです！！・・・と喜ぶのはまだ早いです。&lt;/p&gt;
+
+&lt;p&gt;もう一回チートシートを見直してください。&lt;/p&gt;
+
+&lt;p&gt;もう一回VimのTutorialをやってみてください。
+あれ？Vimにこんなコマンドがあるなんて知らなかったぞ？何か便利そうやん！&lt;/p&gt;
+
+&lt;p&gt;と思うようなコマンドをいくつか再発見できるはずです。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ようやく実施出来たのでまた忘れたりしないようにメモっておきたい。&lt;/p&gt;
+
+&lt;h2 id=&#34;使ってなかったけどこれから使っていきたい思ったvimコマンド:d126f8f0023b0ae6ada93d9e335f5bcf&#34;&gt;使ってなかったけどこれから使っていきたい思ったvimコマンド&lt;/h2&gt;
+
+&lt;h3 id=&#34;g:d126f8f0023b0ae6ada93d9e335f5bcf&#34;&gt;g;&lt;/h3&gt;
+
+&lt;p&gt;前回編集した箇所に飛ぶ。&lt;/p&gt;
+
+&lt;p&gt;結構長いソースとか書いてる時、あっちこっち飛んだりするから面倒に感じてた。&lt;/p&gt;
+
+&lt;p&gt;行番号覚えたりっていう不毛なことやってたんだけど、今後はこれで済みそう！&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_2:d126f8f0023b0ae6ada93d9e335f5bcf&#34;&gt;&amp;gt;&amp;gt;, &amp;lt;&amp;lt;&lt;/h3&gt;
+
+&lt;p&gt;カーソル行をインデントする。&lt;/p&gt;
+
+&lt;p&gt;毎回行頭に戻って・・・ってやってたのが馬鹿らしい・・・。&lt;/p&gt;
+
+&lt;h3 id=&#34;e-root-pm:d126f8f0023b0ae6ada93d9e335f5bcf&#34;&gt;:e **/Root.pm&lt;/h3&gt;
+
+&lt;p&gt;ワーキングディレクトリ以下からRoot.pmにマッチするファイルを開く。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;unite.vim&lt;/code&gt;を使ってるからこっちに目がいかなかった。便利そう。&lt;/p&gt;
+
+&lt;h3 id=&#34;e-ro:d126f8f0023b0ae6ada93d9e335f5bcf&#34;&gt;:e **/*Ro&lt;/h3&gt;
+
+&lt;p&gt;ワーキングディレクトリ以下から*Roにマッチするファイルを開く。&lt;/p&gt;
+
+&lt;p&gt;さらに便利そう。&lt;/p&gt;
+
+&lt;h3 id=&#34;gf:d126f8f0023b0ae6ada93d9e335f5bcf&#34;&gt;gf&lt;/h3&gt;
+
+&lt;p&gt;カーソル位置にある単語と同名のファイル名を開く。&lt;/p&gt;
+
+&lt;p&gt;あんまり使わなそうだけど、こんなんあるんだなと感心した。&lt;/p&gt;
+
+&lt;p&gt;そういう場面に出くわしても忘れて普通にファイル開いちゃいそうだな・・・。&lt;/p&gt;
+
+&lt;h3 id=&#34;wqa:d126f8f0023b0ae6ada93d9e335f5bcf&#34;&gt;:wqa&lt;/h3&gt;
+
+&lt;p&gt;全てのウィンドウを閉じて終了する。&lt;/p&gt;
+
+&lt;p&gt;今までは&lt;code&gt;:q&lt;/code&gt;連打してたんだけど、よく考えれば普通にダサいよね。&lt;/p&gt;
+
+&lt;p&gt;スマートじゃないやり方は大抵何かが間違ってるんだなあと思った。&lt;/p&gt;
+
+&lt;h3 id=&#34;0:d126f8f0023b0ae6ada93d9e335f5bcf&#34;&gt;0&lt;/h3&gt;
+
+&lt;p&gt;インデントのさらに行頭へカーソルを移動する。&lt;/p&gt;
+
+&lt;p&gt;こんなのも知らないとかまじかよ！って自分でも思ったけどいつも&lt;code&gt;^&lt;/code&gt;を使ってたので煩わしかった。&lt;/p&gt;
+
+&lt;p&gt;ある程度操作が出来るようになるとそれでまかなってしまうから成長しないね・・・。&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>
@@ -18,7 +106,7 @@
           <guid>http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/</guid>
           <description>
 
-&lt;p&gt;意外と日が空いたね。&lt;/p&gt;
+&lt;p&gt;意外と日が開いたね。&lt;/p&gt;
 
 &lt;p&gt;最近はPHPを書いてます。つってもほんと最近からだけど。&lt;/p&gt;
 
@@ -3398,56 +3486,6 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
     
       
         <item>
-          <title>gitのリポジトリ単位にproxyの設定をする</title>
-          <link>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</link>
-          <pubDate>Sat, 20 Sep 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</guid>
-          <description>
-
-&lt;h2 id=&#34;事の発端:ca86a8bf870eabf283b4127081a3d388&#34;&gt;事の発端&lt;/h2&gt;
-
-&lt;p&gt;会社ではvimを使ってます。&lt;/p&gt;
-
-&lt;p&gt;plugin管理には&lt;a href=&#34;https://github.com/Shougo/neobundle.vim&#34;&gt;neobundle.vim&lt;/a&gt;使ってます。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;.vimrc&lt;/code&gt;は&lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt;で管理してます。&lt;/p&gt;
-
-&lt;p&gt;neobundle.vimで管理してるpluginは大抵のものがGitHub上で管理されてるから、インストールとかアップデートをするときはneobundle.vimがGitHubまで見に行ってくれるんですね。&lt;/p&gt;
-
-&lt;p&gt;ただ、当然社内はproxyを通していて、gitコマンドが通らない！&lt;/p&gt;
-
-&lt;p&gt;ていうかそもそも&lt;strong&gt;GitHubから&lt;code&gt;.vimrc&lt;/code&gt;を落としてくることすら出来ない！いいやzipで落とせ！&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;しかしpluginの導入を手でやるのはだるい・・・。&lt;/p&gt;
-
-&lt;p&gt;マジで？サクラエディタで頑張るしかない？&lt;/p&gt;
-
-&lt;p&gt;いやいやそんなことはない。&lt;/p&gt;
-
-&lt;h2 id=&#34;解決:ca86a8bf870eabf283b4127081a3d388&#34;&gt;解決&lt;/h2&gt;
-
-&lt;p&gt;じゃあこうしようってことで、&lt;code&gt;~/.gitconfig&lt;/code&gt;をこんな感じにしたのよ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;[https]
-        proxy = http://proxy.com:8080
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ひとまず解決したんです。&lt;/p&gt;
-
-&lt;p&gt;そしたら次は&lt;strong&gt;社内のgitに繋がらない！！&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;マジかよじゃあ&lt;code&gt;~/.gitconfig&lt;/code&gt;をちょこちょこ変えるのかよだせえよそれと思ったら既に解決してくれてる人がいた。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://tanacasino.hatenablog.com/entry/2013/12/21/003750&#34;&gt;Git の http proxy に関するまとめ&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;めんどくさかったけど、個々のpluginの&lt;code&gt;config&lt;/code&gt;にだけproxyの記述を追加することで解決。&lt;/p&gt;
-</description>
-        </item>
-      
-    
-      
-        <item>
           <title>OctopressのサイドバーにGravatarを表示させる</title>
           <link>http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/</link>
           <pubDate>Sat, 20 Sep 2014 00:00:00 UTC</pubDate>
@@ -3569,6 +3607,56 @@ div#urls {
 &lt;h2 id=&#34;参考にさせて頂きました:61eb03e5faeba6147c5a5cd44e5e95a1&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://blog.awairo.net/blog/2013/12/24/octopress-aside-of-getting-profile-from-gravatar/&#34;&gt;Gravatarのプロフィールを表示するOctopressのサイドバー&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>gitのリポジトリ単位にproxyの設定をする</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</link>
+          <pubDate>Sat, 20 Sep 2014 00:00:00 UTC</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</guid>
+          <description>
+
+&lt;h2 id=&#34;事の発端:ca86a8bf870eabf283b4127081a3d388&#34;&gt;事の発端&lt;/h2&gt;
+
+&lt;p&gt;会社ではvimを使ってます。&lt;/p&gt;
+
+&lt;p&gt;plugin管理には&lt;a href=&#34;https://github.com/Shougo/neobundle.vim&#34;&gt;neobundle.vim&lt;/a&gt;使ってます。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;.vimrc&lt;/code&gt;は&lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt;で管理してます。&lt;/p&gt;
+
+&lt;p&gt;neobundle.vimで管理してるpluginは大抵のものがGitHub上で管理されてるから、インストールとかアップデートをするときはneobundle.vimがGitHubまで見に行ってくれるんですね。&lt;/p&gt;
+
+&lt;p&gt;ただ、当然社内はproxyを通していて、gitコマンドが通らない！&lt;/p&gt;
+
+&lt;p&gt;ていうかそもそも&lt;strong&gt;GitHubから&lt;code&gt;.vimrc&lt;/code&gt;を落としてくることすら出来ない！いいやzipで落とせ！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;しかしpluginの導入を手でやるのはだるい・・・。&lt;/p&gt;
+
+&lt;p&gt;マジで？サクラエディタで頑張るしかない？&lt;/p&gt;
+
+&lt;p&gt;いやいやそんなことはない。&lt;/p&gt;
+
+&lt;h2 id=&#34;解決:ca86a8bf870eabf283b4127081a3d388&#34;&gt;解決&lt;/h2&gt;
+
+&lt;p&gt;じゃあこうしようってことで、&lt;code&gt;~/.gitconfig&lt;/code&gt;をこんな感じにしたのよ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;[https]
+        proxy = http://proxy.com:8080
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ひとまず解決したんです。&lt;/p&gt;
+
+&lt;p&gt;そしたら次は&lt;strong&gt;社内のgitに繋がらない！！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;マジかよじゃあ&lt;code&gt;~/.gitconfig&lt;/code&gt;をちょこちょこ変えるのかよだせえよそれと思ったら既に解決してくれてる人がいた。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://tanacasino.hatenablog.com/entry/2013/12/21/003750&#34;&gt;Git の http proxy に関するまとめ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;めんどくさかったけど、個々のpluginの&lt;code&gt;config&lt;/code&gt;にだけproxyの記述を追加することで解決。&lt;/p&gt;
 </description>
         </item>
       
