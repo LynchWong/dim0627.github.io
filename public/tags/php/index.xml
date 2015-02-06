@@ -55,6 +55,8 @@
 &lt;p&gt;g:neocomplcache_omni_patternsは、neocomplcacheがオムニ補完の関数を呼び出すためのキーワードパターンを設定します。 主な言語にはデフォルトで対応していますが、RubyやPHPなど重いものは無効化されています。 設定例のようにすれば有効化できますが、Vimがフリーズする可能性もあります。自己責任で使用してください。&lt;/p&gt;
 &lt;/blockquote&gt;
 
+&lt;p&gt;つまり原因は定数云々じゃなく&lt;code&gt;self::&lt;/code&gt;がパターンに合致したせいで、補完が走り一気に重たくなったと。&lt;/p&gt;
+
 &lt;p&gt;いいタイミングだし、0から書き直すかな・・・。&lt;/p&gt;
 
 &lt;p&gt;そしてHappy Vim Lifeを&amp;hellip;&lt;/p&gt;
