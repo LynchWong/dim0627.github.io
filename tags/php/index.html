@@ -113,6 +113,8 @@
             
             
             
+            
+            
         </div>
     </div>
 
@@ -120,6 +122,26 @@
 
 
 <div class="posts">
+    
+    <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/"><img src="http://yet.unresolved.xyz/images/apigility.png" alt="Apigility &#43; React.jsでタスク管理ツールを作ってみる"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Sat, Feb 14, 2015</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/">Apigility &#43; React.jsでタスク管理ツールを作ってみる</a></h1>
+        <div class="summary">これに行ってきました。 Zend 社技術者による最近の PHP 関連の取り組みご紹介 - Zendイベント管理 | Doorkeeper 英語辛かった。 PHP7やらZ Rayやらまあ気になるものはそれなりにあったんだけど、 その中でも触ってみようかなと思えるくらい興味を持てたApigilityを触ってみようと思います。 ついでなので使ってみたかったReact.jsも導入してみる。 Apigility？ API構築に特化したのフレームワークらしい。 プレゼンテーションレイヤを完全に分離したアーキテクチャでの利用を想定しているんだと思う。 何が強いかって、DBさえ用意してしまえば後はGUIから操作するだけでAPIが作れてしまう。 DBも多分メジャーどころは大抵使える(と思う)し、APIもRPCはもちろん、RESTfulな設計にもバッチリ対応してるらしい。 今回は勉強も兼ねて、簡単なタスク管理ツールを作ってみます。 インストール このコマンドをべしっとやるだけで、カレントディレクトリにapigilityのディレクトリが切られる &amp; サーバまで起動する。 curl -sS https://apigility.org/install | php サーバを再度起動する場合はphp -S localhost:8888 -t public public/index.phpとかやればOK。 画面を開くとこんな感じのが出てくる。 ロゴがかわいいね。 ここからAPIの追加やらが出来る。 データベースの準備 プロダクションでやるものじゃないので、SQLiteでやっちゃう。 テーブルはこんな感じで、名前と完了/未完了が持てるだけにしよう。 create table tasks(id integer primary key, name varchar(20), finished integer); Apigilityからデータベースにつなぐ SettingsのDatabase Adapteresから定義を追加出来る。 今回はこんな感じで設定。 APIを追加する データはまだないけどとりあえずAPIだけ作ってみよう。 APIsのCreate New APIからAPIを追加する。 今回はTasksという名前で作成した。 粒度がわかりづらいけど、ここで作ったAPIに対して個々のサービスを追加していく。 大分類みたいなものだと捉えればいいのかな？ サービスを追加する さっき作ったTasksAPIに、データベースのtasksテーブルとRESTで紐づくサービスを追加する。 今回はREST Service Nameをtasks、DB-Connectedはさっき作ったアダプタとテーブル名を設定。 こんな感じになる。 接続できるか試してみよう。 データがないので、まずはPOSTで格納してみる。 いけてるっぽい。 取得は？ おお！取れる！ もちろんSQLite側にも、 sqlite&gt; select * from tasks; 1|task1|false 入ってます。 ビューを作る サーバサイドがあまりにもサクッと終わっちゃったな・・・。 後は画面側を生のHTMLにして、取得と格納は全部JSに任せます。 つってもここはあんまり説明してもしょうがないのでSSとコードだけ。 こんな感じで、 こんなHTMLでやりました。 &lt;!DOCTYPE HTML&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css&quot;&gt; &lt;style&gt; #tasks-wrapper { margin: 20px auto; max-width: 500px; } #tasks { } .buttons { margin-right: 5px; } .buttons&gt;button { margin-right: 5px; } &lt;/style&gt; &lt;div id=&quot;tasks-wrapper&quot;&gt; &lt;div class=&quot;input-group&quot;&gt; &lt;input type=&quot;text&quot; id=&quot;task-name&quot; class=&quot;form-control&quot; placeholder=&quot;Task name&quot;&gt; &lt;span class=&quot;input-group-btn&quot;&gt; &lt;button id=&quot;task-post&quot; class=&quot;btn btn-success&quot; type=&quot;button&quot;&gt;登録&lt;/button&gt; &lt;/span&gt; &lt;/div&gt; &lt;hr&gt; &lt;div id=&quot;tasks&quot;&gt; &lt;/div&gt; &lt;/div&gt; &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.min.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/react/0.12.2/JSXTransformer.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;//code.jquery.com/jquery-2.1.3.min.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;/app.js&quot; type=&quot;text/jsx&quot;&gt;&lt;/script&gt; JSはこんな。 var Task = React.createClass({ del: function(e) { $.ajax({ type: &quot;DELETE&quot;, url: &quot;/tasks/&quot; + this.props.id, }); }, finish: function(e) { $.ajax({ type: &quot;PUT&quot;, url: &quot;/tasks/&quot; + this.props.id, data: JSON.stringify({finished: 1}), headers: { &quot;Content-Type&quot;: &quot;application/json&quot;, } }); }, render: function() { return (&lt;li className=&quot;list-group-item clearfix&quot;&gt; &lt;div className=&quot;buttons pull-left&quot;&gt; {this.props.finished == &quot;0&quot; ?</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
+
     
     <article class="post">
     <div class="eyecatch">
@@ -188,6 +210,13 @@
             <h2>Tags</h2>
             <ul class="post-tags">
                 
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz/tags/apigility">
+                        apigility
+                    </a>
+                </li>
                 
                 <li>
                     
@@ -473,6 +502,13 @@
                     
                     <a href="http://yet.unresolved.xyz/tags/python">
                         python
+                    </a>
+                </li>
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz/tags/reactjs">
+                        reactjs
                     </a>
                 </li>
                 
