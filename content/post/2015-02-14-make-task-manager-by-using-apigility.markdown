@@ -21,7 +21,7 @@ PHP7やらZ Rayやらまあ気になるものはそれなりにあったんだ�
 
 ## [Apigility](https://apigility.org/)？
 
-API構築に特化したのフレームワークらしい。
+API構築に特化したフレームワークらしい。
 
 プレゼンテーションレイヤを完全に分離したアーキテクチャでの利用を想定しているんだと思う。
 
@@ -47,11 +47,11 @@ curl -sS https://apigility.org/install | php
 
 ロゴがかわいいね。
 
-ここからAPIの追加やらが出来る。
+ここからAPIの追加やデータベース接続の設定やらが出来ます。
 
 ## データベースの準備
 
-プロダクションでやるものじゃないので、SQLiteでやっちゃう。
+適当なものなので、SQLiteでやっちゃう。
 
 テーブルはこんな感じで、名前と完了/未完了が持てるだけにしよう。
 
@@ -70,8 +70,6 @@ create table tasks(id integer primary key, name varchar(20), finished integer);
 [<img src="/images/2015-02-14/def_database.png" class="image" alt="def_database">](/images/2015-02-14/def_database.png)
 
 ## APIを追加する
-
-データはまだないけどとりあえずAPIだけ作ってみよう。
 
 `APIs`の`Create New API`からAPIを追加する。
 
@@ -126,7 +124,9 @@ sqlite> select * from tasks;
 
 つってもここはあんまり説明してもしょうがないのでSSとコードだけ。
 
-こんな感じで、
+そうですめんどくさくなりました。
+
+表示はこんな感じで、
 
 [<img src="/images/2015-02-14/view.png" class="image" alt="view">](/images/2015-02-14/view.png)
 
