@@ -94,7 +94,15 @@
 
 &lt;p&gt;さっき作ったTasksAPIに、データベースの&lt;code&gt;tasks&lt;/code&gt;テーブルとRESTで紐づくサービスを追加する。&lt;/p&gt;
 
-&lt;p&gt;今回は&lt;code&gt;REST Service Name&lt;/code&gt;をtasks、&lt;code&gt;DB-Connected&lt;/code&gt;はさっき作ったアダプタとテーブル名を設定。&lt;/p&gt;
+&lt;p&gt;サービスはRESTとRPCから選ぶことが出来て、&lt;/p&gt;
+
+&lt;p&gt;RPCを選ぶと自動生成されたPHPのコードに自分で処理を書いていく感じになるみたい。&lt;/p&gt;
+
+&lt;p&gt;んで指定したURLを叩くとその処理が呼ばれる、って感じ。&lt;/p&gt;
+
+&lt;p&gt;今回は単純にテーブルとURLをRESTfulに対応付けられればいいのでRESTにしてます。&lt;/p&gt;
+
+&lt;p&gt;というわけで、&lt;code&gt;REST Service Name&lt;/code&gt;をtasks、&lt;code&gt;DB-Connected&lt;/code&gt;はさっき作ったアダプタとテーブル名を設定。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/create_service.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/create_service.png&#34; class=&#34;image&#34; alt=&#34;create_service&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 

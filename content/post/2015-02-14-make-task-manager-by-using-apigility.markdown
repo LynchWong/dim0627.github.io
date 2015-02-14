@@ -85,7 +85,15 @@ create table tasks(id integer primary key, name varchar(20), finished integer);
 
 さっき作ったTasksAPIに、データベースの`tasks`テーブルとRESTで紐づくサービスを追加する。
 
-今回は`REST Service Name`をtasks、`DB-Connected`はさっき作ったアダプタとテーブル名を設定。
+サービスはRESTとRPCから選ぶことが出来て、
+
+RPCを選ぶと自動生成されたPHPのコードに自分で処理を書いていく感じになるみたい。
+
+んで指定したURLを叩くとその処理が呼ばれる、って感じ。
+
+今回は単純にテーブルとURLをRESTfulに対応付けられればいいのでRESTにしてます。
+
+というわけで、`REST Service Name`をtasks、`DB-Connected`はさっき作ったアダプタとテーブル名を設定。
 
 [<img src="/images/2015-02-14/create_service.png" class="image" alt="create_service">](/images/2015-02-14/create_service.png)
 
