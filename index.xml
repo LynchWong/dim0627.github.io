@@ -32,7 +32,7 @@
 
 &lt;h2 id=&#34;apigility-https-apigility-org:a8f13c6c06505842468ef355c1de93c5&#34;&gt;&lt;a href=&#34;https://apigility.org/&#34;&gt;Apigility&lt;/a&gt;？&lt;/h2&gt;
 
-&lt;p&gt;API構築に特化したのフレームワークらしい。&lt;/p&gt;
+&lt;p&gt;API構築に特化したフレームワークらしい。&lt;/p&gt;
 
 &lt;p&gt;プレゼンテーションレイヤを完全に分離したアーキテクチャでの利用を想定しているんだと思う。&lt;/p&gt;
 
@@ -57,11 +57,11 @@
 
 &lt;p&gt;ロゴがかわいいね。&lt;/p&gt;
 
-&lt;p&gt;ここからAPIの追加やらが出来る。&lt;/p&gt;
+&lt;p&gt;ここからAPIの追加やデータベース接続の設定やらが出来ます。&lt;/p&gt;
 
 &lt;h2 id=&#34;データベースの準備:a8f13c6c06505842468ef355c1de93c5&#34;&gt;データベースの準備&lt;/h2&gt;
 
-&lt;p&gt;プロダクションでやるものじゃないので、SQLiteでやっちゃう。&lt;/p&gt;
+&lt;p&gt;適当なものなので、SQLiteでやっちゃう。&lt;/p&gt;
 
 &lt;p&gt;テーブルはこんな感じで、名前と完了/未完了が持てるだけにしよう。&lt;/p&gt;
 
@@ -79,8 +79,6 @@
 &lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/def_database.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/def_database.png&#34; class=&#34;image&#34; alt=&#34;def_database&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;apiを追加する:a8f13c6c06505842468ef355c1de93c5&#34;&gt;APIを追加する&lt;/h2&gt;
-
-&lt;p&gt;データはまだないけどとりあえずAPIだけ作ってみよう。&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;APIs&lt;/code&gt;の&lt;code&gt;Create New API&lt;/code&gt;からAPIを追加する。&lt;/p&gt;
 
@@ -134,7 +132,9 @@
 
 &lt;p&gt;つってもここはあんまり説明してもしょうがないのでSSとコードだけ。&lt;/p&gt;
 
-&lt;p&gt;こんな感じで、&lt;/p&gt;
+&lt;p&gt;そうですめんどくさくなりました。&lt;/p&gt;
+
+&lt;p&gt;表示はこんな感じで、&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/view.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/view.png&#34; class=&#34;image&#34; alt=&#34;view&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
