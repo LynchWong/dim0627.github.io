@@ -15,11 +15,11 @@ title: "Apigility + React.jsでタスク管理ツールを作ってみる"
 
 PHP7やらZ Rayやらまあ気になるものはそれなりにあったんだけど、
 
-その中でも触ってみようかなと思えるくらい興味を持てたApigilityを触ってみようと思います。
+その中でも触ってみようかなと思えるくらい興味を持てた[Apigility](https://apigility.org/)を触ってみようと思います。
 
 ついでなので使ってみたかったReact.jsも導入してみる。
 
-## [Apigility](https://apigility.org/)？
+## Apigility？
 
 API構築に特化したフレームワークらしい。
 
