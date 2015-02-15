@@ -70,7 +70,7 @@
 
 &lt;h2 id=&#34;apigilityからデータベースにつなぐ:a8f13c6c06505842468ef355c1de93c5&#34;&gt;Apigilityからデータベースにつなぐ&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;Settings&lt;/code&gt;の&lt;code&gt;Database Adapteres&lt;/code&gt;から定義を追加出来る。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Settings&lt;/code&gt;の&lt;code&gt;Database Adapters&lt;/code&gt;から定義を追加出来る。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/database.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/database.png&#34; class=&#34;image&#34; alt=&#34;database&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 

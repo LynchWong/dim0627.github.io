@@ -61,7 +61,7 @@ create table tasks(id integer primary key, name varchar(20), finished integer);
 
 ## Apigilityからデータベースにつなぐ
 
-`Settings`の`Database Adapteres`から定義を追加出来る。
+`Settings`の`Database Adapters`から定義を追加出来る。
 
 [<img src="/images/2015-02-14/database.png" class="image" alt="database">](/images/2015-02-14/database.png)
 
