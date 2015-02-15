@@ -4,7 +4,7 @@ title: "Lobosでマイグレーションができない in Heroku"
 eyecatch: "clojure.png"
 date: 2014-12-21
 comments: true
-tags: ["heroku", "clojure", "migration", "lobos", "postgres"]
+tags: ["heroku", "clojure", "migration", "lobos", "postgresql"]
 ---
 
 ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。
