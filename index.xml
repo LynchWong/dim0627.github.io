@@ -26,11 +26,11 @@
 
 &lt;p&gt;PHP7やらZ Rayやらまあ気になるものはそれなりにあったんだけど、&lt;/p&gt;
 
-&lt;p&gt;その中でも触ってみようかなと思えるくらい興味を持てたApigilityを触ってみようと思います。&lt;/p&gt;
+&lt;p&gt;その中でも触ってみようかなと思えるくらい興味を持てた&lt;a href=&#34;https://apigility.org/&#34;&gt;Apigility&lt;/a&gt;を触ってみようと思います。&lt;/p&gt;
 
 &lt;p&gt;ついでなので使ってみたかったReact.jsも導入してみる。&lt;/p&gt;
 
-&lt;h2 id=&#34;apigility-https-apigility-org:a8f13c6c06505842468ef355c1de93c5&#34;&gt;&lt;a href=&#34;https://apigility.org/&#34;&gt;Apigility&lt;/a&gt;？&lt;/h2&gt;
+&lt;h2 id=&#34;apigility:a8f13c6c06505842468ef355c1de93c5&#34;&gt;Apigility？&lt;/h2&gt;
 
 &lt;p&gt;API構築に特化したフレームワークらしい。&lt;/p&gt;
 
@@ -3660,46 +3660,6 @@ fast-forwards&#39; section of &#39;git push --help&#39; for details.
     
       
         <item>
-          <title>_config.ymlに書いたdescriptionが設定されない</title>
-          <link>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</link>
-          <pubDate>Sun, 21 Sep 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</guid>
-          <description>&lt;p&gt;認識が間違ってるのか、_config.ymlに書いたdescriptionがサイトに反映されない・・・。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;source/_includes/head.html&lt;/code&gt;のコードを見てみるとこんな感じ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{% raw %}
-  {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
-  &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ description | strip_html | condense_spaces | truncate:150 }}&amp;quot;&amp;gt;
-  {% if page.keywords %}&amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;{{ page.keywords }}&amp;quot;&amp;gt;{% endif %}
-{% endraw %}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;page.descriptionしか見てない？&lt;/p&gt;
-
-&lt;p&gt;同じことで悩んでる人いないのかな・・・と思ったら居た。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://sweetme.at/2013/08/06/how-to-set-your-octopress-description-and-keyword-meta-tags/&#34;&gt;Make the Magic Happen&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;やっぱり同じ認識のようだ。&lt;/p&gt;
-
-&lt;p&gt;elseifってこう書くんだね。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{% raw %}
-  {% capture description %}{% if page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
-  &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ description | strip_html | condense_spaces | truncate:150 }}&amp;quot;&amp;gt;
-  {% if page.keywords %}&amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;{{ page.keywords }}&amp;quot;&amp;gt;{% endif %}
-{% endraw %}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;worked!&lt;/p&gt;
-</description>
-        </item>
-      
-    
-      
-        <item>
           <title>Octopressのテーマを作ってみる</title>
           <link>http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/</link>
           <pubDate>Sun, 21 Sep 2014 00:00:00 UTC</pubDate>
@@ -3769,6 +3729,46 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
 &lt;p&gt;&lt;a href=&#34;https://github.com/dim0627/flatten&#34;&gt;flatten&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;gravatarの件が入っちゃってるから、これは後で分離しなきゃなあ。&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>_config.ymlに書いたdescriptionが設定されない</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</link>
+          <pubDate>Sun, 21 Sep 2014 00:00:00 UTC</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</guid>
+          <description>&lt;p&gt;認識が間違ってるのか、_config.ymlに書いたdescriptionがサイトに反映されない・・・。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;source/_includes/head.html&lt;/code&gt;のコードを見てみるとこんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{% raw %}
+  {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
+  &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ description | strip_html | condense_spaces | truncate:150 }}&amp;quot;&amp;gt;
+  {% if page.keywords %}&amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;{{ page.keywords }}&amp;quot;&amp;gt;{% endif %}
+{% endraw %}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;page.descriptionしか見てない？&lt;/p&gt;
+
+&lt;p&gt;同じことで悩んでる人いないのかな・・・と思ったら居た。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://sweetme.at/2013/08/06/how-to-set-your-octopress-description-and-keyword-meta-tags/&#34;&gt;Make the Magic Happen&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;やっぱり同じ認識のようだ。&lt;/p&gt;
+
+&lt;p&gt;elseifってこう書くんだね。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{% raw %}
+  {% capture description %}{% if page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
+  &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ description | strip_html | condense_spaces | truncate:150 }}&amp;quot;&amp;gt;
+  {% if page.keywords %}&amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;{{ page.keywords }}&amp;quot;&amp;gt;{% endif %}
+{% endraw %}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;worked!&lt;/p&gt;
 </description>
         </item>
       
