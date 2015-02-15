@@ -367,6 +367,12 @@ $(&amp;quot;#task-post&amp;quot;).on(&amp;quot;click&amp;quot;, function() {
 
 &lt;p&gt;スマートじゃないやり方は大抵何かが間違ってるんだなあと思った。&lt;/p&gt;
 
+&lt;h3 id=&#34;j:d126f8f0023b0ae6ada93d9e335f5bcf&#34;&gt;J&lt;/h3&gt;
+
+&lt;p&gt;カーソル行とその下の行を結合する。&lt;/p&gt;
+
+&lt;p&gt;いつも先頭に戻って・・・ってやってた。&lt;/p&gt;
+
 &lt;h3 id=&#34;0:d126f8f0023b0ae6ada93d9e335f5bcf&#34;&gt;0&lt;/h3&gt;
 
 &lt;p&gt;インデントのさらに行頭へカーソルを移動する。&lt;/p&gt;
