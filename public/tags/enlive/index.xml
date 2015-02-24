@@ -45,7 +45,7 @@
   [:head :title] (html/content &amp;quot;Enlive starter kit&amp;quot;))
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;HTLMが素でかけるから、デザイナさんとの協業がすごく捗りそう。&lt;/p&gt;
+&lt;p&gt;HTMLが素でかけるから、デザイナさんとの協業がすごく捗りそう。&lt;/p&gt;
 
 &lt;p&gt;サンプルのHTMLをそのまま使って、Clojure側でサンプルの値を置き換えたりリピートさせたりすれば済んじゃう。&lt;/p&gt;
 
