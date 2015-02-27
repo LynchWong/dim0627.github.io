@@ -6,8 +6,100 @@
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
-    <updated>2015-01-25 00:58:15 &#43;0900 JST</updated>
+    <updated>2015-02-28 06:34:59 &#43;0900 JST</updated>
 
+    
+      
+        <item>
+          <title>Slamhoundを使ってClojureのnsを自動生成する</title>
+          <link>http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/</link>
+          <pubDate>Sat, 28 Feb 2015 06:34:59 JST</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/</guid>
+          <description>
+
+&lt;p&gt;ちょっとVimとClojureの環境を整備したくて、こんなのを読んでました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.venanti.us/clojure-vim/&#34;&gt;My Clojure Toolchain: Vim&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;そもそも&lt;code&gt;~/.lein/profiles.clj&lt;/code&gt;の存在を知らなくって、ちょっと色々書いてみることに。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/technomancy/leiningen/blob/master/doc/PROFILES.md&#34;&gt;leiningen/PROFILES.md at master · technomancy/leiningen&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;サンプルはこんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;{:user {:plugins [[lein-pprint &amp;quot;1.1.1&amp;quot;]]
+        :dependencies [[slamhound &amp;quot;1.3.1&amp;quot;]]}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;lein-pprint&lt;/code&gt;は対象のleiningenプロジェクトの情報を表示してくれるインスペクタみたいなもの。&lt;/p&gt;
+
+&lt;p&gt;いつ使うのだろうか。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;slamhound&lt;/code&gt;はClojureのnsを自動生成してくれるもの。&lt;/p&gt;
+
+&lt;p&gt;今回はこれを導入してみる。&lt;/p&gt;
+
+&lt;h2 id=&#34;slamhound-vim:fbdac85df6e96d5628a211f2220a20d8&#34;&gt;Slamhound + Vim&lt;/h2&gt;
+
+&lt;p&gt;Clojureのnsが書きづらいとは思わないけど、まあ面倒なのは確かなわけで自動生成してくれるならそれの方がいい。&lt;/p&gt;
+
+&lt;p&gt;SlamhoundはLeiningenから呼び出すことが出来て、こんな感じのclojureプログラムがあったとして、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(ns my.namespace
+  &amp;quot;I have a doc string.&amp;quot;)
+
+(defn -main [&amp;amp; args]
+  (pprint args)
+  (io/copy (ByteArrayInputStream. (.getBytes &amp;quot;hello&amp;quot;))
+           (first args)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こうやると&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ lein slamhound src/my/namespace.clj
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;nsのとこがこうなる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(ns my.namespace
+  &amp;quot;I have a doc string.&amp;quot;
+  (:require [clojure.java.io :as io]
+            [clojure.pprint :refer [pprint]])
+  (:import (java.io ByteArrayInputStream)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これをVimから呼び出せるようにしたい。&lt;/p&gt;
+
+&lt;h3 id=&#34;slamhoundの導入:fbdac85df6e96d5628a211f2220a20d8&#34;&gt;Slamhoundの導入&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/technomancy/slamhound&#34;&gt;technomancy/slamhound&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;[slamhound &amp;quot;1.5.5&amp;quot;]&lt;/code&gt;を&lt;code&gt;~/.lein/profiles.clj&lt;/code&gt;の&lt;code&gt;:dependencies&lt;/code&gt;に追加するだけ。&lt;/p&gt;
+
+&lt;p&gt;replを起動したりなんかすればleiningenがダウンロードしてくれる。&lt;/p&gt;
+
+&lt;h3 id=&#34;vimプラグインの導入:fbdac85df6e96d5628a211f2220a20d8&#34;&gt;Vimプラグインの導入&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/guns/vim-slamhound&#34;&gt;guns/vim-slamhound&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;NeoBundleを使っているのでこんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;NeoBundle &#39;guns/vim-slamhound&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;NeoBundleInstall&lt;/code&gt;とかすればインストールされる。&lt;/p&gt;
+
+&lt;h3 id=&#34;使い方:fbdac85df6e96d5628a211f2220a20d8&#34;&gt;使い方&lt;/h3&gt;
+
+&lt;p&gt;Vim上で&lt;code&gt;:Slamhound&lt;/code&gt;すればnsが自動生成される。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;use&lt;/code&gt;で呼び出してたものも&lt;code&gt;require&lt;/code&gt;に書きなおしてくれたりする。&lt;/p&gt;
+
+&lt;p&gt;しかしClojure周りもの物って何もかも遅い感じあるけどなんとかなんないのかな・・・。&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>
