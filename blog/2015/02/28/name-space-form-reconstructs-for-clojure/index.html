@@ -9,9 +9,9 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="Slamhoundを使ってClojureのnsを自動生成する | Unresolved">
+<meta property="og:title" content="Slamhoundを使ってClojureのrequireとかを自動生成する | Unresolved">
 <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/">
-<meta property="og:description" content="ちょっとVimとClojureの環境を整備したくて、こんなのを読んでました。 My Clojure Toolchain: Vim そもそも~/.lein/profiles.cljの存在を知らなくって、ちょっと色々書いてみることに。 leiningen/PROFILES.md at master · technomancy/leiningen サンプルはこんな感じ。 {:user {:plugins [[lein-pprint &quot;1.1.1&quot;]] :dependencies [[slamhound &quot;1.3.1&quot;]]}} lein-pprintは対象のleiningenプロジェクトの情報を表示してくれるインスペクタみたいなもの。 いつ使うのだろうか。 slamhoundはClojureのnsを自動生成してくれるもの。 今回はこれを導入してみる。 Slamhound &#43; Vim Clojureのnsが書きづらいとは思わないけど、まあ面倒なのは確かなわけで自動生成してくれるならそれの方がいい。 SlamhoundはLeiningenから呼び出すことが出来て、こんな感じのclojureプログラムがあったとして、 (ns my.namespace &quot;I have a doc string.&quot;) (defn -main [&amp; args] (pprint args) (io/copy (ByteArrayInputStream. (.getBytes &quot;hello&quot;)) (first args))) こうやると $ lein slamhound src/my/namespace.clj nsのとこがこうなる。 (ns my.namespace &quot;I have a doc string.&quot; (:require [clojure.java.io :as io] [clojure.pprint :refer [pprint]]) (:import (java.io ByteArrayInputStream)))">
+<meta property="og:description" content="ちょっとVimとClojureの環境を整備したくて、こんなのを読んでました。 My Clojure Toolchain: Vim そもそも~/.lein/profiles.cljの存在を知らなくって、ちょっと色々書いてみることに。 leiningen/PROFILES.md at master · technomancy/leiningen サンプルはこんな感じ。 {:user {:plugins [[lein-pprint &quot;1.1.1&quot;]] :dependencies [[slamhound &quot;1.3.1&quot;]]}} lein-pprintは対象のleiningenプロジェクトの情報を表示してくれるインスペクタみたいなもの。 いつ使うのだろうか。 slamhoundはClojureのrequireを自動生成してくれるもの。 今回はこれを導入してみる。 Slamhound &#43; Vim Clojureのnsが書きづらいとは思わないけど、まあ面倒なのは確かなわけで自動生成してくれるならそれの方がいい。 SlamhoundはLeiningenから呼び出すことが出来て、こんな感じのclojureプログラムがあったとしたら、 (ns my.namespace &quot;I have a doc string.&quot;) (defn -main [&amp; args] (pprint args) (io/copy (ByteArrayInputStream. (.getBytes &quot;hello&quot;)) (first args))) こうやると $ lein slamhound src/my/namespace.clj nsのとこがこうなる。 (ns my.namespace &quot;I have a doc string.&quot; (:require [clojure.java.io :as io] [clojure.pprint :refer [pprint]]) (:import (java.io ByteArrayInputStream)))">
 
 <meta property="og:image" content="http://yet.unresolved.xyz/images/clojure.png">
 
@@ -21,7 +21,7 @@
 
 <title>
     
-    Slamhoundを使ってClojureのnsを自動生成する | Unresolved
+    Slamhoundを使ってClojureのrequireとかを自動生成する | Unresolved
     
 </title>
 
@@ -130,11 +130,11 @@
 
 <article class="post post-single">
     <span class="post-date">Sat, Feb 28, 2015</span>
-    <h1 class="post-title">Slamhoundを使ってClojureのnsを自動生成する</h1>
+    <h1 class="post-title">Slamhoundを使ってClojureのrequireとかを自動生成する</h1>
 
     <div class="eyecatch">
         
-        <img src="http://yet.unresolved.xyz/images/clojure.png" alt="Slamhoundを使ってClojureのnsを自動生成する">
+        <img src="http://yet.unresolved.xyz/images/clojure.png" alt="Slamhoundを使ってClojureのrequireとかを自動生成する">
         
     </div>
 
@@ -159,7 +159,7 @@
 
 <p>いつ使うのだろうか。</p>
 
-<p><code>slamhound</code>はClojureのnsを自動生成してくれるもの。</p>
+<p><code>slamhound</code>はClojureの<code>require</code>を自動生成してくれるもの。</p>
 
 <p>今回はこれを導入してみる。</p>
 
@@ -167,7 +167,7 @@
 
 <p>Clojureのnsが書きづらいとは思わないけど、まあ面倒なのは確かなわけで自動生成してくれるならそれの方がいい。</p>
 
-<p>SlamhoundはLeiningenから呼び出すことが出来て、こんな感じのclojureプログラムがあったとして、</p>
+<p>SlamhoundはLeiningenから呼び出すことが出来て、こんな感じのclojureプログラムがあったとしたら、</p>
 
 <pre><code class="language-clojure">(ns my.namespace
   &quot;I have a doc string.&quot;)
@@ -234,11 +234,11 @@
     <aside>
         <div class="post-share">
             <h3>Share</h3>
-            <a id="share-fb" href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f28%2fname-space-form-reconstructs-for-clojure%2f&t=Slamhound%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6Clojure%e3%81%aens%e3%82%92%e8%87%aa%e5%8b%95%e7%94%9f%e6%88%90%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/facebook.png" alt="Facebook"/></a>
-            <a id="share-twitter" href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f28%2fname-space-form-reconstructs-for-clojure%2f&text=Slamhound%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6Clojure%e3%81%aens%e3%82%92%e8%87%aa%e5%8b%95%e7%94%9f%e6%88%90%e3%81%99%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/twitter.png" alt="Twitter"/></a>
+            <a id="share-fb" href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f28%2fname-space-form-reconstructs-for-clojure%2f&t=Slamhound%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6Clojure%e3%81%aerequire%e3%81%a8%e3%81%8b%e3%82%92%e8%87%aa%e5%8b%95%e7%94%9f%e6%88%90%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/facebook.png" alt="Facebook"/></a>
+            <a id="share-twitter" href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f28%2fname-space-form-reconstructs-for-clojure%2f&text=Slamhound%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6Clojure%e3%81%aerequire%e3%81%a8%e3%81%8b%e3%82%92%e8%87%aa%e5%8b%95%e7%94%9f%e6%88%90%e3%81%99%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/twitter.png" alt="Twitter"/></a>
             <a id="share-googleplus" href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f28%2fname-space-form-reconstructs-for-clojure%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/googleplus.png" alt="Google+"/></a>
             <a id="share-hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f28%2fname-space-form-reconstructs-for-clojure%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/hatena.png" alt="Hatena"/></a>
-            <a id="share-pocket" href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f28%2fname-space-form-reconstructs-for-clojure%2f&title=Slamhound%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6Clojure%e3%81%aens%e3%82%92%e8%87%aa%e5%8b%95%e7%94%9f%e6%88%90%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/pocket.png" alt="Pocket"/></a>
+            <a id="share-pocket" href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f28%2fname-space-form-reconstructs-for-clojure%2f&title=Slamhound%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6Clojure%e3%81%aerequire%e3%81%a8%e3%81%8b%e3%82%92%e8%87%aa%e5%8b%95%e7%94%9f%e6%88%90%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/pocket.png" alt="Pocket"/></a>
         </div>
 
         
