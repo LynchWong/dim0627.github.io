@@ -4,7 +4,7 @@ date: 2015-02-28T06:34:59+09:00
 eyecatch: "clojure.png"
 slug: "name-space-form-reconstructs-for-clojure"
 tags: ["vim", "clojure"]
-title: "Slamhoundを使ってClojureのnsを自動生成する"
+title: "Slamhoundを使ってClojureのrequireとかを自動生成する"
 ---
 
 ちょっとVimとClojureの環境を整備したくて、こんなのを読んでました。
@@ -26,7 +26,7 @@ title: "Slamhoundを使ってClojureのnsを自動生成する"
 
 いつ使うのだろうか。
 
-`slamhound`はClojureのnsを自動生成してくれるもの。
+`slamhound`はClojureの`require`を自動生成してくれるもの。
 
 今回はこれを導入してみる。
 
@@ -34,7 +34,7 @@ title: "Slamhoundを使ってClojureのnsを自動生成する"
 
 Clojureのnsが書きづらいとは思わないけど、まあ面倒なのは確かなわけで自動生成してくれるならそれの方がいい。
 
-SlamhoundはLeiningenから呼び出すことが出来て、こんな感じのclojureプログラムがあったとして、
+SlamhoundはLeiningenから呼び出すことが出来て、こんな感じのclojureプログラムがあったとしたら、
 
 ``` clojure
 (ns my.namespace

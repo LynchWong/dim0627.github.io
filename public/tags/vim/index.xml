@@ -11,7 +11,7 @@
     
       
         <item>
-          <title>Slamhoundを使ってClojureのnsを自動生成する</title>
+          <title>Slamhoundを使ってClojureのrequireとかを自動生成する</title>
           <link>http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/</link>
           <pubDate>Sat, 28 Feb 2015 06:34:59 JST</pubDate>
           <author>Daisuke Tsuji</author>
@@ -36,7 +36,7 @@
 
 &lt;p&gt;いつ使うのだろうか。&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;slamhound&lt;/code&gt;はClojureのnsを自動生成してくれるもの。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;slamhound&lt;/code&gt;はClojureの&lt;code&gt;require&lt;/code&gt;を自動生成してくれるもの。&lt;/p&gt;
 
 &lt;p&gt;今回はこれを導入してみる。&lt;/p&gt;
 
@@ -44,7 +44,7 @@
 
 &lt;p&gt;Clojureのnsが書きづらいとは思わないけど、まあ面倒なのは確かなわけで自動生成してくれるならそれの方がいい。&lt;/p&gt;
 
-&lt;p&gt;SlamhoundはLeiningenから呼び出すことが出来て、こんな感じのclojureプログラムがあったとして、&lt;/p&gt;
+&lt;p&gt;SlamhoundはLeiningenから呼び出すことが出来て、こんな感じのclojureプログラムがあったとしたら、&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(ns my.namespace
   &amp;quot;I have a doc string.&amp;quot;)
