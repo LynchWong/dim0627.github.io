@@ -22,7 +22,7 @@ title: "Slamhoundを使ってClojureのrequireを自動生成する"
         :dependencies [[slamhound "1.3.1"]]}}
 ```
 
-`lein-pprint`は対象のleiningenプロジェクトの情報を表示してくれるインスペクタみたいなもの。
+`lein-pprint`は対象のLeiningenプロジェクトの情報を表示してくれるインスペクタみたいなもの。
 
 いつ使うのだろうか。
 
@@ -70,7 +70,7 @@ nsのとこがこうなる。
 
 `[slamhound "1.5.5"]`を`~/.lein/profiles.clj`の`:dependencies`に追加するだけ。
 
-replを起動したりなんかすればleiningenがダウンロードしてくれる。
+replを起動したりなんかすればLeiningenがダウンロードしてくれる。
 
 ### Vimプラグインの導入
 
@@ -90,5 +90,5 @@ Vim上で`:Slamhound`すればnsが自動生成される。
 
 `use`で呼び出してたものも`require`に書きなおしてくれたりする。
 
-しかしClojure周りもの物って何もかも遅い感じあるけどなんとかなんないのかな・・・。
+しかしClojure周りの物って何もかも遅い感じあるけどなんとかなんないのかな・・・。
 
