@@ -60,9 +60,9 @@
 
 &lt;h2 id=&#34;ansible-galaxyを使う:9446d12faffaea86f5cd69ba47c5c383&#34;&gt;Ansible Galaxyを使う&lt;/h2&gt;
 
-&lt;p&gt;AnsibleはPlaybookにモジュールの導入やらの記述をするようなので用意する。&lt;/p&gt;
+&lt;p&gt;AnsibleはPlaybookと呼ばれるymlファイルにプロビジョニングの定義をしていく。&lt;/p&gt;
 
-&lt;p&gt;Playbookはymlで書くんだけど、正直個人的に使う環境のためにガリガリ書くのはバカらしいよね。&lt;/p&gt;
+&lt;p&gt;でも、正直個人的に使う環境のためにガリガリ書くのはバカらしいよね。&lt;/p&gt;
 
 &lt;p&gt;特にMySQLなんて相当な数の人が使ってるだろうし、そのノウハウを使わせてもらいたい。&lt;/p&gt;
 
