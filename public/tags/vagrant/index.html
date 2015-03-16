@@ -117,6 +117,8 @@
             
             
             
+            
+            
         </div>
     </div>
 
@@ -124,6 +126,26 @@
 
 
 <div class="posts">
+    
+    <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2015/03/16/provided-hosts-list-is-empty/"><img src="http://yet.unresolved.xyz/images/ansible.png" alt="Vagrant &#43; Ansibleでprovided hosts list is empty"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Mon, Mar 16, 2015</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/03/16/provided-hosts-list-is-empty/">Vagrant &#43; Ansibleでprovided hosts list is empty</a></h1>
+        <div class="summary">AnsibleでVagrant上のCentOSにMySQLを入れようとしたらこれ。 PLAY [vagrant] **************************************************************** skipping: no hosts matched Vagrantfileにinventory_pathを指定しなきゃいけない。 config.vm.provision &quot;ansible&quot; do |ansible| ansible.playbook = &quot;env/dev-playbook.yml&quot; ansible.inventory_path = &quot;env/hosts&quot; end 次はこれ。 ERROR: provided hosts list is empty Ansible failed to complete successfully. Any error output should be visible above. Please fix these errors and try again. limitの指定も必要。 config.vm.provision &quot;ansible&quot; do |ansible| ansible.playbook = &quot;env/dev-playbook.yml&quot; ansible.inventory_path = &quot;env/hosts&quot; ansible.limit = 'all' end 参考にさせて頂きました Vagrant 1.5からAnsibleを使うのならlimit = &lsquo;all&rsquo;が必要 - 今日のハック</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2015/03/16/provided-hosts-list-is-empty/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
+
     
     <article class="post">
     <div class="eyecatch">
@@ -172,6 +194,13 @@
             <h2>Tags</h2>
             <ul class="post-tags">
                 
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz/tags/ansible">
+                        ansible
+                    </a>
+                </li>
                 
                 <li>
                     
