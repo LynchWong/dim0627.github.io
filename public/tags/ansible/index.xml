@@ -37,7 +37,7 @@
 192.168.33.20
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;ansibleのsshがrefuseで止められる場合は、&lt;code&gt;vagrant ssh-config &amp;gt;&amp;gt; ~/.ssh/config&lt;/code&gt;とかしておけば多分大丈夫。&lt;/p&gt;
+&lt;p&gt;Ansibleのsshがrefuseで止められる場合は、&lt;code&gt;vagrant ssh-config &amp;gt;&amp;gt; ~/.ssh/config&lt;/code&gt;とかしておけば多分大丈夫。&lt;/p&gt;
 
 &lt;h2 id=&#34;vagrantfileでプロビジョニング出来るようにする:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;Vagrantfileでプロビジョニング出来るようにする&lt;/h2&gt;
 
@@ -62,7 +62,7 @@
 
 &lt;p&gt;AnsibleはPlaybookと呼ばれるymlファイルにプロビジョニングの定義をしていく。&lt;/p&gt;
 
-&lt;p&gt;でも、正直個人的に使う環境のためにガリガリ書くのはバカらしいよね。&lt;/p&gt;
+&lt;p&gt;でも正直、個人的に使う環境のためにガリガリ書くのはバカらしいよね。&lt;/p&gt;
 
 &lt;p&gt;特にMySQLなんて相当な数の人が使ってるだろうし、そのノウハウを使わせてもらいたい。&lt;/p&gt;
 
@@ -72,15 +72,13 @@
 
 &lt;p&gt;AnsibleではMySQLやらhttpdやらの個々のモジュールをroleと呼んでるらしい。&lt;/p&gt;
 
-&lt;p&gt;つまり今回はMySQLのroleを探せばいい。&lt;/p&gt;
-
-&lt;p&gt;検索は&lt;a href=&#34;https://galaxy.ansible.com/list#/roles&#34;&gt;Browse Roles&lt;/a&gt;から出来ます。&lt;/p&gt;
+&lt;p&gt;つまり、&lt;a href=&#34;https://galaxy.ansible.com/list#/roles&#34;&gt;Browse Roles&lt;/a&gt;からMySQLのroleを探せばよい。&lt;/p&gt;
 
 &lt;p&gt;検索結果、デフォルトで評価の降順にしておいて欲しいんだけど・・・。&lt;/p&gt;
 
 &lt;p&gt;今回は&lt;a href=&#34;https://galaxy.ansible.com/list#/roles/509&#34;&gt;ANXS.mysql&lt;/a&gt;という奴を使わせてもらうことにしました。&lt;/p&gt;
 
-&lt;p&gt;理由は、評価がそれなりに高くて、MySQLの設定等が見たまんまでやれそうだったから。&lt;/p&gt;
+&lt;p&gt;理由は、評価がそれなりに高くて、MySQLの設定が見たまんまでやれそうだったから。&lt;/p&gt;
 
 &lt;h3 id=&#34;ansible-galaxyからroleをインストールする:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;Ansible Galaxyからroleをインストールする&lt;/h3&gt;
 
@@ -100,6 +98,8 @@
 &lt;p&gt;シンプル。&lt;/p&gt;
 
 &lt;p&gt;導入するときは&lt;code&gt;ansible-galaxy install -p ./env/roles -r env/requirements.yml&lt;/code&gt;みたいにやればいい。&lt;/p&gt;
+
+&lt;p&gt;pythonっぽい。&lt;/p&gt;
 
 &lt;p&gt;これで環境を作る手順を統一することができた。&lt;/p&gt;
 
