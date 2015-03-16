@@ -78,13 +78,13 @@ AnsibleではMySQLやらhttpdやらの個々のモジュールをroleと呼ん�
 
 Ansible Galaxyからの導入は`ansible-galaxy install ANXS.mysql`みたいにやれば出来る。
 
-でもこれじゃあ、このPCにだけroleが導入されちゃうし、どんなroleが必要だったのかがわからないね。
+でもこれじゃあ、このPCにだけroleが導入されちゃうし、どんなroleが必要だったのか後々わからなくなっちゃうね。
 
 だから他の人が環境を作るときに困っちゃう。
 
 そういう時のために`requirements.txt`っていうのを作るのが主流らしい。
 
-これはAnsible Galaxyから導入したroleを記述しておくものみたいで、今回はこんな感じの記述になった。
+これはAnsible Galaxyから導入するroleを記述しておくものみたいで、今回はこんな感じの記述になった。
 
 ```
 - src: ANXS.mysql
