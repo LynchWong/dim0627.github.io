@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unresolved </title>
+    <link>http://yet.unresolved.xyz/tags/ansible/</link>
+    <language>en-us</language>
+    <author>Daisuke Tsuji</author>
+    <rights>(C) 2015</rights>
+    <updated>2015-03-16 22:55:18 &#43;0900 JST</updated>
+
+    
+      
+        <item>
+          <title>Vagrant &#43; Ansibleでprovided hosts list is empty</title>
+          <link>http://yet.unresolved.xyz/blog/2015/03/16/provided-hosts-list-is-empty/</link>
+          <pubDate>Mon, 16 Mar 2015 22:55:18 JST</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2015/03/16/provided-hosts-list-is-empty/</guid>
+          <description>
+
+&lt;p&gt;AnsibleでVagrant上のCentOSにMySQLを入れようとしたらこれ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PLAY [vagrant] ****************************************************************
+skipping: no hosts matched
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;Vagrantfile&lt;/code&gt;に&lt;code&gt;inventory_path&lt;/code&gt;を指定しなきゃいけない。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;  config.vm.provision &amp;quot;ansible&amp;quot; do |ansible|
+    ansible.playbook = &amp;quot;env/dev-playbook.yml&amp;quot;
+    ansible.inventory_path = &amp;quot;env/hosts&amp;quot;
+  end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;次はこれ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ERROR: provided hosts list is empty
+Ansible failed to complete successfully. Any error output should be
+visible above. Please fix these errors and try again.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;limit&lt;/code&gt;の指定も必要。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;  config.vm.provision &amp;quot;ansible&amp;quot; do |ansible|
+    ansible.playbook = &amp;quot;env/dev-playbook.yml&amp;quot;
+    ansible.inventory_path = &amp;quot;env/hosts&amp;quot;
+    ansible.limit = &#39;all&#39;
+  end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;参考にさせて頂きました:333088a6c8a5face53f03b54cc61c846&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://narusemotoki.tumblr.com/post/82475978900/vagrant-1-5-ansible-limit-all&#34;&gt;Vagrant 1.5からAnsibleを使うのならlimit = &amp;lsquo;all&amp;rsquo;が必要 - 今日のハック&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
+    
+
+  </channel>
+</rss>

@@ -9,11 +9,11 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="Lobosでマイグレーションができない in Heroku | Unresolved">
-<meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/">
-<meta property="og:description" content="ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。 何が起きたか 今だにHerokuの使い方がようわからんのだけど、 とりあえずローカルから向き先変えるよりもSSHの方がいっかなってことでheroku run bashしてやってます。 ローカルからだとDBをSSLで接続させないといけないし・・・。 んでマイグレーションしようとしたら、 user=&gt; (migrate) nil 何も出ない。 本当はこんな感じで、 user=&gt; (migrate) add-sites-table add-entries-table nil 作成されたり変更されたテーブルが出てくるはず。 原因はなんだったのか lobos.migrationsが読まれてない（というかリロードされてない）っぽい。 そもそもmigrate自体はこんな感じでlobos.migrationのdo-migrationsを呼んでます。 (defcommand migrate [&amp; names] (let [names (if (empty? names) (mig/pending-migrations db-spec sname) names)] (mig/do-migrations db-spec sname :up names))) で、do-migrationsはこんな感じで、list-migrations-namesの結果を絞って実行してる。 たぶんマイグレーション済みのものは除外とかそんな感じなんじゃないだろうか。 (defn do-migrations [db-spec sname with names &amp; [silent]] (let [filter-migs #(only % (list-migrations-names)) migrations (-&gt;&gt; names (map str) filter-migs (when-&gt;&gt; (= with :down) reverse) (map symbol) (map (partial ns-resolve *migrations-namespace*)) (map var-get))] (binding [*record* nil] (doseq [migration migrations] (let [name (-&gt; migration meta :name)] (when-not silent (println name)) (if (= with :up) (do (up migration) (insert-migrations db-spec sname name)) (do (down migration) (delete-migrations db-spec sname name)))))))) でlist-migrations-namesの定義がこれ、list-migrationsを呼んでる。 (defn list-migrations-names [] (map #(-&gt; % meta :name str) (list-migrations))) (defn list-migrations [] (if *reload-migrations* (when (.exists (migrations-file)) (swap!">
+<meta property="og:title" content="Vagrant &#43; Ansibleでprovided hosts list is empty | Unresolved">
+<meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/03/16/provided-hosts-list-is-empty/">
+<meta property="og:description" content="AnsibleでVagrant上のCentOSにMySQLを入れようとしたらこれ。 PLAY [vagrant] **************************************************************** skipping: no hosts matched Vagrantfileにinventory_pathを指定しなきゃいけない。 config.vm.provision &quot;ansible&quot; do |ansible| ansible.playbook = &quot;env/dev-playbook.yml&quot; ansible.inventory_path = &quot;env/hosts&quot; end 次はこれ。 ERROR: provided hosts list is empty Ansible failed to complete successfully. Any error output should be visible above. Please fix these errors and try again. limitの指定も必要。 config.vm.provision &quot;ansible&quot; do |ansible| ansible.playbook = &quot;env/dev-playbook.yml&quot; ansible.inventory_path = &quot;env/hosts&quot; ansible.limit = &#39;all&#39; end 参考にさせて頂きました Vagrant 1.5からAnsibleを使うのならlimit = &lsquo;all&rsquo;が必要 - 今日のハック">
 
-<meta property="og:image" content="http://yet.unresolved.xyz/images/clojure.png">
+<meta property="og:image" content="http://yet.unresolved.xyz/images/ansible.png">
 
 
 <meta property="og:site_name" content="Unresolved">
@@ -21,7 +21,7 @@
 
 <title>
     
-    Lobosでマイグレーションができない in Heroku | Unresolved
+    Vagrant &#43; Ansibleでprovided hosts list is empty | Unresolved
     
 </title>
 
@@ -131,176 +131,70 @@
 
 
 <article class="post post-single">
-    <span class="post-date">Sun, Dec 21, 2014</span>
-    <h1 class="post-title">Lobosでマイグレーションができない in Heroku</h1>
+    <span class="post-date">Mon, Mar 16, 2015</span>
+    <h1 class="post-title">Vagrant &#43; Ansibleでprovided hosts list is empty</h1>
 
     <div class="eyecatch">
         
-        <img src="http://yet.unresolved.xyz/images/clojure.png" alt="Lobosでマイグレーションができない in Heroku">
+        <img src="http://yet.unresolved.xyz/images/ansible.png" alt="Vagrant &#43; Ansibleでprovided hosts list is empty">
         
     </div>
 
     <div class="post-content">
         
 
-<p>ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。</p>
+<p>AnsibleでVagrant上のCentOSにMySQLを入れようとしたらこれ。</p>
 
-<h2 id="何が起きたか:b3814854ab9c35505a0d42182d51f32f">何が起きたか</h2>
-
-<p>今だにHerokuの使い方がようわからんのだけど、</p>
-
-<p>とりあえずローカルから向き先変えるよりもSSHの方がいっかなってことで<code>heroku run bash</code>してやってます。</p>
-
-<p>ローカルからだとDBをSSLで接続させないといけないし・・・。</p>
-
-<p>んでマイグレーションしようとしたら、</p>
-
-<pre><code class="language-clojure-repl">user=&gt; (migrate)
-nil
+<pre><code>PLAY [vagrant] ****************************************************************
+skipping: no hosts matched
 </code></pre>
 
-<p>何も出ない。</p>
+<p><code>Vagrantfile</code>に<code>inventory_path</code>を指定しなきゃいけない。</p>
 
-<p>本当はこんな感じで、</p>
-
-<pre><code class="language-clojure-repl">user=&gt; (migrate)
-add-sites-table
-add-entries-table
-nil
+<pre><code class="language-ruby">  config.vm.provision &quot;ansible&quot; do |ansible|
+    ansible.playbook = &quot;env/dev-playbook.yml&quot;
+    ansible.inventory_path = &quot;env/hosts&quot;
+  end
 </code></pre>
 
-<p>作成されたり変更されたテーブルが出てくるはず。</p>
+<p>次はこれ。</p>
 
-<h2 id="原因はなんだったのか:b3814854ab9c35505a0d42182d51f32f">原因はなんだったのか</h2>
-
-<p><code>lobos.migrations</code>が読まれてない（というかリロードされてない）っぽい。</p>
-
-<p>そもそも<code>migrate</code>自体はこんな感じで<code>lobos.migration</code>の<code>do-migrations</code>を呼んでます。</p>
-
-<pre><code class="language-clojure">(defcommand migrate [&amp; names]
-  (let [names (if (empty? names)
-                (mig/pending-migrations db-spec sname)
-                names)]
-    (mig/do-migrations db-spec sname :up names)))
+<pre><code>ERROR: provided hosts list is empty
+Ansible failed to complete successfully. Any error output should be
+visible above. Please fix these errors and try again.
 </code></pre>
 
-<p>で、<code>do-migrations</code>はこんな感じで、<code>list-migrations-names</code>の結果を絞って実行してる。</p>
+<p><code>limit</code>の指定も必要。</p>
 
-<p>たぶんマイグレーション済みのものは除外とかそんな感じなんじゃないだろうか。</p>
-
-<pre><code class="language-clojure">(defn do-migrations [db-spec sname with names &amp; [silent]]
-  (let [filter-migs #(only % (list-migrations-names))
-        migrations (-&gt;&gt; names
-                        (map str)
-                        filter-migs
-                        (when-&gt;&gt; (= with :down) reverse)
-                        (map symbol)
-                        (map (partial ns-resolve *migrations-namespace*))
-                        (map var-get))]
-    (binding [*record* nil]
-      (doseq [migration migrations]
-        (let [name (-&gt; migration meta :name)]
-          (when-not silent
-            (println name))
-          (if (= with :up)
-            (do
-              (up migration)
-              (insert-migrations db-spec sname name))
-            (do
-              (down migration)
-              (delete-migrations db-spec sname name))))))))
+<pre><code class="language-ruby">  config.vm.provision &quot;ansible&quot; do |ansible|
+    ansible.playbook = &quot;env/dev-playbook.yml&quot;
+    ansible.inventory_path = &quot;env/hosts&quot;
+    ansible.limit = 'all'
+  end
 </code></pre>
 
-<p>で<code>list-migrations-names</code>の定義がこれ、<code>list-migrations</code>を呼んでる。</p>
+<h2 id="参考にさせて頂きました:333088a6c8a5face53f03b54cc61c846">参考にさせて頂きました</h2>
 
-<pre><code class="language-clojure">(defn list-migrations-names []
-  (map #(-&gt; % meta :name str) (list-migrations)))
-
-(defn list-migrations []
-  (if *reload-migrations*
-    (when (.exists (migrations-file))
-      (swap! migrations (constantly []))
-      (use :reload *migrations-namespace*)
-      @migrations)
-    @migrations))
-</code></pre>
-
-<p>この<code>list-migrations</code>が問題のようで、いや、たぶんHeroku側の環境がよくないんだと思うけど、</p>
-
-<pre><code class="language-clojure">      (use :reload *migrations-namespace*)
-</code></pre>
-
-<p>この<code>:reload</code>が正常に動かなくてマイグレーション対象が取れてない。</p>
-
-<p>だから<code>list-migrations</code>を実行した時、1回目はきちんとロードされて、</p>
-
-<p>2回目は<code>(swap! migrations (constantly []))</code>で空っぽになったままリロードされてないのが悪かったみたい。</p>
-
-<p>だからこんな風に、2回目の実行からは空になった<code>migrations</code>が返ってくる。</p>
-
-<pre><code class="language-clojure-repl">user=&gt; (use 'lobos.migration)
-WARNING: complement already refers to: #'clojure.core/complement in namespace: user, being replaced by: #'lobos.migration/complement
-nil
-user=&gt; (list-migrations)
-[#&lt;migrations$reify__2390 lobos.migrations$reify__2390@445aed&gt; #&lt;migrations$reify__2392 lobos.migrations$reify__2392@42bfb95d&gt;]
-user=&gt; (list-migrations)
-[]
-user=&gt;
-</code></pre>
-
-<h2 id="解決策:b3814854ab9c35505a0d42182d51f32f">解決策</h2>
-
-<p>もう正直ここまでで一週間弱悩んだから、lobos使うのやめようかなとも思ったけどまあいい勉強だろうし・・・。</p>
-
-<p>暫定にしかならないけど、とりあえずリロードさせないようにしよう。</p>
-
-<p>ソースコードの通り、<code>*reload-migrations*</code>が<code>true</code>になっている場合にリロードが走るらしい。</p>
-
-<p>だからこんな感じで<code>false</code>で上書いてしまおう。</p>
-
-<pre><code class="language-clojure-repl">user=&gt; (use 'lobos.migration)
-WARNING: complement already refers to: #'clojure.core/complement in namespace: user, being replaced by: #'lobos.migration/complement
-nil
-user=&gt; (ns lobos.migration)
-
-IllegalStateException defonce already refers to: #'lobos.utils/defonce in namespace: lobos.migration  clojure.lang.Namespace.warnOrFailOnReplace (Namespace.java:88)
-user=&gt; (def ^{:dynamic true} *reload-migrations* false)
-#'lobos.migration/*reload-migrations*
-lobos.migration=&gt; (use 'lobos.core)
-WARNING: alter already refers to: #'clojure.core/alter in namespace: lobos.migration, being replaced by: #'lobos.core/alter
-WARNING: drop already refers to: #'clojure.core/drop in namespace: lobos.migration, being replaced by: #'lobos.core/drop
-nil
-lobos.migration=&gt; (migrate)
-add-sites-table
-add-entries-table
-nil
-lobos.migration=&gt;
-</code></pre>
-
-<p>これじゃない感がすごいけど、とりあえず通った・・・。</p>
-
-<p>Lobosはもう開発があんまり活発じゃないみたいだなあ。</p>
-
-<p><code>lobos.migration</code>と<code>lobos.migrations</code>の命名はちょっといけてないような・・・。</p>
+<p><a href="http://narusemotoki.tumblr.com/post/82475978900/vagrant-1-5-ansible-limit-all">Vagrant 1.5からAnsibleを使うのならlimit = &lsquo;all&rsquo;が必要 - 今日のハック</a></p>
 
     </div>
 
     <aside class="post-ad pc">
-        <iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=48&l=st1&mode=books-jp&search=heroku&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="728" height="90" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+        <iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=48&l=st1&mode=books-jp&search=vagrant&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="728" height="90" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
     </aside>
 
     <aside class="post-ad sp">
-<iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=12&l=st1&mode=books-jp&search=heroku&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="300" height="250" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+<iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=12&l=st1&mode=books-jp&search=vagrant&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="300" height="250" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
     </aside>
 
     <aside>
         <div class="post-share">
             <h3>Share</h3>
-            <a id="share-fb" href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f12%2f21%2fdoes-not-work-lobos-in-heroku%2f&t=Lobos%e3%81%a7%e3%83%9e%e3%82%a4%e3%82%b0%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%81%8c%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84%20in%20Heroku" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/facebook.png" alt="Facebook"/></a>
-            <a id="share-twitter" href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f12%2f21%2fdoes-not-work-lobos-in-heroku%2f&text=Lobos%e3%81%a7%e3%83%9e%e3%82%a4%e3%82%b0%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%81%8c%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84%20in%20Heroku&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/twitter.png" alt="Twitter"/></a>
-            <a id="share-googleplus" href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f12%2f21%2fdoes-not-work-lobos-in-heroku%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/googleplus.png" alt="Google+"/></a>
-            <a id="share-hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f12%2f21%2fdoes-not-work-lobos-in-heroku%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/hatena.png" alt="Hatena"/></a>
-            <a id="share-pocket" href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f12%2f21%2fdoes-not-work-lobos-in-heroku%2f&title=Lobos%e3%81%a7%e3%83%9e%e3%82%a4%e3%82%b0%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%81%8c%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84%20in%20Heroku" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/pocket.png" alt="Pocket"/></a>
+            <a id="share-fb" href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f03%2f16%2fprovided-hosts-list-is-empty%2f&t=Vagrant%20%2b%20Ansible%e3%81%a7provided%20hosts%20list%20is%20empty" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/facebook.png" alt="Facebook"/></a>
+            <a id="share-twitter" href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f03%2f16%2fprovided-hosts-list-is-empty%2f&text=Vagrant%20%2b%20Ansible%e3%81%a7provided%20hosts%20list%20is%20empty&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/twitter.png" alt="Twitter"/></a>
+            <a id="share-googleplus" href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f03%2f16%2fprovided-hosts-list-is-empty%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/googleplus.png" alt="Google+"/></a>
+            <a id="share-hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f03%2f16%2fprovided-hosts-list-is-empty%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/hatena.png" alt="Hatena"/></a>
+            <a id="share-pocket" href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f03%2f16%2fprovided-hosts-list-is-empty%2f&title=Vagrant%20%2b%20Ansible%e3%81%a7provided%20hosts%20list%20is%20empty" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/pocket.png" alt="Pocket"/></a>
         </div>
 
         
@@ -312,37 +206,16 @@ lobos.migration=&gt;
             <ul class="post-tags">
                 
                 <li>
-                    <a href="http://yet.unresolved.xyz/tags/heroku">
+                    <a href="http://yet.unresolved.xyz/tags/vagrant">
                         <i class="fa fa-tags"></i>
-                        heroku
+                        vagrant
                     </a>
                 </li>
                 
                 <li>
-                    <a href="http://yet.unresolved.xyz/tags/clojure">
+                    <a href="http://yet.unresolved.xyz/tags/ansible">
                         <i class="fa fa-tags"></i>
-                        clojure
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="http://yet.unresolved.xyz/tags/migration">
-                        <i class="fa fa-tags"></i>
-                        migration
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="http://yet.unresolved.xyz/tags/lobos">
-                        <i class="fa fa-tags"></i>
-                        lobos
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="http://yet.unresolved.xyz/tags/postgresql">
-                        <i class="fa fa-tags"></i>
-                        postgresql
+                        ansible
                     </a>
                 </li>
                 
@@ -359,7 +232,6 @@ lobos.migration=&gt;
                 
                 
                 
-                <li><a href="http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/">Slamhoundを使ってClojureのrequireを自動生成する</a></li>
                 
                 
                 
@@ -385,13 +257,8 @@ lobos.migration=&gt;
                 
                 
                 
-                <li><a href="http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/">SlackAPIで遊ぶ</a></li>
                 
                 
-                
-                
-                
-                <li><a href="http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/">paiza.IOのAPIを使ってreplを作る</a></li>
                 
                 
                 
@@ -403,13 +270,6 @@ lobos.migration=&gt;
                 
                 
                 
-                <li><a href="http://yet.unresolved.xyz/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/">Clojureで新卒の女の子を射止めた話</a></li>
-                
-                
-                
-                
-                
-                <li><a href="http://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/">Clojureのテンプレートエンジンについて</a></li>
                 
                 
                 
@@ -427,7 +287,6 @@ lobos.migration=&gt;
                 
                 
                 
-                <li><a href="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/">ClojureのWebアプリをDocker &#43; Beanstalkで動かす</a></li>
                 
                 
                 
@@ -441,13 +300,11 @@ lobos.migration=&gt;
                 
                 
                 
-                <li><a href="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/">Lobosを使ってマイグレーションをする</a></li>
                 
                 
                 
                 
                 
-                <li><a href="http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/">LeiningenでSCSSを自動コンパイルする</a></li>
                 
                 
                 
@@ -528,16 +385,11 @@ lobos.migration=&gt;
         <div class="move">
             <div class="prev">
                 
-                <a href="http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/">
-                    <i class="fa fa-chevron-left"></i>
-                    boot2dockerでCannot connect to the Docker daemon
-                </a>
-                
             </div>
             <div class="next">
                 
-                <a href="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/">
-                    Lobosを使ってマイグレーションをする
+                <a href="http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/">
+                    Slamhoundを使ってClojureのrequireを自動生成する
                     <i class="fa fa-chevron-right"></i>
                 </a>
                 
