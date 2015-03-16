@@ -10,7 +10,7 @@
 
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ansibleを使ってMySQLが動く環境を手っ取り早く作る | Unresolved">
-<meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/03/16/create-an-mysql-environment-using-the-ansible/">
+<meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/03/16/create-mysql-environment-using-the-ansible/">
 <meta property="og:description" content="ちょっと友人と共同で開発しているWebアプリがあって、DBの用意も手軽に共有したいのでAnsibleでやることに。 まあオレはViewしか触ってないから別になくてもいいんだけど・・・。 hostsを書く Ansibleが取り扱うマシンの定義をしておかなきゃいけない。 Vagrantfileで作られる仮想マシンのipを固定して、 config.vm.network &quot;private_network&quot;, ip: &quot;192.168.33.20&quot; Ansibleに読み込ませるhostsに定義しよう。 [vagrant] 192.168.33.20 ansibleのsshがrefuseで止められる場合は、vagrant ssh-config &gt;&gt; ~/.ssh/configとかしておけば多分大丈夫。 Vagrantfileでプロビジョニング出来るようにする せっかくだしvagrant upかvagrant provisionでプロビジョニングしてほしい。 Vagrantfileにこんな感じの記述をすれば、初回実施時にAnsibleのPlaybookを実行してくれるらしい。 Ansibleはなんかコマンド覚えらんないしちょうどいいね。 config.vm.provision &quot;ansible&quot; do |ansible| ansible.playbook = &quot;env/dev-playbook.yml&quot; ansible.inventory_path = &quot;env/hosts&quot; ansible.limit = &#39;all&#39; end 今回はVagrantfileがあるディレクトリにenvってディレクトリを作って、そこに設定ファイルを置くことにした。 Playbookとかもここに入れていくよ。 Ansible Galaxyを使う AnsibleはPlaybookと呼ばれるymlファイルにプロビジョニングの定義をしていく。 でも、正直個人的に使う環境のためにガリガリ書くのはバカらしいよね。 特にMySQLなんて相当な数の人が使ってるだろうし、そのノウハウを使わせてもらいたい。 AnsibleにはAnsible GalaxyっていうWebサービスがあって、モジュール単位のよく使う定義をアップできるみたい。 Ansible Galaxy | Find, reuse, and share the best Ansible content AnsibleではMySQLやらhttpdやらの個々のモジュールをroleと呼んでるらしい。 つまり今回はMySQLのroleを探せばいい。 検索はBrowse Rolesから出来ます。 検索結果、デフォルトで評価の降順にしておいて欲しいんだけど・・・。 今回はANXS.mysqlという奴を使わせてもらうことにしました。 理由は、評価がそれなりに高くて、MySQLの設定等が見たまんまでやれそうだったから。 Ansible Galaxyからroleをインストールする Ansible Galaxyからの導入はansible-galaxy install ANXS.mysqlみたいにやれば出来る。 でもこれじゃあ、このPCにだけroleが導入されちゃうし、どんなroleが必要だったのか後々わからなくなっちゃうね。">
 
 <meta property="og:image" content="http://yet.unresolved.xyz/images/ansible.png">
@@ -149,7 +149,7 @@
 
 <p>まあオレはViewしか触ってないから別になくてもいいんだけど・・・。</p>
 
-<h2 id="hostsを書く:9446d12faffaea86f5cd69ba47c5c383">hostsを書く</h2>
+<h2 id="hostsを書く:3b232f4f71049640111f0fd2b2cec1ee">hostsを書く</h2>
 
 <p>Ansibleが取り扱うマシンの定義をしておかなきゃいけない。</p>
 
@@ -166,7 +166,7 @@
 
 <p>ansibleのsshがrefuseで止められる場合は、<code>vagrant ssh-config &gt;&gt; ~/.ssh/config</code>とかしておけば多分大丈夫。</p>
 
-<h2 id="vagrantfileでプロビジョニング出来るようにする:9446d12faffaea86f5cd69ba47c5c383">Vagrantfileでプロビジョニング出来るようにする</h2>
+<h2 id="vagrantfileでプロビジョニング出来るようにする:3b232f4f71049640111f0fd2b2cec1ee">Vagrantfileでプロビジョニング出来るようにする</h2>
 
 <p>せっかくだし<code>vagrant up</code>か<code>vagrant provision</code>でプロビジョニングしてほしい。</p>
 
@@ -185,7 +185,7 @@
 
 <p>Playbookとかもここに入れていくよ。</p>
 
-<h2 id="ansible-galaxyを使う:9446d12faffaea86f5cd69ba47c5c383">Ansible Galaxyを使う</h2>
+<h2 id="ansible-galaxyを使う:3b232f4f71049640111f0fd2b2cec1ee">Ansible Galaxyを使う</h2>
 
 <p>AnsibleはPlaybookと呼ばれるymlファイルにプロビジョニングの定義をしていく。</p>
 
@@ -209,7 +209,7 @@
 
 <p>理由は、評価がそれなりに高くて、MySQLの設定等が見たまんまでやれそうだったから。</p>
 
-<h3 id="ansible-galaxyからroleをインストールする:9446d12faffaea86f5cd69ba47c5c383">Ansible Galaxyからroleをインストールする</h3>
+<h3 id="ansible-galaxyからroleをインストールする:3b232f4f71049640111f0fd2b2cec1ee">Ansible Galaxyからroleをインストールする</h3>
 
 <p>Ansible Galaxyからの導入は<code>ansible-galaxy install ANXS.mysql</code>みたいにやれば出来る。</p>
 
@@ -234,7 +234,7 @@
 
 <p>ちなみに、roleはAnsible Galaxyにあるものだけじゃなくて、GitHubにあるものとかも導入できるらしい。</p>
 
-<h3 id="playbookを書く:9446d12faffaea86f5cd69ba47c5c383">Playbookを書く</h3>
+<h3 id="playbookを書く:3b232f4f71049640111f0fd2b2cec1ee">Playbookを書く</h3>
 
 <p>じゃあインストールしてきたroleをもとにPlaybookを書こう。</p>
 
@@ -282,7 +282,7 @@ monit_protection: false                 # true or false, requires ANXS.monit
 
 <p>Ansible Galaxyに載っているものからコピってきて、不要なものを消しただけ。</p>
 
-<h2 id="プロビジョニングする:9446d12faffaea86f5cd69ba47c5c383">プロビジョニングする</h2>
+<h2 id="プロビジョニングする:3b232f4f71049640111f0fd2b2cec1ee">プロビジョニングする</h2>
 
 <p><code>vagrant up</code>か<code>vagrant provision</code>すればやってくれる。</p>
 
@@ -303,11 +303,11 @@ monit_protection: false                 # true or false, requires ANXS.monit
     <aside>
         <div class="post-share">
             <h3>Share</h3>
-            <a id="share-fb" href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f03%2f16%2fcreate-an-mysql-environment-using-the-ansible%2f&t=Ansible%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6MySQL%e3%81%8c%e5%8b%95%e3%81%8f%e7%92%b0%e5%a2%83%e3%82%92%e6%89%8b%e3%81%a3%e5%8f%96%e3%82%8a%e6%97%a9%e3%81%8f%e4%bd%9c%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/facebook.png" alt="Facebook"/></a>
-            <a id="share-twitter" href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f03%2f16%2fcreate-an-mysql-environment-using-the-ansible%2f&text=Ansible%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6MySQL%e3%81%8c%e5%8b%95%e3%81%8f%e7%92%b0%e5%a2%83%e3%82%92%e6%89%8b%e3%81%a3%e5%8f%96%e3%82%8a%e6%97%a9%e3%81%8f%e4%bd%9c%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/twitter.png" alt="Twitter"/></a>
-            <a id="share-googleplus" href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f03%2f16%2fcreate-an-mysql-environment-using-the-ansible%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/googleplus.png" alt="Google+"/></a>
-            <a id="share-hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f03%2f16%2fcreate-an-mysql-environment-using-the-ansible%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/hatena.png" alt="Hatena"/></a>
-            <a id="share-pocket" href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f03%2f16%2fcreate-an-mysql-environment-using-the-ansible%2f&title=Ansible%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6MySQL%e3%81%8c%e5%8b%95%e3%81%8f%e7%92%b0%e5%a2%83%e3%82%92%e6%89%8b%e3%81%a3%e5%8f%96%e3%82%8a%e6%97%a9%e3%81%8f%e4%bd%9c%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/pocket.png" alt="Pocket"/></a>
+            <a id="share-fb" href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f03%2f16%2fcreate-mysql-environment-using-the-ansible%2f&t=Ansible%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6MySQL%e3%81%8c%e5%8b%95%e3%81%8f%e7%92%b0%e5%a2%83%e3%82%92%e6%89%8b%e3%81%a3%e5%8f%96%e3%82%8a%e6%97%a9%e3%81%8f%e4%bd%9c%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/facebook.png" alt="Facebook"/></a>
+            <a id="share-twitter" href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f03%2f16%2fcreate-mysql-environment-using-the-ansible%2f&text=Ansible%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6MySQL%e3%81%8c%e5%8b%95%e3%81%8f%e7%92%b0%e5%a2%83%e3%82%92%e6%89%8b%e3%81%a3%e5%8f%96%e3%82%8a%e6%97%a9%e3%81%8f%e4%bd%9c%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/twitter.png" alt="Twitter"/></a>
+            <a id="share-googleplus" href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f03%2f16%2fcreate-mysql-environment-using-the-ansible%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/googleplus.png" alt="Google+"/></a>
+            <a id="share-hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f03%2f16%2fcreate-mysql-environment-using-the-ansible%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/hatena.png" alt="Hatena"/></a>
+            <a id="share-pocket" href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f03%2f16%2fcreate-mysql-environment-using-the-ansible%2f&title=Ansible%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6MySQL%e3%81%8c%e5%8b%95%e3%81%8f%e7%92%b0%e5%a2%83%e3%82%92%e6%89%8b%e3%81%a3%e5%8f%96%e3%82%8a%e6%97%a9%e3%81%8f%e4%bd%9c%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/pocket.png" alt="Pocket"/></a>
         </div>
 
         
