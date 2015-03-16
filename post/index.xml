@@ -86,13 +86,13 @@
 
 &lt;p&gt;Ansible Galaxyからの導入は&lt;code&gt;ansible-galaxy install ANXS.mysql&lt;/code&gt;みたいにやれば出来る。&lt;/p&gt;
 
-&lt;p&gt;でもこれじゃあ、このPCにだけroleが導入されちゃうし、どんなroleが必要だったのかがわからないね。&lt;/p&gt;
+&lt;p&gt;でもこれじゃあ、このPCにだけroleが導入されちゃうし、どんなroleが必要だったのか後々わからなくなっちゃうね。&lt;/p&gt;
 
 &lt;p&gt;だから他の人が環境を作るときに困っちゃう。&lt;/p&gt;
 
 &lt;p&gt;そういう時のために&lt;code&gt;requirements.txt&lt;/code&gt;っていうのを作るのが主流らしい。&lt;/p&gt;
 
-&lt;p&gt;これはAnsible Galaxyから導入したroleを記述しておくものみたいで、今回はこんな感じの記述になった。&lt;/p&gt;
+&lt;p&gt;これはAnsible Galaxyから導入するroleを記述しておくものみたいで、今回はこんな感じの記述になった。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;- src: ANXS.mysql
 &lt;/code&gt;&lt;/pre&gt;
