@@ -132,16 +132,16 @@
         <article class="post">
     <div class="eyecatch">
         
-        <a href="http://yet.unresolved.xyz/blog/2015/03/16/create-an-mysql-environment-using-the-ansible/"><img src="http://yet.unresolved.xyz/images/ansible.png" alt="Ansibleを使ってMySQLが動く環境を手っ取り早く作る"></a>
+        <a href="http://yet.unresolved.xyz/blog/2015/03/16/create-mysql-environment-using-the-ansible/"><img src="http://yet.unresolved.xyz/images/ansible.png" alt="Ansibleを使ってMySQLが動く環境を手っ取り早く作る"></a>
         
     </div>
     <div class="data">
         <span class="post-date">Mon, Mar 16, 2015</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/03/16/create-an-mysql-environment-using-the-ansible/">Ansibleを使ってMySQLが動く環境を手っ取り早く作る</a></h1>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/03/16/create-mysql-environment-using-the-ansible/">Ansibleを使ってMySQLが動く環境を手っ取り早く作る</a></h1>
         <div class="summary">ちょっと友人と共同で開発しているWebアプリがあって、DBの用意も手軽に共有したいのでAnsibleでやることに。 まあオレはViewしか触ってないから別になくてもいいんだけど・・・。 hostsを書く Ansibleが取り扱うマシンの定義をしておかなきゃいけない。 Vagrantfileで作られる仮想マシンのipを固定して、 config.vm.network &quot;private_network&quot;, ip: &quot;192.168.33.20&quot; Ansibleに読み込ませるhostsに定義しよう。 [vagrant] 192.168.33.20 ansibleのsshがrefuseで止められる場合は、vagrant ssh-config &gt;&gt; ~/.ssh/configとかしておけば多分大丈夫。 Vagrantfileでプロビジョニング出来るようにする せっかくだしvagrant upかvagrant provisionでプロビジョニングしてほしい。 Vagrantfileにこんな感じの記述をすれば、初回実施時にAnsibleのPlaybookを実行してくれるらしい。 Ansibleはなんかコマンド覚えらんないしちょうどいいね。 config.vm.provision &quot;ansible&quot; do |ansible| ansible.playbook = &quot;env/dev-playbook.yml&quot; ansible.inventory_path = &quot;env/hosts&quot; ansible.limit = 'all' end 今回はVagrantfileがあるディレクトリにenvってディレクトリを作って、そこに設定ファイルを置くことにした。 Playbookとかもここに入れていくよ。 Ansible Galaxyを使う AnsibleはPlaybookと呼ばれるymlファイルにプロビジョニングの定義をしていく。 でも、正直個人的に使う環境のためにガリガリ書くのはバカらしいよね。 特にMySQLなんて相当な数の人が使ってるだろうし、そのノウハウを使わせてもらいたい。 AnsibleにはAnsible GalaxyっていうWebサービスがあって、モジュール単位のよく使う定義をアップできるみたい。 Ansible Galaxy | Find, reuse, and share the best Ansible content AnsibleではMySQLやらhttpdやらの個々のモジュールをroleと呼んでるらしい。 つまり今回はMySQLのroleを探せばいい。 検索はBrowse Rolesから出来ます。 検索結果、デフォルトで評価の降順にしておいて欲しいんだけど・・・。 今回はANXS.mysqlという奴を使わせてもらうことにしました。 理由は、評価がそれなりに高くて、MySQLの設定等が見たまんまでやれそうだったから。 Ansible Galaxyからroleをインストールする Ansible Galaxyからの導入はansible-galaxy install ANXS.mysqlみたいにやれば出来る。 でもこれじゃあ、このPCにだけroleが導入されちゃうし、どんなroleが必要だったのか後々わからなくなっちゃうね。</div>
     </div>
     <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2015/03/16/create-an-mysql-environment-using-the-ansible/">
+        <a href="http://yet.unresolved.xyz/blog/2015/03/16/create-mysql-environment-using-the-ansible/">
             <i class="fa fa-chevron-down"></i>
         </a>
     </footer>

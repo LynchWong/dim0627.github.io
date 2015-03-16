@@ -12,17 +12,17 @@
       
         <item>
           <title>Ansibleを使ってMySQLが動く環境を手っ取り早く作る</title>
-          <link>http://yet.unresolved.xyz/blog/2015/03/16/create-an-mysql-environment-using-the-ansible/</link>
+          <link>http://yet.unresolved.xyz/blog/2015/03/16/create-mysql-environment-using-the-ansible/</link>
           <pubDate>Mon, 16 Mar 2015 23:15:49 JST</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/03/16/create-an-mysql-environment-using-the-ansible/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2015/03/16/create-mysql-environment-using-the-ansible/</guid>
           <description>
 
 &lt;p&gt;ちょっと友人と共同で開発しているWebアプリがあって、DBの用意も手軽に共有したいのでAnsibleでやることに。&lt;/p&gt;
 
 &lt;p&gt;まあオレはViewしか触ってないから別になくてもいいんだけど・・・。&lt;/p&gt;
 
-&lt;h2 id=&#34;hostsを書く:9446d12faffaea86f5cd69ba47c5c383&#34;&gt;hostsを書く&lt;/h2&gt;
+&lt;h2 id=&#34;hostsを書く:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;hostsを書く&lt;/h2&gt;
 
 &lt;p&gt;Ansibleが取り扱うマシンの定義をしておかなきゃいけない。&lt;/p&gt;
 
@@ -39,7 +39,7 @@
 
 &lt;p&gt;ansibleのsshがrefuseで止められる場合は、&lt;code&gt;vagrant ssh-config &amp;gt;&amp;gt; ~/.ssh/config&lt;/code&gt;とかしておけば多分大丈夫。&lt;/p&gt;
 
-&lt;h2 id=&#34;vagrantfileでプロビジョニング出来るようにする:9446d12faffaea86f5cd69ba47c5c383&#34;&gt;Vagrantfileでプロビジョニング出来るようにする&lt;/h2&gt;
+&lt;h2 id=&#34;vagrantfileでプロビジョニング出来るようにする:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;Vagrantfileでプロビジョニング出来るようにする&lt;/h2&gt;
 
 &lt;p&gt;せっかくだし&lt;code&gt;vagrant up&lt;/code&gt;か&lt;code&gt;vagrant provision&lt;/code&gt;でプロビジョニングしてほしい。&lt;/p&gt;
 
@@ -58,7 +58,7 @@
 
 &lt;p&gt;Playbookとかもここに入れていくよ。&lt;/p&gt;
 
-&lt;h2 id=&#34;ansible-galaxyを使う:9446d12faffaea86f5cd69ba47c5c383&#34;&gt;Ansible Galaxyを使う&lt;/h2&gt;
+&lt;h2 id=&#34;ansible-galaxyを使う:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;Ansible Galaxyを使う&lt;/h2&gt;
 
 &lt;p&gt;AnsibleはPlaybookと呼ばれるymlファイルにプロビジョニングの定義をしていく。&lt;/p&gt;
 
@@ -82,7 +82,7 @@
 
 &lt;p&gt;理由は、評価がそれなりに高くて、MySQLの設定等が見たまんまでやれそうだったから。&lt;/p&gt;
 
-&lt;h3 id=&#34;ansible-galaxyからroleをインストールする:9446d12faffaea86f5cd69ba47c5c383&#34;&gt;Ansible Galaxyからroleをインストールする&lt;/h3&gt;
+&lt;h3 id=&#34;ansible-galaxyからroleをインストールする:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;Ansible Galaxyからroleをインストールする&lt;/h3&gt;
 
 &lt;p&gt;Ansible Galaxyからの導入は&lt;code&gt;ansible-galaxy install ANXS.mysql&lt;/code&gt;みたいにやれば出来る。&lt;/p&gt;
 
@@ -107,7 +107,7 @@
 
 &lt;p&gt;ちなみに、roleはAnsible Galaxyにあるものだけじゃなくて、GitHubにあるものとかも導入できるらしい。&lt;/p&gt;
 
-&lt;h3 id=&#34;playbookを書く:9446d12faffaea86f5cd69ba47c5c383&#34;&gt;Playbookを書く&lt;/h3&gt;
+&lt;h3 id=&#34;playbookを書く:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;Playbookを書く&lt;/h3&gt;
 
 &lt;p&gt;じゃあインストールしてきたroleをもとにPlaybookを書こう。&lt;/p&gt;
 
@@ -155,7 +155,7 @@ monit_protection: false                 # true or false, requires ANXS.monit
 
 &lt;p&gt;Ansible Galaxyに載っているものからコピってきて、不要なものを消しただけ。&lt;/p&gt;
 
-&lt;h2 id=&#34;プロビジョニングする:9446d12faffaea86f5cd69ba47c5c383&#34;&gt;プロビジョニングする&lt;/h2&gt;
+&lt;h2 id=&#34;プロビジョニングする:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;プロビジョニングする&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;vagrant up&lt;/code&gt;か&lt;code&gt;vagrant provision&lt;/code&gt;すればやってくれる。&lt;/p&gt;
 
