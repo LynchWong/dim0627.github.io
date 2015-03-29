@@ -6,8 +6,168 @@
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
-    <updated>2015-02-28 06:34:59 &#43;0900 JST</updated>
+    <updated>2015-03-22 19:47:22 &#43;0900 JST</updated>
 
+    
+      
+        <item>
+          <title>VimのClojureプラグイン覚書</title>
+          <link>http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/</link>
+          <pubDate>Sun, 22 Mar 2015 19:47:22 JST</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/</guid>
+          <description>
+
+&lt;p&gt;VimでClojure書くときのあれこれをいっつも忘れるのでまとめておこうと思う。&lt;/p&gt;
+
+&lt;p&gt;新しいことを覚えたら随時追記していこうかな。&lt;/p&gt;
+
+&lt;h2 id=&#34;使ってるプラグイン:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;使ってるプラグイン&lt;/h2&gt;
+
+&lt;h3 id=&#34;tpope-vim-classpath-https-github-com-tpope-vim-classpath:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/tpope/vim-classpath&#34;&gt;tpope/vim-classpath&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;クラスパスの設定をやってくれる。&lt;/p&gt;
+
+&lt;p&gt;何も考えず入れればよい。&lt;/p&gt;
+
+&lt;h3 id=&#34;guns-vim-slamhound-https-github-com-guns-vim-slamhound:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/guns/vim-slamhound&#34;&gt;guns/vim-slamhound&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;require&lt;/code&gt;の整理をやってくれる。&lt;/p&gt;
+
+&lt;p&gt;不要な奴は消してくれるし、ない奴はclasspathから読み込んで追加してくれる。&lt;/p&gt;
+
+&lt;h3 id=&#34;kien-rainbow-parentheses-vim-https-github-com-kien-rainbow-parentheses-vim:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/kien/rainbow_parentheses.vim&#34;&gt;kien/rainbow_parentheses.vim&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;括弧をrainbowな感じにしてくれる。&lt;/p&gt;
+
+&lt;h3 id=&#34;tpope-vim-fireplace-https-github-com-tpope-vim-fireplace:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/tpope/vim-fireplace&#34;&gt;tpope/vim-fireplace&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.venanti.us/clojure-vim/&#34;&gt;My Clojure Toolchain: Vim&lt;/a&gt;でもキラープラグインと書かれているfireplace。&lt;/p&gt;
+
+&lt;p&gt;VimをREPLと接続してあんなことやこんなことが出来る。&lt;/p&gt;
+
+&lt;p&gt;こいつの機能、よく使う割によく忘れるんだよなあ。&lt;/p&gt;
+
+&lt;p&gt;もはやこの記事はこの覚書のために書いたようなもの。&lt;/p&gt;
+
+&lt;p&gt;&lt;kbd&gt;K&lt;/kbd&gt; : カーソル位置にある関数のドキュメントを表示する。&lt;/p&gt;
+
+&lt;p&gt;&lt;kbd&gt;[d&lt;/kbd&gt; : カーソル位置にある関数のソースを表示する。&lt;/p&gt;
+
+&lt;p&gt;&lt;kbd&gt;[&amp;lt;C-D&amp;gt;&lt;/kbd&gt; : カーソル位置にある関数のソースにジャンプする。&lt;/p&gt;
+
+&lt;p&gt;&lt;kbd&gt;&amp;lt;C-W&amp;gt;f&lt;/kbd&gt; : カーソル位置にある関数のソースを横分割して開く。&lt;/p&gt;
+
+&lt;p&gt;&lt;kbd&gt;&amp;lt;C-W&amp;gt;gf&lt;/kbd&gt; : カーソル位置にある関数のソースをタブ分割して開く。&lt;/p&gt;
+
+&lt;p&gt;&lt;kbd&gt;&amp;lt;C-^&amp;gt;&lt;/kbd&gt; : ジャンプする前のファイルに戻る。&lt;/p&gt;
+
+&lt;p&gt;&lt;kbd&gt;cpp&lt;/kbd&gt; : カーソル行をREPLで実行する。&lt;/p&gt;
+
+&lt;p&gt;&lt;kbd&gt;cqq&lt;/kbd&gt; : カーソル行をVim内のREPLで編集モードで開く。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;:RunTest&lt;/code&gt; : テストを実行する。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;:Require&lt;/code&gt; : 読み込んでる名前空間をリロードする。&lt;/p&gt;
+
+&lt;h3 id=&#34;venantius-vim-eastwood-https-github-com-venantius-vim-eastwood:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/venantius/vim-eastwood&#34;&gt;venantius/vim-eastwood&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Clojure用のLint。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/scrooloose/syntastic&#34;&gt;scrooloose/syntastic&lt;/a&gt;と&lt;a href=&#34;https://github.com/jonase/eastwood&#34;&gt;jonase/eastwood&lt;/a&gt;と&lt;a href=&#34;https://github.com/tpope/vim-fireplace&#34;&gt;tpope/vim-fireplace&lt;/a&gt;が必要。&lt;/p&gt;
+
+&lt;h3 id=&#34;venantius-vim-cljfmt-https-github-com-venantius-vim-cljfmt:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/venantius/vim-cljfmt&#34;&gt;venantius/vim-cljfmt&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Clojure用のフォーマッター。&lt;/p&gt;
+
+&lt;p&gt;デフォルトで保存時のフォーマットがかかるようになってるので、入れるだけでOKのはず。&lt;/p&gt;
+
+&lt;h2 id=&#34;使ってないプラグイン:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;使ってないプラグイン&lt;/h2&gt;
+
+&lt;h3 id=&#34;guns-vim-clojure-static-https-github-com-guns-vim-clojure-static:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/guns/vim-clojure-static&#34;&gt;guns/vim-clojure-static&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;シンタックスハイライト、インデントのためのプラグイン。&lt;/p&gt;
+
+&lt;p&gt;あと&lt;code&gt;clojure.core&lt;/code&gt;の名前空間にある補完機能があるらしい。&lt;/p&gt;
+
+&lt;p&gt;なんかあってもなくてもあんまり変わらなかった（設定しきれなかった？）ので使うのをやめた。&lt;/p&gt;
+
+&lt;h3 id=&#34;vim-scripts-paredit-vim-https-github-com-vim-scripts-paredit-vim:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/vim-scripts/paredit.vim&#34;&gt;vim-scripts/paredit.vim&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;括弧の位置をあれこれ出来るやつ、だと思う。&lt;/p&gt;
+
+&lt;p&gt;ちょっと脳みそがそんなにたくさんの事を一気に覚えるのは無理だったので、一旦使うのをやめた。&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>[Clojure]ringのCSRFトークンを生成する</title>
+          <link>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</link>
+          <pubDate>Sun, 22 Mar 2015 19:23:27 JST</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</guid>
+          <description>&lt;p&gt;ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、&lt;/p&gt;
+
+&lt;p&gt;デフォルトだとPOSTリクエストした時にCSRFトークンチェックが入るようになってると思う。&lt;/p&gt;
+
+&lt;p&gt;で、そのトークンの作成の仕方を毎回調べてるのでメモっときたい。&lt;/p&gt;
+
+&lt;p&gt;チェックの処理は&lt;code&gt;site-defaults&lt;/code&gt;の、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def app
+  (wrap-defaults app-routes site-defaults))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;:security&lt;/code&gt;のところで設定出来る。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def site-defaults
+  &amp;quot;A default configuration for a browser-accessible website, based on current
+  best practice.&amp;quot;
+  {:params    {:urlencoded true
+               :multipart  true
+               :nested     true
+               :keywordize true}
+   :cookies   true
+   :session   {:flash true
+               :cookie-attrs {:http-only true}}
+   :security  {:anti-forgery   true
+               :xss-protection {:enable? true, :mode :block}
+               :frame-options  :sameorigin
+               :content-type-options :nosniff}
+   :static    {:resources &amp;quot;public&amp;quot;}
+   :responses {:not-modified-responses true
+               :absolute-redirects     true
+               :content-types          true}})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これを&lt;code&gt;false&lt;/code&gt;にしちゃえばもちろんCSRFのチェックはされなくなるんだけど、まあ普通はするべきだよね。&lt;/p&gt;
+
+&lt;p&gt;トークンの生成の仕方はこう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(ns sample.handler
+  (:require [ring.util.anti-forgery :refer :all]))
+(anti-forgery-field)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;ring.util.anti-forgery&lt;/code&gt;の中身はこんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(ns ring.util.anti-forgery
+  &amp;quot;Utility functions for inserting anti-forgery tokens into HTML forms.&amp;quot;
+  (:use [hiccup core form]
+        ring.middleware.anti-forgery))
+
+(defn anti-forgery-field
+  &amp;quot;Create a hidden field with the session anti-forgery token as its value.
+  This ensures that the form it&#39;s inside won&#39;t be stopped by the anti-forgery
+  middleware.&amp;quot;
+  []
+  (html (hidden-field &amp;quot;__anti-forgery-token&amp;quot; *anti-forgery-token*)))
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        </item>
+      
     
       
         <item>

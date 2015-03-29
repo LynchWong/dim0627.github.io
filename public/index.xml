@@ -6,8 +6,168 @@
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
-    <updated>2015-03-16 23:15:49 &#43;0900 JST</updated>
+    <updated>2015-03-22 19:47:22 &#43;0900 JST</updated>
 
+    
+      
+        <item>
+          <title>VimのClojureプラグイン覚書</title>
+          <link>http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/</link>
+          <pubDate>Sun, 22 Mar 2015 19:47:22 JST</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/</guid>
+          <description>
+
+&lt;p&gt;VimでClojure書くときのあれこれをいっつも忘れるのでまとめておこうと思う。&lt;/p&gt;
+
+&lt;p&gt;新しいことを覚えたら随時追記していこうかな。&lt;/p&gt;
+
+&lt;h2 id=&#34;使ってるプラグイン:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;使ってるプラグイン&lt;/h2&gt;
+
+&lt;h3 id=&#34;tpope-vim-classpath-https-github-com-tpope-vim-classpath:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/tpope/vim-classpath&#34;&gt;tpope/vim-classpath&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;クラスパスの設定をやってくれる。&lt;/p&gt;
+
+&lt;p&gt;何も考えず入れればよい。&lt;/p&gt;
+
+&lt;h3 id=&#34;guns-vim-slamhound-https-github-com-guns-vim-slamhound:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/guns/vim-slamhound&#34;&gt;guns/vim-slamhound&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;require&lt;/code&gt;の整理をやってくれる。&lt;/p&gt;
+
+&lt;p&gt;不要な奴は消してくれるし、ない奴はclasspathから読み込んで追加してくれる。&lt;/p&gt;
+
+&lt;h3 id=&#34;kien-rainbow-parentheses-vim-https-github-com-kien-rainbow-parentheses-vim:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/kien/rainbow_parentheses.vim&#34;&gt;kien/rainbow_parentheses.vim&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;括弧をrainbowな感じにしてくれる。&lt;/p&gt;
+
+&lt;h3 id=&#34;tpope-vim-fireplace-https-github-com-tpope-vim-fireplace:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/tpope/vim-fireplace&#34;&gt;tpope/vim-fireplace&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.venanti.us/clojure-vim/&#34;&gt;My Clojure Toolchain: Vim&lt;/a&gt;でもキラープラグインと書かれているfireplace。&lt;/p&gt;
+
+&lt;p&gt;VimをREPLと接続してあんなことやこんなことが出来る。&lt;/p&gt;
+
+&lt;p&gt;こいつの機能、よく使う割によく忘れるんだよなあ。&lt;/p&gt;
+
+&lt;p&gt;もはやこの記事はこの覚書のために書いたようなもの。&lt;/p&gt;
+
+&lt;p&gt;&lt;kbd&gt;K&lt;/kbd&gt; : カーソル位置にある関数のドキュメントを表示する。&lt;/p&gt;
+
+&lt;p&gt;&lt;kbd&gt;[d&lt;/kbd&gt; : カーソル位置にある関数のソースを表示する。&lt;/p&gt;
+
+&lt;p&gt;&lt;kbd&gt;[&amp;lt;C-D&amp;gt;&lt;/kbd&gt; : カーソル位置にある関数のソースにジャンプする。&lt;/p&gt;
+
+&lt;p&gt;&lt;kbd&gt;&amp;lt;C-W&amp;gt;f&lt;/kbd&gt; : カーソル位置にある関数のソースを横分割して開く。&lt;/p&gt;
+
+&lt;p&gt;&lt;kbd&gt;&amp;lt;C-W&amp;gt;gf&lt;/kbd&gt; : カーソル位置にある関数のソースをタブ分割して開く。&lt;/p&gt;
+
+&lt;p&gt;&lt;kbd&gt;&amp;lt;C-^&amp;gt;&lt;/kbd&gt; : ジャンプする前のファイルに戻る。&lt;/p&gt;
+
+&lt;p&gt;&lt;kbd&gt;cpp&lt;/kbd&gt; : カーソル行をREPLで実行する。&lt;/p&gt;
+
+&lt;p&gt;&lt;kbd&gt;cqq&lt;/kbd&gt; : カーソル行をVim内のREPLで編集モードで開く。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;:RunTest&lt;/code&gt; : テストを実行する。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;:Require&lt;/code&gt; : 読み込んでる名前空間をリロードする。&lt;/p&gt;
+
+&lt;h3 id=&#34;venantius-vim-eastwood-https-github-com-venantius-vim-eastwood:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/venantius/vim-eastwood&#34;&gt;venantius/vim-eastwood&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Clojure用のLint。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/scrooloose/syntastic&#34;&gt;scrooloose/syntastic&lt;/a&gt;と&lt;a href=&#34;https://github.com/jonase/eastwood&#34;&gt;jonase/eastwood&lt;/a&gt;と&lt;a href=&#34;https://github.com/tpope/vim-fireplace&#34;&gt;tpope/vim-fireplace&lt;/a&gt;が必要。&lt;/p&gt;
+
+&lt;h3 id=&#34;venantius-vim-cljfmt-https-github-com-venantius-vim-cljfmt:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/venantius/vim-cljfmt&#34;&gt;venantius/vim-cljfmt&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Clojure用のフォーマッター。&lt;/p&gt;
+
+&lt;p&gt;デフォルトで保存時のフォーマットがかかるようになってるので、入れるだけでOKのはず。&lt;/p&gt;
+
+&lt;h2 id=&#34;使ってないプラグイン:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;使ってないプラグイン&lt;/h2&gt;
+
+&lt;h3 id=&#34;guns-vim-clojure-static-https-github-com-guns-vim-clojure-static:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/guns/vim-clojure-static&#34;&gt;guns/vim-clojure-static&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;シンタックスハイライト、インデントのためのプラグイン。&lt;/p&gt;
+
+&lt;p&gt;あと&lt;code&gt;clojure.core&lt;/code&gt;の名前空間にある補完機能があるらしい。&lt;/p&gt;
+
+&lt;p&gt;なんかあってもなくてもあんまり変わらなかった（設定しきれなかった？）ので使うのをやめた。&lt;/p&gt;
+
+&lt;h3 id=&#34;vim-scripts-paredit-vim-https-github-com-vim-scripts-paredit-vim:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/vim-scripts/paredit.vim&#34;&gt;vim-scripts/paredit.vim&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;括弧の位置をあれこれ出来るやつ、だと思う。&lt;/p&gt;
+
+&lt;p&gt;ちょっと脳みそがそんなにたくさんの事を一気に覚えるのは無理だったので、一旦使うのをやめた。&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>[Clojure]ringのCSRFトークンを生成する</title>
+          <link>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</link>
+          <pubDate>Sun, 22 Mar 2015 19:23:27 JST</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</guid>
+          <description>&lt;p&gt;ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、&lt;/p&gt;
+
+&lt;p&gt;デフォルトだとPOSTリクエストした時にCSRFトークンチェックが入るようになってると思う。&lt;/p&gt;
+
+&lt;p&gt;で、そのトークンの作成の仕方を毎回調べてるのでメモっときたい。&lt;/p&gt;
+
+&lt;p&gt;チェックの処理は&lt;code&gt;site-defaults&lt;/code&gt;の、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def app
+  (wrap-defaults app-routes site-defaults))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;:security&lt;/code&gt;のところで設定出来る。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def site-defaults
+  &amp;quot;A default configuration for a browser-accessible website, based on current
+  best practice.&amp;quot;
+  {:params    {:urlencoded true
+               :multipart  true
+               :nested     true
+               :keywordize true}
+   :cookies   true
+   :session   {:flash true
+               :cookie-attrs {:http-only true}}
+   :security  {:anti-forgery   true
+               :xss-protection {:enable? true, :mode :block}
+               :frame-options  :sameorigin
+               :content-type-options :nosniff}
+   :static    {:resources &amp;quot;public&amp;quot;}
+   :responses {:not-modified-responses true
+               :absolute-redirects     true
+               :content-types          true}})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これを&lt;code&gt;false&lt;/code&gt;にしちゃえばもちろんCSRFのチェックはされなくなるんだけど、まあ普通はするべきだよね。&lt;/p&gt;
+
+&lt;p&gt;トークンの生成の仕方はこう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(ns sample.handler
+  (:require [ring.util.anti-forgery :refer :all]))
+(anti-forgery-field)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;ring.util.anti-forgery&lt;/code&gt;の中身はこんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(ns ring.util.anti-forgery
+  &amp;quot;Utility functions for inserting anti-forgery tokens into HTML forms.&amp;quot;
+  (:use [hiccup core form]
+        ring.middleware.anti-forgery))
+
+(defn anti-forgery-field
+  &amp;quot;Create a hidden field with the session anti-forgery token as its value.
+  This ensures that the form it&#39;s inside won&#39;t be stopped by the anti-forgery
+  middleware.&amp;quot;
+  []
+  (html (hidden-field &amp;quot;__anti-forgery-token&amp;quot; *anti-forgery-token*)))
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        </item>
+      
     
       
         <item>
@@ -686,38 +846,12 @@ $(&amp;quot;#task-post&amp;quot;).on(&amp;quot;click&amp;quot;, function() {
           <pubDate>Thu, 05 Feb 2015 21:36:25 JST</pubDate>
           <author>Daisuke Tsuji</author>
           <guid>http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/</guid>
-          <description>
-
-&lt;p&gt;意外と日が開いたね。&lt;/p&gt;
-
-&lt;p&gt;最近はPHPを書いてます。つってもほんと最近からだけど。&lt;/p&gt;
-
-&lt;p&gt;そんな最中、さあ書くぞーって時にvimがフリーズしたことがありました。&lt;/p&gt;
-
-&lt;p&gt;vimが止まったのは人生初の経験だったので焦りました。&lt;/p&gt;
-
-&lt;p&gt;もうほんと困った！&lt;/p&gt;
-
-&lt;h2 id=&#34;原因:fd4f21eb55d20dc5d298df72f4a01bea&#34;&gt;原因&lt;/h2&gt;
-
-&lt;p&gt;ほとんどコピペで作った&lt;code&gt;.vimrc&lt;/code&gt;のせいで何が悪いのかがわからない・・・。&lt;/p&gt;
-
-&lt;p&gt;ていうか未だに書き方がようわからない・・・。&lt;/p&gt;
-
-&lt;p&gt;というわけで&lt;strong&gt;とりあえず色々消してみて軽くなるパターンを探す&lt;/strong&gt;方法で行くしかなかった。&lt;/p&gt;
-
-&lt;p&gt;原始的最強。&lt;/p&gt;
-
-&lt;p&gt;結論を言いますと&lt;code&gt;neocomplcache&lt;/code&gt;の設定が甘かったです。&lt;/p&gt;
-
-&lt;p&gt;この設定が原因でした。&lt;/p&gt;
+          <description>&lt;p&gt;&lt;code&gt;neocomplcache&lt;/code&gt;のこの設定が甘かった。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;let g:neocomplcache_omni_patterns.php = &#39;[^. \t]-&amp;gt;\h\w*\|\h\w*::&#39;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Shougoさんのプラグインを適当に使ってたオレが悪かったんです。&lt;/p&gt;
-
-&lt;p&gt;実はこの件に関してはShougoさん本人がまとめててくださってました。&lt;/p&gt;
+&lt;p&gt;参考になったのはこの記事。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://vim-jp.org/vim-users-jp/2011/01/06/Hack-193.html&#34;&gt;vim-jp » Hack #193: neocomplcacheの設定について知る　後編&lt;/a&gt;&lt;/p&gt;
 
@@ -726,10 +860,6 @@ $(&amp;quot;#task-post&amp;quot;).on(&amp;quot;click&amp;quot;, function() {
 &lt;/blockquote&gt;
 
 &lt;p&gt;つまり原因は定数云々じゃなく&lt;code&gt;self::&lt;/code&gt;がパターンに合致したせいで、補完が走り一気に重たくなったと。&lt;/p&gt;
-
-&lt;p&gt;いいタイミングだし、0から書き直すかな・・・。&lt;/p&gt;
-
-&lt;p&gt;そしてHappy Vim Lifeを&amp;hellip;&lt;/p&gt;
 </description>
         </item>
       
@@ -3322,6 +3452,80 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
     
       
         <item>
+          <title>Google app engineでカスタムドメインを使う</title>
+          <link>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</link>
+          <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</guid>
+          <description>
+
+&lt;p&gt;簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。&lt;/p&gt;
+
+&lt;h2 id=&#34;googleによるドメインの確認:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;Googleによるドメインの確認&lt;/h2&gt;
+
+&lt;p&gt;ドメインを持っていない人は先に取得しちゃってね。&lt;/p&gt;
+
+&lt;p&gt;ちなみにオレはGMOさん(&lt;a href=&#34;http://www.onamae.com/&#34;&gt;お名前.com&lt;/a&gt;)で取得しました。&lt;/p&gt;
+
+&lt;p&gt;ていうことで以下の手順にそってやっていきます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/appengine/docs/domain&#34;&gt;Using a Custom Domain - Google App Engine Google Cloud Platform&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;作業は&lt;a href=&#34;https://console.developers.google.com/&#34;&gt;Developers Console&lt;/a&gt;から行います。&lt;/p&gt;
+
+&lt;p&gt;はじめにGoogleが、使いたいドメインが君のものか確認したいとのことなので、verifyへ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34; class=&#34;image&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;そうするとこんな画面になるので、&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34; class=&#34;image&#34; alt=&#34;input_domain&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ここに表示されてるテキストを、ドメインを発行した会社さんのほうからTXTレコードとして追加すればOK。&lt;/p&gt;
+
+&lt;p&gt;なんかこの画面、すごい頻度でChromeがエラー吐きまくったけど、クリックしなければ大丈夫だったのでなんとかしのぎました。&lt;/p&gt;
+
+&lt;p&gt;TXTレコードの追加は、お名前.comであれば&lt;a href=&#34;http://www.onamae.com/navi/domain.html&#34;&gt;ドメインNavi&lt;/a&gt;から&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ドメイン設定&lt;/li&gt;
+&lt;li&gt;DNS関連機能の設定&lt;/li&gt;
+&lt;li&gt;DNSレコード設定を利用する&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;でここに入力すればOK。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34; class=&#34;image&#34; alt=&#34;input_txt&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;TYPEはTXTにしてVALUEにさっきのテキストを入力。&lt;/p&gt;
+
+&lt;p&gt;場所にもよるけど少し待てば反映されるので、それまでGoogle側の画面で確認ボタンを何度か押してみる。&lt;/p&gt;
+
+&lt;p&gt;反映されてたら確認が通るはず。&lt;/p&gt;
+
+&lt;h2 id=&#34;ドメインの選択:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;ドメインの選択&lt;/h2&gt;
+
+&lt;p&gt;確認が出来たらサブドメインとしてプレフィックスを付けるのかを決める。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34; class=&#34;image&#34; alt=&#34;step2&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;これによって最後のステップが変わるけど、オレは確認の時点でサブドメインとして設定したので、Google側では特に付加せずやってます。&lt;/p&gt;
+
+&lt;h2 id=&#34;aレコードとaaaaレコードの追加:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;AレコードとAAAAレコードの追加&lt;/h2&gt;
+
+&lt;p&gt;最後はまたDNSレコードの追加。&lt;/p&gt;
+
+&lt;p&gt;ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34; class=&#34;image&#34; alt=&#34;step3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;あとは待ってればそのうち反映されるはず。&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
           <title>クラスタ化インデックスとかカバリングインデックスについて</title>
           <link>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</link>
           <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
@@ -3407,80 +3611,6 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 &lt;/blockquote&gt;
 
 &lt;p&gt;誤った認識があればご指摘を。&lt;/p&gt;
-</description>
-        </item>
-      
-    
-      
-        <item>
-          <title>Google app engineでカスタムドメインを使う</title>
-          <link>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</link>
-          <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</guid>
-          <description>
-
-&lt;p&gt;簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。&lt;/p&gt;
-
-&lt;h2 id=&#34;googleによるドメインの確認:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;Googleによるドメインの確認&lt;/h2&gt;
-
-&lt;p&gt;ドメインを持っていない人は先に取得しちゃってね。&lt;/p&gt;
-
-&lt;p&gt;ちなみにオレはGMOさん(&lt;a href=&#34;http://www.onamae.com/&#34;&gt;お名前.com&lt;/a&gt;)で取得しました。&lt;/p&gt;
-
-&lt;p&gt;ていうことで以下の手順にそってやっていきます。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/appengine/docs/domain&#34;&gt;Using a Custom Domain - Google App Engine Google Cloud Platform&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;作業は&lt;a href=&#34;https://console.developers.google.com/&#34;&gt;Developers Console&lt;/a&gt;から行います。&lt;/p&gt;
-
-&lt;p&gt;はじめにGoogleが、使いたいドメインが君のものか確認したいとのことなので、verifyへ。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34; class=&#34;image&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;そうするとこんな画面になるので、&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34; class=&#34;image&#34; alt=&#34;input_domain&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;ここに表示されてるテキストを、ドメインを発行した会社さんのほうからTXTレコードとして追加すればOK。&lt;/p&gt;
-
-&lt;p&gt;なんかこの画面、すごい頻度でChromeがエラー吐きまくったけど、クリックしなければ大丈夫だったのでなんとかしのぎました。&lt;/p&gt;
-
-&lt;p&gt;TXTレコードの追加は、お名前.comであれば&lt;a href=&#34;http://www.onamae.com/navi/domain.html&#34;&gt;ドメインNavi&lt;/a&gt;から&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ドメイン設定&lt;/li&gt;
-&lt;li&gt;DNS関連機能の設定&lt;/li&gt;
-&lt;li&gt;DNSレコード設定を利用する&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;でここに入力すればOK。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34; class=&#34;image&#34; alt=&#34;input_txt&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;TYPEはTXTにしてVALUEにさっきのテキストを入力。&lt;/p&gt;
-
-&lt;p&gt;場所にもよるけど少し待てば反映されるので、それまでGoogle側の画面で確認ボタンを何度か押してみる。&lt;/p&gt;
-
-&lt;p&gt;反映されてたら確認が通るはず。&lt;/p&gt;
-
-&lt;h2 id=&#34;ドメインの選択:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;ドメインの選択&lt;/h2&gt;
-
-&lt;p&gt;確認が出来たらサブドメインとしてプレフィックスを付けるのかを決める。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34; class=&#34;image&#34; alt=&#34;step2&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;これによって最後のステップが変わるけど、オレは確認の時点でサブドメインとして設定したので、Google側では特に付加せずやってます。&lt;/p&gt;
-
-&lt;h2 id=&#34;aレコードとaaaaレコードの追加:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;AレコードとAAAAレコードの追加&lt;/h2&gt;
-
-&lt;p&gt;最後はまたDNSレコードの追加。&lt;/p&gt;
-
-&lt;p&gt;ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34; class=&#34;image&#34; alt=&#34;step3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;あとは待ってればそのうち反映されるはず。&lt;/p&gt;
 </description>
         </item>
       
@@ -3955,6 +4085,46 @@ fast-forwards&#39; section of &#39;git push --help&#39; for details.
     
       
         <item>
+          <title>_config.ymlに書いたdescriptionが設定されない</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</link>
+          <pubDate>Sun, 21 Sep 2014 00:00:00 UTC</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</guid>
+          <description>&lt;p&gt;認識が間違ってるのか、_config.ymlに書いたdescriptionがサイトに反映されない・・・。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;source/_includes/head.html&lt;/code&gt;のコードを見てみるとこんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{% raw %}
+  {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
+  &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ description | strip_html | condense_spaces | truncate:150 }}&amp;quot;&amp;gt;
+  {% if page.keywords %}&amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;{{ page.keywords }}&amp;quot;&amp;gt;{% endif %}
+{% endraw %}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;page.descriptionしか見てない？&lt;/p&gt;
+
+&lt;p&gt;同じことで悩んでる人いないのかな・・・と思ったら居た。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://sweetme.at/2013/08/06/how-to-set-your-octopress-description-and-keyword-meta-tags/&#34;&gt;Make the Magic Happen&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;やっぱり同じ認識のようだ。&lt;/p&gt;
+
+&lt;p&gt;elseifってこう書くんだね。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{% raw %}
+  {% capture description %}{% if page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
+  &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ description | strip_html | condense_spaces | truncate:150 }}&amp;quot;&amp;gt;
+  {% if page.keywords %}&amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;{{ page.keywords }}&amp;quot;&amp;gt;{% endif %}
+{% endraw %}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;worked!&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
           <title>Octopressのテーマを作ってみる</title>
           <link>http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/</link>
           <pubDate>Sun, 21 Sep 2014 00:00:00 UTC</pubDate>
@@ -4024,46 +4194,6 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
 &lt;p&gt;&lt;a href=&#34;https://github.com/dim0627/flatten&#34;&gt;flatten&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;gravatarの件が入っちゃってるから、これは後で分離しなきゃなあ。&lt;/p&gt;
-</description>
-        </item>
-      
-    
-      
-        <item>
-          <title>_config.ymlに書いたdescriptionが設定されない</title>
-          <link>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</link>
-          <pubDate>Sun, 21 Sep 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</guid>
-          <description>&lt;p&gt;認識が間違ってるのか、_config.ymlに書いたdescriptionがサイトに反映されない・・・。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;source/_includes/head.html&lt;/code&gt;のコードを見てみるとこんな感じ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{% raw %}
-  {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
-  &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ description | strip_html | condense_spaces | truncate:150 }}&amp;quot;&amp;gt;
-  {% if page.keywords %}&amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;{{ page.keywords }}&amp;quot;&amp;gt;{% endif %}
-{% endraw %}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;page.descriptionしか見てない？&lt;/p&gt;
-
-&lt;p&gt;同じことで悩んでる人いないのかな・・・と思ったら居た。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://sweetme.at/2013/08/06/how-to-set-your-octopress-description-and-keyword-meta-tags/&#34;&gt;Make the Magic Happen&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;やっぱり同じ認識のようだ。&lt;/p&gt;
-
-&lt;p&gt;elseifってこう書くんだね。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{% raw %}
-  {% capture description %}{% if page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
-  &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ description | strip_html | condense_spaces | truncate:150 }}&amp;quot;&amp;gt;
-  {% if page.keywords %}&amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;{{ page.keywords }}&amp;quot;&amp;gt;{% endif %}
-{% endraw %}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;worked!&lt;/p&gt;
 </description>
         </item>
       
