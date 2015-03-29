@@ -9,7 +9,7 @@
 
 
 <meta property="og:title" content="Unresolved">
-<meta property="og:url" content="http://yet.unresolved.xyz">
+<meta property="og:url" content="http://yet.unresolved.xyz/">
 
 <meta property="og:site_name" content="Unresolved">
 <meta name="google-site-verification" content="SLxungm5o9WvGwPUEGZCspbMBAsLBjOxAHNyjIBUuSI" />
@@ -24,15 +24,15 @@
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-<link rel="stylesheet" href="http://yet.unresolved.xyz/css/base.css">
-<link rel="stylesheet" href="http://yet.unresolved.xyz/css/styles.css">
-<link rel="stylesheet" href="http://yet.unresolved.xyz/css/custom.css">
+<link rel="stylesheet" href="http://yet.unresolved.xyz//css/base.css">
+<link rel="stylesheet" href="http://yet.unresolved.xyz//css/styles.css">
+<link rel="stylesheet" href="http://yet.unresolved.xyz//css/custom.css">
 
 
-<link rel="shortcut icon" href="http://yet.unresolved.xyz/assets/favicon.ico">
+<link rel="shortcut icon" href="http://yet.unresolved.xyz//assets/favicon.ico">
 
 
-<link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz//index.xml">
 </head>
 
 
@@ -41,8 +41,12 @@
     <div class="masthead">
         <div class="container">
             <h3 class="masthead-title">
-                <a href="http://yet.unresolved.xyz" title="Home">Unresolved</a>
+                <a href="http://yet.unresolved.xyz/" title="Home">Unresolved</a>
             </h3>
+            
+            
+            
+            
             
             
             
@@ -132,7 +136,27 @@
     <article class="post">
     <div class="eyecatch">
         
-        <a href="http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/"><img src="http://yet.unresolved.xyz/images/clojure.png" alt="Slamhoundを使ってClojureのrequireを自動生成する"></a>
+        <a href="http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/"><img src="http://yet.unresolved.xyz//images/vim.png" alt="VimのClojureプラグイン覚書"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Sun, Mar 22, 2015</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/">VimのClojureプラグイン覚書</a></h1>
+        <div class="summary">VimでClojure書くときのあれこれをいっつも忘れるのでまとめておこうと思う。 新しいことを覚えたら随時追記していこうかな。 使ってるプラグイン tpope/vim-classpath クラスパスの設定をやってくれる。 何も考えず入れればよい。 guns/vim-slamhound requireの整理をやってくれる。 不要な奴は消してくれるし、ない奴はclasspathから読み込んで追加してくれる。 kien/rainbow_parentheses.vim 括弧をrainbowな感じにしてくれる。 tpope/vim-fireplace My Clojure Toolchain: Vimでもキラープラグインと書かれているfireplace。 VimをREPLと接続してあんなことやこんなことが出来る。 こいつの機能、よく使う割によく忘れるんだよなあ。 もはやこの記事はこの覚書のために書いたようなもの。 K : カーソル位置にある関数のドキュメントを表示する。 [d : カーソル位置にある関数のソースを表示する。 [&lt;C-D&gt; : カーソル位置にある関数のソースにジャンプする。 &lt;C-W&gt;f : カーソル位置にある関数のソースを横分割して開く。 &lt;C-W&gt;gf : カーソル位置にある関数のソースをタブ分割して開く。 &lt;C-^&gt; : ジャンプする前のファイルに戻る。 cpp : カーソル行をREPLで実行する。 cqq : カーソル行をVim内のREPLで編集モードで開く。 :RunTest : テストを実行する。 :Require : 読み込んでる名前空間をリロードする。 venantius/vim-eastwood Clojure用のLint。 scrooloose/syntasticとjonase/eastwoodとtpope/vim-fireplaceが必要。 venantius/vim-cljfmt Clojure用のフォーマッター。 デフォルトで保存時のフォーマットがかかるようになってるので、入れるだけでOKのはず。 使ってないプラグイン guns/vim-clojure-static シンタックスハイライト、インデントのためのプラグイン。 あとclojure.coreの名前空間にある補完機能があるらしい。 なんかあってもなくてもあんまり変わらなかった（設定しきれなかった？）ので使うのをやめた。 vim-scripts/paredit.vim 括弧の位置をあれこれ出来るやつ、だと思う。 ちょっと脳みそがそんなにたくさんの事を一気に覚えるのは無理だったので、一旦使うのをやめた。</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
+
+    
+    <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/"><img src="http://yet.unresolved.xyz//images/clojure.png" alt="Slamhoundを使ってClojureのrequireを自動生成する"></a>
         
     </div>
     <div class="data">
@@ -152,7 +176,7 @@
     <article class="post">
     <div class="eyecatch">
         
-        <a href="http://yet.unresolved.xyz/blog/2015/02/06/learning-vim-again/"><img src="http://yet.unresolved.xyz/images/vim.png" alt="今だからやるvimコマンド再学習"></a>
+        <a href="http://yet.unresolved.xyz/blog/2015/02/06/learning-vim-again/"><img src="http://yet.unresolved.xyz//images/vim.png" alt="今だからやるvimコマンド再学習"></a>
         
     </div>
     <div class="data">
@@ -172,13 +196,13 @@
     <article class="post">
     <div class="eyecatch">
         
-        <a href="http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/"><img src="http://yet.unresolved.xyz/images/vim.png" alt="PHPファイルの定数に触るとvimがフリーズする"></a>
+        <a href="http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/"><img src="http://yet.unresolved.xyz//images/vim.png" alt="PHPファイルの定数に触るとvimがフリーズする"></a>
         
     </div>
     <div class="data">
         <span class="post-date">Thu, Feb 5, 2015</span>
         <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/">PHPファイルの定数に触るとvimがフリーズする</a></h1>
-        <div class="summary">意外と日が開いたね。 最近はPHPを書いてます。つってもほんと最近からだけど。 そんな最中、さあ書くぞーって時にvimがフリーズしたことがありました。 vimが止まったのは人生初の経験だったので焦りました。 もうほんと困った！ 原因 ほとんどコピペで作った.vimrcのせいで何が悪いのかがわからない・・・。 ていうか未だに書き方がようわからない・・・。 というわけでとりあえず色々消してみて軽くなるパターンを探す方法で行くしかなかった。 原始的最強。 結論を言いますとneocomplcacheの設定が甘かったです。 この設定が原因でした。 let g:neocomplcache_omni_patterns.php = '[^. \t]-&gt;\h\w*\|\h\w*::' Shougoさんのプラグインを適当に使ってたオレが悪かったんです。 実はこの件に関してはShougoさん本人がまとめててくださってました。 vim-jp » Hack #193: neocomplcacheの設定について知る 後編 g:neocomplcache_omni_patternsは、neocomplcacheがオムニ補完の関数を呼び出すためのキーワードパターンを設定します。 主な言語にはデフォルトで対応していますが、RubyやPHPなど重いものは無効化されています。 設定例のようにすれば有効化できますが、Vimがフリーズする可能性もあります。自己責任で使用してください。 つまり原因は定数云々じゃなくself::がパターンに合致したせいで、補完が走り一気に重たくなったと。 いいタイミングだし、0から書き直すかな・・・。 そしてHappy Vim Lifeを&hellip;</div>
+        <div class="summary">neocomplcacheのこの設定が甘かった。 let g:neocomplcache_omni_patterns.php = '[^. \t]-&gt;\h\w*\|\h\w*::' 参考になったのはこの記事。 vim-jp » Hack #193: neocomplcacheの設定について知る 後編 g:neocomplcache_omni_patternsは、neocomplcacheがオムニ補完の関数を呼び出すためのキーワードパターンを設定します。 主な言語にはデフォルトで対応していますが、RubyやPHPなど重いものは無効化されています。 設定例のようにすれば有効化できますが、Vimがフリーズする可能性もあります。自己責任で使用してください。 つまり原因は定数云々じゃなくself::がパターンに合致したせいで、補完が走り一気に重たくなったと。</div>
     </div>
     <footer class="readon">
         <a href="http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/">
@@ -219,385 +243,399 @@
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/ansible">
+                    <a href="http://yet.unresolved.xyz//tags/ansible">
                         ansible
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/apigility">
+                    <a href="http://yet.unresolved.xyz//tags/apigility">
                         apigility
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/auriga">
+                    <a href="http://yet.unresolved.xyz//tags/auriga">
                         auriga
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/aws">
+                    <a href="http://yet.unresolved.xyz//tags/aws">
                         aws
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/beanstalk">
+                    <a href="http://yet.unresolved.xyz//tags/beanstalk">
                         beanstalk
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/book">
+                    <a href="http://yet.unresolved.xyz//tags/book">
                         book
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/boot2docker">
+                    <a href="http://yet.unresolved.xyz//tags/boot2docker">
                         boot2docker
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/centos">
+                    <a href="http://yet.unresolved.xyz//tags/centos">
                         centos
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/clang">
+                    <a href="http://yet.unresolved.xyz//tags/clang">
                         clang
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/clojure">
+                    <a href="http://yet.unresolved.xyz//tags/clojure">
                         clojure
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/css">
+                    <a href="http://yet.unresolved.xyz//tags/css">
                         css
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/database">
+                    <a href="http://yet.unresolved.xyz//tags/database">
                         database
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/design">
+                    <a href="http://yet.unresolved.xyz//tags/design">
                         design
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/dns">
+                    <a href="http://yet.unresolved.xyz//tags/dns">
                         dns
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/docker">
+                    <a href="http://yet.unresolved.xyz//tags/docker">
                         docker
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/enlive">
+                    <a href="http://yet.unresolved.xyz//tags/enlive">
                         enlive
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/git">
+                    <a href="http://yet.unresolved.xyz//tags/git">
                         git
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/github">
+                    <a href="http://yet.unresolved.xyz//tags/github">
                         github
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/golang">
+                    <a href="http://yet.unresolved.xyz//tags/golang">
                         golang
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/google-app-engine">
+                    <a href="http://yet.unresolved.xyz//tags/google-app-engine">
                         google-app-engine
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/gravatar">
+                    <a href="http://yet.unresolved.xyz//tags/gravatar">
                         gravatar
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/hackathon">
+                    <a href="http://yet.unresolved.xyz//tags/hackathon">
                         hackathon
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/heroku">
+                    <a href="http://yet.unresolved.xyz//tags/heroku">
                         heroku
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/hiccup">
+                    <a href="http://yet.unresolved.xyz//tags/hiccup">
                         hiccup
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/html">
+                    <a href="http://yet.unresolved.xyz//tags/html">
                         html
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/hugo">
+                    <a href="http://yet.unresolved.xyz//tags/hugo">
                         hugo
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/javascript">
+                    <a href="http://yet.unresolved.xyz//tags/javascript">
                         javascript
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/jekyll">
+                    <a href="http://yet.unresolved.xyz//tags/jekyll">
                         jekyll
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/laravel">
+                    <a href="http://yet.unresolved.xyz//tags/laravel">
                         laravel
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/leiningen">
+                    <a href="http://yet.unresolved.xyz//tags/leiningen">
                         leiningen
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/linux">
+                    <a href="http://yet.unresolved.xyz//tags/linux">
                         linux
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/lobos">
+                    <a href="http://yet.unresolved.xyz//tags/lobos">
                         lobos
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/mac">
+                    <a href="http://yet.unresolved.xyz//tags/mac">
                         mac
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/migration">
+                    <a href="http://yet.unresolved.xyz//tags/migration">
                         migration
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/node.js">
+                    <a href="http://yet.unresolved.xyz//tags/node.js">
                         node.js
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/octopress">
+                    <a href="http://yet.unresolved.xyz//tags/octopress">
                         octopress
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/os-x">
+                    <a href="http://yet.unresolved.xyz//tags/os-x">
                         os-x
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/paiza">
+                    <a href="http://yet.unresolved.xyz//tags/paiza">
                         paiza
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/paizaio">
+                    <a href="http://yet.unresolved.xyz//tags/paizaio">
                         paizaio
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/php">
+                    <a href="http://yet.unresolved.xyz//tags/php">
                         php
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/postgresql">
+                    <a href="http://yet.unresolved.xyz//tags/postgresql">
                         postgresql
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/python">
+                    <a href="http://yet.unresolved.xyz//tags/python">
                         python
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/reactjs">
+                    <a href="http://yet.unresolved.xyz//tags/reactjs">
                         reactjs
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/ruby">
+                    <a href="http://yet.unresolved.xyz//tags/ring">
+                        ring
+                    </a>
+                </li>
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz//tags/ruby">
                         ruby
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/sass">
+                    <a href="http://yet.unresolved.xyz//tags/sass">
                         sass
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/scss">
+                    <a href="http://yet.unresolved.xyz//tags/scss">
                         scss
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/slack">
+                    <a href="http://yet.unresolved.xyz//tags/security">
+                        security
+                    </a>
+                </li>
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz//tags/slack">
                         slack
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/sql-server">
+                    <a href="http://yet.unresolved.xyz//tags/sql-server">
                         sql-server
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/sqlite">
+                    <a href="http://yet.unresolved.xyz//tags/sqlite">
                         sqlite
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/startup">
+                    <a href="http://yet.unresolved.xyz//tags/startup">
                         startup
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/startup-weekend">
+                    <a href="http://yet.unresolved.xyz//tags/startup-weekend">
                         startup-weekend
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/ubuntu">
+                    <a href="http://yet.unresolved.xyz//tags/ubuntu">
                         ubuntu
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/util">
+                    <a href="http://yet.unresolved.xyz//tags/util">
                         util
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/vagrant">
+                    <a href="http://yet.unresolved.xyz//tags/vagrant">
                         vagrant
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/vim">
+                    <a href="http://yet.unresolved.xyz//tags/vim">
                         vim
                     </a>
                 </li>
@@ -641,7 +679,7 @@
 
 <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-<script src="http://yet.unresolved.xyz/js/highlight.pack.js"></script>
+<script src="http://yet.unresolved.xyz//js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 

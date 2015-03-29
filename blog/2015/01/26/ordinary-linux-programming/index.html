@@ -13,7 +13,7 @@
 <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/01/26/ordinary-linux-programming/">
 <meta property="og:description" content="ふつうのLinuxプログラミング Linuxの仕組みから学べるgccプログラミングの王道 読もうと思ったきっかけ Ruby書かないくせにるびまのインタビューの奴が好きで、著者である青木さんの記事を見てた時に知った。 Rubyist Magazine - Rubyist Hotlinks 【第 17 回】 青木峰郎さん Kernelとかいつかは触れたいけど実際どこから入ればいいかわからない、って人、結構いると思うんだよね。 オレもその一人で、この本はなんか、その入り口になるんじゃないかなって期待があった。 実際評判も良かったし。 前提 C言語、書けないんだよね。 高校の頃に書いたっきり、1行も、いや！1文字も書いてない！ 他人のコードを読む場面もなかったわけじゃないけど、ほぼ初心者としてこの本を読みました。 プロトタイプ宣言やらヘッダファイルやらを理解してたくらい。 ちなみに対象読者は、 構造体とポインタくらいはわかる って書いてあるんだけど、「とにかくプログラミング！」な本ではないので、そこまで必要はなさそう。 あ、唯一困ったのはLinkedListを使うところで出てきた-&gt;演算子・・・。 第 11 章 ポインタとリスト構造 この本に書いてあること Linuxの構造と、その上でのC言語っていう2本軸がある。 Linuxについては3つの概念をあげていて、 ファイルシステム プロセス ストリーム これをベースに、Linuxが動いてる仕組みを歴史とか思想をまじえて説明がされてる。 で、それらをC言語で扱う上での作法とか、注意点とか、プログラムを書く上での話に繋がっていくんだけど、 APIの紹介だけじゃなくて、「これはこういう理由で使ってはいけません」って話があるのはすごく良かった。 実際に何か作るときって、大抵どの界隈でも暗黙の了解とかルールがあると思っていて、 そういうのをきちんとした文献で知ることが出来るのは入門者にとってはありがたい事だと思う。 この本を読んで得られたもの まとめは最後に書くとして、読んでる中で納得したところとか課題が解決した点を章立てにしてみる。 Linuxの構造について 本書では一貫して前述した3つの概念をベースに説明しているから、思考がブレずに読みやすい。 また、Linux上でのC言語プログラミング、っていうだけじゃなくて、FHSとか、CPUとメモリについてまでも言及されてる。 Linuxのディレクトリ構成みたいになんとなく理解しちゃうところが説明されてるのは嬉しい。 LinuxでC言語を書くためのノウハウ 言語本ではないからC言語がどうのこうのっていう話はそこまで書いてない。 ただ、API仕様についてはしっかり書いてあるから、実際にプログラムを書くときにまた読み直したいと思った。 あと、プログラムを書くだけじゃなくてその周辺技術(manやgdb)についても述べていて、 どういうタイミングでどういう風に使ったらいいか、っていうノウハウが得られた。 プロセスとは何か プロセスについてはハードウェアと合わせて1つ章が切られていて、結構細かく説明されてる。 個人的にそうなんだって思ったのは、マルチタスクを実現する上でのCPUとメモリの扱いについて。 仮想CPU(初めて聞いた)と仮想メモリの概念とどうやって実現してるかについてはなるほどなと思った。 物理アドレスと論理アドレスっていう物自体は知っていたけど、必要性とかそういう観点で説明されているから理解しやすい。 ビルド周りの話 C言語のビルドについて、 プリプロセス コンパイル アセンブル リンク にわけて説明されてる。 コンパイルとリンクについては知ってたけどそれ以外については知らなかったし、 リンクについてはもう少ししっかり理解したいと思ってたから、この章はその理解に役立った。 スタティックリンクとダイナミックリンクの説明と、どちらを使うべきか、っていう話も載ってる。 シグナルについて プロセスを殺すとかは普段からやるけど、それをプログラム側で見た場合の話がされてる。 シグナルを送信する側の実装とか、受ける上での実装とか、さらに注意点までまとめられてるのは良かった。 ちなみに関数ポインタの存在はここで初めて知った。">
 
-<meta property="og:image" content="http://yet.unresolved.xyz/images/linux.png">
+<meta property="og:image" content="http://yet.unresolved.xyz//images/linux.png">
 
 
 <meta property="og:site_name" content="Unresolved">
@@ -29,15 +29,15 @@
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-<link rel="stylesheet" href="http://yet.unresolved.xyz/css/base.css">
-<link rel="stylesheet" href="http://yet.unresolved.xyz/css/styles.css">
-<link rel="stylesheet" href="http://yet.unresolved.xyz/css/custom.css">
+<link rel="stylesheet" href="http://yet.unresolved.xyz//css/base.css">
+<link rel="stylesheet" href="http://yet.unresolved.xyz//css/styles.css">
+<link rel="stylesheet" href="http://yet.unresolved.xyz//css/custom.css">
 
 
-<link rel="shortcut icon" href="http://yet.unresolved.xyz/assets/favicon.ico">
+<link rel="shortcut icon" href="http://yet.unresolved.xyz//assets/favicon.ico">
 
 
-<link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz//index.xml">
 </head>
 
 
@@ -46,8 +46,12 @@
     <div class="masthead">
         <div class="container">
             <h3 class="masthead-title">
-                <a href="http://yet.unresolved.xyz" title="Home">Unresolved</a>
+                <a href="http://yet.unresolved.xyz/" title="Home">Unresolved</a>
             </h3>
+            
+            
+            
+            
             
             
             
@@ -138,7 +142,7 @@
 
     <div class="eyecatch">
         
-        <img src="http://yet.unresolved.xyz/images/linux.png" alt="「ふつうのLinuxプログラミング」を読んだ">
+        <img src="http://yet.unresolved.xyz//images/linux.png" alt="「ふつうのLinuxプログラミング」を読んだ">
         
     </div>
 
@@ -301,11 +305,11 @@
     <aside>
         <div class="post-share">
             <h3>Share</h3>
-            <a id="share-fb" href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f26%2fordinary-linux-programming%2f&t=%e3%80%8c%e3%81%b5%e3%81%a4%e3%81%86%e3%81%aeLinux%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e3%80%8d%e3%82%92%e8%aa%ad%e3%82%93%e3%81%a0" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/facebook.png" alt="Facebook"/></a>
-            <a id="share-twitter" href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f26%2fordinary-linux-programming%2f&text=%e3%80%8c%e3%81%b5%e3%81%a4%e3%81%86%e3%81%aeLinux%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e3%80%8d%e3%82%92%e8%aa%ad%e3%82%93%e3%81%a0&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/twitter.png" alt="Twitter"/></a>
-            <a id="share-googleplus" href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f26%2fordinary-linux-programming%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/googleplus.png" alt="Google+"/></a>
-            <a id="share-hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f26%2fordinary-linux-programming%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/hatena.png" alt="Hatena"/></a>
-            <a id="share-pocket" href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f26%2fordinary-linux-programming%2f&title=%e3%80%8c%e3%81%b5%e3%81%a4%e3%81%86%e3%81%aeLinux%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e3%80%8d%e3%82%92%e8%aa%ad%e3%82%93%e3%81%a0" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/pocket.png" alt="Pocket"/></a>
+            <a id="share-fb" href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f26%2fordinary-linux-programming%2f&t=%e3%80%8c%e3%81%b5%e3%81%a4%e3%81%86%e3%81%aeLinux%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e3%80%8d%e3%82%92%e8%aa%ad%e3%82%93%e3%81%a0" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/facebook.png" alt="Facebook"/></a>
+            <a id="share-twitter" href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f26%2fordinary-linux-programming%2f&text=%e3%80%8c%e3%81%b5%e3%81%a4%e3%81%86%e3%81%aeLinux%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e3%80%8d%e3%82%92%e8%aa%ad%e3%82%93%e3%81%a0&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/twitter.png" alt="Twitter"/></a>
+            <a id="share-googleplus" href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f26%2fordinary-linux-programming%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/googleplus.png" alt="Google+"/></a>
+            <a id="share-hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f26%2fordinary-linux-programming%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/hatena.png" alt="Hatena"/></a>
+            <a id="share-pocket" href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f26%2fordinary-linux-programming%2f&title=%e3%80%8c%e3%81%b5%e3%81%a4%e3%81%86%e3%81%aeLinux%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e3%80%8d%e3%82%92%e8%aa%ad%e3%82%93%e3%81%a0" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/pocket.png" alt="Pocket"/></a>
         </div>
 
         
@@ -317,14 +321,14 @@
             <ul class="post-tags">
                 
                 <li>
-                    <a href="http://yet.unresolved.xyz/tags/linux">
+                    <a href="http://yet.unresolved.xyz//tags/linux">
                         <i class="fa fa-tags"></i>
                         linux
                     </a>
                 </li>
                 
                 <li>
-                    <a href="http://yet.unresolved.xyz/tags/book">
+                    <a href="http://yet.unresolved.xyz//tags/book">
                         <i class="fa fa-tags"></i>
                         book
                     </a>
@@ -333,6 +337,14 @@
             </ul>
 
             <ul>
+                
+                
+                
+                
+                
+                
+                
+                
                 
                 
                 
@@ -568,385 +580,399 @@ var disqus_shortname = 'unresolved';
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/ansible">
+                    <a href="http://yet.unresolved.xyz//tags/ansible">
                         ansible
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/apigility">
+                    <a href="http://yet.unresolved.xyz//tags/apigility">
                         apigility
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/auriga">
+                    <a href="http://yet.unresolved.xyz//tags/auriga">
                         auriga
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/aws">
+                    <a href="http://yet.unresolved.xyz//tags/aws">
                         aws
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/beanstalk">
+                    <a href="http://yet.unresolved.xyz//tags/beanstalk">
                         beanstalk
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/book">
+                    <a href="http://yet.unresolved.xyz//tags/book">
                         book
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/boot2docker">
+                    <a href="http://yet.unresolved.xyz//tags/boot2docker">
                         boot2docker
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/centos">
+                    <a href="http://yet.unresolved.xyz//tags/centos">
                         centos
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/clang">
+                    <a href="http://yet.unresolved.xyz//tags/clang">
                         clang
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/clojure">
+                    <a href="http://yet.unresolved.xyz//tags/clojure">
                         clojure
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/css">
+                    <a href="http://yet.unresolved.xyz//tags/css">
                         css
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/database">
+                    <a href="http://yet.unresolved.xyz//tags/database">
                         database
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/design">
+                    <a href="http://yet.unresolved.xyz//tags/design">
                         design
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/dns">
+                    <a href="http://yet.unresolved.xyz//tags/dns">
                         dns
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/docker">
+                    <a href="http://yet.unresolved.xyz//tags/docker">
                         docker
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/enlive">
+                    <a href="http://yet.unresolved.xyz//tags/enlive">
                         enlive
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/git">
+                    <a href="http://yet.unresolved.xyz//tags/git">
                         git
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/github">
+                    <a href="http://yet.unresolved.xyz//tags/github">
                         github
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/golang">
+                    <a href="http://yet.unresolved.xyz//tags/golang">
                         golang
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/google-app-engine">
+                    <a href="http://yet.unresolved.xyz//tags/google-app-engine">
                         google-app-engine
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/gravatar">
+                    <a href="http://yet.unresolved.xyz//tags/gravatar">
                         gravatar
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/hackathon">
+                    <a href="http://yet.unresolved.xyz//tags/hackathon">
                         hackathon
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/heroku">
+                    <a href="http://yet.unresolved.xyz//tags/heroku">
                         heroku
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/hiccup">
+                    <a href="http://yet.unresolved.xyz//tags/hiccup">
                         hiccup
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/html">
+                    <a href="http://yet.unresolved.xyz//tags/html">
                         html
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/hugo">
+                    <a href="http://yet.unresolved.xyz//tags/hugo">
                         hugo
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/javascript">
+                    <a href="http://yet.unresolved.xyz//tags/javascript">
                         javascript
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/jekyll">
+                    <a href="http://yet.unresolved.xyz//tags/jekyll">
                         jekyll
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/laravel">
+                    <a href="http://yet.unresolved.xyz//tags/laravel">
                         laravel
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/leiningen">
+                    <a href="http://yet.unresolved.xyz//tags/leiningen">
                         leiningen
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/linux">
+                    <a href="http://yet.unresolved.xyz//tags/linux">
                         linux
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/lobos">
+                    <a href="http://yet.unresolved.xyz//tags/lobos">
                         lobos
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/mac">
+                    <a href="http://yet.unresolved.xyz//tags/mac">
                         mac
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/migration">
+                    <a href="http://yet.unresolved.xyz//tags/migration">
                         migration
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/node.js">
+                    <a href="http://yet.unresolved.xyz//tags/node.js">
                         node.js
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/octopress">
+                    <a href="http://yet.unresolved.xyz//tags/octopress">
                         octopress
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/os-x">
+                    <a href="http://yet.unresolved.xyz//tags/os-x">
                         os-x
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/paiza">
+                    <a href="http://yet.unresolved.xyz//tags/paiza">
                         paiza
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/paizaio">
+                    <a href="http://yet.unresolved.xyz//tags/paizaio">
                         paizaio
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/php">
+                    <a href="http://yet.unresolved.xyz//tags/php">
                         php
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/postgresql">
+                    <a href="http://yet.unresolved.xyz//tags/postgresql">
                         postgresql
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/python">
+                    <a href="http://yet.unresolved.xyz//tags/python">
                         python
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/reactjs">
+                    <a href="http://yet.unresolved.xyz//tags/reactjs">
                         reactjs
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/ruby">
+                    <a href="http://yet.unresolved.xyz//tags/ring">
+                        ring
+                    </a>
+                </li>
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz//tags/ruby">
                         ruby
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/sass">
+                    <a href="http://yet.unresolved.xyz//tags/sass">
                         sass
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/scss">
+                    <a href="http://yet.unresolved.xyz//tags/scss">
                         scss
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/slack">
+                    <a href="http://yet.unresolved.xyz//tags/security">
+                        security
+                    </a>
+                </li>
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz//tags/slack">
                         slack
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/sql-server">
+                    <a href="http://yet.unresolved.xyz//tags/sql-server">
                         sql-server
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/sqlite">
+                    <a href="http://yet.unresolved.xyz//tags/sqlite">
                         sqlite
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/startup">
+                    <a href="http://yet.unresolved.xyz//tags/startup">
                         startup
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/startup-weekend">
+                    <a href="http://yet.unresolved.xyz//tags/startup-weekend">
                         startup-weekend
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/ubuntu">
+                    <a href="http://yet.unresolved.xyz//tags/ubuntu">
                         ubuntu
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/util">
+                    <a href="http://yet.unresolved.xyz//tags/util">
                         util
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/vagrant">
+                    <a href="http://yet.unresolved.xyz//tags/vagrant">
                         vagrant
                     </a>
                 </li>
                 
                 <li>
                     
-                    <a href="http://yet.unresolved.xyz/tags/vim">
+                    <a href="http://yet.unresolved.xyz//tags/vim">
                         vim
                     </a>
                 </li>
@@ -990,7 +1016,7 @@ var disqus_shortname = 'unresolved';
 
 <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-<script src="http://yet.unresolved.xyz/js/highlight.pack.js"></script>
+<script src="http://yet.unresolved.xyz//js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 
