@@ -125,6 +125,8 @@
             
             
             
+            
+            
         </div>
     </div>
 
@@ -470,6 +472,13 @@
                 
                 <li>
                     
+                    <a href="http://yet.unresolved.xyz//tags/powerline">
+                        powerline
+                    </a>
+                </li>
+                
+                <li>
+                    
                     <a href="http://yet.unresolved.xyz//tags/python">
                         python
                     </a>
@@ -549,6 +558,13 @@
                     
                     <a href="http://yet.unresolved.xyz//tags/startup-weekend">
                         startup-weekend
+                    </a>
+                </li>
+                
+                <li>
+                    
+                    <a href="http://yet.unresolved.xyz//tags/tmux">
+                        tmux
                     </a>
                 </li>
                 
