@@ -3,9 +3,11 @@ comments: true
 date: 2015-03-30T23:56:58+09:00
 eyecatch: "linux.png"
 slug: "status-line-of-tmux-powerline-overlap"
-tags: ["tmux", "powerline"]
+tags: ["tmux", "iterm", "powerline"]
 title: "tmux-powerlineのステータスラインが描画ごとに増える"
 ---
+
+iTerm2での話。
 
 こいつのせい。
 
