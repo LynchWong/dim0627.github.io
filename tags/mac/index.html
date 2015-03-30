@@ -367,6 +367,13 @@
                 
                 <li>
                     
+                    <a href="http://yet.unresolved.xyz//tags/iterm">
+                        iterm
+                    </a>
+                </li>
+                
+                <li>
+                    
                     <a href="http://yet.unresolved.xyz//tags/javascript">
                         javascript
                     </a>
