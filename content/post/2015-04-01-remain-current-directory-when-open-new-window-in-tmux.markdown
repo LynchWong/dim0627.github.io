@@ -4,7 +4,7 @@ date: 2015-04-01T22:42:40+09:00
 eyecatch: "linux.png"
 slug: "remain-current-directory-when-open-new-window-in-tmux"
 tags: ["tmux"]
-title: "tmuxでウィンドウを開いたり画面分割したときにディレクトリを保持する"
+title: "tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する"
 ---
 
 こんな感じ。
