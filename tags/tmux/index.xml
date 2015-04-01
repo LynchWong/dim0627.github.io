@@ -11,7 +11,7 @@
     
       
         <item>
-          <title>tmuxでウィンドウを開いたり画面分割したときにディレクトリを保持する</title>
+          <title>tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する</title>
           <link>http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/</link>
           <pubDate>Wed, 01 Apr 2015 22:42:40 JST</pubDate>
           <author>Daisuke Tsuji</author>
