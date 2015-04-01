@@ -6,8 +6,36 @@
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
-    <updated>2015-03-30 23:56:58 &#43;0900 JST</updated>
+    <updated>2015-04-01 22:42:40 &#43;0900 JST</updated>
 
+    
+      
+        <item>
+          <title>tmuxでウィンドウを開いたり画面分割したときにディレクトリを保持する</title>
+          <link>http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/</link>
+          <pubDate>Wed, 01 Apr 2015 22:42:40 JST</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/</guid>
+          <description>
+
+&lt;p&gt;こんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# v でペインを縦に分割する
+bind v split-window -h -c &amp;quot;#{pane_current_path}&amp;quot;
+
+# s でペインを横に分割する
+bind s split-window -v -c &amp;quot;#{pane_current_path}&amp;quot;
+
+# 新規ウィンドウでディレクトリを保持
+bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;参考にさせていただきました:0adf99f262be79bb5ee2575ca8ebd7e8&#34;&gt;参考にさせていただきました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://studio3104.hatenablog.com/entry/2014/10/14/131430&#34;&gt;tmux 1.9 でペイン分割時にカレントディレクトリを維持 - Studio3104::BLOG.new&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>
