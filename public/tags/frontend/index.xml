@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unresolved </title>
+    <link>http://yet.unresolved.xyz/tags/frontend/</link>
+    <language>en-us</language>
+    <author>Daisuke Tsuji</author>
+    <rights>(C) 2015</rights>
+    <updated>2015-04-04 22:39:07 &#43;0900 JST</updated>
+
+    
+      
+        <item>
+          <title>CSS / HTMLで味わった苦悩の数々</title>
+          <link>http://yet.unresolved.xyz/blog/2015/04/04/anguish-in-the-css-and-html/</link>
+          <pubDate>Sat, 04 Apr 2015 22:39:07 JST</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2015/04/04/anguish-in-the-css-and-html/</guid>
+          <description>
+
+&lt;p&gt;CSSってアンチパターンとかベストプラクティスみたいなのをあんまり聞かないよね。&lt;/p&gt;
+
+&lt;p&gt;デザイナじゃないオレがフロントエンドに触れて苦しんだこととかノウハウとかをまとめてみようと思う。&lt;/p&gt;
+
+&lt;h2 id=&#34;セクションを意識する:8ce6f11ffb5ab38525aa42f985db3a46&#34;&gt;セクションを意識する&lt;/h2&gt;
+
+&lt;p&gt;HTML5から&lt;code&gt;section&lt;/code&gt;タグが出てきたね。&lt;/p&gt;
+
+&lt;p&gt;これはそのタグの話ではなくて、画面レイアウトを考えた上での大枠について。&lt;/p&gt;
+
+&lt;p&gt;オレがやって失敗だったなと思ったのは&lt;strong&gt;ページの一部からHTMLを書き始めるやり方。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;これをやってしまうとページの一部分から完成していくから、全体で統制が取れなくなることが多かった。&lt;/p&gt;
+
+&lt;p&gt;具体的に言うと、だいたいのページはこんな感じのセクション分けになるはず。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;!doctype HTML&amp;gt;
+&amp;lt;html&amp;gt;
+  &amp;lt;head&amp;gt;
+    metaタグ。
+    CSSフレームワークの読み込み。
+    オーバライド用のCSSファイルの読み込み。
+    などなど。
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
+    &amp;lt;header&amp;gt;
+      ヘッダ。ロゴや一部のメニューを置く。
+    &amp;lt;/header&amp;gt;
+    &amp;lt;div&amp;gt;
+      グローバルメニュー。サイトによってはheaderで事足りる場合も。
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div&amp;gt;
+      メインコンテンツ。この中でカラム分けをしたり、さらに細分化されたセクション分けをしたりする。
+    &amp;lt;/div&amp;gt;
+    &amp;lt;footer&amp;gt;
+      コピーライトを書いたりする。
+      最近はサイトマップをここに置いたりすることが多いみたい。
+    &amp;lt;/footer&amp;gt;
+    JavaScriptの読み込み
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;個人的に好きに書いていい場面では&lt;code&gt;html&lt;/code&gt;タグ、&lt;code&gt;head&lt;/code&gt;、&lt;code&gt;body&lt;/code&gt;タグは省略するんだけど、今回はその話は置いておきます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://qiita.com/wadako111/items/7100c02337f14df07205&#34;&gt;&amp;lt;html&amp;gt;,&amp;lt;body&amp;gt;は要らない？Googleが推奨するHTMLファイルの記法 - Qiita&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;こういう風に、自分が作りたいサイトの全体像から、&lt;strong&gt;各セクションの根底に来るであろうタグ&lt;/strong&gt;を最初に配置しておく。&lt;/p&gt;
+
+&lt;p&gt;こうしなかったせいで、あとで要素を追加したときにDOMの全体像が不自然な形になってしまうことがあった。&lt;/p&gt;
+
+&lt;p&gt;あと、無駄に要素を重ねたりするとHTMLの構造を理解するのが辛くなる。&lt;/p&gt;
+
+&lt;h2 id=&#34;idとクラスを使い分ける:8ce6f11ffb5ab38525aa42f985db3a46&#34;&gt;IDとクラスを使い分ける&lt;/h2&gt;
+
+&lt;p&gt;CSSは本当にパフォーマンスコストがかかりづらいのだろうか？&lt;/p&gt;
+
+&lt;p&gt;もしそうだとしても、意識しない理由はどこにもないと思う。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://speakerdeck.com/jonrohan/githubs-css-performance&#34;&gt;https://speakerdeck.com/jonrohan/githubs-css-performance&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;正直な話をすれば、スタイルをあてたいならもうクラスを見境なしにつけてしまっても多分問題なくやっていける。&lt;/p&gt;
+
+&lt;p&gt;なのにID、クラスどっちにするかとかそういう不要な検討事項を増やすのはいやだよね。&lt;/p&gt;
+
+&lt;p&gt;でもサイトの規模によってはパフォーマンスは死活問題だし、何よりIDとクラスの違いで読みやすさが変わると思う。&lt;/p&gt;
+
+&lt;p&gt;さっきの例を使うと、オレはだいたいこういうIDを先に付けておく。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;body&amp;gt;
+  &amp;lt;header id=&amp;quot;header&amp;quot;&amp;gt;
+    ヘッダ。ロゴや一部のメニューを置く。
+  &amp;lt;/header&amp;gt;
+  &amp;lt;div id=&amp;quot;menu&amp;quot;&amp;gt;
+    グローバルメニュー。サイトによってはheaderで事足りる場合も。
+  &amp;lt;/div&amp;gt;
+  &amp;lt;div id=&amp;quot;body&amp;quot;&amp;gt;
+    メインコンテンツ。この中でカラム分けをしたり、さらに細分化されたセクション分けをしたりする。
+  &amp;lt;/div&amp;gt;
+  &amp;lt;footer id=&amp;quot;footer&amp;quot;&amp;gt;
+    コピーライトを書いたりする。
+    最近はサイトマップをここに置いたりすることが多いみたい。
+  &amp;lt;/footer&amp;gt;
+  JavaScriptの読み込み
+&amp;lt;/body&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;この各セクションのルート要素は絶対にサイト内でユニークだから。&lt;/p&gt;
+
+&lt;p&gt;こうすることで、後から見たときに&lt;strong&gt;この要素は固有なものなんだな&lt;/strong&gt;っていうのがわかる。&lt;/p&gt;
+
+&lt;p&gt;でも&lt;code&gt;header&lt;/code&gt;タグの&lt;code&gt;#header&lt;/code&gt;とか、&lt;code&gt;#body&lt;/code&gt;や&lt;code&gt;#footer&lt;/code&gt;の命名はイケてないように見えるよね。&lt;/p&gt;
+
+&lt;p&gt;ここの命名については個人的なものだから、意図する意味の単語をつけてもらえればいいと思う。&lt;/p&gt;
+
+&lt;p&gt;ただ、&lt;code&gt;header&lt;/code&gt;タグや&lt;code&gt;footer&lt;/code&gt;タグはサイト内でユニークなもの&lt;strong&gt;ではない&lt;/strong&gt;ので、タグに直接スタイルをあてるのは避けるべき。&lt;/p&gt;
+
+&lt;h2 id=&#34;命名は1分考えてからつける:8ce6f11ffb5ab38525aa42f985db3a46&#34;&gt;命名は1分考えてからつける&lt;/h2&gt;
+
+&lt;p&gt;まあこれはCSSだけじゃなくプログラミング言語でも同じ事だけど、命名はしっかり考えたほうがいい。&lt;/p&gt;
+
+&lt;p&gt;例えばIDなら固有な名前にしたほうがいいし、クラスならある程度抽象的なものにしたほうがいい。&lt;/p&gt;
+
+&lt;p&gt;クラスに固有なものをつける場合は、それがIDにするべきでないかを検討すべき。&lt;/p&gt;
+
+&lt;p&gt;個人的にやめてほしいのは、&lt;strong&gt;そのスタイルを体現した命名&lt;/strong&gt;をすること。&lt;/p&gt;
+
+&lt;p&gt;例えば、赤いボタンに&lt;code&gt;.red-button&lt;/code&gt;とかそういうの。&lt;/p&gt;
+
+&lt;p&gt;これは後の章でも書くけど、もう少し抽象的でスタイルの内容を変えたときに命名と齟齬が出ないものにすべきだと思う。&lt;/p&gt;
+
+&lt;p&gt;Bootstrapでは、&lt;code&gt;.btn-danger&lt;/code&gt;とかつけてるね。&lt;/p&gt;
+
+&lt;p&gt;じゃないとあとで色を変えたときにクラス名まで変える羽目になることがある。&lt;/p&gt;
+
+&lt;h2 id=&#34;抽象的な名前を付ける-固有な名前をつけない:8ce6f11ffb5ab38525aa42f985db3a46&#34;&gt;抽象的な名前を付ける、固有な名前をつけない&lt;/h2&gt;
+
+&lt;p&gt;例えば、&lt;code&gt;.title&lt;/code&gt;ってクラスを考えるとする。&lt;/p&gt;
+
+&lt;p&gt;これはメインコンテンツのタイトルかもしれないし、サイドバーに置くパネルのタイトルかもしれない。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;.main-title&lt;/code&gt;とか&lt;code&gt;.side-bar-title&lt;/code&gt;とか付けてもいいんだけど、汎用的で固有な使い方が出来ればそれが一番だよね。&lt;/p&gt;
+
+&lt;p&gt;そういう時はこう書くのが今の段階での、自分の解。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div id=&amp;quot;body&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;row&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;col-md-4&amp;quot;&amp;gt;
+      &amp;lt;div id=&amp;quot;sidebar&amp;quot;&amp;gt;
+        &amp;lt;h2 class=&amp;quot;title&amp;quot;&amp;gt;サイドバーのタイトル&amp;lt;/h2&amp;gt;
+      &amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;col-md-8&amp;quot;&amp;gt;
+      &amp;lt;div id=&amp;quot;content&amp;quot;&amp;gt;
+        &amp;lt;h2 class=&amp;quot;title&amp;quot;&amp;gt;メインコンテンツのタイトル&amp;lt;/h2&amp;gt;
+      &amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.title {
+  color: #ddd;
+}
+
+#sidebar .title {
+  font-size: 2rem;
+}
+
+#content .title {
+  font-size: 2.5rem;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こうしておけば、タイトル共通の定義も出来るし、個々のタイトルに対しての定義も出来る。&lt;/p&gt;
+
+&lt;p&gt;でも、もしかしたらサイドバーの中でも特定のタイトルだけ、スタイルを変えたい場合があるかもね。&lt;/p&gt;
+
+&lt;p&gt;今の書き方だと、サイドバーのタイトルを個別に変えたりするのは出来そうにない。&lt;/p&gt;
+
+&lt;p&gt;そういう時は、&lt;code&gt;.title&lt;/code&gt;の派生を作る。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div id=&amp;quot;body&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;row&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;col-md-4&amp;quot;&amp;gt;
+      &amp;lt;div id=&amp;quot;sidebar&amp;quot;&amp;gt;
+        &amp;lt;h2 class=&amp;quot;title&amp;quot;&amp;gt;サイドバーのタイトル&amp;lt;/h2&amp;gt;
+        &amp;lt;h2 class=&amp;quot;title title-active&amp;quot;&amp;gt;サイドバーのちょっと強調したいタイトル&amp;lt;/h2&amp;gt;
+      &amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;col-md-8&amp;quot;&amp;gt;
+      &amp;lt;div id=&amp;quot;content&amp;quot;&amp;gt;
+        &amp;lt;h2 class=&amp;quot;title&amp;quot;&amp;gt;メインコンテンツのタイトル&amp;lt;/h2&amp;gt;
+      &amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.title {
+  color: #ddd;
+}
+
+#sidebar .title {
+  font-size: 2rem;
+}
+
+#sidebar .title-active {
+  font-weight: 900;
+}
+
+#content .title {
+  font-size: 2.5rem;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こうすることで、&lt;strong&gt;特定のクラスを付けたり外したりするだけでスタイルを変えることが出来る。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;.title&lt;/code&gt;自体は残しておくことで、共通の定義を生かすことも出来る。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;.title&lt;/code&gt;を消さずに新たなクラスを追加してるところが大事なポイント。&lt;/p&gt;
+
+&lt;p&gt;極力まとめておいて、特別なスタイルを当てたい場合にだけクラスを追加していくやり方がいいと思う。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;.side-bar-title&lt;/code&gt;とかにしてもいいんだけど、その名前だと同じスタイルを他の場所で使いたいときに困るよね。&lt;/p&gt;
+
+&lt;p&gt;それに固有な名前をつけてしまうと、固有な要素の数だけクラスが溢れることになっちゃう。&lt;/p&gt;
+
+&lt;h2 id=&#34;無駄なネストをしない:8ce6f11ffb5ab38525aa42f985db3a46&#34;&gt;無駄なネストをしない&lt;/h2&gt;
+
+&lt;p&gt;当たり前の事。&lt;/p&gt;
+
+&lt;p&gt;深くすれば読みづらくなるしタグの抜け漏れとかも発生する。&lt;/p&gt;
+
+&lt;p&gt;タグは増やすのは楽だけど減らすのは大変。&lt;/p&gt;
+
+&lt;p&gt;だからサイトの運営が続くにつれてネストが深くなりがちだし、当たり前のことだけど気をつけていなきゃいけない。&lt;/p&gt;
+
+&lt;h2 id=&#34;タグの用途を意識する:8ce6f11ffb5ab38525aa42f985db3a46&#34;&gt;タグの用途を意識する&lt;/h2&gt;
+
+&lt;p&gt;なんか見出しに&lt;code&gt;div&lt;/code&gt;で囲んで&lt;code&gt;font-size&lt;/code&gt;を指定する人をよく見る気がする。&lt;/p&gt;
+
+&lt;p&gt;その意図を持ったタグがあるのであればそれを使おう。&lt;/p&gt;
+
+&lt;p&gt;見出しなら&lt;code&gt;h&lt;/code&gt;タグがあるしね。&lt;/p&gt;
+
+&lt;p&gt;ちなみに&lt;code&gt;h1&lt;/code&gt;タグは1ページに付き、1つまで！(MUSTではないらしい)&lt;/p&gt;
+
+&lt;h2 id=&#34;remとかpxとか-単位は理解した上で使う:8ce6f11ffb5ab38525aa42f985db3a46&#34;&gt;remとかpxとか、単位は理解した上で使う&lt;/h2&gt;
+
+&lt;p&gt;個人的に、&lt;code&gt;font-size&lt;/code&gt;は&lt;code&gt;rem&lt;/code&gt;、&lt;code&gt;margin&lt;/code&gt;や&lt;code&gt;padding&lt;/code&gt;は&lt;code&gt;px&lt;/code&gt;と決めて使ってる。&lt;/p&gt;
+
+&lt;p&gt;あまりたくさんの単位が混在するのは統一感がなくなるし、ある程度ルールを決めて書くのがいいのかなと思う。&lt;/p&gt;
+
+&lt;p&gt;単位は色々種類があるから、見た目がそれなりだからいいやではなく理解してから使うべきだと思った。&lt;/p&gt;
+
+&lt;h2 id=&#34;不用意にfloatを使わない:8ce6f11ffb5ab38525aa42f985db3a46&#34;&gt;不用意にfloatを使わない&lt;/h2&gt;
+
+&lt;p&gt;もちろん必要な場面はあるんだけど、&lt;code&gt;float&lt;/code&gt;はあんまり気軽に使うと変なところに影響が出たりする。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;clearfix&lt;/code&gt;とかも考えながら使える人ならいいけど、そうでないならまず本当に&lt;code&gt;float&lt;/code&gt;が必要なのかを検討すべき。&lt;/p&gt;
+
+&lt;p&gt;ちなみにBootstrapを使っているなら、&lt;code&gt;.pull-left&lt;/code&gt;や&lt;code&gt;.pull-right&lt;/code&gt;っていうhelperクラスが用意されてる。&lt;/p&gt;
+
+&lt;h2 id=&#34;不用意にdisplayをいじらない:8ce6f11ffb5ab38525aa42f985db3a46&#34;&gt;不用意にdisplayをいじらない&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;display&lt;/code&gt;は各タグにしっかり設定されているものだから、&lt;code&gt;display&lt;/code&gt;を変更する前にタグ選びから見直したほうがいい。&lt;/p&gt;
+
+&lt;p&gt;もちろん、どうしても変えなきゃいけない場面はあるんだけども。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;block&lt;/code&gt;と&lt;code&gt;inline&lt;/code&gt;くらいは最初に勉強しておくべきだと思った。&lt;/p&gt;
+
+&lt;h2 id=&#34;cssフレームワークを信じる:8ce6f11ffb5ab38525aa42f985db3a46&#34;&gt;CSSフレームワークを信じる&lt;/h2&gt;
+
+&lt;p&gt;BootstrapとかSkeltonとかを使っている場合の話。&lt;/p&gt;
+
+&lt;p&gt;いろいろ頑張った結果なんだけど、隠蔽してくれるフレームワークがあるのであれば出来る限りそれに任せたほうがいい。&lt;/p&gt;
+
+&lt;p&gt;例えばレスポンシブにするならフレームワークが用意してくれてるブレークポイントに従ったほうがいいし、&lt;/p&gt;
+
+&lt;p&gt;そもそもレスポンシブなコンポーネントを提供してくれてるならそれを使ったほうがいい。&lt;/p&gt;
+
+&lt;p&gt;スタイルを変えたいならオーバライドすればいいしね。&lt;/p&gt;
+
+&lt;p&gt;あと、helperクラスは結構使える。&lt;/p&gt;
+
+&lt;p&gt;Bootstrapであれば&lt;code&gt;.text-center&lt;/code&gt;とか&lt;code&gt;.cleafix&lt;/code&gt;とかも便利に使えると思う。&lt;/p&gt;
+</description>
+        </item>
+      
+    
+
+  </channel>
+</rss>
