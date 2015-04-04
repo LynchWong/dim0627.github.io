@@ -226,6 +226,8 @@
 
 &lt;p&gt;それに固有な名前をつけてしまうと、固有な要素の数だけクラスが溢れることになっちゃう。&lt;/p&gt;
 
+&lt;p&gt;この場合は、&lt;code&gt;#sidebar&lt;/code&gt;に入れなくてもいいかもしれないね。&lt;/p&gt;
+
 &lt;h2 id=&#34;無駄なネストをしない:8ce6f11ffb5ab38525aa42f985db3a46&#34;&gt;無駄なネストをしない&lt;/h2&gt;
 
 &lt;p&gt;当たり前の事。&lt;/p&gt;
@@ -238,7 +240,7 @@
 
 &lt;h2 id=&#34;タグの用途を意識する:8ce6f11ffb5ab38525aa42f985db3a46&#34;&gt;タグの用途を意識する&lt;/h2&gt;
 
-&lt;p&gt;なんか見出しに&lt;code&gt;div&lt;/code&gt;で囲んで&lt;code&gt;font-size&lt;/code&gt;を指定する人をよく見る気がする。&lt;/p&gt;
+&lt;p&gt;なんか見出しを&lt;code&gt;div&lt;/code&gt;で囲んで&lt;code&gt;font-size&lt;/code&gt;を指定する人をよく見る気がする。&lt;/p&gt;
 
 &lt;p&gt;その意図を持ったタグがあるのであればそれを使おう。&lt;/p&gt;
 
@@ -250,7 +252,7 @@
 
 &lt;p&gt;個人的に、&lt;code&gt;font-size&lt;/code&gt;は&lt;code&gt;rem&lt;/code&gt;、&lt;code&gt;margin&lt;/code&gt;や&lt;code&gt;padding&lt;/code&gt;は&lt;code&gt;px&lt;/code&gt;と決めて使ってる。&lt;/p&gt;
 
-&lt;p&gt;あまりたくさんの単位が混在するのは統一感がなくなるし、ある程度ルールを決めて書くのがいいのかなと思う。&lt;/p&gt;
+&lt;p&gt;単位が混在するのは統一感がなくなるし、小さな差異が発生するからある程度ルールを決めて書くのがいいのかなと思う。&lt;/p&gt;
 
 &lt;p&gt;単位は色々種類があるから、見た目がそれなりだからいいやではなく理解してから使うべきだと思った。&lt;/p&gt;
 
