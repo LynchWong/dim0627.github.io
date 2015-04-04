@@ -9,11 +9,11 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="gitでforce pushが出来ない | Unresolved">
-<meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/">
-<meta property="og:description" content="typoを直すためにrebase -iやらをやってたんだけど、操作してたのがmasterブランチだったのでどうしてもforce pushがしたかった。 一人で使ってたリポジトリだしね。 んだけど、-fをつけても To git://example.com/project1.git ! [rejected] master -&gt; master (non-fast-forward) error: failed to push some refs to &#39;git://example.com/project1.git&#39; To prevent ... See the &#39;Note about fast-forwards&#39; section of &#39;git push --help&#39; for details. こんな感じになってしまう・・・。 解決 gitリポジトリのconfigを見たらこんな項目が、 [receive] denyNonFastforwards = true どうやらこいつをfalseにすればよかったらしい。 最初はtrueになってるもんなのかな・・・。">
+<meta property="og:title" content="CSS / HTMLで味わった苦悩の数々 | Unresolved">
+<meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/04/04/anguish-in-the-css-and-html/">
+<meta property="og:description" content="CSSってアンチパターンとかベストプラクティスみたいなのをあんまり聞かないよね。 デザイナじゃないオレがフロントエンドに触れて苦しんだこととかノウハウとかをまとめてみようと思う。 セクションを意識する HTML5からsectionタグが出てきたね。 これはそのタグの話ではなくて、画面レイアウトを考えた上での大枠について。 オレがやって失敗だったなと思ったのはページの一部からHTMLを書き始めるやり方。 これをやってしまうとページの一部分から完成していくから、全体で統制が取れなくなることが多かった。 具体的に言うと、だいたいのページはこんな感じのセクション分けになるはず。 &lt;!doctype HTML&gt; &lt;html&gt; &lt;head&gt; metaタグ。 CSSフレームワークの読み込み。 オーバライド用のCSSファイルの読み込み。 などなど。 &lt;/head&gt; &lt;body&gt; &lt;header&gt; ヘッダ。ロゴや一部のメニューを置く。 &lt;/header&gt; &lt;div&gt; グローバルメニュー。サイトによってはheaderで事足りる場合も。 &lt;/div&gt; &lt;div&gt; メインコンテンツ。この中でカラム分けをしたり、さらに細分化されたセクション分けをしたりする。 &lt;/div&gt; &lt;footer&gt; コピーライトを書いたりする。 最近はサイトマップをここに置いたりすることが多いみたい。 &lt;/footer&gt; JavaScriptの読み込み &lt;/body&gt; &lt;/html&gt; 個人的に好きに書いていい場面ではhtmlタグ、head、bodyタグは省略するんだけど、今回はその話は置いておきます。 &lt;html&gt;,&lt;body&gt;は要らない？Googleが推奨するHTMLファイルの記法 - Qiita こういう風に、自分が作りたいサイトの全体像から、各セクションの根底に来るであろうタグを最初に配置しておく。 こうしなかったせいで、あとで要素を追加したときにDOMの全体像が不自然な形になってしまうことがあった。 あと、無駄に要素を重ねたりするとHTMLの構造を理解するのが辛くなる。 IDとクラスを使い分ける CSSは本当にパフォーマンスコストがかかりづらいのだろうか？ もしそうだとしても、意識しない理由はどこにもないと思う。 https://speakerdeck.com/jonrohan/githubs-css-performance 正直な話をすれば、スタイルをあてたいならもうクラスを見境なしにつけてしまっても多分問題なくやっていける。 なのにID、クラスどっちにするかとかそういう不要な検討事項を増やすのはいやだよね。 でもサイトの規模によってはパフォーマンスは死活問題だし、何よりIDとクラスの違いで読みやすさが変わると思う。 さっきの例を使うと、オレはだいたいこういうIDを先に付けておく。 &lt;body&gt; &lt;header id=&quot;header&quot;&gt; ヘッダ。ロゴや一部のメニューを置く。 &lt;/header&gt; &lt;div id=&quot;menu&quot;&gt; グローバルメニュー。サイトによってはheaderで事足りる場合も。 &lt;/div&gt; &lt;div id=&quot;body&quot;&gt; メインコンテンツ。この中でカラム分けをしたり、さらに細分化されたセクション分けをしたりする。 &lt;/div&gt; &lt;footer id=&quot;footer&quot;&gt; コピーライトを書いたりする。 最近はサイトマップをここに置いたりすることが多いみたい。 &lt;/footer&gt; JavaScriptの読み込み &lt;/body&gt; この各セクションのルート要素は絶対にサイト内でユニークだから。">
 
-<meta property="og:image" content="http://yet.unresolved.xyz//images/git.png">
+<meta property="og:image" content="http://yet.unresolved.xyz//images/front.png">
 
 
 <meta property="og:site_name" content="Unresolved">
@@ -21,7 +21,7 @@
 
 <title>
     
-    gitでforce pushが出来ない | Unresolved
+    CSS / HTMLで味わった苦悩の数々 | Unresolved
     
 </title>
 
@@ -143,63 +143,304 @@
 
 
 <article class="post post-single">
-    <span class="post-date">Sat, Sep 27, 2014</span>
-    <h1 class="post-title">gitでforce pushが出来ない</h1>
+    <span class="post-date">Sat, Apr 4, 2015</span>
+    <h1 class="post-title">CSS / HTMLで味わった苦悩の数々</h1>
 
     <div class="eyecatch">
         
-        <img src="http://yet.unresolved.xyz//images/git.png" alt="gitでforce pushが出来ない">
+        <img src="http://yet.unresolved.xyz//images/front.png" alt="CSS / HTMLで味わった苦悩の数々">
         
     </div>
 
     <div class="post-content">
         
 
-<p>typoを直すために<code>rebase -i</code>やらをやってたんだけど、操作してたのがmasterブランチだったのでどうしてもforce pushがしたかった。</p>
+<p>CSSってアンチパターンとかベストプラクティスみたいなのをあんまり聞かないよね。</p>
 
-<p>一人で使ってたリポジトリだしね。</p>
+<p>デザイナじゃないオレがフロントエンドに触れて苦しんだこととかノウハウとかをまとめてみようと思う。</p>
 
-<p>んだけど、<code>-f</code>をつけても</p>
+<h2 id="セクションを意識する:8ce6f11ffb5ab38525aa42f985db3a46">セクションを意識する</h2>
 
-<pre><code class="language-sh">To git://example.com/project1.git
- ! [rejected]        master -&gt; master (non-fast-forward)
-error: failed to push some refs to 'git://example.com/project1.git'
-To prevent ... See the 'Note about
-fast-forwards' section of 'git push --help' for details.
+<p>HTML5から<code>section</code>タグが出てきたね。</p>
+
+<p>これはそのタグの話ではなくて、画面レイアウトを考えた上での大枠について。</p>
+
+<p>オレがやって失敗だったなと思ったのは<strong>ページの一部からHTMLを書き始めるやり方。</strong></p>
+
+<p>これをやってしまうとページの一部分から完成していくから、全体で統制が取れなくなることが多かった。</p>
+
+<p>具体的に言うと、だいたいのページはこんな感じのセクション分けになるはず。</p>
+
+<pre><code class="language-html">&lt;!doctype HTML&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    metaタグ。
+    CSSフレームワークの読み込み。
+    オーバライド用のCSSファイルの読み込み。
+    などなど。
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;
+      ヘッダ。ロゴや一部のメニューを置く。
+    &lt;/header&gt;
+    &lt;div&gt;
+      グローバルメニュー。サイトによってはheaderで事足りる場合も。
+    &lt;/div&gt;
+    &lt;div&gt;
+      メインコンテンツ。この中でカラム分けをしたり、さらに細分化されたセクション分けをしたりする。
+    &lt;/div&gt;
+    &lt;footer&gt;
+      コピーライトを書いたりする。
+      最近はサイトマップをここに置いたりすることが多いみたい。
+    &lt;/footer&gt;
+    JavaScriptの読み込み
+  &lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
 
-<p>こんな感じになってしまう・・・。</p>
+<p>個人的に好きに書いていい場面では<code>html</code>タグ、<code>head</code>、<code>body</code>タグは省略するんだけど、今回はその話は置いておきます。</p>
 
-<h2 id="解決:c5ac499954fae3df373a4f81754a5ef2">解決</h2>
+<p><a href="http://qiita.com/wadako111/items/7100c02337f14df07205">&lt;html&gt;,&lt;body&gt;は要らない？Googleが推奨するHTMLファイルの記法 - Qiita</a></p>
 
-<p>gitリポジトリのconfigを見たらこんな項目が、</p>
+<p>こういう風に、自分が作りたいサイトの全体像から、<strong>各セクションの根底に来るであろうタグ</strong>を最初に配置しておく。</p>
 
-<pre><code class="language-yml">[receive]
-    denyNonFastforwards = true
+<p>こうしなかったせいで、あとで要素を追加したときにDOMの全体像が不自然な形になってしまうことがあった。</p>
+
+<p>あと、無駄に要素を重ねたりするとHTMLの構造を理解するのが辛くなる。</p>
+
+<h2 id="idとクラスを使い分ける:8ce6f11ffb5ab38525aa42f985db3a46">IDとクラスを使い分ける</h2>
+
+<p>CSSは本当にパフォーマンスコストがかかりづらいのだろうか？</p>
+
+<p>もしそうだとしても、意識しない理由はどこにもないと思う。</p>
+
+<p><a href="https://speakerdeck.com/jonrohan/githubs-css-performance">https://speakerdeck.com/jonrohan/githubs-css-performance</a></p>
+
+<p>正直な話をすれば、スタイルをあてたいならもうクラスを見境なしにつけてしまっても多分問題なくやっていける。</p>
+
+<p>なのにID、クラスどっちにするかとかそういう不要な検討事項を増やすのはいやだよね。</p>
+
+<p>でもサイトの規模によってはパフォーマンスは死活問題だし、何よりIDとクラスの違いで読みやすさが変わると思う。</p>
+
+<p>さっきの例を使うと、オレはだいたいこういうIDを先に付けておく。</p>
+
+<pre><code class="language-html">&lt;body&gt;
+  &lt;header id=&quot;header&quot;&gt;
+    ヘッダ。ロゴや一部のメニューを置く。
+  &lt;/header&gt;
+  &lt;div id=&quot;menu&quot;&gt;
+    グローバルメニュー。サイトによってはheaderで事足りる場合も。
+  &lt;/div&gt;
+  &lt;div id=&quot;body&quot;&gt;
+    メインコンテンツ。この中でカラム分けをしたり、さらに細分化されたセクション分けをしたりする。
+  &lt;/div&gt;
+  &lt;footer id=&quot;footer&quot;&gt;
+    コピーライトを書いたりする。
+    最近はサイトマップをここに置いたりすることが多いみたい。
+  &lt;/footer&gt;
+  JavaScriptの読み込み
+&lt;/body&gt;
 </code></pre>
 
-<p>どうやらこいつを<code>false</code>にすればよかったらしい。</p>
+<p>この各セクションのルート要素は絶対にサイト内でユニークだから。</p>
 
-<p>最初はtrueになってるもんなのかな・・・。</p>
+<p>こうすることで、後から見たときに<strong>この要素は固有なものなんだな</strong>っていうのがわかる。</p>
+
+<p>でも<code>header</code>タグの<code>#header</code>とか、<code>#body</code>や<code>#footer</code>の命名はイケてないように見えるよね。</p>
+
+<p>ここの命名については個人的なものだから、意図する意味の単語をつけてもらえればいいと思う。</p>
+
+<p>ただ、<code>header</code>タグや<code>footer</code>タグはサイト内でユニークなもの<strong>ではない</strong>ので、タグに直接スタイルをあてるのは避けるべき。</p>
+
+<h2 id="命名は1分考えてからつける:8ce6f11ffb5ab38525aa42f985db3a46">命名は1分考えてからつける</h2>
+
+<p>まあこれはCSSだけじゃなくプログラミング言語でも同じ事だけど、命名はしっかり考えたほうがいい。</p>
+
+<p>例えばIDなら固有な名前にしたほうがいいし、クラスならある程度抽象的なものにしたほうがいい。</p>
+
+<p>クラスに固有なものをつける場合は、それがIDにするべきでないかを検討すべき。</p>
+
+<p>個人的にやめてほしいのは、<strong>そのスタイルを体現した命名</strong>をすること。</p>
+
+<p>例えば、赤いボタンに<code>.red-button</code>とかそういうの。</p>
+
+<p>これは後の章でも書くけど、もう少し抽象的でスタイルの内容を変えたときに命名と齟齬が出ないものにすべきだと思う。</p>
+
+<p>Bootstrapでは、<code>.btn-danger</code>とかつけてるね。</p>
+
+<p>じゃないとあとで色を変えたときにクラス名まで変える羽目になることがある。</p>
+
+<h2 id="抽象的な名前を付ける-固有な名前をつけない:8ce6f11ffb5ab38525aa42f985db3a46">抽象的な名前を付ける、固有な名前をつけない</h2>
+
+<p>例えば、<code>.title</code>ってクラスを考えるとする。</p>
+
+<p>これはメインコンテンツのタイトルかもしれないし、サイドバーに置くパネルのタイトルかもしれない。</p>
+
+<p><code>.main-title</code>とか<code>.side-bar-title</code>とか付けてもいいんだけど、汎用的で固有な使い方が出来ればそれが一番だよね。</p>
+
+<p>そういう時はこう書くのが今の段階での、自分の解。</p>
+
+<pre><code class="language-html">&lt;div id=&quot;body&quot;&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-md-4&quot;&gt;
+      &lt;div id=&quot;sidebar&quot;&gt;
+        &lt;h2 class=&quot;title&quot;&gt;サイドバーのタイトル&lt;/h2&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col-md-8&quot;&gt;
+      &lt;div id=&quot;content&quot;&gt;
+        &lt;h2 class=&quot;title&quot;&gt;メインコンテンツのタイトル&lt;/h2&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre><code class="language-css">.title {
+  color: #ddd;
+}
+
+#sidebar .title {
+  font-size: 2rem;
+}
+
+#content .title {
+  font-size: 2.5rem;
+}
+</code></pre>
+
+<p>こうしておけば、タイトル共通の定義も出来るし、個々のタイトルに対しての定義も出来る。</p>
+
+<p>でも、もしかしたらサイドバーの中でも特定のタイトルだけ、スタイルを変えたい場合があるかもね。</p>
+
+<p>今の書き方だと、サイドバーのタイトルを個別に変えたりするのは出来そうにない。</p>
+
+<p>そういう時は、<code>.title</code>の派生を作る。</p>
+
+<pre><code class="language-html">&lt;div id=&quot;body&quot;&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-md-4&quot;&gt;
+      &lt;div id=&quot;sidebar&quot;&gt;
+        &lt;h2 class=&quot;title&quot;&gt;サイドバーのタイトル&lt;/h2&gt;
+        &lt;h2 class=&quot;title title-active&quot;&gt;サイドバーのちょっと強調したいタイトル&lt;/h2&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col-md-8&quot;&gt;
+      &lt;div id=&quot;content&quot;&gt;
+        &lt;h2 class=&quot;title&quot;&gt;メインコンテンツのタイトル&lt;/h2&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre><code class="language-css">.title {
+  color: #ddd;
+}
+
+#sidebar .title {
+  font-size: 2rem;
+}
+
+#sidebar .title-active {
+  font-weight: 900;
+}
+
+#content .title {
+  font-size: 2.5rem;
+}
+</code></pre>
+
+<p>こうすることで、<strong>特定のクラスを付けたり外したりするだけでスタイルを変えることが出来る。</strong></p>
+
+<p><code>.title</code>自体は残しておくことで、共通の定義を生かすことも出来る。</p>
+
+<p><code>.title</code>を消さずに新たなクラスを追加してるところが大事なポイント。</p>
+
+<p>極力まとめておいて、特別なスタイルを当てたい場合にだけクラスを追加していくやり方がいいと思う。</p>
+
+<p><code>.side-bar-title</code>とかにしてもいいんだけど、その名前だと同じスタイルを他の場所で使いたいときに困るよね。</p>
+
+<p>それに固有な名前をつけてしまうと、固有な要素の数だけクラスが溢れることになっちゃう。</p>
+
+<h2 id="無駄なネストをしない:8ce6f11ffb5ab38525aa42f985db3a46">無駄なネストをしない</h2>
+
+<p>当たり前の事。</p>
+
+<p>深くすれば読みづらくなるしタグの抜け漏れとかも発生する。</p>
+
+<p>タグは増やすのは楽だけど減らすのは大変。</p>
+
+<p>だからサイトの運営が続くにつれてネストが深くなりがちだし、当たり前のことだけど気をつけていなきゃいけない。</p>
+
+<h2 id="タグの用途を意識する:8ce6f11ffb5ab38525aa42f985db3a46">タグの用途を意識する</h2>
+
+<p>なんか見出しに<code>div</code>で囲んで<code>font-size</code>を指定する人をよく見る気がする。</p>
+
+<p>その意図を持ったタグがあるのであればそれを使おう。</p>
+
+<p>見出しなら<code>h</code>タグがあるしね。</p>
+
+<p>ちなみに<code>h1</code>タグは1ページに付き、1つまで！(MUSTではないらしい)</p>
+
+<h2 id="remとかpxとか-単位は理解した上で使う:8ce6f11ffb5ab38525aa42f985db3a46">remとかpxとか、単位は理解した上で使う</h2>
+
+<p>個人的に、<code>font-size</code>は<code>rem</code>、<code>margin</code>や<code>padding</code>は<code>px</code>と決めて使ってる。</p>
+
+<p>あまりたくさんの単位が混在するのは統一感がなくなるし、ある程度ルールを決めて書くのがいいのかなと思う。</p>
+
+<p>単位は色々種類があるから、見た目がそれなりだからいいやではなく理解してから使うべきだと思った。</p>
+
+<h2 id="不用意にfloatを使わない:8ce6f11ffb5ab38525aa42f985db3a46">不用意にfloatを使わない</h2>
+
+<p>もちろん必要な場面はあるんだけど、<code>float</code>はあんまり気軽に使うと変なところに影響が出たりする。</p>
+
+<p><code>clearfix</code>とかも考えながら使える人ならいいけど、そうでないならまず本当に<code>float</code>が必要なのかを検討すべき。</p>
+
+<p>ちなみにBootstrapを使っているなら、<code>.pull-left</code>や<code>.pull-right</code>っていうhelperクラスが用意されてる。</p>
+
+<h2 id="不用意にdisplayをいじらない:8ce6f11ffb5ab38525aa42f985db3a46">不用意にdisplayをいじらない</h2>
+
+<p><code>display</code>は各タグにしっかり設定されているものだから、<code>display</code>を変更する前にタグ選びから見直したほうがいい。</p>
+
+<p>もちろん、どうしても変えなきゃいけない場面はあるんだけども。</p>
+
+<p><code>block</code>と<code>inline</code>くらいは最初に勉強しておくべきだと思った。</p>
+
+<h2 id="cssフレームワークを信じる:8ce6f11ffb5ab38525aa42f985db3a46">CSSフレームワークを信じる</h2>
+
+<p>BootstrapとかSkeltonとかを使っている場合の話。</p>
+
+<p>いろいろ頑張った結果なんだけど、隠蔽してくれるフレームワークがあるのであれば出来る限りそれに任せたほうがいい。</p>
+
+<p>例えばレスポンシブにするならフレームワークが用意してくれてるブレークポイントに従ったほうがいいし、</p>
+
+<p>そもそもレスポンシブなコンポーネントを提供してくれてるならそれを使ったほうがいい。</p>
+
+<p>スタイルを変えたいならオーバライドすればいいしね。</p>
+
+<p>あと、helperクラスは結構使える。</p>
+
+<p>Bootstrapであれば<code>.text-center</code>とか<code>.cleafix</code>とかも便利に使えると思う。</p>
 
     </div>
 
     <aside class="post-ad pc">
-        <iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=48&l=st1&mode=books-jp&search=git&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="728" height="90" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+        <iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=48&l=st1&mode=books-jp&search=css&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="728" height="90" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
     </aside>
 
     <aside class="post-ad sp">
-<iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=12&l=st1&mode=books-jp&search=git&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="300" height="250" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+<iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=12&l=st1&mode=books-jp&search=css&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="300" height="250" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
     </aside>
 
     <aside>
         <div class="post-share">
             <h3>Share</h3>
-            <a id="share-fb" href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f09%2f27%2fcould-not-force-push-on-git%2f&t=git%e3%81%a7force%20push%e3%81%8c%e5%87%ba%e6%9d%a5%e3%81%aa%e3%81%84" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/facebook.png" alt="Facebook"/></a>
-            <a id="share-twitter" href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f09%2f27%2fcould-not-force-push-on-git%2f&text=git%e3%81%a7force%20push%e3%81%8c%e5%87%ba%e6%9d%a5%e3%81%aa%e3%81%84&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/twitter.png" alt="Twitter"/></a>
-            <a id="share-googleplus" href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f09%2f27%2fcould-not-force-push-on-git%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/googleplus.png" alt="Google+"/></a>
-            <a id="share-hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f09%2f27%2fcould-not-force-push-on-git%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/hatena.png" alt="Hatena"/></a>
-            <a id="share-pocket" href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f09%2f27%2fcould-not-force-push-on-git%2f&title=git%e3%81%a7force%20push%e3%81%8c%e5%87%ba%e6%9d%a5%e3%81%aa%e3%81%84" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/pocket.png" alt="Pocket"/></a>
+            <a id="share-fb" href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f04%2f04%2fanguish-in-the-css-and-html%2f&t=CSS%20%2f%20HTML%e3%81%a7%e5%91%b3%e3%82%8f%e3%81%a3%e3%81%9f%e8%8b%a6%e6%82%a9%e3%81%ae%e6%95%b0%e3%80%85" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/facebook.png" alt="Facebook"/></a>
+            <a id="share-twitter" href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f04%2f04%2fanguish-in-the-css-and-html%2f&text=CSS%20%2f%20HTML%e3%81%a7%e5%91%b3%e3%82%8f%e3%81%a3%e3%81%9f%e8%8b%a6%e6%82%a9%e3%81%ae%e6%95%b0%e3%80%85&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/twitter.png" alt="Twitter"/></a>
+            <a id="share-googleplus" href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f04%2f04%2fanguish-in-the-css-and-html%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/googleplus.png" alt="Google+"/></a>
+            <a id="share-hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f04%2f04%2fanguish-in-the-css-and-html%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/hatena.png" alt="Hatena"/></a>
+            <a id="share-pocket" href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f04%2f04%2fanguish-in-the-css-and-html%2f&title=CSS%20%2f%20HTML%e3%81%a7%e5%91%b3%e3%82%8f%e3%81%a3%e3%81%9f%e8%8b%a6%e6%82%a9%e3%81%ae%e6%95%b0%e3%80%85" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/pocket.png" alt="Pocket"/></a>
         </div>
 
         
@@ -211,9 +452,23 @@ fast-forwards' section of 'git push --help' for details.
             <ul class="post-tags">
                 
                 <li>
-                    <a href="http://yet.unresolved.xyz//tags/git">
+                    <a href="http://yet.unresolved.xyz//tags/css">
                         <i class="fa fa-tags"></i>
-                        git
+                        css
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="http://yet.unresolved.xyz//tags/html">
+                        <i class="fa fa-tags"></i>
+                        html
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="http://yet.unresolved.xyz//tags/frontend">
+                        <i class="fa fa-tags"></i>
+                        frontend
                     </a>
                 </li>
                 
@@ -326,6 +581,17 @@ fast-forwards' section of 'git push --help' for details.
                 
                 
                 
+                <li><a href="http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/">LeiningenでSCSSを自動コンパイルする</a></li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/">OctopressをW3Cのバリデーションにパスさせる</a></li>
                 
                 
                 
@@ -370,7 +636,6 @@ fast-forwards' section of 'git push --help' for details.
                 
                 
                 
-                <li><a href="http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/">git管理したくないファイルを除外する</a></li>
                 
                 
                 
@@ -379,16 +644,6 @@ fast-forwards' section of 'git push --help' for details.
                 
                 
                 
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                <li><a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/">gitのリポジトリ単位にproxyの設定をする</a></li>
                 
                 
                 
@@ -409,16 +664,11 @@ fast-forwards' section of 'git push --help' for details.
         <div class="move">
             <div class="prev">
                 
-                <a href="http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/">
-                    <i class="fa fa-chevron-left"></i>
-                    git管理したくないファイルを除外する
-                </a>
-                
             </div>
             <div class="next">
                 
-                <a href="http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/">
-                    Octopressのテーマを作ってみる
+                <a href="http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/">
+                    tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する
                     <i class="fa fa-chevron-right"></i>
                 </a>
                 

@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://yet.unresolved.xyz/</loc>
-    <lastmod>2015-04-01T22:42:40+09:00</lastmod>
+    <lastmod>2015-04-04T22:39:07+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://yet.unresolved.xyz/blog/2015/04/04/anguish-in-the-css-and-html/</loc>
+    <lastmod>2015-04-04T22:39:07+09:00</lastmod>
   </url>
   
   <url>
@@ -193,22 +198,22 @@
   </url>
   
   <url>
-    <loc>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</loc>
-    <lastmod>2014-09-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/</loc>
     <lastmod>2014-09-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/</loc>
-    <lastmod>2014-09-20T00:00:00+00:00</lastmod>
+    <loc>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</loc>
+    <lastmod>2014-09-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</loc>
+    <lastmod>2014-09-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/</loc>
     <lastmod>2014-09-20T00:00:00+00:00</lastmod>
   </url>
   
