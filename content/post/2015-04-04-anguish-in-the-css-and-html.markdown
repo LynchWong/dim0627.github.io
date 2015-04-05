@@ -67,7 +67,7 @@ CSSは本当にパフォーマンスコストがかかりづらいのだろう�
 
 もしそうだとしても、意識しない理由はどこにもないと思う。
 
-https://speakerdeck.com/jonrohan/githubs-css-performance
+[GitHub's CSS Performance // Speaker Deck](https://speakerdeck.com/jonrohan/githubs-css-performance)
 
 正直な話をすれば、スタイルをあてたいならもうクラスを見境なしにつけてしまっても多分問題なくやっていける。
 
