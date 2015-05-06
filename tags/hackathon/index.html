@@ -131,6 +131,8 @@
             
             
             
+            
+            
         </div>
     </div>
 
@@ -138,6 +140,26 @@
 
 
 <div class="posts">
+    
+    <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/"><img src="http://yet.unresolved.xyz//images/clojure.png" alt="例によってpaiza online hackathon5をClojureで解いてみた"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Wed, May 6, 2015</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/">例によってpaiza online hackathon5をClojureで解いてみた</a></h1>
+        <div class="summary">まずい更新することがない。 とりあえずPOHネタでこの場をしのごう。 マンガ版「俺の許嫁と幼なじみが修羅場すぎる」｜paizaオンラインハッカソン5 今回はパフォーマンスとかの問題はなく、ただただロジックが面倒くさいものばっかでした。 Problem 1 (def in (line-seq (java.io.BufferedReader. *in*))) (def p1 (-&gt;&gt; in first (take-nth 2) clojure.string/join)) (println p1) そもそもこれシーケンスで取らなければfirstとかつけなくてよかったんじゃないかなあ。 そんな方法あるかわかんないけど。 Problem 2 (def in (map #(Integer/parseInt %) (line-seq (java.io.BufferedReader. *in*)))) (defn take-padding [coll pad] (-&gt;&gt; coll (partition-all pad) (map first))) (def p2 (let [l (rest in)] (map #(apply + %) (for [i (range 7)] (take-padding (drop i l) 7))))) (print (clojure.string/join &quot;\n&quot; p2)) 結構強引にシーケンス操作を書いたけど、もっと楽にやれる関数が用意されてる気する。 Problem 3 RENA (def in (for [e (map #(.split % &quot; &quot;) (line-seq (java.io.BufferedReader.</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
+
     
     <article class="post">
     <div class="eyecatch">
