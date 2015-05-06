@@ -12,9 +12,9 @@
 <meta property="og:url" content="http://yet.unresolved.xyz/">
 <meta property="og:title" content="Unresolved">
 
-<meta property="og:description" content="CSSってアンチパターンとかベストプラクティスみたいなのをあんまり聞かないよね。 デザイナじゃないオレがフロントエンドに触れて苦しんだこととかノウハウとかをまとめてみようと思う。 セクションを意識する HTML5からsectionタグが出てきたね。 これはそのタグの話ではなくて、画面レイアウトを考えた上での大枠について。 オレがやって失敗だったなと思ったのはページの一部からHTMLを書き始めるやり方。 これをやってしまうとページの一部分から完成していくから、全体で統制が取れなくなることが多かった。 具体的に言うと、だいたいのページはこんな感じのセクション分けになるはず。 &lt;!doctype HTML&gt; &lt;html&gt; &lt;head&gt; metaタグ。 CSSフレームワークの読み込み。 オーバライド用のCSSファイルの読み込み。 などなど。 &lt;/head&gt; &lt;body&gt; &lt;header&gt; ヘッダ。ロゴや一部のメニューを置く。 &lt;/header&gt; &lt;div&gt; グローバルメニュー。サイトによってはheaderで事足りる場合も。 &lt;/div&gt; &lt;div&gt; メインコンテンツ。この中でカラム分けをしたり、さらに細分化されたセクション分けをしたりする。 &lt;/div&gt; &lt;footer&gt; コピーライトを書いたりする。 最近はサイトマップをここに置いたりすることが多いみたい。 &lt;/footer&gt; JavaScriptの読み込み &lt;/body&gt; &lt;/html&gt; 個人的に好きに書いていい場面ではhtmlタグ、head、bodyタグは省略するんだけど、今回はその話は置いておきます。 &lt;html&gt;,&lt;body&gt;は要らない？Googleが推奨するHTMLファイルの記法 - Qiita こういう風に、自分が作りたいサイトの全体像から、各セクションの根底に来るであろうタグを最初に配置しておく。 こうしなかったせいで、あとで要素を追加したときにDOMの全体像が不自然な形になってしまうことがあった。 あと、無駄に要素を重ねたりするとHTMLの構造を理解するのが辛くなる。 IDとクラスを使い分ける CSSは本当にパフォーマンスコストがかかりづらいのだろうか？ もしそうだとしても、意識しない理由はどこにもないと思う。 GitHub&rsquo;s CSS Performance // Speaker Deck 正直な話をすれば、スタイルをあてたいならもうクラスを見境なしにつけてしまっても多分問題なくやっていける。 なのにID、クラスどっちにするかとかそういう不要な検討事項を増やすのはいやだよね。 でもサイトの規模によってはパフォーマンスは死活問題だし、何よりIDとクラスの違いで読みやすさが変わると思う。 さっきの例を使うと、オレはだいたいこういうIDを先に付けておく。 &lt;body&gt; &lt;header id=&quot;header&quot;&gt; ヘッダ。ロゴや一部のメニューを置く。 &lt;/header&gt; &lt;div id=&quot;menu&quot;&gt; グローバルメニュー。サイトによってはheaderで事足りる場合も。 &lt;/div&gt; &lt;div id=&quot;body&quot;&gt; メインコンテンツ。この中でカラム分けをしたり、さらに細分化されたセクション分けをしたりする。 &lt;/div&gt; &lt;footer id=&quot;footer&quot;&gt; コピーライトを書いたりする。">
+<meta property="og:description" content="まずい更新することがない。 とりあえずPOHネタでこの場をしのごう。 マンガ版「俺の許嫁と幼なじみが修羅場すぎる」｜paizaオンラインハッカソン5 今回はパフォーマンスとかの問題はなく、ただただロジックが面倒くさいものばっかでした。 Problem 1 (def in (line-seq (java.io.BufferedReader. *in*))) (def p1 (-&gt;&gt; in first (take-nth 2) clojure.string/join)) (println p1) そもそもこれシーケンスで取らなければfirstとかつけなくてよかったんじゃないかなあ。 そんな方法あるかわかんないけど。 Problem 2 (def in (map #(Integer/parseInt %) (line-seq (java.io.BufferedReader. *in*)))) (defn take-padding [coll pad] (-&gt;&gt; coll (partition-all pad) (map first))) (def p2 (let [l (rest in)] (map #(apply &#43; %) (for [i (range 7)] (take-padding (drop i l) 7))))) (print (clojure.string/join &quot;\n&quot; p2)) 結構強引にシーケンス操作を書いたけど、もっと楽にやれる関数が用意されてる気する。 Problem 3 RENA (def in (for [e (map #(.split % &quot; &quot;) (line-seq (java.io.BufferedReader.">
 
-<meta property="og:image" content="http://yet.unresolved.xyz//images/front.png">
+<meta property="og:image" content="http://yet.unresolved.xyz//images/clojure.png">
 
 
 
@@ -138,6 +138,8 @@
             
             
             
+            
+            
         </div>
     </div>
 
@@ -147,6 +149,28 @@
 
 
 <div class="posts">
+    
+    
+    <article class="post">
+    <div class="eyecatch">
+        
+        <a href="http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/"><img src="http://yet.unresolved.xyz//images/clojure.png" alt="例によってpaiza online hackathon5をClojureで解いてみた"></a>
+        
+    </div>
+    <div class="data">
+        <span class="post-date">Wed, May 6, 2015</span>
+        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/">例によってpaiza online hackathon5をClojureで解いてみた</a></h1>
+        <div class="summary">まずい更新することがない。 とりあえずPOHネタでこの場をしのごう。 マンガ版「俺の許嫁と幼なじみが修羅場すぎる」｜paizaオンラインハッカソン5 今回はパフォーマンスとかの問題はなく、ただただロジックが面倒くさいものばっかでした。 Problem 1 (def in (line-seq (java.io.BufferedReader. *in*))) (def p1 (-&gt;&gt; in first (take-nth 2) clojure.string/join)) (println p1) そもそもこれシーケンスで取らなければfirstとかつけなくてよかったんじゃないかなあ。 そんな方法あるかわかんないけど。 Problem 2 (def in (map #(Integer/parseInt %) (line-seq (java.io.BufferedReader. *in*)))) (defn take-padding [coll pad] (-&gt;&gt; coll (partition-all pad) (map first))) (def p2 (let [l (rest in)] (map #(apply + %) (for [i (range 7)] (take-padding (drop i l) 7))))) (print (clojure.string/join &quot;\n&quot; p2)) 結構強引にシーケンス操作を書いたけど、もっと楽にやれる関数が用意されてる気する。 Problem 3 RENA (def in (for [e (map #(.split % &quot; &quot;) (line-seq (java.io.BufferedReader.</div>
+    </div>
+    <footer class="readon">
+        <a href="http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </footer>
+</article>
+<hr>
+
+    
     
     
     <article class="post">
@@ -338,28 +362,6 @@
     </div>
     <footer class="readon">
         <a href="http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
-
-    
-    
-    
-    <article class="post">
-    <div class="eyecatch">
-        
-        <a href="http://yet.unresolved.xyz/blog/2015/02/06/learning-vim-again/"><img src="http://yet.unresolved.xyz//images/vim.png" alt="今だからやるvimコマンド再学習"></a>
-        
-    </div>
-    <div class="data">
-        <span class="post-date">Fri, Feb 6, 2015</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/02/06/learning-vim-again/">今だからやるvimコマンド再学習</a></h1>
-        <div class="summary">ちょうど1年ほど前からvimを使ってるんだけど、 例に漏れずオレも使い始めの頃にこのサイトを参考にさせて頂きました。 僕がサクラエディタからVimに乗り換えるまで - give IT a try 2012年公開の記事なんだね、意外と最近。 ずっとずっとやれないで居たんだけど、いずれやろうと思っていたこの記事の一節があります。 そんなこんなで2〜3日ぐらい「Vim縛り」をやっていると、徐々にVim恐怖症は消えてくると思います。 おめでとうございます！これであなたも立派なVimmerです！！・・・と喜ぶのはまだ早いです。 もう一回チートシートを見直してください。 もう一回VimのTutorialをやってみてください。 あれ？Vimにこんなコマンドがあるなんて知らなかったぞ？何か便利そうやん！ と思うようなコマンドをいくつか再発見できるはずです。 ようやく実施出来たのでまた忘れたりしないようにメモっておきたい。 使ってなかったけどこれから使っていきたい思ったvimコマンド g; 前回編集した箇所に飛ぶ。 結構長いソースとか書いてる時、あっちこっち飛んだりするから面倒に感じてた。 行番号覚えたりっていう不毛なことやってたんだけど、今後はこれで済みそう！ &gt;&gt;, &lt;&lt; カーソル行をインデントする。 毎回行頭に戻って・・・ってやってたのが馬鹿らしい・・・。 :e **/Root.pm ワーキングディレクトリ以下からRoot.pmにマッチするファイルを開く。 unite.vimを使ってるからこっちに目がいかなかった。便利そう。 :e **/*Ro ワーキングディレクトリ以下から*Roにマッチするファイルを開く。 さらに便利そう。 gf カーソル位置にある単語と同名のファイル名を開く。 あんまり使わなそうだけど、こんなんあるんだなと感心した。 そういう場面に出くわしても忘れて普通にファイル開いちゃいそうだな・・・。 :wqa 全てのウィンドウを閉じて終了する。 今までは:q連打してたんだけど、よく考えれば普通にダサいよね。 スマートじゃないやり方は大抵何かが間違ってるんだなあと思った。 J カーソル行とその下の行を結合する。 いつも先頭に戻って・・・ってやってた。 0 インデントのさらに行頭へカーソルを移動する。 こんなのも知らないとかまじかよ！って自分でも思ったけどいつも^を使ってたので煩わしかった。 ある程度操作が出来るようになるとそれでまかなってしまうから成長しないね・・・。</div>
-    </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2015/02/06/learning-vim-again/">
             <i class="fa fa-chevron-down"></i>
         </a>
     </footer>

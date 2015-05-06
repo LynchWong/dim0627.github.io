@@ -8,15 +8,20 @@
 
 
 
-<meta property="og:title" content="Unresolved">
-<meta property="og:url" content="http://yet.unresolved.xyz/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="例によってpaiza online hackathon5をClojureで解いてみた | Unresolved">
+<meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/">
+<meta property="og:description" content="まずい更新することがない。 とりあえずPOHネタでこの場をしのごう。 マンガ版「俺の許嫁と幼なじみが修羅場すぎる」｜paizaオンラインハッカソン5 今回はパフォーマンスとかの問題はなく、ただただロジックが面倒くさいものばっかでした。 Problem 1 (def in (line-seq (java.io.BufferedReader. *in*))) (def p1 (-&gt;&gt; in first (take-nth 2) clojure.string/join)) (println p1) そもそもこれシーケンスで取らなければfirstとかつけなくてよかったんじゃないかなあ。 そんな方法あるかわかんないけど。 Problem 2 (def in (map #(Integer/parseInt %) (line-seq (java.io.BufferedReader. *in*)))) (defn take-padding [coll pad] (-&gt;&gt; coll (partition-all pad) (map first))) (def p2 (let [l (rest in)] (map #(apply &#43; %) (for [i (range 7)] (take-padding (drop i l) 7))))) (print (clojure.string/join &quot;\n&quot; p2)) 結構強引にシーケンス操作を書いたけど、もっと楽にやれる関数が用意されてる気する。 Problem 3 RENA (def in (for [e (map #(.split % &quot; &quot;) (line-seq (java.io.BufferedReader.">
+
+<meta property="og:image" content="http://yet.unresolved.xyz//images/clojure.png">
+
 
 <meta property="og:site_name" content="Unresolved">
 <meta name="google-site-verification" content="SLxungm5o9WvGwPUEGZCspbMBAsLBjOxAHNyjIBUuSI" />
 
 <title>
     
-    Tags | Unresolved
+    例によってpaiza online hackathon5をClojureで解いてみた | Unresolved
     
 </title>
 
@@ -139,29 +144,414 @@
     <div class="container content">
 
 
-<div class="posts">
-    
-    <article class="post">
+<article class="post post-single">
+    <span class="post-date">Wed, May 6, 2015</span>
+    <h1 class="post-title">例によってpaiza online hackathon5をClojureで解いてみた</h1>
+
     <div class="eyecatch">
         
-        <a href="http://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/"><img src="http://yet.unresolved.xyz//images/clojure.png" alt="Clojureのテンプレートエンジンについて"></a>
+        <img src="http://yet.unresolved.xyz//images/clojure.png" alt="例によってpaiza online hackathon5をClojureで解いてみた">
         
     </div>
-    <div class="data">
-        <span class="post-date">Wed, Jan 14, 2015</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/">Clojureのテンプレートエンジンについて</a></h1>
-        <div class="summary">練習のためにClojureでいくつかのWebアプリを作ってみたんだけど、どの言語でもなんだかんだ手間になるテンプレートの扱いについてまとめてみる。 Enlive Clojure Programmingを執筆されたChristophe Grand氏のライブラリ。 CSSのセレクタでバインドを行うという、すごく画期的な方法でテンプレート機能を実現させてる。 例えばこんな感じでテンプレートのHTMLがあれば、 &lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;title&gt;This is a title placeholder&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;/body&gt; &lt;/html&gt; こうやってバインドできる。 (html/deftemplate main-template &quot;templates/application.html&quot; [] [:head :title] (html/content &quot;Enlive starter kit&quot;)) HTMLが素でかけるから、デザイナさんとの協業がすごく捗りそう。 サンプルのHTMLをそのまま使って、Clojure側でサンプルの値を置き換えたりリピートさせたりすれば済んじゃう。 今回は一人で使ったからそういう場面はなかったけど、サーバを起動しなくてもデザインが見れる &amp; 直せるっていうのは便利な場面があるかなあと。 ただ、結構CSSを書いたりしてるほうだけど、バインドの学習コストは意外と高いなと思った。 効率的に手早くバインドさせるには、Enliveを使う想定のHTML構造にする必要がありそうな印象だった。 覚えてしまえばものすごく活躍しそう。 Hiccup CompojureやEnviron、Ringなどの作者、James Reeves氏のライブラリ。 HTMLを完全にClojureでラップしてるので、ClojureだけでWebアプリを完結させられる。 こんな感じ。 user=&gt; (html [:script]) &quot;&lt;script&gt;&lt;/script&gt;&quot; user=&gt; (html [:p]) &quot;&lt;p /&gt;&quot; Clojureのコンパイルが走るので、タグの不整合(閉じタグがないとか)が一切起こらないっていうのは魅力だと思う。 欠点を挙げるとすれば、改行なしでHTMLが出力されるからブラウザからソースを見るのが厳しい。ていうか無理。 設定でなんとか出来るんだろうか？ でもChromeの開発者ツールとか使えばフォーマットして表示してくれるし、全然クリティカルな問題じゃない。 もう1点は、例えば広告のスクリプトみたいにコピペで貼り付けたい文字列とかの出力がちょっとめんどう。 Hiccupの世界にただのタグを入れるのは見栄えも悪いし、オレはこんな感じで外だしすることで対応した。 (def partial-ad-big (str &quot;&lt;script async src=&quot;&quot;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;&quot;&gt;&lt;/script&gt; &lt;ins class=&quot;&quot;adsbygoogle&quot;&quot; style=&quot;&quot;display:inline-block;width:728px;height:90px&quot;&quot; data-ad-client=&quot;&quot;ca-pub-421xxxxxxxxxx76&quot;&quot;</div>
+
+    <div class="post-content">
+        
+
+<p>まずい更新することがない。</p>
+
+<p>とりあえずPOHネタでこの場をしのごう。</p>
+
+<p><a href="https://paiza.jp/poh/enshura?locale=ja">マンガ版「俺の許嫁と幼なじみが修羅場すぎる」｜paizaオンラインハッカソン5</a></p>
+
+<p>今回はパフォーマンスとかの問題はなく、ただただロジックが面倒くさいものばっかでした。</p>
+
+<h2 id="problem-1:d10396b379fa39f08bc202555c3657f6">Problem 1</h2>
+
+<pre><code class="language-clojure">(def in (line-seq (java.io.BufferedReader. *in*)))
+
+(def p1 (-&gt;&gt; in
+             first
+             (take-nth 2)
+             clojure.string/join))
+
+(println p1)
+</code></pre>
+
+<p>そもそもこれシーケンスで取らなければ<code>first</code>とかつけなくてよかったんじゃないかなあ。</p>
+
+<p>そんな方法あるかわかんないけど。</p>
+
+<h2 id="problem-2:d10396b379fa39f08bc202555c3657f6">Problem 2</h2>
+
+<pre><code class="language-clojure">(def in (map
+         #(Integer/parseInt %)
+         (line-seq (java.io.BufferedReader. *in*))))
+
+(defn take-padding [coll pad]
+  (-&gt;&gt; coll
+       (partition-all pad)
+       (map first)))
+
+(def p2
+  (let [l (rest in)]
+    (map #(apply + %)
+         (for [i (range 7)]
+           (take-padding (drop i l) 7)))))
+
+(print (clojure.string/join &quot;\n&quot; p2))
+</code></pre>
+
+<p>結構強引にシーケンス操作を書いたけど、もっと楽にやれる関数が用意されてる気する。</p>
+
+<h2 id="problem-3-rena:d10396b379fa39f08bc202555c3657f6">Problem 3 RENA</h2>
+
+<pre><code class="language-clojure">(def in (for [e (map #(.split % &quot; &quot;) (line-seq (java.io.BufferedReader. *in*)))]
+          (map #(Integer/parseInt %) e)))
+
+(defn point-to-range [coll]
+  (for [v (map #(partition 2 %) coll)]
+    (let [[s e] v]
+      (for [x (range (- (first s) 1) (first e))
+            y (range (- (second s) 1) (second e))]
+        [x y]))))
+
+(def p3r
+  (let [[w dc rc] (first in)
+        d (take dc (rest in))
+        r (-&gt;&gt; (point-to-range (take-last rc in))
+               (apply concat)
+               distinct)]
+    (for [e r]
+      (nth (nth d (second e)) (first e)))))
+
+(print (apply + p3r))
+</code></pre>
+
+<p>エクセル的なやつ。</p>
+
+<p>めんどくさかった。</p>
+
+<h2 id="problem-3-minami:d10396b379fa39f08bc202555c3657f6">Problem 3 MINAMI</h2>
+
+<pre><code class="language-clojure">(def in (line-seq (java.io.BufferedReader. *in*)))
+
+(defn h2v [coll n]
+  (for [c (range n)]
+    (map #(nth % c) coll)))
+
+(defn compl [n coll]
+  (concat (take (- n (count coll)) (repeat 0)) coll))
+
+(def p3m
+  (let [tc (for [e (map #(.split % &quot; &quot;) in)]
+             (map #(Integer/parseInt %) e))
+        [x y] (-&gt; tc first)
+        coll (rest tc)]
+    (h2v (-&gt;&gt; (h2v coll x)
+              (map (fn [c] (filter #(not= 2 %) c)))
+              (map #(compl y %))) y)))
+
+(print (clojure.string/join &quot;\n&quot;
+                            (map #(clojure.string/join &quot; &quot; %) p3m)))
+</code></pre>
+
+<p>爆弾のやつ。</p>
+
+<p>めんどくさかった。</p>
+
     </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
+
+    <aside class="post-ad pc">
+        <iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=48&l=st1&mode=books-jp&search=clojure&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="728" height="90" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+    </aside>
+
+    <aside class="post-ad sp">
+<iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=12&l=st1&mode=books-jp&search=clojure&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="300" height="250" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+    </aside>
+
+    <aside>
+        <div class="post-share">
+            <h3>Share</h3>
+            <a id="share-fb" href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f05%2f06%2fchallenged-to-online-hackathon-of-paiza5%2f&t=%e4%be%8b%e3%81%ab%e3%82%88%e3%81%a3%e3%81%a6paiza%20online%20hackathon5%e3%82%92Clojure%e3%81%a7%e8%a7%a3%e3%81%84%e3%81%a6%e3%81%bf%e3%81%9f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/facebook.png" alt="Facebook"/></a>
+            <a id="share-twitter" href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f05%2f06%2fchallenged-to-online-hackathon-of-paiza5%2f&text=%e4%be%8b%e3%81%ab%e3%82%88%e3%81%a3%e3%81%a6paiza%20online%20hackathon5%e3%82%92Clojure%e3%81%a7%e8%a7%a3%e3%81%84%e3%81%a6%e3%81%bf%e3%81%9f&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/twitter.png" alt="Twitter"/></a>
+            <a id="share-googleplus" href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f05%2f06%2fchallenged-to-online-hackathon-of-paiza5%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/googleplus.png" alt="Google+"/></a>
+            <a id="share-hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f05%2f06%2fchallenged-to-online-hackathon-of-paiza5%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/hatena.png" alt="Hatena"/></a>
+            <a id="share-pocket" href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f05%2f06%2fchallenged-to-online-hackathon-of-paiza5%2f&title=%e4%be%8b%e3%81%ab%e3%82%88%e3%81%a3%e3%81%a6paiza%20online%20hackathon5%e3%82%92Clojure%e3%81%a7%e8%a7%a3%e3%81%84%e3%81%a6%e3%81%bf%e3%81%9f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/pocket.png" alt="Pocket"/></a>
+        </div>
+
+        
+        
+
+        
+        <div class="post-related">
+            <h3>Related Post</h3>
+            <ul class="post-tags">
+                
+                <li>
+                    <a href="http://yet.unresolved.xyz//tags/clojure">
+                        <i class="fa fa-tags"></i>
+                        clojure
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="http://yet.unresolved.xyz//tags/paiza">
+                        <i class="fa fa-tags"></i>
+                        paiza
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="http://yet.unresolved.xyz//tags/hackathon">
+                        <i class="fa fa-tags"></i>
+                        hackathon
+                    </a>
+                </li>
+                
+            </ul>
+
+            <ul>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/">VimのClojureプラグイン覚書</a></li>
+                
+                
+                
+                
+                
+                <li><a href="http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/">[Clojure]ringのCSRFトークンを生成する</a></li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/">Slamhoundを使ってClojureのrequireを自動生成する</a></li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/">paiza.IOのAPIを使ってreplを作る</a></li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="http://yet.unresolved.xyz/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/">Clojureで新卒の女の子を射止めた話</a></li>
+                
+                
+                
+                
+                
+                <li><a href="http://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/">Clojureのテンプレートエンジンについて</a></li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/">ClojureのWebアプリをDocker &#43; Beanstalkで動かす</a></li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/">Lobosでマイグレーションができない in Heroku</a></li>
+                
+                
+                
+                
+                
+                <li><a href="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/">Lobosを使ってマイグレーションをする</a></li>
+                
+                
+                
+                
+                
+                <li><a href="http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/">LeiningenでSCSSを自動コンパイルする</a></li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ul>
+        </div>
+        
+    </aside>
 
     
-</div>
+    <footer>
+        <div class="move">
+            <div class="prev">
+                
+            </div>
+            <div class="next">
+                
+                <a href="http://yet.unresolved.xyz/blog/2015/04/04/anguish-in-the-css-and-html/">
+                    CSS / HTMLで味わった苦悩の数々
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+                
+            </div>
+        </div>
+
+        
+        
+        
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+ 
+var disqus_shortname = 'unresolved'; 
+
+ 
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        
+        
+    </footer>
+
+</article>
 
 
     </div>
