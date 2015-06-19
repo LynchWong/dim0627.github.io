@@ -1,770 +1,434 @@
 <!DOCTYPE html>
-
-<head>
-<meta charset="utf-8">
-
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-
-
-<meta property="og:title" content="Unresolved">
-<meta property="og:url" content="http://yet.unresolved.xyz/">
-
-<meta property="og:site_name" content="Unresolved">
-<meta name="google-site-verification" content="SLxungm5o9WvGwPUEGZCspbMBAsLBjOxAHNyjIBUuSI" />
-
-<title>
-    
-    Tags | Unresolved
-    
-</title>
-
-
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-<link rel="stylesheet" href="http://yet.unresolved.xyz//css/base.css">
-<link rel="stylesheet" href="http://yet.unresolved.xyz//css/styles.css">
-<link rel="stylesheet" href="http://yet.unresolved.xyz//css/custom.css">
-
-
-<link rel="shortcut icon" href="http://yet.unresolved.xyz//assets/favicon.ico">
-
-
-<link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz//index.xml">
-</head>
-
-
-
-<div class="wrap">
-    <div class="masthead">
-        <div class="container">
-            <h3 class="masthead-title">
-                <a href="http://yet.unresolved.xyz/" title="Home">Unresolved</a>
-            </h3>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        </div>
-    </div>
-
-    <div class="container content">
-
-
-<div class="posts">
-    
-    <article class="post">
-    <div class="eyecatch">
-        
-        <a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/"><img src="http://yet.unresolved.xyz//images/hugo.png" alt="ブログをOctopressからHugoに移行した"></a>
-        
-    </div>
-    <div class="data">
-        <span class="post-date">Sun, Jan 4, 2015</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">ブログをOctopressからHugoに移行した</a></h1>
-        <div class="summary">Octopressでのブログもずいぶん慣れてきたところでHugoに移行しました。 一晩徹夜して、カスタマイズからGitHub Pagesでの公開までいけたのでいろいろまとめてみる。 なぜ移行？ ずっとテーマのカスタマイズをしたいと思ってたんだけど、Octopressのテーマの構成がいつまでたっても理解出来なかったのが一番の理由。 テーマというか、テンプレートの構成かな・・・。 Google Adsenseとかも導入したんだけど、そんな些細な修正ですらちょっと辛い感じになってしまってたので、いっそ土台ごと変えることに。 Hugoに移行するメリット せっかくだし移行してみてよかったことをまとめてみます。 とにかくスピーディ 何をするにも動作がめちゃくちゃ速い。 記事数がそんなに多くないからOctopressでも不満はなかったんだけど、今考えればとてつもない遅さだったなあと思う。 Hugoはほんとに一瞬で記事を生成するし、サーバの起動も一瞬なのでライブリロードがいらないくらい。使ってるけど笑 HugoはGolangで出来てるそうで、それが要因なのかはわからないけど、これまで触ってきた開発用サーバの中でも類を見ない速さで作業ができます。 構造がシンプル トップページ、記事一覧、記事個別のページ、って感じで綺麗に区分けがされてる。 テーマがいくつかあるんだけど、どれも必要のないネストとかしてないし、そこからカスタマイズがしやすい。 あと、カテゴリとかタグみたいに、記事間を横断的に集計したい場合もすごく簡単に出来る。 すごく簡単すぎてどうなってるのかわからなくなることがあるけど笑 Taxonomy Overview 無駄な物がない Hugoはnewで作った時に基礎になるテンプレートがないくらい、標準装備が少ない。 まあそれじゃテスト実行さえ出来ないからどうなんだっていう人もいると思うけど笑 オレは結構0から作りたい方なので、これくらいすっきりさせてくれてたほうが嬉しかった。 移行によるデメリット とはいえ全てがよかったわけではなくて、途中で何度か引き返そうと思う場面もあったので、そこも書いとく。 自分でやらなきゃいけないことが多い やっぱりOctopressはRakeタスクでかなり囲い込みが出来てたなあと思う。 OctopressをGitHub Pagesで公開する場合、masterとsourceブランチが作成されるんだけど、あれは運用面でも非常に楽だったなあと思う。 Hugoはデプロイは一切触れずに、本当に静的な資材の生成しかしないから、その辺は自分でやらなきゃいけない。 だから初めての人には辛いところがあるかも。 あ、あとDISQUSとかもテーマによってはIDを指定するだけで使えたり、自分でタグを埋め込まなきゃ使えなかったりする。 記事のカテゴリ分けとかタグ付けについても自分で設定しなきゃいけない。公式に手順はあるけど。 もちろんSNSのリンクも自分で配置。 日本語タイトルが使いづらい Octopressの時は、記事のMarkdownファイルのファイル名は英語にして、ファイル内のtitleで日本語を設定してました。 Hugoはファイル内のtitleで記事個別ページのURLを生成するから、マルチバイトが入るといろいろ面倒なことになっちゃった。 あと、これまでのSEOをゼロにしたくないからURLは変えたくなくて、やっぱりURLでは英語のタイトルを使いたい。 これはもうどうしょうもなくて、ファイル内に英語タイトルと日本語タイトルを設定出来るようにした。 シェルで一括操作出来るような内容でもないので、ここは手作業。 テーマが少ない あるものでなんとかしたい、って人には深刻かと笑 ブログ自体に注力せずに記事を書くことに注力したい、って人はOctopressかHexoかそもそもHatenaとかの方がいいのかもしれない。 移行において 記事の移行と、なるべく移行前と移行後でブログを書く作業が変わらないように工夫した点をまとめる。 日付フォーマットの変更 Octopressと違ってHugoでは日付のフォーマットを date: &quot;2013-10-27&quot; こんな感じにしなきゃいけないので、先人の知恵を使って置換する。 $ find . -type f -exec sed -i &quot;&quot; -e 's/\([0-9]\+-[0-9]\+-[0-9]\+\).*$/&quot;\1&quot;/' {} \; 画像タグの変更 Octopressではこう書いてたけど [{% img /images/2015-01-01/beanstalkDockerApp.png 'beanstalkDockerApp' 'beanstalkDockerApp' %}](/images/2015-01-01/beanstalkDockerApp.png) Hugoでは画像タグHTMLベタにするので、 $ find .</div>
-    </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     
-    <article class="post">
-    <div class="eyecatch">
-        
-        <a href="http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/"><img src="http://yet.unresolved.xyz//images/octopress.png" alt="Octopressのサイドバーを下部に移動する"></a>
-        
-    </div>
-    <div class="data">
-        <span class="post-date">Wed, Oct 22, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/">Octopressのサイドバーを下部に移動する</a></h1>
-        <div class="summary">デフォルトのテーマだとサイドバーの表示/非表示の切り替えが出来て、非表示にするとサイドバーは記事の下に落っこちるんだけど、 常時この状態にした方がかっこいいんでないか？ということで移動させてみることに。 サイドバーの非表示時に何が起きているかというと、bodyタグにclassが追加されてます。 具体的な処理は/javascripts/octopress.jsに書いてあるよ。 $('.toggle-sidebar').bind('click', function(e) { e.preventDefault(); if ($('body').hasClass('collapse-sidebar')) { $('body').removeClass('collapse-sidebar'); } else { $('body').addClass('collapse-sidebar'); } }); bodyタグがcollapse-sidebarクラスに属していれば、サイドバーは勝手に下に落っこちる訳だ。 bodyを描画するテンプレートは_layouts/default.htmlで、こんな記載がある。 長ったらしいので少し見やすく改行してあります。 &lt;body {% if page.body_id %} id=&quot;{{ page.body_id }}&quot; {% endif %} {% if page.sidebar == false %} class=&quot;no-sidebar&quot; {% endif %} {% if page.sidebar == 'collapse' or site.sidebar == 'collapse' %} class=&quot;collapse-sidebar sidebar-footer&quot; {% endif %} &gt; sidebarがcollapseの場合にclassが追加されるようになってるね。 sidebar-footerクラスもレイアウトに必要なものらしい。 というわけでテンプレートを直に変えるのではなくて、_config.ymlに以下を追加すれば対応出来そうだ。 sidebar: &quot;collapse&quot; トグルボタンのスペースが空いてしまうので、custom/_style.cssに以下も追加。 .collapse-sidebar #content { margin-right: 0; }</div>
-    </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
+    
+    <meta property="og:title" content="Unresolved">
+    <meta property="og:url" content="http://yet.unresolved.xyz/">
+    
+    <meta property="og:site_name" content="Unresolved">
+
+    <title>
+      
+      Tags | Unresolved
+      
+    </title>
 
     
-    <article class="post">
-    <div class="eyecatch">
-        
-        <a href="http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/"><img src="http://yet.unresolved.xyz//images/octopress.png" alt="Octopressのテーマを作ってみる"></a>
-        
-    </div>
-    <div class="data">
-        <span class="post-date">Sun, Sep 21, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/">Octopressのテーマを作ってみる</a></h1>
-        <div class="summary">元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。 でもオレはデザイナーじゃないから、あんまりがっつりやるのもやだよね。 てことで元のclassicテーマをパクって作ろう。 Octopressから移行してしまったので、スクリーンショットだけ載せとく。 テーマの変え方 そもそも変え方すら知らない。 てことで調べた。 どうやらここにテーマ単位のディレクトリが配置されるらしい。 octopress git:(source)$ ls .themes classic で、rake install[theme name]でインストール。 テーマの構成 作るにも、テーマの定義に何が必要かがわからぬ。 classicの中を見てみよう。 octopress git:(source)$ ls .themes/classic sass source んん、シンプル。 察するにsassがスタイル系でsourceがテンプレート系なのかな？ 別にページレイアウトを変えたいとか、そんなたいそうなことは考えてないので、sass内をいじるだけでよさそう。 sass内はどうなってるのかな？ octopress git:(source)$ ls .themes/classic/sass _base.scss _partials.scss base custom partials plugins screen.scss octopress git:(source)$ ls .themes/classic/sass/custom _colors.scss _fonts.scss _layout.scss _styles.scss で、.themes/classic/sass/custom/_styles.scssがオーバーライド用のファイルなわけだな。 // This File is imported last, and will override other styles in the cascade // Add styles here to make changes</div>
-    </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
+    <link rel="shortcut icon" href="http://yet.unresolved.xyz//assets/favicon.ico">
 
     
-    <article class="post">
-    <div class="eyecatch">
-        
-        <a href="http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/"><img src="http://yet.unresolved.xyz//images/octopress.png" alt="_config.ymlに書いたdescriptionが設定されない"></a>
-        
-    </div>
-    <div class="data">
-        <span class="post-date">Sun, Sep 21, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/">_config.ymlに書いたdescriptionが設定されない</a></h1>
-        <div class="summary">認識が間違ってるのか、_config.ymlに書いたdescriptionがサイトに反映されない・・・。 source/_includes/head.htmlのコードを見てみるとこんな感じ。 {% raw %} {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %} &lt;meta name=&quot;description&quot; content=&quot;{{ description | strip_html | condense_spaces | truncate:150 }}&quot;&gt; {% if page.keywords %}&lt;meta name=&quot;keywords&quot; content=&quot;{{ page.keywords }}&quot;&gt;{% endif %} {% endraw %} page.descriptionしか見てない？ 同じことで悩んでる人いないのかな・・・と思ったら居た。 Make the Magic Happen やっぱり同じ認識のようだ。 elseifってこう書くんだね。 {% raw %} {% capture description %}{% if page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %} &lt;meta name=&quot;description&quot; content=&quot;{{ description | strip_html | condense_spaces | truncate:150 }}&quot;&gt; {% if page.keywords %}&lt;meta name=&quot;keywords&quot; content=&quot;{{ page.keywords }}&quot;&gt;{% endif %} {% endraw %} worked!</div>
-    </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz//index.xml">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Marcellus+SC' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
 
     
-    <article class="post">
-    <div class="eyecatch">
-        
-        <a href="http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/"><img src="http://yet.unresolved.xyz//images/octopress.png" alt="OctopressのサイドバーにGravatarを表示させる"></a>
-        
-    </div>
-    <div class="data">
-        <span class="post-date">Sat, Sep 20, 2014</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/">OctopressのサイドバーにGravatarを表示させる</a></h1>
-        <div class="summary">Octopressのサイドバーってどうなってんの？ そもそもOctopressの構成がまだよくわかってないのでそこから勉強しよう。 どうやらデフォルトで準備されてるサイドバーはここに格納されているらしい。 octopress git:(source)$ ls source/_includes/asides/ delicious.html github.html googleplus.html pinboard.html recent_posts.html で、自分で作りたい場合はここに格納するっぽい。 octopress git:(source)$ ls source/_includes/custom/asides about.html twitter.html って_config.ymlに書いてあった。 # list each of the sidebar modules you want to include, in the order you want them to appear. # To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like 'custom/asides/custom_aside_name.html' default_asides: [custom/asides/about.html, asides/recent_posts.html, custom/asides/twitter.html] Gravatarの情報って持って来れるの？ ちょっとだけ調べてみたらGravatarの画像だけ持ってくるpluginは用意されてるっぽい。 でもどうせなら自己紹介のところとかも欲しいよね。 で、Gravatarに開発者向け資料がありました。 しっかり読んでないけど、JSONで返せるっぽいからこれを使えばいいかな。 ハッシュを指定する必要があるみたいなので、公式から取得しとく。 作るぞ なんか最初からsource/_include/custom/asidesにabout.htmlってのがあるし、これにプロフィールを書こうかな。 まず取得したハッシュを_config.ymlに定義しちゃおう。 #</div>
-    </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
+  </head>
+  <body>
 
-    
-</div>
+    <header id="site-header">
+      <div class="container">
+        <h1 class="text-center">
+          <a href="http://yet.unresolved.xyz/" class="font-logo">Unresolved</a>
+        </h1>
+      </div>
+    </header>
 
-
-    </div>
-</div>
-
-<div class="container footer-ad">
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-4218045898905176"
-         data-ad-slot="4750057642"
-         data-ad-format="auto"></ins>
-    <script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-</div>
-
-
-<aside class="sidebar-wrapper">
+    <main id="site-body">
     <div class="container">
+
+
+
+<div class="row">
+  <div class="col-md-9">
+    <div id="posts">
+      <div class="row">
         
-        <div class="tags tag-cloud">
-            <h2>Tags</h2>
-            <ul class="post-tags">
-                
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/ansible">
-                        ansible
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/apigility">
-                        apigility
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/auriga">
-                        auriga
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/aws">
-                        aws
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/beanstalk">
-                        beanstalk
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/book">
-                        book
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/boot2docker">
-                        boot2docker
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/centos">
-                        centos
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/clang">
-                        clang
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/clojure">
-                        clojure
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/css">
-                        css
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/database">
-                        database
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/design">
-                        design
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/dns">
-                        dns
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/docker">
-                        docker
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/enlive">
-                        enlive
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/frontend">
-                        frontend
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/git">
-                        git
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/github">
-                        github
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/golang">
-                        golang
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/google-app-engine">
-                        google-app-engine
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/gravatar">
-                        gravatar
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/hackathon">
-                        hackathon
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/heroku">
-                        heroku
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/hiccup">
-                        hiccup
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/html">
-                        html
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/hugo">
-                        hugo
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/iterm">
-                        iterm
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/javascript">
-                        javascript
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/jekyll">
-                        jekyll
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/laravel">
-                        laravel
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/leiningen">
-                        leiningen
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/linux">
-                        linux
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/lobos">
-                        lobos
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/mac">
-                        mac
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/migration">
-                        migration
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/node.js">
-                        node.js
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/octopress">
-                        octopress
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/os-x">
-                        os-x
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/paiza">
-                        paiza
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/paizaio">
-                        paizaio
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/php">
-                        php
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/postgresql">
-                        postgresql
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/powerline">
-                        powerline
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/python">
-                        python
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/reactjs">
-                        reactjs
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/ring">
-                        ring
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/ruby">
-                        ruby
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/sass">
-                        sass
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/scss">
-                        scss
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/security">
-                        security
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/slack">
-                        slack
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/sql-server">
-                        sql-server
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/sqlite">
-                        sqlite
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/startup">
-                        startup
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/startup-weekend">
-                        startup-weekend
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/tmux">
-                        tmux
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/ubuntu">
-                        ubuntu
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/util">
-                        util
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/vagrant">
-                        vagrant
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/vim">
-                        vim
-                    </a>
-                </li>
-                
-            </ul>
+        
+        
+        <div class="col-sm-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/" class="post post-topix">
+              <header class="eyecatch text-center">
+                <img src="/images/hugo.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Sun, Jan 4, 2015</span>
+              </div>
+              <h2 class="title">ブログをOctopressからHugoに移行した</h2>
+              <div class="summary">
+                Octopressでのブログもずいぶん慣れてきたところでHugoに移行しました。 一晩徹夜して、カスタマイズからGitHub Pagesでの公開までいけたのでいろいろまとめてみる。 なぜ移行？ ずっとテーマのカスタマイズをしたいと思ってたんだけど、Octopressのテーマの構成がいつまでたっても理解出来なかったのが一番の理由。 テーマというか、テンプレートの構成かな・・・。 Google Adsenseとかも導入したんだけど、そんな些細な修正ですらちょっと辛い感じになってしまってたので、いっそ土台ごと変えることに。 Hugoに移行するメリット せっかくだし移行してみてよかったことをまとめてみます。 とにかくスピーディ 何をするにも動作がめちゃくちゃ速い。 記事数がそんなに多くないからOctopressでも不満はなかったんだけど、今考えればとてつもない遅さだったなあと思う。 Hugoはほんとに一瞬で記事を生成するし、サーバの起動も一瞬なのでライブリロードがいらないくらい。使ってるけど笑 HugoはGolangで出来てるそうで、それが要因なのかはわからないけど、これまで触ってきた開発用サーバの中でも類を見ない速さで作業ができます。 構造がシンプル トップページ、記事一覧、記事個別のページ、って感じで綺麗に区分けがされてる。 テーマがいくつかあるんだけど、どれも必要のないネストとかしてないし、そこからカスタマイズがしやすい。 あと、カテゴリとかタグみたいに、記事間を横断的に集計したい場合もすごく簡単に出来る。 すごく簡単すぎてどうなってるのかわからなくなることがあるけど笑 Taxonomy Overview 無駄な物がない Hugoはnewで作った時に基礎になるテンプレートがないくらい、標準装備が少ない。 まあそれじゃテスト実行さえ出来ないからどうなんだっていう人もいると思うけど笑 オレは結構0から作りたい方なので、これくらいすっきりさせてくれてたほうが嬉しかった。 移行によるデメリット とはいえ全てがよかったわけではなくて、途中で何度か引き返そうと思う場面もあったので、そこも書いとく。 自分でやらなきゃいけないことが多い やっぱりOctopressはRakeタスクでかなり囲い込みが出来てたなあと思う。 OctopressをGitHub Pagesで公開する場合、masterとsourceブランチが作成されるんだけど、あれは運用面でも非常に楽だったなあと思う。 Hugoはデプロイは一切触れずに、本当に静的な資材の生成しかしないから、その辺は自分でやらなきゃいけない。 だから初めての人には辛いところがあるかも。 あ、あとDISQUSとかもテーマによってはIDを指定するだけで使えたり、自分でタグを埋め込まなきゃ使えなかったりする。 記事のカテゴリ分けとかタグ付けについても自分で設定しなきゃいけない。公式に手順はあるけど。 もちろんSNSのリンクも自分で配置。 日本語タイトルが使いづらい Octopressの時は、記事のMarkdownファイルのファイル名は英語にして、ファイル内のtitleで日本語を設定してました。 Hugoはファイル内のtitleで記事個別ページのURLを生成するから、マルチバイトが入るといろいろ面倒なことになっちゃった。 あと、これまでのSEOをゼロにしたくないからURLは変えたくなくて、やっぱりURLでは英語のタイトルを使いたい。 これはもうどうしょうもなくて、ファイル内に英語タイトルと日本語タイトルを設定出来るようにした。 シェルで一括操作出来るような内容でもないので、ここは手作業。 テーマが少ない あるものでなんとかしたい、って人には深刻かと笑 ブログ自体に注力せずに記事を書くことに注力したい、って人はOctopressかHexoかそもそもHatenaとかの方がいいのかもしれない。 移行において 記事の移行と、なるべく移行前と移行後でブログを書く作業が変わらないように工夫した点をまとめる。 日付フォーマットの変更 Octopressと違ってHugoでは日付のフォーマットを date: &quot;2013-10-27&quot; こんな感じにしなきゃいけないので、先人の知恵を使って置換する。 $ find . -type f -exec sed -i &quot;&quot; -e 's/\([0-9]\+-[0-9]\+-[0-9]\+\).*$/&quot;\1&quot;/' {} \; 画像タグの変更 Octopressではこう書いてたけど [{% img /images/2015-01-01/beanstalkDockerApp.png 'beanstalkDockerApp' 'beanstalkDockerApp' %}](/images/2015-01-01/beanstalkDockerApp.png) Hugoでは画像タグHTMLベタにするので、 $ find .
+              </div>
+            </a>
+          </article>
         </div>
         
         
-        <div id="profile">
-            <div class="eyecatch">
-                <img id="photo" src="/images/nopicture.png" alt="profile">
-            </div>
-            <div class="data">
-                
-                <span class="post-date">Sun, Feb 26, 1989</span>
-                
-                <h1 id="username" class="post-title"></h1>
-                
-                <a href="https://www.facebook.com/daisuke.tsuji.735" target="_blank"><i class="fa fa-facebook-square"></i></a>
-                
-                
-                <a href="https://twitter.com/dim0627" target="_blank"><i class="fa fa-twitter-square"></i></a>
-                
-                
-                <a href="https://github.com/dim0627" target="_blank"><i class="fa fa-github-square"></i></a>
-                
-                <pre id="description"></pre>
-                <ul id="urls" class="post-tags"></ul>
-            </div>
+        
+        
+        
+        <div class="col-sm-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/" class="post post-topix">
+              <header class="eyecatch text-center">
+                <img src="/images/octopress.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Wed, Oct 22, 2014</span>
+              </div>
+              <h2 class="title">Octopressのサイドバーを下部に移動する</h2>
+              <div class="summary">
+                デフォルトのテーマだとサイドバーの表示/非表示の切り替えが出来て、非表示にするとサイドバーは記事の下に落っこちるんだけど、 常時この状態にした方がかっこいいんでないか？ということで移動させてみることに。 サイドバーの非表示時に何が起きているかというと、bodyタグにclassが追加されてます。 具体的な処理は/javascripts/octopress.jsに書いてあるよ。 $('.toggle-sidebar').bind('click', function(e) { e.preventDefault(); if ($('body').hasClass('collapse-sidebar')) { $('body').removeClass('collapse-sidebar'); } else { $('body').addClass('collapse-sidebar'); } }); bodyタグがcollapse-sidebarクラスに属していれば、サイドバーは勝手に下に落っこちる訳だ。 bodyを描画するテンプレートは_layouts/default.htmlで、こんな記載がある。 長ったらしいので少し見やすく改行してあります。 &lt;body {% if page.body_id %} id=&quot;{{ page.body_id }}&quot; {% endif %} {% if page.sidebar == false %} class=&quot;no-sidebar&quot; {% endif %} {% if page.sidebar == 'collapse' or site.sidebar == 'collapse' %} class=&quot;collapse-sidebar sidebar-footer&quot; {% endif %} &gt; sidebarがcollapseの場合にclassが追加されるようになってるね。 sidebar-footerクラスもレイアウトに必要なものらしい。 というわけでテンプレートを直に変えるのではなくて、_config.ymlに以下を追加すれば対応出来そうだ。 sidebar: &quot;collapse&quot; トグルボタンのスペースが空いてしまうので、custom/_style.cssに以下も追加。 .collapse-sidebar #content { margin-right: 0; }
+              </div>
+            </a>
+          </article>
         </div>
         
+        
+        
+        
+        
+        <div class="col-sm-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/" class="post post-topix">
+              <header class="eyecatch text-center">
+                <img src="/images/octopress.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Sun, Sep 21, 2014</span>
+              </div>
+              <h2 class="title">Octopressのテーマを作ってみる</h2>
+              <div class="summary">
+                元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。 でもオレはデザイナーじゃないから、あんまりがっつりやるのもやだよね。 てことで元のclassicテーマをパクって作ろう。 Octopressから移行してしまったので、スクリーンショットだけ載せとく。 テーマの変え方 そもそも変え方すら知らない。 てことで調べた。 どうやらここにテーマ単位のディレクトリが配置されるらしい。 octopress git:(source)$ ls .themes classic で、rake install[theme name]でインストール。 テーマの構成 作るにも、テーマの定義に何が必要かがわからぬ。 classicの中を見てみよう。 octopress git:(source)$ ls .themes/classic sass source んん、シンプル。 察するにsassがスタイル系でsourceがテンプレート系なのかな？ 別にページレイアウトを変えたいとか、そんなたいそうなことは考えてないので、sass内をいじるだけでよさそう。 sass内はどうなってるのかな？ octopress git:(source)$ ls .themes/classic/sass _base.scss _partials.scss base custom partials plugins screen.scss octopress git:(source)$ ls .themes/classic/sass/custom _colors.scss _fonts.scss _layout.scss _styles.scss で、.themes/classic/sass/custom/_styles.scssがオーバーライド用のファイルなわけだな。 // This File is imported last, and will override other styles in the cascade // Add styles here to make changes
+              </div>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-sm-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/" class="post post-topix">
+              <header class="eyecatch text-center">
+                <img src="/images/octopress.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Sun, Sep 21, 2014</span>
+              </div>
+              <h2 class="title">_config.ymlに書いたdescriptionが設定されない</h2>
+              <div class="summary">
+                認識が間違ってるのか、_config.ymlに書いたdescriptionがサイトに反映されない・・・。 source/_includes/head.htmlのコードを見てみるとこんな感じ。 {% raw %} {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %} &lt;meta name=&quot;description&quot; content=&quot;{{ description | strip_html | condense_spaces | truncate:150 }}&quot;&gt; {% if page.keywords %}&lt;meta name=&quot;keywords&quot; content=&quot;{{ page.keywords }}&quot;&gt;{% endif %} {% endraw %} page.descriptionしか見てない？ 同じことで悩んでる人いないのかな・・・と思ったら居た。 Make the Magic Happen やっぱり同じ認識のようだ。 elseifってこう書くんだね。 {% raw %} {% capture description %}{% if page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %} &lt;meta name=&quot;description&quot; content=&quot;{{ description | strip_html | condense_spaces | truncate:150 }}&quot;&gt; {% if page.keywords %}&lt;meta name=&quot;keywords&quot; content=&quot;{{ page.keywords }}&quot;&gt;{% endif %} {% endraw %} worked!
+              </div>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/octopress.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Sat, Sep 20, 2014</span>
+              </div>
+              <h3 class="title">OctopressのサイドバーにGravatarを表示させる</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+      </div>
     </div>
-</aside>
+  </div>
+  <div class="col-md-3">
+    <aside id="site-sidebar">
+      <div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+  <section class="sidebar-bordered">
+    <h3>Profile</h3>
+    
+    <div id="profile">
+      <div class="text-center">
+        <img id="profile-photo" src="/images/nopicture.png" alt="profile">
+      </div>
+      <div class="data">
+        
+        <span id="profile-birth">Sun, Feb 26, 1989</span>
+        
+        <h4 id="profile-username" class="post-title"></h4>
+        <div id="social-links">
+          
+          <a href="https://www.facebook.com/daisuke.tsuji.735" target="_blank"><i class="fa fa-facebook-square"></i></a>
+          
+          
+          <a href="https://twitter.com/dim0627" target="_blank"><i class="fa fa-twitter-square"></i></a>
+          
+          
+          <a href="https://github.com/dim0627" target="_blank"><i class="fa fa-github-square"></i></a>
+          
+        </div>
+        <div id="profile-description"></div>
+        <ul id="profile-urls" class="post-tags"></ul>
+      </div>
+    </div>
+    
+  </section>
+</div>
 
+<div class="col-md-12 col-sm-6 col-xs-12">
+  <section>
+    <h3>Tags</h3>
+    
+    <div id="tag-cloud" class="text-center">
+      
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/ansible">ansible</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/apigility">apigility</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/auriga">auriga</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/aws">aws</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/beanstalk">beanstalk</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/book">book</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/boot2docker">boot2docker</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/centos">centos</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/clang">clang</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/clojure">clojure</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/css">css</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/database">database</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/design">design</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/dns">dns</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/docker">docker</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/enlive">enlive</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/frontend">frontend</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/git">git</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/github">github</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/golang">golang</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/google-app-engine">google-app-engine</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/gravatar">gravatar</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/hackathon">hackathon</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/heroku">heroku</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/hiccup">hiccup</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/html">html</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/hugo">hugo</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/iterm">iterm</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/javascript">javascript</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/jekyll">jekyll</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/leiningen">leiningen</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/linux">linux</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/lobos">lobos</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/mac">mac</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/migration">migration</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/octopress">octopress</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/os-x">os-x</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/paiza">paiza</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/paizaio">paizaio</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/php">php</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/postgresql">postgresql</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/powerline">powerline</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/python">python</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/reactjs">reactjs</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/ring">ring</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/ruby">ruby</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/sass">sass</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/scss">scss</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/security">security</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/slack">slack</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/sql-server">sql-server</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/sqlite">sqlite</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/startup">startup</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/startup-weekend">startup-weekend</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/tmux">tmux</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/ubuntu">ubuntu</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/util">util</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/vagrant">vagrant</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/vim">vim</a>
+      
+    </div>
+    
+  </section>
+</div>
 
+      </div>
+    </aside>
+  </div>
+</div>
 
-<footer class="copy">
-    <p>&copy; 2015  Daisuke Tsuji </p>
-    <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>, Theme <a href="https://github.com/dim0627/hugo_theme_aglaus" target="_blank">Aglaus</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
-</footer>
+      </div>
+    </main>
 
-<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-<script src="http://yet.unresolved.xyz//js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+    <footer id="site-footer" class="text-center font-logo">
+      <p>&copy; 2015  Daisuke Tsuji </p>
 
+      <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>, Theme <a href="https://github.com/dim0627/hugo_theme_robust" target="_blank">Robust</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+    </footer>
 
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script src="http://yet.unresolved.xyz//js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-55005303-1', 'auto');
-ga('send', 'pageview');
+    ga('create', 'UA-55005303-1', 'auto');
+    ga('send', 'pageview');
 
-</script>
+    </script>
 
-
-<script>
-$(function() {
-    var url = "https://ja.gravatar.com/1e092e9f2cda827deb8623be2e846936.json?callback=?";
-    $.getJSON(url)
+    <script>
+    $(function() {
+      var url = "https://ja.gravatar.com/1e092e9f2cda827deb8623be2e846936.json?callback=?";
+      $.getJSON(url)
         .done(function(data) {
-            var entry = data.entry[0];
-            $("#photo").attr("src", entry.photos[0].value);
-            $("#username").html(entry.name.familyName + " " + entry.name.givenName);
-            $("#description").html(entry.aboutMe);
-            entry.urls.forEach(function(el){
-                $("#urls").append($("<li><a href='" + el.value + "'>" + el.title + "</a></li>"));
-            });
-            $("#profile").show();
+          var entry = data.entry[0];
+          $("#profile-photo").attr("src", entry.photos[0].value);
+          $("#profile-username").html(entry.name.familyName + " " + entry.name.givenName);
+          $("#profile-description").html(entry.aboutMe);
+          entry.urls.forEach(function(el){
+            $("#profile-urls").append($("<li><a href='" + el.value + "'>" + el.title + "</a></li>"));
+          });
+          $("#profile").show();
         });
-});
-</script>
+    });
+    </script>
+  </body>
+</html>
 

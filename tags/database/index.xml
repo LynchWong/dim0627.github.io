@@ -193,7 +193,7 @@ lobos_migrations  sites
     
       
         <item>
-          <title>クラスタ化インデックスとかカバリングインデックスについて</title>
+          <title>クラスタ化インデックスとかカバリングインデックスについてどうせ忘れるからまとめる</title>
           <link>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</link>
           <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
@@ -205,8 +205,6 @@ lobos_migrations  sites
 &lt;h2 id=&#34;クラスタ化-非クラスタ化インデックスの違い:c92488df51ae62a183920f8a12e0e585&#34;&gt;クラスタ化 / 非クラスタ化インデックスの違い&lt;/h2&gt;
 
 &lt;p&gt;MySQLにも同じ話があったんだね。&lt;/p&gt;
-
-&lt;p&gt;そもそもそれを知らない時点でいろいろだめなわけで。&lt;/p&gt;
 
 &lt;p&gt;まず参考にしたのはMSDN。&lt;/p&gt;
 
@@ -241,8 +239,6 @@ lobos_migrations  sites
 
 &lt;p&gt;B-Treeのイメージも、SQL Server上での実装が具体的にイメージ出来たし、非クラスタ化インデックスじゃ結局ランダムI/Oが発生するんだね、ってこともわかった。&lt;/p&gt;
 
-&lt;p&gt;ついでにB-Treeの勉強も軽くした。&lt;/p&gt;
-
 &lt;p&gt;&lt;a href=&#34;http://www.atmarkit.co.jp/fcoding/articles/delphi/05/delphi05a.html&#34;&gt;RDBMSで使われるB木を学ぼう&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;ここでわかったこと-1:c92488df51ae62a183920f8a12e0e585&#34;&gt;ここでわかったこと&lt;/h3&gt;
@@ -253,15 +249,13 @@ lobos_migrations  sites
 &lt;li&gt;非クラスタ化インデックスを利用したクエリの場合、リーフノードにはポインタしかないので、ランダムI/Oが発生する。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;ちなみにごめんなさいだけど、こっちのページはあまり理解が進まなかった・・・。&lt;/p&gt;
+&lt;p&gt;こっちのページはよくわかんなかった。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://enterprisezine.jp/iti/detail/3357&#34;&gt;SQL Serverの大きな特徴、クラスタ化インデックスを押さえよう！&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;カバリングインデックス:c92488df51ae62a183920f8a12e0e585&#34;&gt;カバリングインデックス&lt;/h2&gt;
 
-&lt;p&gt;おまえそれも知らねーのかよって言われそうだけど・・・。&lt;/p&gt;
-
-&lt;p&gt;正直マルチカラムインデックスと混同してました。&lt;/p&gt;
+&lt;p&gt;マルチカラムインデックスと混同するよね。&lt;/p&gt;
 
 &lt;p&gt;これは結構わかりやすく書いてくれている記事があった。&lt;/p&gt;
 

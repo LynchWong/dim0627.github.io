@@ -1,902 +1,1107 @@
 <!DOCTYPE html>
-
-<head>
-<meta charset="utf-8">
-
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-
-
-<meta property="og:type" content="website">
-<meta property="og:url" content="http://yet.unresolved.xyz/">
-<meta property="og:title" content="Unresolved">
-
-<meta property="og:description" content="まずい更新することがない。 とりあえずPOHネタでこの場をしのごう。 マンガ版「俺の許嫁と幼なじみが修羅場すぎる」｜paizaオンラインハッカソン5 今回はパフォーマンスとかの問題はなく、ただただロジックが面倒くさいものばっかでした。 Problem 1 (def in (line-seq (java.io.BufferedReader. *in*))) (def p1 (-&gt;&gt; in first (take-nth 2) clojure.string/join)) (println p1) そもそもこれシーケンスで取らなければfirstとかつけなくてよかったんじゃないかなあ。 そんな方法あるかわかんないけど。 Problem 2 (def in (map #(Integer/parseInt %) (line-seq (java.io.BufferedReader. *in*)))) (defn take-padding [coll pad] (-&gt;&gt; coll (partition-all pad) (map first))) (def p2 (let [l (rest in)] (map #(apply &#43; %) (for [i (range 7)] (take-padding (drop i l) 7))))) (print (clojure.string/join &quot;\n&quot; p2)) 結構強引にシーケンス操作を書いたけど、もっと楽にやれる関数が用意されてる気する。 Problem 3 RENA (def in (for [e (map #(.split % &quot; &quot;) (line-seq (java.io.BufferedReader.">
-
-<meta property="og:image" content="http://yet.unresolved.xyz//images/clojure.png">
-
-
-
-<meta property="og:site_name" content="Unresolved">
-<meta name="google-site-verification" content="SLxungm5o9WvGwPUEGZCspbMBAsLBjOxAHNyjIBUuSI" />
-
-<title>
-    
-    Unresolved
-    
-</title>
-
-
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-<link rel="stylesheet" href="http://yet.unresolved.xyz//css/base.css">
-<link rel="stylesheet" href="http://yet.unresolved.xyz//css/styles.css">
-<link rel="stylesheet" href="http://yet.unresolved.xyz//css/custom.css">
-
-
-<link rel="shortcut icon" href="http://yet.unresolved.xyz//assets/favicon.ico">
-
-
-<link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz//index.xml">
-</head>
-
-
-
-<div class="wrap">
-    <div class="masthead">
-        <div class="container">
-            <h3 class="masthead-title">
-                <a href="http://yet.unresolved.xyz/" title="Home">Unresolved</a>
-            </h3>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        </div>
-    </div>
-
-    <div class="container content">
-
-
-
-
-<div class="posts">
-    
-    
-    <article class="post">
-    <div class="eyecatch">
-        
-        <a href="http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/"><img src="http://yet.unresolved.xyz//images/clojure.png" alt="例によってpaiza online hackathon5をClojureで解いてみた"></a>
-        
-    </div>
-    <div class="data">
-        <span class="post-date">Wed, May 6, 2015</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/">例によってpaiza online hackathon5をClojureで解いてみた</a></h1>
-        <div class="summary">まずい更新することがない。 とりあえずPOHネタでこの場をしのごう。 マンガ版「俺の許嫁と幼なじみが修羅場すぎる」｜paizaオンラインハッカソン5 今回はパフォーマンスとかの問題はなく、ただただロジックが面倒くさいものばっかでした。 Problem 1 (def in (line-seq (java.io.BufferedReader. *in*))) (def p1 (-&gt;&gt; in first (take-nth 2) clojure.string/join)) (println p1) そもそもこれシーケンスで取らなければfirstとかつけなくてよかったんじゃないかなあ。 そんな方法あるかわかんないけど。 Problem 2 (def in (map #(Integer/parseInt %) (line-seq (java.io.BufferedReader. *in*)))) (defn take-padding [coll pad] (-&gt;&gt; coll (partition-all pad) (map first))) (def p2 (let [l (rest in)] (map #(apply + %) (for [i (range 7)] (take-padding (drop i l) 7))))) (print (clojure.string/join &quot;\n&quot; p2)) 結構強引にシーケンス操作を書いたけど、もっと楽にやれる関数が用意されてる気する。 Problem 3 RENA (def in (for [e (map #(.split % &quot; &quot;) (line-seq (java.io.BufferedReader.</div>
-    </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     
     
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://yet.unresolved.xyz/">
+    <meta property="og:title" content="Unresolved">
     
-    <article class="post">
-    <div class="eyecatch">
-        
-        <a href="http://yet.unresolved.xyz/blog/2015/04/04/anguish-in-the-css-and-html/"><img src="http://yet.unresolved.xyz//images/front.png" alt="CSS / HTMLで味わった苦悩の数々"></a>
-        
-    </div>
-    <div class="data">
-        <span class="post-date">Sat, Apr 4, 2015</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/04/04/anguish-in-the-css-and-html/">CSS / HTMLで味わった苦悩の数々</a></h1>
-        <div class="summary">CSSってアンチパターンとかベストプラクティスみたいなのをあんまり聞かないよね。 デザイナじゃないオレがフロントエンドに触れて苦しんだこととかノウハウとかをまとめてみようと思う。 セクションを意識する HTML5からsectionタグが出てきたね。 これはそのタグの話ではなくて、画面レイアウトを考えた上での大枠について。 オレがやって失敗だったなと思ったのはページの一部からHTMLを書き始めるやり方。 これをやってしまうとページの一部分から完成していくから、全体で統制が取れなくなることが多かった。 具体的に言うと、だいたいのページはこんな感じのセクション分けになるはず。 &lt;!doctype HTML&gt; &lt;html&gt; &lt;head&gt; metaタグ。 CSSフレームワークの読み込み。 オーバライド用のCSSファイルの読み込み。 などなど。 &lt;/head&gt; &lt;body&gt; &lt;header&gt; ヘッダ。ロゴや一部のメニューを置く。 &lt;/header&gt; &lt;div&gt; グローバルメニュー。サイトによってはheaderで事足りる場合も。 &lt;/div&gt; &lt;div&gt; メインコンテンツ。この中でカラム分けをしたり、さらに細分化されたセクション分けをしたりする。 &lt;/div&gt; &lt;footer&gt; コピーライトを書いたりする。 最近はサイトマップをここに置いたりすることが多いみたい。 &lt;/footer&gt; JavaScriptの読み込み &lt;/body&gt; &lt;/html&gt; 個人的に好きに書いていい場面ではhtmlタグ、head、bodyタグは省略するんだけど、今回はその話は置いておきます。 &lt;html&gt;,&lt;body&gt;は要らない？Googleが推奨するHTMLファイルの記法 - Qiita こういう風に、自分が作りたいサイトの全体像から、各セクションの根底に来るであろうタグを最初に配置しておく。 こうしなかったせいで、あとで要素を追加したときにDOMの全体像が不自然な形になってしまうことがあった。 あと、無駄に要素を重ねたりするとHTMLの構造を理解するのが辛くなる。 IDとクラスを使い分ける CSSは本当にパフォーマンスコストがかかりづらいのだろうか？ もしそうだとしても、意識しない理由はどこにもないと思う。 GitHub&rsquo;s CSS Performance // Speaker Deck 正直な話をすれば、スタイルをあてたいならもうクラスを見境なしにつけてしまっても多分問題なくやっていける。 なのにID、クラスどっちにするかとかそういう不要な検討事項を増やすのはいやだよね。 でもサイトの規模によってはパフォーマンスは死活問題だし、何よりIDとクラスの違いで読みやすさが変わると思う。 さっきの例を使うと、オレはだいたいこういうIDを先に付けておく。 &lt;body&gt; &lt;header id=&quot;header&quot;&gt; ヘッダ。ロゴや一部のメニューを置く。 &lt;/header&gt; &lt;div id=&quot;menu&quot;&gt; グローバルメニュー。サイトによってはheaderで事足りる場合も。 &lt;/div&gt; &lt;div id=&quot;body&quot;&gt; メインコンテンツ。この中でカラム分けをしたり、さらに細分化されたセクション分けをしたりする。 &lt;/div&gt; &lt;footer id=&quot;footer&quot;&gt; コピーライトを書いたりする。</div>
-    </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2015/04/04/anguish-in-the-css-and-html/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
+    <meta property="og:description" content="まずい更新することがない。 とりあえずPOHネタでこの場をしのごう。 マンガ版「俺の許嫁と幼なじみが修羅場すぎる」｜paizaオンラインハッカソン5 今回はパフォーマンスとかの問題はなく、ただただロジックが面倒くさいものばっかでした。 Problem 1 (def in (line-seq (java.io.BufferedReader. *in*))) (def p1 (-&gt;&gt; in first (take-nth 2) clojure.string/join)) (println p1) そもそもこれシーケンスで取らなければfirstとかつけなくてよかったんじゃないかなあ。 そんな方法あるかわかんないけど。 Problem 2 (def in (map #(Integer/parseInt %) (line-seq (java.io.BufferedReader. *in*)))) (defn take-padding [coll pad] (-&gt;&gt; coll (partition-all pad) (map first))) (def p2 (let [l (rest in)] (map #(apply &#43; %) (for [i (range 7)] (take-padding (drop i l) 7))))) (print (clojure.string/join &quot;\n&quot; p2)) 結構強引にシーケンス操作を書いたけど、もっと楽にやれる関数が用意されてる気する。 Problem 3 RENA (def in (for [e (map #(.split % &quot; &quot;) (line-seq (java.io.BufferedReader.">
+    
+    <meta property="og:image" content="http://yet.unresolved.xyz//images/functional_programming.png">
+    
+    
+    
+    <meta property="og:site_name" content="Unresolved">
+
+    <title>
+      
+      Unresolved
+      
+    </title>
 
     
-    
-    
-    <article class="post">
-    <div class="eyecatch">
-        
-        <a href="http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/"><img src="http://yet.unresolved.xyz//images/linux.png" alt="tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する"></a>
-        
-    </div>
-    <div class="data">
-        <span class="post-date">Wed, Apr 1, 2015</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/">tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する</a></h1>
-        <div class="summary">こんな感じ。 # v でペインを縦に分割する bind v split-window -h -c &quot;#{pane_current_path}&quot; # s でペインを横に分割する bind s split-window -v -c &quot;#{pane_current_path}&quot; # 新規ウィンドウでディレクトリを保持 bind c new-window -c &quot;#{pane_current_path}&quot; 参考にさせていただきました tmux 1.9 でペイン分割時にカレントディレクトリを維持 - Studio3104::BLOG.new</div>
-    </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
+    <link rel="shortcut icon" href="http://yet.unresolved.xyz//assets/favicon.ico">
 
     
-    
-    
-    <article class="post">
-    <div class="eyecatch">
-        
-        <a href="http://yet.unresolved.xyz/blog/2015/03/30/status-line-of-tmux-powerline-overlap/"><img src="http://yet.unresolved.xyz//images/linux.png" alt="tmux-powerlineのステータスラインが描画ごとに増える"></a>
-        
-    </div>
-    <div class="data">
-        <span class="post-date">Mon, Mar 30, 2015</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/03/30/status-line-of-tmux-powerline-overlap/">tmux-powerlineのステータスラインが描画ごとに増える</a></h1>
-        <div class="summary">iTerm2での話。 こいつのせい。 でもこれがないと、素の時に使うVimでitchyny/lightline.vimがズレるんだよなあ。 これはなに？Vimとtmuxで統一出来るの？ tmux - Powerline導入例 - Qiita</div>
-    </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2015/03/30/status-line-of-tmux-powerline-overlap/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz//index.xml">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Marcellus+SC' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
 
     
-    
-    
-    <article class="post">
-    <div class="eyecatch">
-        
-        <a href="http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/"><img src="http://yet.unresolved.xyz//images/vim.png" alt="VimのClojureプラグイン覚書"></a>
-        
-    </div>
-    <div class="data">
-        <span class="post-date">Sun, Mar 22, 2015</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/">VimのClojureプラグイン覚書</a></h1>
-        <div class="summary">VimでClojure書くときのあれこれをいっつも忘れるのでまとめておこうと思う。 新しいことを覚えたら随時追記していこうかな。 使ってるプラグイン tpope/vim-classpath クラスパスの設定をやってくれる。 何も考えず入れればよい。 guns/vim-slamhound requireの整理をやってくれる。 不要な奴は消してくれるし、ない奴はclasspathから読み込んで追加してくれる。 kien/rainbow_parentheses.vim 括弧をrainbowな感じにしてくれる。 tpope/vim-fireplace My Clojure Toolchain: Vimでもキラープラグインと書かれているfireplace。 VimをREPLと接続してあんなことやこんなことが出来る。 こいつの機能、よく使う割によく忘れるんだよなあ。 もはやこの記事はこの覚書のために書いたようなもの。 K : カーソル位置にある関数のドキュメントを表示する。 [d : カーソル位置にある関数のソースを表示する。 [&lt;C-D&gt; : カーソル位置にある関数のソースにジャンプする。 &lt;C-W&gt;f : カーソル位置にある関数のソースを横分割して開く。 &lt;C-W&gt;gf : カーソル位置にある関数のソースをタブ分割して開く。 &lt;C-^&gt; : ジャンプする前のファイルに戻る。 cpp : カーソル行をREPLで実行する。 cqq : カーソル行をVim内のREPLで編集モードで開く。 :RunTest : テストを実行する。 :Require : 読み込んでる名前空間をリロードする。 venantius/vim-eastwood Clojure用のLint。 scrooloose/syntasticとjonase/eastwoodとtpope/vim-fireplaceが必要。 venantius/vim-cljfmt Clojure用のフォーマッター。 デフォルトで保存時のフォーマットがかかるようになってるので、入れるだけでOKのはず。 使ってないプラグイン guns/vim-clojure-static シンタックスハイライト、インデントのためのプラグイン。 あとclojure.coreの名前空間にある補完機能があるらしい。 なんかあってもなくてもあんまり変わらなかった（設定しきれなかった？）ので使うのをやめた。 vim-scripts/paredit.vim 括弧の位置をあれこれ出来るやつ、だと思う。 ちょっと脳みそがそんなにたくさんの事を一気に覚えるのは無理だったので、一旦使うのをやめた。</div>
-    </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
+  </head>
+  <body>
 
-    
-    
-    
-    <article class="post">
-    <div class="eyecatch">
-        
-        <a href="http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/"><img src="http://yet.unresolved.xyz//images/clojure.png" alt="[Clojure]ringのCSRFトークンを生成する"></a>
-        
-    </div>
-    <div class="data">
-        <span class="post-date">Sun, Mar 22, 2015</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/">[Clojure]ringのCSRFトークンを生成する</a></h1>
-        <div class="summary">ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、 デフォルトだとPOSTリクエストした時にCSRFトークンチェックが入るようになってると思う。 で、そのトークンの作成の仕方を毎回調べてるのでメモっときたい。 チェックの処理はsite-defaultsの、 (def app (wrap-defaults app-routes site-defaults)) :securityのところで設定出来る。 (def site-defaults &quot;A default configuration for a browser-accessible website, based on current best practice.&quot; {:params {:urlencoded true :multipart true :nested true :keywordize true} :cookies true :session {:flash true :cookie-attrs {:http-only true}} :security {:anti-forgery true :xss-protection {:enable? true, :mode :block} :frame-options :sameorigin :content-type-options :nosniff} :static {:resources &quot;public&quot;} :responses {:not-modified-responses true :absolute-redirects true :content-types true}}) これをfalseにしちゃえばもちろんCSRFのチェックはされなくなるんだけど、まあ普通はするべきだよね。 トークンの生成の仕方はこう。 (ns sample.handler (:require [ring.util.anti-forgery :refer :all])) (anti-forgery-field) ring.util.anti-forgeryの中身はこんな感じ。 (ns ring.util.anti-forgery &quot;Utility functions for inserting anti-forgery tokens into HTML forms.&quot; (:use [hiccup core form] ring.middleware.anti-forgery)) (defn anti-forgery-field &quot;Create a hidden field with the session anti-forgery token as its value.</div>
-    </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
+    <header id="site-header">
+      <div class="container">
+        <h1 class="text-center">
+          <a href="http://yet.unresolved.xyz/" class="font-logo">Unresolved</a>
+        </h1>
+      </div>
+    </header>
 
-    
-    
-    
-    <article class="post">
-    <div class="eyecatch">
-        
-        <a href="http://yet.unresolved.xyz/blog/2015/03/16/create-mysql-environment-using-the-ansible/"><img src="http://yet.unresolved.xyz//images/ansible.png" alt="Ansibleを使ってMySQLが動く環境を手っ取り早く作る"></a>
-        
-    </div>
-    <div class="data">
-        <span class="post-date">Mon, Mar 16, 2015</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/03/16/create-mysql-environment-using-the-ansible/">Ansibleを使ってMySQLが動く環境を手っ取り早く作る</a></h1>
-        <div class="summary">ちょっと友人と共同で開発しているWebアプリがあって、DBの用意も手軽に共有したいのでAnsibleでやることに。 まあオレはViewしか触ってないから別になくてもいいんだけど・・・。 hostsを書く Ansibleが取り扱うマシンの定義をしておかなきゃいけない。 Vagrantfileで作られる仮想マシンのipを固定して、 config.vm.network &quot;private_network&quot;, ip: &quot;192.168.33.20&quot; Ansibleに読み込ませるhostsに定義しよう。 [vagrant] 192.168.33.20 Ansibleのsshがrefuseで止められる場合は、vagrant ssh-config &gt;&gt; ~/.ssh/configとかしておけば多分大丈夫。 Vagrantfileでプロビジョニング出来るようにする せっかくだしvagrant upかvagrant provisionでプロビジョニングしてほしい。 Vagrantfileにこんな感じの記述をすれば、初回実施時にAnsibleのPlaybookを実行してくれるらしい。 Ansibleはなんかコマンド覚えらんないしちょうどいいね。 config.vm.provision &quot;ansible&quot; do |ansible| ansible.playbook = &quot;env/dev-playbook.yml&quot; ansible.inventory_path = &quot;env/hosts&quot; ansible.limit = 'all' end 今回はVagrantfileがあるディレクトリにenvってディレクトリを作って、そこに設定ファイルを置くことにした。 Playbookとかもここに入れていくよ。 Ansible Galaxyを使う AnsibleはPlaybookと呼ばれるymlファイルにプロビジョニングの定義をしていく。 でも正直、個人的に使う環境のためにガリガリ書くのはバカらしいよね。 特にMySQLなんて相当な数の人が使ってるだろうし、そのノウハウを使わせてもらいたい。 AnsibleにはAnsible GalaxyっていうWebサービスがあって、モジュール単位のよく使う定義をアップできるみたい。 Ansible Galaxy | Find, reuse, and share the best Ansible content AnsibleではMySQLやらhttpdやらの個々のモジュールをroleと呼んでるらしい。 つまり、Browse RolesからMySQLのroleを探せばよい。 検索結果、デフォルトで評価の降順にしておいて欲しいんだけど・・・。 今回はANXS.mysqlという奴を使わせてもらうことにしました。 理由は、評価がそれなりに高くて、MySQLの設定が見たまんまでやれそうだったから。 Ansible Galaxyからroleをインストールする Ansible Galaxyからの導入はansible-galaxy install ANXS.mysqlみたいにやれば出来る。 でもこれじゃあ、このPCにだけroleが導入されちゃうし、どんなroleが必要だったのか後々わからなくなっちゃうね。 だから他の人が環境を作るときに困っちゃう。</div>
-    </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2015/03/16/create-mysql-environment-using-the-ansible/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
-
-    
-    
-    
-    <article class="post">
-    <div class="eyecatch">
-        
-        <a href="http://yet.unresolved.xyz/blog/2015/03/16/provided-hosts-list-is-empty/"><img src="http://yet.unresolved.xyz//images/ansible.png" alt="Vagrant &#43; Ansibleでprovided hosts list is empty"></a>
-        
-    </div>
-    <div class="data">
-        <span class="post-date">Mon, Mar 16, 2015</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/03/16/provided-hosts-list-is-empty/">Vagrant &#43; Ansibleでprovided hosts list is empty</a></h1>
-        <div class="summary">AnsibleでVagrant上のCentOSにMySQLを入れようとしたらこれ。 PLAY [vagrant] **************************************************************** skipping: no hosts matched Vagrantfileにinventory_pathを指定しなきゃいけない。 config.vm.provision &quot;ansible&quot; do |ansible| ansible.playbook = &quot;env/dev-playbook.yml&quot; ansible.inventory_path = &quot;env/hosts&quot; end 次はこれ。 ERROR: provided hosts list is empty Ansible failed to complete successfully. Any error output should be visible above. Please fix these errors and try again. limitの指定も必要。 config.vm.provision &quot;ansible&quot; do |ansible| ansible.playbook = &quot;env/dev-playbook.yml&quot; ansible.inventory_path = &quot;env/hosts&quot; ansible.limit = 'all' end 参考にさせて頂きました Vagrant 1.5からAnsibleを使うのならlimit = &lsquo;all&rsquo;が必要 - 今日のハック</div>
-    </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2015/03/16/provided-hosts-list-is-empty/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
-
-    
-    
-    
-    <article class="post">
-    <div class="eyecatch">
-        
-        <a href="http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/"><img src="http://yet.unresolved.xyz//images/clojure.png" alt="Slamhoundを使ってClojureのrequireを自動生成する"></a>
-        
-    </div>
-    <div class="data">
-        <span class="post-date">Sat, Feb 28, 2015</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/">Slamhoundを使ってClojureのrequireを自動生成する</a></h1>
-        <div class="summary">ちょっとVimとClojureの環境を整備したくて、こんなのを読んでました。 My Clojure Toolchain: Vim そもそも~/.lein/profiles.cljの存在を知らなくって、ちょっと色々書いてみることに。 leiningen/PROFILES.md at master · technomancy/leiningen サンプルはこんな感じ。 {:user {:plugins [[lein-pprint &quot;1.1.1&quot;]] :dependencies [[slamhound &quot;1.3.1&quot;]]}} lein-pprintは対象のLeiningenプロジェクトの情報を表示してくれるインスペクタみたいなもの。 いつ使うのだろうか。 slamhoundはClojureのrequireを自動生成してくれるもの。 今回はこれを導入してみる。 Slamhound + Vim Clojureのnsが書きづらいとは思わないけど、まあ面倒なのは確かなわけで自動生成してくれるならそれの方がいい。 SlamhoundはLeiningenから呼び出すことが出来て、こんな感じのclojureプログラムがあったとしたら、 (ns my.namespace &quot;I have a doc string.&quot;) (defn -main [&amp; args] (pprint args) (io/copy (ByteArrayInputStream. (.getBytes &quot;hello&quot;)) (first args))) こうやると $ lein slamhound src/my/namespace.clj nsのとこがこうなる。 (ns my.namespace &quot;I have a doc string.&quot; (:require [clojure.java.io :as io] [clojure.pprint :refer [pprint]]) (:import (java.io ByteArrayInputStream)))</div>
-    </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
-
-    
-    
-    
-    <article class="post">
-    <div class="eyecatch">
-        
-        <a href="http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/"><img src="http://yet.unresolved.xyz//images/apigility.png" alt="Apigility &#43; React.jsでタスク管理ツールを作ってみる"></a>
-        
-    </div>
-    <div class="data">
-        <span class="post-date">Sat, Feb 14, 2015</span>
-        <h1 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/">Apigility &#43; React.jsでタスク管理ツールを作ってみる</a></h1>
-        <div class="summary">これに行ってきました。 Zend 社技術者による最近の PHP 関連の取り組みご紹介 - Zendイベント管理 | Doorkeeper 英語辛かった。 PHP7やらZ Rayやらまあ気になるものはそれなりにあったんだけど、 その中でも触ってみようかなと思えるくらい興味を持てたApigilityを触ってみようと思います。 ついでなので使ってみたかったReact.jsも導入してみる。 Apigility？ API構築に特化したフレームワークらしい。 プレゼンテーションレイヤを完全に分離したアーキテクチャでの利用を想定しているんだと思う。 何が強いかって、DBさえ用意してしまえば後はGUIから操作するだけでAPIが作れてしまう。 DBも多分メジャーどころは大抵使える(と思う)し、APIもRPCはもちろん、RESTfulな設計にもバッチリ対応してるらしい。 今回は勉強も兼ねて、簡単なタスク管理ツールを作ってみます。 インストール このコマンドをべしっとやるだけで、カレントディレクトリにapigilityのディレクトリが切られる &amp; サーバまで起動する。 curl -sS https://apigility.org/install | php サーバを再度起動する場合はphp -S localhost:8888 -t public public/index.phpとかやればOK。 画面を開くとこんな感じのが出てくる。 ロゴがかわいいね。 ここからAPIの追加やデータベース接続の設定やらが出来ます。 データベースの準備 適当なものなので、SQLiteでやっちゃう。 テーブルはこんな感じで、名前と完了/未完了が持てるだけにしよう。 create table tasks(id integer primary key, name varchar(20), finished integer); Apigilityからデータベースにつなぐ SettingsのDatabase Adaptersから定義を追加出来る。 今回はこんな感じで設定。 APIを追加する APIsのCreate New APIからAPIを追加する。 今回はTasksという名前で作成した。 粒度がわかりづらいけど、ここで作ったAPIに対して個々のサービスを追加していく。 大分類みたいなものだと捉えればいいのかな？ サービスを追加する さっき作ったTasksAPIに、データベースのtasksテーブルとRESTで紐づくサービスを追加する。 サービスはRESTとRPCから選ぶことが出来て、 RPCを選ぶと自動生成されたPHPのコードに自分で処理を書いていく感じになるみたい。 んで指定したURLを叩くとその処理が呼ばれる、って感じ。 今回は単純にテーブルとURLをRESTfulに対応付けられればいいのでRESTにしてます。 というわけで、REST Service Nameをtasks、DB-Connectedはさっき作ったアダプタとテーブル名を設定。 こんな感じになる。 接続できるか試してみよう。 データがないので、まずはPOSTで格納してみる。 いけてるっぽい。 取得は？ おお！取れる！ もちろんSQLite側にも、 sqlite&gt; select * from tasks; 1|task1|false 入ってます。 ビューを作る サーバサイドがあまりにもサクッと終わっちゃったな・・・。 後は画面側を生のHTMLにして、取得と格納は全部JSに任せます。 つってもここはあんまり説明してもしょうがないのでSSとコードだけ。 そうですめんどくさくなりました。 表示はこんな感じで、 こんなHTMLでやりました。 &lt;!DOCTYPE HTML&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css&quot;&gt; &lt;style&gt; #tasks-wrapper { margin: 20px auto; max-width: 500px; } #tasks { } .buttons { margin-right: 5px; } .buttons&gt;button { margin-right: 5px; } &lt;/style&gt; &lt;div id=&quot;tasks-wrapper&quot;&gt; &lt;div class=&quot;input-group&quot;&gt; &lt;input type=&quot;text&quot; id=&quot;task-name&quot; class=&quot;form-control&quot; placeholder=&quot;Task name&quot;&gt; &lt;span class=&quot;input-group-btn&quot;&gt; &lt;button id=&quot;task-post&quot; class=&quot;btn btn-success&quot; type=&quot;button&quot;&gt;登録&lt;/button&gt; &lt;/span&gt; &lt;/div&gt; &lt;hr&gt; &lt;div id=&quot;tasks&quot;&gt; &lt;/div&gt; &lt;/div&gt; &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.min.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/react/0.12.2/JSXTransformer.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;//code.jquery.com/jquery-2.1.3.min.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;/app.js&quot; type=&quot;text/jsx&quot;&gt;&lt;/script&gt; JSはこんな。 var Task = React.createClass({ del: function(e) { $.ajax({ type: &quot;DELETE&quot;, url: &quot;/tasks/&quot; + this.props.id, }); }, finish: function(e) { $.ajax({ type: &quot;PUT&quot;, url: &quot;/tasks/&quot; + this.props.id, data: JSON.stringify({finished: 1}), headers: { &quot;Content-Type&quot;: &quot;application/json&quot;, } }); }, render: function() { return (&lt;li className=&quot;list-group-item clearfix&quot;&gt; &lt;div className=&quot;buttons pull-left&quot;&gt; {this.props.finished == &quot;0&quot; ?</div>
-    </div>
-    <footer class="readon">
-        <a href="http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/">
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </footer>
-</article>
-<hr>
-
-    
-    
-    <div class="all-entries">
-        <a href="http://yet.unresolved.xyz//post">All Entries</a>
-    </div>
-</div>
-
-
-    </div>
-</div>
-
-<div class="container footer-ad">
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-4218045898905176"
-         data-ad-slot="4750057642"
-         data-ad-format="auto"></ins>
-    <script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-</div>
-
-
-<aside class="sidebar-wrapper">
+    <main id="site-body">
     <div class="container">
+
+
+
+<div class="row">
+  <div class="col-md-9">
+    <div id="posts">
+      <div class="row">
         
-        <div class="tags tag-cloud">
-            <h2>Tags</h2>
-            <ul class="post-tags">
-                
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/ansible">
-                        ansible
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/apigility">
-                        apigility
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/auriga">
-                        auriga
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/aws">
-                        aws
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/beanstalk">
-                        beanstalk
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/book">
-                        book
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/boot2docker">
-                        boot2docker
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/centos">
-                        centos
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/clang">
-                        clang
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/clojure">
-                        clojure
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/css">
-                        css
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/database">
-                        database
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/design">
-                        design
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/dns">
-                        dns
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/docker">
-                        docker
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/enlive">
-                        enlive
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/frontend">
-                        frontend
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/git">
-                        git
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/github">
-                        github
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/golang">
-                        golang
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/google-app-engine">
-                        google-app-engine
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/gravatar">
-                        gravatar
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/hackathon">
-                        hackathon
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/heroku">
-                        heroku
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/hiccup">
-                        hiccup
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/html">
-                        html
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/hugo">
-                        hugo
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/iterm">
-                        iterm
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/javascript">
-                        javascript
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/jekyll">
-                        jekyll
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/laravel">
-                        laravel
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/leiningen">
-                        leiningen
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/linux">
-                        linux
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/lobos">
-                        lobos
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/mac">
-                        mac
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/migration">
-                        migration
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/node.js">
-                        node.js
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/octopress">
-                        octopress
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/os-x">
-                        os-x
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/paiza">
-                        paiza
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/paizaio">
-                        paizaio
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/php">
-                        php
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/postgresql">
-                        postgresql
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/powerline">
-                        powerline
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/python">
-                        python
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/reactjs">
-                        reactjs
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/ring">
-                        ring
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/ruby">
-                        ruby
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/sass">
-                        sass
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/scss">
-                        scss
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/security">
-                        security
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/slack">
-                        slack
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/sql-server">
-                        sql-server
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/sqlite">
-                        sqlite
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/startup">
-                        startup
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/startup-weekend">
-                        startup-weekend
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/tmux">
-                        tmux
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/ubuntu">
-                        ubuntu
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/util">
-                        util
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/vagrant">
-                        vagrant
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/vim">
-                        vim
-                    </a>
-                </li>
-                
-            </ul>
+        
+        
+        <div class="col-sm-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/" class="post post-topix">
+              <header class="eyecatch text-center">
+                <img src="/images/functional_programming.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Wed, May 6, 2015</span>
+              </div>
+              <h2 class="title">例によってpaiza online hackathon5をClojureで解いてみた</h2>
+              <div class="summary">
+                まずい更新することがない。 とりあえずPOHネタでこの場をしのごう。 マンガ版「俺の許嫁と幼なじみが修羅場すぎる」｜paizaオンラインハッカソン5 今回はパフォーマンスとかの問題はなく、ただただロジックが面倒くさいものばっかでした。 Problem 1 (def in (line-seq (java.io.BufferedReader. *in*))) (def p1 (-&gt;&gt; in first (take-nth 2) clojure.string/join)) (println p1) そもそもこれシーケンスで取らなければfirstとかつけなくてよかったんじゃないかなあ。 そんな方法あるかわかんないけど。 Problem 2 (def in (map #(Integer/parseInt %) (line-seq (java.io.BufferedReader. *in*)))) (defn take-padding [coll pad] (-&gt;&gt; coll (partition-all pad) (map first))) (def p2 (let [l (rest in)] (map #(apply + %) (for [i (range 7)] (take-padding (drop i l) 7))))) (print (clojure.string/join &quot;\n&quot; p2)) 結構強引にシーケンス操作を書いたけど、もっと楽にやれる関数が用意されてる気する。 Problem 3 RENA (def in (for [e (map #(.split % &quot; &quot;) (line-seq (java.io.BufferedReader.
+              </div>
+            </a>
+          </article>
         </div>
         
         
-        <div id="profile">
-            <div class="eyecatch">
-                <img id="photo" src="/images/nopicture.png" alt="profile">
-            </div>
-            <div class="data">
-                
-                <span class="post-date">Sun, Feb 26, 1989</span>
-                
-                <h1 id="username" class="post-title"></h1>
-                
-                <a href="https://www.facebook.com/daisuke.tsuji.735" target="_blank"><i class="fa fa-facebook-square"></i></a>
-                
-                
-                <a href="https://twitter.com/dim0627" target="_blank"><i class="fa fa-twitter-square"></i></a>
-                
-                
-                <a href="https://github.com/dim0627" target="_blank"><i class="fa fa-github-square"></i></a>
-                
-                <pre id="description"></pre>
-                <ul id="urls" class="post-tags"></ul>
-            </div>
+        
+        
+        
+        <div class="col-sm-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/04/04/anguish-in-the-css-and-html/" class="post post-topix">
+              <header class="eyecatch text-center">
+                <img src="/images/front.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Sat, Apr 4, 2015</span>
+              </div>
+              <h2 class="title">CSS / HTMLで味わった苦悩の数々を振り返ってみる</h2>
+              <div class="summary">
+                CSSってアンチパターンとかベストプラクティスみたいなのをあんまり聞かないよね。 デザイナじゃないオレがフロントエンドに触れて苦しんだこととかノウハウとかをまとめてみようと思う。 セクションを意識する HTML5からsectionタグが出てきたね。 これはそのタグの話ではなくて、画面レイアウトを考えた上での大枠について。 オレがやって失敗だったなと思ったのはページの一部からHTMLを書き始めるやり方。 これをやってしまうとページの一部分から完成していくから、全体で統制が取れなくなることが多かった。 具体的に言うと、だいたいのページはこんな感じのセクション分けになるはず。 &lt;!doctype HTML&gt; &lt;html&gt; &lt;head&gt; metaタグ。 CSSフレームワークの読み込み。 オーバライド用のCSSファイルの読み込み。 などなど。 &lt;/head&gt; &lt;body&gt; &lt;header&gt; ヘッダ。ロゴや一部のメニューを置く。 &lt;/header&gt; &lt;div&gt; グローバルメニュー。サイトによってはheaderで事足りる場合も。 &lt;/div&gt; &lt;div&gt; メインコンテンツ。この中でカラム分けをしたり、さらに細分化されたセクション分けをしたりする。 &lt;/div&gt; &lt;footer&gt; コピーライトを書いたりする。 最近はサイトマップをここに置いたりすることが多いみたい。 &lt;/footer&gt; JavaScriptの読み込み &lt;/body&gt; &lt;/html&gt; 個人的に好きに書いていい場面ではhtmlタグ、head、bodyタグは省略するんだけど、今回はその話は置いておきます。 &lt;html&gt;,&lt;body&gt;は要らない？Googleが推奨するHTMLファイルの記法 - Qiita こういう風に、自分が作りたいサイトの全体像から、各セクションの根底に来るであろうタグを最初に配置しておく。 こうしなかったせいで、あとで要素を追加したときにDOMの全体像が不自然な形になってしまうことがあった。 あと、無駄に要素を重ねたりするとHTMLの構造を理解するのが辛くなる。 IDとクラスを使い分ける CSSは本当にパフォーマンスコストがかかりづらいのだろうか？ もしそうだとしても、意識しない理由はどこにもないと思う。 GitHub&rsquo;s CSS Performance // Speaker Deck 正直な話をすれば、スタイルをあてたいならもうクラスを見境なしにつけてしまっても多分問題なくやっていける。 なのにID、クラスどっちにするかとかそういう不要な検討事項を増やすのはいやだよね。 でもサイトの規模によってはパフォーマンスは死活問題だし、何よりIDとクラスの違いで読みやすさが変わると思う。 さっきの例を使うと、オレはだいたいこういうIDを先に付けておく。 &lt;body&gt; &lt;header id=&quot;header&quot;&gt; ヘッダ。ロゴや一部のメニューを置く。 &lt;/header&gt; &lt;div id=&quot;menu&quot;&gt; グローバルメニュー。サイトによってはheaderで事足りる場合も。 &lt;/div&gt; &lt;div id=&quot;body&quot;&gt; メインコンテンツ。この中でカラム分けをしたり、さらに細分化されたセクション分けをしたりする。 &lt;/div&gt; &lt;footer id=&quot;footer&quot;&gt; コピーライトを書いたりする。
+              </div>
+            </a>
+          </article>
         </div>
         
+        
+        
+        
+        
+        <div class="col-sm-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/" class="post post-topix">
+              <header class="eyecatch text-center">
+                <img src="/images/linux.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Wed, Apr 1, 2015</span>
+              </div>
+              <h2 class="title">tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する</h2>
+              <div class="summary">
+                こんな感じ。 # v でペインを縦に分割する bind v split-window -h -c &quot;#{pane_current_path}&quot; # s でペインを横に分割する bind s split-window -v -c &quot;#{pane_current_path}&quot; # 新規ウィンドウでディレクトリを保持 bind c new-window -c &quot;#{pane_current_path}&quot; 参考にさせていただきました tmux 1.9 でペイン分割時にカレントディレクトリを維持 - Studio3104::BLOG.new
+              </div>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-sm-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/03/30/status-line-of-tmux-powerline-overlap/" class="post post-topix">
+              <header class="eyecatch text-center">
+                <img src="/images/linux.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Mon, Mar 30, 2015</span>
+              </div>
+              <h2 class="title">tmux-powerlineのステータスラインが描画ごとに増える</h2>
+              <div class="summary">
+                iTerm2での話。 こいつのせい。 でもこれがないと、素の時に使うVimでitchyny/lightline.vimがズレるんだよなあ。 これはなに？Vimとtmuxで統一出来るの？ tmux - Powerline導入例 - Qiita
+              </div>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/vim.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Sun, Mar 22, 2015</span>
+              </div>
+              <h3 class="title">VimのClojureプラグイン覚書</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/clojure.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Sun, Mar 22, 2015</span>
+              </div>
+              <h3 class="title">[Clojure]ringのCSRFトークンを生成する</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/03/16/create-mysql-environment-using-the-ansible/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/ansible.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Mon, Mar 16, 2015</span>
+              </div>
+              <h3 class="title">Ansibleを使ってMySQLが動く環境を手っ取り早く作る</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/03/16/provided-hosts-list-is-empty/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/ansible.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Mon, Mar 16, 2015</span>
+              </div>
+              <h3 class="title">Vagrant &#43; Ansibleでprovided hosts list is empty</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/clojure.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Sat, Feb 28, 2015</span>
+              </div>
+              <h3 class="title">Slamhoundを使ってClojureのrequireを自動生成する</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/apigility.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Sat, Feb 14, 2015</span>
+              </div>
+              <h3 class="title">Apigility &#43; React.jsでタスク管理ツールを作ってみる</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/02/06/learning-vim-again/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/vim.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Fri, Feb 6, 2015</span>
+              </div>
+              <h3 class="title">今だからやるvimコマンド再学習</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/vim.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Thu, Feb 5, 2015</span>
+              </div>
+              <h3 class="title">PHPファイルの定数に触るとvimがフリーズする</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/01/26/ordinary-linux-programming/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/linux.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Mon, Jan 26, 2015</span>
+              </div>
+              <h3 class="title">「ふつうのLinuxプログラミング」を読んだ</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/01/25/using-display-zoom-in-mac/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/osx.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Sun, Jan 25, 2015</span>
+              </div>
+              <h3 class="title">Macで画面の一部をズームする</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/slack.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Sun, Jan 25, 2015</span>
+              </div>
+              <h3 class="title">SlackAPIで遊ぶ</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/paizaio.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Sun, Jan 25, 2015</span>
+              </div>
+              <h3 class="title">paiza.IOのAPIを使ってreplを作る</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/01/22/install-postgresql-on-centos/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/vagrant.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Thu, Jan 22, 2015</span>
+              </div>
+              <h3 class="title">Vagrant &#43; CentOS &#43; PostgreSQLを最速で構築</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/clojure.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Thu, Jan 15, 2015</span>
+              </div>
+              <h3 class="title">Clojureで新卒の女の子を射止めた話</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/clojure.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Wed, Jan 14, 2015</span>
+              </div>
+              <h3 class="title">Clojureのテンプレートエンジンについて</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/python.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Mon, Jan 12, 2015</span>
+              </div>
+              <h3 class="title">Python on GAEで3rdパーティライブラリを使う</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/hugo.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Wed, Jan 7, 2015</span>
+              </div>
+              <h3 class="title">Hugoでマルチバイトのタイトルをスマートに使う方法</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/hugo.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Sun, Jan 4, 2015</span>
+              </div>
+              <h3 class="title">ブログをOctopressからHugoに移行した</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/aws.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Wed, Dec 31, 2014</span>
+              </div>
+              <h3 class="title">ClojureのWebアプリをDocker &#43; Beanstalkで動かす</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/docker.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Tue, Dec 30, 2014</span>
+              </div>
+              <h3 class="title">boot2dockerでCannot connect to the Docker daemon</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/clojure.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Sun, Dec 21, 2014</span>
+              </div>
+              <h3 class="title">Lobosでマイグレーションができない in Heroku</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/clojure.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Thu, Dec 11, 2014</span>
+              </div>
+              <h3 class="title">Lobosを使ってマイグレーションをする</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/clojure.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Tue, Dec 9, 2014</span>
+              </div>
+              <h3 class="title">LeiningenでSCSSを自動コンパイルする</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2014/12/02/went-to-startup-weekend-yokohama-2nd/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/nopicture.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Tue, Dec 2, 2014</span>
+              </div>
+              <h3 class="title">HackerにとってのStartup Weekend</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/octopress.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Wed, Nov 12, 2014</span>
+              </div>
+              <h3 class="title">OctopressをW3Cのバリデーションにパスさせる</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2014/11/09/learn-docker/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/docker.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Sun, Nov 9, 2014</span>
+              </div>
+              <h3 class="title">Docker事始め</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/github.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Fri, Oct 24, 2014</span>
+              </div>
+              <h3 class="title">GitHub Pagesでカスタムドメインを使う</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/gae.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Thu, Oct 23, 2014</span>
+              </div>
+              <h3 class="title">Google app engineでカスタムドメインを使う</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/nopicture.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Thu, Oct 23, 2014</span>
+              </div>
+              <h3 class="title">クラスタ化インデックスとかカバリングインデックスについてどうせ忘れるからまとめる</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/octopress.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Wed, Oct 22, 2014</span>
+              </div>
+              <h3 class="title">Octopressのサイドバーを下部に移動する</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/ubuntu.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Sun, Oct 19, 2014</span>
+              </div>
+              <h3 class="title">UbuntuにAurigaを構築してみる</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/git.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Sun, Sep 28, 2014</span>
+              </div>
+              <h3 class="title">gitで管理したくないファイルをインデックスから除外する</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/git.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Sat, Sep 27, 2014</span>
+              </div>
+              <h3 class="title">gitでforce pushが出来ない</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/octopress.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Sun, Sep 21, 2014</span>
+              </div>
+              <h3 class="title">_config.ymlに書いたdescriptionが設定されない</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/octopress.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Sun, Sep 21, 2014</span>
+              </div>
+              <h3 class="title">Octopressのテーマを作ってみる</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/git.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Sat, Sep 20, 2014</span>
+              </div>
+              <h3 class="title">gitのリポジトリ単位にproxyの設定をする</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/octopress.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Sat, Sep 20, 2014</span>
+              </div>
+              <h3 class="title">OctopressのサイドバーにGravatarを表示させる</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/octopress.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Wed, Sep 17, 2014</span>
+              </div>
+              <h3 class="title">GitHub PagesにOctopressをのっけてみる</h3>
+            </a>
+          </article>
+        </div>
+        
+        
+        
+      </div>
     </div>
-</aside>
+  </div>
+  <div class="col-md-3">
+    <aside id="site-sidebar">
+      <div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+  <section class="sidebar-bordered">
+    <h3>Profile</h3>
+    
+    <div id="profile">
+      <div class="text-center">
+        <img id="profile-photo" src="/images/nopicture.png" alt="profile">
+      </div>
+      <div class="data">
+        
+        <span id="profile-birth">Sun, Feb 26, 1989</span>
+        
+        <h4 id="profile-username" class="post-title"></h4>
+        <div id="social-links">
+          
+          <a href="https://www.facebook.com/daisuke.tsuji.735" target="_blank"><i class="fa fa-facebook-square"></i></a>
+          
+          
+          <a href="https://twitter.com/dim0627" target="_blank"><i class="fa fa-twitter-square"></i></a>
+          
+          
+          <a href="https://github.com/dim0627" target="_blank"><i class="fa fa-github-square"></i></a>
+          
+        </div>
+        <div id="profile-description"></div>
+        <ul id="profile-urls" class="post-tags"></ul>
+      </div>
+    </div>
+    
+  </section>
+</div>
 
+<div class="col-md-12 col-sm-6 col-xs-12">
+  <section>
+    <h3>Tags</h3>
+    
+    <div id="tag-cloud" class="text-center">
+      
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/ansible">ansible</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/apigility">apigility</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/auriga">auriga</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/aws">aws</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/beanstalk">beanstalk</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/book">book</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/boot2docker">boot2docker</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/centos">centos</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/clang">clang</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/clojure">clojure</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/css">css</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/database">database</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/design">design</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/dns">dns</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/docker">docker</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/enlive">enlive</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/frontend">frontend</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/git">git</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/github">github</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/golang">golang</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/google-app-engine">google-app-engine</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/gravatar">gravatar</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/hackathon">hackathon</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/heroku">heroku</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/hiccup">hiccup</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/html">html</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/hugo">hugo</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/iterm">iterm</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/javascript">javascript</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/jekyll">jekyll</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/leiningen">leiningen</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/linux">linux</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/lobos">lobos</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/mac">mac</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/migration">migration</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/octopress">octopress</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/os-x">os-x</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/paiza">paiza</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/paizaio">paizaio</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/php">php</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/postgresql">postgresql</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/powerline">powerline</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/python">python</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/reactjs">reactjs</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/ring">ring</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/ruby">ruby</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/sass">sass</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/scss">scss</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/security">security</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/slack">slack</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/sql-server">sql-server</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/sqlite">sqlite</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/startup">startup</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/startup-weekend">startup-weekend</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/tmux">tmux</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/ubuntu">ubuntu</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/util">util</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/vagrant">vagrant</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/vim">vim</a>
+      
+    </div>
+    
+  </section>
+</div>
 
+      </div>
+    </aside>
+  </div>
+</div>
 
-<footer class="copy">
-    <p>&copy; 2015  Daisuke Tsuji </p>
-    <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>, Theme <a href="https://github.com/dim0627/hugo_theme_aglaus" target="_blank">Aglaus</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
-</footer>
+      </div>
+    </main>
 
-<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-<script src="http://yet.unresolved.xyz//js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+    <footer id="site-footer" class="text-center font-logo">
+      <p>&copy; 2015  Daisuke Tsuji </p>
 
+      <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>, Theme <a href="https://github.com/dim0627/hugo_theme_robust" target="_blank">Robust</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+    </footer>
 
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script src="http://yet.unresolved.xyz//js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-55005303-1', 'auto');
-ga('send', 'pageview');
+    ga('create', 'UA-55005303-1', 'auto');
+    ga('send', 'pageview');
 
-</script>
+    </script>
 
-
-<script>
-$(function() {
-    var url = "https://ja.gravatar.com/1e092e9f2cda827deb8623be2e846936.json?callback=?";
-    $.getJSON(url)
+    <script>
+    $(function() {
+      var url = "https://ja.gravatar.com/1e092e9f2cda827deb8623be2e846936.json?callback=?";
+      $.getJSON(url)
         .done(function(data) {
-            var entry = data.entry[0];
-            $("#photo").attr("src", entry.photos[0].value);
-            $("#username").html(entry.name.familyName + " " + entry.name.givenName);
-            $("#description").html(entry.aboutMe);
-            entry.urls.forEach(function(el){
-                $("#urls").append($("<li><a href='" + el.value + "'>" + el.title + "</a></li>"));
-            });
-            $("#profile").show();
+          var entry = data.entry[0];
+          $("#profile-photo").attr("src", entry.photos[0].value);
+          $("#profile-username").html(entry.name.familyName + " " + entry.name.givenName);
+          $("#profile-description").html(entry.aboutMe);
+          entry.urls.forEach(function(el){
+            $("#profile-urls").append($("<li><a href='" + el.value + "'>" + el.title + "</a></li>"));
+          });
+          $("#profile").show();
         });
-});
-</script>
+    });
+    </script>
+  </body>
+</html>
 
