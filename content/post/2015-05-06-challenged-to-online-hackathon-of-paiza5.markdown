@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2015-05-06T09:54:46+09:00
-eyecatch: "clojure.png"
+eyecatch: "functional_programming.png"
 slug: "challenged-to-online-hackathon-of-paiza5"
 tags: ["clojure", "paiza", "hackathon"]
 title: "例によってpaiza online hackathon5をClojureで解いてみた"

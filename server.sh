@@ -1,3 +1,3 @@
 #!/bin/bash
 
-hugo server --watch -t aglaus
+hugo server --watch -t $1

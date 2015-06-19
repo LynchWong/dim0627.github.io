@@ -1,160 +1,70 @@
 <!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-<meta charset="utf-8">
-
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-
-
-<meta property="og:type" content="article">
-<meta property="og:title" content="Apigility &#43; React.jsでタスク管理ツールを作ってみる | Unresolved">
-<meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/">
-<meta property="og:description" content="これに行ってきました。 Zend 社技術者による最近の PHP 関連の取り組みご紹介 - Zendイベント管理 | Doorkeeper 英語辛かった。 PHP7やらZ Rayやらまあ気になるものはそれなりにあったんだけど、 その中でも触ってみようかなと思えるくらい興味を持てたApigilityを触ってみようと思います。 ついでなので使ってみたかったReact.jsも導入してみる。 Apigility？ API構築に特化したフレームワークらしい。 プレゼンテーションレイヤを完全に分離したアーキテクチャでの利用を想定しているんだと思う。 何が強いかって、DBさえ用意してしまえば後はGUIから操作するだけでAPIが作れてしまう。 DBも多分メジャーどころは大抵使える(と思う)し、APIもRPCはもちろん、RESTfulな設計にもバッチリ対応してるらしい。 今回は勉強も兼ねて、簡単なタスク管理ツールを作ってみます。 インストール このコマンドをべしっとやるだけで、カレントディレクトリにapigilityのディレクトリが切られる &amp; サーバまで起動する。 curl -sS https://apigility.org/install | php サーバを再度起動する場合はphp -S localhost:8888 -t public public/index.phpとかやればOK。 画面を開くとこんな感じのが出てくる。 ロゴがかわいいね。 ここからAPIの追加やデータベース接続の設定やらが出来ます。 データベースの準備 適当なものなので、SQLiteでやっちゃう。 テーブルはこんな感じで、名前と完了/未完了が持てるだけにしよう。 create table tasks(id integer primary key, name varchar(20), finished integer); Apigilityからデータベースにつなぐ SettingsのDatabase Adaptersから定義を追加出来る。 今回はこんな感じで設定。 APIを追加する APIsのCreate New APIからAPIを追加する。 今回はTasksという名前で作成した。 粒度がわかりづらいけど、ここで作ったAPIに対して個々のサービスを追加していく。 大分類みたいなものだと捉えればいいのかな？ サービスを追加する さっき作ったTasksAPIに、データベースのtasksテーブルとRESTで紐づくサービスを追加する。 サービスはRESTとRPCから選ぶことが出来て、 RPCを選ぶと自動生成されたPHPのコードに自分で処理を書いていく感じになるみたい。 んで指定したURLを叩くとその処理が呼ばれる、って感じ。 今回は単純にテーブルとURLをRESTfulに対応付けられればいいのでRESTにしてます。 というわけで、REST Service Nameをtasks、DB-Connectedはさっき作ったアダプタとテーブル名を設定。 こんな感じになる。 接続できるか試してみよう。 データがないので、まずはPOSTで格納してみる。 いけてるっぽい。 取得は？ おお！取れる！ もちろんSQLite側にも、 sqlite&gt; select * from tasks; 1|task1|false 入ってます。 ビューを作る サーバサイドがあまりにもサクッと終わっちゃったな・・・。 後は画面側を生のHTMLにして、取得と格納は全部JSに任せます。 つってもここはあんまり説明してもしょうがないのでSSとコードだけ。 そうですめんどくさくなりました。 表示はこんな感じで、 こんなHTMLでやりました。 &lt;!DOCTYPE HTML&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css&quot;&gt; &lt;style&gt; #tasks-wrapper { margin: 20px auto; max-width: 500px; } #tasks { } .buttons { margin-right: 5px; } .buttons&gt;button { margin-right: 5px; } &lt;/style&gt; &lt;div id=&quot;tasks-wrapper&quot;&gt; &lt;div class=&quot;input-group&quot;&gt; &lt;input type=&quot;text&quot; id=&quot;task-name&quot; class=&quot;form-control&quot; placeholder=&quot;Task name&quot;&gt; &lt;span class=&quot;input-group-btn&quot;&gt; &lt;button id=&quot;task-post&quot; class=&quot;btn btn-success&quot; type=&quot;button&quot;&gt;登録&lt;/button&gt; &lt;/span&gt; &lt;/div&gt; &lt;hr&gt; &lt;div id=&quot;tasks&quot;&gt; &lt;/div&gt; &lt;/div&gt; &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.min.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/react/0.12.2/JSXTransformer.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;//code.jquery.com/jquery-2.1.3.min.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;/app.js&quot; type=&quot;text/jsx&quot;&gt;&lt;/script&gt; JSはこんな。 var Task = React.createClass({ del: function(e) { $.ajax({ type: &quot;DELETE&quot;, url: &quot;/tasks/&quot; &#43; this.props.id, }); }, finish: function(e) { $.ajax({ type: &quot;PUT&quot;, url: &quot;/tasks/&quot; &#43; this.props.id, data: JSON.stringify({finished: 1}), headers: { &quot;Content-Type&quot;: &quot;application/json&quot;, } }); }, render: function() { return (&lt;li className=&quot;list-group-item clearfix&quot;&gt; &lt;div className=&quot;buttons pull-left&quot;&gt; {this.props.finished == &quot;0&quot; ?">
-
-<meta property="og:image" content="http://yet.unresolved.xyz//images/apigility.png">
-
-
-<meta property="og:site_name" content="Unresolved">
-<meta name="google-site-verification" content="SLxungm5o9WvGwPUEGZCspbMBAsLBjOxAHNyjIBUuSI" />
-
-<title>
     
-    Apigility &#43; React.jsでタスク管理ツールを作ってみる | Unresolved
     
-</title>
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Apigility &#43; React.jsでタスク管理ツールを作ってみる | Unresolved">
+    <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/">
+    <meta property="og:description" content="これに行ってきました。 Zend 社技術者による最近の PHP 関連の取り組みご紹介 - Zendイベント管理 | Doorkeeper 英語辛かった。 PHP7やらZ Rayやらまあ気になるものはそれなりにあったんだけど、 その中でも触ってみようかなと思えるくらい興味を持てたApigilityを触ってみようと思います。 ついでなので使ってみたかったReact.jsも導入してみる。 Apigility？ API構築に特化したフレームワークらしい。 プレゼンテーションレイヤを完全に分離したアーキテクチャでの利用を想定しているんだと思う。 何が強いかって、DBさえ用意してしまえば後はGUIから操作するだけでAPIが作れてしまう。 DBも多分メジャーどころは大抵使える(と思う)し、APIもRPCはもちろん、RESTfulな設計にもバッチリ対応してるらしい。 今回は勉強も兼ねて、簡単なタスク管理ツールを作ってみます。 インストール このコマンドをべしっとやるだけで、カレントディレクトリにapigilityのディレクトリが切られる &amp; サーバまで起動する。 curl -sS https://apigility.org/install | php サーバを再度起動する場合はphp -S localhost:8888 -t public public/index.phpとかやればOK。 画面を開くとこんな感じのが出てくる。 ロゴがかわいいね。 ここからAPIの追加やデータベース接続の設定やらが出来ます。 データベースの準備 適当なものなので、SQLiteでやっちゃう。 テーブルはこんな感じで、名前と完了/未完了が持てるだけにしよう。 create table tasks(id integer primary key, name varchar(20), finished integer); Apigilityからデータベースにつなぐ SettingsのDatabase Adaptersから定義を追加出来る。 今回はこんな感じで設定。 APIを追加する APIsのCreate New APIからAPIを追加する。 今回はTasksという名前で作成した。 粒度がわかりづらいけど、ここで作ったAPIに対して個々のサービスを追加していく。 大分類みたいなものだと捉えればいいのかな？ サービスを追加する さっき作ったTasksAPIに、データベースのtasksテーブルとRESTで紐づくサービスを追加する。 サービスはRESTとRPCから選ぶことが出来て、 RPCを選ぶと自動生成されたPHPのコードに自分で処理を書いていく感じになるみたい。 んで指定したURLを叩くとその処理が呼ばれる、って感じ。 今回は単純にテーブルとURLをRESTfulに対応付けられればいいのでRESTにしてます。 というわけで、REST Service Nameをtasks、DB-Connectedはさっき作ったアダプタとテーブル名を設定。 こんな感じになる。 接続できるか試してみよう。 データがないので、まずはPOSTで格納してみる。 いけてるっぽい。 取得は？ おお！取れる！ もちろんSQLite側にも、 sqlite&gt; select * from tasks; 1|task1|false 入ってます。 ビューを作る サーバサイドがあまりにもサクッと終わっちゃったな・・・。 後は画面側を生のHTMLにして、取得と格納は全部JSに任せます。 つってもここはあんまり説明してもしょうがないのでSSとコードだけ。 そうですめんどくさくなりました。 表示はこんな感じで、 こんなHTMLでやりました。 &lt;!DOCTYPE HTML&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css&quot;&gt; &lt;style&gt; #tasks-wrapper { margin: 20px auto; max-width: 500px; } #tasks { } .buttons { margin-right: 5px; } .buttons&gt;button { margin-right: 5px; } &lt;/style&gt; &lt;div id=&quot;tasks-wrapper&quot;&gt; &lt;div class=&quot;input-group&quot;&gt; &lt;input type=&quot;text&quot; id=&quot;task-name&quot; class=&quot;form-control&quot; placeholder=&quot;Task name&quot;&gt; &lt;span class=&quot;input-group-btn&quot;&gt; &lt;button id=&quot;task-post&quot; class=&quot;btn btn-success&quot; type=&quot;button&quot;&gt;登録&lt;/button&gt; &lt;/span&gt; &lt;/div&gt; &lt;hr&gt; &lt;div id=&quot;tasks&quot;&gt; &lt;/div&gt; &lt;/div&gt; &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.min.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/react/0.12.2/JSXTransformer.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;//code.jquery.com/jquery-2.1.3.min.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;/app.js&quot; type=&quot;text/jsx&quot;&gt;&lt;/script&gt; JSはこんな。 var Task = React.createClass({ del: function(e) { $.ajax({ type: &quot;DELETE&quot;, url: &quot;/tasks/&quot; &#43; this.props.id, }); }, finish: function(e) { $.ajax({ type: &quot;PUT&quot;, url: &quot;/tasks/&quot; &#43; this.props.id, data: JSON.stringify({finished: 1}), headers: { &quot;Content-Type&quot;: &quot;application/json&quot;, } }); }, render: function() { return (&lt;li className=&quot;list-group-item clearfix&quot;&gt; &lt;div className=&quot;buttons pull-left&quot;&gt; {this.props.finished == &quot;0&quot; ?">
+    
+    <meta property="og:image" content="http://yet.unresolved.xyz//images/apigility.png">
+    
+    
+    <meta property="og:site_name" content="Unresolved">
+
+    <title>
+      
+      Apigility &#43; React.jsでタスク管理ツールを作ってみる | Unresolved
+      
+    </title>
+
+    
+    <link rel="shortcut icon" href="http://yet.unresolved.xyz//assets/favicon.ico">
+
+    
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz//index.xml">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Marcellus+SC' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
+
+    
+  </head>
+  <body>
+
+    <header id="site-header">
+      <div class="container">
+        <h1 class="text-center">
+          <a href="http://yet.unresolved.xyz/" class="font-logo">Unresolved</a>
+        </h1>
+      </div>
+    </header>
+
+    <main id="site-body">
+    <div class="container">
 
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-<link rel="stylesheet" href="http://yet.unresolved.xyz//css/base.css">
-<link rel="stylesheet" href="http://yet.unresolved.xyz//css/styles.css">
-<link rel="stylesheet" href="http://yet.unresolved.xyz//css/custom.css">
+<div class="row">
+  <div class="col-md-9">
+    <article id="post">
+      <span class="date">Sat, Feb 14, 2015</span>
+      <h2 class="title">Apigility &#43; React.jsでタスク管理ツールを作ってみる</h2>
 
-
-<link rel="shortcut icon" href="http://yet.unresolved.xyz//assets/favicon.ico">
-
-
-<link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz//index.xml">
-</head>
-
-
-
-<div class="wrap">
-    <div class="masthead">
-        <div class="container">
-            <h3 class="masthead-title">
-                <a href="http://yet.unresolved.xyz/" title="Home">Unresolved</a>
-            </h3>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        </div>
-    </div>
-
-    <div class="container content">
-
-
-<article class="post post-single">
-    <span class="post-date">Sat, Feb 14, 2015</span>
-    <h1 class="post-title">Apigility &#43; React.jsでタスク管理ツールを作ってみる</h1>
-
-    <div class="eyecatch">
+      <div class="eyecatch text-center">
         
         <img src="http://yet.unresolved.xyz//images/apigility.png" alt="Apigility &#43; React.jsでタスク管理ツールを作ってみる">
         
-    </div>
+      </div>
 
-    <div class="post-content">
+      <div class="content">
         
 
 <p>これに行ってきました。</p>
@@ -426,65 +336,41 @@ $(&quot;#task-post&quot;).on(&quot;click&quot;, function() {
 
 <p>React.jsはもう少ししっかり勉強します。</p>
 
-    </div>
+      </div>
 
-    <aside class="post-ad pc">
-        <iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=48&l=st1&mode=books-jp&search=javascript&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="728" height="90" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
-    </aside>
+      <aside>
+        <div class="row">
+          <div class="col-sm-5">
+            <section id="share">
+              <h3>Share</h3>
+              <a id="share-fb" href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f14%2fmake-task-manager-by-using-apigility%2f&t=Apigility%20%2b%20React.js%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%e3%83%84%e3%83%bc%e3%83%ab%e3%82%92%e4%bd%9c%e3%81%a3%e3%81%a6%e3%81%bf%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/facebook.png" alt="Facebook"/></a>
+              <a id="share-twitter" href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f14%2fmake-task-manager-by-using-apigility%2f&text=Apigility%20%2b%20React.js%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%e3%83%84%e3%83%bc%e3%83%ab%e3%82%92%e4%bd%9c%e3%81%a3%e3%81%a6%e3%81%bf%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/twitter.png" alt="Twitter"/></a>
+              <a id="share-googleplus" href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f14%2fmake-task-manager-by-using-apigility%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/googleplus.png" alt="Google+"/></a>
+              <a id="share-hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f14%2fmake-task-manager-by-using-apigility%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/hatena.png" alt="Hatena"/></a>
+              <a id="share-pocket" href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f14%2fmake-task-manager-by-using-apigility%2f&title=Apigility%20%2b%20React.js%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%e3%83%84%e3%83%bc%e3%83%ab%e3%82%92%e4%bd%9c%e3%81%a3%e3%81%a6%e3%81%bf%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/pocket.png" alt="Pocket"/></a>
+            </section>
+          </div>
 
-    <aside class="post-ad sp">
-<iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=12&l=st1&mode=books-jp&search=javascript&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="300" height="250" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
-    </aside>
+          <div class="col-sm-7">
+            
+            
 
-    <aside>
-        <div class="post-share">
-            <h3>Share</h3>
-            <a id="share-fb" href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f14%2fmake-task-manager-by-using-apigility%2f&t=Apigility%20%2b%20React.js%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%e3%83%84%e3%83%bc%e3%83%ab%e3%82%92%e4%bd%9c%e3%81%a3%e3%81%a6%e3%81%bf%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/facebook.png" alt="Facebook"/></a>
-            <a id="share-twitter" href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f14%2fmake-task-manager-by-using-apigility%2f&text=Apigility%20%2b%20React.js%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%e3%83%84%e3%83%bc%e3%83%ab%e3%82%92%e4%bd%9c%e3%81%a3%e3%81%a6%e3%81%bf%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/twitter.png" alt="Twitter"/></a>
-            <a id="share-googleplus" href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f14%2fmake-task-manager-by-using-apigility%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/googleplus.png" alt="Google+"/></a>
-            <a id="share-hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f14%2fmake-task-manager-by-using-apigility%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/hatena.png" alt="Hatena"/></a>
-            <a id="share-pocket" href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f14%2fmake-task-manager-by-using-apigility%2f&title=Apigility%20%2b%20React.js%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%e3%83%84%e3%83%bc%e3%83%ab%e3%82%92%e4%bd%9c%e3%81%a3%e3%81%a6%e3%81%bf%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/pocket.png" alt="Pocket"/></a>
-        </div>
-
-        
-        
-
-        
-        <div class="post-related">
-            <h3>Related Post</h3>
-            <ul class="post-tags">
+            
+            <section id="related">
+              <h3>Related Post</h3>
+              <div id="tags">
                 
-                <li>
-                    <a href="http://yet.unresolved.xyz//tags/javascript">
-                        <i class="fa fa-tags"></i>
-                        javascript
-                    </a>
-                </li>
+                <a href="http://yet.unresolved.xyz//tags/javascript"><i class="fa fa-tags"></i> javascript </a>
                 
-                <li>
-                    <a href="http://yet.unresolved.xyz//tags/reactjs">
-                        <i class="fa fa-tags"></i>
-                        reactjs
-                    </a>
-                </li>
+                <a href="http://yet.unresolved.xyz//tags/reactjs"><i class="fa fa-tags"></i> reactjs </a>
                 
-                <li>
-                    <a href="http://yet.unresolved.xyz//tags/php">
-                        <i class="fa fa-tags"></i>
-                        php
-                    </a>
-                </li>
+                <a href="http://yet.unresolved.xyz//tags/php"><i class="fa fa-tags"></i> php </a>
                 
-                <li>
-                    <a href="http://yet.unresolved.xyz//tags/apigility">
-                        <i class="fa fa-tags"></i>
-                        apigility
-                    </a>
-                </li>
+                <a href="http://yet.unresolved.xyz//tags/apigility"><i class="fa fa-tags"></i> apigility </a>
                 
-            </ul>
+              </div>
 
-            <ul>
+              <ul id="related-posts">
                 
                 
                 
@@ -633,13 +519,6 @@ $(&quot;#task-post&quot;).on(&quot;click&quot;, function() {
                 
                 
                 
-                <li><a href="http://yet.unresolved.xyz/blog/2014/10/18/install-nodejs-on-ubuntu/">Ubuntuにnode.jsをインストールする</a></li>
-                
-                
-                
-                
-                
-                <li><a href="http://yet.unresolved.xyz/blog/2014/09/29/laravel-array-input/">Laravelで配列をリクエストパラメータにする</a></li>
                 
                 
                 
@@ -665,36 +544,39 @@ $(&quot;#task-post&quot;).on(&quot;click&quot;, function() {
                 
                 
                 
-                
-                
-                
-                
-                
-            </ul>
+              </ul>
+            </section>
+            
+          </div>
         </div>
-        
-    </aside>
+      </aside>
 
-    
-    <footer>
-        <div class="move">
-            <div class="prev">
+      
+      <footer>
+        <section id="pagination">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="prev">
                 
                 <a href="http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/">
-                    <i class="fa fa-chevron-left"></i>
-                    Slamhoundを使ってClojureのrequireを自動生成する
+                  <i class="fa fa-chevron-left"></i>
+                  Slamhoundを使ってClojureのrequireを自動生成する
                 </a>
                 
+              </div>
             </div>
-            <div class="next">
+            <div class="col-sm-6">
+              <div class="next text-right">
                 
                 <a href="http://yet.unresolved.xyz/blog/2015/02/06/learning-vim-again/">
-                    今だからやるvimコマンド再学習
-                    <i class="fa fa-chevron-right"></i>
+                  今だからやるvimコマンド再学習
+                  <i class="fa fa-chevron-right"></i>
                 </a>
                 
+              </div>
             </div>
-        </div>
+          </div>
+        </section>
 
         
         
@@ -706,540 +588,290 @@ var disqus_shortname = 'unresolved';
 
  
 (function() {
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 })();
         </script>
         <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         
         
+      </footer>
+
+    </article>
+  </div>
+
+  <div class="col-md-3">
+    <aside id="site-sidebar">
+      <div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+  <section class="sidebar-bordered">
+    <h3>Profile</h3>
+    
+    <div id="profile">
+      <div class="text-center">
+        <img id="profile-photo" src="/images/nopicture.png" alt="profile">
+      </div>
+      <div class="data">
+        
+        <span id="profile-birth">Sun, Feb 26, 1989</span>
+        
+        <h4 id="profile-username" class="post-title"></h4>
+        <div id="social-links">
+          
+          <a href="https://www.facebook.com/daisuke.tsuji.735" target="_blank"><i class="fa fa-facebook-square"></i></a>
+          
+          
+          <a href="https://twitter.com/dim0627" target="_blank"><i class="fa fa-twitter-square"></i></a>
+          
+          
+          <a href="https://github.com/dim0627" target="_blank"><i class="fa fa-github-square"></i></a>
+          
+        </div>
+        <div id="profile-description"></div>
+        <ul id="profile-urls" class="post-tags"></ul>
+      </div>
+    </div>
+    
+  </section>
+</div>
+
+<div class="col-md-12 col-sm-6 col-xs-12">
+  <section>
+    <h3>Tags</h3>
+    
+    <div id="tag-cloud" class="text-center">
+      
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/ansible">ansible</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/apigility">apigility</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/auriga">auriga</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/aws">aws</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/beanstalk">beanstalk</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/book">book</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/boot2docker">boot2docker</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/centos">centos</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/clang">clang</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/clojure">clojure</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/css">css</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/database">database</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/design">design</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/dns">dns</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/docker">docker</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/enlive">enlive</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/frontend">frontend</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/git">git</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/github">github</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/golang">golang</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/google-app-engine">google-app-engine</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/gravatar">gravatar</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/hackathon">hackathon</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/heroku">heroku</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/hiccup">hiccup</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/html">html</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/hugo">hugo</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/iterm">iterm</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/javascript">javascript</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/jekyll">jekyll</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/leiningen">leiningen</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/linux">linux</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/lobos">lobos</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/mac">mac</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/migration">migration</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/octopress">octopress</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/os-x">os-x</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/paiza">paiza</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/paizaio">paizaio</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/php">php</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/postgresql">postgresql</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/powerline">powerline</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/python">python</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/reactjs">reactjs</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/ring">ring</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/ruby">ruby</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/sass">sass</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/scss">scss</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/security">security</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/slack">slack</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/sql-server">sql-server</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/sqlite">sqlite</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/startup">startup</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/startup-weekend">startup-weekend</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/tmux">tmux</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/ubuntu">ubuntu</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/util">util</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/vagrant">vagrant</a>
+      
+      
+      <a href="http://yet.unresolved.xyz//tags/vim">vim</a>
+      
+    </div>
+    
+  </section>
+</div>
+
+      </div>
+    </aside>
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer id="site-footer" class="text-center font-logo">
+      <p>&copy; 2015  Daisuke Tsuji </p>
+
+      <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>, Theme <a href="https://github.com/dim0627/hugo_theme_robust" target="_blank">Robust</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
     </footer>
 
-</article>
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script src="http://yet.unresolved.xyz//js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 
-
-    </div>
-</div>
-
-<div class="container footer-ad">
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-4218045898905176"
-         data-ad-slot="4750057642"
-         data-ad-format="auto"></ins>
     <script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-</div>
-
-
-<aside class="sidebar-wrapper">
-    <div class="container">
-        
-        <div class="tags tag-cloud">
-            <h2>Tags</h2>
-            <ul class="post-tags">
-                
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/ansible">
-                        ansible
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/apigility">
-                        apigility
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/auriga">
-                        auriga
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/aws">
-                        aws
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/beanstalk">
-                        beanstalk
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/book">
-                        book
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/boot2docker">
-                        boot2docker
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/centos">
-                        centos
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/clang">
-                        clang
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/clojure">
-                        clojure
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/css">
-                        css
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/database">
-                        database
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/design">
-                        design
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/dns">
-                        dns
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/docker">
-                        docker
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/enlive">
-                        enlive
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/frontend">
-                        frontend
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/git">
-                        git
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/github">
-                        github
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/golang">
-                        golang
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/google-app-engine">
-                        google-app-engine
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/gravatar">
-                        gravatar
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/hackathon">
-                        hackathon
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/heroku">
-                        heroku
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/hiccup">
-                        hiccup
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/html">
-                        html
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/hugo">
-                        hugo
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/iterm">
-                        iterm
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/javascript">
-                        javascript
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/jekyll">
-                        jekyll
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/laravel">
-                        laravel
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/leiningen">
-                        leiningen
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/linux">
-                        linux
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/lobos">
-                        lobos
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/mac">
-                        mac
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/migration">
-                        migration
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/node.js">
-                        node.js
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/octopress">
-                        octopress
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/os-x">
-                        os-x
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/paiza">
-                        paiza
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/paizaio">
-                        paizaio
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/php">
-                        php
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/postgresql">
-                        postgresql
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/powerline">
-                        powerline
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/python">
-                        python
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/reactjs">
-                        reactjs
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/ring">
-                        ring
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/ruby">
-                        ruby
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/sass">
-                        sass
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/scss">
-                        scss
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/security">
-                        security
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/slack">
-                        slack
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/sql-server">
-                        sql-server
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/sqlite">
-                        sqlite
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/startup">
-                        startup
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/startup-weekend">
-                        startup-weekend
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/tmux">
-                        tmux
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/ubuntu">
-                        ubuntu
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/util">
-                        util
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/vagrant">
-                        vagrant
-                    </a>
-                </li>
-                
-                <li>
-                    
-                    <a href="http://yet.unresolved.xyz//tags/vim">
-                        vim
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-        
-        
-        <div id="profile">
-            <div class="eyecatch">
-                <img id="photo" src="/images/nopicture.png" alt="profile">
-            </div>
-            <div class="data">
-                
-                <span class="post-date">Sun, Feb 26, 1989</span>
-                
-                <h1 id="username" class="post-title"></h1>
-                
-                <a href="https://www.facebook.com/daisuke.tsuji.735" target="_blank"><i class="fa fa-facebook-square"></i></a>
-                
-                
-                <a href="https://twitter.com/dim0627" target="_blank"><i class="fa fa-twitter-square"></i></a>
-                
-                
-                <a href="https://github.com/dim0627" target="_blank"><i class="fa fa-github-square"></i></a>
-                
-                <pre id="description"></pre>
-                <ul id="urls" class="post-tags"></ul>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-<footer class="copy">
-    <p>&copy; 2015  Daisuke Tsuji </p>
-    <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>, Theme <a href="https://github.com/dim0627/hugo_theme_aglaus" target="_blank">Aglaus</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
-</footer>
-
-<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-<script src="http://yet.unresolved.xyz//js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-55005303-1', 'auto');
-ga('send', 'pageview');
+    ga('create', 'UA-55005303-1', 'auto');
+    ga('send', 'pageview');
 
-</script>
+    </script>
 
-
-<script>
-$(function() {
-    var url = "https://ja.gravatar.com/1e092e9f2cda827deb8623be2e846936.json?callback=?";
-    $.getJSON(url)
+    <script>
+    $(function() {
+      var url = "https://ja.gravatar.com/1e092e9f2cda827deb8623be2e846936.json?callback=?";
+      $.getJSON(url)
         .done(function(data) {
-            var entry = data.entry[0];
-            $("#photo").attr("src", entry.photos[0].value);
-            $("#username").html(entry.name.familyName + " " + entry.name.givenName);
-            $("#description").html(entry.aboutMe);
-            entry.urls.forEach(function(el){
-                $("#urls").append($("<li><a href='" + el.value + "'>" + el.title + "</a></li>"));
-            });
-            $("#profile").show();
+          var entry = data.entry[0];
+          $("#profile-photo").attr("src", entry.photos[0].value);
+          $("#profile-username").html(entry.name.familyName + " " + entry.name.givenName);
+          $("#profile-description").html(entry.aboutMe);
+          entry.urls.forEach(function(el){
+            $("#profile-urls").append($("<li><a href='" + el.value + "'>" + el.title + "</a></li>"));
+          });
+          $("#profile").show();
         });
-});
-</script>
+    });
+    </script>
+  </body>
+</html>
 

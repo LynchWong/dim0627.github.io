@@ -11,7 +11,7 @@
     
       
         <item>
-          <title>git管理したくないファイルを除外する</title>
+          <title>gitで管理したくないファイルをインデックスから除外する</title>
           <link>http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/</link>
           <pubDate>Sun, 28 Sep 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
@@ -20,18 +20,14 @@
 
 &lt;p&gt;ローカル環境でちょこちょこ作ってたやつを本番環境に載せたんだけど、それなりに解決してた環境依存が少し残ってて.gitignoreファイルをちゃんと書くことに。&lt;/p&gt;
 
-&lt;p&gt;しかし本番でcloneしてきたファイルを&lt;strong&gt;うまいことワーキングには残してインデックスから消すやりかた&lt;/strong&gt;がわからない！&lt;/p&gt;
+&lt;p&gt;しかし本番でcloneしてきたファイルを&lt;strong&gt;ワーキングには残してインデックスから消す&lt;/strong&gt;方法がわからない。&lt;/p&gt;
 
-&lt;p&gt;というわけで少しくらいまともに勉強してみる。&lt;/p&gt;
-
-&lt;p&gt;最初につまづいてたのはこのコマンドを連発してたから。&lt;/p&gt;
+&lt;p&gt;これだとインデックスからじゃなくワーキングツリーからも消えてしまう。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ git rm filename
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;どうやらこいつはインデックスだけでなくワーキングディレクトリからも消すようだ。&lt;/p&gt;
-
-&lt;p&gt;そこでインデックスからだけ消すものはないのかと調べてたらあった。&lt;/p&gt;
+&lt;p&gt;からこうする。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ git rm --cached filename
 &lt;/code&gt;&lt;/pre&gt;

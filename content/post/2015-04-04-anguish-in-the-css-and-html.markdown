@@ -4,7 +4,7 @@ date: 2015-04-04T22:39:07+09:00
 eyecatch: "front.png"
 slug: "anguish-in-the-css-and-html"
 tags: ["css", "html", "frontend"]
-title: "CSS / HTMLで味わった苦悩の数々"
+title: "CSS / HTMLで味わった苦悩の数々を振り返ってみる"
 ---
 
 CSSってアンチパターンとかベストプラクティスみたいなのをあんまり聞かないよね。
