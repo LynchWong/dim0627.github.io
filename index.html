@@ -11,9 +11,9 @@
     <meta property="og:url" content="http://yet.unresolved.xyz/">
     <meta property="og:title" content="Unresolved">
     
-    <meta property="og:description" content="まずい更新することがない。 とりあえずPOHネタでこの場をしのごう。 マンガ版「俺の許嫁と幼なじみが修羅場すぎる」｜paizaオンラインハッカソン5 今回はパフォーマンスとかの問題はなく、ただただロジックが面倒くさいものばっかでした。 Problem 1 (def in (line-seq (java.io.BufferedReader. *in*))) (def p1 (-&gt;&gt; in first (take-nth 2) clojure.string/join)) (println p1) そもそもこれシーケンスで取らなければfirstとかつけなくてよかったんじゃないかなあ。 そんな方法あるかわかんないけど。 Problem 2 (def in (map #(Integer/parseInt %) (line-seq (java.io.BufferedReader. *in*)))) (defn take-padding [coll pad] (-&gt;&gt; coll (partition-all pad) (map first))) (def p2 (let [l (rest in)] (map #(apply &#43; %) (for [i (range 7)] (take-padding (drop i l) 7))))) (print (clojure.string/join &quot;\n&quot; p2)) 結構強引にシーケンス操作を書いたけど、もっと楽にやれる関数が用意されてる気する。 Problem 3 RENA (def in (for [e (map #(.split % &quot; &quot;) (line-seq (java.io.BufferedReader.">
+    <meta property="og:description" content="前に作ったやつが飽きてしまったので、そもそもForkするんじゃなくて0から作ることにしました。 出来たもの こんな感じ。 トップの最新4記事は2カラム、それ以降は4カラムで表示するようにしてる。もちろんレスポンシブで。 前はPost一覧とかの画面もあったけど、そもそも必要無いような気がして色々削った。 なので今回はシンプルにトップ、記事詳細、タグ別記事一覧の3ページだけ。 トップとタグ別記事一覧は同じテンプレートを使ってるから、少し冗長になってしまったなあ。 Hugoのテンプレート構成が今だによくわかってないから、共通化とかがうまく出来ない・・・。 工夫したこと 前にテーマを作って思ったんだけど、Hugoの強みは各テーマをOverride出来ることなんだよね。 だからそれ前提で書かないと、Overrideしたいのは一部でも、ファイルまるごとコピるはめになっちゃう。 前はそれでもう何がなんだかわからなくなったので、今回はそれを避けようとした。 何をしたかというと、空っぽのテンプレートファイルを最初からいろいろな場所に設置しておくことにした。 Overrideしたい人はこのファイルを各自のディレクトリにコピーして編集すればいいし、 Overrideしない人はほっとけば影響もない。 まとめ 数時間でざーっと作ったので、最後のほうはCSSもぶれまくったなあ。 あとReadmeとかいろいろ書けてない。 spf13/hugoThemesにプルリクも送らねば・・・。">
     
-    <meta property="og:image" content="http://yet.unresolved.xyz//images/functional_programming.png">
+    <meta property="og:image" content="http://yet.unresolved.xyz//images/hex.jpg">
     
     
     
@@ -60,6 +60,28 @@
     <div id="posts">
       
       <div class="row">
+        
+        
+        
+        <div class="col-sm-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/06/20/making-new-theme-robust-for-hugo/" class="post post-topix">
+              <header class="eyecatch text-center">
+                <img src="/images/hex.jpg" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Sat, Jun 20, 2015</span>
+              </div>
+              <h2 class="title">Hugo向けの新しいテーマを作った</h2>
+              <div class="summary">
+                前に作ったやつが飽きてしまったので、そもそもForkするんじゃなくて0から作ることにしました。 出来たもの こんな感じ。 トップの最新4記事は2カラム、それ以降は4カラムで表示するようにしてる。もちろんレスポンシブで。 前はPost一覧とかの画面もあったけど、そもそも必要無いような気がして色々削った。 なので今回はシンプルにトップ、記事詳細、タグ別記事一覧の3ページだけ。 トップとタグ別記事一覧は同じテンプレートを使ってるから、少し冗長になってしまったなあ。 Hugoのテンプレート構成が今だによくわかってないから、共通化とかがうまく出来ない・・・。 工夫したこと 前にテーマを作って思ったんだけど、Hugoの強みは各テーマをOverride出来ることなんだよね。 だからそれ前提で書かないと、Overrideしたいのは一部でも、ファイルまるごとコピるはめになっちゃう。 前はそれでもう何がなんだかわからなくなったので、今回はそれを避けようとした。 何をしたかというと、空っぽのテンプレートファイルを最初からいろいろな場所に設置しておくことにした。 Overrideしたい人はこのファイルを各自のディレクトリにコピーして編集すればいいし、 Overrideしない人はほっとけば影響もない。 まとめ 数時間でざーっと作ったので、最後のほうはCSSもぶれまくったなあ。 あとReadmeとかいろいろ書けてない。 spf13/hugoThemesにプルリクも送らねば・・・。
+              </div>
+            </a>
+          </article>
+        </div>
+        
+        
+        
         
         
         
@@ -125,28 +147,6 @@
         </div>
         
         
-        
-        
-        
-        
-        <div class="col-sm-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/03/30/status-line-of-tmux-powerline-overlap/" class="post post-topix">
-              <header class="eyecatch text-center">
-                <img src="/images/linux.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Mon, Mar 30, 2015</span>
-              </div>
-              <h2 class="title">tmux-powerlineのステータスラインが描画ごとに増える</h2>
-              <div class="summary">
-                iTerm2での話。 こいつのせい。 でもこれがないと、素の時に使うVimでitchyny/lightline.vimがズレるんだよなあ。 これはなに？Vimとtmuxで統一出来るの？ tmux - Powerline導入例 - Qiita
-              </div>
-            </a>
-          </article>
-        </div>
-        
-        
         <div class="col-md-12">
           <div class="text-center custom-partial">
             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -162,6 +162,25 @@
 
           </div>
         </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/03/30/status-line-of-tmux-powerline-overlap/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/linux.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Mon, Mar 30, 2015</span>
+              </div>
+              <h3 class="title">tmux-powerlineのステータスラインが描画ごとに増える</h3>
+            </a>
+          </article>
+        </div>
+        
         
         
         
@@ -834,14 +853,14 @@
         
         <div class="col-md-3 col-sm-4 col-xs-6">
           <article>
-            <a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/" class="post">
+            <a href="http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/" class="post">
               <header class="eyecatch text-center">
-                <img src="/images/git.png" alt="eyecatch">
+                <img src="/images/octopress.png" alt="eyecatch">
               </header>
               <div class="date text-center">
                 <span>Sat, Sep 20, 2014</span>
               </div>
-              <h3 class="title">gitのリポジトリ単位にproxyの設定をする</h3>
+              <h3 class="title">OctopressのサイドバーにGravatarを表示させる</h3>
             </a>
           </article>
         </div>
@@ -853,14 +872,14 @@
         
         <div class="col-md-3 col-sm-4 col-xs-6">
           <article>
-            <a href="http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/" class="post">
+            <a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/" class="post">
               <header class="eyecatch text-center">
-                <img src="/images/octopress.png" alt="eyecatch">
+                <img src="/images/git.png" alt="eyecatch">
               </header>
               <div class="date text-center">
                 <span>Sat, Sep 20, 2014</span>
               </div>
-              <h3 class="title">OctopressのサイドバーにGravatarを表示させる</h3>
+              <h3 class="title">gitのリポジトリ単位にproxyの設定をする</h3>
             </a>
           </article>
         </div>
