@@ -13,6 +13,8 @@ title: "Hugo向けの新しいテーマを作った"
 
 こんな感じ。
 
+[dim0627/hugo_theme_robust](https://github.com/dim0627/hugo_theme_robust)
+
 [<img src="/images/2015-06-20/theme_tn.png" class="image" alt="theme_tn">](/images/2015-06-20/theme_tn.png)
 
 トップの最新4記事は2カラム、それ以降は4カラムで表示するようにしてる。もちろんレスポンシブで。
