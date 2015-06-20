@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved </title>
-    <link>http://localhost:1313/tags/paizaio/</link>
+    <link>http://yet.unresolved.xyz/tags/paizaio/</link>
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
@@ -12,10 +12,10 @@
       
         <item>
           <title>paiza.IOのAPIを使ってreplを作る</title>
-          <link>http://localhost:1313/blog/2015/01/25/make-repl-using-the-paizaio/</link>
+          <link>http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/</link>
           <pubDate>Sun, 25 Jan 2015 00:58:15 JST</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://localhost:1313/blog/2015/01/25/make-repl-using-the-paizaio/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/</guid>
           <description>
 
 &lt;p&gt;&lt;a href=&#34;http://paiza.jp/&#34;&gt;paiza&lt;/a&gt;が面白いAPIを公開してたから、そのうち使ってみたいと思ってたんだよね。&lt;/p&gt;
