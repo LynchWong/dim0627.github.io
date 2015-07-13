@@ -12,7 +12,7 @@
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/02/06/learning-vim-again/">
     <meta property="og:description" content="ちょうど1年ほど前からvimを使ってるんだけど、 例に漏れずオレも使い始めの頃にこのサイトを参考にさせて頂きました。 僕がサクラエディタからVimに乗り換えるまで - give IT a try 2012年公開の記事なんだね、意外と最近。 ずっとずっとやれないで居たんだけど、いずれやろうと思っていたこの記事の一節があります。 そんなこんなで2〜3日ぐらい「Vim縛り」をやっていると、徐々にVim恐怖症は消えてくると思います。 おめでとうございます！これであなたも立派なVimmerです！！・・・と喜ぶのはまだ早いです。 もう一回チートシートを見直してください。 もう一回VimのTutorialをやってみてください。 あれ？Vimにこんなコマンドがあるなんて知らなかったぞ？何か便利そうやん！ と思うようなコマンドをいくつか再発見できるはずです。 ようやく実施出来たのでまた忘れたりしないようにメモっておきたい。 使ってなかったけどこれから使っていきたい思ったvimコマンド g; 前回編集した箇所に飛ぶ。 結構長いソースとか書いてる時、あっちこっち飛んだりするから面倒に感じてた。 行番号覚えたりっていう不毛なことやってたんだけど、今後はこれで済みそう！ &gt;&gt;, &lt;&lt; カーソル行をインデントする。 毎回行頭に戻って・・・ってやってたのが馬鹿らしい・・・。 :e **/Root.pm ワーキングディレクトリ以下からRoot.pmにマッチするファイルを開く。 unite.vimを使ってるからこっちに目がいかなかった。便利そう。 :e **/*Ro ワーキングディレクトリ以下から*Roにマッチするファイルを開く。 さらに便利そう。 gf カーソル位置にある単語と同名のファイル名を開く。 あんまり使わなそうだけど、こんなんあるんだなと感心した。 そういう場面に出くわしても忘れて普通にファイル開いちゃいそうだな・・・。 :wqa 全てのウィンドウを閉じて終了する。 今までは:q連打してたんだけど、よく考えれば普通にダサいよね。 スマートじゃないやり方は大抵何かが間違ってるんだなあと思った。 J カーソル行とその下の行を結合する。 いつも先頭に戻って・・・ってやってた。 0 インデントのさらに行頭へカーソルを移動する。 こんなのも知らないとかまじかよ！って自分でも思ったけどいつも^を使ってたので煩わしかった。 ある程度操作が出来るようになるとそれでまかなってしまうから成長しないね・・・。">
     
-    <meta property="og:image" content="http://yet.unresolved.xyz//images/vim.png">
+    <meta property="og:image" content="http://yet.unresolved.xyz/images/vim.png">
     
     
     <meta property="og:site_name" content="Unresolved">
@@ -24,10 +24,10 @@
     </title>
 
     
-    <link rel="shortcut icon" href="http://yet.unresolved.xyz//assets/favicon.ico">
+    <link rel="shortcut icon" href="http://yet.unresolved.xyz/assets/favicon.ico">
 
     
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz//index.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Marcellus+SC" rel="stylesheet" type="text/css">
@@ -44,7 +44,7 @@
     <header id="site-header">
       <div class="container">
         <h1 class="text-center">
-          <a href="http://yet.unresolved.xyz/" class="font-logo">Unresolved</a>
+          <a href="http://yet.unresolved.xyz" class="font-logo">Unresolved</a>
         </h1>
       </div>
     </header>
@@ -61,7 +61,7 @@
 
       <div class="eyecatch text-center">
         
-        <img src="http://yet.unresolved.xyz//images/vim.png" alt="今だからやるvimコマンド再学習">
+        <img src="http://yet.unresolved.xyz/images/vim.png" alt="今だからやるvimコマンド再学習">
         
       </div>
 
@@ -168,11 +168,11 @@
           <div class="col-sm-5">
             <section id="share">
               <h3>Share</h3>
-              <a id="share-fb" href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f06%2flearning-vim-again%2f&t=%e4%bb%8a%e3%81%a0%e3%81%8b%e3%82%89%e3%82%84%e3%82%8bvim%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e5%86%8d%e5%ad%a6%e7%bf%92" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/facebook.png" alt="Facebook"/></a>
-              <a id="share-twitter" href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f06%2flearning-vim-again%2f&text=%e4%bb%8a%e3%81%a0%e3%81%8b%e3%82%89%e3%82%84%e3%82%8bvim%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e5%86%8d%e5%ad%a6%e7%bf%92&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/twitter.png" alt="Twitter"/></a>
-              <a id="share-googleplus" href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f06%2flearning-vim-again%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/googleplus.png" alt="Google+"/></a>
-              <a id="share-hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f06%2flearning-vim-again%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/hatena.png" alt="Hatena"/></a>
-              <a id="share-pocket" href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f06%2flearning-vim-again%2f&title=%e4%bb%8a%e3%81%a0%e3%81%8b%e3%82%89%e3%82%84%e3%82%8bvim%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e5%86%8d%e5%ad%a6%e7%bf%92" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/pocket.png" alt="Pocket"/></a>
+              <a id="share-fb" href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f06%2flearning-vim-again%2f&t=%e4%bb%8a%e3%81%a0%e3%81%8b%e3%82%89%e3%82%84%e3%82%8bvim%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e5%86%8d%e5%ad%a6%e7%bf%92" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/facebook.png" alt="Facebook"/></a>
+              <a id="share-twitter" href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f06%2flearning-vim-again%2f&text=%e4%bb%8a%e3%81%a0%e3%81%8b%e3%82%89%e3%82%84%e3%82%8bvim%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e5%86%8d%e5%ad%a6%e7%bf%92&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/twitter.png" alt="Twitter"/></a>
+              <a id="share-googleplus" href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f06%2flearning-vim-again%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/googleplus.png" alt="Google+"/></a>
+              <a id="share-hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f06%2flearning-vim-again%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/hatena.png" alt="Hatena"/></a>
+              <a id="share-pocket" href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f06%2flearning-vim-again%2f&title=%e4%bb%8a%e3%81%a0%e3%81%8b%e3%82%89%e3%82%84%e3%82%8bvim%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e5%86%8d%e5%ad%a6%e7%bf%92" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/pocket.png" alt="Pocket"/></a>
             </section>
           </div>
 
@@ -185,11 +185,15 @@
               <h3>Related Post</h3>
               <div id="tags">
                 
-                <a href="http://yet.unresolved.xyz//tags/vim"><i class="fa fa-tags"></i> vim </a>
+                <a href="http://yet.unresolved.xyz/tags/vim"><i class="fa fa-tags"></i> vim </a>
                 
               </div>
 
               <ul id="related-posts">
+                
+                
+                
+                
                 
                 
                 
@@ -474,181 +478,181 @@ var disqus_shortname = 'unresolved';
       
       
       
-      <a href="http://yet.unresolved.xyz//tags/ansible">ansible</a>
+      <a href="http://yet.unresolved.xyz/tags/ansible">ansible</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/apigility">apigility</a>
+      <a href="http://yet.unresolved.xyz/tags/apigility">apigility</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/auriga">auriga</a>
+      <a href="http://yet.unresolved.xyz/tags/auriga">auriga</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/aws">aws</a>
+      <a href="http://yet.unresolved.xyz/tags/aws">aws</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/beanstalk">beanstalk</a>
+      <a href="http://yet.unresolved.xyz/tags/beanstalk">beanstalk</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/book">book</a>
+      <a href="http://yet.unresolved.xyz/tags/book">book</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/boot2docker">boot2docker</a>
+      <a href="http://yet.unresolved.xyz/tags/boot2docker">boot2docker</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/centos">centos</a>
+      <a href="http://yet.unresolved.xyz/tags/centos">centos</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/clang">clang</a>
+      <a href="http://yet.unresolved.xyz/tags/clang">clang</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/clojure">clojure</a>
+      <a href="http://yet.unresolved.xyz/tags/clojure">clojure</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/css">css</a>
+      <a href="http://yet.unresolved.xyz/tags/css">css</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/database">database</a>
+      <a href="http://yet.unresolved.xyz/tags/database">database</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/design">design</a>
+      <a href="http://yet.unresolved.xyz/tags/design">design</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/dns">dns</a>
+      <a href="http://yet.unresolved.xyz/tags/dns">dns</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/docker">docker</a>
+      <a href="http://yet.unresolved.xyz/tags/docker">docker</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/enlive">enlive</a>
+      <a href="http://yet.unresolved.xyz/tags/enlive">enlive</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/frontend">frontend</a>
+      <a href="http://yet.unresolved.xyz/tags/frontend">frontend</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/git">git</a>
+      <a href="http://yet.unresolved.xyz/tags/git">git</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/github">github</a>
+      <a href="http://yet.unresolved.xyz/tags/github">github</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/golang">golang</a>
+      <a href="http://yet.unresolved.xyz/tags/golang">golang</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/google-app-engine">google-app-engine</a>
+      <a href="http://yet.unresolved.xyz/tags/google-app-engine">google-app-engine</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/gravatar">gravatar</a>
+      <a href="http://yet.unresolved.xyz/tags/gravatar">gravatar</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/hackathon">hackathon</a>
+      <a href="http://yet.unresolved.xyz/tags/hackathon">hackathon</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/heroku">heroku</a>
+      <a href="http://yet.unresolved.xyz/tags/heroku">heroku</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/hiccup">hiccup</a>
+      <a href="http://yet.unresolved.xyz/tags/hiccup">hiccup</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/html">html</a>
+      <a href="http://yet.unresolved.xyz/tags/html">html</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/hugo">hugo</a>
+      <a href="http://yet.unresolved.xyz/tags/hugo">hugo</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/iterm">iterm</a>
+      <a href="http://yet.unresolved.xyz/tags/iterm">iterm</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/javascript">javascript</a>
+      <a href="http://yet.unresolved.xyz/tags/javascript">javascript</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/jekyll">jekyll</a>
+      <a href="http://yet.unresolved.xyz/tags/jekyll">jekyll</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/leiningen">leiningen</a>
+      <a href="http://yet.unresolved.xyz/tags/leiningen">leiningen</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/linux">linux</a>
+      <a href="http://yet.unresolved.xyz/tags/linux">linux</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/lobos">lobos</a>
+      <a href="http://yet.unresolved.xyz/tags/lobos">lobos</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/mac">mac</a>
+      <a href="http://yet.unresolved.xyz/tags/mac">mac</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/migration">migration</a>
+      <a href="http://yet.unresolved.xyz/tags/migration">migration</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/octopress">octopress</a>
+      <a href="http://yet.unresolved.xyz/tags/octopress">octopress</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/os-x">os-x</a>
+      <a href="http://yet.unresolved.xyz/tags/os-x">os-x</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/paiza">paiza</a>
+      <a href="http://yet.unresolved.xyz/tags/paiza">paiza</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/paizaio">paizaio</a>
+      <a href="http://yet.unresolved.xyz/tags/paizaio">paizaio</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/php">php</a>
+      <a href="http://yet.unresolved.xyz/tags/php">php</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/postgresql">postgresql</a>
+      <a href="http://yet.unresolved.xyz/tags/postgresql">postgresql</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/powerline">powerline</a>
+      <a href="http://yet.unresolved.xyz/tags/powerline">powerline</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/python">python</a>
+      <a href="http://yet.unresolved.xyz/tags/python">python</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/reactjs">reactjs</a>
+      <a href="http://yet.unresolved.xyz/tags/reactjs">reactjs</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/ring">ring</a>
+      <a href="http://yet.unresolved.xyz/tags/ring">ring</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/ruby">ruby</a>
+      <a href="http://yet.unresolved.xyz/tags/ruby">ruby</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/sass">sass</a>
+      <a href="http://yet.unresolved.xyz/tags/sass">sass</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/scss">scss</a>
+      <a href="http://yet.unresolved.xyz/tags/scss">scss</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/security">security</a>
+      <a href="http://yet.unresolved.xyz/tags/security">security</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/slack">slack</a>
+      <a href="http://yet.unresolved.xyz/tags/slack">slack</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/sql-server">sql-server</a>
+      <a href="http://yet.unresolved.xyz/tags/sql-server">sql-server</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/sqlite">sqlite</a>
+      <a href="http://yet.unresolved.xyz/tags/sqlite">sqlite</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/startup">startup</a>
+      <a href="http://yet.unresolved.xyz/tags/startup">startup</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/startup-weekend">startup-weekend</a>
+      <a href="http://yet.unresolved.xyz/tags/startup-weekend">startup-weekend</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/tmux">tmux</a>
+      <a href="http://yet.unresolved.xyz/tags/tmux">tmux</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/ubuntu">ubuntu</a>
+      <a href="http://yet.unresolved.xyz/tags/ubuntu">ubuntu</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/util">util</a>
+      <a href="http://yet.unresolved.xyz/tags/util">util</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/vagrant">vagrant</a>
+      <a href="http://yet.unresolved.xyz/tags/vagrant">vagrant</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/vim">vim</a>
+      <a href="http://yet.unresolved.xyz/tags/vim">vim</a>
       
     </div>
     
@@ -700,7 +704,7 @@ var disqus_shortname = 'unresolved';
 
     <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-    <script src="http://yet.unresolved.xyz//js/highlight.pack.js"></script>
+    <script src="http://yet.unresolved.xyz/js/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
     

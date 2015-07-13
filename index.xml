@@ -6,8 +6,77 @@
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
-    <updated>2015-06-20 11:30:06 &#43;0900 JST</updated>
+    <updated>2015-07-14 00:05:16 &#43;0900 JST</updated>
 
+    
+      
+        <item>
+          <title>focusoutイベントでfocus中の要素が取得できない</title>
+          <link>http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/</link>
+          <pubDate>Tue, 14 Jul 2015 00:05:16 JST</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/</guid>
+          <description>
+
+&lt;p&gt;何を血迷ったかサジェストを自作しようとしてしまってつらい目にあった話。&lt;/p&gt;
+
+&lt;h2 id=&#34;フォーカスアウトしたらサジェストを消したい:1be3a17c6bd3affece21cbd510505d7a&#34;&gt;フォーカスアウトしたらサジェストを消したい&lt;/h2&gt;
+
+&lt;p&gt;入力欄もしくはサジェストからフォーカスアウトした時はサジェストを消したいじゃん。&lt;/p&gt;
+
+&lt;p&gt;でもフォーカスアウトした先にフォーカスしたものが入力欄もしくはサジェストだったらそれは消したくないじゃん。&lt;/p&gt;
+
+&lt;p&gt;だからこんなコードを書いた。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;search-text&amp;quot;&amp;gt;
+&amp;lt;div id=&amp;quot;suggest-list&amp;quot;&amp;gt;
+  &amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;suggest&amp;lt;/a&amp;gt;
+  &amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;suggest&amp;lt;/a&amp;gt;
+  &amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;suggest&amp;lt;/a&amp;gt;
+&amp;lt;/div&amp;gt;
+
+&amp;lt;script&amp;gt;
+$(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() {
+  if ($(&amp;quot;#suggest-list&amp;quot;).find(&amp;quot;:focus&amp;quot;).length !== 0) {
+    console.log(&amp;quot;Not hide!&amp;quot;);
+    return;
+  }
+  console.log(&amp;quot;hide!&amp;quot;);
+});
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;実際はこの処理を入力だけじゃなくアンカーにも適用したんだけど面倒だから省略。&lt;/p&gt;
+
+&lt;p&gt;しかしこれだと&lt;code&gt;if&lt;/code&gt;の中には入らずサジェストの非表示処理が通ってしまう・・・。&lt;/p&gt;
+
+&lt;h2 id=&#34;フォーカス処理は一度ブラウザに返してあげる:1be3a17c6bd3affece21cbd510505d7a&#34;&gt;フォーカス処理は一度ブラウザに返してあげる&lt;/h2&gt;
+
+&lt;p&gt;どうやらJavaScriptの処理が進んでる間はフォーカス処理が行われないらしい。&lt;/p&gt;
+
+&lt;p&gt;なので&lt;strong&gt;一度ブラウザに処理が返るような処理&lt;/strong&gt;を挟んでやる必要がある。&lt;/p&gt;
+
+&lt;p&gt;こんなかんじに。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;$(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() {
+  setTimeout(function() {
+    if ($(&amp;quot;#suggest-list&amp;quot;).find(&amp;quot;:focus&amp;quot;).length !== 0) {
+      console.log(&amp;quot;Not hide!&amp;quot;);
+      return;
+    }
+    console.log(&amp;quot;hide!&amp;quot;);
+  }, 0);
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;setTimeout&lt;/code&gt;はJavaScriptの処理を通した後に、ブラウザ側からまた呼び出されるとのこと。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考にさせていただきました:1be3a17c6bd3affece21cbd510505d7a&#34;&gt;参考にさせていただきました。&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://qiita.com/jkr_2255/items/17693ab77beea71a871c&#34;&gt;JavaScript - setTimeout(&amp;hellip;,0)などの使いドコロ - Qiita&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>
@@ -3952,6 +4021,80 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
     
       
         <item>
+          <title>Google app engineでカスタムドメインを使う</title>
+          <link>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</link>
+          <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</guid>
+          <description>
+
+&lt;p&gt;簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。&lt;/p&gt;
+
+&lt;h2 id=&#34;googleによるドメインの確認:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;Googleによるドメインの確認&lt;/h2&gt;
+
+&lt;p&gt;ドメインを持っていない人は先に取得しちゃってね。&lt;/p&gt;
+
+&lt;p&gt;ちなみにオレはGMOさん(&lt;a href=&#34;http://www.onamae.com/&#34;&gt;お名前.com&lt;/a&gt;)で取得しました。&lt;/p&gt;
+
+&lt;p&gt;ていうことで以下の手順にそってやっていきます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/appengine/docs/domain&#34;&gt;Using a Custom Domain - Google App Engine Google Cloud Platform&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;作業は&lt;a href=&#34;https://console.developers.google.com/&#34;&gt;Developers Console&lt;/a&gt;から行います。&lt;/p&gt;
+
+&lt;p&gt;はじめにGoogleが、使いたいドメインが君のものか確認したいとのことなので、verifyへ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34; class=&#34;image&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;そうするとこんな画面になるので、&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34; class=&#34;image&#34; alt=&#34;input_domain&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ここに表示されてるテキストを、ドメインを発行した会社さんのほうからTXTレコードとして追加すればOK。&lt;/p&gt;
+
+&lt;p&gt;なんかこの画面、すごい頻度でChromeがエラー吐きまくったけど、クリックしなければ大丈夫だったのでなんとかしのぎました。&lt;/p&gt;
+
+&lt;p&gt;TXTレコードの追加は、お名前.comであれば&lt;a href=&#34;http://www.onamae.com/navi/domain.html&#34;&gt;ドメインNavi&lt;/a&gt;から&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ドメイン設定&lt;/li&gt;
+&lt;li&gt;DNS関連機能の設定&lt;/li&gt;
+&lt;li&gt;DNSレコード設定を利用する&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;でここに入力すればOK。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34; class=&#34;image&#34; alt=&#34;input_txt&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;TYPEはTXTにしてVALUEにさっきのテキストを入力。&lt;/p&gt;
+
+&lt;p&gt;場所にもよるけど少し待てば反映されるので、それまでGoogle側の画面で確認ボタンを何度か押してみる。&lt;/p&gt;
+
+&lt;p&gt;反映されてたら確認が通るはず。&lt;/p&gt;
+
+&lt;h2 id=&#34;ドメインの選択:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;ドメインの選択&lt;/h2&gt;
+
+&lt;p&gt;確認が出来たらサブドメインとしてプレフィックスを付けるのかを決める。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34; class=&#34;image&#34; alt=&#34;step2&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;これによって最後のステップが変わるけど、オレは確認の時点でサブドメインとして設定したので、Google側では特に付加せずやってます。&lt;/p&gt;
+
+&lt;h2 id=&#34;aレコードとaaaaレコードの追加:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;AレコードとAAAAレコードの追加&lt;/h2&gt;
+
+&lt;p&gt;最後はまたDNSレコードの追加。&lt;/p&gt;
+
+&lt;p&gt;ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34; class=&#34;image&#34; alt=&#34;step3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;あとは待ってればそのうち反映されるはず。&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
           <title>クラスタ化インデックスとかカバリングインデックスについてどうせ忘れるからまとめる</title>
           <link>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</link>
           <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
@@ -4031,80 +4174,6 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 &lt;/blockquote&gt;
 
 &lt;p&gt;誤った認識があればご指摘を。&lt;/p&gt;
-</description>
-        </item>
-      
-    
-      
-        <item>
-          <title>Google app engineでカスタムドメインを使う</title>
-          <link>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</link>
-          <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</guid>
-          <description>
-
-&lt;p&gt;簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。&lt;/p&gt;
-
-&lt;h2 id=&#34;googleによるドメインの確認:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;Googleによるドメインの確認&lt;/h2&gt;
-
-&lt;p&gt;ドメインを持っていない人は先に取得しちゃってね。&lt;/p&gt;
-
-&lt;p&gt;ちなみにオレはGMOさん(&lt;a href=&#34;http://www.onamae.com/&#34;&gt;お名前.com&lt;/a&gt;)で取得しました。&lt;/p&gt;
-
-&lt;p&gt;ていうことで以下の手順にそってやっていきます。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/appengine/docs/domain&#34;&gt;Using a Custom Domain - Google App Engine Google Cloud Platform&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;作業は&lt;a href=&#34;https://console.developers.google.com/&#34;&gt;Developers Console&lt;/a&gt;から行います。&lt;/p&gt;
-
-&lt;p&gt;はじめにGoogleが、使いたいドメインが君のものか確認したいとのことなので、verifyへ。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34; class=&#34;image&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;そうするとこんな画面になるので、&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34; class=&#34;image&#34; alt=&#34;input_domain&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;ここに表示されてるテキストを、ドメインを発行した会社さんのほうからTXTレコードとして追加すればOK。&lt;/p&gt;
-
-&lt;p&gt;なんかこの画面、すごい頻度でChromeがエラー吐きまくったけど、クリックしなければ大丈夫だったのでなんとかしのぎました。&lt;/p&gt;
-
-&lt;p&gt;TXTレコードの追加は、お名前.comであれば&lt;a href=&#34;http://www.onamae.com/navi/domain.html&#34;&gt;ドメインNavi&lt;/a&gt;から&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ドメイン設定&lt;/li&gt;
-&lt;li&gt;DNS関連機能の設定&lt;/li&gt;
-&lt;li&gt;DNSレコード設定を利用する&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;でここに入力すればOK。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34; class=&#34;image&#34; alt=&#34;input_txt&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;TYPEはTXTにしてVALUEにさっきのテキストを入力。&lt;/p&gt;
-
-&lt;p&gt;場所にもよるけど少し待てば反映されるので、それまでGoogle側の画面で確認ボタンを何度か押してみる。&lt;/p&gt;
-
-&lt;p&gt;反映されてたら確認が通るはず。&lt;/p&gt;
-
-&lt;h2 id=&#34;ドメインの選択:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;ドメインの選択&lt;/h2&gt;
-
-&lt;p&gt;確認が出来たらサブドメインとしてプレフィックスを付けるのかを決める。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34; class=&#34;image&#34; alt=&#34;step2&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;これによって最後のステップが変わるけど、オレは確認の時点でサブドメインとして設定したので、Google側では特に付加せずやってます。&lt;/p&gt;
-
-&lt;h2 id=&#34;aレコードとaaaaレコードの追加:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;AレコードとAAAAレコードの追加&lt;/h2&gt;
-
-&lt;p&gt;最後はまたDNSレコードの追加。&lt;/p&gt;
-
-&lt;p&gt;ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34; class=&#34;image&#34; alt=&#34;step3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;あとは待ってればそのうち反映されるはず。&lt;/p&gt;
 </description>
         </item>
       

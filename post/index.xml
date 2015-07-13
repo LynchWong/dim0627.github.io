@@ -6,8 +6,77 @@
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
-    <updated>2015-06-20 11:30:06 &#43;0900 JST</updated>
+    <updated>2015-07-14 00:05:16 &#43;0900 JST</updated>
 
+    
+      
+        <item>
+          <title>focusoutイベントでfocus中の要素が取得できない</title>
+          <link>http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/</link>
+          <pubDate>Tue, 14 Jul 2015 00:05:16 JST</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/</guid>
+          <description>
+
+&lt;p&gt;何を血迷ったかサジェストを自作しようとしてしまってつらい目にあった話。&lt;/p&gt;
+
+&lt;h2 id=&#34;フォーカスアウトしたらサジェストを消したい:1be3a17c6bd3affece21cbd510505d7a&#34;&gt;フォーカスアウトしたらサジェストを消したい&lt;/h2&gt;
+
+&lt;p&gt;入力欄もしくはサジェストからフォーカスアウトした時はサジェストを消したいじゃん。&lt;/p&gt;
+
+&lt;p&gt;でもフォーカスアウトした先にフォーカスしたものが入力欄もしくはサジェストだったらそれは消したくないじゃん。&lt;/p&gt;
+
+&lt;p&gt;だからこんなコードを書いた。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;search-text&amp;quot;&amp;gt;
+&amp;lt;div id=&amp;quot;suggest-list&amp;quot;&amp;gt;
+  &amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;suggest&amp;lt;/a&amp;gt;
+  &amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;suggest&amp;lt;/a&amp;gt;
+  &amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;suggest&amp;lt;/a&amp;gt;
+&amp;lt;/div&amp;gt;
+
+&amp;lt;script&amp;gt;
+$(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() {
+  if ($(&amp;quot;#suggest-list&amp;quot;).find(&amp;quot;:focus&amp;quot;).length !== 0) {
+    console.log(&amp;quot;Not hide!&amp;quot;);
+    return;
+  }
+  console.log(&amp;quot;hide!&amp;quot;);
+});
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;実際はこの処理を入力だけじゃなくアンカーにも適用したんだけど面倒だから省略。&lt;/p&gt;
+
+&lt;p&gt;しかしこれだと&lt;code&gt;if&lt;/code&gt;の中には入らずサジェストの非表示処理が通ってしまう・・・。&lt;/p&gt;
+
+&lt;h2 id=&#34;フォーカス処理は一度ブラウザに返してあげる:1be3a17c6bd3affece21cbd510505d7a&#34;&gt;フォーカス処理は一度ブラウザに返してあげる&lt;/h2&gt;
+
+&lt;p&gt;どうやらJavaScriptの処理が進んでる間はフォーカス処理が行われないらしい。&lt;/p&gt;
+
+&lt;p&gt;なので&lt;strong&gt;一度ブラウザに処理が返るような処理&lt;/strong&gt;を挟んでやる必要がある。&lt;/p&gt;
+
+&lt;p&gt;こんなかんじに。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;$(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() {
+  setTimeout(function() {
+    if ($(&amp;quot;#suggest-list&amp;quot;).find(&amp;quot;:focus&amp;quot;).length !== 0) {
+      console.log(&amp;quot;Not hide!&amp;quot;);
+      return;
+    }
+    console.log(&amp;quot;hide!&amp;quot;);
+  }, 0);
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;setTimeout&lt;/code&gt;はJavaScriptの処理を通した後に、ブラウザ側からまた呼び出されるとのこと。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考にさせていただきました:1be3a17c6bd3affece21cbd510505d7a&#34;&gt;参考にさせていただきました。&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://qiita.com/jkr_2255/items/17693ab77beea71a871c&#34;&gt;JavaScript - setTimeout(&amp;hellip;,0)などの使いドコロ - Qiita&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>
