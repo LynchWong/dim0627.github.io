@@ -12,7 +12,7 @@
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/">
     <meta property="og:description" content="練習のためにClojureでいくつかのWebアプリを作ってみたんだけど、どの言語でもなんだかんだ手間になるテンプレートの扱いについてまとめてみる。 Enlive Clojure Programmingを執筆されたChristophe Grand氏のライブラリ。 CSSのセレクタでバインドを行うという、すごく画期的な方法でテンプレート機能を実現させてる。 例えばこんな感じでテンプレートのHTMLがあれば、 &lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;title&gt;This is a title placeholder&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;/body&gt; &lt;/html&gt; こうやってバインドできる。 (html/deftemplate main-template &quot;templates/application.html&quot; [] [:head :title] (html/content &quot;Enlive starter kit&quot;)) HTMLが素でかけるから、デザイナさんとの協業がすごく捗りそう。 サンプルのHTMLをそのまま使って、Clojure側でサンプルの値を置き換えたりリピートさせたりすれば済んじゃう。 今回は一人で使ったからそういう場面はなかったけど、サーバを起動しなくてもデザインが見れる &amp; 直せるっていうのは便利な場面があるかなあと。 ただ、結構CSSを書いたりしてるほうだけど、バインドの学習コストは意外と高いなと思った。 効率的に手早くバインドさせるには、Enliveを使う想定のHTML構造にする必要がありそうな印象だった。 覚えてしまえばものすごく活躍しそう。 Hiccup CompojureやEnviron、Ringなどの作者、James Reeves氏のライブラリ。 HTMLを完全にClojureでラップしてるので、ClojureだけでWebアプリを完結させられる。 こんな感じ。 user=&gt; (html [:script]) &quot;&lt;script&gt;&lt;/script&gt;&quot; user=&gt; (html [:p]) &quot;&lt;p /&gt;&quot; Clojureのコンパイルが走るので、タグの不整合(閉じタグがないとか)が一切起こらないっていうのは魅力だと思う。 欠点を挙げるとすれば、改行なしでHTMLが出力されるからブラウザからソースを見るのが厳しい。ていうか無理。 設定でなんとか出来るんだろうか？ でもChromeの開発者ツールとか使えばフォーマットして表示してくれるし、全然クリティカルな問題じゃない。 もう1点は、例えば広告のスクリプトみたいにコピペで貼り付けたい文字列とかの出力がちょっとめんどう。 Hiccupの世界にただのタグを入れるのは見栄えも悪いし、オレはこんな感じで外だしすることで対応した。 (def partial-ad-big (str &quot;&lt;script async src=&quot;&quot;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;&quot;&gt;&lt;/script&gt; &lt;ins class=&quot;&quot;adsbygoogle&quot;&quot; style=&quot;&quot;display:inline-block;width:728px;height:90px&quot;&quot; data-ad-client=&quot;&quot;ca-pub-421xxxxxxxxxx76&quot;&quot;">
     
-    <meta property="og:image" content="http://yet.unresolved.xyz//images/clojure.png">
+    <meta property="og:image" content="http://yet.unresolved.xyz/images/clojure.png">
     
     
     <meta property="og:site_name" content="Unresolved">
@@ -24,10 +24,10 @@
     </title>
 
     
-    <link rel="shortcut icon" href="http://yet.unresolved.xyz//assets/favicon.ico">
+    <link rel="shortcut icon" href="http://yet.unresolved.xyz/assets/favicon.ico">
 
     
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz//index.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Marcellus+SC" rel="stylesheet" type="text/css">
@@ -44,7 +44,7 @@
     <header id="site-header">
       <div class="container">
         <h1 class="text-center">
-          <a href="http://yet.unresolved.xyz/" class="font-logo">Unresolved</a>
+          <a href="http://yet.unresolved.xyz" class="font-logo">Unresolved</a>
         </h1>
       </div>
     </header>
@@ -61,7 +61,7 @@
 
       <div class="eyecatch text-center">
         
-        <img src="http://yet.unresolved.xyz//images/clojure.png" alt="Clojureのテンプレートエンジンについて">
+        <img src="http://yet.unresolved.xyz/images/clojure.png" alt="Clojureのテンプレートエンジンについて">
         
       </div>
 
@@ -171,11 +171,11 @@ user=&gt; (html [:p])
           <div class="col-sm-5">
             <section id="share">
               <h3>Share</h3>
-              <a id="share-fb" href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f14%2fuse-template-engine-in-clojure%2f&t=Clojure%e3%81%ae%e3%83%86%e3%83%b3%e3%83%97%e3%83%ac%e3%83%bc%e3%83%88%e3%82%a8%e3%83%b3%e3%82%b8%e3%83%b3%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/facebook.png" alt="Facebook"/></a>
-              <a id="share-twitter" href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f14%2fuse-template-engine-in-clojure%2f&text=Clojure%e3%81%ae%e3%83%86%e3%83%b3%e3%83%97%e3%83%ac%e3%83%bc%e3%83%88%e3%82%a8%e3%83%b3%e3%82%b8%e3%83%b3%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/twitter.png" alt="Twitter"/></a>
-              <a id="share-googleplus" href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f14%2fuse-template-engine-in-clojure%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/googleplus.png" alt="Google+"/></a>
-              <a id="share-hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f14%2fuse-template-engine-in-clojure%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/hatena.png" alt="Hatena"/></a>
-              <a id="share-pocket" href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f14%2fuse-template-engine-in-clojure%2f&title=Clojure%e3%81%ae%e3%83%86%e3%83%b3%e3%83%97%e3%83%ac%e3%83%bc%e3%83%88%e3%82%a8%e3%83%b3%e3%82%b8%e3%83%b3%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/pocket.png" alt="Pocket"/></a>
+              <a id="share-fb" href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f14%2fuse-template-engine-in-clojure%2f&t=Clojure%e3%81%ae%e3%83%86%e3%83%b3%e3%83%97%e3%83%ac%e3%83%bc%e3%83%88%e3%82%a8%e3%83%b3%e3%82%b8%e3%83%b3%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/facebook.png" alt="Facebook"/></a>
+              <a id="share-twitter" href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f14%2fuse-template-engine-in-clojure%2f&text=Clojure%e3%81%ae%e3%83%86%e3%83%b3%e3%83%97%e3%83%ac%e3%83%bc%e3%83%88%e3%82%a8%e3%83%b3%e3%82%b8%e3%83%b3%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/twitter.png" alt="Twitter"/></a>
+              <a id="share-googleplus" href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f14%2fuse-template-engine-in-clojure%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/googleplus.png" alt="Google+"/></a>
+              <a id="share-hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f14%2fuse-template-engine-in-clojure%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/hatena.png" alt="Hatena"/></a>
+              <a id="share-pocket" href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f14%2fuse-template-engine-in-clojure%2f&title=Clojure%e3%81%ae%e3%83%86%e3%83%b3%e3%83%97%e3%83%ac%e3%83%bc%e3%83%88%e3%82%a8%e3%83%b3%e3%82%b8%e3%83%b3%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/pocket.png" alt="Pocket"/></a>
             </section>
           </div>
 
@@ -188,15 +188,19 @@ user=&gt; (html [:p])
               <h3>Related Post</h3>
               <div id="tags">
                 
-                <a href="http://yet.unresolved.xyz//tags/clojure"><i class="fa fa-tags"></i> clojure </a>
+                <a href="http://yet.unresolved.xyz/tags/clojure"><i class="fa fa-tags"></i> clojure </a>
                 
-                <a href="http://yet.unresolved.xyz//tags/enlive"><i class="fa fa-tags"></i> enlive </a>
+                <a href="http://yet.unresolved.xyz/tags/enlive"><i class="fa fa-tags"></i> enlive </a>
                 
-                <a href="http://yet.unresolved.xyz//tags/hiccup"><i class="fa fa-tags"></i> hiccup </a>
+                <a href="http://yet.unresolved.xyz/tags/hiccup"><i class="fa fa-tags"></i> hiccup </a>
                 
               </div>
 
               <ul id="related-posts">
+                
+                
+                
+                
                 
                 
                 
@@ -495,181 +499,181 @@ var disqus_shortname = 'unresolved';
       
       
       
-      <a href="http://yet.unresolved.xyz//tags/ansible">ansible</a>
+      <a href="http://yet.unresolved.xyz/tags/ansible">ansible</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/apigility">apigility</a>
+      <a href="http://yet.unresolved.xyz/tags/apigility">apigility</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/auriga">auriga</a>
+      <a href="http://yet.unresolved.xyz/tags/auriga">auriga</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/aws">aws</a>
+      <a href="http://yet.unresolved.xyz/tags/aws">aws</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/beanstalk">beanstalk</a>
+      <a href="http://yet.unresolved.xyz/tags/beanstalk">beanstalk</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/book">book</a>
+      <a href="http://yet.unresolved.xyz/tags/book">book</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/boot2docker">boot2docker</a>
+      <a href="http://yet.unresolved.xyz/tags/boot2docker">boot2docker</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/centos">centos</a>
+      <a href="http://yet.unresolved.xyz/tags/centos">centos</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/clang">clang</a>
+      <a href="http://yet.unresolved.xyz/tags/clang">clang</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/clojure">clojure</a>
+      <a href="http://yet.unresolved.xyz/tags/clojure">clojure</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/css">css</a>
+      <a href="http://yet.unresolved.xyz/tags/css">css</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/database">database</a>
+      <a href="http://yet.unresolved.xyz/tags/database">database</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/design">design</a>
+      <a href="http://yet.unresolved.xyz/tags/design">design</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/dns">dns</a>
+      <a href="http://yet.unresolved.xyz/tags/dns">dns</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/docker">docker</a>
+      <a href="http://yet.unresolved.xyz/tags/docker">docker</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/enlive">enlive</a>
+      <a href="http://yet.unresolved.xyz/tags/enlive">enlive</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/frontend">frontend</a>
+      <a href="http://yet.unresolved.xyz/tags/frontend">frontend</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/git">git</a>
+      <a href="http://yet.unresolved.xyz/tags/git">git</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/github">github</a>
+      <a href="http://yet.unresolved.xyz/tags/github">github</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/golang">golang</a>
+      <a href="http://yet.unresolved.xyz/tags/golang">golang</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/google-app-engine">google-app-engine</a>
+      <a href="http://yet.unresolved.xyz/tags/google-app-engine">google-app-engine</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/gravatar">gravatar</a>
+      <a href="http://yet.unresolved.xyz/tags/gravatar">gravatar</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/hackathon">hackathon</a>
+      <a href="http://yet.unresolved.xyz/tags/hackathon">hackathon</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/heroku">heroku</a>
+      <a href="http://yet.unresolved.xyz/tags/heroku">heroku</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/hiccup">hiccup</a>
+      <a href="http://yet.unresolved.xyz/tags/hiccup">hiccup</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/html">html</a>
+      <a href="http://yet.unresolved.xyz/tags/html">html</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/hugo">hugo</a>
+      <a href="http://yet.unresolved.xyz/tags/hugo">hugo</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/iterm">iterm</a>
+      <a href="http://yet.unresolved.xyz/tags/iterm">iterm</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/javascript">javascript</a>
+      <a href="http://yet.unresolved.xyz/tags/javascript">javascript</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/jekyll">jekyll</a>
+      <a href="http://yet.unresolved.xyz/tags/jekyll">jekyll</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/leiningen">leiningen</a>
+      <a href="http://yet.unresolved.xyz/tags/leiningen">leiningen</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/linux">linux</a>
+      <a href="http://yet.unresolved.xyz/tags/linux">linux</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/lobos">lobos</a>
+      <a href="http://yet.unresolved.xyz/tags/lobos">lobos</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/mac">mac</a>
+      <a href="http://yet.unresolved.xyz/tags/mac">mac</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/migration">migration</a>
+      <a href="http://yet.unresolved.xyz/tags/migration">migration</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/octopress">octopress</a>
+      <a href="http://yet.unresolved.xyz/tags/octopress">octopress</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/os-x">os-x</a>
+      <a href="http://yet.unresolved.xyz/tags/os-x">os-x</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/paiza">paiza</a>
+      <a href="http://yet.unresolved.xyz/tags/paiza">paiza</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/paizaio">paizaio</a>
+      <a href="http://yet.unresolved.xyz/tags/paizaio">paizaio</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/php">php</a>
+      <a href="http://yet.unresolved.xyz/tags/php">php</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/postgresql">postgresql</a>
+      <a href="http://yet.unresolved.xyz/tags/postgresql">postgresql</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/powerline">powerline</a>
+      <a href="http://yet.unresolved.xyz/tags/powerline">powerline</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/python">python</a>
+      <a href="http://yet.unresolved.xyz/tags/python">python</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/reactjs">reactjs</a>
+      <a href="http://yet.unresolved.xyz/tags/reactjs">reactjs</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/ring">ring</a>
+      <a href="http://yet.unresolved.xyz/tags/ring">ring</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/ruby">ruby</a>
+      <a href="http://yet.unresolved.xyz/tags/ruby">ruby</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/sass">sass</a>
+      <a href="http://yet.unresolved.xyz/tags/sass">sass</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/scss">scss</a>
+      <a href="http://yet.unresolved.xyz/tags/scss">scss</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/security">security</a>
+      <a href="http://yet.unresolved.xyz/tags/security">security</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/slack">slack</a>
+      <a href="http://yet.unresolved.xyz/tags/slack">slack</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/sql-server">sql-server</a>
+      <a href="http://yet.unresolved.xyz/tags/sql-server">sql-server</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/sqlite">sqlite</a>
+      <a href="http://yet.unresolved.xyz/tags/sqlite">sqlite</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/startup">startup</a>
+      <a href="http://yet.unresolved.xyz/tags/startup">startup</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/startup-weekend">startup-weekend</a>
+      <a href="http://yet.unresolved.xyz/tags/startup-weekend">startup-weekend</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/tmux">tmux</a>
+      <a href="http://yet.unresolved.xyz/tags/tmux">tmux</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/ubuntu">ubuntu</a>
+      <a href="http://yet.unresolved.xyz/tags/ubuntu">ubuntu</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/util">util</a>
+      <a href="http://yet.unresolved.xyz/tags/util">util</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/vagrant">vagrant</a>
+      <a href="http://yet.unresolved.xyz/tags/vagrant">vagrant</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/vim">vim</a>
+      <a href="http://yet.unresolved.xyz/tags/vim">vim</a>
       
     </div>
     
@@ -721,7 +725,7 @@ var disqus_shortname = 'unresolved';
 
     <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-    <script src="http://yet.unresolved.xyz//js/highlight.pack.js"></script>
+    <script src="http://yet.unresolved.xyz/js/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
     

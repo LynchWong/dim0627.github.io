@@ -12,7 +12,7 @@
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">
     <meta property="og:description" content="Octopressでのブログもずいぶん慣れてきたところでHugoに移行しました。 一晩徹夜して、カスタマイズからGitHub Pagesでの公開までいけたのでいろいろまとめてみる。 なぜ移行？ ずっとテーマのカスタマイズをしたいと思ってたんだけど、Octopressのテーマの構成がいつまでたっても理解出来なかったのが一番の理由。 テーマというか、テンプレートの構成かな・・・。 Google Adsenseとかも導入したんだけど、そんな些細な修正ですらちょっと辛い感じになってしまってたので、いっそ土台ごと変えることに。 Hugoに移行するメリット せっかくだし移行してみてよかったことをまとめてみます。 とにかくスピーディ 何をするにも動作がめちゃくちゃ速い。 記事数がそんなに多くないからOctopressでも不満はなかったんだけど、今考えればとてつもない遅さだったなあと思う。 Hugoはほんとに一瞬で記事を生成するし、サーバの起動も一瞬なのでライブリロードがいらないくらい。使ってるけど笑 HugoはGolangで出来てるそうで、それが要因なのかはわからないけど、これまで触ってきた開発用サーバの中でも類を見ない速さで作業ができます。 構造がシンプル トップページ、記事一覧、記事個別のページ、って感じで綺麗に区分けがされてる。 テーマがいくつかあるんだけど、どれも必要のないネストとかしてないし、そこからカスタマイズがしやすい。 あと、カテゴリとかタグみたいに、記事間を横断的に集計したい場合もすごく簡単に出来る。 すごく簡単すぎてどうなってるのかわからなくなることがあるけど笑 Taxonomy Overview 無駄な物がない Hugoはnewで作った時に基礎になるテンプレートがないくらい、標準装備が少ない。 まあそれじゃテスト実行さえ出来ないからどうなんだっていう人もいると思うけど笑 オレは結構0から作りたい方なので、これくらいすっきりさせてくれてたほうが嬉しかった。 移行によるデメリット とはいえ全てがよかったわけではなくて、途中で何度か引き返そうと思う場面もあったので、そこも書いとく。 自分でやらなきゃいけないことが多い やっぱりOctopressはRakeタスクでかなり囲い込みが出来てたなあと思う。 OctopressをGitHub Pagesで公開する場合、masterとsourceブランチが作成されるんだけど、あれは運用面でも非常に楽だったなあと思う。 Hugoはデプロイは一切触れずに、本当に静的な資材の生成しかしないから、その辺は自分でやらなきゃいけない。 だから初めての人には辛いところがあるかも。 あ、あとDISQUSとかもテーマによってはIDを指定するだけで使えたり、自分でタグを埋め込まなきゃ使えなかったりする。 記事のカテゴリ分けとかタグ付けについても自分で設定しなきゃいけない。公式に手順はあるけど。 もちろんSNSのリンクも自分で配置。 日本語タイトルが使いづらい Octopressの時は、記事のMarkdownファイルのファイル名は英語にして、ファイル内のtitleで日本語を設定してました。 Hugoはファイル内のtitleで記事個別ページのURLを生成するから、マルチバイトが入るといろいろ面倒なことになっちゃった。 あと、これまでのSEOをゼロにしたくないからURLは変えたくなくて、やっぱりURLでは英語のタイトルを使いたい。 これはもうどうしょうもなくて、ファイル内に英語タイトルと日本語タイトルを設定出来るようにした。 シェルで一括操作出来るような内容でもないので、ここは手作業。 テーマが少ない あるものでなんとかしたい、って人には深刻かと笑 ブログ自体に注力せずに記事を書くことに注力したい、って人はOctopressかHexoかそもそもHatenaとかの方がいいのかもしれない。 移行において 記事の移行と、なるべく移行前と移行後でブログを書く作業が変わらないように工夫した点をまとめる。 日付フォーマットの変更 Octopressと違ってHugoでは日付のフォーマットを date: &quot;2013-10-27&quot; こんな感じにしなきゃいけないので、先人の知恵を使って置換する。 $ find . -type f -exec sed -i &quot;&quot; -e &#39;s/\([0-9]\&#43;-[0-9]\&#43;-[0-9]\&#43;\).*$/&quot;\1&quot;/&#39; {} \; 画像タグの変更 Octopressではこう書いてたけど [{% img /images/2015-01-01/beanstalkDockerApp.png &#39;beanstalkDockerApp&#39; &#39;beanstalkDockerApp&#39; %}](/images/2015-01-01/beanstalkDockerApp.png) Hugoでは画像タグHTMLベタにするので、 $ find .">
     
-    <meta property="og:image" content="http://yet.unresolved.xyz//images/hugo.png">
+    <meta property="og:image" content="http://yet.unresolved.xyz/images/hugo.png">
     
     
     <meta property="og:site_name" content="Unresolved">
@@ -24,10 +24,10 @@
     </title>
 
     
-    <link rel="shortcut icon" href="http://yet.unresolved.xyz//assets/favicon.ico">
+    <link rel="shortcut icon" href="http://yet.unresolved.xyz/assets/favicon.ico">
 
     
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz//index.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Marcellus+SC" rel="stylesheet" type="text/css">
@@ -44,7 +44,7 @@
     <header id="site-header">
       <div class="container">
         <h1 class="text-center">
-          <a href="http://yet.unresolved.xyz/" class="font-logo">Unresolved</a>
+          <a href="http://yet.unresolved.xyz" class="font-logo">Unresolved</a>
         </h1>
       </div>
     </header>
@@ -61,7 +61,7 @@
 
       <div class="eyecatch text-center">
         
-        <img src="http://yet.unresolved.xyz//images/hugo.png" alt="ブログをOctopressからHugoに移行した">
+        <img src="http://yet.unresolved.xyz/images/hugo.png" alt="ブログをOctopressからHugoに移行した">
         
       </div>
 
@@ -251,11 +251,11 @@ hugo new post/&quot;`date +%Y-%m-%d`-$title.markdown&quot;
           <div class="col-sm-5">
             <section id="share">
               <h3>Share</h3>
-              <a id="share-fb" href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f04%2fmigrate-blog-to-hugo-from-octopress%2f&t=%e3%83%96%e3%83%ad%e3%82%b0%e3%82%92Octopress%e3%81%8b%e3%82%89Hugo%e3%81%ab%e7%a7%bb%e8%a1%8c%e3%81%97%e3%81%9f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/facebook.png" alt="Facebook"/></a>
-              <a id="share-twitter" href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f04%2fmigrate-blog-to-hugo-from-octopress%2f&text=%e3%83%96%e3%83%ad%e3%82%b0%e3%82%92Octopress%e3%81%8b%e3%82%89Hugo%e3%81%ab%e7%a7%bb%e8%a1%8c%e3%81%97%e3%81%9f&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/twitter.png" alt="Twitter"/></a>
-              <a id="share-googleplus" href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f04%2fmigrate-blog-to-hugo-from-octopress%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/googleplus.png" alt="Google+"/></a>
-              <a id="share-hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f04%2fmigrate-blog-to-hugo-from-octopress%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/hatena.png" alt="Hatena"/></a>
-              <a id="share-pocket" href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f04%2fmigrate-blog-to-hugo-from-octopress%2f&title=%e3%83%96%e3%83%ad%e3%82%b0%e3%82%92Octopress%e3%81%8b%e3%82%89Hugo%e3%81%ab%e7%a7%bb%e8%a1%8c%e3%81%97%e3%81%9f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz//images/sharebutton/pocket.png" alt="Pocket"/></a>
+              <a id="share-fb" href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f04%2fmigrate-blog-to-hugo-from-octopress%2f&t=%e3%83%96%e3%83%ad%e3%82%b0%e3%82%92Octopress%e3%81%8b%e3%82%89Hugo%e3%81%ab%e7%a7%bb%e8%a1%8c%e3%81%97%e3%81%9f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/facebook.png" alt="Facebook"/></a>
+              <a id="share-twitter" href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f04%2fmigrate-blog-to-hugo-from-octopress%2f&text=%e3%83%96%e3%83%ad%e3%82%b0%e3%82%92Octopress%e3%81%8b%e3%82%89Hugo%e3%81%ab%e7%a7%bb%e8%a1%8c%e3%81%97%e3%81%9f&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/twitter.png" alt="Twitter"/></a>
+              <a id="share-googleplus" href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f04%2fmigrate-blog-to-hugo-from-octopress%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/googleplus.png" alt="Google+"/></a>
+              <a id="share-hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f04%2fmigrate-blog-to-hugo-from-octopress%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/hatena.png" alt="Hatena"/></a>
+              <a id="share-pocket" href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f01%2f04%2fmigrate-blog-to-hugo-from-octopress%2f&title=%e3%83%96%e3%83%ad%e3%82%b0%e3%82%92Octopress%e3%81%8b%e3%82%89Hugo%e3%81%ab%e7%a7%bb%e8%a1%8c%e3%81%97%e3%81%9f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/pocket.png" alt="Pocket"/></a>
             </section>
           </div>
 
@@ -268,17 +268,21 @@ hugo new post/&quot;`date +%Y-%m-%d`-$title.markdown&quot;
               <h3>Related Post</h3>
               <div id="tags">
                 
-                <a href="http://yet.unresolved.xyz//tags/golang"><i class="fa fa-tags"></i> golang </a>
+                <a href="http://yet.unresolved.xyz/tags/golang"><i class="fa fa-tags"></i> golang </a>
                 
-                <a href="http://yet.unresolved.xyz//tags/octopress"><i class="fa fa-tags"></i> octopress </a>
+                <a href="http://yet.unresolved.xyz/tags/octopress"><i class="fa fa-tags"></i> octopress </a>
                 
-                <a href="http://yet.unresolved.xyz//tags/hugo"><i class="fa fa-tags"></i> hugo </a>
+                <a href="http://yet.unresolved.xyz/tags/hugo"><i class="fa fa-tags"></i> hugo </a>
                 
-                <a href="http://yet.unresolved.xyz//tags/ruby"><i class="fa fa-tags"></i> ruby </a>
+                <a href="http://yet.unresolved.xyz/tags/ruby"><i class="fa fa-tags"></i> ruby </a>
                 
               </div>
 
               <ul id="related-posts">
+                
+                
+                
+                
                 
                 
                 
@@ -573,181 +577,181 @@ var disqus_shortname = 'unresolved';
       
       
       
-      <a href="http://yet.unresolved.xyz//tags/ansible">ansible</a>
+      <a href="http://yet.unresolved.xyz/tags/ansible">ansible</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/apigility">apigility</a>
+      <a href="http://yet.unresolved.xyz/tags/apigility">apigility</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/auriga">auriga</a>
+      <a href="http://yet.unresolved.xyz/tags/auriga">auriga</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/aws">aws</a>
+      <a href="http://yet.unresolved.xyz/tags/aws">aws</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/beanstalk">beanstalk</a>
+      <a href="http://yet.unresolved.xyz/tags/beanstalk">beanstalk</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/book">book</a>
+      <a href="http://yet.unresolved.xyz/tags/book">book</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/boot2docker">boot2docker</a>
+      <a href="http://yet.unresolved.xyz/tags/boot2docker">boot2docker</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/centos">centos</a>
+      <a href="http://yet.unresolved.xyz/tags/centos">centos</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/clang">clang</a>
+      <a href="http://yet.unresolved.xyz/tags/clang">clang</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/clojure">clojure</a>
+      <a href="http://yet.unresolved.xyz/tags/clojure">clojure</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/css">css</a>
+      <a href="http://yet.unresolved.xyz/tags/css">css</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/database">database</a>
+      <a href="http://yet.unresolved.xyz/tags/database">database</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/design">design</a>
+      <a href="http://yet.unresolved.xyz/tags/design">design</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/dns">dns</a>
+      <a href="http://yet.unresolved.xyz/tags/dns">dns</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/docker">docker</a>
+      <a href="http://yet.unresolved.xyz/tags/docker">docker</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/enlive">enlive</a>
+      <a href="http://yet.unresolved.xyz/tags/enlive">enlive</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/frontend">frontend</a>
+      <a href="http://yet.unresolved.xyz/tags/frontend">frontend</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/git">git</a>
+      <a href="http://yet.unresolved.xyz/tags/git">git</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/github">github</a>
+      <a href="http://yet.unresolved.xyz/tags/github">github</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/golang">golang</a>
+      <a href="http://yet.unresolved.xyz/tags/golang">golang</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/google-app-engine">google-app-engine</a>
+      <a href="http://yet.unresolved.xyz/tags/google-app-engine">google-app-engine</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/gravatar">gravatar</a>
+      <a href="http://yet.unresolved.xyz/tags/gravatar">gravatar</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/hackathon">hackathon</a>
+      <a href="http://yet.unresolved.xyz/tags/hackathon">hackathon</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/heroku">heroku</a>
+      <a href="http://yet.unresolved.xyz/tags/heroku">heroku</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/hiccup">hiccup</a>
+      <a href="http://yet.unresolved.xyz/tags/hiccup">hiccup</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/html">html</a>
+      <a href="http://yet.unresolved.xyz/tags/html">html</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/hugo">hugo</a>
+      <a href="http://yet.unresolved.xyz/tags/hugo">hugo</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/iterm">iterm</a>
+      <a href="http://yet.unresolved.xyz/tags/iterm">iterm</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/javascript">javascript</a>
+      <a href="http://yet.unresolved.xyz/tags/javascript">javascript</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/jekyll">jekyll</a>
+      <a href="http://yet.unresolved.xyz/tags/jekyll">jekyll</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/leiningen">leiningen</a>
+      <a href="http://yet.unresolved.xyz/tags/leiningen">leiningen</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/linux">linux</a>
+      <a href="http://yet.unresolved.xyz/tags/linux">linux</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/lobos">lobos</a>
+      <a href="http://yet.unresolved.xyz/tags/lobos">lobos</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/mac">mac</a>
+      <a href="http://yet.unresolved.xyz/tags/mac">mac</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/migration">migration</a>
+      <a href="http://yet.unresolved.xyz/tags/migration">migration</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/octopress">octopress</a>
+      <a href="http://yet.unresolved.xyz/tags/octopress">octopress</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/os-x">os-x</a>
+      <a href="http://yet.unresolved.xyz/tags/os-x">os-x</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/paiza">paiza</a>
+      <a href="http://yet.unresolved.xyz/tags/paiza">paiza</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/paizaio">paizaio</a>
+      <a href="http://yet.unresolved.xyz/tags/paizaio">paizaio</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/php">php</a>
+      <a href="http://yet.unresolved.xyz/tags/php">php</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/postgresql">postgresql</a>
+      <a href="http://yet.unresolved.xyz/tags/postgresql">postgresql</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/powerline">powerline</a>
+      <a href="http://yet.unresolved.xyz/tags/powerline">powerline</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/python">python</a>
+      <a href="http://yet.unresolved.xyz/tags/python">python</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/reactjs">reactjs</a>
+      <a href="http://yet.unresolved.xyz/tags/reactjs">reactjs</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/ring">ring</a>
+      <a href="http://yet.unresolved.xyz/tags/ring">ring</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/ruby">ruby</a>
+      <a href="http://yet.unresolved.xyz/tags/ruby">ruby</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/sass">sass</a>
+      <a href="http://yet.unresolved.xyz/tags/sass">sass</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/scss">scss</a>
+      <a href="http://yet.unresolved.xyz/tags/scss">scss</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/security">security</a>
+      <a href="http://yet.unresolved.xyz/tags/security">security</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/slack">slack</a>
+      <a href="http://yet.unresolved.xyz/tags/slack">slack</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/sql-server">sql-server</a>
+      <a href="http://yet.unresolved.xyz/tags/sql-server">sql-server</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/sqlite">sqlite</a>
+      <a href="http://yet.unresolved.xyz/tags/sqlite">sqlite</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/startup">startup</a>
+      <a href="http://yet.unresolved.xyz/tags/startup">startup</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/startup-weekend">startup-weekend</a>
+      <a href="http://yet.unresolved.xyz/tags/startup-weekend">startup-weekend</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/tmux">tmux</a>
+      <a href="http://yet.unresolved.xyz/tags/tmux">tmux</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/ubuntu">ubuntu</a>
+      <a href="http://yet.unresolved.xyz/tags/ubuntu">ubuntu</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/util">util</a>
+      <a href="http://yet.unresolved.xyz/tags/util">util</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/vagrant">vagrant</a>
+      <a href="http://yet.unresolved.xyz/tags/vagrant">vagrant</a>
       
       
-      <a href="http://yet.unresolved.xyz//tags/vim">vim</a>
+      <a href="http://yet.unresolved.xyz/tags/vim">vim</a>
       
     </div>
     
@@ -799,7 +803,7 @@ var disqus_shortname = 'unresolved';
 
     <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-    <script src="http://yet.unresolved.xyz//js/highlight.pack.js"></script>
+    <script src="http://yet.unresolved.xyz/js/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
     
