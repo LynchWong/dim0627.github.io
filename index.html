@@ -11,9 +11,9 @@
     <meta property="og:url" content="http://yet.unresolved.xyz">
     <meta property="og:title" content="Unresolved">
     
-    <meta property="og:description" content="何を血迷ったかサジェストを自作しようとしてしまってつらい目にあった話。 フォーカスアウトしたらサジェストを消したい 入力欄もしくはサジェストからフォーカスアウトした時はサジェストを消したいじゃん。 でもフォーカスアウトした先にフォーカスしたものが入力欄もしくはサジェストだったらそれは消したくないじゃん。 だからこんなコードを書いた。 &lt;input type=&quot;text&quot; id=&quot;search-text&quot;&gt; &lt;div id=&quot;suggest-list&quot;&gt; &lt;a href=&quot;#&quot;&gt;suggest&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;suggest&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;suggest&lt;/a&gt; &lt;/div&gt; &lt;script&gt; $(&quot;#search-text&quot;).on(&quot;focusout&quot;, function() { if ($(&quot;#suggest-list&quot;).find(&quot;:focus&quot;).length !== 0) { console.log(&quot;Not hide!&quot;); return; } console.log(&quot;hide!&quot;); }); &lt;/script&gt; 実際はこの処理を入力だけじゃなくアンカーにも適用したんだけど面倒だから省略。 しかしこれだとifの中には入らずサジェストの非表示処理が通ってしまう・・・。 フォーカス処理は一度ブラウザに返してあげる どうやらJavaScriptの処理が進んでる間はフォーカス処理が行われないらしい。 なので一度ブラウザに処理が返るような処理を挟んでやる必要がある。 こんなかんじに。 $(&quot;#search-text&quot;).on(&quot;focusout&quot;, function() { setTimeout(function() { if ($(&quot;#suggest-list&quot;).find(&quot;:focus&quot;).length !== 0) { console.log(&quot;Not hide!&quot;); return; } console.log(&quot;hide!&quot;); }, 0); }); setTimeoutはJavaScriptの処理を通した後に、ブラウザ側からまた呼び出されるとのこと。 参考にさせていただきました。 JavaScript - setTimeout(&hellip;,0)などの使いドコロ - Qiita">
+    <meta property="og:description" content="開発はCentOS、本番はAmazonLinuxにしようとしたら意外と違うところが多くてProvisioningがだるかったので。 ec2-create-instance-export-task ec2-create-instance-export-taskっていうCLIのコマンドが用意されているらしい。 Amazon EC2 インスタンスをエクスポートする - Amazon Elastic Compute Cloud このコマンドでEC2のinstance_idを指定してS3にイメージファイルをエクスポートできるとのこと。 書式はこんな。 ec2-create-instance-export-task instance_id –e target_environment –f disk_image_format -c container_format –b s3_bucket pipで入れたからこんな感じになったよ。 aws ec2 create-instance-export-task --instance-id i-82xxx70 --target-environment vmware --export-to-s3-task DiskImageFormat=vmdk,ContainerFormat=ova,S3Bucket=images.xxxxx.jp そしたらこんなエラー。 A client error (AuthFailure) occurred when calling the CreateInstanceExportTask operation: vm-import-export@amazon.com must have WRITE and READ_ACL permission on the S3 bucket. しっかり説明を読むと、 エクスポートされたインスタンスを格納する Amazon S3 バケットを作成します。Amazon S3 バケットでは、[vm-import-export@amazon.com] アカウントへの [Upload/Delete] および [View Permissions] アクセスが付与される必要があります。詳細については、Amazon Simple Storage Service コンソールユーザーガイド の Creating a Bucket および Editing Bucket Permissions を参照してください。 なるほどなるほど。 こんな感じに。 そしたら違うエラー。 A client error (NotExportable) occurred when calling the CreateInstanceExportTask operation: Only imported instances can be exported.">
     
-    <meta property="og:image" content="http://yet.unresolved.xyz/images/jquery.jpg">
+    <meta property="og:image" content="http://yet.unresolved.xyz/images/aws.png">
     
     
     
@@ -61,6 +61,28 @@
     <div id="posts">
       
       <div class="row">
+        
+        
+        
+        <div class="col-sm-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/" class="post post-topix">
+              <header class="eyecatch text-center">
+                <img src="/images/aws.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Wed, Aug 26, 2015</span>
+              </div>
+              <h2 class="title">Amazon LinuxをVagrantで使いたい</h2>
+              <div class="summary">
+                開発はCentOS、本番はAmazonLinuxにしようとしたら意外と違うところが多くてProvisioningがだるかったので。 ec2-create-instance-export-task ec2-create-instance-export-taskっていうCLIのコマンドが用意されているらしい。 Amazon EC2 インスタンスをエクスポートする - Amazon Elastic Compute Cloud このコマンドでEC2のinstance_idを指定してS3にイメージファイルをエクスポートできるとのこと。 書式はこんな。 ec2-create-instance-export-task instance_id –e target_environment –f disk_image_format -c container_format –b s3_bucket pipで入れたからこんな感じになったよ。 aws ec2 create-instance-export-task --instance-id i-82xxx70 --target-environment vmware --export-to-s3-task DiskImageFormat=vmdk,ContainerFormat=ova,S3Bucket=images.xxxxx.jp そしたらこんなエラー。 A client error (AuthFailure) occurred when calling the CreateInstanceExportTask operation: vm-import-export@amazon.com must have WRITE and READ_ACL permission on the S3 bucket. しっかり説明を読むと、 エクスポートされたインスタンスを格納する Amazon S3 バケットを作成します。Amazon S3 バケットでは、[vm-import-export@amazon.com] アカウントへの [Upload/Delete] および [View Permissions] アクセスが付与される必要があります。詳細については、Amazon Simple Storage Service コンソールユーザーガイド の Creating a Bucket および Editing Bucket Permissions を参照してください。 なるほどなるほど。 こんな感じに。 そしたら違うエラー。 A client error (NotExportable) occurred when calling the CreateInstanceExportTask operation: Only imported instances can be exported.
+              </div>
+            </a>
+          </article>
+        </div>
+        
+        
+        
         
         
         
@@ -126,28 +148,6 @@
         </div>
         
         
-        
-        
-        
-        
-        <div class="col-sm-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/04/04/anguish-in-the-css-and-html/" class="post post-topix">
-              <header class="eyecatch text-center">
-                <img src="/images/front.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Sat, Apr 4, 2015</span>
-              </div>
-              <h2 class="title">CSS / HTMLで味わった苦悩の数々を振り返ってみる</h2>
-              <div class="summary">
-                CSSってアンチパターンとかベストプラクティスみたいなのをあんまり聞かないよね。 デザイナじゃないオレがフロントエンドに触れて苦しんだこととかノウハウとかをまとめてみようと思う。 セクションを意識する HTML5からsectionタグが出てきたね。 これはそのタグの話ではなくて、画面レイアウトを考えた上での大枠について。 オレがやって失敗だったなと思ったのはページの一部からHTMLを書き始めるやり方。 これをやってしまうとページの一部分から完成していくから、全体で統制が取れなくなることが多かった。 具体的に言うと、だいたいのページはこんな感じのセクション分けになるはず。 &lt;!doctype HTML&gt; &lt;html&gt; &lt;head&gt; metaタグ。 CSSフレームワークの読み込み。 オーバライド用のCSSファイルの読み込み。 などなど。 &lt;/head&gt; &lt;body&gt; &lt;header&gt; ヘッダ。ロゴや一部のメニューを置く。 &lt;/header&gt; &lt;div&gt; グローバルメニュー。サイトによってはheaderで事足りる場合も。 &lt;/div&gt; &lt;div&gt; メインコンテンツ。この中でカラム分けをしたり、さらに細分化されたセクション分けをしたりする。 &lt;/div&gt; &lt;footer&gt; コピーライトを書いたりする。 最近はサイトマップをここに置いたりすることが多いみたい。 &lt;/footer&gt; JavaScriptの読み込み &lt;/body&gt; &lt;/html&gt; 個人的に好きに書いていい場面ではhtmlタグ、head、bodyタグは省略するんだけど、今回はその話は置いておきます。 &lt;html&gt;,&lt;body&gt;は要らない？Googleが推奨するHTMLファイルの記法 - Qiita こういう風に、自分が作りたいサイトの全体像から、各セクションの根底に来るであろうタグを最初に配置しておく。 こうしなかったせいで、あとで要素を追加したときにDOMの全体像が不自然な形になってしまうことがあった。 あと、無駄に要素を重ねたりするとHTMLの構造を理解するのが辛くなる。 IDとクラスを使い分ける CSSは本当にパフォーマンスコストがかかりづらいのだろうか？ もしそうだとしても、意識しない理由はどこにもないと思う。 GitHub&rsquo;s CSS Performance // Speaker Deck 正直な話をすれば、スタイルをあてたいならもうクラスを見境なしにつけてしまっても多分問題なくやっていける。 なのにID、クラスどっちにするかとかそういう不要な検討事項を増やすのはいやだよね。 でもサイトの規模によってはパフォーマンスは死活問題だし、何よりIDとクラスの違いで読みやすさが変わると思う。 さっきの例を使うと、オレはだいたいこういうIDを先に付けておく。 &lt;body&gt; &lt;header id=&quot;header&quot;&gt; ヘッダ。ロゴや一部のメニューを置く。 &lt;/header&gt; &lt;div id=&quot;menu&quot;&gt; グローバルメニュー。サイトによってはheaderで事足りる場合も。 &lt;/div&gt; &lt;div id=&quot;body&quot;&gt; メインコンテンツ。この中でカラム分けをしたり、さらに細分化されたセクション分けをしたりする。 &lt;/div&gt; &lt;footer id=&quot;footer&quot;&gt; コピーライトを書いたりする。
-              </div>
-            </a>
-          </article>
-        </div>
-        
-        
         <div class="col-md-12">
           <div class="text-center custom-partial">
             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -163,6 +163,25 @@
 
           </div>
         </div>
+        
+        
+        
+        
+        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <article>
+            <a href="http://yet.unresolved.xyz/blog/2015/04/04/anguish-in-the-css-and-html/" class="post">
+              <header class="eyecatch text-center">
+                <img src="/images/front.png" alt="eyecatch">
+              </header>
+              <div class="date text-center">
+                <span>Sat, Apr 4, 2015</span>
+              </div>
+              <h3 class="title">CSS / HTMLで味わった苦悩の数々を振り返ってみる</h3>
+            </a>
+          </article>
+        </div>
+        
         
         
         
@@ -721,14 +740,14 @@
         
         <div class="col-md-3 col-sm-4 col-xs-6">
           <article>
-            <a href="http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/" class="post">
+            <a href="http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/" class="post">
               <header class="eyecatch text-center">
-                <img src="/images/gae.png" alt="eyecatch">
+                <img src="/images/nopicture.png" alt="eyecatch">
               </header>
               <div class="date text-center">
                 <span>Thu, Oct 23, 2014</span>
               </div>
-              <h3 class="title">Google app engineでカスタムドメインを使う</h3>
+              <h3 class="title">クラスタ化インデックスとかカバリングインデックスについてどうせ忘れるからまとめる</h3>
             </a>
           </article>
         </div>
@@ -740,14 +759,14 @@
         
         <div class="col-md-3 col-sm-4 col-xs-6">
           <article>
-            <a href="http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/" class="post">
+            <a href="http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/" class="post">
               <header class="eyecatch text-center">
-                <img src="/images/nopicture.png" alt="eyecatch">
+                <img src="/images/gae.png" alt="eyecatch">
               </header>
               <div class="date text-center">
                 <span>Thu, Oct 23, 2014</span>
               </div>
-              <h3 class="title">クラスタ化インデックスとかカバリングインデックスについてどうせ忘れるからまとめる</h3>
+              <h3 class="title">Google app engineでカスタムドメインを使う</h3>
             </a>
           </article>
         </div>
