@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://yet.unresolved.xyz/</loc>
-    <lastmod>2015-07-14T00:05:16+09:00</lastmod>
+    <lastmod>2015-08-26T23:12:02+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://yet.unresolved.xyz/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/</loc>
+    <lastmod>2015-08-26T23:12:02+09:00</lastmod>
   </url>
   
   <url>
@@ -173,12 +178,12 @@
   </url>
   
   <url>
-    <loc>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</loc>
     <lastmod>2014-10-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</loc>
+    <loc>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</loc>
     <lastmod>2014-10-23T00:00:00+00:00</lastmod>
   </url>
   

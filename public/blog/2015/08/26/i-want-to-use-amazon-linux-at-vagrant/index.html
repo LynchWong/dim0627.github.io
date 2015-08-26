@@ -8,16 +8,18 @@
     
     
     <meta property="og:type" content="article">
-    <meta property="og:title" content="クラスタ化インデックスとかカバリングインデックスについてどうせ忘れるからまとめる | Unresolved">
-    <meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/">
-    <meta property="og:description" content="SQL Serverを使ってて、ちょっと曖昧にしかわからんなってところがあったので少し調べてみた。 クラスタ化 / 非クラスタ化インデックスの違い MySQLにも同じ話があったんだね。 まず参考にしたのはMSDN。 クラスター化インデックスと非クラスター化インデックスの概念 まさにぴったりのタイトルじゃんと思ったんだけどいまいちよくわからない。 いや、わかったっちゃわかったんだけど、だからどうなるとか、だからどうする、っていうところが掴めなかった。 ここでわかったこと クラスタ化インデックス 1テーブルに1つしか作れない。 これがあると指定されたインデックスの値によってソートされた構造体が出来る。(テーブルの構造ごとそうなる？) クラスタ化インデックスが設定されていないテーブルはヒープと呼ばれる未ソートの状態になる。 非クラスタ化インデックス テーブルとは別に構造を持つ。 実データじゃなく、実データへのポインタを持つ。 次に参考にさせてもらったのがこっち。 SQL Serverのインデックス構造（前編） (1&frasl;2) ここは非常にわかりやすかった B-Treeのイメージも、SQL Server上での実装が具体的にイメージ出来たし、非クラスタ化インデックスじゃ結局ランダムI/Oが発生するんだね、ってこともわかった。 RDBMSで使われるB木を学ぼう ここでわかったこと B-Treeなのでリーフノードのレベルが全部同じになる。 クラスタ化インデックスを利用したクエリの場合、リーフノードに実データがあるのでランダムI/Oが発生しない。 非クラスタ化インデックスを利用したクエリの場合、リーフノードにはポインタしかないので、ランダムI/Oが発生する。 こっちのページはよくわかんなかった。 SQL Serverの大きな特徴、クラスタ化インデックスを押さえよう！ カバリングインデックス マルチカラムインデックスと混同するよね。 これは結構わかりやすく書いてくれている記事があった。 MySQLのインデックスを学ぶ (1) クエリが必要とするカラムがすべてインデックスに含まれている場合、インデックスだけを読めば良いのでとても速い、というもの。 SQL インデックスを最適化する方法 カバーリング インデックスは、WHERE 句およびクエリ列選択の形態をとるすべての列を含む、非クラスタ化インデックスです。 誤った認識があればご指摘を。">
+    <meta property="og:title" content="Amazon LinuxをVagrantで使いたい | Unresolved">
+    <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/">
+    <meta property="og:description" content="開発はCentOS、本番はAmazonLinuxにしようとしたら意外と違うところが多くてProvisioningがだるかったので。 ec2-create-instance-export-task ec2-create-instance-export-taskっていうCLIのコマンドが用意されているらしい。 Amazon EC2 インスタンスをエクスポートする - Amazon Elastic Compute Cloud このコマンドでEC2のinstance_idを指定してS3にイメージファイルをエクスポートできるとのこと。 書式はこんな。 ec2-create-instance-export-task instance_id –e target_environment –f disk_image_format -c container_format –b s3_bucket pipで入れたからこんな感じになったよ。 aws ec2 create-instance-export-task --instance-id i-82xxx70 --target-environment vmware --export-to-s3-task DiskImageFormat=vmdk,ContainerFormat=ova,S3Bucket=images.xxxxx.jp そしたらこんなエラー。 A client error (AuthFailure) occurred when calling the CreateInstanceExportTask operation: vm-import-export@amazon.com must have WRITE and READ_ACL permission on the S3 bucket. しっかり説明を読むと、 エクスポートされたインスタンスを格納する Amazon S3 バケットを作成します。Amazon S3 バケットでは、[vm-import-export@amazon.com] アカウントへの [Upload/Delete] および [View Permissions] アクセスが付与される必要があります。詳細については、Amazon Simple Storage Service コンソールユーザーガイド の Creating a Bucket および Editing Bucket Permissions を参照してください。 なるほどなるほど。 こんな感じに。 そしたら違うエラー。 A client error (NotExportable) occurred when calling the CreateInstanceExportTask operation: Only imported instances can be exported.">
+    
+    <meta property="og:image" content="http://yet.unresolved.xyz/images/aws.png">
     
     
     <meta property="og:site_name" content="Unresolved">
 
     <title>
       
-      クラスタ化インデックスとかカバリングインデックスについてどうせ忘れるからまとめる | Unresolved
+      Amazon LinuxをVagrantで使いたい | Unresolved
       
     </title>
 
@@ -54,100 +56,104 @@
 <div class="row">
   <div class="col-md-9">
     <article id="post">
-      <span class="date">Thu, Oct 23, 2014</span>
-      <h2 class="title">クラスタ化インデックスとかカバリングインデックスについてどうせ忘れるからまとめる</h2>
+      <span class="date">Wed, Aug 26, 2015</span>
+      <h2 class="title">Amazon LinuxをVagrantで使いたい</h2>
 
       <div class="eyecatch text-center">
         
-        <img src="http://yet.unresolved.xyz/images/nopicture.png" alt="no_picture">
+        <img src="http://yet.unresolved.xyz/images/aws.png" alt="Amazon LinuxをVagrantで使いたい">
         
       </div>
 
       <div class="content">
         
 
-<p>SQL Serverを使ってて、ちょっと曖昧にしかわからんなってところがあったので少し調べてみた。</p>
+<p>開発はCentOS、本番はAmazonLinuxにしようとしたら意外と違うところが多くてProvisioningがだるかったので。</p>
 
-<h2 id="クラスタ化-非クラスタ化インデックスの違い:c92488df51ae62a183920f8a12e0e585">クラスタ化 / 非クラスタ化インデックスの違い</h2>
+<h2 id="ec2-create-instance-export-task:219da61ce6f755e0018f6c81d16e9cbc">ec2-create-instance-export-task</h2>
 
-<p>MySQLにも同じ話があったんだね。</p>
+<p>ec2-create-instance-export-taskっていうCLIのコマンドが用意されているらしい。</p>
 
-<p>まず参考にしたのはMSDN。</p>
+<p><a href="http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/ExportingEC2Instances.html">Amazon EC2 インスタンスをエクスポートする - Amazon Elastic Compute Cloud</a></p>
 
-<p><a href="http://msdn.microsoft.com/ja-jp/library/ms190457.aspx">クラスター化インデックスと非クラスター化インデックスの概念</a></p>
+<p>このコマンドでEC2のinstance_idを指定してS3にイメージファイルをエクスポートできるとのこと。</p>
 
-<p>まさにぴったりのタイトルじゃんと思ったんだけどいまいちよくわからない。</p>
+<p>書式はこんな。</p>
 
-<p>いや、わかったっちゃわかったんだけど、だからどうなるとか、だからどうする、っていうところが掴めなかった。</p>
+<pre><code>ec2-create-instance-export-task instance_id –e target_environment –f disk_image_format -c container_format –b s3_bucket
+</code></pre>
 
-<h3 id="ここでわかったこと:c92488df51ae62a183920f8a12e0e585">ここでわかったこと</h3>
+<p>pipで入れたからこんな感じになったよ。</p>
 
-<p><strong>クラスタ化インデックス</strong></p>
+<pre><code>aws ec2 create-instance-export-task --instance-id i-82xxx70 --target-environment vmware --export-to-s3-task DiskImageFormat=vmdk,ContainerFormat=ova,S3Bucket=images.xxxxx.jp
+</code></pre>
 
-<ul>
-<li>1テーブルに1つしか作れない。</li>
-<li>これがあると指定されたインデックスの値によってソートされた構造体が出来る。(テーブルの構造ごとそうなる？)</li>
-<li>クラスタ化インデックスが設定されていないテーブルはヒープと呼ばれる未ソートの状態になる。</li>
-</ul>
+<p>そしたらこんなエラー。</p>
 
-<p><strong>非クラスタ化インデックス</strong></p>
+<pre><code>A client error (AuthFailure) occurred when calling the CreateInstanceExportTask operation: vm-import-export@amazon.com must have WRITE and READ_ACL permission on the S3 bucket.
+</code></pre>
 
-<ul>
-<li>テーブルとは別に構造を持つ。</li>
-<li>実データじゃなく、実データへのポインタを持つ。</li>
-</ul>
-
-<p>次に参考にさせてもらったのがこっち。</p>
-
-<p><a href="http://www.atmarkit.co.jp/ait/articles/0501/18/news097.html">SQL Serverのインデックス構造（前編） (<sup>1</sup>&frasl;<sub>2</sub>)</a></p>
-
-<p>ここは非常にわかりやすかった</p>
-
-<p>B-Treeのイメージも、SQL Server上での実装が具体的にイメージ出来たし、非クラスタ化インデックスじゃ結局ランダムI/Oが発生するんだね、ってこともわかった。</p>
-
-<p><a href="http://www.atmarkit.co.jp/fcoding/articles/delphi/05/delphi05a.html">RDBMSで使われるB木を学ぼう</a></p>
-
-<h3 id="ここでわかったこと-1:c92488df51ae62a183920f8a12e0e585">ここでわかったこと</h3>
-
-<ul>
-<li>B-Treeなのでリーフノードのレベルが全部同じになる。</li>
-<li>クラスタ化インデックスを利用したクエリの場合、リーフノードに実データがあるのでランダムI/Oが発生しない。</li>
-<li>非クラスタ化インデックスを利用したクエリの場合、リーフノードにはポインタしかないので、ランダムI/Oが発生する。</li>
-</ul>
-
-<p>こっちのページはよくわかんなかった。</p>
-
-<p><a href="http://enterprisezine.jp/iti/detail/3357">SQL Serverの大きな特徴、クラスタ化インデックスを押さえよう！</a></p>
-
-<h2 id="カバリングインデックス:c92488df51ae62a183920f8a12e0e585">カバリングインデックス</h2>
-
-<p>マルチカラムインデックスと混同するよね。</p>
-
-<p>これは結構わかりやすく書いてくれている記事があった。</p>
-
-<p><a href="http://d.hatena.ne.jp/a666666/20100920/1284992435">MySQLのインデックスを学ぶ (1)</a></p>
+<p>しっかり説明を読むと、</p>
 
 <blockquote>
-<p>クエリが必要とするカラムがすべてインデックスに含まれている場合、インデックスだけを読めば良いのでとても速い、というもの。</p>
+<p>エクスポートされたインスタンスを格納する Amazon S3 バケットを作成します。Amazon S3 バケットでは、[vm-import-export@amazon.com] アカウントへの [Upload/Delete] および [View Permissions] アクセスが付与される必要があります。詳細については、Amazon Simple Storage Service コンソールユーザーガイド の Creating a Bucket および Editing Bucket Permissions を参照してください。</p>
 </blockquote>
 
-<p><a href="http://msdn.microsoft.com/ja-jp/library/ff650692.aspx">SQL インデックスを最適化する方法</a></p>
+<p>なるほどなるほど。</p>
+
+<p>こんな感じに。</p>
+
+<p><a href="/images/2015-08-26/bucket.png"><img src="/images/2015-08-26/bucket.png" class="image" alt="bucket"></a></p>
+
+<p>そしたら違うエラー。</p>
+
+<pre><code>A client error (NotExportable) occurred when calling the CreateInstanceExportTask operation: Only imported instances can be exported.
+</code></pre>
+
+<p>ん？</p>
+
+<p>前提条件を読んでなかった。</p>
+
+<p><a href="http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/VMImportPrerequisites.html#vmimport-image-formats">VM Import/Export の前提条件 - Amazon Elastic Compute Cloud</a></p>
 
 <blockquote>
-<p>カバーリング インデックスは、WHERE 句およびクエリ列選択の形態をとるすべての列を含む、非クラスタ化インデックスです。</p>
+<p>Linux/Unix（64 ビット）</p>
+
+<p>Red Hat Enterprise Linux (RHEL) 5.1-5.11、6.1-6.6、7.0-7.1</p>
+
+<p>Note
+Amazon EC2 で実行するときに必要なドライバが存在しないため、RHEL 6.0 はサポートされていません。
+VM Import は、RHEL インスタンスのライセンスポータビリティをサポートしています。既存の RHEL ライセンスは、関連付けられた RHEL インスタンスと一緒にインポートされます。Red Hat Cloud Access の適格性の詳細については、Red Hat ウェブサイトの適格性を参照してください。
+CentOS 5.1～5.11、6.1～6.6、7.0-7.1</p>
+
+<p>Note
+Amazon EC2 で実行するときに必要なドライバが存在しないため、CentOS 6.0 はサポートされていません。
+Ubuntu 12.04、12.10、13.04、13.10、14.04、14.10</p>
+
+<p>Debian 6.0.0-6.0.8, 7.0.0-7.2.0</p>
 </blockquote>
 
-<p>誤った認識があればご指摘を。</p>
+<p>あっ・・・。</p>
+
+<h2 id="これでいいや:219da61ce6f755e0018f6c81d16e9cbc">これでいいや</h2>
+
+<p><a href="https://www.geekandi.com/2014/04/13/amazon-linux-vagrant-box-images/">Amazon Linux Vagrant Box Images | Geek and I</a></p>
+
+<p>ちょっと古いし不安だけど、どうせ個人的なやつだし・・・。</p>
+
+<h2 id="参考にさせていただきました:219da61ce6f755e0018f6c81d16e9cbc">参考にさせていただきました</h2>
+
+<p><a href="http://stackoverflow.com/questions/21920993/convert-amazon-ec2-ami-to-virtual-or-vagrant-box">virtualbox - Convert Amazon EC2 AMI to Virtual or Vagrant box - Stack Overflow</a></p>
 
       </div>
 
       <div class="text-center custom-partial">
         <aside class="visible-lg visible-md">
-  <iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=48&l=st1&mode=books-jp&search=sql%20server&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="728" height="90" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+  <iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=48&l=st1&mode=books-jp&search=aws&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="728" height="90" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
 </aside>
 
 <aside class="visible-sm visible-xs">
-  <iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=12&l=st1&mode=books-jp&search=sql%20server&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="300" height="250" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+  <iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?t=unresolved-22&o=9&p=12&l=st1&mode=books-jp&search=aws&fc1=000000&lt1=_blank&lc1=000000&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="300" height="250" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
 </aside>
 
       </div>
@@ -157,11 +163,11 @@
           <div class="col-sm-5">
             <section id="share">
               <h3>Share</h3>
-              <a id="share-fb" href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f10%2f23%2fabout-sqlserver-clusteredindex-and-nonclustered-index%2f&t=%e3%82%af%e3%83%a9%e3%82%b9%e3%82%bf%e5%8c%96%e3%82%a4%e3%83%b3%e3%83%87%e3%83%83%e3%82%af%e3%82%b9%e3%81%a8%e3%81%8b%e3%82%ab%e3%83%90%e3%83%aa%e3%83%b3%e3%82%b0%e3%82%a4%e3%83%b3%e3%83%87%e3%83%83%e3%82%af%e3%82%b9%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%e3%81%a9%e3%81%86%e3%81%9b%e5%bf%98%e3%82%8c%e3%82%8b%e3%81%8b%e3%82%89%e3%81%be%e3%81%a8%e3%82%81%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/facebook.png" alt="Facebook"/></a>
-              <a id="share-twitter" href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f10%2f23%2fabout-sqlserver-clusteredindex-and-nonclustered-index%2f&text=%e3%82%af%e3%83%a9%e3%82%b9%e3%82%bf%e5%8c%96%e3%82%a4%e3%83%b3%e3%83%87%e3%83%83%e3%82%af%e3%82%b9%e3%81%a8%e3%81%8b%e3%82%ab%e3%83%90%e3%83%aa%e3%83%b3%e3%82%b0%e3%82%a4%e3%83%b3%e3%83%87%e3%83%83%e3%82%af%e3%82%b9%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%e3%81%a9%e3%81%86%e3%81%9b%e5%bf%98%e3%82%8c%e3%82%8b%e3%81%8b%e3%82%89%e3%81%be%e3%81%a8%e3%82%81%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/twitter.png" alt="Twitter"/></a>
-              <a id="share-googleplus" href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f10%2f23%2fabout-sqlserver-clusteredindex-and-nonclustered-index%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/googleplus.png" alt="Google+"/></a>
-              <a id="share-hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f10%2f23%2fabout-sqlserver-clusteredindex-and-nonclustered-index%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/hatena.png" alt="Hatena"/></a>
-              <a id="share-pocket" href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f10%2f23%2fabout-sqlserver-clusteredindex-and-nonclustered-index%2f&title=%e3%82%af%e3%83%a9%e3%82%b9%e3%82%bf%e5%8c%96%e3%82%a4%e3%83%b3%e3%83%87%e3%83%83%e3%82%af%e3%82%b9%e3%81%a8%e3%81%8b%e3%82%ab%e3%83%90%e3%83%aa%e3%83%b3%e3%82%b0%e3%82%a4%e3%83%b3%e3%83%87%e3%83%83%e3%82%af%e3%82%b9%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%e3%81%a9%e3%81%86%e3%81%9b%e5%bf%98%e3%82%8c%e3%82%8b%e3%81%8b%e3%82%89%e3%81%be%e3%81%a8%e3%82%81%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/pocket.png" alt="Pocket"/></a>
+              <a id="share-fb" href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f08%2f26%2fi-want-to-use-amazon-linux-at-vagrant%2f&t=Amazon%20Linux%e3%82%92Vagrant%e3%81%a7%e4%bd%bf%e3%81%84%e3%81%9f%e3%81%84" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/facebook.png" alt="Facebook"/></a>
+              <a id="share-twitter" href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f08%2f26%2fi-want-to-use-amazon-linux-at-vagrant%2f&text=Amazon%20Linux%e3%82%92Vagrant%e3%81%a7%e4%bd%bf%e3%81%84%e3%81%9f%e3%81%84&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/twitter.png" alt="Twitter"/></a>
+              <a id="share-googleplus" href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f08%2f26%2fi-want-to-use-amazon-linux-at-vagrant%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/googleplus.png" alt="Google+"/></a>
+              <a id="share-hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f08%2f26%2fi-want-to-use-amazon-linux-at-vagrant%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/hatena.png" alt="Hatena"/></a>
+              <a id="share-pocket" href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f08%2f26%2fi-want-to-use-amazon-linux-at-vagrant%2f&title=Amazon%20Linux%e3%82%92Vagrant%e3%81%a7%e4%bd%bf%e3%81%84%e3%81%9f%e3%81%84" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="http://yet.unresolved.xyz/images/sharebutton/pocket.png" alt="Pocket"/></a>
             </section>
           </div>
 
@@ -174,9 +180,7 @@
               <h3>Related Post</h3>
               <div id="tags">
                 
-                <a href="http://yet.unresolved.xyz/tags/sql-server"><i class="fa fa-tags"></i> sql server </a>
-                
-                <a href="http://yet.unresolved.xyz/tags/database"><i class="fa fa-tags"></i> database </a>
+                <a href="http://yet.unresolved.xyz/tags/aws"><i class="fa fa-tags"></i> aws </a>
                 
               </div>
 
@@ -287,6 +291,7 @@
                 
                 
                 
+                <li><a href="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/">ClojureのWebアプリをDocker &#43; Beanstalkで動かす</a></li>
                 
                 
                 
@@ -299,7 +304,6 @@
                 
                 
                 
-                <li><a href="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/">Lobosを使ってマイグレーションをする</a></li>
                 
                 
                 
@@ -380,18 +384,13 @@
             <div class="col-sm-6">
               <div class="prev">
                 
-                <a href="http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/">
-                  <i class="fa fa-chevron-left"></i>
-                  GitHub Pagesでカスタムドメインを使う
-                </a>
-                
               </div>
             </div>
             <div class="col-sm-6">
               <div class="next text-right">
                 
-                <a href="http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/">
-                  Google app engineでカスタムドメインを使う
+                <a href="http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/">
+                  focusoutイベントでfocus中の要素が取得できない
                   <i class="fa fa-chevron-right"></i>
                 </a>
                 
