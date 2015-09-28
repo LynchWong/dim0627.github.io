@@ -11,7 +11,7 @@ title: "Clojureのテンプレートエンジンについて"
 
 ## [Enlive](https://github.com/cgrand/enlive)
 
-<a href="http://www.amazon.co.jp/gp/product/B007Q4T040/ref=as_li_tf_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B007Q4T040&linkCode=as2&tag=unresolved-22">Clojure Programming</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=B007Q4T040" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important; display:inline;" />を執筆されたChristophe Grand氏のライブラリ。
+<a href="http://www.amazon.co.jp/gp/product/B007Q4T040/ref=as_li_tf_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B007Q4T040&linkCode=as2&tag=unresolved-22">Clojure Programming</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=B007Q4T040" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important; display:inline;width:0;" />を執筆されたChristophe Grand氏のライブラリ。
 
 CSSのセレクタでバインドを行うという、すごく画期的な方法でテンプレート機能を実現させてる。
 

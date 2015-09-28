@@ -1531,7 +1531,7 @@ $(&amp;quot;#task-post&amp;quot;).on(&amp;quot;click&amp;quot;, function() {
           <guid>http://yet.unresolved.xyz/blog/2015/01/26/ordinary-linux-programming/</guid>
           <description>
 
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/gp/product/4797328355/ref=as_li_tf_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4797328355&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;ふつうのLinuxプログラミング Linuxの仕組みから学べるgccプログラミングの王道&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=4797328355&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important; display: inline;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/gp/product/4797328355/ref=as_li_tf_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4797328355&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;ふつうのLinuxプログラミング Linuxの仕組みから学べるgccプログラミングの王道&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=4797328355&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important; display: inline;width:0;&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;読もうと思ったきっかけ:4c81d64344bd445def23c23666be1353&#34;&gt;読もうと思ったきっかけ&lt;/h2&gt;
 
@@ -1672,7 +1672,7 @@ $(&amp;quot;#task-post&amp;quot;).on(&amp;quot;click&amp;quot;, function() {
 
 &lt;p&gt;分野に分けておすすめの本を紹介されてるので、これは今後読んでいく予定。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/gp/product/4797328355/ref=as_li_tf_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4797328355&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;ふつうのLinuxプログラミング Linuxの仕組みから学べるgccプログラミングの王道&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=4797328355&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important; display: inline;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/gp/product/4797328355/ref=as_li_tf_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4797328355&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;ふつうのLinuxプログラミング Linuxの仕組みから学べるgccプログラミングの王道&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=4797328355&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important; display: inline;width:0;&#34; /&gt;&lt;/p&gt;
 </description>
         </item>
       
@@ -1713,7 +1713,7 @@ $(&amp;quot;#task-post&amp;quot;).on(&amp;quot;click&amp;quot;, function() {
           <description>
 
 &lt;p&gt;最近
-&lt;a href=&#34;http://www.amazon.co.jp/gp/product/4797328355/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4797328355&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;ふつうのLinuxプログラミング&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=4797328355&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important; display:inline;&#34; /&gt;を読んでます。知りたいことが書かれてて楽しい！&lt;/p&gt;
+&lt;a href=&#34;http://www.amazon.co.jp/gp/product/4797328355/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4797328355&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;ふつうのLinuxプログラミング&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=4797328355&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important; display:inline;width:0;&#34; /&gt;を読んでます。知りたいことが書かれてて楽しい！&lt;/p&gt;
 
 &lt;p&gt;でもずっと本読むのは飽きるよね。なのでSlackのAPIとか触ってみる。&lt;/p&gt;
 
@@ -2285,7 +2285,7 @@ m_n&lt;/p&gt;
 
 &lt;h2 id=&#34;enlive-https-github-com-cgrand-enlive:d03bd055194b84467476c0228f17c156&#34;&gt;&lt;a href=&#34;https://github.com/cgrand/enlive&#34;&gt;Enlive&lt;/a&gt;&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/gp/product/B007Q4T040/ref=as_li_tf_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B007Q4T040&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;Clojure Programming&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=B007Q4T040&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important; display:inline;&#34; /&gt;を執筆されたChristophe Grand氏のライブラリ。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/gp/product/B007Q4T040/ref=as_li_tf_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B007Q4T040&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;Clojure Programming&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=B007Q4T040&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important; display:inline;width:0;&#34; /&gt;を執筆されたChristophe Grand氏のライブラリ。&lt;/p&gt;
 
 &lt;p&gt;CSSのセレクタでバインドを行うという、すごく画期的な方法でテンプレート機能を実現させてる。&lt;/p&gt;
 

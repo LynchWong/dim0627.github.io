@@ -8,7 +8,7 @@ title: "SlackAPIで遊ぶ"
 ---
 
 最近
-<a href="http://www.amazon.co.jp/gp/product/4797328355/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4797328355&linkCode=as2&tag=unresolved-22">ふつうのLinuxプログラミング</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=4797328355" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important; display:inline;" />を読んでます。知りたいことが書かれてて楽しい！
+<a href="http://www.amazon.co.jp/gp/product/4797328355/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4797328355&linkCode=as2&tag=unresolved-22">ふつうのLinuxプログラミング</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=4797328355" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important; display:inline;width:0;" />を読んでます。知りたいことが書かれてて楽しい！
 
 でもずっと本読むのは飽きるよね。なのでSlackのAPIとか触ってみる。
 

@@ -102,7 +102,6 @@ article {
 .body h5 { font-size: .8rem; }
 
 .body img {
-  width: inherit;
   max-width: 700px;
   border: 1px solid #fafafa;
 }
