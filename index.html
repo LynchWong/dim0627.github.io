@@ -32,1190 +32,390 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Marcellus+SC" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">
     <link href="/css/custom.css" rel="stylesheet">
-
-    
   </head>
   <body>
 
-    <header id="site-header">
-      <div class="container">
-        <h1 class="text-center">
-          <a href="http://yet.unresolved.xyz" class="font-logo">Unresolved</a>
-        </h1>
-      </div>
+    <header id="site-header" class="container">
+      <h1 class="text-center"><a href="http://yet.unresolved.xyz" class="logo font-logo">Unresolved</a></h1>
     </header>
 
-    <main id="site-body">
-      <div class="container">
+    <div id="site-body">
 
 
 
-<div class="row">
-  <div class="col-md-9">
-    <div id="posts">
-      
-      <div class="row">
-        
-        
-        
-        <div class="col-sm-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/" class="post post-topix">
-              <header class="eyecatch text-center">
-                <img src="/images/aws.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Wed, Aug 26, 2015</span>
-              </div>
-              <h2 class="title">Amazon LinuxをVagrantで使いたい</h2>
-              <div class="summary">
-                開発はCentOS、本番はAmazonLinuxにしようとしたら意外と違うところが多くてProvisioningがだるかったので。 ec2-create-instance-export-task ec2-create-instance-export-taskっていうCLIのコマンドが用意されているらしい。 Amazon EC2 インスタンスをエクスポートする - Amazon Elastic Compute Cloud このコマンドでEC2のinstance_idを指定してS3にイメージファイルをエクスポートできるとのこと。 書式はこんな。 ec2-create-instance-export-task instance_id –e target_environment –f disk_image_format -c container_format –b s3_bucket pipで入れたからこんな感じになったよ。 aws ec2 create-instance-export-task --instance-id i-82xxx70 --target-environment vmware --export-to-s3-task DiskImageFormat=vmdk,ContainerFormat=ova,S3Bucket=images.xxxxx.jp そしたらこんなエラー。 A client error (AuthFailure) occurred when calling the CreateInstanceExportTask operation: vm-import-export@amazon.com must have WRITE and READ_ACL permission on the S3 bucket. しっかり説明を読むと、 エクスポートされたインスタンスを格納する Amazon S3 バケットを作成します。Amazon S3 バケットでは、[vm-import-export@amazon.com] アカウントへの [Upload/Delete] および [View Permissions] アクセスが付与される必要があります。詳細については、Amazon Simple Storage Service コンソールユーザーガイド の Creating a Bucket および Editing Bucket Permissions を参照してください。 なるほどなるほど。 こんな感じに。 そしたら違うエラー。 A client error (NotExportable) occurred when calling the CreateInstanceExportTask operation: Only imported instances can be exported.
-              </div>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-sm-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/" class="post post-topix">
-              <header class="eyecatch text-center">
-                <img src="/images/jquery.jpg" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Tue, Jul 14, 2015</span>
-              </div>
-              <h2 class="title">focusoutイベントでfocus中の要素が取得できない</h2>
-              <div class="summary">
-                何を血迷ったかサジェストを自作しようとしてしまってつらい目にあった話。 フォーカスアウトしたらサジェストを消したい 入力欄もしくはサジェストからフォーカスアウトした時はサジェストを消したいじゃん。 でもフォーカスアウトした先にフォーカスしたものが入力欄もしくはサジェストだったらそれは消したくないじゃん。 だからこんなコードを書いた。 &lt;input type=&quot;text&quot; id=&quot;search-text&quot;&gt; &lt;div id=&quot;suggest-list&quot;&gt; &lt;a href=&quot;#&quot;&gt;suggest&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;suggest&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;suggest&lt;/a&gt; &lt;/div&gt; &lt;script&gt; $(&quot;#search-text&quot;).on(&quot;focusout&quot;, function() { if ($(&quot;#suggest-list&quot;).find(&quot;:focus&quot;).length !== 0) { console.log(&quot;Not hide!&quot;); return; } console.log(&quot;hide!&quot;); }); &lt;/script&gt; 実際はこの処理を入力だけじゃなくアンカーにも適用したんだけど面倒だから省略。 しかしこれだとifの中には入らずサジェストの非表示処理が通ってしまう・・・。 フォーカス処理は一度ブラウザに返してあげる どうやらJavaScriptの処理が進んでる間はフォーカス処理が行われないらしい。 なので一度ブラウザに処理が返るような処理を挟んでやる必要がある。 こんなかんじに。 $(&quot;#search-text&quot;).on(&quot;focusout&quot;, function() { setTimeout(function() { if ($(&quot;#suggest-list&quot;).find(&quot;:focus&quot;).length !== 0) { console.log(&quot;Not hide!&quot;); return; } console.log(&quot;hide!&quot;); }, 0); }); setTimeoutはJavaScriptの処理を通した後に、ブラウザ側からまた呼び出されるとのこと。 参考にさせていただきました。 JavaScript - setTimeout(&hellip;,0)などの使いドコロ - Qiita
-              </div>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-sm-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/06/20/making-new-theme-robust-for-hugo/" class="post post-topix">
-              <header class="eyecatch text-center">
-                <img src="/images/hex.jpg" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Sat, Jun 20, 2015</span>
-              </div>
-              <h2 class="title">Hugo向けの新しいテーマを作った</h2>
-              <div class="summary">
-                前に作ったやつが飽きてしまったので、そもそもForkするんじゃなくて0から作ることにしました。 出来たもの こんな感じ。 dim0627/hugo_theme_robust トップの最新4記事は2カラム、それ以降は4カラムで表示するようにしてる。もちろんレスポンシブで。 前はPost一覧とかの画面もあったけど、そもそも必要無いような気がして色々削った。 なので今回はシンプルにトップ、記事詳細、タグ別記事一覧の3ページだけ。 トップとタグ別記事一覧は同じテンプレートを使ってるから、少し冗長になってしまったなあ。 Hugoのテンプレート構成が今だによくわかってないから、共通化とかがうまく出来ない・・・。 工夫したこと 前にテーマを作って思ったんだけど、Hugoの強みは各テーマをOverride出来ることなんだよね。 だからそれ前提で書かないと、Overrideしたいのは一部でも、ファイルまるごとコピるはめになっちゃう。 前はそれでもう何がなんだかわからなくなったので、今回はそれを避けようとした。 何をしたかというと、空っぽのテンプレートファイルを最初からいろいろな場所に設置しておくことにした。 Overrideしたい人はこのファイルを各自のディレクトリにコピーして編集すればいいし、 Overrideしない人はほっとけば影響もない。 まとめ 数時間でざーっと作ったので、最後のほうはCSSもぶれまくったなあ。 あとReadmeとかいろいろ書けてない。 spf13/hugoThemesにプルリクも送らねば・・・。
-              </div>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-sm-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/" class="post post-topix">
-              <header class="eyecatch text-center">
-                <img src="/images/functional_programming.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Wed, May 6, 2015</span>
-              </div>
-              <h2 class="title">例によってpaiza online hackathon5をClojureで解いてみた</h2>
-              <div class="summary">
-                まずい更新することがない。 とりあえずPOHネタでこの場をしのごう。 マンガ版「俺の許嫁と幼なじみが修羅場すぎる」｜paizaオンラインハッカソン5 今回はパフォーマンスとかの問題はなく、ただただロジックが面倒くさいものばっかでした。 Problem 1 (def in (line-seq (java.io.BufferedReader. *in*))) (def p1 (-&gt;&gt; in first (take-nth 2) clojure.string/join)) (println p1) そもそもこれシーケンスで取らなければfirstとかつけなくてよかったんじゃないかなあ。 そんな方法あるかわかんないけど。 Problem 2 (def in (map #(Integer/parseInt %) (line-seq (java.io.BufferedReader. *in*)))) (defn take-padding [coll pad] (-&gt;&gt; coll (partition-all pad) (map first))) (def p2 (let [l (rest in)] (map #(apply + %) (for [i (range 7)] (take-padding (drop i l) 7))))) (print (clojure.string/join &quot;\n&quot; p2)) 結構強引にシーケンス操作を書いたけど、もっと楽にやれる関数が用意されてる気する。 Problem 3 RENA (def in (for [e (map #(.split % &quot; &quot;) (line-seq (java.io.BufferedReader.
-              </div>
-            </a>
-          </article>
-        </div>
-        
-        
-        <div class="col-md-12">
-          <div class="text-center custom-partial">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4218045898905176"
-     data-ad-slot="4750057642"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
-          </div>
-        </div>
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/04/04/anguish-in-the-css-and-html/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/front.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Sat, Apr 4, 2015</span>
-              </div>
-              <h3 class="title">CSS / HTMLで味わった苦悩の数々を振り返ってみる</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/linux.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Wed, Apr 1, 2015</span>
-              </div>
-              <h3 class="title">tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/03/30/status-line-of-tmux-powerline-overlap/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/linux.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Mon, Mar 30, 2015</span>
-              </div>
-              <h3 class="title">tmux-powerlineのステータスラインが描画ごとに増える</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/vim.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Sun, Mar 22, 2015</span>
-              </div>
-              <h3 class="title">VimのClojureプラグイン覚書</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/clojure.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Sun, Mar 22, 2015</span>
-              </div>
-              <h3 class="title">[Clojure]ringのCSRFトークンを生成する</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/03/16/create-mysql-environment-using-the-ansible/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/ansible.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Mon, Mar 16, 2015</span>
-              </div>
-              <h3 class="title">Ansibleを使ってMySQLが動く環境を手っ取り早く作る</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/03/16/provided-hosts-list-is-empty/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/ansible.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Mon, Mar 16, 2015</span>
-              </div>
-              <h3 class="title">Vagrant &#43; Ansibleでprovided hosts list is empty</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/clojure.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Sat, Feb 28, 2015</span>
-              </div>
-              <h3 class="title">Slamhoundを使ってClojureのrequireを自動生成する</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/apigility.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Sat, Feb 14, 2015</span>
-              </div>
-              <h3 class="title">Apigility &#43; React.jsでタスク管理ツールを作ってみる</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/02/06/learning-vim-again/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/vim.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Fri, Feb 6, 2015</span>
-              </div>
-              <h3 class="title">今だからやるvimコマンド再学習</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/vim.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Thu, Feb 5, 2015</span>
-              </div>
-              <h3 class="title">PHPファイルの定数に触るとvimがフリーズする</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/01/26/ordinary-linux-programming/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/linux.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Mon, Jan 26, 2015</span>
-              </div>
-              <h3 class="title">「ふつうのLinuxプログラミング」を読んだ</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/01/25/using-display-zoom-in-mac/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/osx.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Sun, Jan 25, 2015</span>
-              </div>
-              <h3 class="title">Macで画面の一部をズームする</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/slack.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Sun, Jan 25, 2015</span>
-              </div>
-              <h3 class="title">SlackAPIで遊ぶ</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/paizaio.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Sun, Jan 25, 2015</span>
-              </div>
-              <h3 class="title">paiza.IOのAPIを使ってreplを作る</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/01/22/install-postgresql-on-centos/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/vagrant.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Thu, Jan 22, 2015</span>
-              </div>
-              <h3 class="title">Vagrant &#43; CentOS &#43; PostgreSQLを最速で構築</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/clojure.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Thu, Jan 15, 2015</span>
-              </div>
-              <h3 class="title">Clojureで新卒の女の子を射止めた話</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/clojure.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Wed, Jan 14, 2015</span>
-              </div>
-              <h3 class="title">Clojureのテンプレートエンジンについて</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/python.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Mon, Jan 12, 2015</span>
-              </div>
-              <h3 class="title">Python on GAEで3rdパーティライブラリを使う</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/hugo.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Wed, Jan 7, 2015</span>
-              </div>
-              <h3 class="title">Hugoでマルチバイトのタイトルをスマートに使う方法</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/hugo.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Sun, Jan 4, 2015</span>
-              </div>
-              <h3 class="title">ブログをOctopressからHugoに移行した</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/aws.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Wed, Dec 31, 2014</span>
-              </div>
-              <h3 class="title">ClojureのWebアプリをDocker &#43; Beanstalkで動かす</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/docker.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Tue, Dec 30, 2014</span>
-              </div>
-              <h3 class="title">boot2dockerでCannot connect to the Docker daemon</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/clojure.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Sun, Dec 21, 2014</span>
-              </div>
-              <h3 class="title">Lobosでマイグレーションができない in Heroku</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/clojure.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Thu, Dec 11, 2014</span>
-              </div>
-              <h3 class="title">Lobosを使ってマイグレーションをする</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/clojure.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Tue, Dec 9, 2014</span>
-              </div>
-              <h3 class="title">LeiningenでSCSSを自動コンパイルする</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2014/12/02/went-to-startup-weekend-yokohama-2nd/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/nopicture.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Tue, Dec 2, 2014</span>
-              </div>
-              <h3 class="title">HackerにとってのStartup Weekend</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/octopress.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Wed, Nov 12, 2014</span>
-              </div>
-              <h3 class="title">OctopressをW3Cのバリデーションにパスさせる</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2014/11/09/learn-docker/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/docker.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Sun, Nov 9, 2014</span>
-              </div>
-              <h3 class="title">Docker事始め</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/github.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Fri, Oct 24, 2014</span>
-              </div>
-              <h3 class="title">GitHub Pagesでカスタムドメインを使う</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/nopicture.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Thu, Oct 23, 2014</span>
-              </div>
-              <h3 class="title">クラスタ化インデックスとかカバリングインデックスについてどうせ忘れるからまとめる</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/gae.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Thu, Oct 23, 2014</span>
-              </div>
-              <h3 class="title">Google app engineでカスタムドメインを使う</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/octopress.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Wed, Oct 22, 2014</span>
-              </div>
-              <h3 class="title">Octopressのサイドバーを下部に移動する</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/ubuntu.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Sun, Oct 19, 2014</span>
-              </div>
-              <h3 class="title">UbuntuにAurigaを構築してみる</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/git.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Sun, Sep 28, 2014</span>
-              </div>
-              <h3 class="title">gitで管理したくないファイルをインデックスから除外する</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/git.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Sat, Sep 27, 2014</span>
-              </div>
-              <h3 class="title">gitでforce pushが出来ない</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/octopress.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Sun, Sep 21, 2014</span>
-              </div>
-              <h3 class="title">_config.ymlに書いたdescriptionが設定されない</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/octopress.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Sun, Sep 21, 2014</span>
-              </div>
-              <h3 class="title">Octopressのテーマを作ってみる</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/octopress.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Sat, Sep 20, 2014</span>
-              </div>
-              <h3 class="title">OctopressのサイドバーにGravatarを表示させる</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/git.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Sat, Sep 20, 2014</span>
-              </div>
-              <h3 class="title">gitのリポジトリ単位にproxyの設定をする</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-        
-        
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <article>
-            <a href="http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/" class="post">
-              <header class="eyecatch text-center">
-                <img src="/images/octopress.png" alt="eyecatch">
-              </header>
-              <div class="date text-center">
-                <span>Wed, Sep 17, 2014</span>
-              </div>
-              <h3 class="title">GitHub PagesにOctopressをのっけてみる</h3>
-            </a>
-          </article>
-        </div>
-        
-        
-        
-        
-      </div>
+<article class="text-center">
+  <div class="font-logo post-date">Wed, Aug 26, 2015</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/">Amazon LinuxをVagrantで使いたい</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Tue, Jul 14, 2015</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/">focusoutイベントでfocus中の要素が取得できない</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Sat, Jun 20, 2015</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/06/20/making-new-theme-robust-for-hugo/">Hugo向けの新しいテーマを作った</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Wed, May 6, 2015</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/">例によってpaiza online hackathon5をClojureで解いてみた</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Sat, Apr 4, 2015</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/04/04/anguish-in-the-css-and-html/">CSS / HTMLで味わった苦悩の数々を振り返ってみる</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Wed, Apr 1, 2015</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/">tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Mon, Mar 30, 2015</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/03/30/status-line-of-tmux-powerline-overlap/">tmux-powerlineのステータスラインが描画ごとに増える</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Sun, Mar 22, 2015</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/">VimのClojureプラグイン覚書</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Sun, Mar 22, 2015</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/">[Clojure]ringのCSRFトークンを生成する</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Mon, Mar 16, 2015</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/03/16/create-mysql-environment-using-the-ansible/">Ansibleを使ってMySQLが動く環境を手っ取り早く作る</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Mon, Mar 16, 2015</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/03/16/provided-hosts-list-is-empty/">Vagrant &#43; Ansibleでprovided hosts list is empty</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Sat, Feb 28, 2015</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/">Slamhoundを使ってClojureのrequireを自動生成する</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Sat, Feb 14, 2015</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/">Apigility &#43; React.jsでタスク管理ツールを作ってみる</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Fri, Feb 6, 2015</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/02/06/learning-vim-again/">今だからやるvimコマンド再学習</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Thu, Feb 5, 2015</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/">PHPファイルの定数に触るとvimがフリーズする</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Mon, Jan 26, 2015</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/01/26/ordinary-linux-programming/">「ふつうのLinuxプログラミング」を読んだ</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Sun, Jan 25, 2015</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/01/25/using-display-zoom-in-mac/">Macで画面の一部をズームする</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Sun, Jan 25, 2015</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/">SlackAPIで遊ぶ</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Sun, Jan 25, 2015</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/">paiza.IOのAPIを使ってreplを作る</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Thu, Jan 22, 2015</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/01/22/install-postgresql-on-centos/">Vagrant &#43; CentOS &#43; PostgreSQLを最速で構築</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Thu, Jan 15, 2015</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/">Clojureで新卒の女の子を射止めた話</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Wed, Jan 14, 2015</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/">Clojureのテンプレートエンジンについて</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Mon, Jan 12, 2015</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/">Python on GAEで3rdパーティライブラリを使う</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Wed, Jan 7, 2015</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/">Hugoでマルチバイトのタイトルをスマートに使う方法</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Sun, Jan 4, 2015</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">ブログをOctopressからHugoに移行した</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Wed, Dec 31, 2014</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/">ClojureのWebアプリをDocker &#43; Beanstalkで動かす</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Tue, Dec 30, 2014</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/">boot2dockerでCannot connect to the Docker daemon</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Sun, Dec 21, 2014</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/">Lobosでマイグレーションができない in Heroku</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Thu, Dec 11, 2014</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/">Lobosを使ってマイグレーションをする</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Tue, Dec 9, 2014</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/">LeiningenでSCSSを自動コンパイルする</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Tue, Dec 2, 2014</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/12/02/went-to-startup-weekend-yokohama-2nd/">HackerにとってのStartup Weekend</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Wed, Nov 12, 2014</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/">OctopressをW3Cのバリデーションにパスさせる</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Sun, Nov 9, 2014</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/11/09/learn-docker/">Docker事始め</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Fri, Oct 24, 2014</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/">GitHub Pagesでカスタムドメインを使う</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Thu, Oct 23, 2014</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/">クラスタ化インデックスとかカバリングインデックスについてどうせ忘れるからまとめる</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Thu, Oct 23, 2014</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/">Google app engineでカスタムドメインを使う</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Wed, Oct 22, 2014</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/">Octopressのサイドバーを下部に移動する</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Sun, Oct 19, 2014</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/">UbuntuにAurigaを構築してみる</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Sun, Sep 28, 2014</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/">gitで管理したくないファイルをインデックスから除外する</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Sat, Sep 27, 2014</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/">gitでforce pushが出来ない</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Sun, Sep 21, 2014</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/">_config.ymlに書いたdescriptionが設定されない</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Sun, Sep 21, 2014</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/">Octopressのテーマを作ってみる</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Sat, Sep 20, 2014</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/">gitのリポジトリ単位にproxyの設定をする</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Sat, Sep 20, 2014</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/">OctopressのサイドバーにGravatarを表示させる</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
+<article class="text-center">
+  <div class="font-logo post-date">Wed, Sep 17, 2014</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/">GitHub PagesにOctopressをのっけてみる</a></h2>
+</article>
+<div class="text-center post-separator"></div>
+
+
+
     </div>
-  </div>
-  <div class="col-md-3">
-    <aside id="site-sidebar">
-      <div class="row">
-        <div class="col-md-12 col-sm-6 col-xs-12">
-  <div class="text-center custom-partial">
-    
-  </div>
-  <section class="sidebar-bordered">
-    <h3>Profile</h3>
-    
-    <div id="profile">
-      <div class="text-center">
-        <img id="profile-photo" src="/images/nopicture.png" alt="profile">
-      </div>
-      <div class="data">
-        
-        <span id="profile-birth">Sun, Feb 26, 1989</span>
-        
-        <h4 id="profile-username" class="post-title"></h4>
-        <div id="social-links">
-          
-          <a href="https://www.facebook.com/daisuke.tsuji.735" target="_blank"><i class="fa fa-facebook-square"></i></a>
-          
-          
-          <a href="https://twitter.com/dim0627" target="_blank"><i class="fa fa-twitter-square"></i></a>
-          
-          
-          <a href="https://github.com/dim0627" target="_blank"><i class="fa fa-github-square"></i></a>
-          
-        </div>
-        <div id="profile-description"></div>
-        <ul id="profile-urls" class="post-tags"></ul>
-      </div>
-    </div>
-    
-  </section>
-</div>
-
-<div class="col-md-12 col-sm-6 col-xs-12">
-  <section>
-    <h3>Tags</h3>
-    
-    <div id="tag-cloud" class="text-center">
-      
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/ansible">ansible</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/apigility">apigility</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/auriga">auriga</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/aws">aws</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/beanstalk">beanstalk</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/book">book</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/boot2docker">boot2docker</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/centos">centos</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/clang">clang</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/clojure">clojure</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/css">css</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/database">database</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/design">design</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/dns">dns</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/docker">docker</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/enlive">enlive</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/frontend">frontend</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/git">git</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/github">github</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/golang">golang</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/google-app-engine">google-app-engine</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/gravatar">gravatar</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/hackathon">hackathon</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/heroku">heroku</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/hiccup">hiccup</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/html">html</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/hugo">hugo</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/iterm">iterm</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/javascript">javascript</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/jekyll">jekyll</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/leiningen">leiningen</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/linux">linux</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/lobos">lobos</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/mac">mac</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/migration">migration</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/octopress">octopress</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/os-x">os-x</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/paiza">paiza</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/paizaio">paizaio</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/php">php</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/postgresql">postgresql</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/powerline">powerline</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/python">python</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/reactjs">reactjs</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/ring">ring</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/ruby">ruby</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/sass">sass</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/scss">scss</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/security">security</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/slack">slack</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/sql-server">sql-server</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/sqlite">sqlite</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/startup">startup</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/startup-weekend">startup-weekend</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/tmux">tmux</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/ubuntu">ubuntu</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/util">util</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/vagrant">vagrant</a>
-      
-      
-      <a href="http://yet.unresolved.xyz/tags/vim">vim</a>
-      
-    </div>
-    
-  </section>
-</div>
-
-<div class="col-md-12 col-sm-6 col-xs-12">
-  <div class="text-center custom-partial">
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4218045898905176"
-     data-ad-slot="4750057642"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-  </div>
-</div>
-
-      </div>
-    </aside>
-  </div>
-</div>
-
-        <div class="text-center custom-partial">
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4218045898905176"
-     data-ad-slot="4750057642"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-        </div>
-      </div>
-    </main>
 
     <footer id="site-footer" class="text-center font-logo">
       <p>&copy; 2015  Daisuke Tsuji </p>
 
-      <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>, Theme <a href="https://github.com/dim0627/hugo_theme_robust" target="_blank">Robust</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+      <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>, Theme <a href="https://github.com/dim0627/hugo_theme_harb" target="_blank">Harb</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
     </footer>
 
     <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
