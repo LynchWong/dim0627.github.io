@@ -78,6 +78,8 @@ article {
 .body {
   font-size: .8rem;
   line-height: 2rem;
+  max-width: 670px;
+  margin: 0 auto;
 }
 
 .body h1,
@@ -105,9 +107,6 @@ article {
 }
 
 /* Override */
-.container {
-  max-width: 670px;
-}
 
 /* Helper */
 .font-logo {
