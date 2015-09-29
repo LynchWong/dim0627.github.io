@@ -8,16 +8,16 @@
     
     
     <meta property="og:type" content="article">
-    <meta property="og:title" content="クラスタ化インデックスとかカバリングインデックスについてどうせ忘れるからまとめる | Unresolved">
+    <meta property="og:title" content="クラスタ化インデックスとかカバリングインデックスについてどうせ忘れるからまとめる | UNRESOLVED">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/">
     <meta property="og:description" content="SQL Serverを使ってて、ちょっと曖昧にしかわからんなってところがあったので少し調べてみた。 クラスタ化 / 非クラスタ化インデックスの違い MySQLにも同じ話があったんだね。 まず参考にしたのはMSDN。 クラスター化インデックスと非クラスター化インデックスの概念 まさにぴったりのタイトルじゃんと思ったんだけどいまいちよくわからない。 いや、わかったっちゃわかったんだけど、だからどうなるとか、だからどうする、っていうところが掴めなかった。 ここでわかったこと クラスタ化インデックス 1テーブルに1つしか作れない。 これがあると指定されたインデックスの値によってソートされた構造体が出来る。(テーブルの構造ごとそうなる？) クラスタ化インデックスが設定されていないテーブルはヒープと呼ばれる未ソートの状態になる。 非クラスタ化インデックス テーブルとは別に構造を持つ。 実データじゃなく、実データへのポインタを持つ。 次に参考にさせてもらったのがこっち。 SQL Serverのインデックス構造（前編） (1&frasl;2) ここは非常にわかりやすかった B-Treeのイメージも、SQL Server上での実装が具体的にイメージ出来たし、非クラスタ化インデックスじゃ結局ランダムI/Oが発生するんだね、ってこともわかった。 RDBMSで使われるB木を学ぼう ここでわかったこと B-Treeなのでリーフノードのレベルが全部同じになる。 クラスタ化インデックスを利用したクエリの場合、リーフノードに実データがあるのでランダムI/Oが発生しない。 非クラスタ化インデックスを利用したクエリの場合、リーフノードにはポインタしかないので、ランダムI/Oが発生する。 こっちのページはよくわかんなかった。 SQL Serverの大きな特徴、クラスタ化インデックスを押さえよう！ カバリングインデックス マルチカラムインデックスと混同するよね。 これは結構わかりやすく書いてくれている記事があった。 MySQLのインデックスを学ぶ (1) クエリが必要とするカラムがすべてインデックスに含まれている場合、インデックスだけを読めば良いのでとても速い、というもの。 SQL インデックスを最適化する方法 カバーリング インデックスは、WHERE 句およびクエリ列選択の形態をとるすべての列を含む、非クラスタ化インデックスです。 誤った認識があればご指摘を。">
     
     
-    <meta property="og:site_name" content="Unresolved">
+    <meta property="og:site_name" content="UNRESOLVED">
 
     <title>
       
-      クラスタ化インデックスとかカバリングインデックスについてどうせ忘れるからまとめる | Unresolved
+      クラスタ化インデックスとかカバリングインデックスについてどうせ忘れるからまとめる | UNRESOLVED
       
     </title>
 
@@ -28,7 +28,7 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href='//fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Over+the+Rainbow' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">
@@ -36,7 +36,7 @@
   <body>
 
     <header id="site-header" class="container">
-      <h1 class="text-center"><a href="http://yet.unresolved.xyz" class="logo font-logo">Unresolved</a></h1>
+      <h1 class="text-center"><a href="http://yet.unresolved.xyz" class="logo font-logo">UNRESOLVED</a></h1>
     </header>
 
     <div id="site-body">
@@ -44,8 +44,10 @@
 
 
 <article id="post" class="container">
-  <div class="font-logo post-date">Thu, Oct 23, 2014</div>
-  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/">クラスタ化インデックスとかカバリングインデックスについてどうせ忘れるからまとめる</a></h2>
+  <div class="text-center">
+    <div class="font-logo post-date">Thu, Oct 23, 2014</div>
+    <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/">クラスタ化インデックスとかカバリングインデックスについてどうせ忘れるからまとめる</a></h2>
+  </div>
   <div class="body">
 
 <p>SQL Serverを使ってて、ちょっと曖昧にしかわからんなってところがあったので少し調べてみた。</p>
@@ -145,24 +147,6 @@
 
     ga('create', 'UA-55005303-1', 'auto');
     ga('send', 'pageview');
-
-    </script>
-
-    <script>
-    $(function() {
-      var url = "https://ja.gravatar.com/1e092e9f2cda827deb8623be2e846936.json?callback=?";
-      $.getJSON(url)
-        .done(function(data) {
-          var entry = data.entry[0];
-          $("#profile-photo").attr("src", entry.photos[0].value);
-          $("#profile-username").html(entry.name.familyName + " " + entry.name.givenName);
-          $("#profile-description").html(entry.aboutMe);
-          entry.urls.forEach(function(el){
-            $("#profile-urls").append($("<li><a href='" + el.value + "'>" + el.title + "</a></li>"));
-          });
-          $("#profile").show();
-        });
-    });
     </script>
   </body>
 </html>

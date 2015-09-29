@@ -40,6 +40,7 @@ pre {
 /* Original */
 #site-header {
   background-color: #fff;
+  padding: 40px 0;
 }
 
 #site-header .logo {
@@ -52,11 +53,12 @@ pre {
 }
 
 article {
-  margin: 30px 0;
+  margin-bottom: 60px;
 }
 
 .post-date {
   font-size: 1rem;
+  margin-bottom: 5px;
 }
 
 .post-title {
@@ -67,14 +69,6 @@ article {
 
 .post-title a {
   text-decoration: none;
-}
-
-.post-separator:after {
-  font-family: FontAwesome;
-  content: "\f1b2\f1b2\f1b2";
-  font-size: .8rem;
-  letter-spacing: 1rem;
-  color: #ddd;
 }
 
 #post .post-title {
@@ -102,7 +96,7 @@ article {
 .body h5 { font-size: .8rem; }
 
 .body img {
-  max-width: 700px;
+  max-width: 500px;
   border: 1px solid #fafafa;
 }
 
@@ -111,9 +105,12 @@ article {
 }
 
 /* Override */
+.container {
+  max-width: 670px;
+}
 
 /* Helper */
 .font-logo {
-  font-family: 'Handlee', cursive;
+  font-family: 'Over the Rainbow', cursive;
 }
 
