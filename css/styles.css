@@ -39,8 +39,8 @@ pre {
 
 /* Original */
 #site-header {
-  background-color: #fff;
   padding: 40px 0;
+  margin-bottom: 40px;
 }
 
 #site-header .logo {
