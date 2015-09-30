@@ -10,7 +10,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="PHPファイルの定数に触るとvimがフリーズする | UNRESOLVED">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/">
-    <meta property="og:description" content="neocomplcacheのこの設定が甘かった。 let g:neocomplcache_omni_patterns.php = &#39;[^. \t]-&gt;\h\w*\|\h\w*::&#39; 参考になったのはこの記事。 vim-jp » Hack #193: neocomplcacheの設定について知る 後編 g:neocomplcache_omni_patternsは、neocomplcacheがオムニ補完の関数を呼び出すためのキーワードパターンを設定します。 主な言語にはデフォルトで対応していますが、RubyやPHPなど重いものは無効化されています。 設定例のようにすれば有効化できますが、Vimがフリーズする可能性もあります。自己責任で使用してください。 つまり原因は定数云々じゃなくself::がパターンに合致したせいで、補完が走り一気に重たくなったと。">
+    <meta property="og:description" content="neocomplcacheのこの設定が甘かった。 let g:neocomplcache_omni_patterns.php = &#39;[^. \t]-&gt;\h\w*\|\h\w*::&#39; 参考になったのはこの記事。 vim-jp » Hack #193: neocomplcacheの設定について知る 後編">
     
     <meta property="og:image" content="http://yet.unresolved.xyz/images/vim.png">
     

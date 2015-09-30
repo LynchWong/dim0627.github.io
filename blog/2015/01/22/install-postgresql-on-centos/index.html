@@ -10,7 +10,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="Vagrant &#43; CentOS &#43; PostgreSQLを最速で構築 | UNRESOLVED">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/01/22/install-postgresql-on-centos/">
-    <meta property="og:description" content="herokuにのっけるアプリを作るとき、ローカルではSQLite使ってたんだけどもう色々つらい。 なんか整数で定義したカラムに文字列入るし！ なんかオートインクリメントの設定の仕方がPostgreSQLと違うし！ つらい。 なのでもう、さっとPostgreSQLだけ入った仮想環境を作ってホスト側から繋げるようにしたい。 Vagrantfileの設定 もう面倒なのはいやなのでCentOSとIPの設定だけやるよ。 # -*- mode: ruby -*- # vi: set ft=ruby : VAGRANTFILE_API_VERSION = &quot;2&quot; Vagrant.configure(VAGRANTFILE_API_VERSION) do |config| config.vm.box = &quot;chef/centos-6.5&quot; config.vm.network &quot;private_network&quot;, ip: &quot;192.168.33.10&quot; end PostgreSQLの導入 [vagrant@localhost ~]$ sudo yum install postgresql [vagrant@localhost ~]$ sudo yum install postgresql-server [vagrant@localhost ~]$ sudo yum install postgresql-contrib さくっと入るやん！ どうやって繋ぐのかな もうほんとPostgreSQLの使い方がわかんない、MySQLばっか触ってたからわかんない。 そもそもサービス名はなによ。 [vagrant@localhost ~]$ service postgresql Usage: /etc/init.d/postgresql {start|stop|status|restart|condrestart|try-restart|reload|force-reload|initdb} [vagrant@localhost ~]$ service postgresql status postmaster is stopped [vagrant@localhost ~]$ sudo service postgresql start /var/lib/pgsql/data is missing.">
+    <meta property="og:description" content="herokuにのっけるアプリを作るとき、ローカルではSQLite使ってたんだけどもう色々つらい。 なんか整数で定義したカラムに文字列入るし！ な">
     
     <meta property="og:image" content="http://yet.unresolved.xyz/images/vagrant.png">
     
