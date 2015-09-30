@@ -17,5 +17,10 @@ fi
 git commit -m "$msg"
 
 # Push source and build repos.
-git push origin source
-git subtree push --prefix=public origin master
+git push origin source:source
+
+# Push master sources.
+cd public
+git add -A
+git commit -m "$msg"
+git push origin master:master
