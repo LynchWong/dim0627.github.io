@@ -10,7 +10,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="gitのリポジトリ単位にproxyの設定をする | UNRESOLVED">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/">
-    <meta property="og:description" content="事の発端 会社ではvimを使ってます。 plugin管理にはneobundle.vim使ってます。 .vimrcはGitHubで管理してます。 neobundle.vimで管理してるpluginは大抵のものがGitHub上で管理されてるから、インストールとかアップデートをするときはneobundle.vimがGitHubまで見に行ってくれるんですね。 ただ、当然社内はproxyを通していて、gitコマンドが通らない！ ていうかそもそもGitHubから.vimrcを落としてくることすら出来ない！いいやzipで落とせ！ しかしpluginの導入を手でやるのはだるい・・・。 マジで？サクラエディタで頑張るしかない？ いやいやそんなことはない。 解決 じゃあこうしようってことで、~/.gitconfigをこんな感じにしたのよ。 [https] proxy = http://proxy.com:8080 ひとまず解決したんです。 そしたら次は社内のgitに繋がらない！！ マジかよじゃあ~/.gitconfigをちょこちょこ変えるのかよだせえよそれと思ったら既に解決してくれてる人がいた。 Git の http proxy に関するまとめ めんどくさかったけど、個々のpluginのconfigにだけproxyの記述を追加することで解決。">
+    <meta property="og:description" content="事の発端 会社ではvimを使ってます。 plugin管理にはneobundle.vim使ってます。 .vimrcはGitHubで管理してます。 ne">
     
     <meta property="og:image" content="http://yet.unresolved.xyz/images/git.png">
     

@@ -10,7 +10,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="_config.ymlに書いたdescriptionが設定されない | UNRESOLVED">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/">
-    <meta property="og:description" content="認識が間違ってるのか、_config.ymlに書いたdescriptionがサイトに反映されない・・・。 source/_includes/head.htmlのコードを見てみるとこんな感じ。 {% raw %} {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %} &lt;meta name=&quot;description&quot; content=&quot;{{ description | strip_html | condense_spaces | truncate:150 }}&quot;&gt; {% if page.keywords %}&lt;meta name=&quot;keywords&quot; content=&quot;{{ page.keywords }}&quot;&gt;{% endif %} {% endraw %} page.descriptionしか見てない？ 同じことで悩んでる人いないのかな・・・と思ったら居た。 Make the Magic Happen やっぱり同じ認識のようだ。 elseifってこう書くんだね。 {% raw %} {% capture description %}{% if page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %} &lt;meta name=&quot;description&quot; content=&quot;{{ description | strip_html | condense_spaces | truncate:150 }}&quot;&gt; {% if page.keywords %}&lt;meta name=&quot;keywords&quot; content=&quot;{{ page.keywords }}&quot;&gt;{% endif %} {% endraw %} worked!">
+    <meta property="og:description" content="認識が間違ってるのか、_config.ymlに書いたdescriptionがサイトに反映されない・・・。 source/_includes/h">
     
     <meta property="og:image" content="http://yet.unresolved.xyz/images/octopress.png">
     
