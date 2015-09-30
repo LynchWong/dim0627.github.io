@@ -10,9 +10,9 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="Slamhoundを使ってClojureのrequireを自動生成する | UNRESOLVED">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/">
-    <meta property="og:description" content="ちょっとVimとClojureの環境を整備したくて、こんなのを読んでました。 My Clojure Toolchain: Vim そもそも~/.lein/profiles.cljの存在を">
+    <meta property="og:description" content="ちょっとVimとClojureの環境を整備したくて、こんなのを読んでました。 My Clojure Toolchain: Vim そもそも~/.lein/profiles.cljの存在を知らなくって、ちょっと色々書いてみることに。 leiningen/PROFILES.md at master · technomancy/leiningen サンプルはこんな感じ。 {:user {:plugins [[lein-pprint &quot;1.1.1&quot;]] :dependencies [[slamhound &quot;1.3.1&quot;]]}} lein-pprintは対象のLeiningenプロジェクトの情報を表示してくれるインスペクタみたいなもの。 いつ使うのだろうか。 slamhoundはClojureのrequireを自動生成してくれるもの。 今回はこれを導入してみる。 Slamhound &#43; Vim Clojureのnsが書きづらいとは思わないけど、まあ面倒なのは確かなわけで自動生成してくれるならそれの方がいい。 SlamhoundはLeiningenから呼び出すことが出来て、こんな感じのclojureプログラムがあったとしたら、 (ns my.namespace &quot;I have a doc string.&quot;) (defn -main [&amp; args] (pprint args) (io/copy (ByteArrayInputStream. (.getBytes &quot;hello&quot;)) (first args))) こうやると $ lein slamhound src/my/namespace.clj nsのとこがこうなる。 (ns my.namespace &quot;I have a doc string.&quot; (:require [clojure.java.io :as io] [clojure.pprint :refer [pprint]]) (:import (java.io ByteArrayInputStream)))">
     
-    <meta property="og:image" content="http://yet.unresolved.xyz/images/clojure.png">
+    <meta property="og:image" content="http://yet.unresolved.xyz/images/program4.jpg">
     
     
     <meta property="og:site_name" content="UNRESOLVED">

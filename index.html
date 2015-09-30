@@ -11,9 +11,9 @@
     <meta property="og:url" content="http://yet.unresolved.xyz">
     <meta property="og:title" content="UNRESOLVED">
     
-    <meta property="og:description" content="調べても意外と見つからない。 要はリクエストヘッダに認証情報をくっつけられればいいんだけどその方法がわからない。 リクエストヘッダに情報を差し込">
+    <meta property="og:description" content="開発はCentOS、本番はAmazonLinuxにしようとしたら意外と違うところが多くてProvisioningがだるかったので。 ec2-create-instance-export-task ec2-create-instance-export-taskっていうCLIのコマンドが用意されているらしい。 Amazon EC2 インスタンスをエクスポートする - Amazon Elastic Compute Cloud このコマンドでEC2のinstance_idを指定してS3にイメージファイルをエクスポートできるとのこと。 書式はこんな。 ec2-create-instance-export-task instance_id –e target_environment –f disk_image_format -c container_format –b s3_bucket pipで入れたからこんな感じになったよ。 aws ec2 create-instance-export-task --instance-id i-82xxx70 --target-environment vmware --export-to-s3-task DiskImageFormat=vmdk,ContainerFormat=ova,S3Bucket=images.xxxxx.jp そしたらこんなエラー。 A client error (AuthFailure) occurred when calling the CreateInstanceExportTask operation: vm-import-export@amazon.com must have WRITE and READ_ACL permission on the S3 bucket. しっかり説明を読むと、 エクスポートされたインスタンスを格納する Amazon S3 バケットを作成します。Amazon S3 バケットでは、[vm-import-export@amazon.com] アカウントへの [Upload/Delete] および [View Permissions] アクセスが付与される必要があります。詳細については、Amazon Simple Storage Service コンソールユーザーガイド の Creating a Bucket および Editing Bucket Permissions を参照してください。 なるほどなるほど。 こんな感じに。 そしたら違うエラー。 A client error (NotExportable) occurred when calling the CreateInstanceExportTask operation: Only imported instances can be exported.">
     
-    <meta property="og:image" content="http://yet.unresolved.xyz/images/security.jpg">
+    <meta property="og:image" content="http://yet.unresolved.xyz/images/infra1.jpg">
     
     
     
@@ -46,20 +46,6 @@
     <div id="site-body">
 
 
-
-
-
-<article class="text-center container">
-  <div class="font-logo post-date">Wed, Sep 30, 2015</div>
-  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/">OWASP ZAPでBASIC認証を突破する</a></h2>
-</article>
-
-
-
-<article class="text-center container">
-  <div class="font-logo post-date">Wed, Sep 30, 2015</div>
-  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/">[Laravel5.1]発行されたSQLと実行計画を取得する</a></h2>
-</article>
 
 
 
@@ -303,14 +289,14 @@
 
 <article class="text-center container">
   <div class="font-logo post-date">Thu, Oct 23, 2014</div>
-  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/">Google app engineでカスタムドメインを使う</a></h2>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/">クラスタ化インデックスとかカバリングインデックスについてどうせ忘れるからまとめる</a></h2>
 </article>
 
 
 
 <article class="text-center container">
   <div class="font-logo post-date">Thu, Oct 23, 2014</div>
-  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/">クラスタ化インデックスとかカバリングインデックスについてどうせ忘れるからまとめる</a></h2>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/">Google app engineでカスタムドメインを使う</a></h2>
 </article>
 
 
@@ -345,21 +331,14 @@
 
 <article class="text-center container">
   <div class="font-logo post-date">Sun, Sep 21, 2014</div>
-  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/">Octopressのテーマを作ってみる</a></h2>
-</article>
-
-
-
-<article class="text-center container">
-  <div class="font-logo post-date">Sun, Sep 21, 2014</div>
   <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/">_config.ymlに書いたdescriptionが設定されない</a></h2>
 </article>
 
 
 
 <article class="text-center container">
-  <div class="font-logo post-date">Sat, Sep 20, 2014</div>
-  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/">OctopressのサイドバーにGravatarを表示させる</a></h2>
+  <div class="font-logo post-date">Sun, Sep 21, 2014</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/">Octopressのテーマを作ってみる</a></h2>
 </article>
 
 
@@ -367,6 +346,13 @@
 <article class="text-center container">
   <div class="font-logo post-date">Sat, Sep 20, 2014</div>
   <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/">gitのリポジトリ単位にproxyの設定をする</a></h2>
+</article>
+
+
+
+<article class="text-center container">
+  <div class="font-logo post-date">Sat, Sep 20, 2014</div>
+  <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/">OctopressのサイドバーにGravatarを表示させる</a></h2>
 </article>
 
 

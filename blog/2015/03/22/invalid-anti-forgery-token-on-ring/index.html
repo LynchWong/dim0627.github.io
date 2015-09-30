@@ -10,9 +10,9 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="[Clojure]ringのCSRFトークンを生成する | UNRESOLVED">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/">
-    <meta property="og:description" content="ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、 デフォルトだとPOSTリクエストした時にCSRFトークンチェ">
+    <meta property="og:description" content="ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、 デフォルトだとPOSTリクエストした時にCSRFトークンチェックが入るようになってると思う。 で、そのトークンの作成の仕方を毎回調べてるのでメモっときたい。 チェックの処理はsite-defaultsの、 (def app (wrap-defaults app-routes site-defaults)) :securityのところで設定出来る。 (def site-defaults &quot;A default configuration for a browser-accessible website, based on current best practice.&quot; {:params {:urlencoded true :multipart true :nested true :keywordize true} :cookies true :session {:flash true :cookie-attrs {:http-only true}} :security {:anti-forgery true :xss-protection {:enable? true, :mode :block} :frame-options :sameorigin :content-type-options :nosniff} :static {:resources &quot;public&quot;} :responses {:not-modified-responses true :absolute-redirects true :content-types true}}) これをfalseにしちゃえばもちろんCSRFのチェックはされなくなるんだけど、まあ普通はするべきだよね。 トークンの生成の仕方はこう。 (ns sample.handler (:require [ring.util.anti-forgery :refer :all])) (anti-forgery-field) ring.util.anti-forgeryの中身はこんな感じ。 (ns ring.util.anti-forgery &quot;Utility functions for inserting anti-forgery tokens into HTML forms.&quot; (:use [hiccup core form] ring.middleware.anti-forgery)) (defn anti-forgery-field &quot;Create a hidden field with the session anti-forgery token as its value.">
     
-    <meta property="og:image" content="http://yet.unresolved.xyz/images/clojure.png">
+    <meta property="og:image" content="http://yet.unresolved.xyz/images/program6.jpg">
     
     
     <meta property="og:site_name" content="UNRESOLVED">
