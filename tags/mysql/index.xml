@@ -28,7 +28,7 @@
 
 &lt;p&gt;&lt;code&gt;DB&lt;/code&gt;の&lt;code&gt;listen&lt;/code&gt;メソッドに&lt;code&gt;$sql, $bindings, $time&lt;/code&gt;を受け取るClosureを渡せる。&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;App\Providers\AppServiceProvider&lt;/code&gt;の&lt;code&gt;boot()&lt;/code&gt;メソッドに、&lt;/p&gt;
+&lt;p&gt;なので&lt;code&gt;App\Providers\AppServiceProvider&lt;/code&gt;の&lt;code&gt;boot()&lt;/code&gt;メソッドに、&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;    public function boot()
     {
