@@ -6,8 +6,133 @@
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
-    <updated>2015-08-26 23:12:02 &#43;0900 JST</updated>
+    <updated>2015-09-30 16:24:53 &#43;0900 JST</updated>
 
+    
+      
+        <item>
+          <title>OWASP ZAPでBASIC認証を突破する</title>
+          <link>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</link>
+          <pubDate>Wed, 30 Sep 2015 16:24:53 JST</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</guid>
+          <description>
+
+&lt;p&gt;調べても意外と見つからない。&lt;/p&gt;
+
+&lt;p&gt;要はリクエストヘッダに認証情報をくっつけられればいいんだけどその方法がわからない。&lt;/p&gt;
+
+&lt;h2 id=&#34;リクエストヘッダに情報を差し込む:6779ddb6118e231a79097670a186005c&#34;&gt;リクエストヘッダに情報を差し込む&lt;/h2&gt;
+
+&lt;p&gt;Stand AloneのScriptを作ってこんな感じでヘッダを差し込めるらしい&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt; org.parosproxy.paros.network.HttpSender.addListener(
+   new org.zaproxy.zap.network.HttpSenderListener {
+     getListenerOrder: function() {
+       return 1;
+     },
+
+     onHttpRequestSend: function(msg, initiator) {
+       msg.getRequestHeader().setHeader(
+         &amp;quot;Authorization&amp;quot;, &amp;quot;Basic ZHJwaGxxxxxxBob3Rv&amp;quot;);
+     },
+
+     onHttpResponseReceive: function(msg, initiator) {
+     }
+ });
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;参考にさせて頂きました:6779ddb6118e231a79097670a186005c&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.pupha.net/archives/2654/&#34;&gt;OWASP ZAP で送信されるリクエストに自動で独自ヘッダを追加する方法 - Web Application Security Memo&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>[Laravel5.1]発行されたSQLと実行計画を取得する</title>
+          <link>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</link>
+          <pubDate>Wed, 30 Sep 2015 13:44:48 JST</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</guid>
+          <description>
+
+&lt;p&gt;インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしい。&lt;/p&gt;
+
+&lt;h2 id=&#34;sqlの発行をフックする:f8b9f4d61afe8ca86b89085edc23a796&#34;&gt;SQLの発行をフックする&lt;/h2&gt;
+
+&lt;p&gt;ここに書いてあるとおり。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://laravel.com/docs/5.1/database#listening-for-query-events&#34;&gt;Database: Getting Started - Laravel - The PHP Framework For Web Artisans&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;DB&lt;/code&gt;の&lt;code&gt;listen&lt;/code&gt;メソッドに&lt;code&gt;$sql, $bindings, $time&lt;/code&gt;を受け取るClosureを渡せる。&lt;/p&gt;
+
+&lt;p&gt;なので&lt;code&gt;App\Providers\AppServiceProvider&lt;/code&gt;の&lt;code&gt;boot()&lt;/code&gt;メソッドに、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;    public function boot()
+    {
+        \DB::listen(function($sql, $bindings, $time) {
+            $bindings = implode(&#39;, &#39;, $bindings);
+            $method = request()-&amp;gt;method();
+            $url = request()-&amp;gt;url();
+            \Log::info(&amp;quot;Query [{$method}:{$url}] [{$time}s] $sql, [$bindings]&amp;quot;);
+        });
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;とかやればよい。&lt;/p&gt;
+
+&lt;h2 id=&#34;実行計画も取る:f8b9f4d61afe8ca86b89085edc23a796&#34;&gt;実行計画も取る&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;    public function boot()
+    {
+        \DB::listen(function($sql, $bindings, $time) {
+
+            if (preg_match(&amp;quot;/^select/&amp;quot;, $sql)) {
+                $explain = \DB::select(&amp;quot;explain {$sql}&amp;quot;, $bindings);
+                \Log::info($explain);
+            }
+
+            $bindings = implode(&#39;, &#39;, $bindings);
+            $method = request()-&amp;gt;method();
+            $url = request()-&amp;gt;url();
+            \Log::info(&amp;quot;Query [{$method}:{$url}] [{$time}s] $sql, [$bindings]&amp;quot;);
+        });
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こう。&lt;/p&gt;
+
+&lt;p&gt;updateとかもフックしちゃうと2回発行されたりして面倒なので、selectだけ。&lt;/p&gt;
+
+&lt;p&gt;selectに絞らないとしても、explainの取得がさらにフックされて・・・ってなるので、&lt;/p&gt;
+
+&lt;p&gt;何かしら絞る必要はあり。&lt;/p&gt;
+
+&lt;h2 id=&#34;本番では取らない:f8b9f4d61afe8ca86b89085edc23a796&#34;&gt;本番では取らない&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;    public function boot()
+    {
+        \DB::listen(function($sql, $bindings, $time) {
+
+            if (config(&#39;app.env&#39;) !== &#39;production&#39; &amp;amp;&amp;amp; preg_match(&amp;quot;/^select/&amp;quot;, $sql)) {
+                $explain = \DB::select(&amp;quot;explain {$sql}&amp;quot;, $bindings);
+                \Log::info($explain);
+            }
+
+            $bindings = implode(&#39;, &#39;, $bindings);
+            $method = request()-&amp;gt;method();
+            $url = request()-&amp;gt;url();
+            \Log::info(&amp;quot;Query [{$method}:{$url}] [{$time}s] $sql, [$bindings]&amp;quot;);
+        });
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こんな感じ。&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>
