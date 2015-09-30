@@ -6,8 +6,48 @@
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
-    <updated>2015-09-30 13:44:48 &#43;0900 JST</updated>
+    <updated>2015-09-30 16:24:53 &#43;0900 JST</updated>
 
+    
+      
+        <item>
+          <title>OWASP ZAPでBASIC認証を突破する</title>
+          <link>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</link>
+          <pubDate>Wed, 30 Sep 2015 16:24:53 JST</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</guid>
+          <description>
+
+&lt;p&gt;調べても意外と見つからない。&lt;/p&gt;
+
+&lt;p&gt;要はリクエストヘッダに認証情報をくっつけられればいいんだけどその方法がわからない。&lt;/p&gt;
+
+&lt;h2 id=&#34;リクエストヘッダに情報を差し込む:6779ddb6118e231a79097670a186005c&#34;&gt;リクエストヘッダに情報を差し込む&lt;/h2&gt;
+
+&lt;p&gt;Stand AloneのScriptを作ってこんな感じでヘッダを差し込めるらしい&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt; org.parosproxy.paros.network.HttpSender.addListener(
+   new org.zaproxy.zap.network.HttpSenderListener {
+     getListenerOrder: function() {
+       return 1;
+     },
+
+     onHttpRequestSend: function(msg, initiator) {
+       msg.getRequestHeader().setHeader(
+         &amp;quot;Authorization&amp;quot;, &amp;quot;Basic ZHJwaGxxxxxxBob3Rv&amp;quot;);
+     },
+
+     onHttpResponseReceive: function(msg, initiator) {
+     }
+ });
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;参考にさせて頂きました:6779ddb6118e231a79097670a186005c&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.pupha.net/archives/2654/&#34;&gt;OWASP ZAP で送信されるリクエストに自動で独自ヘッダを追加する方法 - Web Application Security Memo&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>
