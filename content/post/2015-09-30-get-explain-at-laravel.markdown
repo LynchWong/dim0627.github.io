@@ -17,7 +17,7 @@ title: "[Laravel5.1]発行されたSQLと実行計画を取得する"
 
 `DB`の`listen`メソッドに`$sql, $bindings, $time`を受け取るClosureを渡せる。
 
-`App\Providers\AppServiceProvider`の`boot()`メソッドに、
+なので`App\Providers\AppServiceProvider`の`boot()`メソッドに、
 
 ``` php
     public function boot()
