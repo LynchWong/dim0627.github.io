@@ -1,7 +1,7 @@
 ---
 slug: "could-not-force-push-on-git"
 title: "gitでforce pushが出来ない"
-eyecatch: "git.png"
+eyecatch: "program6.jpg"
 date: 2014-09-27
 comments: true
 tags: [git]

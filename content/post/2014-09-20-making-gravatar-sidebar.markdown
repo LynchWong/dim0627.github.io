@@ -1,7 +1,7 @@
 ---
 slug: "making-gravatar-sidebar"
 title: "OctopressのサイドバーにGravatarを表示させる"
-eyecatch: "octopress.png"
+eyecatch: "program1.jpg"
 date: 2014-09-20
 comments: true
 tags: [ruby, gravatar, octopress]

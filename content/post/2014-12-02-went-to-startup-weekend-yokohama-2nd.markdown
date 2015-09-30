@@ -1,6 +1,7 @@
 ---
 slug: "went-to-startup-weekend-yokohama-2nd"
 title: "HackerにとってのStartup Weekend"
+eyecatch: "design5.jpg"
 date: 2014-12-02
 comments: true
 tags: ["startup", "startup weekend"]

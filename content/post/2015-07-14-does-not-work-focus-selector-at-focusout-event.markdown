@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2015-07-14T00:05:16+09:00
-eyecatch: "jquery.jpg"
+eyecatch: "program5.jpg"
 slug: "does-not-work-focus-selector-at-focusout-event"
 tags: ["javascript"]
 title: "focusoutイベントでfocus中の要素が取得できない"

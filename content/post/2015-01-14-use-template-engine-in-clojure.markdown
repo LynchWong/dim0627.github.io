@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2015-01-14T01:01:39+09:00
-eyecatch: "clojure.png"
+eyecatch: "program1.jpg"
 slug: "use-template-engine-in-clojure"
 tags: ["clojure", "enlive", "hiccup"]
 title: "Clojureのテンプレートエンジンについて"

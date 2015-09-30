@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2015-03-16T23:15:49+09:00
-eyecatch: "ansible.png"
+eyecatch: "program5.jpg"
 slug: "create-mysql-environment-using-the-ansible"
 tags: ["vagrant", "ansible"]
 title: "Ansibleを使ってMySQLが動く環境を手っ取り早く作る"

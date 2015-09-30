@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2015-01-25T00:58:15+09:00
-eyecatch: "paizaio.png"
+eyecatch: "program6.jpg"
 slug: "make-repl-using-the-paizaio"
 tags: ["heroku", "paizaio", "clojure"]
 title: "paiza.IOのAPIを使ってreplを作る"

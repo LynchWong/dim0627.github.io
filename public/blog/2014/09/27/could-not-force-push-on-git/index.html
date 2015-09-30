@@ -10,9 +10,9 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="gitでforce pushが出来ない | UNRESOLVED">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/">
-    <meta property="og:description" content="typoを直すためにrebase -iやらをやってたんだけど、操作してたのがmasterブランチだったのでどうしてもforce pushがしたか">
+    <meta property="og:description" content="typoを直すためにrebase -iやらをやってたんだけど、操作してたのがmasterブランチだったのでどうしてもforce pushがしたかった。 一人で使ってたリポジトリだしね。 んだけど、-fをつけても To git://example.com/project1.git ! [rejected] master -&gt; master (non-fast-forward) error: failed to push some refs to &#39;git://example.com/project1.git&#39; To prevent ... See the &#39;Note about fast-forwards&#39; section of &#39;git push --help&#39; for details. こんな感じになってしまう・・・。 解決 gitリポジトリのconfigを見たらこんな項目が、 [receive] denyNonFastforwards = true どうやらこいつをfalseにすればよかったらしい。 最初はtrueになってるもんなのかな・・・。">
     
-    <meta property="og:image" content="http://yet.unresolved.xyz/images/git.png">
+    <meta property="og:image" content="http://yet.unresolved.xyz/images/program6.jpg">
     
     
     <meta property="og:site_name" content="UNRESOLVED">

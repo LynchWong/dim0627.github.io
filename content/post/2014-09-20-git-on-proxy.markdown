@@ -1,7 +1,7 @@
 ---
 slug: "git-on-proxy"
 title: "gitのリポジトリ単位にproxyの設定をする"
-eyecatch: "git.png"
+eyecatch: "program2.jpg"
 date: 2014-09-20
 comments: true
 tags: [git]

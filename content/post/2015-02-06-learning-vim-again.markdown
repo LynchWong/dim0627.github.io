@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2015-02-06T20:50:35+09:00
-eyecatch: "vim.png"
+eyecatch: "design2.jpg"
 slug: "learning-vim-again"
 tags: ["vim"]
 title: "今だからやるvimコマンド再学習"

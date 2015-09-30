@@ -10,9 +10,9 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="focusoutイベントでfocus中の要素が取得できない | UNRESOLVED">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/">
-    <meta property="og:description" content="何を血迷ったかサジェストを自作しようとしてしまってつらい目にあった話。 フォーカスアウトしたらサジェストを消したい 入力欄もしくはサジェストから">
+    <meta property="og:description" content="何を血迷ったかサジェストを自作しようとしてしまってつらい目にあった話。 フォーカスアウトしたらサジェストを消したい 入力欄もしくはサジェストからフォーカスアウトした時はサジェストを消したいじゃん。 でもフォーカスアウトした先にフォーカスしたものが入力欄もしくはサジェストだったらそれは消したくないじゃん。 だからこんなコードを書いた。 &lt;input type=&quot;text&quot; id=&quot;search-text&quot;&gt; &lt;div id=&quot;suggest-list&quot;&gt; &lt;a href=&quot;#&quot;&gt;suggest&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;suggest&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;suggest&lt;/a&gt; &lt;/div&gt; &lt;script&gt; $(&quot;#search-text&quot;).on(&quot;focusout&quot;, function() { if ($(&quot;#suggest-list&quot;).find(&quot;:focus&quot;).length !== 0) { console.log(&quot;Not hide!&quot;); return; } console.log(&quot;hide!&quot;); }); &lt;/script&gt; 実際はこの処理を入力だけじゃなくアンカーにも適用したんだけど面倒だから省略。 しかしこれだとifの中には入らずサジェストの非表示処理が通ってしまう・・・。 フォーカス処理は一度ブラウザに返してあげる どうやらJavaScriptの処理が進んでる間はフォーカス処理が行われないらしい。 なので一度ブラウザに処理が返るような処理を挟んでやる必要がある。 こんなかんじに。 $(&quot;#search-text&quot;).on(&quot;focusout&quot;, function() { setTimeout(function() { if ($(&quot;#suggest-list&quot;).find(&quot;:focus&quot;).length !== 0) { console.log(&quot;Not hide!&quot;); return; } console.log(&quot;hide!&quot;); }, 0); }); setTimeoutはJavaScriptの処理を通した後に、ブラウザ側からまた呼び出されるとのこと。 参考にさせていただきました。 JavaScript - setTimeout(&hellip;,0)などの使いドコロ - Qiita">
     
-    <meta property="og:image" content="http://yet.unresolved.xyz/images/jquery.jpg">
+    <meta property="og:image" content="http://yet.unresolved.xyz/images/program5.jpg">
     
     
     <meta property="og:site_name" content="UNRESOLVED">

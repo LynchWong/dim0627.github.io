@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2015-02-14T19:30:22+09:00
-eyecatch: "apigility.png"
+eyecatch: "infra6.jpg"
 slug: "make-task-manager-by-using-apigility"
 tags: ["javascript", "reactjs", "php", "apigility"]
 title: "Apigility + React.jsでタスク管理ツールを作ってみる"

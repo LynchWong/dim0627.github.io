@@ -6,133 +6,8 @@
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
-    <updated>2015-09-30 16:24:53 &#43;0900 JST</updated>
+    <updated>2015-08-26 23:12:02 &#43;0900 JST</updated>
 
-    
-      
-        <item>
-          <title>OWASP ZAPでBASIC認証を突破する</title>
-          <link>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</link>
-          <pubDate>Wed, 30 Sep 2015 16:24:53 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</guid>
-          <description>
-
-&lt;p&gt;調べても意外と見つからない。&lt;/p&gt;
-
-&lt;p&gt;要はリクエストヘッダに認証情報をくっつけられればいいんだけどその方法がわからない。&lt;/p&gt;
-
-&lt;h2 id=&#34;リクエストヘッダに情報を差し込む:6779ddb6118e231a79097670a186005c&#34;&gt;リクエストヘッダに情報を差し込む&lt;/h2&gt;
-
-&lt;p&gt;Stand AloneのScriptを作ってこんな感じでヘッダを差し込めるらしい&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt; org.parosproxy.paros.network.HttpSender.addListener(
-   new org.zaproxy.zap.network.HttpSenderListener {
-     getListenerOrder: function() {
-       return 1;
-     },
-
-     onHttpRequestSend: function(msg, initiator) {
-       msg.getRequestHeader().setHeader(
-         &amp;quot;Authorization&amp;quot;, &amp;quot;Basic ZHJwaGxxxxxxBob3Rv&amp;quot;);
-     },
-
-     onHttpResponseReceive: function(msg, initiator) {
-     }
- });
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;参考にさせて頂きました:6779ddb6118e231a79097670a186005c&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.pupha.net/archives/2654/&#34;&gt;OWASP ZAP で送信されるリクエストに自動で独自ヘッダを追加する方法 - Web Application Security Memo&lt;/a&gt;&lt;/p&gt;
-</description>
-        </item>
-      
-    
-      
-        <item>
-          <title>[Laravel5.1]発行されたSQLと実行計画を取得する</title>
-          <link>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</link>
-          <pubDate>Wed, 30 Sep 2015 13:44:48 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</guid>
-          <description>
-
-&lt;p&gt;インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしい。&lt;/p&gt;
-
-&lt;h2 id=&#34;sqlの発行をフックする:f8b9f4d61afe8ca86b89085edc23a796&#34;&gt;SQLの発行をフックする&lt;/h2&gt;
-
-&lt;p&gt;ここに書いてあるとおり。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://laravel.com/docs/5.1/database#listening-for-query-events&#34;&gt;Database: Getting Started - Laravel - The PHP Framework For Web Artisans&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;DB&lt;/code&gt;の&lt;code&gt;listen&lt;/code&gt;メソッドに&lt;code&gt;$sql, $bindings, $time&lt;/code&gt;を受け取るClosureを渡せる。&lt;/p&gt;
-
-&lt;p&gt;なので&lt;code&gt;App\Providers\AppServiceProvider&lt;/code&gt;の&lt;code&gt;boot()&lt;/code&gt;メソッドに、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;    public function boot()
-    {
-        \DB::listen(function($sql, $bindings, $time) {
-            $bindings = implode(&#39;, &#39;, $bindings);
-            $method = request()-&amp;gt;method();
-            $url = request()-&amp;gt;url();
-            \Log::info(&amp;quot;Query [{$method}:{$url}] [{$time}s] $sql, [$bindings]&amp;quot;);
-        });
-    }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;とかやればよい。&lt;/p&gt;
-
-&lt;h2 id=&#34;実行計画も取る:f8b9f4d61afe8ca86b89085edc23a796&#34;&gt;実行計画も取る&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;    public function boot()
-    {
-        \DB::listen(function($sql, $bindings, $time) {
-
-            if (preg_match(&amp;quot;/^select/&amp;quot;, $sql)) {
-                $explain = \DB::select(&amp;quot;explain {$sql}&amp;quot;, $bindings);
-                \Log::info($explain);
-            }
-
-            $bindings = implode(&#39;, &#39;, $bindings);
-            $method = request()-&amp;gt;method();
-            $url = request()-&amp;gt;url();
-            \Log::info(&amp;quot;Query [{$method}:{$url}] [{$time}s] $sql, [$bindings]&amp;quot;);
-        });
-    }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;こう。&lt;/p&gt;
-
-&lt;p&gt;updateとかもフックしちゃうと2回発行されたりして面倒なので、selectだけ。&lt;/p&gt;
-
-&lt;p&gt;selectに絞らないとしても、explainの取得がさらにフックされて・・・ってなるので、&lt;/p&gt;
-
-&lt;p&gt;何かしら絞る必要はあり。&lt;/p&gt;
-
-&lt;h2 id=&#34;本番では取らない:f8b9f4d61afe8ca86b89085edc23a796&#34;&gt;本番では取らない&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;    public function boot()
-    {
-        \DB::listen(function($sql, $bindings, $time) {
-
-            if (config(&#39;app.env&#39;) !== &#39;production&#39; &amp;amp;&amp;amp; preg_match(&amp;quot;/^select/&amp;quot;, $sql)) {
-                $explain = \DB::select(&amp;quot;explain {$sql}&amp;quot;, $bindings);
-                \Log::info($explain);
-            }
-
-            $bindings = implode(&#39;, &#39;, $bindings);
-            $method = request()-&amp;gt;method();
-            $url = request()-&amp;gt;url();
-            \Log::info(&amp;quot;Query [{$method}:{$url}] [{$time}s] $sql, [$bindings]&amp;quot;);
-        });
-    }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;こんな感じ。&lt;/p&gt;
-</description>
-        </item>
-      
     
       
         <item>
@@ -4235,80 +4110,6 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
     
       
         <item>
-          <title>Google app engineでカスタムドメインを使う</title>
-          <link>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</link>
-          <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</guid>
-          <description>
-
-&lt;p&gt;簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。&lt;/p&gt;
-
-&lt;h2 id=&#34;googleによるドメインの確認:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;Googleによるドメインの確認&lt;/h2&gt;
-
-&lt;p&gt;ドメインを持っていない人は先に取得しちゃってね。&lt;/p&gt;
-
-&lt;p&gt;ちなみにオレはGMOさん(&lt;a href=&#34;http://www.onamae.com/&#34;&gt;お名前.com&lt;/a&gt;)で取得しました。&lt;/p&gt;
-
-&lt;p&gt;ていうことで以下の手順にそってやっていきます。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/appengine/docs/domain&#34;&gt;Using a Custom Domain - Google App Engine Google Cloud Platform&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;作業は&lt;a href=&#34;https://console.developers.google.com/&#34;&gt;Developers Console&lt;/a&gt;から行います。&lt;/p&gt;
-
-&lt;p&gt;はじめにGoogleが、使いたいドメインが君のものか確認したいとのことなので、verifyへ。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34; class=&#34;image&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;そうするとこんな画面になるので、&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34; class=&#34;image&#34; alt=&#34;input_domain&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;ここに表示されてるテキストを、ドメインを発行した会社さんのほうからTXTレコードとして追加すればOK。&lt;/p&gt;
-
-&lt;p&gt;なんかこの画面、すごい頻度でChromeがエラー吐きまくったけど、クリックしなければ大丈夫だったのでなんとかしのぎました。&lt;/p&gt;
-
-&lt;p&gt;TXTレコードの追加は、お名前.comであれば&lt;a href=&#34;http://www.onamae.com/navi/domain.html&#34;&gt;ドメインNavi&lt;/a&gt;から&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ドメイン設定&lt;/li&gt;
-&lt;li&gt;DNS関連機能の設定&lt;/li&gt;
-&lt;li&gt;DNSレコード設定を利用する&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;でここに入力すればOK。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34; class=&#34;image&#34; alt=&#34;input_txt&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;TYPEはTXTにしてVALUEにさっきのテキストを入力。&lt;/p&gt;
-
-&lt;p&gt;場所にもよるけど少し待てば反映されるので、それまでGoogle側の画面で確認ボタンを何度か押してみる。&lt;/p&gt;
-
-&lt;p&gt;反映されてたら確認が通るはず。&lt;/p&gt;
-
-&lt;h2 id=&#34;ドメインの選択:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;ドメインの選択&lt;/h2&gt;
-
-&lt;p&gt;確認が出来たらサブドメインとしてプレフィックスを付けるのかを決める。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34; class=&#34;image&#34; alt=&#34;step2&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;これによって最後のステップが変わるけど、オレは確認の時点でサブドメインとして設定したので、Google側では特に付加せずやってます。&lt;/p&gt;
-
-&lt;h2 id=&#34;aレコードとaaaaレコードの追加:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;AレコードとAAAAレコードの追加&lt;/h2&gt;
-
-&lt;p&gt;最後はまたDNSレコードの追加。&lt;/p&gt;
-
-&lt;p&gt;ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34; class=&#34;image&#34; alt=&#34;step3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;あとは待ってればそのうち反映されるはず。&lt;/p&gt;
-</description>
-        </item>
-      
-    
-      
-        <item>
           <title>クラスタ化インデックスとかカバリングインデックスについてどうせ忘れるからまとめる</title>
           <link>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</link>
           <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
@@ -4388,6 +4189,80 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 &lt;/blockquote&gt;
 
 &lt;p&gt;誤った認識があればご指摘を。&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Google app engineでカスタムドメインを使う</title>
+          <link>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</link>
+          <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</guid>
+          <description>
+
+&lt;p&gt;簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。&lt;/p&gt;
+
+&lt;h2 id=&#34;googleによるドメインの確認:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;Googleによるドメインの確認&lt;/h2&gt;
+
+&lt;p&gt;ドメインを持っていない人は先に取得しちゃってね。&lt;/p&gt;
+
+&lt;p&gt;ちなみにオレはGMOさん(&lt;a href=&#34;http://www.onamae.com/&#34;&gt;お名前.com&lt;/a&gt;)で取得しました。&lt;/p&gt;
+
+&lt;p&gt;ていうことで以下の手順にそってやっていきます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/appengine/docs/domain&#34;&gt;Using a Custom Domain - Google App Engine Google Cloud Platform&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;作業は&lt;a href=&#34;https://console.developers.google.com/&#34;&gt;Developers Console&lt;/a&gt;から行います。&lt;/p&gt;
+
+&lt;p&gt;はじめにGoogleが、使いたいドメインが君のものか確認したいとのことなので、verifyへ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34; class=&#34;image&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;そうするとこんな画面になるので、&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34; class=&#34;image&#34; alt=&#34;input_domain&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ここに表示されてるテキストを、ドメインを発行した会社さんのほうからTXTレコードとして追加すればOK。&lt;/p&gt;
+
+&lt;p&gt;なんかこの画面、すごい頻度でChromeがエラー吐きまくったけど、クリックしなければ大丈夫だったのでなんとかしのぎました。&lt;/p&gt;
+
+&lt;p&gt;TXTレコードの追加は、お名前.comであれば&lt;a href=&#34;http://www.onamae.com/navi/domain.html&#34;&gt;ドメインNavi&lt;/a&gt;から&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ドメイン設定&lt;/li&gt;
+&lt;li&gt;DNS関連機能の設定&lt;/li&gt;
+&lt;li&gt;DNSレコード設定を利用する&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;でここに入力すればOK。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34; class=&#34;image&#34; alt=&#34;input_txt&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;TYPEはTXTにしてVALUEにさっきのテキストを入力。&lt;/p&gt;
+
+&lt;p&gt;場所にもよるけど少し待てば反映されるので、それまでGoogle側の画面で確認ボタンを何度か押してみる。&lt;/p&gt;
+
+&lt;p&gt;反映されてたら確認が通るはず。&lt;/p&gt;
+
+&lt;h2 id=&#34;ドメインの選択:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;ドメインの選択&lt;/h2&gt;
+
+&lt;p&gt;確認が出来たらサブドメインとしてプレフィックスを付けるのかを決める。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34; class=&#34;image&#34; alt=&#34;step2&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;これによって最後のステップが変わるけど、オレは確認の時点でサブドメインとして設定したので、Google側では特に付加せずやってます。&lt;/p&gt;
+
+&lt;h2 id=&#34;aレコードとaaaaレコードの追加:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;AレコードとAAAAレコードの追加&lt;/h2&gt;
+
+&lt;p&gt;最後はまたDNSレコードの追加。&lt;/p&gt;
+
+&lt;p&gt;ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34; class=&#34;image&#34; alt=&#34;step3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;あとは待ってればそのうち反映されるはず。&lt;/p&gt;
 </description>
         </item>
       

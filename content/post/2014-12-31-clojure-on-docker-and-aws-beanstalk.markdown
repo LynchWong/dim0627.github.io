@@ -1,7 +1,7 @@
 ---
 slug: "clojure-on-docker-and-aws-beanstalk"
 title: "ClojureのWebアプリをDocker + Beanstalkで動かす"
-eyecatch: "aws.png"
+eyecatch: "infra3.jpg"
 date: 2014-12-31
 comments: true
 tags: ["aws", "clojure", "docker", "beanstalk"]

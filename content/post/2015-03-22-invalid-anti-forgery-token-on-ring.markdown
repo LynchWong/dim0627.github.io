@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2015-03-22T19:23:27+09:00
-eyecatch: "clojure.png"
+eyecatch: "program6.jpg"
 slug: "invalid-anti-forgery-token-on-ring"
 tags: ["security", "clojure", "ring"]
 title: "[Clojure]ringのCSRFトークンを生成する"

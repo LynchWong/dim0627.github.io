@@ -1,7 +1,7 @@
 ---
 slug: "how-to-use-custom-domain-in-github-pages"
 title: "GitHub Pagesでカスタムドメインを使う"
-eyecatch: "github.png"
+eyecatch: "infra3.jpg"
 date: 2014-10-24
 comments: true
 tags: [github, dns]

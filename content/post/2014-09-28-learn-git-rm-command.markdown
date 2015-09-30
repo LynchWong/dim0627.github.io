@@ -1,7 +1,7 @@
 ---
 slug: "learn-git-rm-command"
 title: "gitで管理したくないファイルをインデックスから除外する"
-eyecatch: "git.png"
+eyecatch: "program2.jpg"
 date: 2014-09-28
 comments: true
 tags: [git]

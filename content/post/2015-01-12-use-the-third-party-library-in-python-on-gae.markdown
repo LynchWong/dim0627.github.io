@@ -2,7 +2,7 @@
 tags: ["python", "google app engine"]
 comments: true
 date: 2015-01-12T00:19:33+09:00
-eyecatch: "python.png"
+eyecatch: "program4.jpg"
 title: "Python on GAEで3rdパーティライブラリを使う"
 slug: "use-the-third-party-library-in-python-on-gae"
 ---

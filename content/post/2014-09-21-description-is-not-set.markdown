@@ -1,7 +1,7 @@
 ---
 slug: "description-is-not-set"
 title: "_config.ymlに書いたdescriptionが設定されない"
-eyecatch: "octopress.png"
+eyecatch: "program3.jpg"
 date: 2014-09-21
 comments: true
 tags: [ruby, octopress]

@@ -2,7 +2,7 @@
 tags: ["golang", "octopress", "hugo", "ruby"]
 comments: true
 date: 2015-01-04
-eyecatch: "hugo.png"
+eyecatch: "design1.jpg"
 slug: "migrate-blog-to-hugo-from-octopress"
 title: "ブログをOctopressからHugoに移行した"
 ---

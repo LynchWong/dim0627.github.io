@@ -1,7 +1,7 @@
 ---
 slug: "could-not-run-docker-in-mac"
 title: "boot2dockerでCannot connect to the Docker daemon"
-eyecatch: "docker.png"
+eyecatch: "infra1.jpg"
 date: 2014-12-30
 comments: true
 tags: ["docker", "boot2docker"]

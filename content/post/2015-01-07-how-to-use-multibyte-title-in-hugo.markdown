@@ -2,7 +2,7 @@
 tags: ["golang", "hugo"]
 comments: true
 date: 2015-01-07T23:56:32+09:00
-eyecatch: "hugo.png"
+eyecatch: "design2.jpg"
 slug: "how-to-use-multibyte-title-in-hugo"
 title: "Hugoでマルチバイトのタイトルをスマートに使う方法"
 ---

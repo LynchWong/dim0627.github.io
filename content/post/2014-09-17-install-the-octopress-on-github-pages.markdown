@@ -1,7 +1,7 @@
 ---
 slug: "install-the-octopress-on-github-pages"
 title: "GitHub PagesにOctopressをのっけてみる"
-eyecatch: "octopress.png"
+eyecatch: "program1.jpg"
 date: 2014-09-17
 comments: true
 tags: [github, octopress, jekyll]

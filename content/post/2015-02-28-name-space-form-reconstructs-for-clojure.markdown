@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2015-02-28T06:34:59+09:00
-eyecatch: "clojure.png"
+eyecatch: "program4.jpg"
 slug: "name-space-form-reconstructs-for-clojure"
 tags: ["vim", "clojure"]
 title: "Slamhoundを使ってClojureのrequireを自動生成する"

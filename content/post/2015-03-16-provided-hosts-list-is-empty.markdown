@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2015-03-16T22:55:18+09:00
-eyecatch: "ansible.png"
+eyecatch: "infra3.jpg"
 slug: "provided-hosts-list-is-empty"
 tags: ["vagrant", "ansible" ]
 title: "Vagrant + Ansibleでprovided hosts list is empty"

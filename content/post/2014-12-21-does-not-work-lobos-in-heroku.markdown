@@ -1,7 +1,7 @@
 ---
 slug: "does-not-work-lobos-in-heroku"
 title: "Lobosでマイグレーションができない in Heroku"
-eyecatch: "clojure.png"
+eyecatch: "program3.jpg"
 date: 2014-12-21
 comments: true
 tags: ["heroku", "clojure", "migration", "lobos", "postgresql"]

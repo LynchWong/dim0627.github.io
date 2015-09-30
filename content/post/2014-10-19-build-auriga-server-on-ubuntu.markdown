@@ -1,7 +1,7 @@
 ---
 slug: "build-auriga-server-on-ubuntu"
 title: "UbuntuにAurigaを構築してみる"
-eyecatch: "ubuntu.png"
+eyecatch: "infra1.jpg"
 date: 2014-10-19
 comments: true
 tags: [linux, auriga, clang, ubuntu]

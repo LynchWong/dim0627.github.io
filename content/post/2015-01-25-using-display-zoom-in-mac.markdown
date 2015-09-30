@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2015-01-25T23:02:59+09:00
-eyecatch: "osx.png"
+eyecatch: "design5.jpg"
 slug: "using-display-zoom-in-mac"
 tags: ["os x", "mac", "util"]
 title: "Macで画面の一部をズームする"

@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2015-01-25T20:52:46+09:00
-eyecatch: "slack.png"
+eyecatch: "design1.jpg"
 slug: "play-slack-api"
 tags: ["heroku", "slack"]
 title: "SlackAPIで遊ぶ"

@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2015-02-05T21:36:25+09:00
-eyecatch: "vim.png"
+eyecatch: "design1.jpg"
 slug: "vim-freezed-in-editting-a-php-file"
 tags: ["vim", "php"]
 title: "PHPファイルの定数に触るとvimがフリーズする"

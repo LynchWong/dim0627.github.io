@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2015-01-26T14:17:29+09:00
-eyecatch: "linux.png"
+eyecatch: "infra5.jpg"
 slug: "ordinary-linux-programming"
 tags: ["linux", "book"]
 title: "「ふつうのLinuxプログラミング」を読んだ"

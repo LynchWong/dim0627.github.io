@@ -1,7 +1,7 @@
 ---
 slug: "learn-docker"
 title: "Docker事始め"
-eyecatch: "docker.png"
+eyecatch: "infra4.jpg"
 date: 2014-11-09
 comments: true
 tags: [docker]

@@ -1,7 +1,7 @@
 ---
 slug: "move-sidebar-at-under-the-article"
 title: "Octopressのサイドバーを下部に移動する"
-eyecatch: "octopress.png"
+eyecatch: "design1.jpg"
 date: 2014-10-22
 comments: true
 tags: [ruby, octopress]

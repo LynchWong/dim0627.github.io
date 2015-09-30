@@ -1,7 +1,7 @@
 ---
 slug: "how-to-use-custom-domain-in-google-app-engine"
 title: "Google app engineでカスタムドメインを使う"
-eyecatch: "gae.png"
+eyecatch: "infra2.jpg"
 date: 2014-10-23
 comments: true
 tags: ["google app engine", "dns"]

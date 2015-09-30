@@ -1,7 +1,7 @@
 ---
 slug: "making-new-theme-flatten"
 title: "Octopressのテーマを作ってみる"
-eyecatch: "octopress.png"
+eyecatch: "program4.jpg"
 date: 2014-09-21
 comments: true
 tags: [ruby, octopress, design]

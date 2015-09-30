@@ -10,9 +10,9 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="Hugoでマルチバイトのタイトルをスマートに使う方法 | UNRESOLVED">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/">
-    <meta property="og:description" content="Hugoでちょっと困ったこと。 オレはOctopressから移行してきたからなおさらなんだけど、記事のタイトルがURLにされてしまう。 あ、オレ">
+    <meta property="og:description" content="Hugoでちょっと困ったこと。 オレはOctopressから移行してきたからなおさらなんだけど、記事のタイトルがURLにされてしまう。 あ、オレはconfig.yamlに permalinks: post: /blog/:year/:month/:day/:title/ を設定してるからなんだけど。 そうすると日本語とかのマルチバイト文字を使うとパーセントエンコードが走って結構悲惨なことになる。 というかオレの環境だとリンクがきちんと飛べなかった・・・。 Octopressは記事のファイル名がURLになってたから、ファイル名さえ英語なら問題なかったんだよね。 なので今回やった対処法をメモっとく。 URLの構成と対応策 実は移行の時にちょっと手を加えたりしてたんだけど、あんまり綺麗な方法じゃなかったので納得が行ってなかった。 そんな時に公式を読んでたら、Content Organizationの項にこんな図が。 どうやらオレが困ってたURLのタイトル部はslugと呼ばれる部分らしい。 ならこんな風に記事内で毎回指定してしまえば綺麗に話が済むのではないか？ --- tags: [&quot;hugo&quot;, &quot;golang&quot;] comments: true date: 2015-01-07T23:56:32&#43;09:00 eyecatch: &quot;hugo.png&quot; slug: &quot;how-to-use-multibyte-title-in-hugo&quot; title: &quot;Hugoでマルチバイトのタイトルをスマートに使う方法&quot; --- と思ったらうまくいった。 config.yamlはこんな感じ。 permalinks: post: /blog/:year/:month/:day/:slug/ なのでOctopressから移行した人はこの方法も検討するといいかもしれません。 hugo newした時に生成されるテンプレートはarchetypesディレクトリに配置出来るから、そこでやっておくとよし。 しかし移行時に書き足すのが面倒なんだよなあ。">
     
-    <meta property="og:image" content="http://yet.unresolved.xyz/images/hugo.png">
+    <meta property="og:image" content="http://yet.unresolved.xyz/images/design2.jpg">
     
     
     <meta property="og:site_name" content="UNRESOLVED">

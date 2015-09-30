@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2015-01-15T21:12:52+09:00
-eyecatch: "clojure.png"
+eyecatch: "program3.jpg"
 slug: "challenged-to-online-hackathon-of-paiza"
 tags: ["clojure", "paiza", "hackathon"]
 title: "Clojureで新卒の女の子を射止めた話"

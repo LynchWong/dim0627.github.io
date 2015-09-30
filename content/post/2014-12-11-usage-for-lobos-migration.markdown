@@ -1,7 +1,7 @@
 ---
 slug: "usage-for-lobos-migration"
 title: "Lobosを使ってマイグレーションをする"
-eyecatch: "clojure.png"
+eyecatch: "program2.jpg"
 date: 2014-12-11
 comments: true
 tags: ["clojure", "lobos", "database", "migration", "leiningen"]

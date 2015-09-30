@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2015-01-22T15:37:14+09:00
-eyecatch: "vagrant.png"
+eyecatch: "infra4.jpg"
 slug: "install-postgresql-on-centos"
 tags: ["linux", "postgresql", "sqlite", "centos", "vagrant"]
 title: "Vagrant + CentOS + PostgreSQLを最速で構築"

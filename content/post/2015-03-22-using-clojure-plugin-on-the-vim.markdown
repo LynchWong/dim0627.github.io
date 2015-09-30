@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2015-03-22T19:47:22+09:00
-eyecatch: "vim.png"
+eyecatch: "design2.jpg"
 slug: "using-clojure-plugin-on-the-vim"
 tags: ["vim", "clojure"]
 title: "VimのClojureプラグイン覚書"

@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2015-08-26T23:12:02+09:00
-eyecatch: "aws.png"
+eyecatch: "infra1.jpg"
 slug: "i-want-to-use-amazon-linux-at-vagrant"
 tags: ["aws"]
 title: "Amazon LinuxをVagrantで使いたい"

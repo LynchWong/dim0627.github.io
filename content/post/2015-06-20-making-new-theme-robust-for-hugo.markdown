@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2015-06-20T11:30:06+09:00
-eyecatch: "hex.jpg"
+eyecatch: "program2.jpg"
 slug: "making-new-theme-robust-for-hugo"
 tags: ["design", "hugo"]
 title: "Hugo向けの新しいテーマを作った"

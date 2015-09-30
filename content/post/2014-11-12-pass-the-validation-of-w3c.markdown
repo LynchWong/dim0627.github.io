@@ -1,7 +1,7 @@
 ---
 slug: "pass-the-validation-of-w3c"
 title: "OctopressをW3Cのバリデーションにパスさせる"
-eyecatch: "octopress.png"
+eyecatch: "design4.jpg"
 date: 2014-11-12
 comments: true
 tags: ["html", "octopress"]
