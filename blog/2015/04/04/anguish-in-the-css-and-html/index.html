@@ -10,7 +10,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="CSS / HTMLで味わった苦悩の数々を振り返ってみる | UNRESOLVED">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/04/04/anguish-in-the-css-and-html/">
-    <meta property="og:description" content="CSSってアンチパターンとかベストプラクティスみたいなのをあんまり聞かないよね。 デザイナじゃないオレがフロントエンドに触れて苦しんだこととかノウハウとかをまとめてみようと思う。 セクションを意識する HTML5からsectionタグが出てきたね。 これはそのタグの話ではなくて、画面レイアウトを考えた上での大枠について。 オレがやって失敗だったなと思ったのはページの一部からHTMLを書き始めるやり方。 これをやってしまうとページの一部分から完成していくから、全体で統制が取れなくなることが多かった。 具体的に言うと、だいたいのページはこんな感じのセクション分けになるはず。 &lt;!doctype HTML&gt; &lt;html&gt; &lt;head&gt; metaタグ。 CSSフレームワークの読み込み。 オーバライド用のCSSファイルの読み込み。 などなど。 &lt;/head&gt; &lt;body&gt; &lt;header&gt; ヘッダ。ロゴや一部のメニューを置く。 &lt;/header&gt; &lt;div&gt; グローバルメニュー。サイトによってはheaderで事足りる場合も。 &lt;/div&gt; &lt;div&gt; メインコンテンツ。この中でカラム分けをしたり、さらに細分化されたセクション分けをしたりする。 &lt;/div&gt; &lt;footer&gt; コピーライトを書いたりする。 最近はサイトマップをここに置いたりすることが多いみたい。 &lt;/footer&gt; JavaScriptの読み込み &lt;/body&gt; &lt;/html&gt; 個人的に好きに書いていい場面ではhtmlタグ、head、bodyタグは省略するんだけど、今回はその話は置いておきます。 &lt;html&gt;,&lt;body&gt;は要らない？Googleが推奨するHTMLファイルの記法 - Qiita こういう風に、自分が作りたいサイトの全体像から、各セクションの根底に来るであろうタグを最初に配置しておく。 こうしなかったせいで、あとで要素を追加したときにDOMの全体像が不自然な形になってしまうことがあった。 あと、無駄に要素を重ねたりするとHTMLの構造を理解するのが辛くなる。 IDとクラスを使い分ける CSSは本当にパフォーマンスコストがかかりづらいのだろうか？ もしそうだとしても、意識しない理由はどこにもないと思う。 GitHub&rsquo;s CSS Performance // Speaker Deck 正直な話をすれば、スタイルをあてたいならもうクラスを見境なしにつけてしまっても多分問題なくやっていける。 なのにID、クラスどっちにするかとかそういう不要な検討事項を増やすのはいやだよね。 でもサイトの規模によってはパフォーマンスは死活問題だし、何よりIDとクラスの違いで読みやすさが変わると思う。 さっきの例を使うと、オレはだいたいこういうIDを先に付けておく。 &lt;body&gt; &lt;header id=&quot;header&quot;&gt; ヘッダ。ロゴや一部のメニューを置く。 &lt;/header&gt; &lt;div id=&quot;menu&quot;&gt; グローバルメニュー。サイトによってはheaderで事足りる場合も。 &lt;/div&gt; &lt;div id=&quot;body&quot;&gt; メインコンテンツ。この中でカラム分けをしたり、さらに細分化されたセクション分けをしたりする。 &lt;/div&gt; &lt;footer id=&quot;footer&quot;&gt; コピーライトを書いたりする。">
+    <meta property="og:description" content="CSSってアンチパターンとかベストプラクティスみたいなのをあんまり聞かないよね。 デザイナじゃないオレがフロントエンドに触れて苦しんだこととか">
     
     <meta property="og:image" content="http://yet.unresolved.xyz/images/design3.jpg">
     
@@ -31,8 +31,7 @@
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href='//fonts.googleapis.com/css?family=Over+the+Rainbow' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/earlyaccess/notosansjapanese.css' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">

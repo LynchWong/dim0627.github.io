@@ -10,7 +10,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="Hugo向けの新しいテーマを作った | UNRESOLVED">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/06/20/making-new-theme-robust-for-hugo/">
-    <meta property="og:description" content="前に作ったやつが飽きてしまったので、そもそもForkするんじゃなくて0から作ることにしました。 出来たもの こんな感じ。 dim0627/hugo_theme_robust トップの最新4記事は2カラム、それ以降は4カラムで表示するようにしてる。もちろんレスポンシブで。 前はPost一覧とかの画面もあったけど、そもそも必要無いような気がして色々削った。 なので今回はシンプルにトップ、記事詳細、タグ別記事一覧の3ページだけ。 トップとタグ別記事一覧は同じテンプレートを使ってるから、少し冗長になってしまったなあ。 Hugoのテンプレート構成が今だによくわかってないから、共通化とかがうまく出来ない・・・。 工夫したこと 前にテーマを作って思ったんだけど、Hugoの強みは各テーマをOverride出来ることなんだよね。 だからそれ前提で書かないと、Overrideしたいのは一部でも、ファイルまるごとコピるはめになっちゃう。 前はそれでもう何がなんだかわからなくなったので、今回はそれを避けようとした。 何をしたかというと、空っぽのテンプレートファイルを最初からいろいろな場所に設置しておくことにした。 Overrideしたい人はこのファイルを各自のディレクトリにコピーして編集すればいいし、 Overrideしない人はほっとけば影響もない。 まとめ 数時間でざーっと作ったので、最後のほうはCSSもぶれまくったなあ。 あとReadmeとかいろいろ書けてない。 spf13/hugoThemesにプルリクも送らねば・・・。">
+    <meta property="og:description" content="前に作ったやつが飽きてしまったので、そもそもForkするんじゃなくて0から作ることにしました。 出来たもの こんな感じ。 dim0627/hugo_theme_robust トップの最新4記事は2">
     
     <meta property="og:image" content="http://yet.unresolved.xyz/images/program2.jpg">
     
@@ -31,8 +31,7 @@
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href='//fonts.googleapis.com/css?family=Over+the+Rainbow' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/earlyaccess/notosansjapanese.css' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">

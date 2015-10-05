@@ -10,7 +10,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="Clojureで新卒の女の子を射止めた話 | UNRESOLVED">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/">
-    <meta property="og:description" content="何やらプログラムの問題を解くと可愛い女の子とハネムーンにいけるとかいう企画をpaizaが開催していたらしい。 マンガ版「エンジニアでも恋がしたい！」〜転職初日にぶつかった女の子が同僚だった件〜｜paizaオンラインハッカソン4 Lite 会社の子からすすめられたのをずっと放置してたんだけど実際やってみたらなかなか面白かった。 ちなみに実際に手に入るのはハネムーンじゃなくてねるねるねるねかラズパイだったらしい。 ねるねるねるね・・・。 Problem 1 在庫計算プログラムを作成してください。改行区切りで N 個の商品の各在庫数 S が入力されるので、その合計を出力して下さい。 解答次第でこの後のストーリーが変わります！！ 入力される値 入力は標準入力にて以下のフォーマットで与えられます。 N S_1 S_2 ・ ・ S_N 条件 すべてのテストケースにおいて、以下の条件をみたします。 1 ≦ N ≦ 100 0 ≦ S_i ≦ 100 期待する出力 全ての商品の在庫数を足した数を出力してください。最後は改行し、余計な文字、空行を含んではいけません。 ふむふむ。 ちなみにpaizaで使えるClojureのREPLはベータ版とのことで、変な挙動をするかも〜とのこと。 入力の受け方はこんな感じ。 (def in (line-seq (java.io.BufferedReader. *in*))) オレの回答はこんな感じ。 (def in (line-seq (java.io.BufferedReader. *in*))) (defn p1 [] (reduce &#43; (map #(Integer/parseInt %) (rest in)))) (print (p1)) 普通にreduceで回しただけ。 Problem 2 改行区切りで N 個の各商品の在庫数 S が入力されるので、その合計を出力して下さい。 入力される値 入力は以下のフォーマットで与えられる。 N T_1 S_1 P_1 T_2 S_2 P_2 ・ ・ ・ T_N S_N P_N 条件 すべてのテストケースにおいて、以下の条件をみたします。 1 ≦ N ≦ 100 1 ≦ T_i ≦ 100 0 ≦ S_i ≦ 100 1 ≦ P_i ≦ 10,000 期待する出力 在庫数を最低限必要な在庫数を満たすために必要な金額の合計を出力してください。 最後は改行し、余計な文字、空行を含んではいけません。 問題文をよく読まずに解いて何度かミスりました。 (def in (line-seq (java.io.BufferedReader.">
+    <meta property="og:description" content="何やらプログラムの問題を解くと可愛い女の子とハネムーンにいけるとかいう企画をpaizaが開催していたらしい。 マンガ版「エンジニアでも恋がした">
     
     <meta property="og:image" content="http://yet.unresolved.xyz/images/program3.jpg">
     
@@ -31,8 +31,7 @@
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href='//fonts.googleapis.com/css?family=Over+the+Rainbow' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/earlyaccess/notosansjapanese.css' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">

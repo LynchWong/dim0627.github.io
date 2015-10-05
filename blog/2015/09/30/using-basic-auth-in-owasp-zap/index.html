@@ -10,7 +10,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="OWASP ZAPでBASIC認証を突破する | UNRESOLVED">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/">
-    <meta property="og:description" content="調べても意外と見つからない。 要はリクエストヘッダに認証情報をくっつけられればいいんだけどその方法がわからない。 リクエストヘッダに情報を差し込む Stand AloneのScriptを作ってこんな感じでヘッダを差し込めるらしい org.parosproxy.paros.network.HttpSender.addListener( new org.zaproxy.zap.network.HttpSenderListener { getListenerOrder: function() { return 1; }, onHttpRequestSend: function(msg, initiator) { msg.getRequestHeader().setHeader( &quot;Authorization&quot;, &quot;Basic ZHJwaGxxxxxxBob3Rv&quot;); }, onHttpResponseReceive: function(msg, initiator) { } }); 参考にさせて頂きました OWASP ZAP で送信されるリクエストに自動で独自ヘッダを追加する方法 - Web Application Security Memo">
+    <meta property="og:description" content="調べても意外と見つからない。 要はリクエストヘッダに認証情報をくっつけられればいいんだけどその方法がわからない。 リクエストヘッダに情報を差し込">
     
     <meta property="og:image" content="http://yet.unresolved.xyz/images/security1.jpg">
     
@@ -31,8 +31,7 @@
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href='//fonts.googleapis.com/css?family=Over+the+Rainbow' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/earlyaccess/notosansjapanese.css' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">

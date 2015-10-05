@@ -4,8 +4,9 @@ html {
 }
 
 body {
-  font-family: "Alegreya Sans", "PT Sans", 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-family: "Noto Sans Japanese", 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   font-size: 12px;
+  font-weight: 300;
 }
 
 a,
@@ -63,7 +64,7 @@ article {
 
 .post-title {
   font-size: 1.1rem;
-  font-weight: 900;
+  font-weight: 700;
   margin: 0;
 }
 
@@ -72,7 +73,7 @@ article {
 }
 
 #post .post-title {
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
 
 .body {
@@ -87,7 +88,7 @@ article {
 .body h3,
 .body h4,
 .body h5 {
-  font-weight: 900;
+  font-weight: 700;
   margin-top: 30px;
 }
 
