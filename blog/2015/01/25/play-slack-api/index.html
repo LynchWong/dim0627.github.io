@@ -10,7 +10,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="SlackAPIで遊ぶ | UNRESOLVED">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/">
-    <meta property="og:description" content="最近 ふつうのLinuxプログラミングを読んでます。知りたいことが書かれてて楽しい！ でもずっと本読むのは飽きるよね。なのでSlackのAPIと">
+    <meta property="og:description" content="最近 ふつうのLinuxプログラミングを読んでます。知りたいことが書かれてて楽しい！ でもずっと本読むのは飽きるよね。なのでSlackのAPIとか触ってみる。 SlackAPIの種類 SlackのAPIはいくつか種類があるんだね、トリガになるパターンが違うのかな？ 2015年01月24日時点でのAPIをまとめてみる。 Slack Web API 指定したチャンネルの履歴とかユーザの一覧とか、Slackの情報を取得出来る。 Web APIなので、URLベースでの取得。 Real Time Messaging API Web Socketベースのリアルタイムチャット機能を提供する？ bot userがどうのこうのっていうのがよくわからない。 Slackbot Remote Control SlackBotに喋らせたり出来る。ちょうかわいい。 Incoming Webhooks 指定したチャンネルに投稿出来る。 Outgoing Webhooks 指定した単語に応じて指定したURLを叩ける。 Slash Commands 指定したスラッシュで始まる単語に応じてURLを叩けて、レスポンスがそのまま投稿される。 今回は発言のタイミングで発火するSlash Commandsを使ってみようかな！ スラッシュコマンドの追加 ここから新しくコマンドの追加が出来る。 https://my.slack.com/services/new/slash-commands herokuでさくっとHello World作って試してみようかな。 おお、出るじゃん！でもOnly you can see this messageって出てる、オレしか見れないんだね。 REPLを作ろう なんかSlack上でプログラム打つと実行結果が返ってくるみたいなやつ誰かが作ってたよね？ あれ調べても出ないんだけどなんでなんだろう。 まあとりあえず、作ったばっかのpaiza.IOのAPIを叩くあれを導入してみる。 paiza.ioのAPIを使ってreplを作る | Unresolved スラッシュコマンドAPIは/command argsって感じにやると、指定したURLにtextってパラメータ名でargsが飛ばされるみたい。 なので/repl ruby:p &quot;hello&quot;って感じで実行できるようにしようかな。 別にURL出してもいいんだけど・・・。 compojureのルーティングはこんな。 (defroutes app-routes (GET &quot;/&quot; [text] (if (empty? text) &quot;Invalid input.&quot;">
     
     <meta property="og:image" content="http://yet.unresolved.xyz/images/design1.jpg">
     

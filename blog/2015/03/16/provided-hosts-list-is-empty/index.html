@@ -10,7 +10,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="Vagrant &#43; Ansibleでprovided hosts list is empty | UNRESOLVED">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/03/16/provided-hosts-list-is-empty/">
-    <meta property="og:description" content="AnsibleでVagrant上のCentOSにMySQLを入れようとしたらこれ。 PLAY [vagrant] **************************************************************** skipping: no hosts matched Vagrantfileにinventory_">
+    <meta property="og:description" content="AnsibleでVagrant上のCentOSにMySQLを入れようとしたらこれ。 PLAY [vagrant] **************************************************************** skipping: no hosts matched Vagrantfileにinventory_pathを指定しなきゃいけない。 config.vm.provision &quot;ansible&quot; do |ansible| ansible.playbook = &quot;env/dev-playbook.yml&quot; ansible.inventory_path = &quot;env/hosts&quot; end 次はこれ。 ERROR: provided hosts list is empty Ansible failed to complete successfully. Any error output should be visible above. Please fix these errors and try again. limitの指定も必要。 config.vm.provision &quot;ansible&quot; do |ansible| ansible.playbook = &quot;env/dev-playbook.yml&quot; ansible.inventory_path = &quot;env/hosts&quot; ansible.limit = &#39;all&#39; end 参考にさせて頂きました Vagrant 1.5からAnsibleを使うのならlimit = &lsquo;all&rsquo;が必要 - 今日のハック">
     
     <meta property="og:image" content="http://yet.unresolved.xyz/images/infra3.jpg">
     

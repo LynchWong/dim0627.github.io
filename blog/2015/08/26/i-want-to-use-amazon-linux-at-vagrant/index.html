@@ -10,7 +10,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="Amazon LinuxをVagrantで使いたい | UNRESOLVED">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/">
-    <meta property="og:description" content="開発はCentOS、本番はAmazonLinuxにしようとしたら意外と違うところが多くてProvisioningがだるかったので。 ec2-create-instance-export-task ec2-">
+    <meta property="og:description" content="開発はCentOS、本番はAmazonLinuxにしようとしたら意外と違うところが多くてProvisioningがだるかったので。 ec2-create-instance-export-task ec2-create-instance-export-taskっていうCLIのコマンドが用意されているらしい。 Amazon EC2 インスタンスをエクスポートする - Amazon Elastic Compute Cloud このコマンドでEC2のinstance_idを指定してS3にイメージファイルをエクスポートできるとのこと。 書式はこんな。 ec2-create-instance-export-task instance_id –e target_environment –f disk_image_format -c container_format –b s3_bucket pipで入れたからこんな感じになったよ。 aws ec2 create-instance-export-task --instance-id i-82xxx70 --target-environment vmware --export-to-s3-task DiskImageFormat=vmdk,ContainerFormat=ova,S3Bucket=images.xxxxx.jp そしたらこんなエラー。 A client error (AuthFailure) occurred when calling the CreateInstanceExportTask operation: vm-import-export@amazon.com must have WRITE and READ_ACL permission on the S3 bucket. しっかり説明を読むと、 エクスポートされたインスタンスを格納する Amazon S3 バケットを作成します。Amazon S3 バケットでは、[vm-import-export@amazon.com] アカウントへの [Upload/Delete] および [View Permissions] アクセスが付与される必要があります。詳細については、Amazon Simple Storage Service コンソールユーザーガイド の Creating a Bucket および Editing Bucket Permissions を参照してください。 なるほどなるほど。 こんな感じに。 そしたら違うエラー。 A client error (NotExportable) occurred when calling the CreateInstanceExportTask operation: Only imported instances can be exported.">
     
     <meta property="og:image" content="http://yet.unresolved.xyz/images/infra1.jpg">
     

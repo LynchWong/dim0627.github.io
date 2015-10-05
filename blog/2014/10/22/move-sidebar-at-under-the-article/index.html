@@ -10,7 +10,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="Octopressのサイドバーを下部に移動する | UNRESOLVED">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/">
-    <meta property="og:description" content="デフォルトのテーマだとサイドバーの表示/非表示の切り替えが出来て、非表示にするとサイドバーは記事の下に落っこちるんだけど、 常時この状態にした">
+    <meta property="og:description" content="デフォルトのテーマだとサイドバーの表示/非表示の切り替えが出来て、非表示にするとサイドバーは記事の下に落っこちるんだけど、 常時この状態にした方がかっこいいんでないか？ということで移動させてみることに。 サイドバーの非表示時に何が起きているかというと、bodyタグにclassが追加されてます。 具体的な処理は/javascripts/octopress.jsに書いてあるよ。 $(&#39;.toggle-sidebar&#39;).bind(&#39;click&#39;, function(e) { e.preventDefault(); if ($(&#39;body&#39;).hasClass(&#39;collapse-sidebar&#39;)) { $(&#39;body&#39;).removeClass(&#39;collapse-sidebar&#39;); } else { $(&#39;body&#39;).addClass(&#39;collapse-sidebar&#39;); } }); bodyタグがcollapse-sidebarクラスに属していれば、サイドバーは勝手に下に落っこちる訳だ。 bodyを描画するテンプレートは_layouts/default.htmlで、こんな記載がある。 長ったらしいので少し見やすく改行してあります。 &lt;body {% if page.body_id %} id=&quot;{{ page.body_id }}&quot; {% endif %} {% if page.sidebar == false %} class=&quot;no-sidebar&quot; {% endif %} {% if page.sidebar == &#39;collapse&#39; or site.sidebar == &#39;collapse&#39; %} class=&quot;collapse-sidebar sidebar-footer&quot; {% endif %} &gt; sidebarがcollapseの場合にclassが追加されるようになってるね。 sidebar-footerクラスもレイアウトに必要なものらしい。 というわけでテンプレートを直に変えるのではなくて、_config.ymlに以下を追加すれば対応出来そうだ。 sidebar: &quot;collapse&quot; トグルボタンのスペースが空いてしまうので、custom/_style.cssに以下も追加。 .collapse-sidebar #content { margin-right: 0; }">
     
     <meta property="og:image" content="http://yet.unresolved.xyz/images/design1.jpg">
     

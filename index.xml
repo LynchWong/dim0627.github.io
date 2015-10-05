@@ -462,288 +462,6 @@ $(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() 
     
       
         <item>
-          <title>CSS / HTMLで味わった苦悩の数々を振り返ってみる</title>
-          <link>http://yet.unresolved.xyz/blog/2015/04/04/anguish-in-the-css-and-html/</link>
-          <pubDate>Sat, 04 Apr 2015 22:39:07 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/04/04/anguish-in-the-css-and-html/</guid>
-          <description>
-
-&lt;p&gt;CSSってアンチパターンとかベストプラクティスみたいなのをあんまり聞かないよね。&lt;/p&gt;
-
-&lt;p&gt;デザイナじゃないオレがフロントエンドに触れて苦しんだこととかノウハウとかをまとめてみようと思う。&lt;/p&gt;
-
-&lt;h2 id=&#34;セクションを意識する:8ce6f11ffb5ab38525aa42f985db3a46&#34;&gt;セクションを意識する&lt;/h2&gt;
-
-&lt;p&gt;HTML5から&lt;code&gt;section&lt;/code&gt;タグが出てきたね。&lt;/p&gt;
-
-&lt;p&gt;これはそのタグの話ではなくて、画面レイアウトを考えた上での大枠について。&lt;/p&gt;
-
-&lt;p&gt;オレがやって失敗だったなと思ったのは&lt;strong&gt;ページの一部からHTMLを書き始めるやり方。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;これをやってしまうとページの一部分から完成していくから、全体で統制が取れなくなることが多かった。&lt;/p&gt;
-
-&lt;p&gt;具体的に言うと、だいたいのページはこんな感じのセクション分けになるはず。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;!doctype HTML&amp;gt;
-&amp;lt;html&amp;gt;
-  &amp;lt;head&amp;gt;
-    metaタグ。
-    CSSフレームワークの読み込み。
-    オーバライド用のCSSファイルの読み込み。
-    などなど。
-  &amp;lt;/head&amp;gt;
-  &amp;lt;body&amp;gt;
-    &amp;lt;header&amp;gt;
-      ヘッダ。ロゴや一部のメニューを置く。
-    &amp;lt;/header&amp;gt;
-    &amp;lt;div&amp;gt;
-      グローバルメニュー。サイトによってはheaderで事足りる場合も。
-    &amp;lt;/div&amp;gt;
-    &amp;lt;div&amp;gt;
-      メインコンテンツ。この中でカラム分けをしたり、さらに細分化されたセクション分けをしたりする。
-    &amp;lt;/div&amp;gt;
-    &amp;lt;footer&amp;gt;
-      コピーライトを書いたりする。
-      最近はサイトマップをここに置いたりすることが多いみたい。
-    &amp;lt;/footer&amp;gt;
-    JavaScriptの読み込み
-  &amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;個人的に好きに書いていい場面では&lt;code&gt;html&lt;/code&gt;タグ、&lt;code&gt;head&lt;/code&gt;、&lt;code&gt;body&lt;/code&gt;タグは省略するんだけど、今回はその話は置いておきます。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://qiita.com/wadako111/items/7100c02337f14df07205&#34;&gt;&amp;lt;html&amp;gt;,&amp;lt;body&amp;gt;は要らない？Googleが推奨するHTMLファイルの記法 - Qiita&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;こういう風に、自分が作りたいサイトの全体像から、&lt;strong&gt;各セクションの根底に来るであろうタグ&lt;/strong&gt;を最初に配置しておく。&lt;/p&gt;
-
-&lt;p&gt;こうしなかったせいで、あとで要素を追加したときにDOMの全体像が不自然な形になってしまうことがあった。&lt;/p&gt;
-
-&lt;p&gt;あと、無駄に要素を重ねたりするとHTMLの構造を理解するのが辛くなる。&lt;/p&gt;
-
-&lt;h2 id=&#34;idとクラスを使い分ける:8ce6f11ffb5ab38525aa42f985db3a46&#34;&gt;IDとクラスを使い分ける&lt;/h2&gt;
-
-&lt;p&gt;CSSは本当にパフォーマンスコストがかかりづらいのだろうか？&lt;/p&gt;
-
-&lt;p&gt;もしそうだとしても、意識しない理由はどこにもないと思う。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://speakerdeck.com/jonrohan/githubs-css-performance&#34;&gt;GitHub&amp;rsquo;s CSS Performance // Speaker Deck&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;正直な話をすれば、スタイルをあてたいならもうクラスを見境なしにつけてしまっても多分問題なくやっていける。&lt;/p&gt;
-
-&lt;p&gt;なのにID、クラスどっちにするかとかそういう不要な検討事項を増やすのはいやだよね。&lt;/p&gt;
-
-&lt;p&gt;でもサイトの規模によってはパフォーマンスは死活問題だし、何よりIDとクラスの違いで読みやすさが変わると思う。&lt;/p&gt;
-
-&lt;p&gt;さっきの例を使うと、オレはだいたいこういうIDを先に付けておく。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;body&amp;gt;
-  &amp;lt;header id=&amp;quot;header&amp;quot;&amp;gt;
-    ヘッダ。ロゴや一部のメニューを置く。
-  &amp;lt;/header&amp;gt;
-  &amp;lt;div id=&amp;quot;menu&amp;quot;&amp;gt;
-    グローバルメニュー。サイトによってはheaderで事足りる場合も。
-  &amp;lt;/div&amp;gt;
-  &amp;lt;div id=&amp;quot;body&amp;quot;&amp;gt;
-    メインコンテンツ。この中でカラム分けをしたり、さらに細分化されたセクション分けをしたりする。
-  &amp;lt;/div&amp;gt;
-  &amp;lt;footer id=&amp;quot;footer&amp;quot;&amp;gt;
-    コピーライトを書いたりする。
-    最近はサイトマップをここに置いたりすることが多いみたい。
-  &amp;lt;/footer&amp;gt;
-  JavaScriptの読み込み
-&amp;lt;/body&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;この各セクションのルート要素は絶対にサイト内でユニークだから。&lt;/p&gt;
-
-&lt;p&gt;こうすることで、後から見たときに&lt;strong&gt;この要素は固有なものなんだな&lt;/strong&gt;っていうのがわかる。&lt;/p&gt;
-
-&lt;p&gt;でも&lt;code&gt;header&lt;/code&gt;タグの&lt;code&gt;#header&lt;/code&gt;とか、&lt;code&gt;#body&lt;/code&gt;や&lt;code&gt;#footer&lt;/code&gt;の命名はイケてないように見えるよね。&lt;/p&gt;
-
-&lt;p&gt;ここの命名については個人的なものだから、意図する意味の単語をつけてもらえればいいと思う。&lt;/p&gt;
-
-&lt;p&gt;ただ、&lt;code&gt;header&lt;/code&gt;タグや&lt;code&gt;footer&lt;/code&gt;タグはサイト内でユニークなもの&lt;strong&gt;ではない&lt;/strong&gt;ので、タグに直接スタイルをあてるのは避けるべき。&lt;/p&gt;
-
-&lt;h2 id=&#34;命名は1分考えてからつける:8ce6f11ffb5ab38525aa42f985db3a46&#34;&gt;命名は1分考えてからつける&lt;/h2&gt;
-
-&lt;p&gt;まあこれはCSSだけじゃなくプログラミング言語でも同じ事だけど、命名はしっかり考えたほうがいい。&lt;/p&gt;
-
-&lt;p&gt;例えばIDなら固有な名前にしたほうがいいし、クラスならある程度抽象的なものにしたほうがいい。&lt;/p&gt;
-
-&lt;p&gt;クラスに固有なものをつける場合は、それがIDにするべきでないかを検討すべき。&lt;/p&gt;
-
-&lt;p&gt;個人的にやめてほしいのは、&lt;strong&gt;そのスタイルを体現した命名&lt;/strong&gt;をすること。&lt;/p&gt;
-
-&lt;p&gt;例えば、赤いボタンに&lt;code&gt;.red-button&lt;/code&gt;とかそういうの。&lt;/p&gt;
-
-&lt;p&gt;これは後の章でも書くけど、もう少し抽象的でスタイルの内容を変えたときに命名と齟齬が出ないものにすべきだと思う。&lt;/p&gt;
-
-&lt;p&gt;Bootstrapでは、&lt;code&gt;.btn-danger&lt;/code&gt;とかつけてるね。&lt;/p&gt;
-
-&lt;p&gt;じゃないとあとで色を変えたときにクラス名まで変える羽目になることがある。&lt;/p&gt;
-
-&lt;h2 id=&#34;抽象的な名前を付ける-固有な名前をつけない:8ce6f11ffb5ab38525aa42f985db3a46&#34;&gt;抽象的な名前を付ける、固有な名前をつけない&lt;/h2&gt;
-
-&lt;p&gt;例えば、&lt;code&gt;.title&lt;/code&gt;ってクラスを考えるとする。&lt;/p&gt;
-
-&lt;p&gt;これはメインコンテンツのタイトルかもしれないし、サイドバーに置くパネルのタイトルかもしれない。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;.main-title&lt;/code&gt;とか&lt;code&gt;.side-bar-title&lt;/code&gt;とか付けてもいいんだけど、汎用的で固有な使い方が出来ればそれが一番だよね。&lt;/p&gt;
-
-&lt;p&gt;そういう時はこう書くのが今の段階での、自分の解。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div id=&amp;quot;body&amp;quot;&amp;gt;
-  &amp;lt;div class=&amp;quot;row&amp;quot;&amp;gt;
-    &amp;lt;div class=&amp;quot;col-md-4&amp;quot;&amp;gt;
-      &amp;lt;div id=&amp;quot;sidebar&amp;quot;&amp;gt;
-        &amp;lt;h2 class=&amp;quot;title&amp;quot;&amp;gt;サイドバーのタイトル&amp;lt;/h2&amp;gt;
-      &amp;lt;/div&amp;gt;
-    &amp;lt;/div&amp;gt;
-    &amp;lt;div class=&amp;quot;col-md-8&amp;quot;&amp;gt;
-      &amp;lt;div id=&amp;quot;content&amp;quot;&amp;gt;
-        &amp;lt;h2 class=&amp;quot;title&amp;quot;&amp;gt;メインコンテンツのタイトル&amp;lt;/h2&amp;gt;
-      &amp;lt;/div&amp;gt;
-    &amp;lt;/div&amp;gt;
-  &amp;lt;/div&amp;gt;
-&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.title {
-  color: #ddd;
-}
-
-#sidebar .title {
-  font-size: 2rem;
-}
-
-#content .title {
-  font-size: 2.5rem;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;こうしておけば、タイトル共通の定義も出来るし、個々のタイトルに対しての定義も出来る。&lt;/p&gt;
-
-&lt;p&gt;でも、もしかしたらサイドバーの中でも特定のタイトルだけ、スタイルを変えたい場合があるかもね。&lt;/p&gt;
-
-&lt;p&gt;今の書き方だと、サイドバーのタイトルを個別に変えたりするのは出来そうにない。&lt;/p&gt;
-
-&lt;p&gt;そういう時は、&lt;code&gt;.title&lt;/code&gt;の派生を作る。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div id=&amp;quot;body&amp;quot;&amp;gt;
-  &amp;lt;div class=&amp;quot;row&amp;quot;&amp;gt;
-    &amp;lt;div class=&amp;quot;col-md-4&amp;quot;&amp;gt;
-      &amp;lt;div id=&amp;quot;sidebar&amp;quot;&amp;gt;
-        &amp;lt;h2 class=&amp;quot;title&amp;quot;&amp;gt;サイドバーのタイトル&amp;lt;/h2&amp;gt;
-        &amp;lt;h2 class=&amp;quot;title title-active&amp;quot;&amp;gt;サイドバーのちょっと強調したいタイトル&amp;lt;/h2&amp;gt;
-      &amp;lt;/div&amp;gt;
-    &amp;lt;/div&amp;gt;
-    &amp;lt;div class=&amp;quot;col-md-8&amp;quot;&amp;gt;
-      &amp;lt;div id=&amp;quot;content&amp;quot;&amp;gt;
-        &amp;lt;h2 class=&amp;quot;title&amp;quot;&amp;gt;メインコンテンツのタイトル&amp;lt;/h2&amp;gt;
-      &amp;lt;/div&amp;gt;
-    &amp;lt;/div&amp;gt;
-  &amp;lt;/div&amp;gt;
-&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.title {
-  color: #ddd;
-}
-
-#sidebar .title {
-  font-size: 2rem;
-}
-
-#sidebar .title-active {
-  font-weight: 900;
-}
-
-#content .title {
-  font-size: 2.5rem;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;こうすることで、&lt;strong&gt;特定のクラスを付けたり外したりするだけでスタイルを変えることが出来る。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;.title&lt;/code&gt;自体は残しておくことで、共通の定義を生かすことも出来る。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;.title&lt;/code&gt;を消さずに新たなクラスを追加してるところが大事なポイント。&lt;/p&gt;
-
-&lt;p&gt;極力まとめておいて、特別なスタイルを当てたい場合にだけクラスを追加していくやり方がいいと思う。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;.side-bar-title&lt;/code&gt;とかにしてもいいんだけど、その名前だと同じスタイルを他の場所で使いたいときに困るよね。&lt;/p&gt;
-
-&lt;p&gt;それに固有な名前をつけてしまうと、固有な要素の数だけクラスが溢れることになっちゃう。&lt;/p&gt;
-
-&lt;p&gt;この場合は、&lt;code&gt;#sidebar&lt;/code&gt;に入れなくてもいいかもしれないね。&lt;/p&gt;
-
-&lt;h2 id=&#34;無駄なネストをしない:8ce6f11ffb5ab38525aa42f985db3a46&#34;&gt;無駄なネストをしない&lt;/h2&gt;
-
-&lt;p&gt;当たり前の事。&lt;/p&gt;
-
-&lt;p&gt;深くすれば読みづらくなるしタグの抜け漏れとかも発生する。&lt;/p&gt;
-
-&lt;p&gt;タグは増やすのは楽だけど減らすのは大変。&lt;/p&gt;
-
-&lt;p&gt;だからサイトの運営が続くにつれてネストが深くなりがちだし、当たり前のことだけど気をつけていなきゃいけない。&lt;/p&gt;
-
-&lt;h2 id=&#34;タグの用途を意識する:8ce6f11ffb5ab38525aa42f985db3a46&#34;&gt;タグの用途を意識する&lt;/h2&gt;
-
-&lt;p&gt;なんか見出しを&lt;code&gt;div&lt;/code&gt;で囲んで&lt;code&gt;font-size&lt;/code&gt;を指定する人をよく見る気がする。&lt;/p&gt;
-
-&lt;p&gt;その意図を持ったタグがあるのであればそれを使おう。&lt;/p&gt;
-
-&lt;p&gt;見出しなら&lt;code&gt;h&lt;/code&gt;タグがあるしね。&lt;/p&gt;
-
-&lt;p&gt;ちなみに&lt;code&gt;h1&lt;/code&gt;タグは1ページに付き、1つまで！(MUSTではないらしい)&lt;/p&gt;
-
-&lt;h2 id=&#34;remとかpxとか-単位は理解した上で使う:8ce6f11ffb5ab38525aa42f985db3a46&#34;&gt;remとかpxとか、単位は理解した上で使う&lt;/h2&gt;
-
-&lt;p&gt;個人的に、&lt;code&gt;font-size&lt;/code&gt;は&lt;code&gt;rem&lt;/code&gt;、&lt;code&gt;margin&lt;/code&gt;や&lt;code&gt;padding&lt;/code&gt;は&lt;code&gt;px&lt;/code&gt;と決めて使ってる。&lt;/p&gt;
-
-&lt;p&gt;単位が混在するのは統一感がなくなるし、小さな差異が発生するからある程度ルールを決めて書くのがいいのかなと思う。&lt;/p&gt;
-
-&lt;p&gt;単位は色々種類があるから、見た目がそれなりだからいいやではなく理解してから使うべきだと思った。&lt;/p&gt;
-
-&lt;h2 id=&#34;不用意にfloatを使わない:8ce6f11ffb5ab38525aa42f985db3a46&#34;&gt;不用意にfloatを使わない&lt;/h2&gt;
-
-&lt;p&gt;もちろん必要な場面はあるんだけど、&lt;code&gt;float&lt;/code&gt;はあんまり気軽に使うと変なところに影響が出たりする。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;clearfix&lt;/code&gt;とかも考えながら使える人ならいいけど、そうでないならまず本当に&lt;code&gt;float&lt;/code&gt;が必要なのかを検討すべき。&lt;/p&gt;
-
-&lt;p&gt;ちなみにBootstrapを使っているなら、&lt;code&gt;.pull-left&lt;/code&gt;や&lt;code&gt;.pull-right&lt;/code&gt;っていうhelperクラスが用意されてる。&lt;/p&gt;
-
-&lt;h2 id=&#34;不用意にdisplayをいじらない:8ce6f11ffb5ab38525aa42f985db3a46&#34;&gt;不用意にdisplayをいじらない&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;display&lt;/code&gt;は各タグにしっかり設定されているものだから、&lt;code&gt;display&lt;/code&gt;を変更する前にタグ選びから見直したほうがいい。&lt;/p&gt;
-
-&lt;p&gt;もちろん、どうしても変えなきゃいけない場面はあるんだけども。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;block&lt;/code&gt;と&lt;code&gt;inline&lt;/code&gt;くらいは最初に勉強しておくべきだと思った。&lt;/p&gt;
-
-&lt;h2 id=&#34;cssフレームワークを信じる:8ce6f11ffb5ab38525aa42f985db3a46&#34;&gt;CSSフレームワークを信じる&lt;/h2&gt;
-
-&lt;p&gt;BootstrapとかSkeltonとかを使っている場合の話。&lt;/p&gt;
-
-&lt;p&gt;いろいろ頑張った結果なんだけど、隠蔽してくれるフレームワークがあるのであれば出来る限りそれに任せたほうがいい。&lt;/p&gt;
-
-&lt;p&gt;例えばレスポンシブにするならフレームワークが用意してくれてるブレークポイントに従ったほうがいいし、&lt;/p&gt;
-
-&lt;p&gt;そもそもレスポンシブなコンポーネントを提供してくれてるならそれを使ったほうがいい。&lt;/p&gt;
-
-&lt;p&gt;スタイルを変えたいならオーバライドすればいいしね。&lt;/p&gt;
-
-&lt;p&gt;あと、helperクラスは結構使える。&lt;/p&gt;
-
-&lt;p&gt;Bootstrapであれば&lt;code&gt;.text-center&lt;/code&gt;とか&lt;code&gt;.cleafix&lt;/code&gt;とかも便利に使えると思う。&lt;/p&gt;
-</description>
-        </item>
-      
-    
-      
-        <item>
           <title>tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する</title>
           <link>http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/</link>
           <pubDate>Wed, 01 Apr 2015 22:42:40 JST</pubDate>
@@ -4235,80 +3953,6 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
     
       
         <item>
-          <title>Google app engineでカスタムドメインを使う</title>
-          <link>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</link>
-          <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</guid>
-          <description>
-
-&lt;p&gt;簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。&lt;/p&gt;
-
-&lt;h2 id=&#34;googleによるドメインの確認:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;Googleによるドメインの確認&lt;/h2&gt;
-
-&lt;p&gt;ドメインを持っていない人は先に取得しちゃってね。&lt;/p&gt;
-
-&lt;p&gt;ちなみにオレはGMOさん(&lt;a href=&#34;http://www.onamae.com/&#34;&gt;お名前.com&lt;/a&gt;)で取得しました。&lt;/p&gt;
-
-&lt;p&gt;ていうことで以下の手順にそってやっていきます。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/appengine/docs/domain&#34;&gt;Using a Custom Domain - Google App Engine Google Cloud Platform&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;作業は&lt;a href=&#34;https://console.developers.google.com/&#34;&gt;Developers Console&lt;/a&gt;から行います。&lt;/p&gt;
-
-&lt;p&gt;はじめにGoogleが、使いたいドメインが君のものか確認したいとのことなので、verifyへ。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34; class=&#34;image&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;そうするとこんな画面になるので、&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34; class=&#34;image&#34; alt=&#34;input_domain&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;ここに表示されてるテキストを、ドメインを発行した会社さんのほうからTXTレコードとして追加すればOK。&lt;/p&gt;
-
-&lt;p&gt;なんかこの画面、すごい頻度でChromeがエラー吐きまくったけど、クリックしなければ大丈夫だったのでなんとかしのぎました。&lt;/p&gt;
-
-&lt;p&gt;TXTレコードの追加は、お名前.comであれば&lt;a href=&#34;http://www.onamae.com/navi/domain.html&#34;&gt;ドメインNavi&lt;/a&gt;から&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ドメイン設定&lt;/li&gt;
-&lt;li&gt;DNS関連機能の設定&lt;/li&gt;
-&lt;li&gt;DNSレコード設定を利用する&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;でここに入力すればOK。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34; class=&#34;image&#34; alt=&#34;input_txt&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;TYPEはTXTにしてVALUEにさっきのテキストを入力。&lt;/p&gt;
-
-&lt;p&gt;場所にもよるけど少し待てば反映されるので、それまでGoogle側の画面で確認ボタンを何度か押してみる。&lt;/p&gt;
-
-&lt;p&gt;反映されてたら確認が通るはず。&lt;/p&gt;
-
-&lt;h2 id=&#34;ドメインの選択:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;ドメインの選択&lt;/h2&gt;
-
-&lt;p&gt;確認が出来たらサブドメインとしてプレフィックスを付けるのかを決める。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34; class=&#34;image&#34; alt=&#34;step2&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;これによって最後のステップが変わるけど、オレは確認の時点でサブドメインとして設定したので、Google側では特に付加せずやってます。&lt;/p&gt;
-
-&lt;h2 id=&#34;aレコードとaaaaレコードの追加:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;AレコードとAAAAレコードの追加&lt;/h2&gt;
-
-&lt;p&gt;最後はまたDNSレコードの追加。&lt;/p&gt;
-
-&lt;p&gt;ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34; class=&#34;image&#34; alt=&#34;step3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;あとは待ってればそのうち反映されるはず。&lt;/p&gt;
-</description>
-        </item>
-      
-    
-      
-        <item>
           <title>クラスタ化インデックスとかカバリングインデックスについてどうせ忘れるからまとめる</title>
           <link>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</link>
           <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
@@ -4388,6 +4032,80 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 &lt;/blockquote&gt;
 
 &lt;p&gt;誤った認識があればご指摘を。&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Google app engineでカスタムドメインを使う</title>
+          <link>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</link>
+          <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</guid>
+          <description>
+
+&lt;p&gt;簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。&lt;/p&gt;
+
+&lt;h2 id=&#34;googleによるドメインの確認:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;Googleによるドメインの確認&lt;/h2&gt;
+
+&lt;p&gt;ドメインを持っていない人は先に取得しちゃってね。&lt;/p&gt;
+
+&lt;p&gt;ちなみにオレはGMOさん(&lt;a href=&#34;http://www.onamae.com/&#34;&gt;お名前.com&lt;/a&gt;)で取得しました。&lt;/p&gt;
+
+&lt;p&gt;ていうことで以下の手順にそってやっていきます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/appengine/docs/domain&#34;&gt;Using a Custom Domain - Google App Engine Google Cloud Platform&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;作業は&lt;a href=&#34;https://console.developers.google.com/&#34;&gt;Developers Console&lt;/a&gt;から行います。&lt;/p&gt;
+
+&lt;p&gt;はじめにGoogleが、使いたいドメインが君のものか確認したいとのことなので、verifyへ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34; class=&#34;image&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;そうするとこんな画面になるので、&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34; class=&#34;image&#34; alt=&#34;input_domain&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ここに表示されてるテキストを、ドメインを発行した会社さんのほうからTXTレコードとして追加すればOK。&lt;/p&gt;
+
+&lt;p&gt;なんかこの画面、すごい頻度でChromeがエラー吐きまくったけど、クリックしなければ大丈夫だったのでなんとかしのぎました。&lt;/p&gt;
+
+&lt;p&gt;TXTレコードの追加は、お名前.comであれば&lt;a href=&#34;http://www.onamae.com/navi/domain.html&#34;&gt;ドメインNavi&lt;/a&gt;から&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ドメイン設定&lt;/li&gt;
+&lt;li&gt;DNS関連機能の設定&lt;/li&gt;
+&lt;li&gt;DNSレコード設定を利用する&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;でここに入力すればOK。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34; class=&#34;image&#34; alt=&#34;input_txt&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;TYPEはTXTにしてVALUEにさっきのテキストを入力。&lt;/p&gt;
+
+&lt;p&gt;場所にもよるけど少し待てば反映されるので、それまでGoogle側の画面で確認ボタンを何度か押してみる。&lt;/p&gt;
+
+&lt;p&gt;反映されてたら確認が通るはず。&lt;/p&gt;
+
+&lt;h2 id=&#34;ドメインの選択:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;ドメインの選択&lt;/h2&gt;
+
+&lt;p&gt;確認が出来たらサブドメインとしてプレフィックスを付けるのかを決める。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34; class=&#34;image&#34; alt=&#34;step2&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;これによって最後のステップが変わるけど、オレは確認の時点でサブドメインとして設定したので、Google側では特に付加せずやってます。&lt;/p&gt;
+
+&lt;h2 id=&#34;aレコードとaaaaレコードの追加:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;AレコードとAAAAレコードの追加&lt;/h2&gt;
+
+&lt;p&gt;最後はまたDNSレコードの追加。&lt;/p&gt;
+
+&lt;p&gt;ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34; class=&#34;image&#34; alt=&#34;step3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;あとは待ってればそのうち反映されるはず。&lt;/p&gt;
 </description>
         </item>
       
@@ -4667,6 +4385,46 @@ fast-forwards&#39; section of &#39;git push --help&#39; for details.
     
       
         <item>
+          <title>_config.ymlに書いたdescriptionが設定されない</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</link>
+          <pubDate>Sun, 21 Sep 2014 00:00:00 UTC</pubDate>
+          <author>Daisuke Tsuji</author>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</guid>
+          <description>&lt;p&gt;認識が間違ってるのか、_config.ymlに書いたdescriptionがサイトに反映されない・・・。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;source/_includes/head.html&lt;/code&gt;のコードを見てみるとこんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{% raw %}
+  {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
+  &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ description | strip_html | condense_spaces | truncate:150 }}&amp;quot;&amp;gt;
+  {% if page.keywords %}&amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;{{ page.keywords }}&amp;quot;&amp;gt;{% endif %}
+{% endraw %}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;page.descriptionしか見てない？&lt;/p&gt;
+
+&lt;p&gt;同じことで悩んでる人いないのかな・・・と思ったら居た。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://sweetme.at/2013/08/06/how-to-set-your-octopress-description-and-keyword-meta-tags/&#34;&gt;Make the Magic Happen&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;やっぱり同じ認識のようだ。&lt;/p&gt;
+
+&lt;p&gt;elseifってこう書くんだね。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{% raw %}
+  {% capture description %}{% if page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
+  &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ description | strip_html | condense_spaces | truncate:150 }}&amp;quot;&amp;gt;
+  {% if page.keywords %}&amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;{{ page.keywords }}&amp;quot;&amp;gt;{% endif %}
+{% endraw %}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;worked!&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
           <title>Octopressのテーマを作ってみる</title>
           <link>http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/</link>
           <pubDate>Sun, 21 Sep 2014 00:00:00 UTC</pubDate>
@@ -4742,40 +4500,50 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
     
       
         <item>
-          <title>_config.ymlに書いたdescriptionが設定されない</title>
-          <link>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</link>
-          <pubDate>Sun, 21 Sep 2014 00:00:00 UTC</pubDate>
+          <title>gitのリポジトリ単位にproxyの設定をする</title>
+          <link>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</link>
+          <pubDate>Sat, 20 Sep 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</guid>
-          <description>&lt;p&gt;認識が間違ってるのか、_config.ymlに書いたdescriptionがサイトに反映されない・・・。&lt;/p&gt;
+          <guid>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</guid>
+          <description>
 
-&lt;p&gt;&lt;code&gt;source/_includes/head.html&lt;/code&gt;のコードを見てみるとこんな感じ。&lt;/p&gt;
+&lt;h2 id=&#34;事の発端:ca86a8bf870eabf283b4127081a3d388&#34;&gt;事の発端&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{% raw %}
-  {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
-  &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ description | strip_html | condense_spaces | truncate:150 }}&amp;quot;&amp;gt;
-  {% if page.keywords %}&amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;{{ page.keywords }}&amp;quot;&amp;gt;{% endif %}
-{% endraw %}
+&lt;p&gt;会社ではvimを使ってます。&lt;/p&gt;
+
+&lt;p&gt;plugin管理には&lt;a href=&#34;https://github.com/Shougo/neobundle.vim&#34;&gt;neobundle.vim&lt;/a&gt;使ってます。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;.vimrc&lt;/code&gt;は&lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt;で管理してます。&lt;/p&gt;
+
+&lt;p&gt;neobundle.vimで管理してるpluginは大抵のものがGitHub上で管理されてるから、インストールとかアップデートをするときはneobundle.vimがGitHubまで見に行ってくれるんですね。&lt;/p&gt;
+
+&lt;p&gt;ただ、当然社内はproxyを通していて、gitコマンドが通らない！&lt;/p&gt;
+
+&lt;p&gt;ていうかそもそも&lt;strong&gt;GitHubから&lt;code&gt;.vimrc&lt;/code&gt;を落としてくることすら出来ない！いいやzipで落とせ！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;しかしpluginの導入を手でやるのはだるい・・・。&lt;/p&gt;
+
+&lt;p&gt;マジで？サクラエディタで頑張るしかない？&lt;/p&gt;
+
+&lt;p&gt;いやいやそんなことはない。&lt;/p&gt;
+
+&lt;h2 id=&#34;解決:ca86a8bf870eabf283b4127081a3d388&#34;&gt;解決&lt;/h2&gt;
+
+&lt;p&gt;じゃあこうしようってことで、&lt;code&gt;~/.gitconfig&lt;/code&gt;をこんな感じにしたのよ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;[https]
+        proxy = http://proxy.com:8080
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;page.descriptionしか見てない？&lt;/p&gt;
+&lt;p&gt;ひとまず解決したんです。&lt;/p&gt;
 
-&lt;p&gt;同じことで悩んでる人いないのかな・・・と思ったら居た。&lt;/p&gt;
+&lt;p&gt;そしたら次は&lt;strong&gt;社内のgitに繋がらない！！&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://sweetme.at/2013/08/06/how-to-set-your-octopress-description-and-keyword-meta-tags/&#34;&gt;Make the Magic Happen&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;マジかよじゃあ&lt;code&gt;~/.gitconfig&lt;/code&gt;をちょこちょこ変えるのかよだせえよそれと思ったら既に解決してくれてる人がいた。&lt;/p&gt;
 
-&lt;p&gt;やっぱり同じ認識のようだ。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://tanacasino.hatenablog.com/entry/2013/12/21/003750&#34;&gt;Git の http proxy に関するまとめ&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;elseifってこう書くんだね。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{% raw %}
-  {% capture description %}{% if page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
-  &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ description | strip_html | condense_spaces | truncate:150 }}&amp;quot;&amp;gt;
-  {% if page.keywords %}&amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;{{ page.keywords }}&amp;quot;&amp;gt;{% endif %}
-{% endraw %}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;worked!&lt;/p&gt;
+&lt;p&gt;めんどくさかったけど、個々のpluginの&lt;code&gt;config&lt;/code&gt;にだけproxyの記述を追加することで解決。&lt;/p&gt;
 </description>
         </item>
       
@@ -4903,56 +4671,6 @@ div#urls {
 &lt;h2 id=&#34;参考にさせて頂きました:61eb03e5faeba6147c5a5cd44e5e95a1&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://blog.awairo.net/blog/2013/12/24/octopress-aside-of-getting-profile-from-gravatar/&#34;&gt;Gravatarのプロフィールを表示するOctopressのサイドバー&lt;/a&gt;&lt;/p&gt;
-</description>
-        </item>
-      
-    
-      
-        <item>
-          <title>gitのリポジトリ単位にproxyの設定をする</title>
-          <link>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</link>
-          <pubDate>Sat, 20 Sep 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</guid>
-          <description>
-
-&lt;h2 id=&#34;事の発端:ca86a8bf870eabf283b4127081a3d388&#34;&gt;事の発端&lt;/h2&gt;
-
-&lt;p&gt;会社ではvimを使ってます。&lt;/p&gt;
-
-&lt;p&gt;plugin管理には&lt;a href=&#34;https://github.com/Shougo/neobundle.vim&#34;&gt;neobundle.vim&lt;/a&gt;使ってます。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;.vimrc&lt;/code&gt;は&lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt;で管理してます。&lt;/p&gt;
-
-&lt;p&gt;neobundle.vimで管理してるpluginは大抵のものがGitHub上で管理されてるから、インストールとかアップデートをするときはneobundle.vimがGitHubまで見に行ってくれるんですね。&lt;/p&gt;
-
-&lt;p&gt;ただ、当然社内はproxyを通していて、gitコマンドが通らない！&lt;/p&gt;
-
-&lt;p&gt;ていうかそもそも&lt;strong&gt;GitHubから&lt;code&gt;.vimrc&lt;/code&gt;を落としてくることすら出来ない！いいやzipで落とせ！&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;しかしpluginの導入を手でやるのはだるい・・・。&lt;/p&gt;
-
-&lt;p&gt;マジで？サクラエディタで頑張るしかない？&lt;/p&gt;
-
-&lt;p&gt;いやいやそんなことはない。&lt;/p&gt;
-
-&lt;h2 id=&#34;解決:ca86a8bf870eabf283b4127081a3d388&#34;&gt;解決&lt;/h2&gt;
-
-&lt;p&gt;じゃあこうしようってことで、&lt;code&gt;~/.gitconfig&lt;/code&gt;をこんな感じにしたのよ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;[https]
-        proxy = http://proxy.com:8080
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ひとまず解決したんです。&lt;/p&gt;
-
-&lt;p&gt;そしたら次は&lt;strong&gt;社内のgitに繋がらない！！&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;マジかよじゃあ&lt;code&gt;~/.gitconfig&lt;/code&gt;をちょこちょこ変えるのかよだせえよそれと思ったら既に解決してくれてる人がいた。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://tanacasino.hatenablog.com/entry/2013/12/21/003750&#34;&gt;Git の http proxy に関するまとめ&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;めんどくさかったけど、個々のpluginの&lt;code&gt;config&lt;/code&gt;にだけproxyの記述を追加することで解決。&lt;/p&gt;
 </description>
         </item>
       
