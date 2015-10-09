@@ -8,18 +8,18 @@
     
     
     <meta property="og:type" content="article">
-    <meta property="og:title" content="[Clojure]ringのCSRFトークンを生成する | UNRESOLVED">
+    <meta property="og:title" content="[Clojure]ringのCSRFトークンを生成する | Unresolved">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/">
-    <meta property="og:description" content="ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、 デフォルトだとPOSTリクエストした時にCSRFトークンチェックが入るようになってると思う。 で、そのトークンの作成の仕方を毎回調べてるのでメモっときたい。 チェックの処理はsite-defaultsの、 (def app (wrap-defaults app-routes site-defaults)) :securityのところで設定出来る。 (def site-defaults &quot;A default configuration for a browser-accessible website, based on current best practice.&quot; {:params {:urlencoded true :multipart true :nested true :keywordize true} :cookies true :session {:flash true :cookie-attrs {:http-only true}} :security {:anti-forgery true :xss-protection {:enable? true, :mode :block} :frame-options :sameorigin :content-type-options :nosniff} :static {:resources &quot;public&quot;} :responses {:not-modified-responses true :absolute-redirects true :content-types true}}) これをfalseにしちゃえばもちろんCSRFのチェックはされなくなるんだけど、まあ普通はするべきだよね。 トークンの生成の仕方はこう。 (ns sample.handler (:require [ring.util.anti-forgery :refer :all])) (anti-forgery-field) ring.util.anti-forgeryの中身はこんな感じ。 (ns ring.util.anti-forgery &quot;Utility functions for inserting anti-forgery tokens into HTML forms.&quot; (:use [hiccup core form] ring.middleware.anti-forgery)) (defn anti-forgery-field &quot;Create a hidden field with the session anti-forgery token as its value.">
+    <meta property="og:description" content="ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、 デフォルトだとPOSTリクエストした時にCSRFトークンチェ">
     
     <meta property="og:image" content="http://yet.unresolved.xyz/images/program6.jpg">
     
     
-    <meta property="og:site_name" content="UNRESOLVED">
+    <meta property="og:site_name" content="Unresolved">
 
     <title>
       
-      [Clojure]ringのCSRFトークンを生成する | UNRESOLVED
+      [Clojure]ringのCSRFトークンを生成する | Unresolved
       
     </title>
 
@@ -30,28 +30,33 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href='//fonts.googleapis.com/css?family=Over+the+Rainbow' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">
   </head>
   <body>
-
-    <header id="site-header" class="container">
-      <h1 class="text-center"><a href="http://yet.unresolved.xyz" class="logo font-logo">UNRESOLVED</a></h1>
-    </header>
-
     <div id="site-body">
 
 
 
-<article id="post" class="container">
-  <div class="text-center">
-    <div class="font-logo post-date">Sun, Mar 22, 2015</div>
-    <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/">[Clojure]ringのCSRFトークンを生成する</a></h2>
-  </div>
-  <div class="body"><p>ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、</p>
+<div id="page-single" class="page">
+  <header id="site-header" class="text-center" style="background-image: url('/images/program6.jpg');">
+    <div class="overlay">
+      <div class="container text-left actions">
+        <a href="/" class="btn btn-home">HOME</a>
+      </div>
+      <div class="container post-info">
+        <div class="post-date">Sun, Mar 22, 2015</div>
+        <h2 class="post-title">[Clojure]ringのCSRFトークンを生成する</h2>
+      </div>
+    </div>
+  </header>
+
+  <article id="post">
+
+    <div class="container site-container body"><p>ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、</p>
 
 <p>デフォルトだとPOSTリクエストした時にCSRFトークンチェックが入るようになってると思う。</p>
 
@@ -109,7 +114,9 @@
   (html (hidden-field &quot;__anti-forgery-token&quot; *anti-forgery-token*)))
 </code></pre>
 </div>
-</article>
+
+  </article>
+</div>
 
     </div>
 

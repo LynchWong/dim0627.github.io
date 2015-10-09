@@ -8,18 +8,18 @@
     
     
     <meta property="og:type" content="article">
-    <meta property="og:title" content="UbuntuにAurigaを構築してみる | UNRESOLVED">
+    <meta property="og:title" content="UbuntuにAurigaを構築してみる | Unresolved">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/">
-    <meta property="og:description" content="今更だがAurigaの構築をやってみる。 どこもWindows環境での構築方法しか載ってないような印象なんだけどそんなことないのかな。 ソースのダウンロード Auriga Projectからソースを落とす。 言うまでもないけどバージョン番号は最新とかで。 $ wget -O auriga.zip http://auriga.moe.hm/Auriga/snapshotmanager.php?num=1221 $ unzip auriga.zip コンパイル なんか事前の設定とか必要なんだろうけど何も考えずにコンパイルしてみよう。 $ cd Auriga-1221full $ make で、エラーした。 ../common/grfio.c:87:20: fatal error: zlib.h: No such file or directory #include &lt;zlib.h&gt; ^ compilation terminated. make[1]: *** [../common/grfio.o] Error 1 make[1]: Leaving directory `/home/daisuketsuji/Downloads/Auriga-1221Full/src/map&#39; zlibがないらしい。 $ sudo apt-get install zlib1g $ sudo apt-get install zlib1g-dev これで通った。 grfファイルの準備 grfファイルを用意しなきゃいけなかったらしい。 コンパイル前にすることはなかったな。Winならあるのかもね。 とりあえずgrfファイルはクライアント側にあるので、公式のクライアントダウンロードからダウンロード &amp; インストール。 Ubuntuじゃインストール出来ないから、Windowsでインストールして持ってくんのだるかった・・・。 持ってきたらconf/grf-files.txtに追記。 Aurigaと同じフォルダに入れたのでこんな感じに。 grf: ./data.grf 不要な行はコメントアウトで。 サーバ起動 Linuxの場合起動はauriga-startを使うみたい。 解凍直後は実行権限がないのでsudo chmod 744 auriga-startをしとく必要あり。 で、./auriga-start startで起動。 chrif: connection to the char server was closed.">
+    <meta property="og:description" content="今更だがAurigaの構築をやってみる。 どこもWindows環境での構築方法しか載ってないような印象なんだけどそんなことないのかな。 ソースの">
     
     <meta property="og:image" content="http://yet.unresolved.xyz/images/infra1.jpg">
     
     
-    <meta property="og:site_name" content="UNRESOLVED">
+    <meta property="og:site_name" content="Unresolved">
 
     <title>
       
-      UbuntuにAurigaを構築してみる | UNRESOLVED
+      UbuntuにAurigaを構築してみる | Unresolved
       
     </title>
 
@@ -30,28 +30,33 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href='//fonts.googleapis.com/css?family=Over+the+Rainbow' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">
   </head>
   <body>
-
-    <header id="site-header" class="container">
-      <h1 class="text-center"><a href="http://yet.unresolved.xyz" class="logo font-logo">UNRESOLVED</a></h1>
-    </header>
-
     <div id="site-body">
 
 
 
-<article id="post" class="container">
-  <div class="text-center">
-    <div class="font-logo post-date">Sun, Oct 19, 2014</div>
-    <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/">UbuntuにAurigaを構築してみる</a></h2>
-  </div>
-  <div class="body">
+<div id="page-single" class="page">
+  <header id="site-header" class="text-center" style="background-image: url('/images/infra1.jpg');">
+    <div class="overlay">
+      <div class="container text-left actions">
+        <a href="/" class="btn btn-home">HOME</a>
+      </div>
+      <div class="container post-info">
+        <div class="post-date">Sun, Oct 19, 2014</div>
+        <h2 class="post-title">UbuntuにAurigaを構築してみる</h2>
+      </div>
+    </div>
+  </header>
+
+  <article id="post">
+
+    <div class="container site-container body">
 
 <p>今更だがAurigaの構築をやってみる。</p>
 
@@ -176,7 +181,9 @@ CFLAGS += -DNO_HTTPD
 
 <p>出来ました。</p>
 </div>
-</article>
+
+  </article>
+</div>
 
     </div>
 

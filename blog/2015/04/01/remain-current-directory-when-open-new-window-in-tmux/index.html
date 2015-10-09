@@ -8,18 +8,18 @@
     
     
     <meta property="og:type" content="article">
-    <meta property="og:title" content="tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する | UNRESOLVED">
+    <meta property="og:title" content="tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する | Unresolved">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/">
-    <meta property="og:description" content="こんな感じ。 # v でペインを縦に分割する bind v split-window -h -c &quot;#{pane_current_path}&quot; # s でペインを横に分割する bind s split-window -v -c &quot;#{pane_current_path}&quot; # 新規ウィンドウでディレクトリを保持 bind c new-window -c &quot;#{pane_current_path}&quot; 参考にさせていただきました tmux 1.9 でペイン分割時にカレントディレクトリを維持 - Studio3104::BLOG.new">
+    <meta property="og:description" content="こんな感じ。 # v でペインを縦に分割する bind v split-window -h -c &quot;#{pane_current_path}&quot; # s でペインを横に分割する bind s split-window -v -c &quot;#{pane_current_path}&quot; # 新規ウィンドウでディレクトリを保持 bind c new-window -c &quot;#{pane_current_path}&quot; 参考に">
     
     <meta property="og:image" content="http://yet.unresolved.xyz/images/infra1.jpg">
     
     
-    <meta property="og:site_name" content="UNRESOLVED">
+    <meta property="og:site_name" content="Unresolved">
 
     <title>
       
-      tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する | UNRESOLVED
+      tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する | Unresolved
       
     </title>
 
@@ -30,28 +30,33 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href='//fonts.googleapis.com/css?family=Over+the+Rainbow' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">
   </head>
   <body>
-
-    <header id="site-header" class="container">
-      <h1 class="text-center"><a href="http://yet.unresolved.xyz" class="logo font-logo">UNRESOLVED</a></h1>
-    </header>
-
     <div id="site-body">
 
 
 
-<article id="post" class="container">
-  <div class="text-center">
-    <div class="font-logo post-date">Wed, Apr 1, 2015</div>
-    <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/">tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する</a></h2>
-  </div>
-  <div class="body">
+<div id="page-single" class="page">
+  <header id="site-header" class="text-center" style="background-image: url('/images/infra1.jpg');">
+    <div class="overlay">
+      <div class="container text-left actions">
+        <a href="/" class="btn btn-home">HOME</a>
+      </div>
+      <div class="container post-info">
+        <div class="post-date">Wed, Apr 1, 2015</div>
+        <h2 class="post-title">tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する</h2>
+      </div>
+    </div>
+  </header>
+
+  <article id="post">
+
+    <div class="container site-container body">
 
 <p>こんな感じ。</p>
 
@@ -69,7 +74,9 @@ bind c new-window -c &quot;#{pane_current_path}&quot;
 
 <p><a href="http://studio3104.hatenablog.com/entry/2014/10/14/131430">tmux 1.9 でペイン分割時にカレントディレクトリを維持 - Studio3104::BLOG.new</a></p>
 </div>
-</article>
+
+  </article>
+</div>
 
     </div>
 

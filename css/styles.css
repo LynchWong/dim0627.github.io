@@ -4,16 +4,25 @@ html {
 }
 
 body {
-  font-family:"PT Sans", 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-  font-size: 12px;
+  font-family: 'Droid Serif', 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-size: 14px;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+a {
+  transition-duration: .2s;
 }
 
 a,
 a:hover,
 a:focus,
 a:active {
-  color: #000;
-  text-decoration: underline;
+  color: #08c;
+  text-decoration: none;
   outline: none;
   box-shadow: none;
 }
@@ -33,75 +42,145 @@ pre {
   border: none;
   background-color: transparent;
   padding: 0;
-  font-size: .7rem;
+  font-size: .8rem;
   border-radius: 2px;
 }
 
+h1, h2, h3, h4, h5 ,h6 { margin: 0; }
+
 /* Original */
 #site-header {
-  padding: 40px 0;
-  margin-bottom: 40px;
+  height: 100vh;
+  position: relative;
+  background: url(/images/bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 50px;
 }
 
-#site-header .logo {
+#site-header .actions {
+  padding: 10px;
+}
+
+#site-header .site-name {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 40%;
+  font-weight: 900;
+  font-size: 4rem;
+  color: #fff;
+  text-shadow: 1px 1px 0 #000, 1px 0 0 #000, 0 1px 0 #000, -1px -1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000, 1px 1px 0 #000, -1px -1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000;
+}
+
+#site-header .icon-down {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  font-size: 3rem;
+  color: #fff;
+}
+
+.btn-home {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.btn-home:hover,
+.btn-home:focus,
+.btn-home:active {
+  background-color: #fff;
   color: #000;
-  text-decoration: none;
-}
-
-#posts {
-  margin-bottom: 20px;
 }
 
 article {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
+}
+
+.post-date,
+.post-title,
+.post-summary {
+  color: #000;
+}
+
+.post-summary {
+  word-wrap: break-word;
+  color: rgba(0, 0, 0, .8);
 }
 
 .post-date {
-  font-size: 1rem;
-  margin-bottom: 5px;
+  color: rgba(0, 0, 0, .5);
 }
 
 .post-title {
+  margin: 5px 0;
+  line-height: 1.5rem;
   font-size: 1rem;
   font-weight: 900;
-  margin: 0;
 }
 
-.post-title a {
-  text-decoration: none;
+/* Original:Index */
+/* Original:Single */
+#page-single #site-header {
+  height: 50vh;
 }
 
-#post .post-title {
-  margin-bottom: 100px;
+#page-single #site-header .post-info {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 40%;
+  font-weight: 900;
+  text-shadow: 1px 1px 0 #000, 1px 0 0 #000, 0 1px 0 #000, -1px -1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000, 1px 1px 0 #000, -1px -1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000;
 }
 
+#page-single #site-header .post-date,
+#site-header .post-title {
+  color: #fff;
+}
+
+#page-single #site-header .post-date {
+  margin-bottom: 20px;
+}
+
+#page-single #site-header .post-title {
+  font-size: 1.5rem;
+}
+
+#page-single #site-header .overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .7);
+}
+
+/* Original:Body */
 .body {
-  font-size: .8rem;
-  line-height: 2rem;
-  max-width: 670px;
-  margin: 0 auto;
 }
 
 .body h1,
 .body h2,
 .body h3,
 .body h4,
-.body h5 {
+.body h5,
+.body h6 {
   font-weight: 900;
-  margin-top: 60px;
+  margin-top: 50px;
 }
 
-.body h1 { font-size: 1.2rem; }
-.body h2 { font-size: 1.1rem; }
-.body h3 { font-size: 1rem; }
-.body h4 { font-size: .9rem; }
-.body h5 { font-size: .8rem; }
+.body h1 { font-size:1.7rem; }
+.body h2 { font-size:1.4rem; }
+.body h3 { font-size:1.1rem; }
+.body h4 { font-size:.8rem; }
+.body h5 { font-size:.7rem; }
 
-.body img {
-  max-width: 500px;
-  border: 1px solid #fafafa;
-}
-
+/* Original:Footer */
 #site-footer {
   padding: 50px 0 100px 0;
 }
@@ -109,7 +188,16 @@ article {
 /* Override */
 
 /* Helper */
-.font-logo {
-  font-family: 'Over the Rainbow', cursive;
+.site-container {
+  max-width: 670px;
 }
 
+.font-logo {
+  font-family: 'Droid Serif', serif;
+}
+
+@media (max-width:767px) {
+  #site-header .site-name {
+    font-size: 3rem;
+  }
+}

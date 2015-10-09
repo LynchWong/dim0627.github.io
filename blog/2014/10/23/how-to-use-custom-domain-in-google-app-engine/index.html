@@ -8,18 +8,18 @@
     
     
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Google app engineでカスタムドメインを使う | UNRESOLVED">
+    <meta property="og:title" content="Google app engineでカスタムドメインを使う | Unresolved">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/">
-    <meta property="og:description" content="簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。 Googleによるドメインの確認 ドメインを持っていない人は先に取得しちゃってね。 ちなみにオレはGMOさん(お名前.com)で取得しました。 ていうことで以下の手順にそってやっていきます。 Using a Custom Domain - Google App Engine Google Cloud Platform 作業はDevelopers Consoleから行います。 はじめにGoogleが、使いたいドメインが君のものか確認したいとのことなので、verifyへ。 そうするとこんな画面になるので、 ここに表示されてるテキストを、ドメインを発行した会社さんのほうからTXTレコードとして追加すればOK。 なんかこの画面、すごい頻度でChromeがエラー吐きまくったけど、クリックしなければ大丈夫だったのでなんとかしのぎました。 TXTレコードの追加は、お名前.comであればドメインNaviから ドメイン設定 DNS関連機能の設定 DNSレコード設定を利用する でここに入力すればOK。 TYPEはTXTにしてVALUEにさっきのテキストを入力。 場所にもよるけど少し待てば反映されるので、それまでGoogle側の画面で確認ボタンを何度か押してみる。 反映されてたら確認が通るはず。 ドメインの選択 確認が出来たらサブドメインとしてプレフィックスを付けるのかを決める。 これによって最後のステップが変わるけど、オレは確認の時点でサブドメインとして設定したので、Google側では特に付加せずやってます。 AレコードとAAAAレコードの追加 最後はまたDNSレコードの追加。 ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。 あとは待ってればそのうち反映されるはず。">
+    <meta property="og:description" content="簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。 Googleによるドメインの確認 ドメインを持っていない人は先に取得しちゃってね">
     
     <meta property="og:image" content="http://yet.unresolved.xyz/images/infra2.jpg">
     
     
-    <meta property="og:site_name" content="UNRESOLVED">
+    <meta property="og:site_name" content="Unresolved">
 
     <title>
       
-      Google app engineでカスタムドメインを使う | UNRESOLVED
+      Google app engineでカスタムドメインを使う | Unresolved
       
     </title>
 
@@ -30,28 +30,33 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href='//fonts.googleapis.com/css?family=Over+the+Rainbow' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">
   </head>
   <body>
-
-    <header id="site-header" class="container">
-      <h1 class="text-center"><a href="http://yet.unresolved.xyz" class="logo font-logo">UNRESOLVED</a></h1>
-    </header>
-
     <div id="site-body">
 
 
 
-<article id="post" class="container">
-  <div class="text-center">
-    <div class="font-logo post-date">Thu, Oct 23, 2014</div>
-    <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/">Google app engineでカスタムドメインを使う</a></h2>
-  </div>
-  <div class="body">
+<div id="page-single" class="page">
+  <header id="site-header" class="text-center" style="background-image: url('/images/infra2.jpg');">
+    <div class="overlay">
+      <div class="container text-left actions">
+        <a href="/" class="btn btn-home">HOME</a>
+      </div>
+      <div class="container post-info">
+        <div class="post-date">Thu, Oct 23, 2014</div>
+        <h2 class="post-title">Google app engineでカスタムドメインを使う</h2>
+      </div>
+    </div>
+  </header>
+
+  <article id="post">
+
+    <div class="container site-container body">
 
 <p>簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。</p>
 
@@ -115,7 +120,9 @@
 
 <p>あとは待ってればそのうち反映されるはず。</p>
 </div>
-</article>
+
+  </article>
+</div>
 
     </div>
 

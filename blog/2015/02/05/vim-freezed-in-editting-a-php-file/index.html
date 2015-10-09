@@ -8,18 +8,18 @@
     
     
     <meta property="og:type" content="article">
-    <meta property="og:title" content="PHPファイルの定数に触るとvimがフリーズする | UNRESOLVED">
+    <meta property="og:title" content="PHPファイルの定数に触るとvimがフリーズする | Unresolved">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/">
-    <meta property="og:description" content="neocomplcacheのこの設定が甘かった。 let g:neocomplcache_omni_patterns.php = &#39;[^. \t]-&gt;\h\w*\|\h\w*::&#39; 参考になったのはこの記事。 vim-jp » Hack #193: neocomplcacheの設定について知る 後編 g:neocomplcache_omni_patternsは、neocomplcacheがオムニ補完の関数を呼び出すためのキーワードパターンを設定します。 主な言語にはデフォルトで対応していますが、RubyやPHPなど重いものは無効化されています。 設定例のようにすれば有効化できますが、Vimがフリーズする可能性もあります。自己責任で使用してください。 つまり原因は定数云々じゃなくself::がパターンに合致したせいで、補完が走り一気に重たくなったと。">
+    <meta property="og:description" content="neocomplcacheのこの設定が甘かった。 let g:neocomplcache_omni_patterns.php = &#39;[^. \t]-&gt;\h\w*\|\h\w*::&#39; 参考になったのはこの記事。 vim-jp » Hack #193: neocomplcacheの設定について知る 後編">
     
     <meta property="og:image" content="http://yet.unresolved.xyz/images/design1.jpg">
     
     
-    <meta property="og:site_name" content="UNRESOLVED">
+    <meta property="og:site_name" content="Unresolved">
 
     <title>
       
-      PHPファイルの定数に触るとvimがフリーズする | UNRESOLVED
+      PHPファイルの定数に触るとvimがフリーズする | Unresolved
       
     </title>
 
@@ -30,28 +30,33 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href='//fonts.googleapis.com/css?family=Over+the+Rainbow' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">
   </head>
   <body>
-
-    <header id="site-header" class="container">
-      <h1 class="text-center"><a href="http://yet.unresolved.xyz" class="logo font-logo">UNRESOLVED</a></h1>
-    </header>
-
     <div id="site-body">
 
 
 
-<article id="post" class="container">
-  <div class="text-center">
-    <div class="font-logo post-date">Thu, Feb 5, 2015</div>
-    <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/">PHPファイルの定数に触るとvimがフリーズする</a></h2>
-  </div>
-  <div class="body"><p><code>neocomplcache</code>のこの設定が甘かった。</p>
+<div id="page-single" class="page">
+  <header id="site-header" class="text-center" style="background-image: url('/images/design1.jpg');">
+    <div class="overlay">
+      <div class="container text-left actions">
+        <a href="/" class="btn btn-home">HOME</a>
+      </div>
+      <div class="container post-info">
+        <div class="post-date">Thu, Feb 5, 2015</div>
+        <h2 class="post-title">PHPファイルの定数に触るとvimがフリーズする</h2>
+      </div>
+    </div>
+  </header>
+
+  <article id="post">
+
+    <div class="container site-container body"><p><code>neocomplcache</code>のこの設定が甘かった。</p>
 
 <pre><code>let g:neocomplcache_omni_patterns.php = '[^. \t]-&gt;\h\w*\|\h\w*::'
 </code></pre>
@@ -66,7 +71,9 @@
 
 <p>つまり原因は定数云々じゃなく<code>self::</code>がパターンに合致したせいで、補完が走り一気に重たくなったと。</p>
 </div>
-</article>
+
+  </article>
+</div>
 
     </div>
 

@@ -8,18 +8,18 @@
     
     
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Octopressのサイドバーを下部に移動する | UNRESOLVED">
+    <meta property="og:title" content="Octopressのサイドバーを下部に移動する | Unresolved">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/">
-    <meta property="og:description" content="デフォルトのテーマだとサイドバーの表示/非表示の切り替えが出来て、非表示にするとサイドバーは記事の下に落っこちるんだけど、 常時この状態にした方がかっこいいんでないか？ということで移動させてみることに。 サイドバーの非表示時に何が起きているかというと、bodyタグにclassが追加されてます。 具体的な処理は/javascripts/octopress.jsに書いてあるよ。 $(&#39;.toggle-sidebar&#39;).bind(&#39;click&#39;, function(e) { e.preventDefault(); if ($(&#39;body&#39;).hasClass(&#39;collapse-sidebar&#39;)) { $(&#39;body&#39;).removeClass(&#39;collapse-sidebar&#39;); } else { $(&#39;body&#39;).addClass(&#39;collapse-sidebar&#39;); } }); bodyタグがcollapse-sidebarクラスに属していれば、サイドバーは勝手に下に落っこちる訳だ。 bodyを描画するテンプレートは_layouts/default.htmlで、こんな記載がある。 長ったらしいので少し見やすく改行してあります。 &lt;body {% if page.body_id %} id=&quot;{{ page.body_id }}&quot; {% endif %} {% if page.sidebar == false %} class=&quot;no-sidebar&quot; {% endif %} {% if page.sidebar == &#39;collapse&#39; or site.sidebar == &#39;collapse&#39; %} class=&quot;collapse-sidebar sidebar-footer&quot; {% endif %} &gt; sidebarがcollapseの場合にclassが追加されるようになってるね。 sidebar-footerクラスもレイアウトに必要なものらしい。 というわけでテンプレートを直に変えるのではなくて、_config.ymlに以下を追加すれば対応出来そうだ。 sidebar: &quot;collapse&quot; トグルボタンのスペースが空いてしまうので、custom/_style.cssに以下も追加。 .collapse-sidebar #content { margin-right: 0; }">
+    <meta property="og:description" content="デフォルトのテーマだとサイドバーの表示/非表示の切り替えが出来て、非表示にするとサイドバーは記事の下に落っこちるんだけど、 常時この状態にした">
     
     <meta property="og:image" content="http://yet.unresolved.xyz/images/design1.jpg">
     
     
-    <meta property="og:site_name" content="UNRESOLVED">
+    <meta property="og:site_name" content="Unresolved">
 
     <title>
       
-      Octopressのサイドバーを下部に移動する | UNRESOLVED
+      Octopressのサイドバーを下部に移動する | Unresolved
       
     </title>
 
@@ -30,28 +30,33 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href='//fonts.googleapis.com/css?family=Over+the+Rainbow' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">
   </head>
   <body>
-
-    <header id="site-header" class="container">
-      <h1 class="text-center"><a href="http://yet.unresolved.xyz" class="logo font-logo">UNRESOLVED</a></h1>
-    </header>
-
     <div id="site-body">
 
 
 
-<article id="post" class="container">
-  <div class="text-center">
-    <div class="font-logo post-date">Wed, Oct 22, 2014</div>
-    <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/">Octopressのサイドバーを下部に移動する</a></h2>
-  </div>
-  <div class="body"><p>デフォルトのテーマだとサイドバーの表示/非表示の切り替えが出来て、非表示にするとサイドバーは記事の下に落っこちるんだけど、</p>
+<div id="page-single" class="page">
+  <header id="site-header" class="text-center" style="background-image: url('/images/design1.jpg');">
+    <div class="overlay">
+      <div class="container text-left actions">
+        <a href="/" class="btn btn-home">HOME</a>
+      </div>
+      <div class="container post-info">
+        <div class="post-date">Wed, Oct 22, 2014</div>
+        <h2 class="post-title">Octopressのサイドバーを下部に移動する</h2>
+      </div>
+    </div>
+  </header>
+
+  <article id="post">
+
+    <div class="container site-container body"><p>デフォルトのテーマだとサイドバーの表示/非表示の切り替えが出来て、非表示にするとサイドバーは記事の下に落っこちるんだけど、</p>
 
 <p>常時この状態にした方がかっこいいんでないか？ということで移動させてみることに。</p>
 
@@ -110,7 +115,9 @@
 
 <p>別の部分の問題だろうけど、トップページと記事ページで、少しレイアウトが崩れるのが気になる・・・。</p>
 </div>
-</article>
+
+  </article>
+</div>
 
     </div>
 

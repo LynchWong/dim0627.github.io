@@ -8,18 +8,18 @@
     
     
     <meta property="og:type" content="article">
-    <meta property="og:title" content="[Laravel5.1]発行されたSQLと実行計画を取得する | UNRESOLVED">
+    <meta property="og:title" content="[Laravel5.1]発行されたSQLと実行計画を取得する | Unresolved">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/">
-    <meta property="og:description" content="インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしい。 SQLの発行をフックする ここに書いてあるとおり。 Database: Getting Started - Laravel - The PHP Framework For Web Artisans DBのlistenメソッドに$sql, $bindings, $timeを受け取るClosureを渡せる。 なのでApp\Providers\AppServiceProviderのboot()メソッドに、 public function boot() { \DB::listen(function($sql, $bindings, $time) { $bindings = implode(&#39;, &#39;, $bindings); $method = request()-&gt;method(); $url = request()-&gt;url(); \Log::info(&quot;Query [{$method}:{$url}] [{$time}s] $sql, [$bindings]&quot;); }); } とかやればよい。 実行計画も取る public function boot() { \DB::listen(function($sql, $bindings, $time) { if (preg_match(&quot;/^select/&quot;, $sql)) { $explain = \DB::select(&quot;explain {$sql}&quot;, $bindings); \Log::info($explain); } $bindings = implode(&#39;, &#39;,">
+    <meta property="og:description" content="インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしい。 SQLの発行をフックする ここに書いてあるとおり。 Database:">
     
     <meta property="og:image" content="http://yet.unresolved.xyz/images/design5.jpg">
     
     
-    <meta property="og:site_name" content="UNRESOLVED">
+    <meta property="og:site_name" content="Unresolved">
 
     <title>
       
-      [Laravel5.1]発行されたSQLと実行計画を取得する | UNRESOLVED
+      [Laravel5.1]発行されたSQLと実行計画を取得する | Unresolved
       
     </title>
 
@@ -30,28 +30,33 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href='//fonts.googleapis.com/css?family=Over+the+Rainbow' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">
   </head>
   <body>
-
-    <header id="site-header" class="container">
-      <h1 class="text-center"><a href="http://yet.unresolved.xyz" class="logo font-logo">UNRESOLVED</a></h1>
-    </header>
-
     <div id="site-body">
 
 
 
-<article id="post" class="container">
-  <div class="text-center">
-    <div class="font-logo post-date">Wed, Sep 30, 2015</div>
-    <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/">[Laravel5.1]発行されたSQLと実行計画を取得する</a></h2>
-  </div>
-  <div class="body">
+<div id="page-single" class="page">
+  <header id="site-header" class="text-center" style="background-image: url('/images/design5.jpg');">
+    <div class="overlay">
+      <div class="container text-left actions">
+        <a href="/" class="btn btn-home">HOME</a>
+      </div>
+      <div class="container post-info">
+        <div class="post-date">Wed, Sep 30, 2015</div>
+        <h2 class="post-title">[Laravel5.1]発行されたSQLと実行計画を取得する</h2>
+      </div>
+    </div>
+  </header>
+
+  <article id="post">
+
+    <div class="container site-container body">
 
 <p>インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしい。</p>
 
@@ -126,7 +131,9 @@
 
 <p>こんな感じ。</p>
 </div>
-</article>
+
+  </article>
+</div>
 
     </div>
 

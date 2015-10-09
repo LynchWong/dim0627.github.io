@@ -8,18 +8,18 @@
     
     
     <meta property="og:type" content="article">
-    <meta property="og:title" content="VimのClojureプラグイン覚書 | UNRESOLVED">
+    <meta property="og:title" content="VimのClojureプラグイン覚書 | Unresolved">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/">
-    <meta property="og:description" content="VimでClojure書くときのあれこれをいっつも忘れるのでまとめておこうと思う。 新しいことを覚えたら随時追記していこうかな。 使ってるプラグイン tpope/vim-classpath クラスパスの設定をやってくれる。 何も考えず入れればよい。 guns/vim-slamhound requireの整理をやってくれる。 不要な奴は消してくれるし、ない奴はclasspathから読み込んで追加してくれる。 kien/rainbow_parentheses.vim 括弧をrainbowな感じにしてくれる。 tpope/vim-fireplace My Clojure Toolchain: Vimでもキラープラグインと書かれているfireplace。 VimをREPLと接続してあんなことやこんなことが出来る。 こいつの機能、よく使う割によく忘れるんだよなあ。 もはやこの記事はこの覚書のために書いたようなもの。 K : カーソル位置にある関数のドキュメントを表示する。 [d : カーソル位置にある関数のソースを表示する。 [&lt;C-D&gt; : カーソル位置にある関数のソースにジャンプする。 &lt;C-W&gt;f : カーソル位置にある関数のソースを横分割して開く。 &lt;C-W&gt;gf : カーソル位置にある関数のソースをタブ分割して開く。 &lt;C-^&gt; : ジャンプする前のファイルに戻る。 cpp : カーソル行をREPLで実行する。 cqq : カーソル行をVim内のREPLで編集モードで開く。 :RunTest : テストを実行する。 :Require : 読み込んでる名前空間をリロードする。 venantius/vim-eastwood Clojure用のLint。 scrooloose/syntasticとjonase/eastwoodとtpope/vim-fireplaceが必要。 venantius/vim-cljfmt Clojure用のフォーマッター。 デフォルトで保存時のフォーマットがかかるようになってるので、入れるだけでOKのはず。 使ってないプラグイン guns/vim-clojure-static シンタックスハイライト、インデントのためのプラグイン。 あとclojure.coreの名前空間にある補完機能があるらしい。 なんかあってもなくてもあんまり変わらなかった（設定しきれなかった？）ので使うのをやめた。 vim-scripts/paredit.vim 括弧の位置をあれこれ出来るやつ、だと思う。 ちょっと脳みそがそんなにたくさんの事を一気に覚えるのは無理だったので、一旦使うのをやめた。">
+    <meta property="og:description" content="VimでClojure書くときのあれこれをいっつも忘れるのでまとめておこうと思う。 新しいことを覚えたら随時追記していこうかな。 使ってるプラグ">
     
     <meta property="og:image" content="http://yet.unresolved.xyz/images/design2.jpg">
     
     
-    <meta property="og:site_name" content="UNRESOLVED">
+    <meta property="og:site_name" content="Unresolved">
 
     <title>
       
-      VimのClojureプラグイン覚書 | UNRESOLVED
+      VimのClojureプラグイン覚書 | Unresolved
       
     </title>
 
@@ -30,28 +30,33 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href='//fonts.googleapis.com/css?family=Over+the+Rainbow' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">
   </head>
   <body>
-
-    <header id="site-header" class="container">
-      <h1 class="text-center"><a href="http://yet.unresolved.xyz" class="logo font-logo">UNRESOLVED</a></h1>
-    </header>
-
     <div id="site-body">
 
 
 
-<article id="post" class="container">
-  <div class="text-center">
-    <div class="font-logo post-date">Sun, Mar 22, 2015</div>
-    <h2 class="post-title"><a href="http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/">VimのClojureプラグイン覚書</a></h2>
-  </div>
-  <div class="body">
+<div id="page-single" class="page">
+  <header id="site-header" class="text-center" style="background-image: url('/images/design2.jpg');">
+    <div class="overlay">
+      <div class="container text-left actions">
+        <a href="/" class="btn btn-home">HOME</a>
+      </div>
+      <div class="container post-info">
+        <div class="post-date">Sun, Mar 22, 2015</div>
+        <h2 class="post-title">VimのClojureプラグイン覚書</h2>
+      </div>
+    </div>
+  </header>
+
+  <article id="post">
+
+    <div class="container site-container body">
 
 <p>VimでClojure書くときのあれこれをいっつも忘れるのでまとめておこうと思う。</p>
 
@@ -133,7 +138,9 @@
 
 <p>ちょっと脳みそがそんなにたくさんの事を一気に覚えるのは無理だったので、一旦使うのをやめた。</p>
 </div>
-</article>
+
+  </article>
+</div>
 
     </div>
 
