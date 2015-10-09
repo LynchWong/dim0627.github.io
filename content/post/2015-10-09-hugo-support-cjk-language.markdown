@@ -19,9 +19,11 @@ title: "会社でブログを書いたら面倒なことになった"
 
 随分追ってみたんだけど`Metadata`が何を返すのかよくわからず、コミットを見てたらCJKうんたらが追加されたのは最近っぽい。
 
+[WordCount and Summary support CJK Language · spf13/hugo@8233348](https://github.com/spf13/hugo/commit/823334875d396bdc15770c335c2029a01a7ef2ce?diff=split)
+
 なんで会社のMacは期待した挙動をしてるんだ？
 
-[WordCount and Summary support CJK Language · spf13/hugo@8233348](https://github.com/spf13/hugo/commit/823334875d396bdc15770c335c2029a01a7ef2ce?diff=split)
+あ、Goのバージョンが新しいからか？
 
 今のHugoなら`config.yaml`にこう書けば日本語もきちんと処理をするようになってた。
 
