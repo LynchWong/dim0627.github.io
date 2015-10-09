@@ -17,7 +17,7 @@ title: "会社でブログを書いたら面倒なことになった"
 
 [hugo/page.go at 823334875d396bdc15770c335c2029a01a7ef2ce · spf13/hugo](https://github.com/spf13/hugo/blob/823334875d396bdc15770c335c2029a01a7ef2ce/hugolib/page.go)
 
-随分追ってみたんだけど`Metadata`が何を返すのかよくわからず、コミットを見てたら追加されたのは最近っぽい。
+随分追ってみたんだけど`Metadata`が何を返すのかよくわからず、コミットを見てたらCJKうんたらが追加されたのは最近っぽい。
 
 なんで会社のMacは期待した挙動をしてるんだ？
 
