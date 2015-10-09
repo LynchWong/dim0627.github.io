@@ -34,7 +34,7 @@ img {
 blockquote {
   font-size: .8rem;
   border: none;
-  background-color: #fafafa;
+  background-color: #eee;
   border-radius: 2px;
 }
 
@@ -165,13 +165,21 @@ article {
 }
 
 .body h1,
+.body h2 {
+  padding-bottom: 5px;
+  border-bottom: 1px dotted #333;
+}
+
+.body h1,
 .body h2,
 .body h3,
 .body h4,
 .body h5,
 .body h6 {
+  position: relative;
   font-weight: 900;
   margin-top: 50px;
+  margin-bottom: 10px;
 }
 
 .body h1 { font-size:1.7rem; }
