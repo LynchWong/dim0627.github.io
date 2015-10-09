@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  font-family: 'Droid Serif', 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-family: 'Maven Pro', 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
 }
@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5 ,h6 { margin: 0; }
   font-weight: 900;
   font-size: 4rem;
   color: #fff;
-  text-shadow: 1px 1px 0 #000, 1px 0 0 #000, 0 1px 0 #000, -1px -1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000, 1px 1px 0 #000, -1px -1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000;
+  /* text-shadow: 1px 1px 0 #000, 1px 0 0 #000, 0 1px 0 #000, -1px -1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000, 1px 1px 0 #000, -1px -1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000; */
 }
 
 #site-header .icon-down {
@@ -88,6 +88,7 @@ h1, h2, h3, h4, h5 ,h6 { margin: 0; }
 .btn-home {
   border: 1px solid #fff;
   color: #fff;
+  font-family: 'Maven Pro', sans-serif;
 }
 
 .btn-home:hover,
@@ -168,7 +169,6 @@ article {
 .body h1,
 .body h2 {
   padding-bottom: 5px;
-  border-bottom: 1px dotted #333;
 }
 
 .body h1,
@@ -202,7 +202,7 @@ article {
 }
 
 .font-logo {
-  font-family: 'Droid Serif', serif;
+  font-family: 'Maven Pro', sans-serif;
 }
 
 @media (max-width:767px) {

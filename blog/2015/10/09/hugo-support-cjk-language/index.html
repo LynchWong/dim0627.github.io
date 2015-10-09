@@ -8,18 +8,18 @@
     
     
     <meta property="og:type" content="article">
-    <meta property="og:title" content="tmux-powerlineのステータスラインが描画ごとに増える | Unresolved">
-    <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/03/30/status-line-of-tmux-powerline-overlap/">
-    <meta property="og:description" content="iTerm2での話。 こいつのせい。 でもこれがないと、素の時に使うVimでitchyny/lightline.vimがズレるんだよなあ。 これは">
+    <meta property="og:title" content="会社でブログを書いたら面倒なことになった | Unresolved">
+    <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/10/09/hugo-support-cjk-language/">
+    <meta property="og:description" content="会社のMacにもHugoをセットアップしてあるんだけど、 テーマの編集とかの続きを家でやろうとしたら.Summaryが異なる挙動をしてることに">
     
-    <meta property="og:image" content="http://yet.unresolved.xyz/images/infra2.jpg">
+    <meta property="og:image" content="http://yet.unresolved.xyz/images/book3.jpg">
     
     
     <meta property="og:site_name" content="Unresolved">
 
     <title>
       
-      tmux-powerlineのステータスラインが描画ごとに増える | Unresolved
+      会社でブログを書いたら面倒なことになった | Unresolved
       
     </title>
 
@@ -42,31 +42,44 @@
 
 
 <div id="page-single" class="page">
-  <header id="site-header" class="text-center" style="background-image: url('/images/infra2.jpg');">
+  <header id="site-header" class="text-center" style="background-image: url('/images/book3.jpg');">
     <div class="overlay">
       <div class="container text-left actions">
         <a href="/" class="btn btn-home">HOME</a>
       </div>
       <div class="container post-info">
-        <div class="font-logo post-date">Mon, Mar 30, 2015</div>
-        <h2 class="post-title">tmux-powerlineのステータスラインが描画ごとに増える</h2>
+        <div class="font-logo post-date">Fri, Oct 9, 2015</div>
+        <h2 class="post-title">会社でブログを書いたら面倒なことになった</h2>
       </div>
     </div>
   </header>
 
   <article id="post">
 
-    <div class="container site-container body"><p>iTerm2での話。</p>
+    <div class="container site-container body"><p>会社のMacにも<a href="https://gohugo.io/">Hugo</a>をセットアップしてあるんだけど、</p>
 
-<p>こいつのせい。</p>
+<p>テーマの編集とかの続きを家でやろうとしたら<code>.Summary</code>が異なる挙動をしてることに気づいた。</p>
 
-<p><a href="/images/2015-03-31/iterm.png"><img src="/images/2015-03-31/iterm.png" class="image" alt="verify"></a></p>
+<p>どうやらHugoのバージョンによって、日本語の解釈がうまくいったりいかなかったりするみたい。</p>
 
-<p>でもこれがないと、素の時に使うVimで<a href="https://github.com/itchyny/lightline.vim">itchyny/lightline.vim</a>がズレるんだよなあ。</p>
+<p>ソースを読んでたらどうやら日本語のサポートもされてるようだ。</p>
 
-<p>これはなに？Vimとtmuxで統一出来るの？</p>
+<p><a href="https://github.com/spf13/hugo/blob/823334875d396bdc15770c335c2029a01a7ef2ce/hugolib/page.go">hugo/page.go at 823334875d396bdc15770c335c2029a01a7ef2ce · spf13/hugo</a></p>
 
-<p><a href="http://qiita.com/tkhr/items/8cc17c02dea1803be9c6">tmux - Powerline導入例 - Qiita</a></p>
+<p>随分追ってみたんだけど<code>Metadata</code>が何を返すのかよくわからず、コミットを見てたら追加されたのは最近っぽい。</p>
+
+<p>なんで会社のMacは期待した挙動をしてるんだ？</p>
+
+<p><a href="https://github.com/spf13/hugo/commit/823334875d396bdc15770c335c2029a01a7ef2ce?diff=split">WordCount and Summary support CJK Language · spf13/hugo@8233348</a></p>
+
+<p>今のHugoなら<code>config.yaml</code>にこう書けば日本語もきちんと処理をするようになってた。</p>
+
+<pre><code class="language-yaml">HasCJKLanguage: true
+</code></pre>
+
+<p>これできちんと70文字？70word?でSummaryが生成されるようになる。</p>
+
+<p>静的サイトジェネレータも実行環境によって挙動が変わることがあると少し面倒だなあ。</p>
 </div>
 
   </article>
