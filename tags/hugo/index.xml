@@ -37,7 +37,7 @@
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;HasCJKLanguage: true
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;これできちんと70文字？70word?でSummaryが生成されるようになる。&lt;/p&gt;
+&lt;p&gt;これできちんと70文字？70word？でSummaryが生成されるようになる。&lt;/p&gt;
 
 &lt;p&gt;静的サイトジェネレータも実行環境によって挙動が変わることがあると少し面倒だなあ。&lt;/p&gt;
 </description>
