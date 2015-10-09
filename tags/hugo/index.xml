@@ -28,9 +28,11 @@
 
 &lt;p&gt;随分追ってみたんだけど&lt;code&gt;Metadata&lt;/code&gt;が何を返すのかよくわからず、コミットを見てたらCJKうんたらが追加されたのは最近っぽい。&lt;/p&gt;
 
+&lt;p&gt;&lt;a href=&#34;https://github.com/spf13/hugo/commit/823334875d396bdc15770c335c2029a01a7ef2ce?diff=split&#34;&gt;WordCount and Summary support CJK Language · spf13/hugo@8233348&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;なんで会社のMacは期待した挙動をしてるんだ？&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://github.com/spf13/hugo/commit/823334875d396bdc15770c335c2029a01a7ef2ce?diff=split&#34;&gt;WordCount and Summary support CJK Language · spf13/hugo@8233348&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;あ、Goのバージョンが新しいからか？&lt;/p&gt;
 
 &lt;p&gt;今のHugoなら&lt;code&gt;config.yaml&lt;/code&gt;にこう書けば日本語もきちんと処理をするようになってた。&lt;/p&gt;
 
