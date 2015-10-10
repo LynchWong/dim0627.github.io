@@ -4,7 +4,7 @@ date: 2015-10-09T22:15:51+09:00
 eyecatch: "book3.jpg"
 slug: "hugo-support-cjk-language"
 tags: ["hugo", "golang"]
-title: "会社でブログを書いたら面倒なことになった"
+title: "HugoのSummaryが日本語に対応した"
 ---
 
 会社のMacにも[Hugo](https://gohugo.io/)をセットアップしてあるんだけど、
