@@ -164,11 +164,11 @@ article {
 
 /* Original:Body */
 .body {
+  line-height: 2rem;
 }
 
-.body h1,
-.body h2 {
-  padding-bottom: 5px;
+.body p {
+  margin: 0;
 }
 
 .body h1,
