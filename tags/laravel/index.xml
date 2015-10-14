@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved </title>
-    <link>http://yet.unresolved.xyz/tags/laravel/</link>
+    <link>http://localhost:1313/tags/laravel/</link>
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
@@ -12,10 +12,10 @@
       
         <item>
           <title>[Laravel5.1]発行されたSQLと実行計画を取得する</title>
-          <link>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</link>
+          <link>http://localhost:1313/blog/2015/09/30/get-explain-at-laravel/</link>
           <pubDate>Wed, 30 Sep 2015 13:44:48 JST</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</guid>
+          <guid>http://localhost:1313/blog/2015/09/30/get-explain-at-laravel/</guid>
           <description>
 
 &lt;p&gt;インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしい。&lt;/p&gt;

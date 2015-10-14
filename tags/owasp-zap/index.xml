@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved </title>
-    <link>http://yet.unresolved.xyz/tags/owasp-zap/</link>
+    <link>http://localhost:1313/tags/owasp-zap/</link>
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
@@ -12,10 +12,10 @@
       
         <item>
           <title>OWASP ZAPでBASIC認証を突破する</title>
-          <link>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</link>
+          <link>http://localhost:1313/blog/2015/09/30/using-basic-auth-in-owasp-zap/</link>
           <pubDate>Wed, 30 Sep 2015 16:24:53 JST</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</guid>
+          <guid>http://localhost:1313/blog/2015/09/30/using-basic-auth-in-owasp-zap/</guid>
           <description>
 
 &lt;p&gt;調べても意外と見つからない。&lt;/p&gt;

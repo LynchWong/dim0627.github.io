@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved </title>
-    <link>http://yet.unresolved.xyz/tags/clang/</link>
+    <link>http://localhost:1313/tags/clang/</link>
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
@@ -12,10 +12,10 @@
       
         <item>
           <title>UbuntuにAurigaを構築してみる</title>
-          <link>http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/</link>
+          <link>http://localhost:1313/blog/2014/10/19/build-auriga-server-on-ubuntu/</link>
           <pubDate>Sun, 19 Oct 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/</guid>
+          <guid>http://localhost:1313/blog/2014/10/19/build-auriga-server-on-ubuntu/</guid>
           <description>
 
 &lt;p&gt;今更だがAurigaの構築をやってみる。&lt;/p&gt;
@@ -137,7 +137,7 @@ CFLAGS += -DNO_HTTPD
 
 &lt;p&gt;というわけで、&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-19/httpd.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-19/httpd.png&#34; class=&#34;image&#34; alt=&#34; httpd&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2014-10-19/httpd.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2014-10-19/httpd.png&#34; class=&#34;image&#34; alt=&#34; httpd&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;出来ました。&lt;/p&gt;
 </description>
