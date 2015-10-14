@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved </title>
-    <link>http://localhost:1313/tags/heroku/</link>
+    <link>http://yet.unresolved.xyz/tags/heroku/</link>
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
@@ -12,10 +12,10 @@
       
         <item>
           <title>SlackAPIで遊ぶ</title>
-          <link>http://localhost:1313/blog/2015/01/25/play-slack-api/</link>
+          <link>http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/</link>
           <pubDate>Sun, 25 Jan 2015 20:52:46 JST</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://localhost:1313/blog/2015/01/25/play-slack-api/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/</guid>
           <description>
 
 &lt;p&gt;最近
@@ -65,11 +65,11 @@
 
 &lt;p&gt;&lt;a href=&#34;https://my.slack.com/services/new/slash-commands&#34;&gt;https://my.slack.com/services/new/slash-commands&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2015-01-25/new_command.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2015-01-25/new_command.png&#34; class=&#34;image&#34; alt=&#34;new_command&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-25/new_command.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-25/new_command.png&#34; class=&#34;image&#34; alt=&#34;new_command&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;herokuでさくっとHello World作って試してみようかな。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2015-01-25/command_test.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2015-01-25/command_test.png&#34; class=&#34;image&#34; alt=&#34;command_test&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-25/command_test.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-25/command_test.png&#34; class=&#34;image&#34; alt=&#34;command_test&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;おお、出るじゃん！でも&lt;code&gt;Only you can see this message&lt;/code&gt;って出てる、オレしか見れないんだね。&lt;/p&gt;
 
@@ -87,7 +87,7 @@
 
 &lt;p&gt;なので&lt;code&gt;/repl ruby:p &amp;quot;hello&amp;quot;&lt;/code&gt;って感じで実行できるようにしようかな。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2015-01-25/slack_repl.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2015-01-25/slack_repl.png&#34; class=&#34;image&#34; alt=&#34;slack_repl&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-25/slack_repl.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-25/slack_repl.png&#34; class=&#34;image&#34; alt=&#34;slack_repl&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;別にURL出してもいいんだけど・・・。&lt;/p&gt;
 
@@ -104,7 +104,7 @@
 
 &lt;p&gt;さっき書いた通り、&lt;code&gt;/repl ruby:p &amp;quot;hello&amp;quot;&lt;/code&gt;でいけるかな。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2015-01-25/slack_repl_run.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2015-01-25/slack_repl_run.png&#34; class=&#34;image&#34; alt=&#34;slack_repl_run&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-25/slack_repl_run.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-25/slack_repl_run.png&#34; class=&#34;image&#34; alt=&#34;slack_repl_run&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;いけるやん！&lt;/p&gt;
 
@@ -122,10 +122,10 @@
       
         <item>
           <title>paiza.IOのAPIを使ってreplを作る</title>
-          <link>http://localhost:1313/blog/2015/01/25/make-repl-using-the-paizaio/</link>
+          <link>http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/</link>
           <pubDate>Sun, 25 Jan 2015 00:58:15 JST</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://localhost:1313/blog/2015/01/25/make-repl-using-the-paizaio/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/</guid>
           <description>
 
 &lt;p&gt;&lt;a href=&#34;http://paiza.jp/&#34;&gt;paiza&lt;/a&gt;が面白いAPIを公開してたから、そのうち使ってみたいと思ってたんだよね。&lt;/p&gt;
@@ -220,10 +220,10 @@
       
         <item>
           <title>Lobosでマイグレーションができない in Heroku</title>
-          <link>http://localhost:1313/blog/2014/12/21/does-not-work-lobos-in-heroku/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</link>
           <pubDate>Sun, 21 Dec 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://localhost:1313/blog/2014/12/21/does-not-work-lobos-in-heroku/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</guid>
           <description>
 
 &lt;p&gt;ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。&lt;/p&gt;

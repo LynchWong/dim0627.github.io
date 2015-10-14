@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved </title>
-    <link>http://localhost:1313/tags/golang/</link>
+    <link>http://yet.unresolved.xyz/tags/golang/</link>
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
@@ -12,10 +12,10 @@
       
         <item>
           <title>HugoのSummaryが日本語に対応した</title>
-          <link>http://localhost:1313/blog/2015/10/09/hugo-support-cjk-language/</link>
+          <link>http://yet.unresolved.xyz/blog/2015/10/09/hugo-support-cjk-language/</link>
           <pubDate>Fri, 09 Oct 2015 22:15:51 JST</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://localhost:1313/blog/2015/10/09/hugo-support-cjk-language/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2015/10/09/hugo-support-cjk-language/</guid>
           <description>&lt;p&gt;会社のMacにも&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;をセットアップしてあるんだけど、テーマの編集とかの続きを家でやろうとしたら&lt;code&gt;.Summary&lt;/code&gt;が異なる挙動をしてることに気づいた。&lt;/p&gt;
 
 &lt;p&gt;どうやらHugoのバージョンによって、日本語の解釈がうまくいったりいかなかったりするみたい。&lt;/p&gt;
@@ -53,10 +53,10 @@
       
         <item>
           <title>Hugoでマルチバイトのタイトルをスマートに使う方法</title>
-          <link>http://localhost:1313/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/</link>
+          <link>http://yet.unresolved.xyz/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/</link>
           <pubDate>Wed, 07 Jan 2015 23:56:32 JST</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://localhost:1313/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/</guid>
           <description>
 
 &lt;p&gt;&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;でちょっと困ったこと。&lt;/p&gt;
@@ -85,7 +85,7 @@
 
 &lt;p&gt;そんな時に公式を読んでたら、&lt;a href=&#34;http://gohugo.io/content/organization/&#34;&gt;Content Organization&lt;/a&gt;の項にこんな図が。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2015-01-07/permalink.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2015-01-07/permalink.png&#34; class=&#34;image&#34; alt=&#34;permalink&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-07/permalink.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-07/permalink.png&#34; class=&#34;image&#34; alt=&#34;permalink&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;どうやらオレが困ってたURLのタイトル部は&lt;code&gt;slug&lt;/code&gt;と呼ばれる部分らしい。&lt;/p&gt;
 
@@ -121,10 +121,10 @@ title: &amp;quot;Hugoでマルチバイトのタイトルをスマートに使�
       
         <item>
           <title>ブログをOctopressからHugoに移行した</title>
-          <link>http://localhost:1313/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/</link>
+          <link>http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/</link>
           <pubDate>Sun, 04 Jan 2015 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://localhost:1313/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/</guid>
           <description>
 
 &lt;p&gt;&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;でのブログもずいぶん慣れてきたところで&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;に移行しました。&lt;/p&gt;

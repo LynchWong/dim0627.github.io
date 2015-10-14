@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved </title>
-    <link>http://localhost:1313/tags/design/</link>
+    <link>http://yet.unresolved.xyz/tags/design/</link>
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
@@ -12,10 +12,10 @@
       
         <item>
           <title>Hugo向けの新しいテーマを作った</title>
-          <link>http://localhost:1313/blog/2015/06/20/making-new-theme-robust-for-hugo/</link>
+          <link>http://yet.unresolved.xyz/blog/2015/06/20/making-new-theme-robust-for-hugo/</link>
           <pubDate>Sat, 20 Jun 2015 11:30:06 JST</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://localhost:1313/blog/2015/06/20/making-new-theme-robust-for-hugo/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2015/06/20/making-new-theme-robust-for-hugo/</guid>
           <description>
 
 &lt;p&gt;前に作ったやつが飽きてしまったので、そもそもForkするんじゃなくて0から作ることにしました。&lt;/p&gt;
@@ -26,7 +26,7 @@
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/dim0627/hugo_theme_robust&#34;&gt;dim0627/hugo_theme_robust&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2015-06-20/theme_tn.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2015-06-20/theme_tn.png&#34; class=&#34;image&#34; alt=&#34;theme_tn&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-06-20/theme_tn.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-06-20/theme_tn.png&#34; class=&#34;image&#34; alt=&#34;theme_tn&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;トップの最新4記事は2カラム、それ以降は4カラムで表示するようにしてる。もちろんレスポンシブで。&lt;/p&gt;
 
@@ -66,10 +66,10 @@
       
         <item>
           <title>Octopressのテーマを作ってみる</title>
-          <link>http://localhost:1313/blog/2014/09/21/making-new-theme-flatten/</link>
+          <link>http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/</link>
           <pubDate>Sun, 21 Sep 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://localhost:1313/blog/2014/09/21/making-new-theme-flatten/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/</guid>
           <description>
 
 &lt;p&gt;元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。&lt;/p&gt;
@@ -80,7 +80,7 @@
 
 &lt;p&gt;Octopressから移行してしまったので、スクリーンショットだけ載せとく。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2014-09-21/flatten.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2014-09-21/flatten.png&#34; class=&#34;image&#34; alt=&#34;flatten&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34; class=&#34;image&#34; alt=&#34;flatten&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;テーマの変え方:04d1c6053c5be0425bfb88e610b78a00&#34;&gt;テーマの変え方&lt;/h2&gt;
 
