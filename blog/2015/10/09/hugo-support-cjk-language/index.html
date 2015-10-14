@@ -10,7 +10,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="HugoのSummaryが日本語に対応した | Unresolved">
     <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/10/09/hugo-support-cjk-language/">
-    <meta property="og:description" content="会社のMacにもHugoをセットアップしてあるんだけど、 テーマの編集とかの続きを家でやろうとしたら.Summaryが異なる挙動をしてることに">
+    <meta property="og:description" content="会社のMacにもHugoをセットアップしてあるんだけど、テーマの編集とかの続きを家でやろうとしたら.Summaryが異なる挙動をしてることに">
     
     <meta property="og:image" content="http://yet.unresolved.xyz/images/book3.jpg">
     
@@ -56,9 +56,7 @@
 
   <article id="post">
 
-    <div class="container site-container body"><p>会社のMacにも<a href="https://gohugo.io/">Hugo</a>をセットアップしてあるんだけど、</p>
-
-<p>テーマの編集とかの続きを家でやろうとしたら<code>.Summary</code>が異なる挙動をしてることに気づいた。</p>
+    <div class="container site-container body"><p>会社のMacにも<a href="https://gohugo.io/">Hugo</a>をセットアップしてあるんだけど、テーマの編集とかの続きを家でやろうとしたら<code>.Summary</code>が異なる挙動をしてることに気づいた。</p>
 
 <p>どうやらHugoのバージョンによって、日本語の解釈がうまくいったりいかなかったりするみたい。</p>
 
@@ -66,13 +64,15 @@
 
 <p><a href="https://github.com/spf13/hugo/blob/823334875d396bdc15770c335c2029a01a7ef2ce/hugolib/page.go">hugo/page.go at 823334875d396bdc15770c335c2029a01a7ef2ce · spf13/hugo</a></p>
 
-<p>随分追ってみたんだけど<code>Metadata</code>が何を返すのかよくわからず、コミットを見てたらCJKうんたらが追加されたのは最近っぽい。</p>
+<p>随分追ってみたんだけど<code>Metadata</code>が何を返すのかよくわからず、コミットを見てたらCJKうんたらが追加されたのは最近っぽいことがわかった。</p>
 
 <p><a href="https://github.com/spf13/hugo/commit/823334875d396bdc15770c335c2029a01a7ef2ce?diff=split">WordCount and Summary support CJK Language · spf13/hugo@8233348</a></p>
 
-<p>なんで会社のMacは期待した挙動をしてるんだ？</p>
+<p>PRのコメントを読んでみると、configになんか書けばなんとかなりそうな雰囲気。</p>
 
-<p>あ、Goのバージョンが新しいからか？</p>
+<p>でもなんで会社のMacは期待した挙動をしてるんだ？</p>
+
+<p>Goのバージョンが新しいから？</p>
 
 <p>今のHugoなら<code>config.yaml</code>にこう書けば日本語もきちんと処理をするようになってた。</p>
 
@@ -82,6 +82,10 @@
 <p>これできちんと70文字？70word？でSummaryが生成されるようになる。</p>
 
 <p>静的サイトジェネレータも実行環境によって挙動が変わることがあると少し面倒だなあ。</p>
+
+<p>Golanngは人の書いたソースが読みやすいと思う。</p>
+
+<p>書くのはあんまりすきじゃないけど。</p>
 </div>
 
   </article>
