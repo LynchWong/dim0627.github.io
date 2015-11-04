@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="ELB越しのLaravelでHTTPSを使おうとして困った話 | Unresolved">
+    <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/">
+    <meta property="og:description" content="SSL証明書はELBに設置する 何が普通なのか知らないけど、今回立ち上げた構成では CLIENT -&gt; ELB(80 or 443) -&gt; WEB(80) っていう構成にしていました（するつもりだった）">
+    
+    <meta property="og:image" content="http://yet.unresolved.xyz/images/design3.jpg">
+    
+    
+    <meta property="og:site_name" content="Unresolved">
+
+    <title>
+      
+      ELB越しのLaravelでHTTPSを使おうとして困った話 | Unresolved
+      
+    </title>
+
+    
+    <link rel="shortcut icon" href="http://yet.unresolved.xyz/assets/favicon.ico">
+
+    
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:100,300' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="site-body">
+
+
+
+<div id="page-single" class="page">
+  <header id="site-header" class="text-center" style="background-image: url('/images/design3.jpg');">
+    <div class="overlay">
+      <div class="container text-left actions">
+        <a href="/" class="btn btn-home">HOME</a>
+      </div>
+      <div class="container post-info">
+        <div class="font-logo post-date">Wed, Nov 4, 2015</div>
+        <h2 class="post-title">ELB越しのLaravelでHTTPSを使おうとして困った話</h2>
+      </div>
+    </div>
+  </header>
+
+  <article id="post">
+
+    <div class="container site-container body">
+
+<h2 id="ssl証明書はelbに設置する:56aef34fa740ed018dee02e37b63f347">SSL証明書はELBに設置する</h2>
+
+<p>何が普通なのか知らないけど、今回立ち上げた構成では</p>
+
+<pre><code>CLIENT -&gt; ELB(80 or 443) -&gt; WEB(80)
+</code></pre>
+
+<p>っていう構成にしていました（するつもりだった）。</p>
+
+<p><a href="http://dev.classmethod.jp/cloud/aws/aws-beginner-elb-ssl/">【初心者向け】ELBにSSL証明書をインストールする ｜ Developers.IO</a></p>
+
+<h2 id="問題はリリース当日に:56aef34fa740ed018dee02e37b63f347">問題はリリース当日に</h2>
+
+<p>リリースしてみたら何やら証明書のエラーが出てる。</p>
+
+<pre><code>Your connection to this site is private, but someone on the network might be able to change the look of the page.
+</code></pre>
+
+<p>このページはSSL証明書が効いてるんだけど、ネットワーク上の何かがそうじゃなくしちゃうかもね？</p>
+
+<p>原因は<strong>httpsじゃないURLに飛ばすformタグがページに存在する</strong>せいでした。</p>
+
+<p>開発環境でもオレオレ証明書を用意したりしてHTTPSで通信するようにしておくべきでした。</p>
+
+<h2 id="laravelのrouteメソッド:56aef34fa740ed018dee02e37b63f347">Laravelのrouteメソッド</h2>
+
+<p>URLのレンダリングはLaravelの<code>route</code>メソッドを使っています。</p>
+
+<p>これは結構気に入っていて、後でURLを変えたいって時にある程度コストを軽減してくれる（んじゃないか）と思っているから。</p>
+
+<p><a href="http://laravel.com/docs/5.1/routing#named-routes">HTTP Routing - Laravel - The PHP Framework For Web Artisans</a></p>
+
+<p>でも今回はこのメソッドが<strong>HTTPのURLをレンダリングした</strong>せいで問題が起こりました。</p>
+
+<h2 id="laravelでhttpのurlを取り扱う:56aef34fa740ed018dee02e37b63f347">LaravelでHTTPのURLを取り扱う</h2>
+
+<p>LaravelのRoutingはこんな感じなんだけど、</p>
+
+<pre><code class="language-php">Route::get('/', ['as' =&gt; 'home', function() { return view('home.index'); }]);
+</code></pre>
+
+<p>HTTPSのみを許容することも出来るらしい。</p>
+
+<pre><code class="language-php">Route::get('/', ['https', 'as' =&gt; 'home', function() { return view('home.index'); }]);
+</code></pre>
+
+<p>こうしておけば<code>route</code>メソッドでレンダリングされるURLもHTTPSになる。</p>
+
+<h2 id="そして問題が起きる:56aef34fa740ed018dee02e37b63f347">そして問題が起きる</h2>
+
+<p>先ほどの通り、LaravelでHTTPSの設定をすると</p>
+
+<ul>
+<li>HTTPSのみを受け付ける</li>
+<li><code>route</code>メソッドがHTTPSのURLのをレンダリングする</li>
+</ul>
+
+<p>事になります。</p>
+
+<p>今回ELBの奥にあるLaravelが載ったインスタンスはnginxが80ポートを待ち受けています。</p>
+
+<p>なのでHTTPSだけを許容されると困るんですね、443で通信しなきゃいけない。</p>
+
+<h2 id="解決策:56aef34fa740ed018dee02e37b63f347">解決策</h2>
+
+<p>わがままを言えば<strong>LaravelがHTTPを受け付けて<code>route</code>メソッドがHTTPSのURLをレンダリングする</strong>と嬉しい。</p>
+
+<p>けどその方法は見つからず（構成としてナンセンスなんだろう）、ELBとLaravelが載ったインスタンスの両方にSSL証明書を設置することにしました。</p>
+
+<p>というわけでこういう形。</p>
+
+<pre><code>CLIENT -&gt; ELB(80 or 443) -&gt; WEB(443)
+</code></pre>
+
+<p>めでたしめでたし。</p>
+</div>
+
+  </article>
+</div>
+
+    </div>
+
+    <footer id="site-footer" class="text-center font-logo">
+      <p>&copy; 2015  Daisuke Tsuji </p>
+
+      <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>, Theme <a href="https://github.com/dim0627/hugo_theme_harb" target="_blank">Harb</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script src="http://yet.unresolved.xyz/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-55005303-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+  </body>
+</html>
+
+

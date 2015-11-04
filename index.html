@@ -11,9 +11,9 @@
     <meta property="og:url" content="http://yet.unresolved.xyz">
     <meta property="og:title" content="Unresolved">
     
-    <meta property="og:description" content="会社のMacにもHugoをセットアップしてあるんだけど、テーマの編集とかの続きを家でやろうとしたら.Summaryが異なる挙動をしてることに">
+    <meta property="og:description" content="SSL証明書はELBに設置する 何が普通なのか知らないけど、今回立ち上げた構成では CLIENT -&gt; ELB(80 or 443) -&gt; WEB(80) っていう構成にしていました（するつもりだった）">
     
-    <meta property="og:image" content="http://yet.unresolved.xyz/images/book3.jpg">
+    <meta property="og:image" content="http://yet.unresolved.xyz/images/design3.jpg">
     
     
     
@@ -56,6 +56,16 @@
     </div>
   </header>
 
+  
+  
+  <article class="container site-container">
+    <a href="http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/">
+      <div class="font-logo post-date">Wed, Nov 4, 2015</div>
+      <h2 class="post-title">ELB越しのLaravelでHTTPSを使おうとして困った話</h2>
+      <div class="post-summary">SSL証明書はELBに設置する 何が普通なのか知らないけど、今回立ち上げた構成では CLIENT -&gt; ELB(80 or 443) -&gt; WEB(80) っていう構成にしていました（するつもりだった）...</div>
+    </a>
+  </article>
+  
   
   
   <article class="container site-container">
@@ -392,7 +402,7 @@
     <a href="http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/">
       <div class="font-logo post-date">Wed, Nov 12, 2014</div>
       <h2 class="post-title">OctopressをW3Cのバリデーションにパスさせる</h2>
-      <div class="post-summary">ふと思い立ってMarkup Validation Serviceをやってみたら13個もエラーが出たので対応してみるよ。 Error Line 50, Column 32: Element hgroup not allowed as child of element header in this context. (Suppressing further errors from this...</div>
+      <div class="post-summary">ふと思い立ってMarkup Validation Serviceをやってみたら13個もエラーが出たので対応してみるよ。 Error Line 50, Column 32: Element hgroup not allowed as child of element header in this context. (Suppressing further errors from this subtree.) &lt;header role=&quot;banner&quot;&gt;&lt;hgroup&gt; Content model for element header: Flow content, but with no header, footer, or main element descendants....</div>
     </a>
   </article>
   
