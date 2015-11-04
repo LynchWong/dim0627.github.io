@@ -43,7 +43,7 @@ URLのレンダリングはLaravelの`route`メソッドを使っています。
 
 でも今回はこのメソッドが**HTTPのURLをレンダリングした**せいで問題が起こりました。
 
-## LaravelでHTTPのURLを取り扱う
+## LaravelでHTTPSのURLを取り扱う
 
 LaravelのRoutingはこんな感じなんだけど、
 
