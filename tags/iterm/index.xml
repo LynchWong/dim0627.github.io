@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved </title>
-    <link>http://yet.unresolved.xyz/tags/iterm/</link>
+    <link>http://localhost:1313/tags/iterm/</link>
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
@@ -12,15 +12,15 @@
       
         <item>
           <title>tmux-powerlineのステータスラインが描画ごとに増える</title>
-          <link>http://yet.unresolved.xyz/blog/2015/03/30/status-line-of-tmux-powerline-overlap/</link>
+          <link>http://localhost:1313/blog/2015/03/30/status-line-of-tmux-powerline-overlap/</link>
           <pubDate>Mon, 30 Mar 2015 23:56:58 JST</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/03/30/status-line-of-tmux-powerline-overlap/</guid>
+          <guid>http://localhost:1313/blog/2015/03/30/status-line-of-tmux-powerline-overlap/</guid>
           <description>&lt;p&gt;iTerm2での話。&lt;/p&gt;
 
 &lt;p&gt;こいつのせい。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-03-31/iterm.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-03-31/iterm.png&#34; class=&#34;image&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2015-03-31/iterm.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2015-03-31/iterm.png&#34; class=&#34;image&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;でもこれがないと、素の時に使うVimで&lt;a href=&#34;https://github.com/itchyny/lightline.vim&#34;&gt;itchyny/lightline.vim&lt;/a&gt;がズレるんだよなあ。&lt;/p&gt;
 

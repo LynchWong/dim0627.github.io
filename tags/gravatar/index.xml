@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved </title>
-    <link>http://yet.unresolved.xyz/tags/gravatar/</link>
+    <link>http://localhost:1313/tags/gravatar/</link>
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
@@ -12,10 +12,10 @@
       
         <item>
           <title>OctopressのサイドバーにGravatarを表示させる</title>
-          <link>http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/</link>
+          <link>http://localhost:1313/blog/2014/09/20/making-gravatar-sidebar/</link>
           <pubDate>Sat, 20 Sep 2014 00:00:00 UTC</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/</guid>
+          <guid>http://localhost:1313/blog/2014/09/20/making-gravatar-sidebar/</guid>
           <description>
 
 &lt;h2 id=&#34;octopressのサイドバーってどうなってんの:61eb03e5faeba6147c5a5cd44e5e95a1&#34;&gt;Octopressのサイドバーってどうなってんの？&lt;/h2&gt;

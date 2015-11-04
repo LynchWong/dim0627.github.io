@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved </title>
-    <link>http://yet.unresolved.xyz/tags/https/</link>
+    <link>http://localhost:1313/tags/https/</link>
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
@@ -12,10 +12,10 @@
       
         <item>
           <title>ELB越しのLaravelでHTTPSを使おうとして困った話</title>
-          <link>http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/</link>
+          <link>http://localhost:1313/blog/2015/11/04/using-https-in-laravel/</link>
           <pubDate>Wed, 04 Nov 2015 12:18:07 JST</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/</guid>
+          <guid>http://localhost:1313/blog/2015/11/04/using-https-in-laravel/</guid>
           <description>
 
 &lt;h2 id=&#34;ssl証明書はelbに設置する:56aef34fa740ed018dee02e37b63f347&#34;&gt;SSL証明書はELBに設置する&lt;/h2&gt;
@@ -52,7 +52,7 @@
 
 &lt;p&gt;でも今回はこのメソッドが&lt;strong&gt;HTTPのURLをレンダリングした&lt;/strong&gt;せいで問題が起こりました。&lt;/p&gt;
 
-&lt;h2 id=&#34;laravelでhttpのurlを取り扱う:56aef34fa740ed018dee02e37b63f347&#34;&gt;LaravelでHTTPのURLを取り扱う&lt;/h2&gt;
+&lt;h2 id=&#34;laravelでhttpsのurlを取り扱う:56aef34fa740ed018dee02e37b63f347&#34;&gt;LaravelでHTTPSのURLを取り扱う&lt;/h2&gt;
 
 &lt;p&gt;LaravelのRoutingはこんな感じなんだけど、&lt;/p&gt;
 
