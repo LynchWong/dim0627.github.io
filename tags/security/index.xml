@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved </title>
-    <link>http://localhost:1313/tags/security/</link>
+    <link>http://yet.unresolved.xyz/tags/security/</link>
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
@@ -12,10 +12,10 @@
       
         <item>
           <title>OWASP ZAPでBASIC認証を突破する</title>
-          <link>http://localhost:1313/blog/2015/09/30/using-basic-auth-in-owasp-zap/</link>
+          <link>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</link>
           <pubDate>Wed, 30 Sep 2015 16:24:53 JST</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://localhost:1313/blog/2015/09/30/using-basic-auth-in-owasp-zap/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</guid>
           <description>
 
 &lt;p&gt;調べても意外と見つからない。&lt;/p&gt;
@@ -52,10 +52,10 @@
       
         <item>
           <title>[Clojure]ringのCSRFトークンを生成する</title>
-          <link>http://localhost:1313/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</link>
+          <link>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</link>
           <pubDate>Sun, 22 Mar 2015 19:23:27 JST</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://localhost:1313/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</guid>
           <description>&lt;p&gt;ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、&lt;/p&gt;
 
 &lt;p&gt;デフォルトだとPOSTリクエストした時にCSRFトークンチェックが入るようになってると思う。&lt;/p&gt;

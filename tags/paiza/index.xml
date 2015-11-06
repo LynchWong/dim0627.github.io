@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved </title>
-    <link>http://localhost:1313/tags/paiza/</link>
+    <link>http://yet.unresolved.xyz/tags/paiza/</link>
     <language>en-us</language>
     <author>Daisuke Tsuji</author>
     <rights>(C) 2015</rights>
@@ -12,10 +12,10 @@
       
         <item>
           <title>例によってpaiza online hackathon5をClojureで解いてみた</title>
-          <link>http://localhost:1313/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/</link>
+          <link>http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/</link>
           <pubDate>Wed, 06 May 2015 09:54:46 JST</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://localhost:1313/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/</guid>
           <description>
 
 &lt;p&gt;まずい更新することがない。&lt;/p&gt;
@@ -126,10 +126,10 @@
       
         <item>
           <title>Clojureで新卒の女の子を射止めた話</title>
-          <link>http://localhost:1313/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/</link>
+          <link>http://yet.unresolved.xyz/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/</link>
           <pubDate>Thu, 15 Jan 2015 21:12:52 JST</pubDate>
           <author>Daisuke Tsuji</author>
-          <guid>http://localhost:1313/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/</guid>
+          <guid>http://yet.unresolved.xyz/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/</guid>
           <description>
 
 &lt;p&gt;何やらプログラムの問題を解くと可愛い女の子とハネムーンにいけるとかいう企画を&lt;a href=&#34;http://paiza.jp/&#34;&gt;paiza&lt;/a&gt;が開催していたらしい。&lt;/p&gt;
