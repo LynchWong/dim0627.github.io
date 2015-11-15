@@ -7,6 +7,7 @@ body {
   font-family: 'Maven Pro', 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
+  color: #000;
 }
 
 html,
@@ -162,11 +163,18 @@ article {
 
 /* Original:Body */
 .body {
-  line-height: 2rem;
+  line-height: 1.5rem;
+  font-size: 16px;
 }
 
 .body p {
   margin: 0;
+  margin-bottom: 15px;
+}
+
+.body a {
+  color: #000;
+  text-decoration: underline;
 }
 
 .body h1,
