@@ -91,10 +91,6 @@ article .date { text-align: right; }
   line-height: 2rem;
 }
 
-.single article p {
-  margin: 0;
-}
-
 .single article h1,
 .single article h2,
 .single article h3,
@@ -144,6 +140,10 @@ article .date { text-align: right; }
 
 .single article .body {
   font-size: 16px;
+}
+
+.single article .body p {
+  margin-bottom: 10px;
 }
 
 /* Original:Footer */
