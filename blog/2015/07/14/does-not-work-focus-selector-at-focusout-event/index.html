@@ -6,24 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     
-    
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="focusoutイベントでfocus中の要素が取得できない | Unresolved">
-    <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/">
-    <meta property="og:description" content="何を血迷ったかサジェストを自作しようとしてしまってつらい目にあった話。 フォーカスアウトしたらサジェストを消したい 入力欄もしくはサジェストから">
-    
-    <meta property="og:image" content="http://yet.unresolved.xyz/images/program5.jpg">
-    
-    
-    <meta property="og:site_name" content="Unresolved">
-
-    <title>
-      
-      focusoutイベントでfocus中の要素が取得できない | Unresolved
-      
-    </title>
-
-    
     <link rel="shortcut icon" href="http://yet.unresolved.xyz/assets/favicon.ico">
 
     
@@ -37,26 +19,24 @@
     <link href="/css/styles.css" rel="stylesheet">
   </head>
   <body>
-    <div id="site-body">
+    <header class="site">
+      <a href="http://yet.unresolved.xyz">Unresolved</a>
+    </header>
+
+    <div class="site">
 
 
-
-<div id="page-single" class="page">
-  <header id="site-header" class="text-center" style="background-image: url('/images/program5.jpg');">
-    <div class="overlay">
-      <div class="container text-left actions">
-        <a href="/" class="btn btn-home">HOME</a>
-      </div>
-      <div class="container post-info">
-        <div class="font-logo post-date">Tue, Jul 14, 2015</div>
-        <h2 class="post-title">focusoutイベントでfocus中の要素が取得できない</h2>
-      </div>
-    </div>
-  </header>
-
-  <article id="post">
-
-    <div class="container site-container body">
+<div class="single">
+  <div class="container site-container">
+    <article itemscope="itemscope" itemtype="http://schema.org/Article">
+      <meta itemprop="image" content="http://yet.unresolved.xyzimages/program5.jpg" />
+      <meta itemprop="description" content="何を血迷ったかサジェストを自作しようとしてしまってつらい目にあった話。 フォーカスアウトしたらサジェストを消したい 入力欄もしくはサジェストから">
+      <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/">
+      <time itemprop="datePublished" pubdate="pubdate" datetime="2015-07-14T00:05:16&#43;09:00">
+        Tue, Jul 14, 2015
+      </time>
+      <h1><a href="http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/" itemprop="headline">focusoutイベントでfocus中の要素が取得できない</a></h1>
+      <div class="body" itemprop="articleBody">
 
 <p>何を血迷ったかサジェストを自作しようとしてしまってつらい目にあった話。</p>
 
@@ -115,8 +95,8 @@ $(&quot;#search-text&quot;).on(&quot;focusout&quot;, function() {
 
 <p><a href="http://qiita.com/jkr_2255/items/17693ab77beea71a871c">JavaScript - setTimeout(&hellip;,0)などの使いドコロ - Qiita</a></p>
 </div>
-
-  </article>
+    </article>
+  </div>
 </div>
 
     </div>

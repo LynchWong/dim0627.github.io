@@ -6,24 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     
-    
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Hugo向けの新しいテーマを作った | Unresolved">
-    <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/06/20/making-new-theme-robust-for-hugo/">
-    <meta property="og:description" content="前に作ったやつが飽きてしまったので、そもそもForkするんじゃなくて0から作ることにしました。 出来たもの こんな感じ。 dim0627/hugo_theme_robust トップの最新4記事は2">
-    
-    <meta property="og:image" content="http://yet.unresolved.xyz/images/program2.jpg">
-    
-    
-    <meta property="og:site_name" content="Unresolved">
-
-    <title>
-      
-      Hugo向けの新しいテーマを作った | Unresolved
-      
-    </title>
-
-    
     <link rel="shortcut icon" href="http://yet.unresolved.xyz/assets/favicon.ico">
 
     
@@ -37,26 +19,24 @@
     <link href="/css/styles.css" rel="stylesheet">
   </head>
   <body>
-    <div id="site-body">
+    <header class="site">
+      <a href="http://yet.unresolved.xyz">Unresolved</a>
+    </header>
+
+    <div class="site">
 
 
-
-<div id="page-single" class="page">
-  <header id="site-header" class="text-center" style="background-image: url('/images/program2.jpg');">
-    <div class="overlay">
-      <div class="container text-left actions">
-        <a href="/" class="btn btn-home">HOME</a>
-      </div>
-      <div class="container post-info">
-        <div class="font-logo post-date">Sat, Jun 20, 2015</div>
-        <h2 class="post-title">Hugo向けの新しいテーマを作った</h2>
-      </div>
-    </div>
-  </header>
-
-  <article id="post">
-
-    <div class="container site-container body">
+<div class="single">
+  <div class="container site-container">
+    <article itemscope="itemscope" itemtype="http://schema.org/Article">
+      <meta itemprop="image" content="http://yet.unresolved.xyzimages/program2.jpg" />
+      <meta itemprop="description" content="前に作ったやつが飽きてしまったので、そもそもForkするんじゃなくて0から作ることにしました。 出来たもの こんな感じ。 dim0627/hugo_theme_robust トップの最新4記事は2">
+      <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2015/06/20/making-new-theme-robust-for-hugo/">
+      <time itemprop="datePublished" pubdate="pubdate" datetime="2015-06-20T11:30:06&#43;09:00">
+        Sat, Jun 20, 2015
+      </time>
+      <h1><a href="http://yet.unresolved.xyz/blog/2015/06/20/making-new-theme-robust-for-hugo/" itemprop="headline">Hugo向けの新しいテーマを作った</a></h1>
+      <div class="body" itemprop="articleBody">
 
 <p>前に作ったやつが飽きてしまったので、そもそもForkするんじゃなくて0から作ることにしました。</p>
 
@@ -100,8 +80,8 @@
 
 <p><a href="https://github.com/spf13/hugoThemes">spf13/hugoThemes</a>にプルリクも送らねば・・・。</p>
 </div>
-
-  </article>
+    </article>
+  </div>
 </div>
 
     </div>

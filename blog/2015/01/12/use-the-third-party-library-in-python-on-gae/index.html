@@ -6,24 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     
-    
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Python on GAEで3rdパーティライブラリを使う | Unresolved">
-    <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/">
-    <meta property="og:description" content="ひさびさにGoogle App Engineを使おうとしたらGoogle Cloud Platformだかなんだかでいろいろと変わってて戸惑った。 何かっていうと">
-    
-    <meta property="og:image" content="http://yet.unresolved.xyz/images/program4.jpg">
-    
-    
-    <meta property="og:site_name" content="Unresolved">
-
-    <title>
-      
-      Python on GAEで3rdパーティライブラリを使う | Unresolved
-      
-    </title>
-
-    
     <link rel="shortcut icon" href="http://yet.unresolved.xyz/assets/favicon.ico">
 
     
@@ -37,26 +19,24 @@
     <link href="/css/styles.css" rel="stylesheet">
   </head>
   <body>
-    <div id="site-body">
+    <header class="site">
+      <a href="http://yet.unresolved.xyz">Unresolved</a>
+    </header>
+
+    <div class="site">
 
 
-
-<div id="page-single" class="page">
-  <header id="site-header" class="text-center" style="background-image: url('/images/program4.jpg');">
-    <div class="overlay">
-      <div class="container text-left actions">
-        <a href="/" class="btn btn-home">HOME</a>
-      </div>
-      <div class="container post-info">
-        <div class="font-logo post-date">Mon, Jan 12, 2015</div>
-        <h2 class="post-title">Python on GAEで3rdパーティライブラリを使う</h2>
-      </div>
-    </div>
-  </header>
-
-  <article id="post">
-
-    <div class="container site-container body">
+<div class="single">
+  <div class="container site-container">
+    <article itemscope="itemscope" itemtype="http://schema.org/Article">
+      <meta itemprop="image" content="http://yet.unresolved.xyzimages/program4.jpg" />
+      <meta itemprop="description" content="ひさびさにGoogle App Engineを使おうとしたらGoogle Cloud Platformだかなんだかでいろいろと変わってて戸惑った。 何かっていうと">
+      <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/">
+      <time itemprop="datePublished" pubdate="pubdate" datetime="2015-01-12T00:19:33&#43;09:00">
+        Mon, Jan 12, 2015
+      </time>
+      <h1><a href="http://yet.unresolved.xyz/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/" itemprop="headline">Python on GAEで3rdパーティライブラリを使う</a></h1>
+      <div class="body" itemprop="articleBody">
 
 <p>ひさびさに<a href="https://cloud.google.com/appengine/">Google App Engine</a>を使おうとしたらGoogle Cloud Platformだかなんだかでいろいろと変わってて戸惑った。</p>
 
@@ -110,8 +90,8 @@ sys.path.insert(0, 'lib')
 
 <p>今回は手動でzip落として入れちゃったけど、<code>pip install -t lib</code>で入れてくのが楽かな。</p>
 </div>
-
-  </article>
+    </article>
+  </div>
 </div>
 
     </div>

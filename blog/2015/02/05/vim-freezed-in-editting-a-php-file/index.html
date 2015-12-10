@@ -6,24 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     
-    
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="PHPファイルの定数に触るとvimがフリーズする | Unresolved">
-    <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/">
-    <meta property="og:description" content="neocomplcacheのこの設定が甘かった。 let g:neocomplcache_omni_patterns.php = &#39;[^. \t]-&gt;\h\w*\|\h\w*::&#39; 参考になったのはこの記事。 vim-jp » Hack #193: neocomplcacheの設定について知る 後編">
-    
-    <meta property="og:image" content="http://yet.unresolved.xyz/images/design1.jpg">
-    
-    
-    <meta property="og:site_name" content="Unresolved">
-
-    <title>
-      
-      PHPファイルの定数に触るとvimがフリーズする | Unresolved
-      
-    </title>
-
-    
     <link rel="shortcut icon" href="http://yet.unresolved.xyz/assets/favicon.ico">
 
     
@@ -37,26 +19,24 @@
     <link href="/css/styles.css" rel="stylesheet">
   </head>
   <body>
-    <div id="site-body">
+    <header class="site">
+      <a href="http://yet.unresolved.xyz">Unresolved</a>
+    </header>
+
+    <div class="site">
 
 
-
-<div id="page-single" class="page">
-  <header id="site-header" class="text-center" style="background-image: url('/images/design1.jpg');">
-    <div class="overlay">
-      <div class="container text-left actions">
-        <a href="/" class="btn btn-home">HOME</a>
-      </div>
-      <div class="container post-info">
-        <div class="font-logo post-date">Thu, Feb 5, 2015</div>
-        <h2 class="post-title">PHPファイルの定数に触るとvimがフリーズする</h2>
-      </div>
-    </div>
-  </header>
-
-  <article id="post">
-
-    <div class="container site-container body"><p><code>neocomplcache</code>のこの設定が甘かった。</p>
+<div class="single">
+  <div class="container site-container">
+    <article itemscope="itemscope" itemtype="http://schema.org/Article">
+      <meta itemprop="image" content="http://yet.unresolved.xyzimages/design1.jpg" />
+      <meta itemprop="description" content="neocomplcacheのこの設定が甘かった。 let g:neocomplcache_omni_patterns.php = &#39;[^. \t]-&gt;\h\w*\|\h\w*::&#39; 参考になったのはこの記事。 vim-jp » Hack #193: neocomplcacheの設定について知る 後編">
+      <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/">
+      <time itemprop="datePublished" pubdate="pubdate" datetime="2015-02-05T21:36:25&#43;09:00">
+        Thu, Feb 5, 2015
+      </time>
+      <h1><a href="http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/" itemprop="headline">PHPファイルの定数に触るとvimがフリーズする</a></h1>
+      <div class="body" itemprop="articleBody"><p><code>neocomplcache</code>のこの設定が甘かった。</p>
 
 <pre><code>let g:neocomplcache_omni_patterns.php = '[^. \t]-&gt;\h\w*\|\h\w*::'
 </code></pre>
@@ -71,8 +51,8 @@
 
 <p>つまり原因は定数云々じゃなく<code>self::</code>がパターンに合致したせいで、補完が走り一気に重たくなったと。</p>
 </div>
-
-  </article>
+    </article>
+  </div>
 </div>
 
     </div>

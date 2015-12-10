@@ -6,24 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     
-    
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="ブログをOctopressからHugoに移行した | Unresolved">
-    <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">
-    <meta property="og:description" content="Octopressでのブログもずいぶん慣れてきたところでHugoに移行しました。 一晩徹夜して、カスタマイズからGitHub Pagesでの公開">
-    
-    <meta property="og:image" content="http://yet.unresolved.xyz/images/design1.jpg">
-    
-    
-    <meta property="og:site_name" content="Unresolved">
-
-    <title>
-      
-      ブログをOctopressからHugoに移行した | Unresolved
-      
-    </title>
-
-    
     <link rel="shortcut icon" href="http://yet.unresolved.xyz/assets/favicon.ico">
 
     
@@ -37,26 +19,24 @@
     <link href="/css/styles.css" rel="stylesheet">
   </head>
   <body>
-    <div id="site-body">
+    <header class="site">
+      <a href="http://yet.unresolved.xyz">Unresolved</a>
+    </header>
+
+    <div class="site">
 
 
-
-<div id="page-single" class="page">
-  <header id="site-header" class="text-center" style="background-image: url('/images/design1.jpg');">
-    <div class="overlay">
-      <div class="container text-left actions">
-        <a href="/" class="btn btn-home">HOME</a>
-      </div>
-      <div class="container post-info">
-        <div class="font-logo post-date">Sun, Jan 4, 2015</div>
-        <h2 class="post-title">ブログをOctopressからHugoに移行した</h2>
-      </div>
-    </div>
-  </header>
-
-  <article id="post">
-
-    <div class="container site-container body">
+<div class="single">
+  <div class="container site-container">
+    <article itemscope="itemscope" itemtype="http://schema.org/Article">
+      <meta itemprop="image" content="http://yet.unresolved.xyzimages/design1.jpg" />
+      <meta itemprop="description" content="Octopressでのブログもずいぶん慣れてきたところでHugoに移行しました。 一晩徹夜して、カスタマイズからGitHub Pagesでの公開">
+      <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">
+      <time itemprop="datePublished" pubdate="pubdate" datetime="2015-01-04T00:00:00&#43;00:00">
+        Sun, Jan 4, 2015
+      </time>
+      <h1><a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/" itemprop="headline">ブログをOctopressからHugoに移行した</a></h1>
+      <div class="body" itemprop="articleBody">
 
 <p><a href="http://octopress.org/">Octopress</a>でのブログもずいぶん慣れてきたところで<a href="http://gohugo.io/">Hugo</a>に移行しました。</p>
 
@@ -223,8 +203,8 @@ hugo new post/&quot;`date +%Y-%m-%d`-$title.markdown&quot;
 
 <p><a href="http://nathanleclaire.com/blog/2014/12/22/migrating-to-hugo-from-octopress/">Migrating to Hugo From Octopress</a></p>
 </div>
-
-  </article>
+    </article>
+  </div>
 </div>
 
     </div>

@@ -6,24 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     
-    
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Clojureのテンプレートエンジンについて | Unresolved">
-    <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/">
-    <meta property="og:description" content="練習のためにClojureでいくつかのWebアプリを作ってみたんだけど、どの言語でもなんだかんだ手間になるテンプレートの扱いについてまとめて">
-    
-    <meta property="og:image" content="http://yet.unresolved.xyz/images/program1.jpg">
-    
-    
-    <meta property="og:site_name" content="Unresolved">
-
-    <title>
-      
-      Clojureのテンプレートエンジンについて | Unresolved
-      
-    </title>
-
-    
     <link rel="shortcut icon" href="http://yet.unresolved.xyz/assets/favicon.ico">
 
     
@@ -37,26 +19,24 @@
     <link href="/css/styles.css" rel="stylesheet">
   </head>
   <body>
-    <div id="site-body">
+    <header class="site">
+      <a href="http://yet.unresolved.xyz">Unresolved</a>
+    </header>
+
+    <div class="site">
 
 
-
-<div id="page-single" class="page">
-  <header id="site-header" class="text-center" style="background-image: url('/images/program1.jpg');">
-    <div class="overlay">
-      <div class="container text-left actions">
-        <a href="/" class="btn btn-home">HOME</a>
-      </div>
-      <div class="container post-info">
-        <div class="font-logo post-date">Wed, Jan 14, 2015</div>
-        <h2 class="post-title">Clojureのテンプレートエンジンについて</h2>
-      </div>
-    </div>
-  </header>
-
-  <article id="post">
-
-    <div class="container site-container body">
+<div class="single">
+  <div class="container site-container">
+    <article itemscope="itemscope" itemtype="http://schema.org/Article">
+      <meta itemprop="image" content="http://yet.unresolved.xyzimages/program1.jpg" />
+      <meta itemprop="description" content="練習のためにClojureでいくつかのWebアプリを作ってみたんだけど、どの言語でもなんだかんだ手間になるテンプレートの扱いについてまとめて">
+      <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/">
+      <time itemprop="datePublished" pubdate="pubdate" datetime="2015-01-14T01:01:39&#43;09:00">
+        Wed, Jan 14, 2015
+      </time>
+      <h1><a href="http://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/" itemprop="headline">Clojureのテンプレートエンジンについて</a></h1>
+      <div class="body" itemprop="articleBody">
 
 <p>練習のためにClojureでいくつかのWebアプリを作ってみたんだけど、どの言語でもなんだかんだ手間になるテンプレートの扱いについてまとめてみる。</p>
 
@@ -143,8 +123,8 @@ user=&gt; (html [:p])
 
 <p>ゆくゆくはどっちもしっかり使えるようになりたい。</p>
 </div>
-
-  </article>
+    </article>
+  </div>
 </div>
 
     </div>

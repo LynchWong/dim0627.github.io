@@ -6,24 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     
-    
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する | Unresolved">
-    <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/">
-    <meta property="og:description" content="こんな感じ。 # v でペインを縦に分割する bind v split-window -h -c &quot;#{pane_current_path}&quot; # s でペインを横に分割する bind s split-window -v -c &quot;#{pane_current_path}&quot; # 新規ウィンドウでディレクトリを保持 bind c new-window -c &quot;#{pane_current_path}&quot; 参考に">
-    
-    <meta property="og:image" content="http://yet.unresolved.xyz/images/infra1.jpg">
-    
-    
-    <meta property="og:site_name" content="Unresolved">
-
-    <title>
-      
-      tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する | Unresolved
-      
-    </title>
-
-    
     <link rel="shortcut icon" href="http://yet.unresolved.xyz/assets/favicon.ico">
 
     
@@ -37,26 +19,24 @@
     <link href="/css/styles.css" rel="stylesheet">
   </head>
   <body>
-    <div id="site-body">
+    <header class="site">
+      <a href="http://yet.unresolved.xyz">Unresolved</a>
+    </header>
+
+    <div class="site">
 
 
-
-<div id="page-single" class="page">
-  <header id="site-header" class="text-center" style="background-image: url('/images/infra1.jpg');">
-    <div class="overlay">
-      <div class="container text-left actions">
-        <a href="/" class="btn btn-home">HOME</a>
-      </div>
-      <div class="container post-info">
-        <div class="font-logo post-date">Wed, Apr 1, 2015</div>
-        <h2 class="post-title">tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する</h2>
-      </div>
-    </div>
-  </header>
-
-  <article id="post">
-
-    <div class="container site-container body">
+<div class="single">
+  <div class="container site-container">
+    <article itemscope="itemscope" itemtype="http://schema.org/Article">
+      <meta itemprop="image" content="http://yet.unresolved.xyzimages/infra1.jpg" />
+      <meta itemprop="description" content="こんな感じ。 # v でペインを縦に分割する bind v split-window -h -c &quot;#{pane_current_path}&quot; # s でペインを横に分割する bind s split-window -v -c &quot;#{pane_current_path}&quot; # 新規ウィンドウでディレクトリを保持 bind c new-window -c &quot;#{pane_current_path}&quot; 参考に">
+      <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/">
+      <time itemprop="datePublished" pubdate="pubdate" datetime="2015-04-01T22:42:40&#43;09:00">
+        Wed, Apr 1, 2015
+      </time>
+      <h1><a href="http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/" itemprop="headline">tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する</a></h1>
+      <div class="body" itemprop="articleBody">
 
 <p>こんな感じ。</p>
 
@@ -74,8 +54,8 @@ bind c new-window -c &quot;#{pane_current_path}&quot;
 
 <p><a href="http://studio3104.hatenablog.com/entry/2014/10/14/131430">tmux 1.9 でペイン分割時にカレントディレクトリを維持 - Studio3104::BLOG.new</a></p>
 </div>
-
-  </article>
+    </article>
+  </div>
 </div>
 
     </div>

@@ -6,24 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     
-    
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="LeiningenでSCSSを自動コンパイルする | Unresolved">
-    <meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/">
-    <meta property="og:description" content="Clojureを始めて一週間ほどになりまして。 ようやくWebアプリ開発に着手しました。 というわけで開発環境を整えます。 lein-haml-s">
-    
-    <meta property="og:image" content="http://yet.unresolved.xyz/images/program1.jpg">
-    
-    
-    <meta property="og:site_name" content="Unresolved">
-
-    <title>
-      
-      LeiningenでSCSSを自動コンパイルする | Unresolved
-      
-    </title>
-
-    
     <link rel="shortcut icon" href="http://yet.unresolved.xyz/assets/favicon.ico">
 
     
@@ -37,26 +19,24 @@
     <link href="/css/styles.css" rel="stylesheet">
   </head>
   <body>
-    <div id="site-body">
+    <header class="site">
+      <a href="http://yet.unresolved.xyz">Unresolved</a>
+    </header>
+
+    <div class="site">
 
 
-
-<div id="page-single" class="page">
-  <header id="site-header" class="text-center" style="background-image: url('/images/program1.jpg');">
-    <div class="overlay">
-      <div class="container text-left actions">
-        <a href="/" class="btn btn-home">HOME</a>
-      </div>
-      <div class="container post-info">
-        <div class="font-logo post-date">Tue, Dec 9, 2014</div>
-        <h2 class="post-title">LeiningenでSCSSを自動コンパイルする</h2>
-      </div>
-    </div>
-  </header>
-
-  <article id="post">
-
-    <div class="container site-container body">
+<div class="single">
+  <div class="container site-container">
+    <article itemscope="itemscope" itemtype="http://schema.org/Article">
+      <meta itemprop="image" content="http://yet.unresolved.xyzimages/program1.jpg" />
+      <meta itemprop="description" content="Clojureを始めて一週間ほどになりまして。 ようやくWebアプリ開発に着手しました。 というわけで開発環境を整えます。 lein-haml-s">
+      <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/">
+      <time itemprop="datePublished" pubdate="pubdate" datetime="2014-12-09T00:00:00&#43;00:00">
+        Tue, Dec 9, 2014
+      </time>
+      <h1><a href="http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/" itemprop="headline">LeiningenでSCSSを自動コンパイルする</a></h1>
+      <div class="body" itemprop="articleBody">
 
 <p>Clojureを始めて一週間ほどになりまして。</p>
 
@@ -138,8 +118,8 @@
 
 <p><code>lein scss auto</code>で変更監視できるっぽい。</p>
 </div>
-
-  </article>
+    </article>
+  </div>
 </div>
 
     </div>

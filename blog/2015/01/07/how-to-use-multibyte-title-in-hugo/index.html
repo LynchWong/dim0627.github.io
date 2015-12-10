@@ -6,24 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     
-    
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Hugoでマルチバイトのタイトルをスマートに使う方法 | Unresolved">
-    <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/">
-    <meta property="og:description" content="Hugoでちょっと困ったこと。 オレはOctopressから移行してきたからなおさらなんだけど、記事のタイトルがURLにされてしまう。 あ、オレ">
-    
-    <meta property="og:image" content="http://yet.unresolved.xyz/images/design2.jpg">
-    
-    
-    <meta property="og:site_name" content="Unresolved">
-
-    <title>
-      
-      Hugoでマルチバイトのタイトルをスマートに使う方法 | Unresolved
-      
-    </title>
-
-    
     <link rel="shortcut icon" href="http://yet.unresolved.xyz/assets/favicon.ico">
 
     
@@ -37,26 +19,24 @@
     <link href="/css/styles.css" rel="stylesheet">
   </head>
   <body>
-    <div id="site-body">
+    <header class="site">
+      <a href="http://yet.unresolved.xyz">Unresolved</a>
+    </header>
+
+    <div class="site">
 
 
-
-<div id="page-single" class="page">
-  <header id="site-header" class="text-center" style="background-image: url('/images/design2.jpg');">
-    <div class="overlay">
-      <div class="container text-left actions">
-        <a href="/" class="btn btn-home">HOME</a>
-      </div>
-      <div class="container post-info">
-        <div class="font-logo post-date">Wed, Jan 7, 2015</div>
-        <h2 class="post-title">Hugoでマルチバイトのタイトルをスマートに使う方法</h2>
-      </div>
-    </div>
-  </header>
-
-  <article id="post">
-
-    <div class="container site-container body">
+<div class="single">
+  <div class="container site-container">
+    <article itemscope="itemscope" itemtype="http://schema.org/Article">
+      <meta itemprop="image" content="http://yet.unresolved.xyzimages/design2.jpg" />
+      <meta itemprop="description" content="Hugoでちょっと困ったこと。 オレはOctopressから移行してきたからなおさらなんだけど、記事のタイトルがURLにされてしまう。 あ、オレ">
+      <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/">
+      <time itemprop="datePublished" pubdate="pubdate" datetime="2015-01-07T23:56:32&#43;09:00">
+        Wed, Jan 7, 2015
+      </time>
+      <h1><a href="http://yet.unresolved.xyz/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/" itemprop="headline">Hugoでマルチバイトのタイトルをスマートに使う方法</a></h1>
+      <div class="body" itemprop="articleBody">
 
 <p><a href="http://gohugo.io/">Hugo</a>でちょっと困ったこと。</p>
 
@@ -114,8 +94,8 @@ title: &quot;Hugoでマルチバイトのタイトルをスマートに使う方
 
 <p>しかし移行時に書き足すのが面倒なんだよなあ。</p>
 </div>
-
-  </article>
+    </article>
+  </div>
 </div>
 
     </div>

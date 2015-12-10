@@ -6,24 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     
-    
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Octopressのテーマを作ってみる | Unresolved">
-    <meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/">
-    <meta property="og:description" content="元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。 でもオレはデザイナーじゃないから、あんまりがっつり">
-    
-    <meta property="og:image" content="http://yet.unresolved.xyz/images/program4.jpg">
-    
-    
-    <meta property="og:site_name" content="Unresolved">
-
-    <title>
-      
-      Octopressのテーマを作ってみる | Unresolved
-      
-    </title>
-
-    
     <link rel="shortcut icon" href="http://yet.unresolved.xyz/assets/favicon.ico">
 
     
@@ -37,26 +19,24 @@
     <link href="/css/styles.css" rel="stylesheet">
   </head>
   <body>
-    <div id="site-body">
+    <header class="site">
+      <a href="http://yet.unresolved.xyz">Unresolved</a>
+    </header>
+
+    <div class="site">
 
 
-
-<div id="page-single" class="page">
-  <header id="site-header" class="text-center" style="background-image: url('/images/program4.jpg');">
-    <div class="overlay">
-      <div class="container text-left actions">
-        <a href="/" class="btn btn-home">HOME</a>
-      </div>
-      <div class="container post-info">
-        <div class="font-logo post-date">Sun, Sep 21, 2014</div>
-        <h2 class="post-title">Octopressのテーマを作ってみる</h2>
-      </div>
-    </div>
-  </header>
-
-  <article id="post">
-
-    <div class="container site-container body">
+<div class="single">
+  <div class="container site-container">
+    <article itemscope="itemscope" itemtype="http://schema.org/Article">
+      <meta itemprop="image" content="http://yet.unresolved.xyzimages/program4.jpg" />
+      <meta itemprop="description" content="元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。 でもオレはデザイナーじゃないから、あんまりがっつり">
+      <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/">
+      <time itemprop="datePublished" pubdate="pubdate" datetime="2014-09-21T00:00:00&#43;00:00">
+        Sun, Sep 21, 2014
+      </time>
+      <h1><a href="http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/" itemprop="headline">Octopressのテーマを作ってみる</a></h1>
+      <div class="body" itemprop="articleBody">
 
 <p>元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。</p>
 
@@ -121,8 +101,8 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
 
 <p>gravatarの件が入っちゃってるから、これは後で分離しなきゃなあ。</p>
 </div>
-
-  </article>
+    </article>
+  </div>
 </div>
 
     </div>

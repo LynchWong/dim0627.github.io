@@ -6,24 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     
-    
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="_config.ymlに書いたdescriptionが設定されない | Unresolved">
-    <meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/">
-    <meta property="og:description" content="認識が間違ってるのか、_config.ymlに書いたdescriptionがサイトに反映されない・・・。 source/_includes/h">
-    
-    <meta property="og:image" content="http://yet.unresolved.xyz/images/program3.jpg">
-    
-    
-    <meta property="og:site_name" content="Unresolved">
-
-    <title>
-      
-      _config.ymlに書いたdescriptionが設定されない | Unresolved
-      
-    </title>
-
-    
     <link rel="shortcut icon" href="http://yet.unresolved.xyz/assets/favicon.ico">
 
     
@@ -37,26 +19,24 @@
     <link href="/css/styles.css" rel="stylesheet">
   </head>
   <body>
-    <div id="site-body">
+    <header class="site">
+      <a href="http://yet.unresolved.xyz">Unresolved</a>
+    </header>
+
+    <div class="site">
 
 
-
-<div id="page-single" class="page">
-  <header id="site-header" class="text-center" style="background-image: url('/images/program3.jpg');">
-    <div class="overlay">
-      <div class="container text-left actions">
-        <a href="/" class="btn btn-home">HOME</a>
-      </div>
-      <div class="container post-info">
-        <div class="font-logo post-date">Sun, Sep 21, 2014</div>
-        <h2 class="post-title">_config.ymlに書いたdescriptionが設定されない</h2>
-      </div>
-    </div>
-  </header>
-
-  <article id="post">
-
-    <div class="container site-container body"><p>認識が間違ってるのか、_config.ymlに書いたdescriptionがサイトに反映されない・・・。</p>
+<div class="single">
+  <div class="container site-container">
+    <article itemscope="itemscope" itemtype="http://schema.org/Article">
+      <meta itemprop="image" content="http://yet.unresolved.xyzimages/program3.jpg" />
+      <meta itemprop="description" content="認識が間違ってるのか、_config.ymlに書いたdescriptionがサイトに反映されない・・・。 source/_includes/h">
+      <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/">
+      <time itemprop="datePublished" pubdate="pubdate" datetime="2014-09-21T00:00:00&#43;00:00">
+        Sun, Sep 21, 2014
+      </time>
+      <h1><a href="http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/" itemprop="headline">_config.ymlに書いたdescriptionが設定されない</a></h1>
+      <div class="body" itemprop="articleBody"><p>認識が間違ってるのか、_config.ymlに書いたdescriptionがサイトに反映されない・・・。</p>
 
 <p><code>source/_includes/head.html</code>のコードを見てみるとこんな感じ。</p>
 
@@ -86,8 +66,8 @@
 
 <p>worked!</p>
 </div>
-
-  </article>
+    </article>
+  </div>
 </div>
 
     </div>

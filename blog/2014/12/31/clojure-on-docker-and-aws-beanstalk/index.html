@@ -6,24 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     
-    
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="ClojureのWebアプリをDocker &#43; Beanstalkで動かす | Unresolved">
-    <meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/">
-    <meta property="og:description" content="たぶんこういうのはドキュメント読んでもわからないので、とにかく一通りの流れを実践してみる。 Imageの取得 面倒なのでDocker HubからC">
-    
-    <meta property="og:image" content="http://yet.unresolved.xyz/images/infra3.jpg">
-    
-    
-    <meta property="og:site_name" content="Unresolved">
-
-    <title>
-      
-      ClojureのWebアプリをDocker &#43; Beanstalkで動かす | Unresolved
-      
-    </title>
-
-    
     <link rel="shortcut icon" href="http://yet.unresolved.xyz/assets/favicon.ico">
 
     
@@ -37,26 +19,24 @@
     <link href="/css/styles.css" rel="stylesheet">
   </head>
   <body>
-    <div id="site-body">
+    <header class="site">
+      <a href="http://yet.unresolved.xyz">Unresolved</a>
+    </header>
+
+    <div class="site">
 
 
-
-<div id="page-single" class="page">
-  <header id="site-header" class="text-center" style="background-image: url('/images/infra3.jpg');">
-    <div class="overlay">
-      <div class="container text-left actions">
-        <a href="/" class="btn btn-home">HOME</a>
-      </div>
-      <div class="container post-info">
-        <div class="font-logo post-date">Wed, Dec 31, 2014</div>
-        <h2 class="post-title">ClojureのWebアプリをDocker &#43; Beanstalkで動かす</h2>
-      </div>
-    </div>
-  </header>
-
-  <article id="post">
-
-    <div class="container site-container body">
+<div class="single">
+  <div class="container site-container">
+    <article itemscope="itemscope" itemtype="http://schema.org/Article">
+      <meta itemprop="image" content="http://yet.unresolved.xyzimages/infra3.jpg" />
+      <meta itemprop="description" content="たぶんこういうのはドキュメント読んでもわからないので、とにかく一通りの流れを実践してみる。 Imageの取得 面倒なのでDocker HubからC">
+      <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/">
+      <time itemprop="datePublished" pubdate="pubdate" datetime="2014-12-31T00:00:00&#43;00:00">
+        Wed, Dec 31, 2014
+      </time>
+      <h1><a href="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/" itemprop="headline">ClojureのWebアプリをDocker &#43; Beanstalkで動かす</a></h1>
+      <div class="body" itemprop="articleBody">
 
 <p>たぶんこういうのはドキュメント読んでもわからないので、とにかく一通りの流れを実践してみる。</p>
 
@@ -218,8 +198,8 @@ CMD [&quot;java&quot;, &quot;-jar&quot;, &quot;/root/production.jar&quot;]
 
 <p><a href="http://inokara.hateblo.jp/entry/2013/12/29/215322">Dockerfile の書き方「私的」なベストプラクティス（3）〜サービスの起動について〜</a></p>
 </div>
-
-  </article>
+    </article>
+  </div>
 </div>
 
     </div>
