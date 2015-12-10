@@ -142,9 +142,18 @@ article .date { text-align: right; }
   line-height: 1.5rem;
 }
 
+.single article .body {
+  font-size: 16px;
+}
+
 /* Original:Footer */
 #site-footer {
   padding: 100px 0;
+}
+
+/* Parts */
+.tags .tag a {
+  white-space: nowrap;
 }
 
 /* Override */

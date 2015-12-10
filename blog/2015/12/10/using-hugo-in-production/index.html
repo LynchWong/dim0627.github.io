@@ -48,11 +48,11 @@
             </div>
             <div class="tags">
               
-              <div class="tag"><a href="http://yet.unresolved.xyz/tags/golang">golang</a></div>
+              <span class="tag"><a href="http://yet.unresolved.xyz/tags/golang">golang</a></span>
               
-              <div class="tag"><a href="http://yet.unresolved.xyz/tags/hugo">hugo</a></div>
+              <span class="tag"><a href="http://yet.unresolved.xyz/tags/hugo">hugo</a></span>
               
-              <div class="tag"><a href="http://yet.unresolved.xyz/tags/static-site-generator">static-site-generator</a></div>
+              <span class="tag"><a href="http://yet.unresolved.xyz/tags/static-site-generator">static-site-generator</a></span>
               
             </div>
           </aside>
@@ -86,7 +86,7 @@
 <p>やはりMarkdownは優秀だと思っていて、メディア程度の文章ならDBに突っ込むよりMarkdownでファイル管理したいなと思いました。</p>
 
 <p>というわけでライターさんには無理を言ってMarkdownを覚えてもらいました。
-これも快く受け入れてもらえたのはライターさんの度量の広さだと思います。</p>
+これも快く受け入れてくれたライターさんの度量の広さに感謝しています。</p>
 
 <p>正直僕はハナから静的サイトジェネレータを使う気でいて、候補に考えていたのはJekyllとHugoでした。
 何故かと言うと、Jekyllはドキュメント量が期待できると思っていたし、Hugoはそもそも使い慣れてる点を評価したからです。</p>
@@ -153,7 +153,7 @@ Make every program a Filter.</p>
 
 <p><a href="https://ja.wikipedia.org/wiki/UNIX%E5%93%B2%E5%AD%A6">UNIX哲学 - Wikipedia</a></p>
 
-<p>おそらくこれに該当するもっともな例はシェルだと思うのですが、実はHugoもまさにこれを体現しているようなもので、Markdowを一定のルールに従ってテーマというフィルタに通すだけのプログラムになっています。</p>
+<p>おそらくこれに該当するもっともな例はシェルだと思うのですが、実はHugoもまさにこれを体現しているようなもので、Markdownを一定のルールに従ってテーマというフィルタに通すだけのプログラムになっています。</p>
 
 <p>なのでそのルールさえ理解してしまえばテーマを作るのは容易で、約1周間程度でほぼ完成形につくり上げることが出来ました。</p>
 
@@ -201,7 +201,7 @@ Make every program a Filter.</p>
 
 <p>また、生成はcronで定時処理しており、その処理をSlackに流すようにしています。</p>
 
-<p>Slack側では「ERROR」という文言がメッセージが発せられた場合にアラートがあげられるようにしており、簡易的な監視ツールとして手軽に立ち上げられたのではないかと思っています。</p>
+<p>Slack側では「ERROR」という文言を含むメッセージが発せられた場合にアラートがあげられるようにしており、簡易的な監視ツールとして手軽に立ち上げられたのではないかと思っています。</p>
 
 <h2 id="終わりに:5f9546be55588508513a850a19b4c520">終わりに</h2>
 
