@@ -164,6 +164,11 @@ header.site a {
 }
 
 /* Parts */
+.tag a,
+time {
+  color: #aaa;
+}
+
 .tags .tag a {
   white-space: nowrap;
 }
