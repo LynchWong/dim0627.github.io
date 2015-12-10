@@ -7,6 +7,7 @@ body {
   font-family: 'Maven Pro', 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
+  color: #000;
 }
 
 html,
@@ -16,7 +17,7 @@ body {
 
 a {
   transition-duration: .2s;
-  color: #333;
+  color: #000;
   text-decoration: underline;
 }
 
@@ -35,7 +36,7 @@ img {
 blockquote {
   font-size: .8rem;
   border: none;
-  background-color: #eee;
+  background-color: #f5f5f5;
   border-radius: 2px;
 }
 
@@ -70,7 +71,7 @@ header.site a {
 
 .index article { margin-bottom: 50px; }
 .index article a { display: block; text-decoration: none; }
-.index article h2 { font-size: 1rem; color: #000; }
+.index article h2 { font-size: 1rem; color: #000; font-weight: 900; }
 
 .single article {
   line-height: 2rem;
@@ -91,8 +92,38 @@ header.site a {
   color: #000;
 }
 
-.single article h1 { margin-top: 0; margin-bottom: 60px; }
+.single article h1:first-child,
+.single article h2:first-child,
+.single article h3:first-child,
+.single article h4:first-child,
+.single article h5:first-child,
+.single article h6:first-child {
+  margin-top: 0;
+}
+
+.single article h1 {
+  margin-top: 0;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid #f5f5f5;
+}
+
 .single article h1 a { color: #000; text-decoration: none; }
+
+.single article ul,
+.single article ol {
+  background-color: #f5f5f5;
+  border-radius: 2px;
+  display: inline-block;
+  padding: 5px 10px;
+  padding-left: 30px;
+}
+
+.single article ul li,
+.single article ol li {
+  font-size: .8rem;
+  line-height: 1.5rem;
+}
 
 /* Original:Footer */
 #site-footer {

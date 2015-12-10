@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <title>tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する</title>
+
     
     <link rel="shortcut icon" href="http://yet.unresolved.xyz/assets/favicon.ico">
 
@@ -14,7 +16,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href='//fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Lato:100,300' rel='stylesheet' type='text/css'>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">
   </head>
@@ -30,12 +32,13 @@
   <div class="container site-container">
     <article itemscope="itemscope" itemtype="http://schema.org/Article">
       <meta itemprop="image" content="http://yet.unresolved.xyzimages/infra1.jpg" />
+      <meta itemprop="headline" content="tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する">
       <meta itemprop="description" content="こんな感じ。 # v でペインを縦に分割する bind v split-window -h -c &quot;#{pane_current_path}&quot; # s でペインを横に分割する bind s split-window -v -c &quot;#{pane_current_path}&quot; # 新規ウィンドウでディレクトリを保持 bind c new-window -c &quot;#{pane_current_path}&quot; 参考に">
       <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/">
       <time itemprop="datePublished" pubdate="pubdate" datetime="2015-04-01T22:42:40&#43;09:00">
         Wed, Apr 1, 2015
       </time>
-      <h1><a href="http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/" itemprop="headline">tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する</a></h1>
+      <h1><a href="http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/">tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する</a></h1>
       <div class="body" itemprop="articleBody">
 
 <p>こんな感じ。</p>

@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <title>ELB越しのLaravelでHTTPSを使おうとして困った話</title>
+
     
     <link rel="shortcut icon" href="http://yet.unresolved.xyz/assets/favicon.ico">
 
@@ -14,7 +16,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href='//fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Lato:100,300' rel='stylesheet' type='text/css'>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">
   </head>
@@ -30,12 +32,13 @@
   <div class="container site-container">
     <article itemscope="itemscope" itemtype="http://schema.org/Article">
       <meta itemprop="image" content="http://yet.unresolved.xyzimages/design3.jpg" />
+      <meta itemprop="headline" content="ELB越しのLaravelでHTTPSを使おうとして困った話">
       <meta itemprop="description" content="SSL証明書はELBに設置する 何が普通なのか知らないけど、今回立ち上げた構成では CLIENT -&gt; ELB(80 or 443) -&gt; WEB(80) っていう構成にしていました（するつもりだった）">
       <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/">
       <time itemprop="datePublished" pubdate="pubdate" datetime="2015-11-04T12:18:07&#43;09:00">
         Wed, Nov 4, 2015
       </time>
-      <h1><a href="http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/" itemprop="headline">ELB越しのLaravelでHTTPSを使おうとして困った話</a></h1>
+      <h1><a href="http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/">ELB越しのLaravelでHTTPSを使おうとして困った話</a></h1>
       <div class="body" itemprop="articleBody">
 
 <h2 id="ssl証明書はelbに設置する:56aef34fa740ed018dee02e37b63f347">SSL証明書はELBに設置する</h2>
