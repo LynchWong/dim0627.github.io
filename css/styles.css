@@ -84,6 +84,17 @@ header.site a {
   color: #000;
 }
 
+.single article h2,
+.single article h3,
+.single article h4,
+.single article h5,
+.single article h6 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  margin-left: -10px;
+  color: #000;
+}
+
 .single article h1:first-child,
 .single article h2:first-child,
 .single article h3:first-child,
