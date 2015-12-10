@@ -38,6 +38,12 @@ blockquote {
   border: none;
   background-color: #f5f5f5;
   border-radius: 2px;
+  padding: 10px;
+  margin: 0;
+}
+
+blockquote p {
+  line-height: 1rem;
 }
 
 pre {
@@ -45,6 +51,12 @@ pre {
   background-color: transparent;
   padding: 0;
   font-size: .8rem;
+  border-radius: 2px;
+}
+
+code {
+  color: #2980b9;
+  background-color: #e0effa;
   border-radius: 2px;
 }
 
@@ -69,9 +81,11 @@ header.site a {
   text-decoration: none;
 }
 
+article .date { text-align: right; }
+
 .index article { margin-bottom: 50px; }
 .index article a { display: block; text-decoration: none; }
-.index article h2 { font-size: 1rem; color: #000; font-weight: 900; }
+.index article h2 { font-size: 1rem; font-weight: 900; }
 
 .single article {
   line-height: 2rem;
@@ -101,7 +115,8 @@ header.site a {
   margin-top: 0;
 }
 
-.single article h1 {
+.index h1,
+.single h1 {
   margin-top: 0;
   margin-bottom: 30px;
   padding-bottom: 30px;
@@ -109,6 +124,7 @@ header.site a {
 }
 
 .single article h1 a { color: #000; text-decoration: none; }
+.single article h3 { font-weight: 900; }
 
 .single article ul,
 .single article ol {
@@ -117,6 +133,7 @@ header.site a {
   display: inline-block;
   padding: 5px 10px;
   padding-left: 30px;
+  margin: 0;
 }
 
 .single article ul li,
@@ -136,9 +153,3 @@ header.site a {
 .container {
   max-width: 900px;
 }
-
-.site-container {
-  max-width: 670px;
-  margin: 0 auto;
-}
-
