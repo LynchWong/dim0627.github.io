@@ -71,6 +71,7 @@ header.site a {
 .index article { margin-bottom: 50px; }
 .index article a { display: block; text-decoration: none; }
 .index article h2 { font-size: 1rem; font-weight: 900; }
+.index article .summary { word-wrap: break-word; }
 
 .single article h1,
 .single article h2,
