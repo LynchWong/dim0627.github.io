@@ -24,7 +24,9 @@
   </head>
   <body>
     <header class="site">
-      <a href="http://yet.unresolved.xyz">Unresolved</a>
+      <div class="container">
+        <a href="http://yet.unresolved.xyz">Unresolved</a>
+      </div>
     </header>
 
     <div class="site">
@@ -33,41 +35,35 @@
 <div class="index list">
   <div class="container">
 
-    <h1>Vim in tag</h1>
+    <header>
+      <h1>Vim in tag</h1>
+    </header>
 
     
     <article class="li">
   <a href="http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/">
-    <time>Sun, Mar 22, 2015</time>
-    <h2 class="title">VimのClojureプラグイン覚書</h2>
-    <div class="summary">VimでClojure書くときのあれこれをいっつも忘れるのでまとめておこうと思う。 新しいことを覚えたら随時追記していこうかな。 使ってるプラグ...</div>
+    <h2 class="title">VimのClojureプラグイン覚書 <small><time>Sun, Mar 22, 2015</time></small></h2>
   </a>
 </article>
 
     
     <article class="li">
   <a href="http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/">
-    <time>Sat, Feb 28, 2015</time>
-    <h2 class="title">Slamhoundを使ってClojureのrequireを自動生成する</h2>
-    <div class="summary">ちょっとVimとClojureの環境を整備したくて、こんなのを読んでました。 My Clojure Toolchain: Vim そもそも~/.lein/profiles.cljの存在を...</div>
+    <h2 class="title">Slamhoundを使ってClojureのrequireを自動生成する <small><time>Sat, Feb 28, 2015</time></small></h2>
   </a>
 </article>
 
     
     <article class="li">
   <a href="http://yet.unresolved.xyz/blog/2015/02/06/learning-vim-again/">
-    <time>Fri, Feb 6, 2015</time>
-    <h2 class="title">今だからやるvimコマンド再学習</h2>
-    <div class="summary">ちょうど1年ほど前からvimを使ってるんだけど、 例に漏れずオレも使い始めの頃にこのサイトを参考にさせて頂きました。 僕がサクラエディタからVi...</div>
+    <h2 class="title">今だからやるvimコマンド再学習 <small><time>Fri, Feb 6, 2015</time></small></h2>
   </a>
 </article>
 
     
     <article class="li">
   <a href="http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/">
-    <time>Thu, Feb 5, 2015</time>
-    <h2 class="title">PHPファイルの定数に触るとvimがフリーズする</h2>
-    <div class="summary">neocomplcacheのこの設定が甘かった。 let g:neocomplcache_omni_patterns.php = '[^. \t]-&gt;\h\w*\|\h\w*::' 参考になったのはこの記事。 vim-jp » Hack #193: neocomplcacheの設定について知る 後編...</div>
+    <h2 class="title">PHPファイルの定数に触るとvimがフリーズする <small><time>Thu, Feb 5, 2015</time></small></h2>
   </a>
 </article>
 
@@ -77,11 +73,13 @@
 
     </div>
 
-    <footer id="site-footer" class="text-center font-logo">
-      <p>&copy; 2015  Daisuke Tsuji </p>
+    <footer id="site-footer">
+      <div class="container">
+        <p>&copy; 2015  Daisuke Tsuji </p>
 
-      <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
-      <p>Theme <a href="https://github.com/dim0627/hugo_theme_harb" target="_blank">Harb</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+        <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
+        <p>Theme <a href="https://github.com/dim0627/hugo_theme_harb" target="_blank">Harb</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+      </div>
     </footer>
 
     <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>

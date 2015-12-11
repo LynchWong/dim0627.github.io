@@ -24,7 +24,9 @@
   </head>
   <body>
     <header class="site">
-      <a href="http://yet.unresolved.xyz">Unresolved</a>
+      <div class="container">
+        <a href="http://yet.unresolved.xyz">Unresolved</a>
+      </div>
     </header>
 
     <div class="site">
@@ -38,11 +40,13 @@
       <meta itemprop="description" content="ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。 何が起きたか 今だにHeroku">
       <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/">
 
-      <time itemprop="datePublished" pubdate="pubdate" datetime="2014-12-21T00:00:00&#43;00:00">
-        Sun, Dec 21, 2014
-      </time>
+      <header>
+        <h1><a href="http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/">Lobosでマイグレーションができない in Heroku</a></h1>
+        <time itemprop="datePublished" pubdate="pubdate" datetime="2014-12-21T00:00:00&#43;00:00">
+          Sun, Dec 21, 2014
+        </time>
+      </header>
 
-      <h1><a href="http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/">Lobosでマイグレーションができない in Heroku</a></h1>
       <div class="body" itemprop="articleBody">
 
 <p>ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。</p>
@@ -208,11 +212,13 @@ lobos.migration=&gt;
 
     </div>
 
-    <footer id="site-footer" class="text-center font-logo">
-      <p>&copy; 2015  Daisuke Tsuji </p>
+    <footer id="site-footer">
+      <div class="container">
+        <p>&copy; 2015  Daisuke Tsuji </p>
 
-      <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
-      <p>Theme <a href="https://github.com/dim0627/hugo_theme_harb" target="_blank">Harb</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+        <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
+        <p>Theme <a href="https://github.com/dim0627/hugo_theme_harb" target="_blank">Harb</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+      </div>
     </footer>
 
     <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>

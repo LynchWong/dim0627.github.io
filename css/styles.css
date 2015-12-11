@@ -48,24 +48,19 @@ code {
 }
 
 h1, h2, h3, h4, h5 ,h6 { margin: 0; }
-h1 { font-size:1.8rem; }
-h2 { font-size:1.6rem; }
-h3 { font-size:1.1rem; }
-h4 { font-size:.8rem; }
-h5 { font-size:.7rem; }
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.1rem; }
+h4 { font-size: 1rem; }
+h5 { font-size: 1rem; }
 
-@media (max-width:767px) {
-  h1 { font-size:1.6rem; }
-  h2 { font-size:1.4rem; }
-  h3 { font-size:1.1rem; }
-  h4 { font-size:.8rem; }
-  h5 { font-size:.7rem; }
+time {
+  text-transform: uppercase;
 }
 
 /* Original */
 header.site {
   padding: 50px 0;
-  text-align: center;
   font-size: 2rem;
 }
 
@@ -95,9 +90,7 @@ header.site a {
 
 .index h1,
 .single article h1 {
-  margin-top: 0;
-  margin-bottom: 30px;
-  padding-bottom: 30px;
+  margin: 0;
 }
 
 .single article h1 a { color: #000; text-decoration: none; }
@@ -113,16 +106,20 @@ header.site a {
   font-weight: 900;
 }
 
+.index header,
+.single header {
+  margin-bottom: 50px;
+}
+
 .single article .body {
   word-wrap: break-word;
   line-height: 2rem;
   max-width: 700px;
-  margin: 0 auto;
 }
 
 .single article .body ul,
 .single article .body ol {
-  background-color: #ecf0f1;
+  background-color: #f5f5f5;
   border-radius: 2px;
   display: inline-block;
   padding: 15px;
@@ -147,8 +144,8 @@ header.site a {
   position: relative;
   font-size: .8rem;
   border: none;
-  background-color: #ecf0f1;
-  border-radius: 2px;
+  border-top: 1px solid #f5f5f5;
+  border-bottom: 1px solid #f5f5f5;
   padding: 15px;
 }
 
@@ -158,8 +155,8 @@ header.site a {
   font-family: Fontawesome;
   top: -10px;
   left: -5px;
-  font-size: 1rem;
-  color: #3a5168;
+  font-size: 1.5rem;
+  color: #f5f5f5;
 }
 
 .single article .body blockquote p {
@@ -170,29 +167,32 @@ header.site a {
 /* Original:Footer */
 #site-footer {
   padding: 100px 0;
+  font-size: .8rem;
 }
 
 /* Parts */
 .tag a,
 time {
-  color: #bdc3c7;
+  color: #aaa;
+  font-size: .8rem;
 }
 
 .tags .tag a {
   white-space: nowrap;
+  margin-right: 5px;
 }
 
 article.li {
   margin: 0 auto;
-  margin-bottom: 50px;
-  max-width: 700px;
 }
+
 article.li a {
   display: block; text-decoration: none;
+  padding-bottom: 20px;
 }
-article.li .summary {
-  word-wrap: break-word;
-  margin: 0 auto;
+
+article.li .title {
+  font-size: 1rem;
 }
 
 /* Override */
