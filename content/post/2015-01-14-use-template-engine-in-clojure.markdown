@@ -73,7 +73,7 @@ Clojureのコンパイルが走るので、タグの不整合(閉じタグがな
 
 もう1点は、例えば広告のスクリプトみたいにコピペで貼り付けたい文字列とかの出力がちょっとめんどう。
 
-Hiccupの世界にただのタグを入れるのは見栄えも悪いし、オレはこんな感じで外だしすることで対応した。
+Hiccupの世界にただのタグを入れるのは見栄えも悪いし、僕はこんな感じで外だしすることで対応した。
 
 ``` clojure
 (def partial-ad-big (str "<script async src=""//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js""></script>

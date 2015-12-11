@@ -52,7 +52,7 @@ title: "Clojureで新卒の女の子を射止めた話"
 (def in (line-seq (java.io.BufferedReader. *in*)))
 ```
 
-オレの回答はこんな感じ。
+僕の回答はこんな感じ。
 
 ``` clojure
 (def in (line-seq (java.io.BufferedReader. *in*)))

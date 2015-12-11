@@ -72,7 +72,7 @@ $ git push origin source
 
 記事は`rake new_post["title"]`で行けるらしい。
 
-でもオレは`alias rake="noglob rake"`しとかなきゃダメだった。
+でも僕は`alias rake="noglob rake"`しとかなきゃダメだった。
 
 [Octopressで記事が作れない(zsh)](http://ackintosh.github.io/blog/2013/02/02/cant-create-post/)
 

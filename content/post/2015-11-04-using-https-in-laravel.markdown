@@ -31,7 +31,7 @@ Your connection to this site is private, but someone on the network might be abl
 
 原因は**httpsじゃないURLに飛ばすformタグがページに存在する**せいでした。
 
-開発環境でもオレオレ証明書を用意したりしてHTTPSで通信するようにしておくべきでした。
+開発環境でも僕僕証明書を用意したりしてHTTPSで通信するようにしておくべきでした。
 
 ## Laravelのrouteメソッド
 

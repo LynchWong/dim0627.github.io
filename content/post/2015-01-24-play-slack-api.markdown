@@ -60,7 +60,7 @@ herokuでさくっとHello World作って試してみようかな。
 
 [<img src="/images/2015-01-25/command_test.png" class="image" alt="command_test">](/images/2015-01-25/command_test.png)
 
-おお、出るじゃん！でも`Only you can see this message`って出てる、オレしか見れないんだね。
+おお、出るじゃん！でも`Only you can see this message`って出てる、僕しか見れないんだね。
 
 ## REPLを作ろう
 
