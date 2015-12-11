@@ -158,7 +158,7 @@ header.site a {
 
 .single article .body blockquote:before {
   position: absolute;
-  content: '\f10e';
+  content: '\f10d';
   font-family: Fontawesome;
   top: -10px;
   left: -5px;
