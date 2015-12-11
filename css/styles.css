@@ -189,12 +189,11 @@ time {
 }
 
 article.li {
-  margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 article.li a {
-  display: block; text-decoration: none;
-  padding-bottom: 20px;
+  text-decoration: none;
 }
 
 article.li .title {
