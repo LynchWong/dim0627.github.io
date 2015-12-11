@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Github on Unresolved</title>
     <link>http://yet.unresolved.xyz/tags/github/</link>
+    <description>Recent content in Github on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2015</rights>
-    <updated>2014-10-24 00:00:00 &#43;0000 UTC</updated>
-
+    <lastBuildDate>Fri, 24 Oct 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/github/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>GitHub Pagesでカスタムドメインを使う</title>
+      <link>http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/</link>
+      <pubDate>Fri, 24 Oct 2014 00:00:00 +0000</pubDate>
       
-        <item>
-          <title>GitHub Pagesでカスタムドメインを使う</title>
-          <link>http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/</link>
-          <pubDate>Fri, 24 Oct 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/</guid>
+      <description>
 
 &lt;p&gt;昨日はGAEで今日はGithubかよって感じだけど、こっちは結構詰まったのでメモしたい。&lt;/p&gt;
 
@@ -66,17 +65,15 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 
 &lt;p&gt;あ、DOS攻撃のことか。略さずに書かれるとわからんもんだね。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>GitHub PagesにOctopressをのっけてみる</title>
+      <link>http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/</link>
+      <pubDate>Wed, 17 Sep 2014 00:00:00 +0000</pubDate>
       
-        <item>
-          <title>GitHub PagesにOctopressをのっけてみる</title>
-          <link>http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/</link>
-          <pubDate>Wed, 17 Sep 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/</guid>
+      <description>
 
 &lt;p&gt;&lt;a href=&#34;https://ja.wordpress.com/&#34;&gt;WordPress.com&lt;/a&gt;を使ってたんだけど、お金払わないと融通がきかないぽいので移行することに。&lt;/p&gt;
 
@@ -162,9 +159,7 @@ $ git push origin source
 
 &lt;p&gt;必要なものはすべて揃ってて便利。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
-
   </channel>
 </rss>

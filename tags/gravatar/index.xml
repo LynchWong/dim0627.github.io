@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Gravatar on Unresolved</title>
     <link>http://yet.unresolved.xyz/tags/gravatar/</link>
+    <description>Recent content in Gravatar on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2015</rights>
-    <updated>2014-09-20 00:00:00 &#43;0000 UTC</updated>
-
+    <lastBuildDate>Sat, 20 Sep 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/gravatar/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>OctopressのサイドバーにGravatarを表示させる</title>
+      <link>http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/</link>
+      <pubDate>Sat, 20 Sep 2014 00:00:00 +0000</pubDate>
       
-        <item>
-          <title>OctopressのサイドバーにGravatarを表示させる</title>
-          <link>http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/</link>
-          <pubDate>Sat, 20 Sep 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/</guid>
+      <description>
 
 &lt;h2 id=&#34;octopressのサイドバーってどうなってんの:61eb03e5faeba6147c5a5cd44e5e95a1&#34;&gt;Octopressのサイドバーってどうなってんの？&lt;/h2&gt;
 
@@ -133,9 +132,7 @@ div#urls {
 
 &lt;p&gt;&lt;a href=&#34;http://blog.awairo.net/blog/2013/12/24/octopress-aside-of-getting-profile-from-gravatar/&#34;&gt;Gravatarのプロフィールを表示するOctopressのサイドバー&lt;/a&gt;&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
-
   </channel>
 </rss>

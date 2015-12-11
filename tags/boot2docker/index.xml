@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Boot2docker on Unresolved</title>
     <link>http://yet.unresolved.xyz/tags/boot2docker/</link>
+    <description>Recent content in Boot2docker on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2015</rights>
-    <updated>2014-12-30 00:00:00 &#43;0000 UTC</updated>
-
+    <lastBuildDate>Tue, 30 Dec 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/boot2docker/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>boot2dockerでCannot connect to the Docker daemon</title>
+      <link>http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/</link>
+      <pubDate>Tue, 30 Dec 2014 00:00:00 +0000</pubDate>
       
-        <item>
-          <title>boot2dockerでCannot connect to the Docker daemon</title>
-          <link>http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/</link>
-          <pubDate>Tue, 30 Dec 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/</guid>
+      <description>
 
 &lt;p&gt;これまでは普通に手で作ったVMのUbuntu上でDockerを触ってたんだけど、なんかあれだしboot2dockerに移行しようかと。&lt;/p&gt;
 
@@ -147,9 +146,7 @@ For more examples and ideas, visit:
 
 &lt;p&gt;&lt;a href=&#34;http://qiita.com/kanekoa/items/cf3cabb23da69c609002&#34;&gt;OS X をサポートした Docker 0.8 を試す - Qiita&lt;/a&gt;&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
-
   </channel>
 </rss>

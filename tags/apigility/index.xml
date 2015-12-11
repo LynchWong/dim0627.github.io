@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Apigility on Unresolved</title>
     <link>http://yet.unresolved.xyz/tags/apigility/</link>
+    <description>Recent content in Apigility on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2015</rights>
-    <updated>2015-02-14 19:30:22 &#43;0900 JST</updated>
-
+    <lastBuildDate>Sat, 14 Feb 2015 19:30:22 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/apigility/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>Apigility &#43; React.jsでタスク管理ツールを作ってみる</title>
+      <link>http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/</link>
+      <pubDate>Sat, 14 Feb 2015 19:30:22 +0900</pubDate>
       
-        <item>
-          <title>Apigility &#43; React.jsでタスク管理ツールを作ってみる</title>
-          <link>http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/</link>
-          <pubDate>Sat, 14 Feb 2015 19:30:22 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/</guid>
+      <description>
 
 &lt;p&gt;これに行ってきました。&lt;/p&gt;
 
@@ -287,9 +286,7 @@ $(&amp;quot;#task-post&amp;quot;).on(&amp;quot;click&amp;quot;, function() {
 
 &lt;p&gt;React.jsはもう少ししっかり勉強します。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
-
   </channel>
 </rss>

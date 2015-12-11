@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Owasp Zap on Unresolved</title>
     <link>http://yet.unresolved.xyz/tags/owasp-zap/</link>
+    <description>Recent content in Owasp Zap on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2015</rights>
-    <updated>2015-09-30 16:24:53 &#43;0900 JST</updated>
-
+    <lastBuildDate>Wed, 30 Sep 2015 16:24:53 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/owasp-zap/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>OWASP ZAPでBASIC認証を突破する</title>
+      <link>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</link>
+      <pubDate>Wed, 30 Sep 2015 16:24:53 +0900</pubDate>
       
-        <item>
-          <title>OWASP ZAPでBASIC認証を突破する</title>
-          <link>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</link>
-          <pubDate>Wed, 30 Sep 2015 16:24:53 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</guid>
+      <description>
 
 &lt;p&gt;調べても意外と見つからない。&lt;/p&gt;
 
@@ -46,9 +45,7 @@
 
 &lt;p&gt;&lt;a href=&#34;http://www.pupha.net/archives/2654/&#34;&gt;OWASP ZAP で送信されるリクエストに自動で独自ヘッダを追加する方法 - Web Application Security Memo&lt;/a&gt;&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
-
   </channel>
 </rss>

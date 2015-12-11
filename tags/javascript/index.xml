@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Javascript on Unresolved</title>
     <link>http://yet.unresolved.xyz/tags/javascript/</link>
+    <description>Recent content in Javascript on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2015</rights>
-    <updated>2015-07-14 00:05:16 &#43;0900 JST</updated>
-
+    <lastBuildDate>Tue, 14 Jul 2015 00:05:16 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>focusoutイベントでfocus中の要素が取得できない</title>
+      <link>http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/</link>
+      <pubDate>Tue, 14 Jul 2015 00:05:16 +0900</pubDate>
       
-        <item>
-          <title>focusoutイベントでfocus中の要素が取得できない</title>
-          <link>http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/</link>
-          <pubDate>Tue, 14 Jul 2015 00:05:16 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/</guid>
+      <description>
 
 &lt;p&gt;何を血迷ったかサジェストを自作しようとしてしまってつらい目にあった話。&lt;/p&gt;
 
@@ -75,17 +74,15 @@ $(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() 
 
 &lt;p&gt;&lt;a href=&#34;http://qiita.com/jkr_2255/items/17693ab77beea71a871c&#34;&gt;JavaScript - setTimeout(&amp;hellip;,0)などの使いドコロ - Qiita&lt;/a&gt;&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>Apigility &#43; React.jsでタスク管理ツールを作ってみる</title>
+      <link>http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/</link>
+      <pubDate>Sat, 14 Feb 2015 19:30:22 +0900</pubDate>
       
-        <item>
-          <title>Apigility &#43; React.jsでタスク管理ツールを作ってみる</title>
-          <link>http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/</link>
-          <pubDate>Sat, 14 Feb 2015 19:30:22 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/</guid>
+      <description>
 
 &lt;p&gt;これに行ってきました。&lt;/p&gt;
 
@@ -356,9 +353,7 @@ $(&amp;quot;#task-post&amp;quot;).on(&amp;quot;click&amp;quot;, function() {
 
 &lt;p&gt;React.jsはもう少ししっかり勉強します。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
-
   </channel>
 </rss>

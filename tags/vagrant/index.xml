@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Vagrant on Unresolved</title>
     <link>http://yet.unresolved.xyz/tags/vagrant/</link>
+    <description>Recent content in Vagrant on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2015</rights>
-    <updated>2015-03-16 23:15:49 &#43;0900 JST</updated>
-
+    <lastBuildDate>Mon, 16 Mar 2015 23:15:49 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/vagrant/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>Ansibleを使ってMySQLが動く環境を手っ取り早く作る</title>
+      <link>http://yet.unresolved.xyz/blog/2015/03/16/create-mysql-environment-using-the-ansible/</link>
+      <pubDate>Mon, 16 Mar 2015 23:15:49 +0900</pubDate>
       
-        <item>
-          <title>Ansibleを使ってMySQLが動く環境を手っ取り早く作る</title>
-          <link>http://yet.unresolved.xyz/blog/2015/03/16/create-mysql-environment-using-the-ansible/</link>
-          <pubDate>Mon, 16 Mar 2015 23:15:49 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/03/16/create-mysql-environment-using-the-ansible/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/03/16/create-mysql-environment-using-the-ansible/</guid>
+      <description>
 
 &lt;p&gt;ちょっと友人と共同で開発しているWebアプリがあって、DBの用意も手軽に共有したいのでAnsibleでやることに。&lt;/p&gt;
 
@@ -163,17 +162,15 @@ monit_protection: false                 # true or false, requires ANXS.monit
 
 &lt;p&gt;テーブルとかは別途スキーマ定義を用意するだろうし、ここまでやってくれれば十分だね。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>Vagrant &#43; Ansibleでprovided hosts list is empty</title>
+      <link>http://yet.unresolved.xyz/blog/2015/03/16/provided-hosts-list-is-empty/</link>
+      <pubDate>Mon, 16 Mar 2015 22:55:18 +0900</pubDate>
       
-        <item>
-          <title>Vagrant &#43; Ansibleでprovided hosts list is empty</title>
-          <link>http://yet.unresolved.xyz/blog/2015/03/16/provided-hosts-list-is-empty/</link>
-          <pubDate>Mon, 16 Mar 2015 22:55:18 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/03/16/provided-hosts-list-is-empty/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/03/16/provided-hosts-list-is-empty/</guid>
+      <description>
 
 &lt;p&gt;AnsibleでVagrant上のCentOSにMySQLを入れようとしたらこれ。&lt;/p&gt;
 
@@ -209,17 +206,15 @@ visible above. Please fix these errors and try again.
 
 &lt;p&gt;&lt;a href=&#34;http://narusemotoki.tumblr.com/post/82475978900/vagrant-1-5-ansible-limit-all&#34;&gt;Vagrant 1.5からAnsibleを使うのならlimit = &amp;lsquo;all&amp;rsquo;が必要 - 今日のハック&lt;/a&gt;&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>Vagrant &#43; CentOS &#43; PostgreSQLを最速で構築</title>
+      <link>http://yet.unresolved.xyz/blog/2015/01/22/install-postgresql-on-centos/</link>
+      <pubDate>Thu, 22 Jan 2015 15:37:14 +0900</pubDate>
       
-        <item>
-          <title>Vagrant &#43; CentOS &#43; PostgreSQLを最速で構築</title>
-          <link>http://yet.unresolved.xyz/blog/2015/01/22/install-postgresql-on-centos/</link>
-          <pubDate>Thu, 22 Jan 2015 15:37:14 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/01/22/install-postgresql-on-centos/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/01/22/install-postgresql-on-centos/</guid>
+      <description>
 
 &lt;p&gt;herokuにのっけるアプリを作るとき、ローカルではSQLite使ってたんだけどもう色々つらい。&lt;/p&gt;
 
@@ -379,9 +374,7 @@ postgres=# \q
 
 &lt;p&gt;&lt;a href=&#34;http://www.dbonline.jp/postgresql/connect/index2.html&#34;&gt;PostgreSQLへの接続 - PostgreSQLへの接続と切断 - PostgreSQLの使い方&lt;/a&gt;&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
-
   </channel>
 </rss>

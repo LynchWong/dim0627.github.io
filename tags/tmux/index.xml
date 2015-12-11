@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Tmux on Unresolved</title>
     <link>http://yet.unresolved.xyz/tags/tmux/</link>
+    <description>Recent content in Tmux on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2015</rights>
-    <updated>2015-04-01 22:42:40 &#43;0900 JST</updated>
-
+    <lastBuildDate>Wed, 01 Apr 2015 22:42:40 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/tmux/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する</title>
+      <link>http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/</link>
+      <pubDate>Wed, 01 Apr 2015 22:42:40 +0900</pubDate>
       
-        <item>
-          <title>tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する</title>
-          <link>http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/</link>
-          <pubDate>Wed, 01 Apr 2015 22:42:40 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/</guid>
+      <description>
 
 &lt;p&gt;こんな感じ。&lt;/p&gt;
 
@@ -34,17 +33,15 @@ bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
 
 &lt;p&gt;&lt;a href=&#34;http://studio3104.hatenablog.com/entry/2014/10/14/131430&#34;&gt;tmux 1.9 でペイン分割時にカレントディレクトリを維持 - Studio3104::BLOG.new&lt;/a&gt;&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>tmux-powerlineのステータスラインが描画ごとに増える</title>
+      <link>http://yet.unresolved.xyz/blog/2015/03/30/status-line-of-tmux-powerline-overlap/</link>
+      <pubDate>Mon, 30 Mar 2015 23:56:58 +0900</pubDate>
       
-        <item>
-          <title>tmux-powerlineのステータスラインが描画ごとに増える</title>
-          <link>http://yet.unresolved.xyz/blog/2015/03/30/status-line-of-tmux-powerline-overlap/</link>
-          <pubDate>Mon, 30 Mar 2015 23:56:58 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/03/30/status-line-of-tmux-powerline-overlap/</guid>
-          <description>&lt;p&gt;iTerm2での話。&lt;/p&gt;
+      <guid>http://yet.unresolved.xyz/blog/2015/03/30/status-line-of-tmux-powerline-overlap/</guid>
+      <description>&lt;p&gt;iTerm2での話。&lt;/p&gt;
 
 &lt;p&gt;こいつのせい。&lt;/p&gt;
 
@@ -56,9 +53,7 @@ bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
 
 &lt;p&gt;&lt;a href=&#34;http://qiita.com/tkhr/items/8cc17c02dea1803be9c6&#34;&gt;tmux - Powerline導入例 - Qiita&lt;/a&gt;&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
-
   </channel>
 </rss>

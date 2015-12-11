@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Heroku on Unresolved</title>
     <link>http://yet.unresolved.xyz/tags/heroku/</link>
+    <description>Recent content in Heroku on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2015</rights>
-    <updated>2015-01-25 20:52:46 &#43;0900 JST</updated>
-
+    <lastBuildDate>Sun, 25 Jan 2015 20:52:46 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/heroku/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>SlackAPIで遊ぶ</title>
+      <link>http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/</link>
+      <pubDate>Sun, 25 Jan 2015 20:52:46 +0900</pubDate>
       
-        <item>
-          <title>SlackAPIで遊ぶ</title>
-          <link>http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/</link>
-          <pubDate>Sun, 25 Jan 2015 20:52:46 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/</guid>
+      <description>
 
 &lt;p&gt;最近
 &lt;a href=&#34;http://www.amazon.co.jp/gp/product/4797328355/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4797328355&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;ふつうのLinuxプログラミング&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=4797328355&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important; display:inline;width:0;&#34; /&gt;を読んでます。知りたいことが書かれてて楽しい！&lt;/p&gt;
@@ -116,17 +115,15 @@
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/dim0627/slack_repl&#34;&gt;dim0627/slack_repl&lt;/a&gt;&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>paiza.IOのAPIを使ってreplを作る</title>
+      <link>http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/</link>
+      <pubDate>Sun, 25 Jan 2015 00:58:15 +0900</pubDate>
       
-        <item>
-          <title>paiza.IOのAPIを使ってreplを作る</title>
-          <link>http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/</link>
-          <pubDate>Sun, 25 Jan 2015 00:58:15 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/</guid>
+      <description>
 
 &lt;p&gt;&lt;a href=&#34;http://paiza.jp/&#34;&gt;paiza&lt;/a&gt;が面白いAPIを公開してたから、そのうち使ってみたいと思ってたんだよね。&lt;/p&gt;
 
@@ -214,17 +211,15 @@
 
 &lt;p&gt;なのでスリープかけながら&lt;code&gt;running&lt;/code&gt;から外れるまで回す苦しい感じに・・・。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>Lobosでマイグレーションができない in Heroku</title>
+      <link>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</link>
+      <pubDate>Sun, 21 Dec 2014 00:00:00 +0000</pubDate>
       
-        <item>
-          <title>Lobosでマイグレーションができない in Heroku</title>
-          <link>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</link>
-          <pubDate>Sun, 21 Dec 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</guid>
+      <description>
 
 &lt;p&gt;ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。&lt;/p&gt;
 
@@ -366,9 +361,7 @@ lobos.migration=&amp;gt;
 
 &lt;p&gt;&lt;code&gt;lobos.migration&lt;/code&gt;と&lt;code&gt;lobos.migrations&lt;/code&gt;の命名はちょっといけてないような・・・。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
-
   </channel>
 </rss>

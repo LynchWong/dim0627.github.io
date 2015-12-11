@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Wordpress on Unresolved</title>
     <link>http://yet.unresolved.xyz/tags/wordpress/</link>
+    <description>Recent content in Wordpress on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2015</rights>
-    <updated>2015-12-10 14:49:18 &#43;0900 JST</updated>
-
+    <lastBuildDate>Thu, 10 Dec 2015 14:49:18 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>プロダクションのWordPressを捨てHugoに移行した</title>
+      <link>http://yet.unresolved.xyz/blog/2015/12/10/using-hugo-in-production/</link>
+      <pubDate>Thu, 10 Dec 2015 14:49:18 +0900</pubDate>
       
-        <item>
-          <title>プロダクションのWordPressを捨てHugoに移行した</title>
-          <link>http://yet.unresolved.xyz/blog/2015/12/10/using-hugo-in-production/</link>
-          <pubDate>Thu, 10 Dec 2015 14:49:18 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/12/10/using-hugo-in-production/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/12/10/using-hugo-in-production/</guid>
+      <description>
 
 &lt;p&gt;あんまり仕事のことは書かないつもりだったんだけど、このブログの生成でもお世話になっている&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;を結構本気で使ったのでそのことをまとめてみます。&lt;/p&gt;
 
@@ -215,9 +214,7 @@ Make every program a Filter.&lt;/p&gt;
 
 &lt;p&gt;素晴らしきプロダクトである&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;と開発者である&lt;a href=&#34;http://spf13.com/&#34;&gt;Steve Francia氏&lt;/a&gt;に感謝。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
-
   </channel>
 </rss>

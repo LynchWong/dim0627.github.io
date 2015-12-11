@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Php on Unresolved</title>
     <link>http://yet.unresolved.xyz/tags/php/</link>
+    <description>Recent content in Php on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2015</rights>
-    <updated>2015-11-04 12:18:07 &#43;0900 JST</updated>
-
+    <lastBuildDate>Wed, 04 Nov 2015 12:18:07 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/php/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>ELB越しのLaravelでHTTPSを使おうとして困った話</title>
+      <link>http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/</link>
+      <pubDate>Wed, 04 Nov 2015 12:18:07 +0900</pubDate>
       
-        <item>
-          <title>ELB越しのLaravelでHTTPSを使おうとして困った話</title>
-          <link>http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/</link>
-          <pubDate>Wed, 04 Nov 2015 12:18:07 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/</guid>
+      <description>
 
 &lt;h2 id=&#34;ssl証明書はelbに設置する:56aef34fa740ed018dee02e37b63f347&#34;&gt;SSL証明書はELBに設置する&lt;/h2&gt;
 
@@ -94,17 +93,15 @@
 
 &lt;p&gt;めでたしめでたし。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>[Laravel5.1]発行されたSQLと実行計画を取得する</title>
+      <link>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</link>
+      <pubDate>Wed, 30 Sep 2015 13:44:48 +0900</pubDate>
       
-        <item>
-          <title>[Laravel5.1]発行されたSQLと実行計画を取得する</title>
-          <link>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</link>
-          <pubDate>Wed, 30 Sep 2015 13:44:48 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</guid>
+      <description>
 
 &lt;p&gt;インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしい。&lt;/p&gt;
 
@@ -179,17 +176,15 @@
 
 &lt;p&gt;こんな感じ。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>Apigility &#43; React.jsでタスク管理ツールを作ってみる</title>
+      <link>http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/</link>
+      <pubDate>Sat, 14 Feb 2015 19:30:22 +0900</pubDate>
       
-        <item>
-          <title>Apigility &#43; React.jsでタスク管理ツールを作ってみる</title>
-          <link>http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/</link>
-          <pubDate>Sat, 14 Feb 2015 19:30:22 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/</guid>
+      <description>
 
 &lt;p&gt;これに行ってきました。&lt;/p&gt;
 
@@ -460,17 +455,15 @@ $(&amp;quot;#task-post&amp;quot;).on(&amp;quot;click&amp;quot;, function() {
 
 &lt;p&gt;React.jsはもう少ししっかり勉強します。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>PHPファイルの定数に触るとvimがフリーズする</title>
+      <link>http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/</link>
+      <pubDate>Thu, 05 Feb 2015 21:36:25 +0900</pubDate>
       
-        <item>
-          <title>PHPファイルの定数に触るとvimがフリーズする</title>
-          <link>http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/</link>
-          <pubDate>Thu, 05 Feb 2015 21:36:25 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/</guid>
-          <description>&lt;p&gt;&lt;code&gt;neocomplcache&lt;/code&gt;のこの設定が甘かった。&lt;/p&gt;
+      <guid>http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/</guid>
+      <description>&lt;p&gt;&lt;code&gt;neocomplcache&lt;/code&gt;のこの設定が甘かった。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;let g:neocomplcache_omni_patterns.php = &#39;[^. \t]-&amp;gt;\h\w*\|\h\w*::&#39;
 &lt;/code&gt;&lt;/pre&gt;
@@ -485,9 +478,7 @@ $(&amp;quot;#task-post&amp;quot;).on(&amp;quot;click&amp;quot;, function() {
 
 &lt;p&gt;つまり原因は定数云々じゃなく&lt;code&gt;self::&lt;/code&gt;がパターンに合致したせいで、補完が走り一気に重たくなったと。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
-
   </channel>
 </rss>

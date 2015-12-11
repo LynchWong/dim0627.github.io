@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Slack on Unresolved</title>
     <link>http://yet.unresolved.xyz/tags/slack/</link>
+    <description>Recent content in Slack on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2015</rights>
-    <updated>2015-01-25 20:52:46 &#43;0900 JST</updated>
-
+    <lastBuildDate>Sun, 25 Jan 2015 20:52:46 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/slack/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>SlackAPIで遊ぶ</title>
+      <link>http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/</link>
+      <pubDate>Sun, 25 Jan 2015 20:52:46 +0900</pubDate>
       
-        <item>
-          <title>SlackAPIで遊ぶ</title>
-          <link>http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/</link>
-          <pubDate>Sun, 25 Jan 2015 20:52:46 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/</guid>
+      <description>
 
 &lt;p&gt;最近
 &lt;a href=&#34;http://www.amazon.co.jp/gp/product/4797328355/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4797328355&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;ふつうのLinuxプログラミング&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=4797328355&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important; display:inline;width:0;&#34; /&gt;を読んでます。知りたいことが書かれてて楽しい！&lt;/p&gt;
@@ -116,9 +115,7 @@
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/dim0627/slack_repl&#34;&gt;dim0627/slack_repl&lt;/a&gt;&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
-
   </channel>
 </rss>

@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Eloquent Orm on Unresolved</title>
     <link>http://yet.unresolved.xyz/tags/eloquent-orm/</link>
+    <description>Recent content in Eloquent Orm on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2015</rights>
-    <updated>2015-09-30 13:44:48 &#43;0900 JST</updated>
-
+    <lastBuildDate>Wed, 30 Sep 2015 13:44:48 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/eloquent-orm/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>[Laravel5.1]発行されたSQLと実行計画を取得する</title>
+      <link>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</link>
+      <pubDate>Wed, 30 Sep 2015 13:44:48 +0900</pubDate>
       
-        <item>
-          <title>[Laravel5.1]発行されたSQLと実行計画を取得する</title>
-          <link>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</link>
-          <pubDate>Wed, 30 Sep 2015 13:44:48 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</guid>
+      <description>
 
 &lt;p&gt;インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしい。&lt;/p&gt;
 
@@ -91,9 +90,7 @@
 
 &lt;p&gt;こんな感じ。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
-
   </channel>
 </rss>

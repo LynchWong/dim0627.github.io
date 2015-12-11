@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Database on Unresolved</title>
     <link>http://yet.unresolved.xyz/tags/database/</link>
+    <description>Recent content in Database on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2015</rights>
-    <updated>2015-09-30 13:44:48 &#43;0900 JST</updated>
-
+    <lastBuildDate>Wed, 30 Sep 2015 13:44:48 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/database/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>[Laravel5.1]発行されたSQLと実行計画を取得する</title>
+      <link>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</link>
+      <pubDate>Wed, 30 Sep 2015 13:44:48 +0900</pubDate>
       
-        <item>
-          <title>[Laravel5.1]発行されたSQLと実行計画を取得する</title>
-          <link>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</link>
-          <pubDate>Wed, 30 Sep 2015 13:44:48 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</guid>
+      <description>
 
 &lt;p&gt;インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしい。&lt;/p&gt;
 
@@ -91,17 +90,15 @@
 
 &lt;p&gt;こんな感じ。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>Lobosを使ってマイグレーションをする</title>
+      <link>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</link>
+      <pubDate>Thu, 11 Dec 2014 00:00:00 +0000</pubDate>
       
-        <item>
-          <title>Lobosを使ってマイグレーションをする</title>
-          <link>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</link>
-          <pubDate>Thu, 11 Dec 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</guid>
+      <description>
 
 &lt;p&gt;1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。&lt;/p&gt;
 
@@ -273,17 +270,15 @@ lobos_migrations  sites
 
 &lt;p&gt;まだまだ名前空間とか&lt;code&gt;require&lt;/code&gt;あたりの理解が甘いなー・・・。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>クラスタ化インデックスとかカバリングインデックスについてどうせ忘れるからまとめる</title>
+      <link>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</link>
+      <pubDate>Thu, 23 Oct 2014 00:00:00 +0000</pubDate>
       
-        <item>
-          <title>クラスタ化インデックスとかカバリングインデックスについてどうせ忘れるからまとめる</title>
-          <link>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</link>
-          <pubDate>Thu, 23 Oct 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</guid>
+      <description>
 
 &lt;p&gt;SQL Serverを使ってて、ちょっと曖昧にしかわからんなってところがあったので少し調べてみた。&lt;/p&gt;
 
@@ -358,9 +353,7 @@ lobos_migrations  sites
 
 &lt;p&gt;誤った認識があればご指摘を。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
-
   </channel>
 </rss>

@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Ring on Unresolved</title>
     <link>http://yet.unresolved.xyz/tags/ring/</link>
+    <description>Recent content in Ring on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2015</rights>
-    <updated>2015-03-22 19:23:27 &#43;0900 JST</updated>
-
+    <lastBuildDate>Sun, 22 Mar 2015 19:23:27 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/ring/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>[Clojure]ringのCSRFトークンを生成する</title>
+      <link>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</link>
+      <pubDate>Sun, 22 Mar 2015 19:23:27 +0900</pubDate>
       
-        <item>
-          <title>[Clojure]ringのCSRFトークンを生成する</title>
-          <link>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</link>
-          <pubDate>Sun, 22 Mar 2015 19:23:27 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</guid>
-          <description>&lt;p&gt;ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、&lt;/p&gt;
+      <guid>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</guid>
+      <description>&lt;p&gt;ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、&lt;/p&gt;
 
 &lt;p&gt;デフォルトだとPOSTリクエストした時にCSRFトークンチェックが入るようになってると思う。&lt;/p&gt;
 
@@ -74,9 +73,7 @@
   (html (hidden-field &amp;quot;__anti-forgery-token&amp;quot; *anti-forgery-token*)))
 &lt;/code&gt;&lt;/pre&gt;
 </description>
-        </item>
-      
+    </item>
     
-
   </channel>
 </rss>

@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Migration on Unresolved</title>
     <link>http://yet.unresolved.xyz/tags/migration/</link>
+    <description>Recent content in Migration on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2015</rights>
-    <updated>2014-12-21 00:00:00 &#43;0000 UTC</updated>
-
+    <lastBuildDate>Sun, 21 Dec 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/migration/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>Lobosでマイグレーションができない in Heroku</title>
+      <link>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</link>
+      <pubDate>Sun, 21 Dec 2014 00:00:00 +0000</pubDate>
       
-        <item>
-          <title>Lobosでマイグレーションができない in Heroku</title>
-          <link>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</link>
-          <pubDate>Sun, 21 Dec 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</guid>
+      <description>
 
 &lt;p&gt;ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。&lt;/p&gt;
 
@@ -158,17 +157,15 @@ lobos.migration=&amp;gt;
 
 &lt;p&gt;&lt;code&gt;lobos.migration&lt;/code&gt;と&lt;code&gt;lobos.migrations&lt;/code&gt;の命名はちょっといけてないような・・・。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>Lobosを使ってマイグレーションをする</title>
+      <link>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</link>
+      <pubDate>Thu, 11 Dec 2014 00:00:00 +0000</pubDate>
       
-        <item>
-          <title>Lobosを使ってマイグレーションをする</title>
-          <link>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</link>
-          <pubDate>Thu, 11 Dec 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</guid>
+      <description>
 
 &lt;p&gt;1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。&lt;/p&gt;
 
@@ -340,9 +337,7 @@ lobos_migrations  sites
 
 &lt;p&gt;まだまだ名前空間とか&lt;code&gt;require&lt;/code&gt;あたりの理解が甘いなー・・・。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
-
   </channel>
 </rss>

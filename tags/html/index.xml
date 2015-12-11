@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Html on Unresolved</title>
     <link>http://yet.unresolved.xyz/tags/html/</link>
+    <description>Recent content in Html on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2015</rights>
-    <updated>2015-12-11 11:22:28 &#43;0900 JST</updated>
-
+    <lastBuildDate>Fri, 11 Dec 2015 11:22:28 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/html/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>Googleの構造化データの扱いが変わった気がする</title>
+      <link>http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</link>
+      <pubDate>Fri, 11 Dec 2015 11:22:28 +0900</pubDate>
       
-        <item>
-          <title>Googleの構造化データの扱いが変わった気がする</title>
-          <link>http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</link>
-          <pubDate>Fri, 11 Dec 2015 11:22:28 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</guid>
+      <description>
 
 &lt;p&gt;このブログも、他の運営してるサイトも、今日になってエラーが発生するようになった。&lt;/p&gt;
 
@@ -105,17 +104,15 @@
 
 &lt;p&gt;どちらにせよこの辺はこれからも随時変わっていくポイントだろうから、定期的にチェックと対応をしていかなきゃいけないですね。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>OctopressをW3Cのバリデーションにパスさせる</title>
+      <link>http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/</link>
+      <pubDate>Wed, 12 Nov 2014 00:00:00 +0000</pubDate>
       
-        <item>
-          <title>OctopressをW3Cのバリデーションにパスさせる</title>
-          <link>http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/</link>
-          <pubDate>Wed, 12 Nov 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/</guid>
-          <description>&lt;p&gt;ふと思い立って&lt;a href=&#34;http://validator.w3.org/&#34;&gt;Markup Validation Service&lt;/a&gt;をやってみたら13個もエラーが出たので対応してみるよ。&lt;/p&gt;
+      <guid>http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/</guid>
+      <description>&lt;p&gt;ふと思い立って&lt;a href=&#34;http://validator.w3.org/&#34;&gt;Markup Validation Service&lt;/a&gt;をやってみたら13個もエラーが出たので対応してみるよ。&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -242,9 +239,7 @@ Flow content, but with no main element descendants.
 
 &lt;p&gt;警告はもうだるいからいいや&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
-
   </channel>
 </rss>

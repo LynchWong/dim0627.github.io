@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Centos on Unresolved</title>
     <link>http://yet.unresolved.xyz/tags/centos/</link>
+    <description>Recent content in Centos on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2015</rights>
-    <updated>2015-01-22 15:37:14 &#43;0900 JST</updated>
-
+    <lastBuildDate>Thu, 22 Jan 2015 15:37:14 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/centos/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>Vagrant &#43; CentOS &#43; PostgreSQLを最速で構築</title>
+      <link>http://yet.unresolved.xyz/blog/2015/01/22/install-postgresql-on-centos/</link>
+      <pubDate>Thu, 22 Jan 2015 15:37:14 +0900</pubDate>
       
-        <item>
-          <title>Vagrant &#43; CentOS &#43; PostgreSQLを最速で構築</title>
-          <link>http://yet.unresolved.xyz/blog/2015/01/22/install-postgresql-on-centos/</link>
-          <pubDate>Thu, 22 Jan 2015 15:37:14 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/01/22/install-postgresql-on-centos/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/01/22/install-postgresql-on-centos/</guid>
+      <description>
 
 &lt;p&gt;herokuにのっけるアプリを作るとき、ローカルではSQLite使ってたんだけどもう色々つらい。&lt;/p&gt;
 
@@ -176,9 +175,7 @@ postgres=# \q
 
 &lt;p&gt;&lt;a href=&#34;http://www.dbonline.jp/postgresql/connect/index2.html&#34;&gt;PostgreSQLへの接続 - PostgreSQLへの接続と切断 - PostgreSQLの使い方&lt;/a&gt;&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
-
   </channel>
 </rss>

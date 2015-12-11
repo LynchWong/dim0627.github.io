@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Leiningen on Unresolved</title>
     <link>http://yet.unresolved.xyz/tags/leiningen/</link>
+    <description>Recent content in Leiningen on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2015</rights>
-    <updated>2014-12-11 00:00:00 &#43;0000 UTC</updated>
-
+    <lastBuildDate>Thu, 11 Dec 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/leiningen/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>Lobosを使ってマイグレーションをする</title>
+      <link>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</link>
+      <pubDate>Thu, 11 Dec 2014 00:00:00 +0000</pubDate>
       
-        <item>
-          <title>Lobosを使ってマイグレーションをする</title>
-          <link>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</link>
-          <pubDate>Thu, 11 Dec 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</guid>
+      <description>
 
 &lt;p&gt;1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。&lt;/p&gt;
 
@@ -188,17 +187,15 @@ lobos_migrations  sites
 
 &lt;p&gt;まだまだ名前空間とか&lt;code&gt;require&lt;/code&gt;あたりの理解が甘いなー・・・。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>LeiningenでSCSSを自動コンパイルする</title>
+      <link>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</link>
+      <pubDate>Tue, 09 Dec 2014 00:00:00 +0000</pubDate>
       
-        <item>
-          <title>LeiningenでSCSSを自動コンパイルする</title>
-          <link>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</link>
-          <pubDate>Tue, 09 Dec 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</guid>
+      <description>
 
 &lt;p&gt;Clojureを始めて一週間ほどになりまして。&lt;/p&gt;
 
@@ -280,9 +277,7 @@ lobos_migrations  sites
 
 &lt;p&gt;&lt;code&gt;lein scss auto&lt;/code&gt;で変更監視できるっぽい。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
-
   </channel>
 </rss>

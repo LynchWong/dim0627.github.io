@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Beanstalk on Unresolved</title>
     <link>http://yet.unresolved.xyz/tags/beanstalk/</link>
+    <description>Recent content in Beanstalk on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2015</rights>
-    <updated>2014-12-31 00:00:00 &#43;0000 UTC</updated>
-
+    <lastBuildDate>Wed, 31 Dec 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/beanstalk/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>ClojureのWebアプリをDocker &#43; Beanstalkで動かす</title>
+      <link>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</link>
+      <pubDate>Wed, 31 Dec 2014 00:00:00 +0000</pubDate>
       
-        <item>
-          <title>ClojureのWebアプリをDocker &#43; Beanstalkで動かす</title>
-          <link>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</link>
-          <pubDate>Wed, 31 Dec 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</guid>
+      <description>
 
 &lt;p&gt;たぶんこういうのはドキュメント読んでもわからないので、とにかく一通りの流れを実践してみる。&lt;/p&gt;
 
@@ -178,9 +177,7 @@ CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/product
 
 &lt;p&gt;&lt;a href=&#34;http://inokara.hateblo.jp/entry/2013/12/29/215322&#34;&gt;Dockerfile の書き方「私的」なベストプラクティス（3）〜サービスの起動について〜&lt;/a&gt;&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
-
   </channel>
 </rss>

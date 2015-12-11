@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Startup on Unresolved</title>
     <link>http://yet.unresolved.xyz/tags/startup/</link>
+    <description>Recent content in Startup on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2015</rights>
-    <updated>2014-12-02 00:00:00 &#43;0000 UTC</updated>
-
+    <lastBuildDate>Tue, 02 Dec 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/startup/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>HackerにとってのStartup Weekend</title>
+      <link>http://yet.unresolved.xyz/blog/2014/12/02/went-to-startup-weekend-yokohama-2nd/</link>
+      <pubDate>Tue, 02 Dec 2014 00:00:00 +0000</pubDate>
       
-        <item>
-          <title>HackerにとってのStartup Weekend</title>
-          <link>http://yet.unresolved.xyz/blog/2014/12/02/went-to-startup-weekend-yokohama-2nd/</link>
-          <pubDate>Tue, 02 Dec 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/12/02/went-to-startup-weekend-yokohama-2nd/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2014/12/02/went-to-startup-weekend-yokohama-2nd/</guid>
+      <description>
 
 &lt;p&gt;この2週間で、Startup Weekend YokohamaとStartup Weekend Tokyoに参加してきました。&lt;/p&gt;
 
@@ -294,9 +293,7 @@
 
 &lt;p&gt;&lt;a href=&#34;http://developer.android.com/distribute/tools/promote/device-art.html&#34;&gt;Device Art Generator | Android Developers&lt;/a&gt;&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
-
   </channel>
 </rss>

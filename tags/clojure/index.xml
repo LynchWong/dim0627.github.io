@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Clojure on Unresolved</title>
     <link>http://yet.unresolved.xyz/tags/clojure/</link>
+    <description>Recent content in Clojure on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2015</rights>
-    <updated>2015-05-06 09:54:46 &#43;0900 JST</updated>
-
+    <lastBuildDate>Wed, 06 May 2015 09:54:46 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/clojure/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>例によってpaiza online hackathon5をClojureで解いてみた</title>
+      <link>http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/</link>
+      <pubDate>Wed, 06 May 2015 09:54:46 +0900</pubDate>
       
-        <item>
-          <title>例によってpaiza online hackathon5をClojureで解いてみた</title>
-          <link>http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/</link>
-          <pubDate>Wed, 06 May 2015 09:54:46 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/</guid>
+      <description>
 
 &lt;p&gt;まずい更新することがない。&lt;/p&gt;
 
@@ -120,17 +119,15 @@
 
 &lt;p&gt;めんどくさかった。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>VimのClojureプラグイン覚書</title>
+      <link>http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/</link>
+      <pubDate>Sun, 22 Mar 2015 19:47:22 +0900</pubDate>
       
-        <item>
-          <title>VimのClojureプラグイン覚書</title>
-          <link>http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/</link>
-          <pubDate>Sun, 22 Mar 2015 19:47:22 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/</guid>
+      <description>
 
 &lt;p&gt;VimでClojure書くときのあれこれをいっつも忘れるのでまとめておこうと思う。&lt;/p&gt;
 
@@ -212,17 +209,15 @@
 
 &lt;p&gt;ちょっと脳みそがそんなにたくさんの事を一気に覚えるのは無理だったので、一旦使うのをやめた。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>[Clojure]ringのCSRFトークンを生成する</title>
+      <link>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</link>
+      <pubDate>Sun, 22 Mar 2015 19:23:27 +0900</pubDate>
       
-        <item>
-          <title>[Clojure]ringのCSRFトークンを生成する</title>
-          <link>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</link>
-          <pubDate>Sun, 22 Mar 2015 19:23:27 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</guid>
-          <description>&lt;p&gt;ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、&lt;/p&gt;
+      <guid>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</guid>
+      <description>&lt;p&gt;ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、&lt;/p&gt;
 
 &lt;p&gt;デフォルトだとPOSTリクエストした時にCSRFトークンチェックが入るようになってると思う。&lt;/p&gt;
 
@@ -280,17 +275,15 @@
   (html (hidden-field &amp;quot;__anti-forgery-token&amp;quot; *anti-forgery-token*)))
 &lt;/code&gt;&lt;/pre&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>Slamhoundを使ってClojureのrequireを自動生成する</title>
+      <link>http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/</link>
+      <pubDate>Sat, 28 Feb 2015 06:34:59 +0900</pubDate>
       
-        <item>
-          <title>Slamhoundを使ってClojureのrequireを自動生成する</title>
-          <link>http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/</link>
-          <pubDate>Sat, 28 Feb 2015 06:34:59 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/</guid>
+      <description>
 
 &lt;p&gt;ちょっとVimとClojureの環境を整備したくて、こんなのを読んでました。&lt;/p&gt;
 
@@ -372,17 +365,15 @@
 
 &lt;p&gt;しかしClojure周りの物って何もかも遅い感じあるけどなんとかなんないのかな・・・。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>paiza.IOのAPIを使ってreplを作る</title>
+      <link>http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/</link>
+      <pubDate>Sun, 25 Jan 2015 00:58:15 +0900</pubDate>
       
-        <item>
-          <title>paiza.IOのAPIを使ってreplを作る</title>
-          <link>http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/</link>
-          <pubDate>Sun, 25 Jan 2015 00:58:15 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/</guid>
+      <description>
 
 &lt;p&gt;&lt;a href=&#34;http://paiza.jp/&#34;&gt;paiza&lt;/a&gt;が面白いAPIを公開してたから、そのうち使ってみたいと思ってたんだよね。&lt;/p&gt;
 
@@ -470,17 +461,15 @@
 
 &lt;p&gt;なのでスリープかけながら&lt;code&gt;running&lt;/code&gt;から外れるまで回す苦しい感じに・・・。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>Clojureで新卒の女の子を射止めた話</title>
+      <link>http://yet.unresolved.xyz/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/</link>
+      <pubDate>Thu, 15 Jan 2015 21:12:52 +0900</pubDate>
       
-        <item>
-          <title>Clojureで新卒の女の子を射止めた話</title>
-          <link>http://yet.unresolved.xyz/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/</link>
-          <pubDate>Thu, 15 Jan 2015 21:12:52 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/</guid>
+      <description>
 
 &lt;p&gt;何やらプログラムの問題を解くと可愛い女の子とハネムーンにいけるとかいう企画を&lt;a href=&#34;http://paiza.jp/&#34;&gt;paiza&lt;/a&gt;が開催していたらしい。&lt;/p&gt;
 
@@ -661,17 +650,15 @@ m_n&lt;/p&gt;
 
 &lt;p&gt;ちなみにラズパイとかは期間が過ぎてるのでもらえません。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>Clojureのテンプレートエンジンについて</title>
+      <link>http://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/</link>
+      <pubDate>Wed, 14 Jan 2015 01:01:39 +0900</pubDate>
       
-        <item>
-          <title>Clojureのテンプレートエンジンについて</title>
-          <link>http://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/</link>
-          <pubDate>Wed, 14 Jan 2015 01:01:39 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/</guid>
+      <description>
 
 &lt;p&gt;練習のためにClojureでいくつかのWebアプリを作ってみたんだけど、どの言語でもなんだかんだ手間になるテンプレートの扱いについてまとめてみる。&lt;/p&gt;
 
@@ -758,17 +745,15 @@ user=&amp;gt; (html [:p])
 
 &lt;p&gt;ゆくゆくはどっちもしっかり使えるようになりたい。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>ClojureのWebアプリをDocker &#43; Beanstalkで動かす</title>
+      <link>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</link>
+      <pubDate>Wed, 31 Dec 2014 00:00:00 +0000</pubDate>
       
-        <item>
-          <title>ClojureのWebアプリをDocker &#43; Beanstalkで動かす</title>
-          <link>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</link>
-          <pubDate>Wed, 31 Dec 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</guid>
+      <description>
 
 &lt;p&gt;たぶんこういうのはドキュメント読んでもわからないので、とにかく一通りの流れを実践してみる。&lt;/p&gt;
 
@@ -930,17 +915,15 @@ CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/product
 
 &lt;p&gt;&lt;a href=&#34;http://inokara.hateblo.jp/entry/2013/12/29/215322&#34;&gt;Dockerfile の書き方「私的」なベストプラクティス（3）〜サービスの起動について〜&lt;/a&gt;&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>Lobosでマイグレーションができない in Heroku</title>
+      <link>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</link>
+      <pubDate>Sun, 21 Dec 2014 00:00:00 +0000</pubDate>
       
-        <item>
-          <title>Lobosでマイグレーションができない in Heroku</title>
-          <link>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</link>
-          <pubDate>Sun, 21 Dec 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</guid>
+      <description>
 
 &lt;p&gt;ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。&lt;/p&gt;
 
@@ -1082,17 +1065,15 @@ lobos.migration=&amp;gt;
 
 &lt;p&gt;&lt;code&gt;lobos.migration&lt;/code&gt;と&lt;code&gt;lobos.migrations&lt;/code&gt;の命名はちょっといけてないような・・・。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>Lobosを使ってマイグレーションをする</title>
+      <link>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</link>
+      <pubDate>Thu, 11 Dec 2014 00:00:00 +0000</pubDate>
       
-        <item>
-          <title>Lobosを使ってマイグレーションをする</title>
-          <link>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</link>
-          <pubDate>Thu, 11 Dec 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</guid>
+      <description>
 
 &lt;p&gt;1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。&lt;/p&gt;
 
@@ -1264,17 +1245,15 @@ lobos_migrations  sites
 
 &lt;p&gt;まだまだ名前空間とか&lt;code&gt;require&lt;/code&gt;あたりの理解が甘いなー・・・。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>LeiningenでSCSSを自動コンパイルする</title>
+      <link>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</link>
+      <pubDate>Tue, 09 Dec 2014 00:00:00 +0000</pubDate>
       
-        <item>
-          <title>LeiningenでSCSSを自動コンパイルする</title>
-          <link>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</link>
-          <pubDate>Tue, 09 Dec 2014 00:00:00 UTC</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</guid>
+      <description>
 
 &lt;p&gt;Clojureを始めて一週間ほどになりまして。&lt;/p&gt;
 
@@ -1356,9 +1335,7 @@ lobos_migrations  sites
 
 &lt;p&gt;&lt;code&gt;lein scss auto&lt;/code&gt;で変更監視できるっぽい。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
-
   </channel>
 </rss>

@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Vim on Unresolved</title>
     <link>http://yet.unresolved.xyz/tags/vim/</link>
+    <description>Recent content in Vim on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2015</rights>
-    <updated>2015-03-22 19:47:22 &#43;0900 JST</updated>
-
+    <lastBuildDate>Sun, 22 Mar 2015 19:47:22 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>VimのClojureプラグイン覚書</title>
+      <link>http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/</link>
+      <pubDate>Sun, 22 Mar 2015 19:47:22 +0900</pubDate>
       
-        <item>
-          <title>VimのClojureプラグイン覚書</title>
-          <link>http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/</link>
-          <pubDate>Sun, 22 Mar 2015 19:47:22 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/</guid>
+      <description>
 
 &lt;p&gt;VimでClojure書くときのあれこれをいっつも忘れるのでまとめておこうと思う。&lt;/p&gt;
 
@@ -98,17 +97,15 @@
 
 &lt;p&gt;ちょっと脳みそがそんなにたくさんの事を一気に覚えるのは無理だったので、一旦使うのをやめた。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>Slamhoundを使ってClojureのrequireを自動生成する</title>
+      <link>http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/</link>
+      <pubDate>Sat, 28 Feb 2015 06:34:59 +0900</pubDate>
       
-        <item>
-          <title>Slamhoundを使ってClojureのrequireを自動生成する</title>
-          <link>http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/</link>
-          <pubDate>Sat, 28 Feb 2015 06:34:59 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/</guid>
+      <description>
 
 &lt;p&gt;ちょっとVimとClojureの環境を整備したくて、こんなのを読んでました。&lt;/p&gt;
 
@@ -190,17 +187,15 @@
 
 &lt;p&gt;しかしClojure周りの物って何もかも遅い感じあるけどなんとかなんないのかな・・・。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>今だからやるvimコマンド再学習</title>
+      <link>http://yet.unresolved.xyz/blog/2015/02/06/learning-vim-again/</link>
+      <pubDate>Fri, 06 Feb 2015 20:50:35 +0900</pubDate>
       
-        <item>
-          <title>今だからやるvimコマンド再学習</title>
-          <link>http://yet.unresolved.xyz/blog/2015/02/06/learning-vim-again/</link>
-          <pubDate>Fri, 06 Feb 2015 20:50:35 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/02/06/learning-vim-again/</guid>
-          <description>
+      <guid>http://yet.unresolved.xyz/blog/2015/02/06/learning-vim-again/</guid>
+      <description>
 
 &lt;p&gt;ちょうど1年ほど前からvimを使ってるんだけど、&lt;/p&gt;
 
@@ -284,17 +279,15 @@
 
 &lt;p&gt;ある程度操作が出来るようになるとそれでまかなってしまうから成長しないね・・・。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
+    <item>
+      <title>PHPファイルの定数に触るとvimがフリーズする</title>
+      <link>http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/</link>
+      <pubDate>Thu, 05 Feb 2015 21:36:25 +0900</pubDate>
       
-        <item>
-          <title>PHPファイルの定数に触るとvimがフリーズする</title>
-          <link>http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/</link>
-          <pubDate>Thu, 05 Feb 2015 21:36:25 JST</pubDate>
-          <author>Daisuke Tsuji</author>
-          <guid>http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/</guid>
-          <description>&lt;p&gt;&lt;code&gt;neocomplcache&lt;/code&gt;のこの設定が甘かった。&lt;/p&gt;
+      <guid>http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/</guid>
+      <description>&lt;p&gt;&lt;code&gt;neocomplcache&lt;/code&gt;のこの設定が甘かった。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;let g:neocomplcache_omni_patterns.php = &#39;[^. \t]-&amp;gt;\h\w*\|\h\w*::&#39;
 &lt;/code&gt;&lt;/pre&gt;
@@ -309,9 +302,7 @@
 
 &lt;p&gt;つまり原因は定数云々じゃなく&lt;code&gt;self::&lt;/code&gt;がパターンに合致したせいで、補完が走り一気に重たくなったと。&lt;/p&gt;
 </description>
-        </item>
-      
+    </item>
     
-
   </channel>
 </rss>
