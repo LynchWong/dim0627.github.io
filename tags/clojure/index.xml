@@ -534,7 +534,7 @@ S_N&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def in (line-seq (java.io.BufferedReader. *in*)))
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;オレの回答はこんな感じ。&lt;/p&gt;
+&lt;p&gt;僕の回答はこんな感じ。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def in (line-seq (java.io.BufferedReader. *in*)))
 (defn p1 [] (reduce + (map #(Integer/parseInt %) (rest in))))
@@ -736,7 +736,7 @@ user=&amp;gt; (html [:p])
 
 &lt;p&gt;もう1点は、例えば広告のスクリプトみたいにコピペで貼り付けたい文字列とかの出力がちょっとめんどう。&lt;/p&gt;
 
-&lt;p&gt;Hiccupの世界にただのタグを入れるのは見栄えも悪いし、オレはこんな感じで外だしすることで対応した。&lt;/p&gt;
+&lt;p&gt;Hiccupの世界にただのタグを入れるのは見栄えも悪いし、僕はこんな感じで外だしすることで対応した。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def partial-ad-big (str &amp;quot;&amp;lt;script async src=&amp;quot;&amp;quot;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&amp;quot;&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
 &amp;lt;ins class=&amp;quot;&amp;quot;adsbygoogle&amp;quot;&amp;quot;
@@ -1323,7 +1323,7 @@ lobos_migrations  sites
     )
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;ここまではコピペだけど、オレのファイル自体はこんな感じに。&lt;/p&gt;
+&lt;p&gt;ここまではコピペだけど、僕のファイル自体はこんな感じに。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clj&#34;&gt;(defproject tpc &amp;quot;0.1.0-SNAPSHOT&amp;quot;
   :description &amp;quot;FIXME: write description&amp;quot;

@@ -348,7 +348,7 @@ Make every program a Filter.&lt;/p&gt;
 
 &lt;p&gt;原因は&lt;strong&gt;httpsじゃないURLに飛ばすformタグがページに存在する&lt;/strong&gt;せいでした。&lt;/p&gt;
 
-&lt;p&gt;開発環境でもオレオレ証明書を用意したりしてHTTPSで通信するようにしておくべきでした。&lt;/p&gt;
+&lt;p&gt;開発環境でも僕僕証明書を用意したりしてHTTPSで通信するようにしておくべきでした。&lt;/p&gt;
 
 &lt;h2 id=&#34;laravelのrouteメソッド:56aef34fa740ed018dee02e37b63f347&#34;&gt;Laravelのrouteメソッド&lt;/h2&gt;
 
@@ -1118,7 +1118,7 @@ bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
 
 &lt;p&gt;ちょっと友人と共同で開発しているWebアプリがあって、DBの用意も手軽に共有したいのでAnsibleでやることに。&lt;/p&gt;
 
-&lt;p&gt;まあオレはViewしか触ってないから別になくてもいいんだけど・・・。&lt;/p&gt;
+&lt;p&gt;まあ僕はViewしか触ってないから別になくてもいいんだけど・・・。&lt;/p&gt;
 
 &lt;h2 id=&#34;hostsを書く:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;hostsを書く&lt;/h2&gt;
 
@@ -1694,7 +1694,7 @@ $(&amp;quot;#task-post&amp;quot;).on(&amp;quot;click&amp;quot;, function() {
 
 &lt;p&gt;ちょうど1年ほど前からvimを使ってるんだけど、&lt;/p&gt;
 
-&lt;p&gt;例に漏れずオレも使い始めの頃にこのサイトを参考にさせて頂きました。&lt;/p&gt;
+&lt;p&gt;例に漏れず僕も使い始めの頃にこのサイトを参考にさせて頂きました。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://blog.jnito.com/entry/20120101/1325420213&#34;&gt;僕がサクラエディタからVimに乗り換えるまで - give IT a try&lt;/a&gt;&lt;/p&gt;
 
@@ -1821,7 +1821,7 @@ $(&amp;quot;#task-post&amp;quot;).on(&amp;quot;click&amp;quot;, function() {
 
 &lt;p&gt;Kernelとかいつかは触れたいけど実際どこから入ればいいかわからない、って人、結構いると思うんだよね。&lt;/p&gt;
 
-&lt;p&gt;オレもその一人で、この本はなんか、その入り口になるんじゃないかなって期待があった。&lt;/p&gt;
+&lt;p&gt;僕もその一人で、この本はなんか、その入り口になるんじゃないかなって期待があった。&lt;/p&gt;
 
 &lt;p&gt;実際評判も良かったし。&lt;/p&gt;
 
@@ -2045,7 +2045,7 @@ $(&amp;quot;#task-post&amp;quot;).on(&amp;quot;click&amp;quot;, function() {
 
 &lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-25/command_test.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-25/command_test.png&#34; class=&#34;image&#34; alt=&#34;command_test&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;おお、出るじゃん！でも&lt;code&gt;Only you can see this message&lt;/code&gt;って出てる、オレしか見れないんだね。&lt;/p&gt;
+&lt;p&gt;おお、出るじゃん！でも&lt;code&gt;Only you can see this message&lt;/code&gt;って出てる、僕しか見れないんだね。&lt;/p&gt;
 
 &lt;h2 id=&#34;replを作ろう:4800906b877996c3dc902a23f48b0c5e&#34;&gt;REPLを作ろう&lt;/h2&gt;
 
@@ -2422,7 +2422,7 @@ S_N&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def in (line-seq (java.io.BufferedReader. *in*)))
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;オレの回答はこんな感じ。&lt;/p&gt;
+&lt;p&gt;僕の回答はこんな感じ。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def in (line-seq (java.io.BufferedReader. *in*)))
 (defn p1 [] (reduce + (map #(Integer/parseInt %) (rest in))))
@@ -2624,7 +2624,7 @@ user=&amp;gt; (html [:p])
 
 &lt;p&gt;もう1点は、例えば広告のスクリプトみたいにコピペで貼り付けたい文字列とかの出力がちょっとめんどう。&lt;/p&gt;
 
-&lt;p&gt;Hiccupの世界にただのタグを入れるのは見栄えも悪いし、オレはこんな感じで外だしすることで対応した。&lt;/p&gt;
+&lt;p&gt;Hiccupの世界にただのタグを入れるのは見栄えも悪いし、僕はこんな感じで外だしすることで対応した。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def partial-ad-big (str &amp;quot;&amp;lt;script async src=&amp;quot;&amp;quot;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&amp;quot;&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
 &amp;lt;ins class=&amp;quot;&amp;quot;adsbygoogle&amp;quot;&amp;quot;
@@ -2724,9 +2724,9 @@ sys.path.insert(0, &#39;lib&#39;)
 
 &lt;p&gt;&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;でちょっと困ったこと。&lt;/p&gt;
 
-&lt;p&gt;オレは&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;から移行してきたからなおさらなんだけど、記事のタイトルがURLにされてしまう。&lt;/p&gt;
+&lt;p&gt;僕は&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;から移行してきたからなおさらなんだけど、記事のタイトルがURLにされてしまう。&lt;/p&gt;
 
-&lt;p&gt;あ、オレは&lt;code&gt;config.yaml&lt;/code&gt;に&lt;/p&gt;
+&lt;p&gt;あ、僕は&lt;code&gt;config.yaml&lt;/code&gt;に&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;permalinks:
   post: /blog/:year/:month/:day/:title/
@@ -2736,7 +2736,7 @@ sys.path.insert(0, &#39;lib&#39;)
 
 &lt;p&gt;そうすると日本語とかのマルチバイト文字を使うとパーセントエンコードが走って結構悲惨なことになる。&lt;/p&gt;
 
-&lt;p&gt;というかオレの環境だとリンクがきちんと飛べなかった・・・。&lt;/p&gt;
+&lt;p&gt;というか僕の環境だとリンクがきちんと飛べなかった・・・。&lt;/p&gt;
 
 &lt;p&gt;Octopressは記事のファイル名がURLになってたから、ファイル名さえ英語なら問題なかったんだよね。&lt;/p&gt;
 
@@ -2750,7 +2750,7 @@ sys.path.insert(0, &#39;lib&#39;)
 
 &lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-07/permalink.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-07/permalink.png&#34; class=&#34;image&#34; alt=&#34;permalink&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;どうやらオレが困ってたURLのタイトル部は&lt;code&gt;slug&lt;/code&gt;と呼ばれる部分らしい。&lt;/p&gt;
+&lt;p&gt;どうやら僕が困ってたURLのタイトル部は&lt;code&gt;slug&lt;/code&gt;と呼ばれる部分らしい。&lt;/p&gt;
 
 &lt;p&gt;ならこんな風に記事内で毎回指定してしまえば綺麗に話が済むのではないか？&lt;/p&gt;
 
@@ -2834,7 +2834,7 @@ title: &amp;quot;Hugoでマルチバイトのタイトルをスマートに使�
 
 &lt;p&gt;まあそれじゃテスト実行さえ出来ないからどうなんだっていう人もいると思うけど笑&lt;/p&gt;
 
-&lt;p&gt;オレは結構0から作りたい方なので、これくらいすっきりさせてくれてたほうが嬉しかった。&lt;/p&gt;
+&lt;p&gt;僕は結構0から作りたい方なので、これくらいすっきりさせてくれてたほうが嬉しかった。&lt;/p&gt;
 
 &lt;h2 id=&#34;移行によるデメリット:6a8fd8223fd13a59d819b0862af33f03&#34;&gt;移行によるデメリット&lt;/h2&gt;
 
@@ -3661,7 +3661,7 @@ lobos_migrations  sites
     )
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;ここまではコピペだけど、オレのファイル自体はこんな感じに。&lt;/p&gt;
+&lt;p&gt;ここまではコピペだけど、僕のファイル自体はこんな感じに。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clj&#34;&gt;(defproject tpc &amp;quot;0.1.0-SNAPSHOT&amp;quot;
   :description &amp;quot;FIXME: write description&amp;quot;
@@ -3712,7 +3712,7 @@ lobos_migrations  sites
 
 &lt;p&gt;様々な経験になったのは確かなので、自分のためにも、今後行く人のためにもまとめてみようと思います。&lt;/p&gt;
 
-&lt;p&gt;色々な人が体験談を書いてるから、オレはHackerとしての目線で書こうかな。&lt;/p&gt;
+&lt;p&gt;色々な人が体験談を書いてるから、僕はHackerとしての目線で書こうかな。&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -3732,7 +3732,7 @@ lobos_migrations  sites
 
 &lt;p&gt;金曜日の夜に、アイデアがある人は1分間で発表をします。&lt;/p&gt;
 
-&lt;p&gt;オレは、初参加となったYokohamaではしなかった。&lt;/p&gt;
+&lt;p&gt;僕は、初参加となったYokohamaではしなかった。&lt;/p&gt;
 
 &lt;p&gt;様子見したかったのと特にアイデアがなかったので。&lt;/p&gt;
 
@@ -3742,7 +3742,7 @@ lobos_migrations  sites
 
 &lt;p&gt;だからピッチは正直そんな重要なことでもない。&lt;/p&gt;
 
-&lt;p&gt;後悔するよ、って言う人もいるけど、しなかった回とした回があるオレからすれば、どっちでも良かったかな。&lt;/p&gt;
+&lt;p&gt;後悔するよ、って言う人もいるけど、しなかった回とした回がある僕からすれば、どっちでも良かったかな。&lt;/p&gt;
 
 &lt;h2 id=&#34;3日間で何をするのか:6703088d9c3bd70b941ac0a44f0ce152&#34;&gt;3日間で何をするのか&lt;/h2&gt;
 
@@ -3758,7 +3758,7 @@ lobos_migrations  sites
 
 &lt;p&gt;アイデアによってやることは違うから、自分のやりたいことが明確にあるのであれば、それが出来そうなチームに入るのは大事な選択だと思う。&lt;/p&gt;
 
-&lt;p&gt;でも、オレはどんなメンバーとやるのか、ってことの方が大事なのかなとも思った。&lt;/p&gt;
+&lt;p&gt;でも、僕はどんなメンバーとやるのか、ってことの方が大事なのかなとも思った。&lt;/p&gt;
 
 &lt;p&gt;YokohamaもTokyoもすごくいいメンバーに恵まれました。&lt;/p&gt;
 
@@ -3816,7 +3816,7 @@ lobos_migrations  sites
 
 &lt;p&gt;それこそ他のエンジニアとかじゃなくて、そもそも技術とかわかんない人とか、マーケティングの人とか。&lt;/p&gt;
 
-&lt;p&gt;普段からデザイナや企画と調整して仕事してるよ、って人ももちろん居ると思う。オレもそうだし。&lt;/p&gt;
+&lt;p&gt;普段からデザイナや企画と調整して仕事してるよ、って人ももちろん居ると思う。僕もそうだし。&lt;/p&gt;
 
 &lt;p&gt;でもStartup Weekendはもっと距離が近いし、みんなが真剣になって、それぞれの出来ることを発揮して1個のものに取り組むのって、なんか楽しい。&lt;/p&gt;
 
@@ -3828,7 +3828,7 @@ lobos_migrations  sites
 
 &lt;p&gt;例えばFacebookのOAuth認証とか、IaaSやPaaSの利用経験とか。&lt;/p&gt;
 
-&lt;p&gt;特にOAuthなんてエンジニアなら誰でも出来て当然だと思うけど、オレは経験が無かったから調べながらの作業になった。&lt;/p&gt;
+&lt;p&gt;特にOAuthなんてエンジニアなら誰でも出来て当然だと思うけど、僕は経験が無かったから調べながらの作業になった。&lt;/p&gt;
 
 &lt;p&gt;別に素で書ける必要は無いんだけど、これまでにやっていればGitHubから持ってきたりしてさっと作れたのになーと思った。&lt;/p&gt;
 
@@ -3852,21 +3852,21 @@ lobos_migrations  sites
 
 &lt;p&gt;確かに休みを全部使ってこういうのに参加するのは抵抗があるのかもしれない。&lt;/p&gt;
 
-&lt;p&gt;オレも2週連続で参加したせいで、部屋の掃除も出来ないし買い物にも行けないしで結構ぐちゃぐちゃになった笑&lt;/p&gt;
+&lt;p&gt;僕も2週連続で参加したせいで、部屋の掃除も出来ないし買い物にも行けないしで結構ぐちゃぐちゃになった笑&lt;/p&gt;
 
 &lt;p&gt;エンジニアって結構、&lt;strong&gt;勉強しなきゃいけないのはわかってるけど結局しない&lt;/strong&gt;って人が多いんじゃないかなと思う。&lt;/p&gt;
 
-&lt;p&gt;特にオレはそういう焦りがすごくあったから、こういう場に行って、初めましての人となんかしたり、勉強会に誘われて平日の予定を埋めたりするようになったのはすごく良かったな。&lt;/p&gt;
+&lt;p&gt;特に僕はそういう焦りがすごくあったから、こういう場に行って、初めましての人となんかしたり、勉強会に誘われて平日の予定を埋めたりするようになったのはすごく良かったな。&lt;/p&gt;
 
 &lt;h2 id=&#34;hackerはstartup-weekendを楽しめる:6703088d9c3bd70b941ac0a44f0ce152&#34;&gt;HackerはStartup Weekendを楽しめる？&lt;/h2&gt;
 
 &lt;p&gt;個人的には、Startup Weekendを一番楽しめるのはHastlerでもなくDesignerでもなくHackerなんじゃないかと思ってる。&lt;/p&gt;
 
-&lt;p&gt;オレもやってる最中に、来るの間違えたかなーとか、もう来たくないなーって思う場面も結構あった。&lt;/p&gt;
+&lt;p&gt;僕もやってる最中に、来るの間違えたかなーとか、もう来たくないなーって思う場面も結構あった。&lt;/p&gt;
 
 &lt;p&gt;でも終わってみると、すごく楽しくためになる経験だったなって思うし、何よりまた会いたい仲間が出来たことが嬉しかった。&lt;/p&gt;
 
-&lt;p&gt;もちろんオレも本業でプログラムをやってるから、お金についての云々は別に考えてないわけじゃないけど、でもみんなに必要とされながら書くプログラムも楽しいもんだと思います。&lt;/p&gt;
+&lt;p&gt;もちろん僕も本業でプログラムをやってるから、お金についての云々は別に考えてないわけじゃないけど、でもみんなに必要とされながら書くプログラムも楽しいもんだと思います。&lt;/p&gt;
 
 &lt;p&gt;というわけで来年、Yokohama開催のは都合を合わせて参加したいと思います。&lt;/p&gt;
 
@@ -3910,11 +3910,11 @@ lobos_migrations  sites
 
 &lt;p&gt;理由は知らんけどたぶんHastlerやHackerはCreateの分野に居て、DesignerはDesignの分野っていう点で色々と違うものがあるのかなと思う。&lt;/p&gt;
 
-&lt;p&gt;というわけでHackerがマークアップをします。しかしオレを含む9割のエンジニアはデザインが出来ません。&lt;/p&gt;
+&lt;p&gt;というわけでHackerがマークアップをします。しかし僕を含む9割のエンジニアはデザインが出来ません。&lt;/p&gt;
 
 &lt;p&gt;なので良い素材サイトを探しておきましょう。&lt;/p&gt;
 
-&lt;p&gt;サーバサイドなオレが良く使うサイトだったり、使おうと思って使わなかったサイトだったりをあげてこの記事をしめます。&lt;/p&gt;
+&lt;p&gt;サーバサイドな僕が良く使うサイトだったり、使おうと思って使わなかったサイトだったりをあげてこの記事をしめます。&lt;/p&gt;
 
 &lt;h2 id=&#34;フロントエンドをなんとかごまかそう作戦:6703088d9c3bd70b941ac0a44f0ce152&#34;&gt;フロントエンドをなんとかごまかそう作戦&lt;/h2&gt;
 
@@ -4145,9 +4145,9 @@ Flow content, but with no main element descendants.
 
 &lt;p&gt;しかしコンテナ型だから速いとかGolangで出来てるとか、各所は難しい話ばっかで&lt;strong&gt;何が出来て何に使う&lt;/strong&gt;ってのがいまいち見えてこないんだな。&lt;/p&gt;
 
-&lt;p&gt;特にオレみたいに、知識はないけどやってみたい人はそれじゃ理解が進まない！&lt;/p&gt;
+&lt;p&gt;特に僕みたいに、知識はないけどやってみたい人はそれじゃ理解が進まない！&lt;/p&gt;
 
-&lt;p&gt;ちなみにオレの場合、Vagrantはアプリケーション単位に環境を作っています。&lt;/p&gt;
+&lt;p&gt;ちなみに僕の場合、Vagrantはアプリケーション単位に環境を作っています。&lt;/p&gt;
 
 &lt;p&gt;開発するときは、ホストで書く-&amp;gt;ゲストで動かす、って感じに動作環境として使ってるんだけど、&lt;/p&gt;
 
@@ -4163,7 +4163,7 @@ Flow content, but with no main element descendants.
 
 &lt;p&gt;本番で動かすなら結構な知識が必要だから安易にやるのはちょっとね、ってのが製作陣の考えのよう。&lt;/p&gt;
 
-&lt;p&gt;オレは個人的な環境で使いたいだけだから、特に問題はないね。&lt;/p&gt;
+&lt;p&gt;僕は個人的な環境で使いたいだけだから、特に問題はないね。&lt;/p&gt;
 
 &lt;h2 id=&#34;どんな感じに使う:50163fe7ac593e930e96d9451ca55983&#34;&gt;どんな感じに使う？&lt;/h2&gt;
 
@@ -4403,7 +4403,7 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 
 &lt;p&gt;ドメインを持っていない人は先に取得しちゃってね。&lt;/p&gt;
 
-&lt;p&gt;ちなみにオレはGMOさん(&lt;a href=&#34;http://www.onamae.com/&#34;&gt;お名前.com&lt;/a&gt;)で取得しました。&lt;/p&gt;
+&lt;p&gt;ちなみに僕はGMOさん(&lt;a href=&#34;http://www.onamae.com/&#34;&gt;お名前.com&lt;/a&gt;)で取得しました。&lt;/p&gt;
 
 &lt;p&gt;ていうことで以下の手順にそってやっていきます。&lt;/p&gt;
 
@@ -4447,7 +4447,7 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 
 &lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34; class=&#34;image&#34; alt=&#34;step2&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;これによって最後のステップが変わるけど、オレは確認の時点でサブドメインとして設定したので、Google側では特に付加せずやってます。&lt;/p&gt;
+&lt;p&gt;これによって最後のステップが変わるけど、僕は確認の時点でサブドメインとして設定したので、Google側では特に付加せずやってます。&lt;/p&gt;
 
 &lt;h2 id=&#34;aレコードとaaaaレコードの追加:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;AレコードとAAAAレコードの追加&lt;/h2&gt;
 
@@ -4831,7 +4831,7 @@ fast-forwards&#39; section of &#39;git push --help&#39; for details.
 
 &lt;p&gt;元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。&lt;/p&gt;
 
-&lt;p&gt;でもオレはデザイナーじゃないから、あんまりがっつりやるのもやだよね。&lt;/p&gt;
+&lt;p&gt;でも僕はデザイナーじゃないから、あんまりがっつりやるのもやだよね。&lt;/p&gt;
 
 &lt;p&gt;てことで元のclassicテーマをパクって作ろう。&lt;/p&gt;
 
@@ -5187,7 +5187,7 @@ $ git push origin source
 
 &lt;p&gt;記事は&lt;code&gt;rake new_post[&amp;quot;title&amp;quot;]&lt;/code&gt;で行けるらしい。&lt;/p&gt;
 
-&lt;p&gt;でもオレは&lt;code&gt;alias rake=&amp;quot;noglob rake&amp;quot;&lt;/code&gt;しとかなきゃダメだった。&lt;/p&gt;
+&lt;p&gt;でも僕は&lt;code&gt;alias rake=&amp;quot;noglob rake&amp;quot;&lt;/code&gt;しとかなきゃダメだった。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://ackintosh.github.io/blog/2013/02/02/cant-create-post/&#34;&gt;Octopressで記事が作れない(zsh)&lt;/a&gt;&lt;/p&gt;
 

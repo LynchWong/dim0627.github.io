@@ -81,7 +81,7 @@ user=&amp;gt; (html [:p])
 
 &lt;p&gt;もう1点は、例えば広告のスクリプトみたいにコピペで貼り付けたい文字列とかの出力がちょっとめんどう。&lt;/p&gt;
 
-&lt;p&gt;Hiccupの世界にただのタグを入れるのは見栄えも悪いし、オレはこんな感じで外だしすることで対応した。&lt;/p&gt;
+&lt;p&gt;Hiccupの世界にただのタグを入れるのは見栄えも悪いし、僕はこんな感じで外だしすることで対応した。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def partial-ad-big (str &amp;quot;&amp;lt;script async src=&amp;quot;&amp;quot;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&amp;quot;&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
 &amp;lt;ins class=&amp;quot;&amp;quot;adsbygoogle&amp;quot;&amp;quot;

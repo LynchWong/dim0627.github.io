@@ -40,7 +40,7 @@
 
 &lt;p&gt;原因は&lt;strong&gt;httpsじゃないURLに飛ばすformタグがページに存在する&lt;/strong&gt;せいでした。&lt;/p&gt;
 
-&lt;p&gt;開発環境でもオレオレ証明書を用意したりしてHTTPSで通信するようにしておくべきでした。&lt;/p&gt;
+&lt;p&gt;開発環境でも僕僕証明書を用意したりしてHTTPSで通信するようにしておくべきでした。&lt;/p&gt;
 
 &lt;h2 id=&#34;laravelのrouteメソッド:56aef34fa740ed018dee02e37b63f347&#34;&gt;Laravelのrouteメソッド&lt;/h2&gt;
 

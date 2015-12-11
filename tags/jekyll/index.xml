@@ -84,7 +84,7 @@ $ git push origin source
 
 &lt;p&gt;記事は&lt;code&gt;rake new_post[&amp;quot;title&amp;quot;]&lt;/code&gt;で行けるらしい。&lt;/p&gt;
 
-&lt;p&gt;でもオレは&lt;code&gt;alias rake=&amp;quot;noglob rake&amp;quot;&lt;/code&gt;しとかなきゃダメだった。&lt;/p&gt;
+&lt;p&gt;でも僕は&lt;code&gt;alias rake=&amp;quot;noglob rake&amp;quot;&lt;/code&gt;しとかなきゃダメだった。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://ackintosh.github.io/blog/2013/02/02/cant-create-post/&#34;&gt;Octopressで記事が作れない(zsh)&lt;/a&gt;&lt;/p&gt;
 

@@ -62,7 +62,7 @@
 
 &lt;p&gt;まあそれじゃテスト実行さえ出来ないからどうなんだっていう人もいると思うけど笑&lt;/p&gt;
 
-&lt;p&gt;オレは結構0から作りたい方なので、これくらいすっきりさせてくれてたほうが嬉しかった。&lt;/p&gt;
+&lt;p&gt;僕は結構0から作りたい方なので、これくらいすっきりさせてくれてたほうが嬉しかった。&lt;/p&gt;
 
 &lt;h2 id=&#34;移行によるデメリット:6a8fd8223fd13a59d819b0862af33f03&#34;&gt;移行によるデメリット&lt;/h2&gt;
 
@@ -403,7 +403,7 @@ Flow content, but with no main element descendants.
 
 &lt;p&gt;元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。&lt;/p&gt;
 
-&lt;p&gt;でもオレはデザイナーじゃないから、あんまりがっつりやるのもやだよね。&lt;/p&gt;
+&lt;p&gt;でも僕はデザイナーじゃないから、あんまりがっつりやるのもやだよね。&lt;/p&gt;
 
 &lt;p&gt;てことで元のclassicテーマをパクって作ろう。&lt;/p&gt;
 
@@ -709,7 +709,7 @@ $ git push origin source
 
 &lt;p&gt;記事は&lt;code&gt;rake new_post[&amp;quot;title&amp;quot;]&lt;/code&gt;で行けるらしい。&lt;/p&gt;
 
-&lt;p&gt;でもオレは&lt;code&gt;alias rake=&amp;quot;noglob rake&amp;quot;&lt;/code&gt;しとかなきゃダメだった。&lt;/p&gt;
+&lt;p&gt;でも僕は&lt;code&gt;alias rake=&amp;quot;noglob rake&amp;quot;&lt;/code&gt;しとかなきゃダメだった。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://ackintosh.github.io/blog/2013/02/02/cant-create-post/&#34;&gt;Octopressで記事が作れない(zsh)&lt;/a&gt;&lt;/p&gt;
 

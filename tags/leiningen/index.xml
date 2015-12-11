@@ -247,7 +247,7 @@ lobos_migrations  sites
     )
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;ここまではコピペだけど、オレのファイル自体はこんな感じに。&lt;/p&gt;
+&lt;p&gt;ここまではコピペだけど、僕のファイル自体はこんな感じに。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clj&#34;&gt;(defproject tpc &amp;quot;0.1.0-SNAPSHOT&amp;quot;
   :description &amp;quot;FIXME: write description&amp;quot;

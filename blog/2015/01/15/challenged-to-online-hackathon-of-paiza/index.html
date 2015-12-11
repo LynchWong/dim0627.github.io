@@ -116,7 +116,7 @@ S_N</p>
 <pre><code class="language-clojure">(def in (line-seq (java.io.BufferedReader. *in*)))
 </code></pre>
 
-<p>オレの回答はこんな感じ。</p>
+<p>僕の回答はこんな感じ。</p>
 
 <pre><code class="language-clojure">(def in (line-seq (java.io.BufferedReader. *in*)))
 (defn p1 [] (reduce + (map #(Integer/parseInt %) (rest in))))

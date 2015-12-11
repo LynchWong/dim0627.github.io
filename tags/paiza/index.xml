@@ -184,7 +184,7 @@ S_N&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def in (line-seq (java.io.BufferedReader. *in*)))
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;オレの回答はこんな感じ。&lt;/p&gt;
+&lt;p&gt;僕の回答はこんな感じ。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def in (line-seq (java.io.BufferedReader. *in*)))
 (defn p1 [] (reduce + (map #(Integer/parseInt %) (rest in))))
