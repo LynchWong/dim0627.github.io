@@ -16,9 +16,9 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href='//fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Lato:100,300' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">
   </head>
@@ -38,26 +38,12 @@
       <meta itemprop="description" content="neocomplcacheのこの設定が甘かった。 let g:neocomplcache_omni_patterns.php = &#39;[^. \t]-&gt;\h\w*\|\h\w*::&#39; 参考になったのはこの記事。 vim-jp » Hack #193: neocomplcacheの設定について知る 後編">
       <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/">
 
-      <div class="row">
-        <div class="col-sm-3">
-          <aside class="text-right">
-            <div class="date">
-              <time itemprop="datePublished" pubdate="pubdate" datetime="2015-02-05T21:36:25&#43;09:00">
-                Thu, Feb 5, 2015
-              </time>
-            </div>
-            <div class="tags">
-              
-              <span class="tag"><a href="http://yet.unresolved.xyz/tags/vim">vim</a></span>
-              
-              <span class="tag"><a href="http://yet.unresolved.xyz/tags/php">php</a></span>
-              
-            </div>
-          </aside>
-        </div>
-        <div class="col-sm-9">
-          <h1><a href="http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/">PHPファイルの定数に触るとvimがフリーズする</a></h1>
-          <div class="body" itemprop="articleBody"><p><code>neocomplcache</code>のこの設定が甘かった。</p>
+      <time itemprop="datePublished" pubdate="pubdate" datetime="2015-02-05T21:36:25&#43;09:00">
+        Thu, Feb 5, 2015
+      </time>
+
+      <h1><a href="http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/">PHPファイルの定数に触るとvimがフリーズする</a></h1>
+      <div class="body" itemprop="articleBody"><p><code>neocomplcache</code>のこの設定が甘かった。</p>
 
 <pre><code>let g:neocomplcache_omni_patterns.php = '[^. \t]-&gt;\h\w*\|\h\w*::'
 </code></pre>
@@ -72,8 +58,16 @@
 
 <p>つまり原因は定数云々じゃなく<code>self::</code>がパターンに合致したせいで、補完が走り一気に重たくなったと。</p>
 </div>
+
+      <aside>
+        <div class="tags">
+          
+          <span class="tag"><a href="http://yet.unresolved.xyz/tags/vim">vim</a></span>
+          
+          <span class="tag"><a href="http://yet.unresolved.xyz/tags/php">php</a></span>
+          
         </div>
-      </div>
+      </aside>
 
     </article>
   </div>
@@ -84,7 +78,7 @@
     <footer id="site-footer" class="text-center font-logo">
       <p>&copy; 2015  Daisuke Tsuji </p>
 
-      <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>, Theme <a href="https://github.com/dim0627/hugo_theme_harb" target="_blank">Harb</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+      <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>, <div class="visible-xs"></div>Theme <a href="https://github.com/dim0627/hugo_theme_harb" target="_blank">Harb</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
     </footer>
 
     <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
