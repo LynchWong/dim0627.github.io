@@ -4,7 +4,7 @@ date: 2015-10-09T22:15:51+09:00
 eyecatch: "book3.jpg"
 slug: "hugo-support-cjk-language"
 tags: ["hugo", "golang"]
-title: "HugoのSummaryが日本語に対応した"
+title: "Hugo0.15でSummaryが日本語に対応するっぽい"
 ---
 
 会社のMacにも[Hugo](https://gohugo.io/)をセットアップしてあるんだけど、テーマの編集とかの続きを家でやろうとしたら`.Summary`が異なる挙動をしてることに気づいた。
@@ -50,4 +50,14 @@ Search Consoleから被リンクを辿ってたら以下の記事にたどり着
 `<meta name="generator" content="Hugo 0.15-DEV" />`
 
 僕のブログのせいで戸惑わせてしまい、大変失礼しました。
+
+このことに伴い、記事のタイトルを
+
+>HugoのSummaryが日本語に対応した
+
+から
+
+>Hugo0.15でSummaryが日本語に対応するっぽい
+
+に変更しました。
 
