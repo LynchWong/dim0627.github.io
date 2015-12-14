@@ -38,3 +38,16 @@ HasCJKLanguage: true
 Golangは他人の書いたソースが読みやすくて良い。
 
 書くのはあんまりすきじゃないけど。
+
+**追記*
+
+Search Consoleから被リンクを辿ってたら以下の記事にたどり着いた。
+
+[2015 11 05 - log](http://deprode.net/log/logs/2015-11-05/)
+
+上記ブログのauthor様が仰るとおり、僕のHugoの環境はStableじゃなくてDevです。
+
+`<meta name="generator" content="Hugo 0.15-DEV" />`
+
+僕のブログのせいで戸惑わせてしまい、大変失礼しました。
+
