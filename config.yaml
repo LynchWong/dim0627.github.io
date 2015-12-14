@@ -20,7 +20,7 @@ Indexes:
   tag: "tags"
 
 permalinks:
-  post: /blog/:year/:month/:day/:slug/
+  blog: /blog/:year/:month/:day/:slug/
 
 MetadataFormat: "yaml"
 HasCJKLanguage: true
