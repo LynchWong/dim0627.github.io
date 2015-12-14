@@ -217,7 +217,7 @@ Make every program a Filter.&lt;/p&gt;
     </item>
     
     <item>
-      <title>HugoのSummaryが日本語に対応した</title>
+      <title>Hugo0.15でSummaryが日本語に対応するっぽい</title>
       <link>http://yet.unresolved.xyz/blog/2015/10/09/hugo-support-cjk-language/</link>
       <pubDate>Fri, 09 Oct 2015 22:15:51 +0900</pubDate>
       
@@ -264,6 +264,20 @@ Make every program a Filter.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;&amp;lt;meta name=&amp;quot;generator&amp;quot; content=&amp;quot;Hugo 0.15-DEV&amp;quot; /&amp;gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;僕のブログのせいで戸惑わせてしまい、大変失礼しました。&lt;/p&gt;
+
+&lt;p&gt;このことに伴い、記事のタイトルを&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;HugoのSummaryが日本語に対応した&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;から&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Hugo0.15でSummaryが日本語に対応するっぽい&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;に変更しました。&lt;/p&gt;
 </description>
     </item>
     
