@@ -375,9 +375,7 @@ Make every program a Filter.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;---
 tags: [&amp;quot;hugo&amp;quot;, &amp;quot;golang&amp;quot;]
-comments: true
 date: 2015-01-07T23:56:32+09:00
-eyecatch: &amp;quot;hugo.png&amp;quot;
 slug: &amp;quot;how-to-use-multibyte-title-in-hugo&amp;quot;
 title: &amp;quot;Hugoでマルチバイトのタイトルをスマートに使う方法&amp;quot;
 ---

@@ -494,8 +494,7 @@ $ cd sinatra
 $ touch Dockerfile
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;# This is a comment
-FROM ubuntu:14.04
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;# This is a FROM ubuntu:14.04
 MAINTAINER Kate Smith &amp;lt;ksmith@example.com&amp;gt;
 RUN apt-get update &amp;amp;&amp;amp; apt-get install -y ruby ruby-dev
 RUN gem install sinatra

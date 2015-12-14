@@ -62,13 +62,16 @@ time {
 /* Original */
 header.site {
   padding: 50px 0;
+}
+
+header.site .logo {
+  text-decoration: none;
+  font-family: 'Merriweather', serif;
   font-size: 2rem;
 }
 
-header.site a {
-  color: #2d3f52;
-  text-decoration: none;
-  font-family: 'Merriweather', serif;
+nav.site {
+  padding-bottom: 50px;
 }
 
 .single article h1,
