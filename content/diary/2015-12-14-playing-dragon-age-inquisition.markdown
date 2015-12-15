@@ -77,7 +77,8 @@ draft: true
 
 ## DLCは満足した
 
-実はまだクリア出来てないんだな、なんだっけ、最後のやつ。本当のラストに繋がるやつがまだ終わらせられてない。
+実はまだクリア出来てないんだな、なんだっけ、最後のやつ。招かれざる客だっけ。
+あれだけまだ終わらせられてない。
 
 あれの途中で、アイアンブルが抜けるってことがわかってやめて、3周目に入ったんだよね、本編のフラグ立ててないやってことに気づいて。
 
@@ -85,7 +86,7 @@ draft: true
 
 村の聖獣だっけ、あの話とかすごく良いよね、あれで一致団結してハコンの顎に攻め込むとことか。
 
-地底世界はボスまでが少しマンネリしたけどね、ボスは一番苦戦したわ、無理かなって思った。
+地底世界はボスまでが少しマンネリしたけどね、ボスは一番苦戦したわ、正直無理かなって思った。
 
 <a rel="nofollow" href="http://www.amazon.co.jp/gp/product/B00JRUJIPW/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B00JRUJIPW&linkCode=as2&tag=unresolved-22">ドラゴンエイジ:インクイジション (通常版)</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=B00JRUJIPW" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;display: none;" />
 

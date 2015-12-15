@@ -2,7 +2,7 @@
 date: 2015-12-14T14:32:45+09:00
 slug: "playing-blood-borne"
 tags: ["bloodborne", "game"]
-title: "今更だけどBloodborneやってる"
+title: "今更だけどBloodborneをやってる"
 draft: true
 ---
 

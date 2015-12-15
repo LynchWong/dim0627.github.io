@@ -1,7 +1,7 @@
 ---
 date: 2015-12-14T22:17:32+09:00
 slug: "we-live"
-tags: ["book"]
+tags: ["novel"]
 title: "「生きる僕ら」を読んだ"
 draft: true
 ---

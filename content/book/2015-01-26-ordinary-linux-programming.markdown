@@ -1,7 +1,7 @@
 ---
 date: 2015-01-26T14:17:29+09:00
 slug: "ordinary-linux-programming"
-tags: ["linux", "book"]
+tags: ["linux"]
 title: "「ふつうのLinuxプログラミング」を読んだ"
 ---
 
