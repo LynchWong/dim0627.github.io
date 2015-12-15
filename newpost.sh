@@ -3,4 +3,4 @@
 title=`echo $1 | tr "A-Z" "a-z"`
 title=`echo $title | tr " " "-"`
 title=`echo $title | sed "s/\.//g"`
-hugo new tech/"`date +%Y-%m-%d`-$title.markdown"
+hugo new technology/"`date +%Y-%m-%d`-$title.markdown"

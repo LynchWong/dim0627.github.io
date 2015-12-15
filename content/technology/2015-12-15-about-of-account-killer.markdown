@@ -12,6 +12,8 @@ WordPress.comとGravatarを退会しようと思ったんだけどなんか退�
 
 [WordPress.comとGravatarのアカウントは一度登録したら何があっても絶対に削除できない - 檜山正幸のキマイラ飼育記](http://d.hatena.ne.jp/m-hiyama/20150915/1442277074)
 
+**WordPress.comとGravatarのアカウントは一度登録したら何があっても絶対に削除できない！？**
+
 まじかよ、なんてひどいサービスだ。
 
 それはまあよくて、どっちにしろWordPressがひどいのは知ってたし。
