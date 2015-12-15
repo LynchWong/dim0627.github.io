@@ -11,10 +11,10 @@
     
     <item>
       <title>Python on GAEで3rdパーティライブラリを使う</title>
-      <link>http://yet.unresolved.xyz/technology/use-the-third-party-library-in-python-on-gae/</link>
+      <link>http://yet.unresolved.xyz/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/</link>
       <pubDate>Mon, 12 Jan 2015 00:19:33 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/technology/use-the-third-party-library-in-python-on-gae/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/</guid>
       <description>
 
 &lt;p&gt;ひさびさに&lt;a href=&#34;https://cloud.google.com/appengine/&#34;&gt;Google App Engine&lt;/a&gt;を使おうとしたらGoogle Cloud Platformだかなんだかでいろいろと変わってて戸惑った。&lt;/p&gt;

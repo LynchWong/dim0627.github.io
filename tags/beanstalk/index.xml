@@ -11,10 +11,10 @@
     
     <item>
       <title>ClojureのWebアプリをDocker &#43; Beanstalkで動かす</title>
-      <link>http://yet.unresolved.xyz/technology/clojure-on-docker-and-aws-beanstalk/</link>
+      <link>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</link>
       <pubDate>Wed, 31 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/technology/clojure-on-docker-and-aws-beanstalk/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</guid>
       <description>
 
 &lt;p&gt;たぶんこういうのはドキュメント読んでもわからないので、とにかく一通りの流れを実践してみる。&lt;/p&gt;

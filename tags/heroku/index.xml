@@ -11,10 +11,10 @@
     
     <item>
       <title>SlackAPIで遊ぶ</title>
-      <link>http://yet.unresolved.xyz/technology/play-slack-api/</link>
+      <link>http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/</link>
       <pubDate>Sun, 25 Jan 2015 20:52:46 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/technology/play-slack-api/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/</guid>
       <description>
 
 &lt;p&gt;最近
@@ -119,10 +119,10 @@
     
     <item>
       <title>paiza.IOのAPIを使ってreplを作る</title>
-      <link>http://yet.unresolved.xyz/technology/make-repl-using-the-paizaio/</link>
+      <link>http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/</link>
       <pubDate>Sun, 25 Jan 2015 00:58:15 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/technology/make-repl-using-the-paizaio/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;http://paiza.jp/&#34;&gt;paiza&lt;/a&gt;が面白いAPIを公開してたから、そのうち使ってみたいと思ってたんだよね。&lt;/p&gt;
@@ -215,10 +215,10 @@
     
     <item>
       <title>Lobosでマイグレーションができない in Heroku</title>
-      <link>http://yet.unresolved.xyz/technology/does-not-work-lobos-in-heroku/</link>
+      <link>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</link>
       <pubDate>Sun, 21 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/technology/does-not-work-lobos-in-heroku/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</guid>
       <description>
 
 &lt;p&gt;ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。&lt;/p&gt;

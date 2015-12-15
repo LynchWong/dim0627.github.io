@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.15-DEV" />
+
+    
+    <title>paiza.IOのAPIを使ってreplを作る - Unresolved</title>
+    
+
+    <link rel="shortcut icon" href="http://yet.unresolved.xyz/favicon.ico">
+
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans|Merriweather:700' rel='stylesheet' type='text/css'>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site">
+      <div class="container">
+        <a href="http://yet.unresolved.xyz" class="logo">Unresolved</a>
+      </div>
+    </header>
+
+    <div class="site">
+
+
+<div class="single">
+  <div class="container">
+    <article itemscope="itemscope" itemtype="http://schema.org/Article">
+      <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz"/>
+      <meta itemprop="dateModified" content="2015-01-25T00:58:15&#43;09:00">
+      <meta itemprop="headline" content="paiza.IOのAPIを使ってreplを作る">
+      <meta itemprop="description" content="paizaが面白いAPIを公開してたから、そのうち使ってみたいと思ってたんだよね。 ブラウザでプログラミング・実行ができる「オンライン実行環境">
+      <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/">
+      <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.jpg" />
+        <meta itemprop="width" content="800">
+        <meta itemprop="height" content="800">
+      </div>
+      <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.jpg">
+          <meta itemprop="width" content="100">
+          <meta itemprop="height" content="100">
+        </div>
+        <meta itemprop="name" content="Unresolved">
+      </div>
+      <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+        <meta itemprop="name" content="Daisuke Tsuji">
+      </div>
+
+      <header>
+        <h1 class="title">paiza.IOのAPIを使ってreplを作る</h1>
+        <time itemprop="datePublished" pubdate="pubdate" datetime="2015-01-25T00:58:15&#43;09:00">
+          Sun, Jan 25, 2015
+        </time>
+        <a href="/technology/" class="section">technology</a>
+      </header>
+
+      <div class="body" itemprop="articleBody">
+
+<p><a href="http://paiza.jp/">paiza</a>が面白いAPIを公開してたから、そのうち使ってみたいと思ってたんだよね。</p>
+
+<p><a href="https://paiza.io/">ブラウザでプログラミング・実行ができる「オンライン実行環境」| paiza.IO</a></p>
+
+<p>ちょっとSlackAPIで使ってみたいからこの機会に軽くだけ触ってみる。</p>
+
+<h2 id="何が出来る:263a1859984e07d4bd8e496e6113e0fc">何が出来る？</h2>
+
+<p>たくさんの言語のREPLが使える！すごい！</p>
+
+<p>ただ、コンパイル言語はそんな気軽に使える感じではないみたい。</p>
+
+<p>例えばJavaで言えば、<code>System.out.println(&quot;Hello&quot;);</code>だけじゃなくてクラス定義から含めなきゃいけないみたいに。</p>
+
+<h2 id="どうやって使う:263a1859984e07d4bd8e496e6113e0fc">どうやって使う？</h2>
+
+<p>どうやら<a href="http://swagger.io/">Swagger</a>っていうOSSを使ってるみたい。</p>
+
+<p>paiza.IO上でのデモも使える。</p>
+
+<p><a href="http://api.paiza.io/docs/swagger/#!/runners/">Swagger UI</a></p>
+
+<p>なんか動かないなと思ったら<code>https</code>で<code>http</code>のリソースを参照してたみたいで、ブロックされてた。</p>
+
+<pre><code>Mixed Content: The page at 'https://api.paiza.io/docs/swagger/#!/runners/' was loaded over HTTPS, but requested an insecure XMLHttpRequest endpoint 'http://api.paiza.io/docs/swagger-docs/runners.json?api_key=guest'. This request has been blocked; the content must be served over HTTPS.
+</code></pre>
+
+<p>評価パターンは3つあるみたい。</p>
+
+<h3 id="runners-create:263a1859984e07d4bd8e496e6113e0fc">runners/create</h3>
+
+<p>コードの実行が出来る。</p>
+
+<p>レスポンスに<code>id</code>と<code>status</code>が返ってきて、この<code>id</code>を使って実行結果とかを見る。</p>
+
+<h3 id="runners-get-status:263a1859984e07d4bd8e496e6113e0fc">runners/get_status</h3>
+
+<p>実行結果を見ることが出来る。</p>
+
+<p><code>completed</code>とかそういうレベル。</p>
+
+<h3 id="runners-get-details:263a1859984e07d4bd8e496e6113e0fc">runners/get_details</h3>
+
+<p>実行結果として出力された値とかを見ることが出来る。</p>
+
+<p><code>runners/create</code>で実行して<code>runners/get_details</code>で結果を見る感じ。</p>
+
+<h2 id="clojureから叩こう:263a1859984e07d4bd8e496e6113e0fc">Clojureから叩こう</h2>
+
+<p>使い方はわかったしURL叩けば済む話だしさっさと作っちゃう。</p>
+
+<p>HTTPアクセスはJavaのクラスを使おうかなと思ったけど、<a href="https://github.com/dakrone/clj-http">dakrone/clj-http</a>っていうすごく優秀！なライブラリがあったのでこれを使います。</p>
+
+<p>まず<code>runners/create</code>を実行するところ。</p>
+
+<pre><code class="language-clojure">(defn repl [language source]
+  (let [run-id (-&gt; (httpc/post &quot;http://api.paiza.io/runners/create&quot;
+                               {:form-params {:source_code source
+                                              :language language
+                                              :api_key &quot;guest&quot;}
+                                :as :json})
+                   :body
+                   :id)]
+    (get-res run-id)))
+</code></pre>
+
+<p><code>get-res</code>は後述。<code>get_details</code>を実行するための関数。</p>
+
+<p><code>api_key</code>ってこれでいいのだろうか。</p>
+
+<p>とりあえず動いてはいる！</p>
+
+<p>実行結果の取得はこんな感じ。</p>
+
+<pre><code class="language-clojure">(defn get-res [run-id]
+  (let [res (httpc/get (str &quot;http://api.paiza.io/runners/get_details?id=&quot; run-id &quot;&amp;api_key=guest&quot;)
+                           {:as :json})]
+    (if (= (-&gt; res :body :status) &quot;running&quot;)
+      (do (Thread/sleep 100) (recur run-id))
+      (-&gt; res :body :stdout))))
+</code></pre>
+
+<p><code>runners/create</code>を実行した直後は<code>status</code>が<code>running</code>なので、結果が取得できなかった。</p>
+
+<p>なのでスリープかけながら<code>running</code>から外れるまで回す苦しい感じに・・・。</p>
+</div>
+
+      <aside>
+        <div class="tags">
+          
+          <span class="tag"><a href="http://yet.unresolved.xyz/tags/heroku">heroku</a></span>
+          
+          <span class="tag"><a href="http://yet.unresolved.xyz/tags/paizaio">paizaio</a></span>
+          
+          <span class="tag"><a href="http://yet.unresolved.xyz/tags/clojure">clojure</a></span>
+          
+        </div>
+      </aside>
+
+    </article>
+  </div>
+</div>
+
+    </div>
+
+    <footer id="site-footer">
+      <div class="container">
+        <p>&copy; 2015  Daisuke Tsuji </p>
+
+        <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
+        <p>Theme <a href="https://github.com/dim0627/hugo_theme_harb" target="_blank">Harb</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script src="http://yet.unresolved.xyz/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-55005303-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+  </body>
+</html>
+
+

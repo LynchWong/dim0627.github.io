@@ -11,10 +11,10 @@
     
     <item>
       <title>ブログをOctopressからHugoに移行した</title>
-      <link>http://yet.unresolved.xyz/technology/migrate-blog-to-hugo-from-octopress/</link>
+      <link>http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/</link>
       <pubDate>Sun, 04 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/technology/migrate-blog-to-hugo-from-octopress/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;でのブログもずいぶん慣れてきたところで&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;に移行しました。&lt;/p&gt;
@@ -186,10 +186,10 @@ hugo new post/&amp;quot;`date +%Y-%m-%d`-$title.markdown&amp;quot;
     
     <item>
       <title>Octopressのサイドバーを下部に移動する</title>
-      <link>http://yet.unresolved.xyz/technology/move-sidebar-at-under-the-article/</link>
+      <link>http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/</link>
       <pubDate>Wed, 22 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/technology/move-sidebar-at-under-the-article/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2014/10/22/move-sidebar-at-under-the-article/</guid>
       <description>&lt;p&gt;デフォルトのテーマだとサイドバーの表示/非表示の切り替えが出来て、非表示にするとサイドバーは記事の下に落っこちるんだけど、&lt;/p&gt;
 
 &lt;p&gt;常時この状態にした方がかっこいいんでないか？ということで移動させてみることに。&lt;/p&gt;
@@ -253,10 +253,10 @@ hugo new post/&amp;quot;`date +%Y-%m-%d`-$title.markdown&amp;quot;
     
     <item>
       <title>Octopressのテーマを作ってみる</title>
-      <link>http://yet.unresolved.xyz/technology/making-new-theme-flatten/</link>
+      <link>http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/</link>
       <pubDate>Sun, 21 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/technology/making-new-theme-flatten/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/</guid>
       <description>
 
 &lt;p&gt;元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。&lt;/p&gt;
@@ -326,10 +326,10 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
     
     <item>
       <title>_config.ymlに書いたdescriptionが設定されない</title>
-      <link>http://yet.unresolved.xyz/technology/description-is-not-set/</link>
+      <link>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</link>
       <pubDate>Sun, 21 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/technology/description-is-not-set/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2014/09/21/description-is-not-set/</guid>
       <description>&lt;p&gt;認識が間違ってるのか、_config.ymlに書いたdescriptionがサイトに反映されない・・・。&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;source/_includes/head.html&lt;/code&gt;のコードを見てみるとこんな感じ。&lt;/p&gt;
@@ -364,10 +364,10 @@ _colors.scss _fonts.scss  _layout.scss _styles.scss
     
     <item>
       <title>OctopressのサイドバーにGravatarを表示させる</title>
-      <link>http://yet.unresolved.xyz/technology/making-gravatar-sidebar/</link>
+      <link>http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/</link>
       <pubDate>Sat, 20 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/technology/making-gravatar-sidebar/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/</guid>
       <description>
 
 &lt;h2 id=&#34;octopressのサイドバーってどうなってんの:61eb03e5faeba6147c5a5cd44e5e95a1&#34;&gt;Octopressのサイドバーってどうなってんの？&lt;/h2&gt;

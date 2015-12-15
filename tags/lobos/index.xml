@@ -11,10 +11,10 @@
     
     <item>
       <title>Lobosでマイグレーションができない in Heroku</title>
-      <link>http://yet.unresolved.xyz/technology/does-not-work-lobos-in-heroku/</link>
+      <link>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</link>
       <pubDate>Sun, 21 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/technology/does-not-work-lobos-in-heroku/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</guid>
       <description>
 
 &lt;p&gt;ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。&lt;/p&gt;
@@ -161,10 +161,10 @@ lobos.migration=&amp;gt;
     
     <item>
       <title>Lobosを使ってマイグレーションをする</title>
-      <link>http://yet.unresolved.xyz/technology/usage-for-lobos-migration/</link>
+      <link>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</link>
       <pubDate>Thu, 11 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/technology/usage-for-lobos-migration/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</guid>
       <description>
 
 &lt;p&gt;1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。&lt;/p&gt;

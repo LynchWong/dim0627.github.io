@@ -164,10 +164,10 @@
     
     <item>
       <title>Vagrant &#43; CentOS &#43; PostgreSQLを最速で構築</title>
-      <link>http://yet.unresolved.xyz/technology/install-postgresql-on-centos/</link>
+      <link>http://yet.unresolved.xyz/blog/2015/01/22/install-postgresql-on-centos/</link>
       <pubDate>Thu, 22 Jan 2015 15:37:14 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/technology/install-postgresql-on-centos/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2015/01/22/install-postgresql-on-centos/</guid>
       <description>
 
 &lt;p&gt;herokuにのっけるアプリを作るとき、ローカルではSQLite使ってたんだけどもう色々つらい。&lt;/p&gt;
@@ -332,10 +332,10 @@ postgres=# \q
     
     <item>
       <title>UbuntuにAurigaを構築してみる</title>
-      <link>http://yet.unresolved.xyz/technology/build-auriga-server-on-ubuntu/</link>
+      <link>http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/</link>
       <pubDate>Sun, 19 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/technology/build-auriga-server-on-ubuntu/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/</guid>
       <description>
 
 &lt;p&gt;今更だがAurigaの構築をやってみる。&lt;/p&gt;

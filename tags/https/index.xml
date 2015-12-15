@@ -11,10 +11,10 @@
     
     <item>
       <title>ELB越しのLaravelでHTTPSを使おうとして困った話</title>
-      <link>http://yet.unresolved.xyz/technology/using-https-in-laravel/</link>
+      <link>http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/</link>
       <pubDate>Wed, 04 Nov 2015 12:18:07 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/technology/using-https-in-laravel/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/</guid>
       <description>
 
 &lt;h2 id=&#34;ssl証明書はelbに設置する:56aef34fa740ed018dee02e37b63f347&#34;&gt;SSL証明書はELBに設置する&lt;/h2&gt;

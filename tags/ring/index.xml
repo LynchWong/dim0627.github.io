@@ -11,10 +11,10 @@
     
     <item>
       <title>[Clojure]ringのCSRFトークンを生成する</title>
-      <link>http://yet.unresolved.xyz/technology/invalid-anti-forgery-token-on-ring/</link>
+      <link>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</link>
       <pubDate>Sun, 22 Mar 2015 19:23:27 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/technology/invalid-anti-forgery-token-on-ring/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</guid>
       <description>&lt;p&gt;ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、&lt;/p&gt;
 
 &lt;p&gt;デフォルトだとPOSTリクエストした時にCSRFトークンチェックが入るようになってると思う。&lt;/p&gt;

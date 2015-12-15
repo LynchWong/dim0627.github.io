@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.15-DEV" />
+
+    
+    <title>Googleの構造化データの扱いが変わった気がする - Unresolved</title>
+    
+
+    <link rel="shortcut icon" href="http://yet.unresolved.xyz/favicon.ico">
+
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans|Merriweather:700' rel='stylesheet' type='text/css'>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site">
+      <div class="container">
+        <a href="http://yet.unresolved.xyz" class="logo">Unresolved</a>
+      </div>
+    </header>
+
+    <div class="site">
+
+
+<div class="single">
+  <div class="container">
+    <article itemscope="itemscope" itemtype="http://schema.org/Article">
+      <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz"/>
+      <meta itemprop="dateModified" content="2015-12-11T11:22:28&#43;09:00">
+      <meta itemprop="headline" content="Googleの構造化データの扱いが変わった気がする">
+      <meta itemprop="description" content="このブログも、他の運営してるサイトも、今日になってエラーが発生するようになった。 Structured Data Testing Tool エラーは2種類発生していて、ひとつめがこれ。 もうひと">
+      <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/">
+      <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.jpg" />
+        <meta itemprop="width" content="800">
+        <meta itemprop="height" content="800">
+      </div>
+      <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.jpg">
+          <meta itemprop="width" content="100">
+          <meta itemprop="height" content="100">
+        </div>
+        <meta itemprop="name" content="Unresolved">
+      </div>
+      <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+        <meta itemprop="name" content="Daisuke Tsuji">
+      </div>
+
+      <header>
+        <h1 class="title">Googleの構造化データの扱いが変わった気がする</h1>
+        <time itemprop="datePublished" pubdate="pubdate" datetime="2015-12-11T11:22:28&#43;09:00">
+          Fri, Dec 11, 2015
+        </time>
+        <a href="/technology/" class="section">technology</a>
+      </header>
+
+      <div class="body" itemprop="articleBody">
+
+<p>このブログも、他の運営してるサイトも、今日になってエラーが発生するようになった。</p>
+
+<p><a href="https://developers.google.com/structured-data/testing-tool/">Structured Data Testing Tool</a></p>
+
+<p>エラーは2種類発生していて、ひとつめがこれ。</p>
+
+<p><a href="/images/2015-12-11/error1.png"><img src="/images/2015-12-11/error1.png" class="image" alt="error"></a></p>
+
+<p>もうひとつがこれ。</p>
+
+<p><a href="/images/2015-12-11/error2.png"><img src="/images/2015-12-11/error2.png" class="image" alt="error"></a></p>
+
+<p>あれ？<code>author</code>はもともと必須だっけ？</p>
+
+<h2 id="構造化データ:1cba147eb8c5721b87c65951056c9faa">構造化データ？</h2>
+
+<p>マイクロデータとかって呼ばれたりもする。</p>
+
+<p>HTMLにもう少し踏み込んだ側面的な意味を持たせるためのもの。</p>
+
+<p>Googleの説明が、どのように使われるかも記載されていてわかりやすい。</p>
+
+<p><a href="https://developers.google.com/structured-data/">Promote Your Content with Structured Data Markup  |  Structured Data  |  Google Developers</a></p>
+
+<h2 id="エラーの原因:1cba147eb8c5721b87c65951056c9faa">エラーの原因</h2>
+
+<p>今回はArticleの<code>image</code>とか<code>publisher</code>もろもろでエラーが発生しました。</p>
+
+<p>これまでは大丈夫だったのになんでだろう。</p>
+
+<p>この記載を見ると、どうやら構造が間違っているらしい。</p>
+
+<p><a href="https://developers.google.com/structured-data/rich-snippets/articles?hl=ja">Enabling Rich Snippets for Articles  |  Structured Data  |  Google Developers</a></p>
+
+<h3 id="imageプロパティ:1cba147eb8c5721b87c65951056c9faa">imageプロパティ</h3>
+
+<p>これまで僕は、画像要素を次のように記載していたのだけど、</p>
+
+<pre><code class="language-html">&lt;meta itemprop=&quot;image&quot; content=&quot;http://example.com/images/10999.jpg&quot; /&gt;
+</code></pre>
+
+<p>こう記載するのが正しいようだ。</p>
+
+<pre><code class="language-html">&lt;div itemprop=&quot;image&quot; itemscope itemtype=&quot;https://schema.org/ImageObject&quot;&gt;
+  &lt;img src=&quot;https://google.com/thumbnail1.jpg&quot;/&gt;
+  &lt;meta itemprop=&quot;url&quot; content=&quot;https://google.com/thumbnail1.jpg&quot;&gt;
+  &lt;meta itemprop=&quot;width&quot; content=&quot;800&quot;&gt;
+  &lt;meta itemprop=&quot;height&quot; content=&quot;800&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p><code>ImageObject</code>の子で居なきゃいけないんだね。</p>
+
+<p>さらに<code>width</code>と<code>height</code>も必須になってる。
+前は要らなかったような記憶があるんだけど・・・。</p>
+
+<h3 id="publisherプロパティ:1cba147eb8c5721b87c65951056c9faa">publisherプロパティ</h3>
+
+<p><code>publisher</code>はこう記載されている。</p>
+
+<p>これは運営元の組織を指すのかな。</p>
+
+<pre><code class="language-html">&lt;div itemprop=&quot;publisher&quot; itemscope itemtype=&quot;https://schema.org/Organization&quot;&gt;
+  &lt;div itemprop=&quot;logo&quot; itemscope itemtype=&quot;https://schema.org/ImageObject&quot;&gt;
+    &lt;img src=&quot;https://google.com/logo.jpg&quot;/&gt;
+    &lt;meta itemprop=&quot;url&quot; content=&quot;https://google.com/logo.jpg&quot;&gt;
+    &lt;meta itemprop=&quot;width&quot; content=&quot;600&quot;&gt;
+    &lt;meta itemprop=&quot;height&quot; content=&quot;60&quot;&gt;
+  &lt;/div&gt;
+  &lt;meta itemprop=&quot;name&quot; content=&quot;Google&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h3 id="nameプロパティ:1cba147eb8c5721b87c65951056c9faa">nameプロパティ</h3>
+
+<p>何故かこのエラーだけどうやっても消えない。</p>
+
+<p>謎なので分かり次第追記しよう。</p>
+
+<p><strong>追記</strong></p>
+
+<p>この記事を書き終えてから再度試してみたら消えました。</p>
+
+<p>Structured Data Testing Tool自体が改修中だったのだろうか。</p>
+
+<p>どちらにせよこの辺はこれからも随時変わっていくポイントだろうから、定期的にチェックと対応をしていかなきゃいけないですね。</p>
+</div>
+
+      <aside>
+        <div class="tags">
+          
+          <span class="tag"><a href="http://yet.unresolved.xyz/tags/html">html</a></span>
+          
+          <span class="tag"><a href="http://yet.unresolved.xyz/tags/microdata">microdata</a></span>
+          
+          <span class="tag"><a href="http://yet.unresolved.xyz/tags/schema.org">schema.org</a></span>
+          
+          <span class="tag"><a href="http://yet.unresolved.xyz/tags/structured-data">structured-data</a></span>
+          
+        </div>
+      </aside>
+
+    </article>
+  </div>
+</div>
+
+    </div>
+
+    <footer id="site-footer">
+      <div class="container">
+        <p>&copy; 2015  Daisuke Tsuji </p>
+
+        <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
+        <p>Theme <a href="https://github.com/dim0627/hugo_theme_harb" target="_blank">Harb</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script src="http://yet.unresolved.xyz/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-55005303-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+  </body>
+</html>
+
+

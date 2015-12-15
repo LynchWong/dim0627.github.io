@@ -11,10 +11,10 @@
     
     <item>
       <title>LeiningenでSCSSを自動コンパイルする</title>
-      <link>http://yet.unresolved.xyz/technology/automatically-compile-the-scss-in-leiningen/</link>
+      <link>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</link>
       <pubDate>Tue, 09 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/technology/automatically-compile-the-scss-in-leiningen/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</guid>
       <description>
 
 &lt;p&gt;Clojureを始めて一週間ほどになりまして。&lt;/p&gt;

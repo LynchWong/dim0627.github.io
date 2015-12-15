@@ -11,10 +11,10 @@
     
     <item>
       <title>GitHub Pagesでカスタムドメインを使う</title>
-      <link>http://yet.unresolved.xyz/technology/how-to-use-custom-domain-in-github-pages/</link>
+      <link>http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/</link>
       <pubDate>Fri, 24 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/technology/how-to-use-custom-domain-in-github-pages/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/</guid>
       <description>
 
 &lt;p&gt;昨日はGAEで今日はGithubかよって感じだけど、こっちは結構詰まったのでメモしたい。&lt;/p&gt;
@@ -69,10 +69,10 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
     
     <item>
       <title>Google app engineでカスタムドメインを使う</title>
-      <link>http://yet.unresolved.xyz/technology/how-to-use-custom-domain-in-google-app-engine/</link>
+      <link>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</link>
       <pubDate>Thu, 23 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/technology/how-to-use-custom-domain-in-google-app-engine/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</guid>
       <description>
 
 &lt;p&gt;簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。&lt;/p&gt;

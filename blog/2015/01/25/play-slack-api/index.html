@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.15-DEV" />
+
+    
+    <title>SlackAPIで遊ぶ - Unresolved</title>
+    
+
+    <link rel="shortcut icon" href="http://yet.unresolved.xyz/favicon.ico">
+
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans|Merriweather:700' rel='stylesheet' type='text/css'>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site">
+      <div class="container">
+        <a href="http://yet.unresolved.xyz" class="logo">Unresolved</a>
+      </div>
+    </header>
+
+    <div class="site">
+
+
+<div class="single">
+  <div class="container">
+    <article itemscope="itemscope" itemtype="http://schema.org/Article">
+      <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz"/>
+      <meta itemprop="dateModified" content="2015-01-25T20:52:46&#43;09:00">
+      <meta itemprop="headline" content="SlackAPIで遊ぶ">
+      <meta itemprop="description" content="最近 ふつうのLinuxプログラミングを読んでます。知りたいことが書かれてて楽しい！ でもずっと本読むのは飽きるよね。なのでSlackのAPIと">
+      <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/">
+      <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.jpg" />
+        <meta itemprop="width" content="800">
+        <meta itemprop="height" content="800">
+      </div>
+      <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.jpg">
+          <meta itemprop="width" content="100">
+          <meta itemprop="height" content="100">
+        </div>
+        <meta itemprop="name" content="Unresolved">
+      </div>
+      <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+        <meta itemprop="name" content="Daisuke Tsuji">
+      </div>
+
+      <header>
+        <h1 class="title">SlackAPIで遊ぶ</h1>
+        <time itemprop="datePublished" pubdate="pubdate" datetime="2015-01-25T20:52:46&#43;09:00">
+          Sun, Jan 25, 2015
+        </time>
+        <a href="/technology/" class="section">technology</a>
+      </header>
+
+      <div class="body" itemprop="articleBody">
+
+<p>最近
+<a href="http://www.amazon.co.jp/gp/product/4797328355/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4797328355&linkCode=as2&tag=unresolved-22">ふつうのLinuxプログラミング</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=4797328355" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important; display:inline;width:0;" />を読んでます。知りたいことが書かれてて楽しい！</p>
+
+<p>でもずっと本読むのは飽きるよね。なのでSlackのAPIとか触ってみる。</p>
+
+<h2 id="slackapiの種類:4800906b877996c3dc902a23f48b0c5e">SlackAPIの種類</h2>
+
+<p>SlackのAPIはいくつか種類があるんだね、トリガになるパターンが違うのかな？</p>
+
+<p>2015年01月24日時点でのAPIをまとめてみる。</p>
+
+<h3 id="slack-web-api-https-api-slack-com-web:4800906b877996c3dc902a23f48b0c5e"><a href="https://api.slack.com/web">Slack Web API</a></h3>
+
+<p>指定したチャンネルの履歴とかユーザの一覧とか、Slackの情報を取得出来る。</p>
+
+<p>Web APIなので、URLベースでの取得。</p>
+
+<h3 id="real-time-messaging-api-https-api-slack-com-rtm:4800906b877996c3dc902a23f48b0c5e"><a href="https://api.slack.com/rtm">Real Time Messaging API</a></h3>
+
+<p>Web Socketベースのリアルタイムチャット機能を提供する？</p>
+
+<p>bot userがどうのこうのっていうのがよくわからない。</p>
+
+<h3 id="slackbot-remote-control-https-api-slack-com-slackbot:4800906b877996c3dc902a23f48b0c5e"><a href="https://api.slack.com/slackbot">Slackbot Remote Control</a></h3>
+
+<p>SlackBotに喋らせたり出来る。ちょうかわいい。</p>
+
+<h3 id="incoming-webhooks-https-api-slack-com-incoming-webhooks:4800906b877996c3dc902a23f48b0c5e"><a href="https://api.slack.com/incoming-webhooks">Incoming Webhooks</a></h3>
+
+<p>指定したチャンネルに投稿出来る。</p>
+
+<h3 id="outgoing-webhooks-https-api-slack-com-outgoing-webhooks:4800906b877996c3dc902a23f48b0c5e"><a href="https://api.slack.com/outgoing-webhooks">Outgoing Webhooks</a></h3>
+
+<p>指定した単語に応じて指定したURLを叩ける。</p>
+
+<h3 id="slash-commands-https-api-slack-com-slash-commands:4800906b877996c3dc902a23f48b0c5e"><a href="https://api.slack.com/slash-commands">Slash Commands</a></h3>
+
+<p>指定したスラッシュで始まる単語に応じてURLを叩けて、レスポンスがそのまま投稿される。</p>
+
+<p>今回は発言のタイミングで発火する<a href="https://api.slack.com/slash-commands">Slash Commands</a>を使ってみようかな！</p>
+
+<h2 id="スラッシュコマンドの追加:4800906b877996c3dc902a23f48b0c5e">スラッシュコマンドの追加</h2>
+
+<p>ここから新しくコマンドの追加が出来る。</p>
+
+<p><a href="https://my.slack.com/services/new/slash-commands">https://my.slack.com/services/new/slash-commands</a></p>
+
+<p><a href="/images/2015-01-25/new_command.png"><img src="/images/2015-01-25/new_command.png" class="image" alt="new_command"></a></p>
+
+<p>herokuでさくっとHello World作って試してみようかな。</p>
+
+<p><a href="/images/2015-01-25/command_test.png"><img src="/images/2015-01-25/command_test.png" class="image" alt="command_test"></a></p>
+
+<p>おお、出るじゃん！でも<code>Only you can see this message</code>って出てる、僕しか見れないんだね。</p>
+
+<h2 id="replを作ろう:4800906b877996c3dc902a23f48b0c5e">REPLを作ろう</h2>
+
+<p>なんかSlack上でプログラム打つと実行結果が返ってくるみたいなやつ誰かが作ってたよね？</p>
+
+<p>あれ調べても出ないんだけどなんでなんだろう。</p>
+
+<p>まあとりあえず、作ったばっかの<a href="https://paiza.io/">paiza.IO</a>のAPIを叩くあれを導入してみる。</p>
+
+<p><a href="http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/">paiza.ioのAPIを使ってreplを作る | Unresolved</a></p>
+
+<p>スラッシュコマンドAPIは<code>/command args</code>って感じにやると、指定したURLに<code>text</code>ってパラメータ名で<code>args</code>が飛ばされるみたい。</p>
+
+<p>なので<code>/repl ruby:p &quot;hello&quot;</code>って感じで実行できるようにしようかな。</p>
+
+<p><a href="/images/2015-01-25/slack_repl.png"><img src="/images/2015-01-25/slack_repl.png" class="image" alt="slack_repl"></a></p>
+
+<p>別にURL出してもいいんだけど・・・。</p>
+
+<p><code>compojure</code>のルーティングはこんな。</p>
+
+<pre><code class="language-clojure">(defroutes app-routes
+  (GET &quot;/&quot; [text]
+       (if (empty? text) &quot;Invalid input.&quot;
+         (let [[language source] (seq (.split text &quot;:&quot;))]
+           (str &quot;[&quot; language &quot;] &quot; source &quot;\r\n-&gt; &quot; (repl language source))))))
+</code></pre>
+
+<h2 id="実行してみる:4800906b877996c3dc902a23f48b0c5e">実行してみる</h2>
+
+<p>さっき書いた通り、<code>/repl ruby:p &quot;hello&quot;</code>でいけるかな。</p>
+
+<p><a href="/images/2015-01-25/slack_repl_run.png"><img src="/images/2015-01-25/slack_repl_run.png" class="image" alt="slack_repl_run"></a></p>
+
+<p>いけるやん！</p>
+
+<p>Javaだる！</p>
+
+<h2 id="コード:4800906b877996c3dc902a23f48b0c5e">コード</h2>
+
+<p>やばい<code>project.clj</code>とかherokuから持ってきたままだしリファクタリングもしてないし超適当だ</p>
+
+<p><a href="https://github.com/dim0627/slack_repl">dim0627/slack_repl</a></p>
+</div>
+
+      <aside>
+        <div class="tags">
+          
+          <span class="tag"><a href="http://yet.unresolved.xyz/tags/heroku">heroku</a></span>
+          
+          <span class="tag"><a href="http://yet.unresolved.xyz/tags/slack">slack</a></span>
+          
+        </div>
+      </aside>
+
+    </article>
+  </div>
+</div>
+
+    </div>
+
+    <footer id="site-footer">
+      <div class="container">
+        <p>&copy; 2015  Daisuke Tsuji </p>
+
+        <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
+        <p>Theme <a href="https://github.com/dim0627/hugo_theme_harb" target="_blank">Harb</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script src="http://yet.unresolved.xyz/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-55005303-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+  </body>
+</html>
+
+
