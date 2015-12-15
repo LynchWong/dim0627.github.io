@@ -210,8 +210,8 @@ article.li .title {
 }
 
 /* Dev */
-article.draft .title,
-article.draft .title a {
+article.draft .title:before {
+  content: '[DRAFT] ';
   color: #3498db;
 }
 
