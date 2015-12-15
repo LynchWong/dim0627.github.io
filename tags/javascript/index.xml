@@ -11,10 +11,10 @@
     
     <item>
       <title>focusoutイベントでfocus中の要素が取得できない</title>
-      <link>http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/</link>
+      <link>http://yet.unresolved.xyz/technology/does-not-work-focus-selector-at-focusout-event/</link>
       <pubDate>Tue, 14 Jul 2015 00:05:16 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/</guid>
+      <guid>http://yet.unresolved.xyz/technology/does-not-work-focus-selector-at-focusout-event/</guid>
       <description>
 
 &lt;p&gt;何を血迷ったかサジェストを自作しようとしてしまってつらい目にあった話。&lt;/p&gt;
@@ -78,10 +78,10 @@ $(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() 
     
     <item>
       <title>Apigility &#43; React.jsでタスク管理ツールを作ってみる</title>
-      <link>http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/</link>
+      <link>http://yet.unresolved.xyz/technology/make-task-manager-by-using-apigility/</link>
       <pubDate>Sat, 14 Feb 2015 19:30:22 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/</guid>
+      <guid>http://yet.unresolved.xyz/technology/make-task-manager-by-using-apigility/</guid>
       <description>
 
 &lt;p&gt;これに行ってきました。&lt;/p&gt;

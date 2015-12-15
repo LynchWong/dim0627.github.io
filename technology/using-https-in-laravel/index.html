@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.15-DEV" />
+
+    
+    <title>ELB越しのLaravelでHTTPSを使おうとして困った話 - Unresolved</title>
+    
+
+    <link rel="shortcut icon" href="http://yet.unresolved.xyz/favicon.ico">
+
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans|Merriweather:700' rel='stylesheet' type='text/css'>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site">
+      <div class="container">
+        <a href="http://yet.unresolved.xyz" class="logo">Unresolved</a>
+      </div>
+    </header>
+
+    <div class="site">
+
+
+<div class="single">
+  <div class="container">
+    <article itemscope="itemscope" itemtype="http://schema.org/Article">
+      <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz"/>
+      <meta itemprop="dateModified" content="2015-11-04T12:18:07&#43;09:00">
+      <meta itemprop="headline" content="ELB越しのLaravelでHTTPSを使おうとして困った話">
+      <meta itemprop="description" content="SSL証明書はELBに設置する 何が普通なのか知らないけど、今回立ち上げた構成では CLIENT -&gt; ELB(80 or 443) -&gt; WEB(80) っていう構成にしていました（するつもりだった）">
+      <meta itemprop="url" content="http://yet.unresolved.xyz/technology/using-https-in-laravel/">
+      <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.jpg" />
+        <meta itemprop="width" content="800">
+        <meta itemprop="height" content="800">
+      </div>
+      <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.jpg">
+          <meta itemprop="width" content="100">
+          <meta itemprop="height" content="100">
+        </div>
+        <meta itemprop="name" content="Unresolved">
+      </div>
+      <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+        <meta itemprop="name" content="Daisuke Tsuji">
+      </div>
+
+      <header>
+        <h1 class="title">ELB越しのLaravelでHTTPSを使おうとして困った話</h1>
+        <time itemprop="datePublished" pubdate="pubdate" datetime="2015-11-04T12:18:07&#43;09:00">
+          Wed, Nov 4, 2015
+        </time>
+        <a href="/technology/" class="section">technology</a>
+      </header>
+
+      <div class="body" itemprop="articleBody">
+
+<h2 id="ssl証明書はelbに設置する:56aef34fa740ed018dee02e37b63f347">SSL証明書はELBに設置する</h2>
+
+<p>何が普通なのか知らないけど、今回立ち上げた構成では</p>
+
+<pre><code>CLIENT -&gt; ELB(80 or 443) -&gt; WEB(80)
+</code></pre>
+
+<p>っていう構成にしていました（するつもりだった）。</p>
+
+<p><a href="http://dev.classmethod.jp/cloud/aws/aws-beginner-elb-ssl/">【初心者向け】ELBにSSL証明書をインストールする ｜ Developers.IO</a></p>
+
+<h2 id="問題はリリース当日に:56aef34fa740ed018dee02e37b63f347">問題はリリース当日に</h2>
+
+<p>リリースしてみたら何やら証明書のエラーが出てる。</p>
+
+<pre><code>Your connection to this site is private, but someone on the network might be able to change the look of the page.
+</code></pre>
+
+<p>このページはSSL証明書が効いてるんだけど、ネットワーク上の何かがそうじゃなくしちゃうかもね？</p>
+
+<p>原因は<strong>httpsじゃないURLに飛ばすformタグがページに存在する</strong>せいでした。</p>
+
+<p>開発環境でもオレオレ証明書を用意したりしてHTTPSで通信するようにしておくべきでした。</p>
+
+<h2 id="laravelのrouteメソッド:56aef34fa740ed018dee02e37b63f347">Laravelのrouteメソッド</h2>
+
+<p>URLのレンダリングはLaravelの<code>route</code>メソッドを使っています。</p>
+
+<p>これは結構気に入っていて、後でURLを変えたいって時にある程度コストを軽減してくれる（んじゃないか）と思っているから。</p>
+
+<p><a href="http://laravel.com/docs/5.1/routing#named-routes">HTTP Routing - Laravel - The PHP Framework For Web Artisans</a></p>
+
+<p>でも今回はこのメソッドが<strong>HTTPのURLをレンダリングした</strong>せいで問題が起こりました。</p>
+
+<h2 id="laravelでhttpsのurlを取り扱う:56aef34fa740ed018dee02e37b63f347">LaravelでHTTPSのURLを取り扱う</h2>
+
+<p>LaravelのRoutingはこんな感じなんだけど、</p>
+
+<pre><code class="language-php">Route::get('/', ['as' =&gt; 'home', function() { return view('home.index'); }]);
+</code></pre>
+
+<p>HTTPSのみを許容することも出来るらしい。</p>
+
+<pre><code class="language-php">Route::get('/', ['https', 'as' =&gt; 'home', function() { return view('home.index'); }]);
+</code></pre>
+
+<p>こうしておけば<code>route</code>メソッドでレンダリングされるURLもHTTPSになる。</p>
+
+<h2 id="そして問題が起きる:56aef34fa740ed018dee02e37b63f347">そして問題が起きる</h2>
+
+<p>先ほどの通り、LaravelでHTTPSの設定をすると</p>
+
+<ul>
+<li>HTTPSのみを受け付ける</li>
+<li><code>route</code>メソッドがHTTPSのURLのをレンダリングする</li>
+</ul>
+
+<p>事になります。</p>
+
+<p>今回ELBの奥にあるLaravelが載ったインスタンスはnginxが80ポートを待ち受けています。</p>
+
+<p>なのでHTTPSだけを許容されると困るんですね、443で通信しなきゃいけない。</p>
+
+<h2 id="解決策:56aef34fa740ed018dee02e37b63f347">解決策</h2>
+
+<p>わがままを言えば<strong>LaravelがHTTPを受け付けて<code>route</code>メソッドがHTTPSのURLをレンダリングする</strong>と嬉しい。</p>
+
+<p>けどその方法は見つからず（構成としてナンセンスなんだろう）、ELBとLaravelが載ったインスタンスの両方にSSL証明書を設置することにしました。</p>
+
+<p>というわけでこういう形。</p>
+
+<pre><code>CLIENT -&gt; ELB(80 or 443) -&gt; WEB(443)
+</code></pre>
+
+<p>めでたしめでたし。</p>
+</div>
+
+      <aside>
+        <div class="tags">
+          
+          <span class="tag"><a href="http://yet.unresolved.xyz/tags/laravel">laravel</a></span>
+          
+          <span class="tag"><a href="http://yet.unresolved.xyz/tags/php">php</a></span>
+          
+          <span class="tag"><a href="http://yet.unresolved.xyz/tags/https">https</a></span>
+          
+        </div>
+      </aside>
+
+    </article>
+  </div>
+</div>
+
+    </div>
+
+    <footer id="site-footer">
+      <div class="container">
+        <p>&copy; 2015  Daisuke Tsuji </p>
+
+        <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
+        <p>Theme <a href="https://github.com/dim0627/hugo_theme_harb" target="_blank">Harb</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script src="http://yet.unresolved.xyz/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-55005303-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+  </body>
+</html>
+
+

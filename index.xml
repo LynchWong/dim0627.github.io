@@ -11,10 +11,10 @@
     
     <item>
       <title>Googleの構造化データの扱いが変わった気がする</title>
-      <link>http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</link>
+      <link>http://yet.unresolved.xyz/technology/error-occured-in-structured-data-testing-tool/</link>
       <pubDate>Fri, 11 Dec 2015 11:22:28 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</guid>
+      <guid>http://yet.unresolved.xyz/technology/error-occured-in-structured-data-testing-tool/</guid>
       <description>
 
 &lt;p&gt;このブログも、他の運営してるサイトも、今日になってエラーが発生するようになった。&lt;/p&gt;
@@ -108,10 +108,10 @@
     
     <item>
       <title>プロダクションのWordPressを捨てHugoに移行した</title>
-      <link>http://yet.unresolved.xyz/blog/2015/12/10/using-hugo-in-production/</link>
+      <link>http://yet.unresolved.xyz/technology/using-hugo-in-production/</link>
       <pubDate>Thu, 10 Dec 2015 14:49:18 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/12/10/using-hugo-in-production/</guid>
+      <guid>http://yet.unresolved.xyz/technology/using-hugo-in-production/</guid>
       <description>
 
 &lt;p&gt;あんまり仕事のことは書かないつもりだったんだけど、このブログの生成でもお世話になっている&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;を結構本気で使ったのでそのことをまとめてみます。&lt;/p&gt;
@@ -315,10 +315,10 @@ Make every program a Filter.&lt;/p&gt;
     
     <item>
       <title>ELB越しのLaravelでHTTPSを使おうとして困った話</title>
-      <link>http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/</link>
+      <link>http://yet.unresolved.xyz/technology/using-https-in-laravel/</link>
       <pubDate>Wed, 04 Nov 2015 12:18:07 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/</guid>
+      <guid>http://yet.unresolved.xyz/technology/using-https-in-laravel/</guid>
       <description>
 
 &lt;h2 id=&#34;ssl証明書はelbに設置する:56aef34fa740ed018dee02e37b63f347&#34;&gt;SSL証明書はELBに設置する&lt;/h2&gt;
@@ -401,10 +401,10 @@ Make every program a Filter.&lt;/p&gt;
     
     <item>
       <title>Hugo0.15でSummaryが日本語に対応するっぽい</title>
-      <link>http://yet.unresolved.xyz/blog/2015/10/09/hugo-support-cjk-language/</link>
+      <link>http://yet.unresolved.xyz/technology/hugo-support-cjk-language/</link>
       <pubDate>Fri, 09 Oct 2015 22:15:51 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/10/09/hugo-support-cjk-language/</guid>
+      <guid>http://yet.unresolved.xyz/technology/hugo-support-cjk-language/</guid>
       <description>&lt;p&gt;会社のMacにも&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;をセットアップしてあるんだけど、テーマの編集とかの続きを家でやろうとしたら&lt;code&gt;.Summary&lt;/code&gt;が異なる挙動をしてることに気づいた。&lt;/p&gt;
 
 &lt;p&gt;どうやらHugoのバージョンによって、日本語の解釈がうまくいったりいかなかったりするみたい。&lt;/p&gt;
@@ -466,10 +466,10 @@ Make every program a Filter.&lt;/p&gt;
     
     <item>
       <title>OWASP ZAPでBASIC認証を突破する</title>
-      <link>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</link>
+      <link>http://yet.unresolved.xyz/technology/using-basic-auth-in-owasp-zap/</link>
       <pubDate>Wed, 30 Sep 2015 16:24:53 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</guid>
+      <guid>http://yet.unresolved.xyz/technology/using-basic-auth-in-owasp-zap/</guid>
       <description>
 
 &lt;p&gt;調べても意外と見つからない。&lt;/p&gt;
@@ -504,10 +504,10 @@ Make every program a Filter.&lt;/p&gt;
     
     <item>
       <title>[Laravel5.1]発行されたSQLと実行計画を取得する</title>
-      <link>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</link>
+      <link>http://yet.unresolved.xyz/technology/get-explain-at-laravel/</link>
       <pubDate>Wed, 30 Sep 2015 13:44:48 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</guid>
+      <guid>http://yet.unresolved.xyz/technology/get-explain-at-laravel/</guid>
       <description>
 
 &lt;p&gt;インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしい。&lt;/p&gt;
@@ -587,10 +587,10 @@ Make every program a Filter.&lt;/p&gt;
     
     <item>
       <title>Amazon LinuxをVagrantで使いたい</title>
-      <link>http://yet.unresolved.xyz/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/</link>
+      <link>http://yet.unresolved.xyz/technology/i-want-to-use-amazon-linux-at-vagrant/</link>
       <pubDate>Wed, 26 Aug 2015 23:12:02 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/</guid>
+      <guid>http://yet.unresolved.xyz/technology/i-want-to-use-amazon-linux-at-vagrant/</guid>
       <description>
 
 &lt;p&gt;開発はCentOS、本番はAmazonLinuxにしようとしたら意外と違うところが多くてProvisioningがだるかったので。&lt;/p&gt;
@@ -674,10 +674,10 @@ Ubuntu 12.04、12.10、13.04、13.10、14.04、14.10&lt;/p&gt;
     
     <item>
       <title>focusoutイベントでfocus中の要素が取得できない</title>
-      <link>http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/</link>
+      <link>http://yet.unresolved.xyz/technology/does-not-work-focus-selector-at-focusout-event/</link>
       <pubDate>Tue, 14 Jul 2015 00:05:16 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/</guid>
+      <guid>http://yet.unresolved.xyz/technology/does-not-work-focus-selector-at-focusout-event/</guid>
       <description>
 
 &lt;p&gt;何を血迷ったかサジェストを自作しようとしてしまってつらい目にあった話。&lt;/p&gt;
@@ -741,10 +741,10 @@ $(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() 
     
     <item>
       <title>Hugo向けの新しいテーマを作った</title>
-      <link>http://yet.unresolved.xyz/blog/2015/06/20/making-new-theme-robust-for-hugo/</link>
+      <link>http://yet.unresolved.xyz/technology/making-new-theme-robust-for-hugo/</link>
       <pubDate>Sat, 20 Jun 2015 11:30:06 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/06/20/making-new-theme-robust-for-hugo/</guid>
+      <guid>http://yet.unresolved.xyz/technology/making-new-theme-robust-for-hugo/</guid>
       <description>
 
 &lt;p&gt;前に作ったやつが飽きてしまったので、そもそもForkするんじゃなくて0から作ることにしました。&lt;/p&gt;
@@ -793,10 +793,10 @@ $(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() 
     
     <item>
       <title>例によってpaiza online hackathon5をClojureで解いてみた</title>
-      <link>http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/</link>
+      <link>http://yet.unresolved.xyz/technology/challenged-to-online-hackathon-of-paiza5/</link>
       <pubDate>Wed, 06 May 2015 09:54:46 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/</guid>
+      <guid>http://yet.unresolved.xyz/technology/challenged-to-online-hackathon-of-paiza5/</guid>
       <description>
 
 &lt;p&gt;まずい更新することがない。&lt;/p&gt;
@@ -905,10 +905,10 @@ $(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() 
     
     <item>
       <title>tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する</title>
-      <link>http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/</link>
+      <link>http://yet.unresolved.xyz/technology/remain-current-directory-when-open-new-window-in-tmux/</link>
       <pubDate>Wed, 01 Apr 2015 22:42:40 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/</guid>
+      <guid>http://yet.unresolved.xyz/technology/remain-current-directory-when-open-new-window-in-tmux/</guid>
       <description>
 
 &lt;p&gt;こんな感じ。&lt;/p&gt;
@@ -931,10 +931,10 @@ bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
     
     <item>
       <title>tmux-powerlineのステータスラインが描画ごとに増える</title>
-      <link>http://yet.unresolved.xyz/blog/2015/03/30/status-line-of-tmux-powerline-overlap/</link>
+      <link>http://yet.unresolved.xyz/technology/status-line-of-tmux-powerline-overlap/</link>
       <pubDate>Mon, 30 Mar 2015 23:56:58 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/03/30/status-line-of-tmux-powerline-overlap/</guid>
+      <guid>http://yet.unresolved.xyz/technology/status-line-of-tmux-powerline-overlap/</guid>
       <description>&lt;p&gt;iTerm2での話。&lt;/p&gt;
 
 &lt;p&gt;こいつのせい。&lt;/p&gt;
@@ -951,10 +951,10 @@ bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
     
     <item>
       <title>VimのClojureプラグイン覚書</title>
-      <link>http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/</link>
+      <link>http://yet.unresolved.xyz/technology/using-clojure-plugin-on-the-vim/</link>
       <pubDate>Sun, 22 Mar 2015 19:47:22 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/</guid>
+      <guid>http://yet.unresolved.xyz/technology/using-clojure-plugin-on-the-vim/</guid>
       <description>
 
 &lt;p&gt;VimでClojure書くときのあれこれをいっつも忘れるのでまとめておこうと思う。&lt;/p&gt;
@@ -1041,10 +1041,10 @@ bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
     
     <item>
       <title>[Clojure]ringのCSRFトークンを生成する</title>
-      <link>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</link>
+      <link>http://yet.unresolved.xyz/technology/invalid-anti-forgery-token-on-ring/</link>
       <pubDate>Sun, 22 Mar 2015 19:23:27 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</guid>
+      <guid>http://yet.unresolved.xyz/technology/invalid-anti-forgery-token-on-ring/</guid>
       <description>&lt;p&gt;ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、&lt;/p&gt;
 
 &lt;p&gt;デフォルトだとPOSTリクエストした時にCSRFトークンチェックが入るようになってると思う。&lt;/p&gt;
@@ -1107,10 +1107,10 @@ bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
     
     <item>
       <title>Ansibleを使ってMySQLが動く環境を手っ取り早く作る</title>
-      <link>http://yet.unresolved.xyz/blog/2015/03/16/create-mysql-environment-using-the-ansible/</link>
+      <link>http://yet.unresolved.xyz/technology/create-mysql-environment-using-the-ansible/</link>
       <pubDate>Mon, 16 Mar 2015 23:15:49 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/03/16/create-mysql-environment-using-the-ansible/</guid>
+      <guid>http://yet.unresolved.xyz/technology/create-mysql-environment-using-the-ansible/</guid>
       <description>
 
 &lt;p&gt;ちょっと友人と共同で開発しているWebアプリがあって、DBの用意も手軽に共有したいのでAnsibleでやることに。&lt;/p&gt;

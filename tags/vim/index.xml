@@ -11,10 +11,10 @@
     
     <item>
       <title>VimのClojureプラグイン覚書</title>
-      <link>http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/</link>
+      <link>http://yet.unresolved.xyz/technology/using-clojure-plugin-on-the-vim/</link>
       <pubDate>Sun, 22 Mar 2015 19:47:22 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/</guid>
+      <guid>http://yet.unresolved.xyz/technology/using-clojure-plugin-on-the-vim/</guid>
       <description>
 
 &lt;p&gt;VimでClojure書くときのあれこれをいっつも忘れるのでまとめておこうと思う。&lt;/p&gt;
@@ -101,10 +101,10 @@
     
     <item>
       <title>Slamhoundを使ってClojureのrequireを自動生成する</title>
-      <link>http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/</link>
+      <link>http://yet.unresolved.xyz/technology/name-space-form-reconstructs-for-clojure/</link>
       <pubDate>Sat, 28 Feb 2015 06:34:59 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/02/28/name-space-form-reconstructs-for-clojure/</guid>
+      <guid>http://yet.unresolved.xyz/technology/name-space-form-reconstructs-for-clojure/</guid>
       <description>
 
 &lt;p&gt;ちょっとVimとClojureの環境を整備したくて、こんなのを読んでました。&lt;/p&gt;
@@ -191,10 +191,10 @@
     
     <item>
       <title>今だからやるvimコマンド再学習</title>
-      <link>http://yet.unresolved.xyz/blog/2015/02/06/learning-vim-again/</link>
+      <link>http://yet.unresolved.xyz/technology/learning-vim-again/</link>
       <pubDate>Fri, 06 Feb 2015 20:50:35 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/02/06/learning-vim-again/</guid>
+      <guid>http://yet.unresolved.xyz/technology/learning-vim-again/</guid>
       <description>
 
 &lt;p&gt;ちょうど1年ほど前からvimを使ってるんだけど、&lt;/p&gt;
@@ -283,10 +283,10 @@
     
     <item>
       <title>PHPファイルの定数に触るとvimがフリーズする</title>
-      <link>http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/</link>
+      <link>http://yet.unresolved.xyz/technology/vim-freezed-in-editting-a-php-file/</link>
       <pubDate>Thu, 05 Feb 2015 21:36:25 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/</guid>
+      <guid>http://yet.unresolved.xyz/technology/vim-freezed-in-editting-a-php-file/</guid>
       <description>&lt;p&gt;&lt;code&gt;neocomplcache&lt;/code&gt;のこの設定が甘かった。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;let g:neocomplcache_omni_patterns.php = &#39;[^. \t]-&amp;gt;\h\w*\|\h\w*::&#39;

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.15-DEV" />
+
+    
+    <title>Amazon LinuxをVagrantで使いたい - Unresolved</title>
+    
+
+    <link rel="shortcut icon" href="http://yet.unresolved.xyz/favicon.ico">
+
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans|Merriweather:700' rel='stylesheet' type='text/css'>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site">
+      <div class="container">
+        <a href="http://yet.unresolved.xyz" class="logo">Unresolved</a>
+      </div>
+    </header>
+
+    <div class="site">
+
+
+<div class="single">
+  <div class="container">
+    <article itemscope="itemscope" itemtype="http://schema.org/Article">
+      <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz"/>
+      <meta itemprop="dateModified" content="2015-08-26T23:12:02&#43;09:00">
+      <meta itemprop="headline" content="Amazon LinuxをVagrantで使いたい">
+      <meta itemprop="description" content="開発はCentOS、本番はAmazonLinuxにしようとしたら意外と違うところが多くてProvisioningがだるかったので。 ec2-create-instance-export-task ec2-">
+      <meta itemprop="url" content="http://yet.unresolved.xyz/technology/i-want-to-use-amazon-linux-at-vagrant/">
+      <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.jpg" />
+        <meta itemprop="width" content="800">
+        <meta itemprop="height" content="800">
+      </div>
+      <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.jpg">
+          <meta itemprop="width" content="100">
+          <meta itemprop="height" content="100">
+        </div>
+        <meta itemprop="name" content="Unresolved">
+      </div>
+      <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+        <meta itemprop="name" content="Daisuke Tsuji">
+      </div>
+
+      <header>
+        <h1 class="title">Amazon LinuxをVagrantで使いたい</h1>
+        <time itemprop="datePublished" pubdate="pubdate" datetime="2015-08-26T23:12:02&#43;09:00">
+          Wed, Aug 26, 2015
+        </time>
+        <a href="/technology/" class="section">technology</a>
+      </header>
+
+      <div class="body" itemprop="articleBody">
+
+<p>開発はCentOS、本番はAmazonLinuxにしようとしたら意外と違うところが多くてProvisioningがだるかったので。</p>
+
+<h2 id="ec2-create-instance-export-task:219da61ce6f755e0018f6c81d16e9cbc">ec2-create-instance-export-task</h2>
+
+<p>ec2-create-instance-export-taskっていうCLIのコマンドが用意されているらしい。</p>
+
+<p><a href="http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/ExportingEC2Instances.html">Amazon EC2 インスタンスをエクスポートする - Amazon Elastic Compute Cloud</a></p>
+
+<p>このコマンドでEC2のinstance_idを指定してS3にイメージファイルをエクスポートできるとのこと。</p>
+
+<p>書式はこんな。</p>
+
+<pre><code>ec2-create-instance-export-task instance_id –e target_environment –f disk_image_format -c container_format –b s3_bucket
+</code></pre>
+
+<p>pipで入れたからこんな感じになったよ。</p>
+
+<pre><code>aws ec2 create-instance-export-task --instance-id i-82xxx70 --target-environment vmware --export-to-s3-task DiskImageFormat=vmdk,ContainerFormat=ova,S3Bucket=images.xxxxx.jp
+</code></pre>
+
+<p>そしたらこんなエラー。</p>
+
+<pre><code>A client error (AuthFailure) occurred when calling the CreateInstanceExportTask operation: vm-import-export@amazon.com must have WRITE and READ_ACL permission on the S3 bucket.
+</code></pre>
+
+<p>しっかり説明を読むと、</p>
+
+<blockquote>
+<p>エクスポートされたインスタンスを格納する Amazon S3 バケットを作成します。Amazon S3 バケットでは、[vm-import-export@amazon.com] アカウントへの [Upload/Delete] および [View Permissions] アクセスが付与される必要があります。詳細については、Amazon Simple Storage Service コンソールユーザーガイド の Creating a Bucket および Editing Bucket Permissions を参照してください。</p>
+</blockquote>
+
+<p>なるほどなるほど。</p>
+
+<p>こんな感じに。</p>
+
+<p><a href="/images/2015-08-26/bucket.png"><img src="/images/2015-08-26/bucket.png" class="image" alt="bucket"></a></p>
+
+<p>そしたら違うエラー。</p>
+
+<pre><code>A client error (NotExportable) occurred when calling the CreateInstanceExportTask operation: Only imported instances can be exported.
+</code></pre>
+
+<p>ん？</p>
+
+<p>前提条件を読んでなかった。</p>
+
+<p><a href="http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/VMImportPrerequisites.html#vmimport-image-formats">VM Import/Export の前提条件 - Amazon Elastic Compute Cloud</a></p>
+
+<blockquote>
+<p>Linux/Unix（64 ビット）</p>
+
+<p>Red Hat Enterprise Linux (RHEL) 5.1-5.11、6.1-6.6、7.0-7.1</p>
+
+<p>Note
+Amazon EC2 で実行するときに必要なドライバが存在しないため、RHEL 6.0 はサポートされていません。
+VM Import は、RHEL インスタンスのライセンスポータビリティをサポートしています。既存の RHEL ライセンスは、関連付けられた RHEL インスタンスと一緒にインポートされます。Red Hat Cloud Access の適格性の詳細については、Red Hat ウェブサイトの適格性を参照してください。
+CentOS 5.1～5.11、6.1～6.6、7.0-7.1</p>
+
+<p>Note
+Amazon EC2 で実行するときに必要なドライバが存在しないため、CentOS 6.0 はサポートされていません。
+Ubuntu 12.04、12.10、13.04、13.10、14.04、14.10</p>
+
+<p>Debian 6.0.0-6.0.8, 7.0.0-7.2.0</p>
+</blockquote>
+
+<p>あっ・・・。</p>
+
+<h2 id="これでいいや:219da61ce6f755e0018f6c81d16e9cbc">これでいいや</h2>
+
+<p><a href="https://www.geekandi.com/2014/04/13/amazon-linux-vagrant-box-images/">Amazon Linux Vagrant Box Images | Geek and I</a></p>
+
+<p>ちょっと古いし不安だけど、どうせ個人的なやつだし・・・。</p>
+
+<h2 id="参考にさせていただきました:219da61ce6f755e0018f6c81d16e9cbc">参考にさせていただきました</h2>
+
+<p><a href="http://stackoverflow.com/questions/21920993/convert-amazon-ec2-ami-to-virtual-or-vagrant-box">virtualbox - Convert Amazon EC2 AMI to Virtual or Vagrant box - Stack Overflow</a></p>
+</div>
+
+      <aside>
+        <div class="tags">
+          
+          <span class="tag"><a href="http://yet.unresolved.xyz/tags/aws">aws</a></span>
+          
+        </div>
+      </aside>
+
+    </article>
+  </div>
+</div>
+
+    </div>
+
+    <footer id="site-footer">
+      <div class="container">
+        <p>&copy; 2015  Daisuke Tsuji </p>
+
+        <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
+        <p>Theme <a href="https://github.com/dim0627/hugo_theme_harb" target="_blank">Harb</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script src="http://yet.unresolved.xyz/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-55005303-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+  </body>
+</html>
+
+

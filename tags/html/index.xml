@@ -11,10 +11,10 @@
     
     <item>
       <title>Googleの構造化データの扱いが変わった気がする</title>
-      <link>http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</link>
+      <link>http://yet.unresolved.xyz/technology/error-occured-in-structured-data-testing-tool/</link>
       <pubDate>Fri, 11 Dec 2015 11:22:28 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</guid>
+      <guid>http://yet.unresolved.xyz/technology/error-occured-in-structured-data-testing-tool/</guid>
       <description>
 
 &lt;p&gt;このブログも、他の運営してるサイトも、今日になってエラーが発生するようになった。&lt;/p&gt;
@@ -108,10 +108,10 @@
     
     <item>
       <title>OctopressをW3Cのバリデーションにパスさせる</title>
-      <link>http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/</link>
+      <link>http://yet.unresolved.xyz/technology/pass-the-validation-of-w3c/</link>
       <pubDate>Wed, 12 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2014/11/12/pass-the-validation-of-w3c/</guid>
+      <guid>http://yet.unresolved.xyz/technology/pass-the-validation-of-w3c/</guid>
       <description>&lt;p&gt;ふと思い立って&lt;a href=&#34;http://validator.w3.org/&#34;&gt;Markup Validation Service&lt;/a&gt;をやってみたら13個もエラーが出たので対応してみるよ。&lt;/p&gt;
 
 &lt;!-- more --&gt;

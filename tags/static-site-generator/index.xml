@@ -11,10 +11,10 @@
     
     <item>
       <title>プロダクションのWordPressを捨てHugoに移行した</title>
-      <link>http://yet.unresolved.xyz/blog/2015/12/10/using-hugo-in-production/</link>
+      <link>http://yet.unresolved.xyz/technology/using-hugo-in-production/</link>
       <pubDate>Thu, 10 Dec 2015 14:49:18 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/12/10/using-hugo-in-production/</guid>
+      <guid>http://yet.unresolved.xyz/technology/using-hugo-in-production/</guid>
       <description>
 
 &lt;p&gt;あんまり仕事のことは書かないつもりだったんだけど、このブログの生成でもお世話になっている&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;を結構本気で使ったのでそのことをまとめてみます。&lt;/p&gt;
