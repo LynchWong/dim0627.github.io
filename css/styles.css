@@ -182,9 +182,14 @@ nav.site {
 
 /* Parts */
 .tag a,
-time {
+time,
+.section {
   color: #aaa;
   font-size: .8rem;
+}
+
+.section {
+  text-transform: uppercase;
 }
 
 .tags .tag a {
@@ -202,6 +207,12 @@ article.li a {
 
 article.li .title {
   font-size: 1rem;
+}
+
+/* Dev */
+article.draft .title,
+article.draft .title a {
+  color: #3498db;
 }
 
 /* Override */

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blogs on Unresolved</title>
-    <link>http://yet.unresolved.xyz/blog/</link>
-    <description>Recent content in Blogs on Unresolved</description>
+    <title>Teches on Unresolved</title>
+    <link>http://yet.unresolved.xyz/tech/</link>
+    <description>Recent content in Teches on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Dec 2015 11:22:28 +0900</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://yet.unresolved.xyz/tech/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Googleの構造化データの扱いが変わった気がする</title>
