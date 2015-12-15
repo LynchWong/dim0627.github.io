@@ -20,7 +20,7 @@ Indexes:
   tag: "tags"
 
 permalinks:
-  tech: /blog/:year/:month/:day/:slug/
+  technology: /blog/:year/:month/:day/:slug/
   book: /blog/:year/:month/:day/:slug/
   diary: /blog/:year/:month/:day/:slug/
 
