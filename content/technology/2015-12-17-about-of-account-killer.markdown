@@ -1,9 +1,8 @@
 ---
-date: 2015-12-15T10:39:55+09:00
+date: 2015-12-17T10:39:55+09:00
 slug: "about-of-account-killer"
 tags: ["sns", "tool"]
 title: "ACCOUNT KILLERというサービスが面白い"
-draft: true
 ---
 
 WordPress.comとGravatarを退会しようと思ったんだけどなんか退会画面が見つからない。
