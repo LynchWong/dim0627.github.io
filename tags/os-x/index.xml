@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Os X on Unresolved</title>
-    <link>http://localhost:51283/tags/os-x/</link>
+    <link>http://yet.unresolved.xyz/tags/os-x/</link>
     <description>Recent content in Os X on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 25 Jan 2015 23:02:59 +0900</lastBuildDate>
-    <atom:link href="http://localhost:51283/tags/os-x/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://yet.unresolved.xyz/tags/os-x/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Macで画面の一部をズームする</title>
-      <link>http://localhost:51283/blog/2015/01/25/using-display-zoom-in-mac/</link>
+      <link>http://yet.unresolved.xyz/blog/2015/01/25/using-display-zoom-in-mac/</link>
       <pubDate>Sun, 25 Jan 2015 23:02:59 +0900</pubDate>
       
-      <guid>http://localhost:51283/blog/2015/01/25/using-display-zoom-in-mac/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2015/01/25/using-display-zoom-in-mac/</guid>
       <description>&lt;p&gt;Macを操作しながらプレゼンする人って、たまに画面の一部だけをズームしたりするよね。&lt;/p&gt;
 
 &lt;p&gt;あれどうやるのか気になってたんだけど、標準の機能で出来るっぽい。&lt;/p&gt;
 
 &lt;p&gt;設定画面から、&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:51283/images/2015-01-25/mac_pref.png&#34;&gt;&lt;img src=&#34;http://localhost:51283/images/2015-01-25/mac_pref.png&#34; class=&#34;image&#34; alt=&#34;mac_pref&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-25/mac_pref.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-25/mac_pref.png&#34; class=&#34;image&#34; alt=&#34;mac_pref&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;でこれ。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:51283/images/2015-01-25/mac_accessibility.png&#34;&gt;&lt;img src=&#34;http://localhost:51283/images/2015-01-25/mac_accessibility.png&#34; class=&#34;image&#34; alt=&#34;mac_accessibility&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-25/mac_accessibility.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-25/mac_accessibility.png&#34; class=&#34;image&#34; alt=&#34;mac_accessibility&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;コントロールキー押しながらスクロールするとズームする！&lt;/p&gt;
 

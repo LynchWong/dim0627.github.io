@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ansible on Unresolved</title>
-    <link>http://localhost:51283/tags/ansible/</link>
+    <link>http://yet.unresolved.xyz/tags/ansible/</link>
     <description>Recent content in Ansible on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 16 Mar 2015 23:15:49 +0900</lastBuildDate>
-    <atom:link href="http://localhost:51283/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://yet.unresolved.xyz/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Ansibleを使ってMySQLが動く環境を手っ取り早く作る</title>
-      <link>http://localhost:51283/blog/2015/03/16/create-mysql-environment-using-the-ansible/</link>
+      <link>http://yet.unresolved.xyz/blog/2015/03/16/create-mysql-environment-using-the-ansible/</link>
       <pubDate>Mon, 16 Mar 2015 23:15:49 +0900</pubDate>
       
-      <guid>http://localhost:51283/blog/2015/03/16/create-mysql-environment-using-the-ansible/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2015/03/16/create-mysql-environment-using-the-ansible/</guid>
       <description>
 
 &lt;p&gt;ちょっと友人と共同で開発しているWebアプリがあって、DBの用意も手軽に共有したいのでAnsibleでやることに。&lt;/p&gt;
@@ -166,10 +166,10 @@ monit_protection: false                 # true or false, requires ANXS.monit
     
     <item>
       <title>Vagrant &#43; Ansibleでprovided hosts list is empty</title>
-      <link>http://localhost:51283/blog/2015/03/16/provided-hosts-list-is-empty/</link>
+      <link>http://yet.unresolved.xyz/blog/2015/03/16/provided-hosts-list-is-empty/</link>
       <pubDate>Mon, 16 Mar 2015 22:55:18 +0900</pubDate>
       
-      <guid>http://localhost:51283/blog/2015/03/16/provided-hosts-list-is-empty/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2015/03/16/provided-hosts-list-is-empty/</guid>
       <description>
 
 &lt;p&gt;AnsibleでVagrant上のCentOSにMySQLを入れようとしたらこれ。&lt;/p&gt;

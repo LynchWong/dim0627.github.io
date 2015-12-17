@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Scss on Unresolved</title>
-    <link>http://localhost:51283/tags/scss/</link>
+    <link>http://yet.unresolved.xyz/tags/scss/</link>
     <description>Recent content in Scss on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 09 Dec 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:51283/tags/scss/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://yet.unresolved.xyz/tags/scss/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>LeiningenでSCSSを自動コンパイルする</title>
-      <link>http://localhost:51283/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</link>
+      <link>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</link>
       <pubDate>Tue, 09 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:51283/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</guid>
       <description>
 
 &lt;p&gt;Clojureを始めて一週間ほどになりまして。&lt;/p&gt;

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Owasp Zap on Unresolved</title>
-    <link>http://localhost:51283/tags/owasp-zap/</link>
+    <link>http://yet.unresolved.xyz/tags/owasp-zap/</link>
     <description>Recent content in Owasp Zap on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 30 Sep 2015 16:24:53 +0900</lastBuildDate>
-    <atom:link href="http://localhost:51283/tags/owasp-zap/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://yet.unresolved.xyz/tags/owasp-zap/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>OWASP ZAPでBASIC認証を突破する</title>
-      <link>http://localhost:51283/blog/2015/09/30/using-basic-auth-in-owasp-zap/</link>
+      <link>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</link>
       <pubDate>Wed, 30 Sep 2015 16:24:53 +0900</pubDate>
       
-      <guid>http://localhost:51283/blog/2015/09/30/using-basic-auth-in-owasp-zap/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</guid>
       <description>
 
 &lt;p&gt;調べても意外と見つからない。&lt;/p&gt;

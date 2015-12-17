@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Google App Engine on Unresolved</title>
-    <link>http://localhost:51283/tags/google-app-engine/</link>
+    <link>http://yet.unresolved.xyz/tags/google-app-engine/</link>
     <description>Recent content in Google App Engine on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 12 Jan 2015 00:19:33 +0900</lastBuildDate>
-    <atom:link href="http://localhost:51283/tags/google-app-engine/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://yet.unresolved.xyz/tags/google-app-engine/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Python on GAEで3rdパーティライブラリを使う</title>
-      <link>http://localhost:51283/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/</link>
+      <link>http://yet.unresolved.xyz/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/</link>
       <pubDate>Mon, 12 Jan 2015 00:19:33 +0900</pubDate>
       
-      <guid>http://localhost:51283/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/</guid>
       <description>
 
 &lt;p&gt;ひさびさに&lt;a href=&#34;https://cloud.google.com/appengine/&#34;&gt;Google App Engine&lt;/a&gt;を使おうとしたらGoogle Cloud Platformだかなんだかでいろいろと変わってて戸惑った。&lt;/p&gt;
@@ -73,10 +73,10 @@ sys.path.insert(0, &#39;lib&#39;)
     
     <item>
       <title>Google app engineでカスタムドメインを使う</title>
-      <link>http://localhost:51283/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</link>
+      <link>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</link>
       <pubDate>Thu, 23 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:51283/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</guid>
       <description>
 
 &lt;p&gt;簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。&lt;/p&gt;
@@ -95,11 +95,11 @@ sys.path.insert(0, &#39;lib&#39;)
 
 &lt;p&gt;はじめにGoogleが、使いたいドメインが君のものか確認したいとのことなので、verifyへ。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:51283/images/2014-10-23/verify.png&#34;&gt;&lt;img src=&#34;http://localhost:51283/images/2014-10-23/verify.png&#34; class=&#34;image&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34; class=&#34;image&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;そうするとこんな画面になるので、&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:51283/images/2014-10-23/input_domain.png&#34;&gt;&lt;img src=&#34;http://localhost:51283/images/2014-10-23/input_domain.png&#34; class=&#34;image&#34; alt=&#34;input_domain&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34; class=&#34;image&#34; alt=&#34;input_domain&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;ここに表示されてるテキストを、ドメインを発行した会社さんのほうからTXTレコードとして追加すればOK。&lt;/p&gt;
 
@@ -115,7 +115,7 @@ sys.path.insert(0, &#39;lib&#39;)
 
 &lt;p&gt;でここに入力すればOK。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:51283/images/2014-10-23/input_txt.png&#34;&gt;&lt;img src=&#34;http://localhost:51283/images/2014-10-23/input_txt.png&#34; class=&#34;image&#34; alt=&#34;input_txt&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34; class=&#34;image&#34; alt=&#34;input_txt&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;TYPEはTXTにしてVALUEにさっきのテキストを入力。&lt;/p&gt;
 
@@ -127,7 +127,7 @@ sys.path.insert(0, &#39;lib&#39;)
 
 &lt;p&gt;確認が出来たらサブドメインとしてプレフィックスを付けるのかを決める。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:51283/images/2014-10-23/step2.png&#34;&gt;&lt;img src=&#34;http://localhost:51283/images/2014-10-23/step2.png&#34; class=&#34;image&#34; alt=&#34;step2&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34; class=&#34;image&#34; alt=&#34;step2&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;これによって最後のステップが変わるけど、僕は確認の時点でサブドメインとして設定したので、Google側では特に付加せずやってます。&lt;/p&gt;
 
@@ -137,7 +137,7 @@ sys.path.insert(0, &#39;lib&#39;)
 
 &lt;p&gt;ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:51283/images/2014-10-23/step3.png&#34;&gt;&lt;img src=&#34;http://localhost:51283/images/2014-10-23/step3.png&#34; class=&#34;image&#34; alt=&#34;step3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34; class=&#34;image&#34; alt=&#34;step3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;あとは待ってればそのうち反映されるはず。&lt;/p&gt;
 </description>

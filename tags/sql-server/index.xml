@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sql Server on Unresolved</title>
-    <link>http://localhost:51283/tags/sql-server/</link>
+    <link>http://yet.unresolved.xyz/tags/sql-server/</link>
     <description>Recent content in Sql Server on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 23 Oct 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:51283/tags/sql-server/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://yet.unresolved.xyz/tags/sql-server/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>クラスタ化インデックスとかカバリングインデックスについてどうせ忘れるからまとめる</title>
-      <link>http://localhost:51283/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</link>
+      <link>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</link>
       <pubDate>Thu, 23 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:51283/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</guid>
       <description>
 
 &lt;p&gt;SQL Serverを使ってて、ちょっと曖昧にしかわからんなってところがあったので少し調べてみた。&lt;/p&gt;

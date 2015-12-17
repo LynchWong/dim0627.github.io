@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Postgresql on Unresolved</title>
-    <link>http://localhost:51283/tags/postgresql/</link>
+    <link>http://yet.unresolved.xyz/tags/postgresql/</link>
     <description>Recent content in Postgresql on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 22 Jan 2015 15:37:14 +0900</lastBuildDate>
-    <atom:link href="http://localhost:51283/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://yet.unresolved.xyz/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Vagrant &#43; CentOS &#43; PostgreSQLを最速で構築</title>
-      <link>http://localhost:51283/blog/2015/01/22/install-postgresql-on-centos/</link>
+      <link>http://yet.unresolved.xyz/blog/2015/01/22/install-postgresql-on-centos/</link>
       <pubDate>Thu, 22 Jan 2015 15:37:14 +0900</pubDate>
       
-      <guid>http://localhost:51283/blog/2015/01/22/install-postgresql-on-centos/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2015/01/22/install-postgresql-on-centos/</guid>
       <description>
 
 &lt;p&gt;herokuにのっけるアプリを作るとき、ローカルではSQLite使ってたんだけどもう色々つらい。&lt;/p&gt;
@@ -179,10 +179,10 @@ postgres=# \q
     
     <item>
       <title>Lobosでマイグレーションができない in Heroku</title>
-      <link>http://localhost:51283/blog/2014/12/21/does-not-work-lobos-in-heroku/</link>
+      <link>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</link>
       <pubDate>Sun, 21 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:51283/blog/2014/12/21/does-not-work-lobos-in-heroku/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</guid>
       <description>
 
 &lt;p&gt;ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。&lt;/p&gt;

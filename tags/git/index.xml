@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on Unresolved</title>
-    <link>http://localhost:51283/tags/git/</link>
+    <link>http://yet.unresolved.xyz/tags/git/</link>
     <description>Recent content in Git on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:51283/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://yet.unresolved.xyz/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>gitで管理したくないファイルをインデックスから除外する</title>
-      <link>http://localhost:51283/blog/2014/09/28/learn-git-rm-command/</link>
+      <link>http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:51283/blog/2014/09/28/learn-git-rm-command/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2014/09/28/learn-git-rm-command/</guid>
       <description>
 
 &lt;p&gt;ローカル環境でちょこちょこ作ってたやつを本番環境に載せたんだけど、それなりに解決してた環境依存が少し残ってて.gitignoreファイルをちゃんと書くことに。&lt;/p&gt;
@@ -39,10 +39,10 @@
     
     <item>
       <title>gitでforce pushが出来ない</title>
-      <link>http://localhost:51283/blog/2014/09/27/could-not-force-push-on-git/</link>
+      <link>http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/</link>
       <pubDate>Sat, 27 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:51283/blog/2014/09/27/could-not-force-push-on-git/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/</guid>
       <description>
 
 &lt;p&gt;typoを直すために&lt;code&gt;rebase -i&lt;/code&gt;やらをやってたんだけど、操作してたのがmasterブランチだったのでどうしてもforce pushがしたかった。&lt;/p&gt;
@@ -76,10 +76,10 @@ fast-forwards&#39; section of &#39;git push --help&#39; for details.
     
     <item>
       <title>gitのリポジトリ単位にproxyの設定をする</title>
-      <link>http://localhost:51283/blog/2014/09/20/git-on-proxy/</link>
+      <link>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</link>
       <pubDate>Sat, 20 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:51283/blog/2014/09/20/git-on-proxy/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</guid>
       <description>
 
 &lt;h2 id=&#34;事の発端:ca86a8bf870eabf283b4127081a3d388&#34;&gt;事の発端&lt;/h2&gt;

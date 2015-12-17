@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Database on Unresolved</title>
-    <link>http://localhost:51283/tags/database/</link>
+    <link>http://yet.unresolved.xyz/tags/database/</link>
     <description>Recent content in Database on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 30 Sep 2015 13:44:48 +0900</lastBuildDate>
-    <atom:link href="http://localhost:51283/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://yet.unresolved.xyz/tags/database/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>[Laravel5.1]発行されたSQLと実行計画を取得する</title>
-      <link>http://localhost:51283/blog/2015/09/30/get-explain-at-laravel/</link>
+      <link>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</link>
       <pubDate>Wed, 30 Sep 2015 13:44:48 +0900</pubDate>
       
-      <guid>http://localhost:51283/blog/2015/09/30/get-explain-at-laravel/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</guid>
       <description>
 
 &lt;p&gt;インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしい。&lt;/p&gt;
@@ -94,10 +94,10 @@
     
     <item>
       <title>Lobosを使ってマイグレーションをする</title>
-      <link>http://localhost:51283/blog/2014/12/11/usage-for-lobos-migration/</link>
+      <link>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</link>
       <pubDate>Thu, 11 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:51283/blog/2014/12/11/usage-for-lobos-migration/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</guid>
       <description>
 
 &lt;p&gt;1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。&lt;/p&gt;
@@ -274,10 +274,10 @@ lobos_migrations  sites
     
     <item>
       <title>クラスタ化インデックスとかカバリングインデックスについてどうせ忘れるからまとめる</title>
-      <link>http://localhost:51283/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</link>
+      <link>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</link>
       <pubDate>Thu, 23 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:51283/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</guid>
       <description>
 
 &lt;p&gt;SQL Serverを使ってて、ちょっと曖昧にしかわからんなってところがあったので少し調べてみた。&lt;/p&gt;
