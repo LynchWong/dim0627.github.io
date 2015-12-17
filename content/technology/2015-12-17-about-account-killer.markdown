@@ -1,6 +1,6 @@
 ---
 date: 2015-12-17T10:39:55+09:00
-slug: "about-of-account-killer"
+slug: "about-account-killer"
 tags: ["sns", "tool"]
 title: "ACCOUNT KILLERというサービスが面白い"
 ---
