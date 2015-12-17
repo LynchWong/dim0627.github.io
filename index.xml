@@ -2,19 +2,146 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved</title>
-    <link>http://yet.unresolved.xyz/</link>
+    <link>http://localhost:51283/</link>
     <description>Recent content on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Dec 2015 14:32:45 +0900</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Dec 2015 10:39:55 +0900</lastBuildDate>
+    <atom:link href="http://localhost:51283/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ACCOUNT KILLERというサービスが面白い</title>
+      <link>http://localhost:51283/blog/2015/12/17/about-of-account-killer/</link>
+      <pubDate>Thu, 17 Dec 2015 10:39:55 +0900</pubDate>
+      
+      <guid>http://localhost:51283/blog/2015/12/17/about-of-account-killer/</guid>
+      <description>
+
+&lt;p&gt;WordPress.comとGravatarを退会しようと思ったんだけどなんか退会画面が見つからない。&lt;/p&gt;
+
+&lt;p&gt;いろいろ調べてみるとこの記事に行き着いた。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://d.hatena.ne.jp/m-hiyama/20150915/1442277074&#34;&gt;WordPress.comとGravatarのアカウントは一度登録したら何があっても絶対に削除できない - 檜山正幸のキマイラ飼育記&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;WordPress.comとGravatarのアカウントは一度登録したら何があっても絶対に削除できない！？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;まじかよ、なんてひどいサービスだ。&lt;/p&gt;
+
+&lt;p&gt;それはまあよくて、どっちにしろWordPressがひどいのは知ってたし。&lt;/p&gt;
+
+&lt;p&gt;この記事で紹介されてるACCOUNT KILLERというサービスが面白かった。&lt;/p&gt;
+
+&lt;h2 id=&#34;account-killer:c71ef8cc15c5192625af25f3fd00e149&#34;&gt;ACCOUNT KILLER？&lt;/h2&gt;
+
+&lt;p&gt;先の記事を引用させてもらうと、&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;ここは、Webサイト／サービスをホワイトリスト（退会容易）とブラックリスト（退会困難）に分けていて、Gravatarはブラック。ブラックもブラック、なんと退会が不可能なのです。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;世の中の有名なサービスの退会難易度をまとめてくれてるらしい。先にこれ見ときゃよかったなー。&lt;/p&gt;
+
+&lt;p&gt;退会出来ないサービスなんて登録したくないよね。さすがWordPress。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考にさせていただきました:c71ef8cc15c5192625af25f3fd00e149&#34;&gt;参考にさせていただきました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://d.hatena.ne.jp/m-hiyama/20150915/1442277074&#34;&gt;WordPress.comとGravatarのアカウントは一度登録したら何があっても絶対に削除できない - 檜山正幸のキマイラ飼育記&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ブログのデザインをリニューアルした</title>
+      <link>http://localhost:51283/blog/2015/12/15/renewal-this-blog-design/</link>
+      <pubDate>Tue, 15 Dec 2015 15:18:03 +0900</pubDate>
+      
+      <guid>http://localhost:51283/blog/2015/12/15/renewal-this-blog-design/</guid>
+      <description>
+
+&lt;p&gt;なんか最近飽きっぽくて、リニューアル症候群のひどい版に陥ってる感はある。&lt;/p&gt;
+
+&lt;p&gt;まあでも今回のはそれなりに納得がいってるのでちゃんと記事に残そうかな。&lt;/p&gt;
+
+&lt;h2 id=&#34;デザインのことがわからない:202dee404cc53d5ca2d5125da3b23125&#34;&gt;デザインのことがわからない&lt;/h2&gt;
+
+&lt;p&gt;僕はデザイナじゃないしセンスもないのでろくなことも言えないんだけど、
+素人目にもかっこいいものとかそうじゃないものってのはあるよね。&lt;/p&gt;
+
+&lt;p&gt;自分のブログくらいはそりゃもちろんかっこよくしておきたいわけで、これまでいくつかHugoのテーマを作ってきました。&lt;/p&gt;
+
+&lt;p&gt;結局メンテしてないから、ゴミを放出してしまったなって反省はあるけどね。&lt;/p&gt;
+
+&lt;h2 id=&#34;デザイナさんとの仕事:202dee404cc53d5ca2d5125da3b23125&#34;&gt;デザイナさんとの仕事&lt;/h2&gt;
+
+&lt;p&gt;今の会社で初めてまともにデザイナさんと仕事をしてるんだけど、やっぱり気づくことがあったりする。&lt;/p&gt;
+
+&lt;p&gt;デザインはどの要素を取ってもきちんと理由があって、更にその前段の当たり前のルールだとかもあったり。&lt;/p&gt;
+
+&lt;p&gt;僕みたいに適当に作ってきた人間には目からうろこな気づきもあるんだよね。&lt;/p&gt;
+
+&lt;p&gt;それで自分のブログのデザインに嫌気がさして、長く使えるデザインに作り直そうかなと。&lt;/p&gt;
+
+&lt;h2 id=&#34;他人のデザインをコーディングする:202dee404cc53d5ca2d5125da3b23125&#34;&gt;他人のデザインをコーディングする&lt;/h2&gt;
+
+&lt;p&gt;仕事ではマークアップは僕がやってます。&lt;/p&gt;
+
+&lt;p&gt;HTML/CSSは結構これまでも書いてきたからそんなに困ることはないんだけど、
+やっぱり自分で考えて自分で書くと、知らないうちに&lt;strong&gt;楽な実装をするためのデザイン&lt;/strong&gt;になってたりするんだなと思った。&lt;/p&gt;
+
+&lt;p&gt;だからデザイナさんのデザインをコーディングするのは非常にスリリングだったりする。&lt;/p&gt;
+
+&lt;p&gt;あーこれ辛いなー、ややこしいなーって思うことも結構あるんだけど、やっぱやってみると躓いて、ああすればよかった、こうすればよかったって気づきがたくさん得られてる。&lt;/p&gt;
+
+&lt;p&gt;もちろんそう思ったらすぐにリファクタリングしてるけどね。&lt;/p&gt;
+
+&lt;p&gt;でもやっぱりあれだね、HTML/CSSは劣化がはやいね、すぐに破綻の道に入ってしまう。&lt;/p&gt;
+
+&lt;h2 id=&#34;シンプルから始める:202dee404cc53d5ca2d5125da3b23125&#34;&gt;シンプルから始める&lt;/h2&gt;
+
+&lt;p&gt;飽きないデザインってなんだろうなって考えた時に、なんかそれってちょっとやそっとじゃ結論が出るもんじゃないし、
+1つの学問というか、芸術とかの世界に踏み込んじゃう気がしたんだよね。&lt;/p&gt;
+
+&lt;h3 id=&#34;デザインしない:202dee404cc53d5ca2d5125da3b23125&#34;&gt;デザインしない&lt;/h3&gt;
+
+&lt;p&gt;だとしたらプロでもない僕が出来るのは&lt;strong&gt;とりあえず無駄なものがない状態&lt;/strong&gt;にすることなのかなと。&lt;/p&gt;
+
+&lt;p&gt;もっと簡単に言えば、デザイン出来ないからデザインしない、みたいな。&lt;/p&gt;
+
+&lt;p&gt;足りなきゃそこから足していけばいいと思うし。&lt;/p&gt;
+
+&lt;p&gt;ブログの最低限の状態ってなんだろう。タイトルと文章と日付かな、一応は日記だし。
+タグとかは後で、端っこの方に追加していけばいいかな、って考えた結果こうなりました。&lt;/p&gt;
+
+&lt;p&gt;これまでは&lt;code&gt;h2&lt;/code&gt;とか&lt;code&gt;h3&lt;/code&gt;とかを見やすく装飾してたりしたんだけど、それって装飾じゃなきゃ出来ないことなのかな。&lt;/p&gt;
+
+&lt;p&gt;これがWebじゃなくて紙ベースの日記だとしたら、きっと大きめに書いたり1行空けたりして対比してたんじゃないかな。
+さらに言えば&lt;code&gt;h4&lt;/code&gt;以降なんて絶対使わないよな、って結論に至った。&lt;/p&gt;
+
+&lt;h3 id=&#34;たくさんのことをやらない:202dee404cc53d5ca2d5125da3b23125&#34;&gt;たくさんのことをやらない&lt;/h3&gt;
+
+&lt;p&gt;HTMLというかWebデザインというか、いろんな手法があるじゃないですか。&lt;/p&gt;
+
+&lt;p&gt;例えば文字に色を付けるとか、背景を敷くとか、マーカーみたいな下線を入れるとか。
+意味の違うコンテンツを区切るために線を引いたり、背景色を変えてみたり。&lt;/p&gt;
+
+&lt;p&gt;でもそういう手法ってたくさん使わないほうがいいんじゃないかなと思うんですよね。&lt;/p&gt;
+
+&lt;p&gt;基本的に文字もしくは画像で成り立つのがWebページだと思うんだけど、
+だったらその元素となるオブジェクトをうまく配置するだけである程度見やすく出来るんじゃないかなと。&lt;/p&gt;
+
+&lt;p&gt;それでもなお見やすさとかわかりやすさを追求するためにデザインが存在したほうが、なんか合理的な気がするんですよね。&lt;/p&gt;
+
+&lt;p&gt;というわけで今回のリニューアルは、文字と余白だけで見やすく、見出しと文章がわかりやすく、出来たら良いなと。&lt;/p&gt;
+
+&lt;p&gt;まあそうはいっても結局飽きるかもしれないし、飽きなくてもこれから変えていくつもりなんだけどね。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>今更だけどBloodborneをやってる</title>
-      <link>http://yet.unresolved.xyz/blog/2015/12/15/playing-blood-borne/</link>
+      <link>http://localhost:51283/blog/2015/12/15/playing-blood-borne/</link>
       <pubDate>Tue, 15 Dec 2015 14:32:45 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/12/15/playing-blood-borne/</guid>
+      <guid>http://localhost:51283/blog/2015/12/15/playing-blood-borne/</guid>
       <description>
 
 &lt;p&gt;このブログもようわからんから、日記にしようかな、更新頻度あげたい。&lt;/p&gt;
@@ -82,11 +209,223 @@
     </item>
     
     <item>
+      <title>FacebookとTwitterアプリを消した</title>
+      <link>http://localhost:51283/blog/2015/12/15/removed-sns-app/</link>
+      <pubDate>Tue, 15 Dec 2015 11:01:09 +0900</pubDate>
+      
+      <guid>http://localhost:51283/blog/2015/12/15/removed-sns-app/</guid>
+      <description>
+
+&lt;p&gt;消した消した。退会じゃなくてアプリを消しただけ。特に理由はないけど。まあやってる理由もあんまりないしね。&lt;/p&gt;
+
+&lt;p&gt;とは言えそこから得てる情報もあったりするので、Webで夜に少し見たりはしてる。けど最近はそれもしなくなったな。&lt;/p&gt;
+
+&lt;p&gt;少し前にこんな記事もあったね。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://news.livedoor.com/article/detail/10845152/&#34;&gt;Facebookをやめると前向きになる？ 調査結果に納得も - ライブドアニュース&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;別にこんな斜に構えたことは考えてないけど、なんか事あるごとにスマホいじるのも嫌だなとは思うよね。&lt;/p&gt;
+
+&lt;h2 id=&#34;消してみて:edbcc6a26ed8bdd7df2aea4074a00963&#34;&gt;消してみて&lt;/h2&gt;
+
+&lt;p&gt;良くも悪くもなってないな、でも手持ち無沙汰な時間が増えたな。それくらい時間を費やしてたんだろうね。&lt;/p&gt;
+
+&lt;p&gt;その時間を他のことにあてられたらいいんだけどパッとは思いつかないな。&lt;/p&gt;
+
+&lt;p&gt;家の本を全部電子書籍化しようと思ってるんだけど、そしたらそれを読む時間にあてられるか、
+でもさっと取り出せるって意味じゃスマホの右に出るものはないよね。&lt;/p&gt;
+
+&lt;p&gt;っていうかSNSもそうだしネット上に自分の情報をばらまいてしまったのは少し後悔してる、少しずつ消していきたいな。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>裁量労働制が苦手かも知れない</title>
+      <link>http://localhost:51283/blog/2015/12/15/i-not-good-at-discretionary-labor/</link>
+      <pubDate>Tue, 15 Dec 2015 09:31:03 +0900</pubDate>
+      
+      <guid>http://localhost:51283/blog/2015/12/15/i-not-good-at-discretionary-labor/</guid>
+      <description>
+
+&lt;p&gt;今更だけど僕はエンジニアをやっていて、ついこないだまで裁量労働制の会社に居ました。&lt;/p&gt;
+
+&lt;p&gt;出社時間や退社時間が定められていないあれですね。&lt;/p&gt;
+
+&lt;p&gt;比較的エンジニアは優遇された環境にいて、働きやすさで言えば僕の働いた会社の中で一番だったと思ってます。&lt;/p&gt;
+
+&lt;p&gt;ですが実際その頃から体調が良くなくて、それもメンタル面の。
+何かこうやりたいこともなくなったし気力がわかなくなった感じがあったんですね。&lt;/p&gt;
+
+&lt;p&gt;こういう時に原因を考えるのは良くないという話は結構聞くんですが、それでもまあいろいろ考えるわけですよ。&lt;/p&gt;
+
+&lt;h2 id=&#34;裁量労働が向いてない:ffcd20c62ad111083a0811845a92a4d3&#34;&gt;裁量労働が向いてない&lt;/h2&gt;
+
+&lt;p&gt;とはいえ結論が出たわけでもないんだけど、個人的にはその裁量労働が良くなかったのかなあと。&lt;/p&gt;
+
+&lt;p&gt;裁量労働って良く言えば自由だけど、悪く言えば生活のメリハリがなくなるとも取れると思うんですね。&lt;/p&gt;
+
+&lt;p&gt;もちろんそれは人それぞれだから、裁量労働自体が悪いとか言いたいわけじゃないです、ただ僕に合わなかったのかなってだけで。&lt;/p&gt;
+
+&lt;p&gt;でも働きやすかったんだよね、通勤電車は混まないし、思いとは裏腹にうまくいかないもんですな。&lt;/p&gt;
+
+&lt;h2 id=&#34;最近は調子良い:ffcd20c62ad111083a0811845a92a4d3&#34;&gt;最近は調子良い&lt;/h2&gt;
+
+&lt;p&gt;僕は結構ジョブホッパーみたいなことをしてて、いややりたくてやってるわけじゃないけど、とにかくまあ今は普通の勤務体系の会社にいます。&lt;/p&gt;
+
+&lt;p&gt;まだ3ヶ月目とかだけど、結構最近は調子いいです、やりたいことをやろうって気力が出てきた。&lt;/p&gt;
+
+&lt;p&gt;別に仕事のために生きてるわけじゃないけど、ある程度そういうプレッシャーというか、ストレスって必要なのかなと思った次第。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>「生きる僕ら」を読んだ</title>
+      <link>http://localhost:51283/blog/2015/12/14/we-live/</link>
+      <pubDate>Mon, 14 Dec 2015 22:17:32 +0900</pubDate>
+      
+      <guid>http://localhost:51283/blog/2015/12/14/we-live/</guid>
+      <description>&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/4198940142/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4198940142&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;生きるぼくら (徳間文庫)&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=4198940142&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/4198940142/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4198940142&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;生きるぼくら (徳間文庫)&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=4198940142&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ドラゴンエイジインクイジションを3周もやった</title>
+      <link>http://localhost:51283/blog/2015/12/14/playing-dragon-age-inquisition/</link>
+      <pubDate>Mon, 14 Dec 2015 21:13:20 +0900</pubDate>
+      
+      <guid>http://localhost:51283/blog/2015/12/14/playing-dragon-age-inquisition/</guid>
+      <description>
+
+&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/B00JRUJIPW/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B00JRUJIPW&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;ドラゴンエイジ:インクイジション (通常版)&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=B00JRUJIPW&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;3周もやったくらいだし結構楽しめた。DLCも全部買ってしまったぜ。&lt;/p&gt;
+
+&lt;h2 id=&#34;ストーリーが重厚だった:a9abb8a9324bdbbcd8e3052d510b1fa3&#34;&gt;ストーリーが重厚だった&lt;/h2&gt;
+
+&lt;p&gt;ものすごく作りこまれてると思った、最後の方とかコリーフィウス半分ヤケじゃんって感じだけど、それもそれでよかった。&lt;/p&gt;
+
+&lt;p&gt;物語中の分岐も、おそらく網羅は無理なんじゃないかってくらい多くて、ちゃんとストーリーを進めてる実感が持てた。
+逆に次何すればいいんだっけって思うこともあったけど、次することが決まってるのって逆にリアリティがないとも言えるよね。&lt;/p&gt;
+
+&lt;p&gt;あと主人公の職が魔道士とそうじゃない時で節々が変わるんだよね、あれもちゃんと作られてるなと思った。&lt;/p&gt;
+
+&lt;h3 id=&#34;でもわかりにくいところも多い:a9abb8a9324bdbbcd8e3052d510b1fa3&#34;&gt;でもわかりにくいところも多い&lt;/h3&gt;
+
+&lt;p&gt;僕はこれ、シリーズを1個もやったこともないんですよね。
+だから正直、ストーリーの土台が全然わからなかったんですよ。&lt;/p&gt;
+
+&lt;p&gt;いや、やったことないから、ってだけじゃない気がするな、固有名詞がすごく多かった気がする。&lt;/p&gt;
+
+&lt;p&gt;あと説明が少ないよね、コーデックスっていう機能で単語の意味や登場人物の紹介は見れるから、そこは親切だなと思ったけどね。&lt;/p&gt;
+
+&lt;h3 id=&#34;現実味がある:a9abb8a9324bdbbcd8e3052d510b1fa3&#34;&gt;現実味がある&lt;/h3&gt;
+
+&lt;p&gt;スカイホールドへの引っ越しとかすごくいいよね、拠点が襲われてどうしょうもなくなるとかマジかよと思った。&lt;/p&gt;
+
+&lt;p&gt;あとあれだね、ヘイブンが襲われてる時に住民を助けることが出来るんだけど、あれ間に合わないんだよね。
+僕が下手なだけなんだけどね。&lt;/p&gt;
+
+&lt;p&gt;そこも現実味があってよかったな、悲しかったけど。&lt;/p&gt;
+
+&lt;p&gt;助けられないとスカイホールドでいなくなってるんだよね。&lt;/p&gt;
+
+&lt;h2 id=&#34;登場人物の過去が良い:a9abb8a9324bdbbcd8e3052d510b1fa3&#34;&gt;登場人物の過去が良い&lt;/h2&gt;
+
+&lt;p&gt;個人的に一番好きだったのはブラックウォールの個人クエストでしたね。&lt;/p&gt;
+
+&lt;p&gt;スカイホールドに移動してからも、随分こう、詮索を嫌がるなあという印象はあったんだよね。
+だけど少しずつ仲良くなって来てるなあという実感もあって、そのタイミングでのクエスト発生だから結構ハラハラした。&lt;/p&gt;
+
+&lt;p&gt;このゲームはあれだよね、主要メンバーの離脱があるから現実味があるよね。&lt;/p&gt;
+
+&lt;p&gt;実は3周もしたのはそれが理由だったりします。メインで戦ってたメンバーが離脱した &amp;amp; することがわかったから。&lt;/p&gt;
+
+&lt;p&gt;ドリアンの話も良かったな、なんかこう、本当に現実世界でも問題になっている事象を取り上げてるよね。&lt;/p&gt;
+
+&lt;h3 id=&#34;メインメンバー:a9abb8a9324bdbbcd8e3052d510b1fa3&#34;&gt;メインメンバー&lt;/h3&gt;
+
+&lt;p&gt;1周目はカサンドラを使ってたんだよね、でも教皇になってしまわれまして、2周目に入ったわけです。&lt;/p&gt;
+
+&lt;p&gt;あとセラが好きでどの周でも使ってたな、あのひねくれた感じが凄く好き。
+でもあいつ会話でどの選択肢選んでもだいたい好感度下がるんだよね、気難しい。&lt;/p&gt;
+
+&lt;p&gt;あとなんだっけあいつ、魔道士の人、マダムって言われてた人、ヴィヴィエンヌか。
+あいつも良いかなと思ったんだけど、旅の道中でメンバーと喧嘩するのでやめました、仲良くしてほしい。&lt;/p&gt;
+
+&lt;p&gt;アイアンブルもお気に入りだった、頼りがいあるよね。
+でもあいつめっちゃ紙装甲なんだよね、意識した装備してもすぐやられちゃう。&lt;/p&gt;
+
+&lt;h2 id=&#34;職種はもうちょいいろいろ欲しかった:a9abb8a9324bdbbcd8e3052d510b1fa3&#34;&gt;職種はもうちょいいろいろ欲しかった&lt;/h2&gt;
+
+&lt;p&gt;最初は主人公をローグにしたんだよね、二刀でズバズバ斬って戦いたいなあと思ったので。&lt;/p&gt;
+
+&lt;p&gt;まあ言われてる通り装甲は結構弱い感じあったけど、火力が高いから戦いやすかった。デスブロウとか威力やばい。&lt;/p&gt;
+
+&lt;p&gt;しかし2次職はあんまり魅力的なのがないね、アサシンにしたんだけど、あんまりパッとした感じはなかった。&lt;/p&gt;
+
+&lt;p&gt;2週目は魔道士にした。2次で裂け目の魔道士。&lt;/p&gt;
+
+&lt;p&gt;魔道士もすごく火力が高くてよかった。火の地雷のやつとか当たりにくい反面ダメージがチートレベルだし。
+でもこれも2次はあんまり魅力的じゃなかったなあ、まあメテオみたいなやつは派手でよかったけどね。
+もっとこう、大魔法みたいなのがあったらよかったな。&lt;/p&gt;
+
+&lt;p&gt;3週目はまたローグをやった、こっちはテンペスト。&lt;/p&gt;
+
+&lt;p&gt;サウザンドカットは派手でいいね、強いし。
+でもそれ以外はまあこれもパッとしなかったかな。職種はちょっと不満かも。&lt;/p&gt;
+
+&lt;h2 id=&#34;バツボタンで決定はダメだと思う:a9abb8a9324bdbbcd8e3052d510b1fa3&#34;&gt;バツボタンで決定はダメだと思う&lt;/h2&gt;
+
+&lt;p&gt;このゲームはバツボタンが決定で、マルボタンがキャンセルなんですよね。&lt;/p&gt;
+
+&lt;p&gt;これのせいで他のゲームがすごく辛くなった。&lt;/p&gt;
+
+&lt;p&gt;バツはバツでしょ、マルはマルでしょ。せめて設定で変えられるようにして欲しかったな。&lt;/p&gt;
+
+&lt;h2 id=&#34;欠片集めが非常にめんどう:a9abb8a9324bdbbcd8e3052d510b1fa3&#34;&gt;欠片集めが非常にめんどう&lt;/h2&gt;
+
+&lt;p&gt;ゲームで面倒って感じるプレイヤーってどうなのって思うけど、これはだるかったなあ。&lt;/p&gt;
+
+&lt;p&gt;なんていうか、変なギミックが入ってたりしてわかりづらいんだよね、オキュラルム見つからないし、達成感もないし。&lt;/p&gt;
+
+&lt;p&gt;1周目はちゃんとやったけど、2周目以降は一切拾わなかったな。&lt;/p&gt;
+
+&lt;h2 id=&#34;戦闘はもうちょい頑張れたのでは:a9abb8a9324bdbbcd8e3052d510b1fa3&#34;&gt;戦闘はもうちょい頑張れたのでは&lt;/h2&gt;
+
+&lt;p&gt;戦闘システムはすごく作りこまれてるなと思った、戦略立てて戦ったり、アクション的に戦ったり。&lt;/p&gt;
+
+&lt;p&gt;でも少し退屈しちゃうことも多かったな、多分これは敵が悪いんじゃないかな。
+回避も離れればいいだけだし、後は攻撃しっぱなしで余裕で乗りきれてしまった。&lt;/p&gt;
+
+&lt;p&gt;ドラゴンの動きも単調だよね、10体居るけど全部同じ動き。&lt;/p&gt;
+
+&lt;h2 id=&#34;dlcは結構満足した:a9abb8a9324bdbbcd8e3052d510b1fa3&#34;&gt;DLCは結構満足した&lt;/h2&gt;
+
+&lt;p&gt;実はまだクリア出来てないんだな、なんだっけ、最後のやつ。招かれざる客だっけ。
+あれだけまだ終わらせられてない。&lt;/p&gt;
+
+&lt;p&gt;あれの途中で、アイアンブルが抜けるってことがわかってやめて、3周目に入ったんだよね、本編のフラグ立ててないやってことに気づいて。&lt;/p&gt;
+
+&lt;p&gt;とは言え個人的にDLCは結構満足したかな、ハコンの顎とかすげー楽しめた。&lt;/p&gt;
+
+&lt;p&gt;村の聖獣だっけ、あの話とかすごく良いよね、あれで一致団結してハコンの顎に攻め込むとことか。&lt;/p&gt;
+
+&lt;p&gt;地底世界はボスまでが少しマンネリしたけどね、ボスは一番苦戦したわ、正直無理かなって思った。&lt;/p&gt;
+
+&lt;p&gt;だらだら書いたけど楽しめるゲームでしたよ、次作が出たら買うと思う。&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/B00JRUJIPW/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B00JRUJIPW&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;ドラゴンエイジ:インクイジション (通常版)&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=B00JRUJIPW&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Googleの構造化データの扱いが変わった気がする</title>
-      <link>http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</link>
+      <link>http://localhost:51283/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</link>
       <pubDate>Fri, 11 Dec 2015 11:22:28 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</guid>
+      <guid>http://localhost:51283/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</guid>
       <description>
 
 &lt;p&gt;このブログも、他の運営してるサイトも、今日になってエラーが発生するようになった。&lt;/p&gt;
@@ -95,11 +434,11 @@
 
 &lt;p&gt;エラーは2種類発生していて、ひとつめがこれ。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-12-11/error1.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-12-11/error1.png&#34; class=&#34;image&#34; alt=&#34;error&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:51283/images/2015-12-11/error1.png&#34;&gt;&lt;img src=&#34;http://localhost:51283/images/2015-12-11/error1.png&#34; class=&#34;image&#34; alt=&#34;error&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;もうひとつがこれ。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-12-11/error2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-12-11/error2.png&#34; class=&#34;image&#34; alt=&#34;error&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:51283/images/2015-12-11/error2.png&#34;&gt;&lt;img src=&#34;http://localhost:51283/images/2015-12-11/error2.png&#34; class=&#34;image&#34; alt=&#34;error&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;あれ？&lt;code&gt;author&lt;/code&gt;はもともと必須だっけ？&lt;/p&gt;
 
@@ -180,10 +519,10 @@
     
     <item>
       <title>プロダクションのWordPressを捨てHugoに移行した</title>
-      <link>http://yet.unresolved.xyz/blog/2015/12/10/using-hugo-in-production/</link>
+      <link>http://localhost:51283/blog/2015/12/10/using-hugo-in-production/</link>
       <pubDate>Thu, 10 Dec 2015 14:49:18 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/12/10/using-hugo-in-production/</guid>
+      <guid>http://localhost:51283/blog/2015/12/10/using-hugo-in-production/</guid>
       <description>
 
 &lt;p&gt;あんまり仕事のことは書かないつもりだったんだけど、このブログの生成でもお世話になっている&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;を結構本気で使ったのでそのことをまとめてみます。&lt;/p&gt;
@@ -387,10 +726,10 @@ Make every program a Filter.&lt;/p&gt;
     
     <item>
       <title>ELB越しのLaravelでHTTPSを使おうとして困った話</title>
-      <link>http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/</link>
+      <link>http://localhost:51283/blog/2015/11/04/using-https-in-laravel/</link>
       <pubDate>Wed, 04 Nov 2015 12:18:07 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/</guid>
+      <guid>http://localhost:51283/blog/2015/11/04/using-https-in-laravel/</guid>
       <description>
 
 &lt;h2 id=&#34;ssl証明書はelbに設置する:56aef34fa740ed018dee02e37b63f347&#34;&gt;SSL証明書はELBに設置する&lt;/h2&gt;
@@ -473,10 +812,10 @@ Make every program a Filter.&lt;/p&gt;
     
     <item>
       <title>Hugo0.15でSummaryが日本語に対応するっぽい</title>
-      <link>http://yet.unresolved.xyz/blog/2015/10/09/hugo-support-cjk-language/</link>
+      <link>http://localhost:51283/blog/2015/10/09/hugo-support-cjk-language/</link>
       <pubDate>Fri, 09 Oct 2015 22:15:51 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/10/09/hugo-support-cjk-language/</guid>
+      <guid>http://localhost:51283/blog/2015/10/09/hugo-support-cjk-language/</guid>
       <description>&lt;p&gt;会社のMacにも&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;をセットアップしてあるんだけど、テーマの編集とかの続きを家でやろうとしたら&lt;code&gt;.Summary&lt;/code&gt;が異なる挙動をしてることに気づいた。&lt;/p&gt;
 
 &lt;p&gt;どうやらHugoのバージョンによって、日本語の解釈がうまくいったりいかなかったりするみたい。&lt;/p&gt;
@@ -538,10 +877,10 @@ Make every program a Filter.&lt;/p&gt;
     
     <item>
       <title>OWASP ZAPでBASIC認証を突破する</title>
-      <link>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</link>
+      <link>http://localhost:51283/blog/2015/09/30/using-basic-auth-in-owasp-zap/</link>
       <pubDate>Wed, 30 Sep 2015 16:24:53 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</guid>
+      <guid>http://localhost:51283/blog/2015/09/30/using-basic-auth-in-owasp-zap/</guid>
       <description>
 
 &lt;p&gt;調べても意外と見つからない。&lt;/p&gt;
@@ -576,10 +915,10 @@ Make every program a Filter.&lt;/p&gt;
     
     <item>
       <title>[Laravel5.1]発行されたSQLと実行計画を取得する</title>
-      <link>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</link>
+      <link>http://localhost:51283/blog/2015/09/30/get-explain-at-laravel/</link>
       <pubDate>Wed, 30 Sep 2015 13:44:48 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</guid>
+      <guid>http://localhost:51283/blog/2015/09/30/get-explain-at-laravel/</guid>
       <description>
 
 &lt;p&gt;インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしい。&lt;/p&gt;
@@ -659,10 +998,10 @@ Make every program a Filter.&lt;/p&gt;
     
     <item>
       <title>Amazon LinuxをVagrantで使いたい</title>
-      <link>http://yet.unresolved.xyz/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/</link>
+      <link>http://localhost:51283/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/</link>
       <pubDate>Wed, 26 Aug 2015 23:12:02 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/</guid>
+      <guid>http://localhost:51283/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/</guid>
       <description>
 
 &lt;p&gt;開発はCentOS、本番はAmazonLinuxにしようとしたら意外と違うところが多くてProvisioningがだるかったので。&lt;/p&gt;
@@ -700,7 +1039,7 @@ Make every program a Filter.&lt;/p&gt;
 
 &lt;p&gt;こんな感じに。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-08-26/bucket.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-08-26/bucket.png&#34; class=&#34;image&#34; alt=&#34;bucket&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:51283/images/2015-08-26/bucket.png&#34;&gt;&lt;img src=&#34;http://localhost:51283/images/2015-08-26/bucket.png&#34; class=&#34;image&#34; alt=&#34;bucket&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;そしたら違うエラー。&lt;/p&gt;
 
@@ -746,10 +1085,10 @@ Ubuntu 12.04、12.10、13.04、13.10、14.04、14.10&lt;/p&gt;
     
     <item>
       <title>focusoutイベントでfocus中の要素が取得できない</title>
-      <link>http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/</link>
+      <link>http://localhost:51283/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/</link>
       <pubDate>Tue, 14 Jul 2015 00:05:16 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/</guid>
+      <guid>http://localhost:51283/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/</guid>
       <description>
 
 &lt;p&gt;何を血迷ったかサジェストを自作しようとしてしまってつらい目にあった話。&lt;/p&gt;
@@ -808,372 +1147,6 @@ $(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() 
 &lt;h2 id=&#34;参考にさせていただきました:1be3a17c6bd3affece21cbd510505d7a&#34;&gt;参考にさせていただきました。&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://qiita.com/jkr_2255/items/17693ab77beea71a871c&#34;&gt;JavaScript - setTimeout(&amp;hellip;,0)などの使いドコロ - Qiita&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hugo向けの新しいテーマを作った</title>
-      <link>http://yet.unresolved.xyz/blog/2015/06/20/making-new-theme-robust-for-hugo/</link>
-      <pubDate>Sat, 20 Jun 2015 11:30:06 +0900</pubDate>
-      
-      <guid>http://yet.unresolved.xyz/blog/2015/06/20/making-new-theme-robust-for-hugo/</guid>
-      <description>
-
-&lt;p&gt;前に作ったやつが飽きてしまったので、そもそもForkするんじゃなくて0から作ることにしました。&lt;/p&gt;
-
-&lt;h2 id=&#34;出来たもの:b3f0c0f315f1fbc2ee8323461148b3d4&#34;&gt;出来たもの&lt;/h2&gt;
-
-&lt;p&gt;こんな感じ。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/dim0627/hugo_theme_robust&#34;&gt;dim0627/hugo_theme_robust&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-06-20/theme_tn.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-06-20/theme_tn.png&#34; class=&#34;image&#34; alt=&#34;theme_tn&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;トップの最新4記事は2カラム、それ以降は4カラムで表示するようにしてる。もちろんレスポンシブで。&lt;/p&gt;
-
-&lt;p&gt;前はPost一覧とかの画面もあったけど、そもそも必要無いような気がして色々削った。&lt;/p&gt;
-
-&lt;p&gt;なので今回はシンプルにトップ、記事詳細、タグ別記事一覧の3ページだけ。&lt;/p&gt;
-
-&lt;p&gt;トップとタグ別記事一覧は同じテンプレートを使ってるから、少し冗長になってしまったなあ。&lt;/p&gt;
-
-&lt;p&gt;Hugoのテンプレート構成が今だによくわかってないから、共通化とかがうまく出来ない・・・。&lt;/p&gt;
-
-&lt;h2 id=&#34;工夫したこと:b3f0c0f315f1fbc2ee8323461148b3d4&#34;&gt;工夫したこと&lt;/h2&gt;
-
-&lt;p&gt;前にテーマを作って思ったんだけど、Hugoの強みは各テーマをOverride出来ることなんだよね。&lt;/p&gt;
-
-&lt;p&gt;だからそれ前提で書かないと、Overrideしたいのは一部でも、ファイルまるごとコピるはめになっちゃう。&lt;/p&gt;
-
-&lt;p&gt;前はそれでもう何がなんだかわからなくなったので、今回はそれを避けようとした。&lt;/p&gt;
-
-&lt;p&gt;何をしたかというと、空っぽのテンプレートファイルを最初からいろいろな場所に設置しておくことにした。&lt;/p&gt;
-
-&lt;p&gt;Overrideしたい人はこのファイルを各自のディレクトリにコピーして編集すればいいし、&lt;/p&gt;
-
-&lt;p&gt;Overrideしない人はほっとけば影響もない。&lt;/p&gt;
-
-&lt;h2 id=&#34;まとめ:b3f0c0f315f1fbc2ee8323461148b3d4&#34;&gt;まとめ&lt;/h2&gt;
-
-&lt;p&gt;数時間でざーっと作ったので、最後のほうはCSSもぶれまくったなあ。&lt;/p&gt;
-
-&lt;p&gt;あとReadmeとかいろいろ書けてない。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/spf13/hugoThemes&#34;&gt;spf13/hugoThemes&lt;/a&gt;にプルリクも送らねば・・・。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>例によってpaiza online hackathon5をClojureで解いてみた</title>
-      <link>http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/</link>
-      <pubDate>Wed, 06 May 2015 09:54:46 +0900</pubDate>
-      
-      <guid>http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/</guid>
-      <description>
-
-&lt;p&gt;まずい更新することがない。&lt;/p&gt;
-
-&lt;p&gt;とりあえずPOHネタでこの場をしのごう。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://paiza.jp/poh/enshura?locale=ja&#34;&gt;マンガ版「俺の許嫁と幼なじみが修羅場すぎる」｜paizaオンラインハッカソン5&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;今回はパフォーマンスとかの問題はなく、ただただロジックが面倒くさいものばっかでした。&lt;/p&gt;
-
-&lt;h2 id=&#34;problem-1:d10396b379fa39f08bc202555c3657f6&#34;&gt;Problem 1&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def in (line-seq (java.io.BufferedReader. *in*)))
-
-(def p1 (-&amp;gt;&amp;gt; in
-             first
-             (take-nth 2)
-             clojure.string/join))
-
-(println p1)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;そもそもこれシーケンスで取らなければ&lt;code&gt;first&lt;/code&gt;とかつけなくてよかったんじゃないかなあ。&lt;/p&gt;
-
-&lt;p&gt;そんな方法あるかわかんないけど。&lt;/p&gt;
-
-&lt;h2 id=&#34;problem-2:d10396b379fa39f08bc202555c3657f6&#34;&gt;Problem 2&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def in (map
-         #(Integer/parseInt %)
-         (line-seq (java.io.BufferedReader. *in*))))
-
-(defn take-padding [coll pad]
-  (-&amp;gt;&amp;gt; coll
-       (partition-all pad)
-       (map first)))
-
-(def p2
-  (let [l (rest in)]
-    (map #(apply + %)
-         (for [i (range 7)]
-           (take-padding (drop i l) 7)))))
-
-(print (clojure.string/join &amp;quot;\n&amp;quot; p2))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;結構強引にシーケンス操作を書いたけど、もっと楽にやれる関数が用意されてる気する。&lt;/p&gt;
-
-&lt;h2 id=&#34;problem-3-rena:d10396b379fa39f08bc202555c3657f6&#34;&gt;Problem 3 RENA&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def in (for [e (map #(.split % &amp;quot; &amp;quot;) (line-seq (java.io.BufferedReader. *in*)))]
-          (map #(Integer/parseInt %) e)))
-
-(defn point-to-range [coll]
-  (for [v (map #(partition 2 %) coll)]
-    (let [[s e] v]
-      (for [x (range (- (first s) 1) (first e))
-            y (range (- (second s) 1) (second e))]
-        [x y]))))
-
-(def p3r
-  (let [[w dc rc] (first in)
-        d (take dc (rest in))
-        r (-&amp;gt;&amp;gt; (point-to-range (take-last rc in))
-               (apply concat)
-               distinct)]
-    (for [e r]
-      (nth (nth d (second e)) (first e)))))
-
-(print (apply + p3r))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;エクセル的なやつ。&lt;/p&gt;
-
-&lt;p&gt;めんどくさかった。&lt;/p&gt;
-
-&lt;h2 id=&#34;problem-3-minami:d10396b379fa39f08bc202555c3657f6&#34;&gt;Problem 3 MINAMI&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def in (line-seq (java.io.BufferedReader. *in*)))
-
-(defn h2v [coll n]
-  (for [c (range n)]
-    (map #(nth % c) coll)))
-
-(defn compl [n coll]
-  (concat (take (- n (count coll)) (repeat 0)) coll))
-
-(def p3m
-  (let [tc (for [e (map #(.split % &amp;quot; &amp;quot;) in)]
-             (map #(Integer/parseInt %) e))
-        [x y] (-&amp;gt; tc first)
-        coll (rest tc)]
-    (h2v (-&amp;gt;&amp;gt; (h2v coll x)
-              (map (fn [c] (filter #(not= 2 %) c)))
-              (map #(compl y %))) y)))
-
-(print (clojure.string/join &amp;quot;\n&amp;quot;
-                            (map #(clojure.string/join &amp;quot; &amp;quot; %) p3m)))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;爆弾のやつ。&lt;/p&gt;
-
-&lt;p&gt;めんどくさかった。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する</title>
-      <link>http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/</link>
-      <pubDate>Wed, 01 Apr 2015 22:42:40 +0900</pubDate>
-      
-      <guid>http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/</guid>
-      <description>
-
-&lt;p&gt;こんな感じ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# v でペインを縦に分割する
-bind v split-window -h -c &amp;quot;#{pane_current_path}&amp;quot;
-
-# s でペインを横に分割する
-bind s split-window -v -c &amp;quot;#{pane_current_path}&amp;quot;
-
-# 新規ウィンドウでディレクトリを保持
-bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;参考にさせていただきました:0adf99f262be79bb5ee2575ca8ebd7e8&#34;&gt;参考にさせていただきました&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://studio3104.hatenablog.com/entry/2014/10/14/131430&#34;&gt;tmux 1.9 でペイン分割時にカレントディレクトリを維持 - Studio3104::BLOG.new&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>tmux-powerlineのステータスラインが描画ごとに増える</title>
-      <link>http://yet.unresolved.xyz/blog/2015/03/30/status-line-of-tmux-powerline-overlap/</link>
-      <pubDate>Mon, 30 Mar 2015 23:56:58 +0900</pubDate>
-      
-      <guid>http://yet.unresolved.xyz/blog/2015/03/30/status-line-of-tmux-powerline-overlap/</guid>
-      <description>&lt;p&gt;iTerm2での話。&lt;/p&gt;
-
-&lt;p&gt;こいつのせい。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-03-31/iterm.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-03-31/iterm.png&#34; class=&#34;image&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;でもこれがないと、素の時に使うVimで&lt;a href=&#34;https://github.com/itchyny/lightline.vim&#34;&gt;itchyny/lightline.vim&lt;/a&gt;がズレるんだよなあ。&lt;/p&gt;
-
-&lt;p&gt;これはなに？Vimとtmuxで統一出来るの？&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://qiita.com/tkhr/items/8cc17c02dea1803be9c6&#34;&gt;tmux - Powerline導入例 - Qiita&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>VimのClojureプラグイン覚書</title>
-      <link>http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/</link>
-      <pubDate>Sun, 22 Mar 2015 19:47:22 +0900</pubDate>
-      
-      <guid>http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/</guid>
-      <description>
-
-&lt;p&gt;VimでClojure書くときのあれこれをいっつも忘れるのでまとめておこうと思う。&lt;/p&gt;
-
-&lt;p&gt;新しいことを覚えたら随時追記していこうかな。&lt;/p&gt;
-
-&lt;h2 id=&#34;使ってるプラグイン:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;使ってるプラグイン&lt;/h2&gt;
-
-&lt;h3 id=&#34;tpope-vim-classpath-https-github-com-tpope-vim-classpath:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/tpope/vim-classpath&#34;&gt;tpope/vim-classpath&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;クラスパスの設定をやってくれる。&lt;/p&gt;
-
-&lt;p&gt;何も考えず入れればよい。&lt;/p&gt;
-
-&lt;h3 id=&#34;guns-vim-slamhound-https-github-com-guns-vim-slamhound:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/guns/vim-slamhound&#34;&gt;guns/vim-slamhound&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;require&lt;/code&gt;の整理をやってくれる。&lt;/p&gt;
-
-&lt;p&gt;不要な奴は消してくれるし、ない奴はclasspathから読み込んで追加してくれる。&lt;/p&gt;
-
-&lt;h3 id=&#34;kien-rainbow-parentheses-vim-https-github-com-kien-rainbow-parentheses-vim:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/kien/rainbow_parentheses.vim&#34;&gt;kien/rainbow_parentheses.vim&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;括弧をrainbowな感じにしてくれる。&lt;/p&gt;
-
-&lt;h3 id=&#34;tpope-vim-fireplace-https-github-com-tpope-vim-fireplace:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/tpope/vim-fireplace&#34;&gt;tpope/vim-fireplace&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://blog.venanti.us/clojure-vim/&#34;&gt;My Clojure Toolchain: Vim&lt;/a&gt;でもキラープラグインと書かれているfireplace。&lt;/p&gt;
-
-&lt;p&gt;VimをREPLと接続してあんなことやこんなことが出来る。&lt;/p&gt;
-
-&lt;p&gt;こいつの機能、よく使う割によく忘れるんだよなあ。&lt;/p&gt;
-
-&lt;p&gt;もはやこの記事はこの覚書のために書いたようなもの。&lt;/p&gt;
-
-&lt;p&gt;&lt;kbd&gt;K&lt;/kbd&gt; : カーソル位置にある関数のドキュメントを表示する。&lt;/p&gt;
-
-&lt;p&gt;&lt;kbd&gt;[d&lt;/kbd&gt; : カーソル位置にある関数のソースを表示する。&lt;/p&gt;
-
-&lt;p&gt;&lt;kbd&gt;[&amp;lt;C-D&amp;gt;&lt;/kbd&gt; : カーソル位置にある関数のソースにジャンプする。&lt;/p&gt;
-
-&lt;p&gt;&lt;kbd&gt;&amp;lt;C-W&amp;gt;f&lt;/kbd&gt; : カーソル位置にある関数のソースを横分割して開く。&lt;/p&gt;
-
-&lt;p&gt;&lt;kbd&gt;&amp;lt;C-W&amp;gt;gf&lt;/kbd&gt; : カーソル位置にある関数のソースをタブ分割して開く。&lt;/p&gt;
-
-&lt;p&gt;&lt;kbd&gt;&amp;lt;C-^&amp;gt;&lt;/kbd&gt; : ジャンプする前のファイルに戻る。&lt;/p&gt;
-
-&lt;p&gt;&lt;kbd&gt;cpp&lt;/kbd&gt; : カーソル行をREPLで実行する。&lt;/p&gt;
-
-&lt;p&gt;&lt;kbd&gt;cqq&lt;/kbd&gt; : カーソル行をVim内のREPLで編集モードで開く。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;:RunTest&lt;/code&gt; : テストを実行する。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;:Require&lt;/code&gt; : 読み込んでる名前空間をリロードする。&lt;/p&gt;
-
-&lt;h3 id=&#34;venantius-vim-eastwood-https-github-com-venantius-vim-eastwood:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/venantius/vim-eastwood&#34;&gt;venantius/vim-eastwood&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;Clojure用のLint。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/scrooloose/syntastic&#34;&gt;scrooloose/syntastic&lt;/a&gt;と&lt;a href=&#34;https://github.com/jonase/eastwood&#34;&gt;jonase/eastwood&lt;/a&gt;と&lt;a href=&#34;https://github.com/tpope/vim-fireplace&#34;&gt;tpope/vim-fireplace&lt;/a&gt;が必要。&lt;/p&gt;
-
-&lt;h3 id=&#34;venantius-vim-cljfmt-https-github-com-venantius-vim-cljfmt:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/venantius/vim-cljfmt&#34;&gt;venantius/vim-cljfmt&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;Clojure用のフォーマッター。&lt;/p&gt;
-
-&lt;p&gt;デフォルトで保存時のフォーマットがかかるようになってるので、入れるだけでOKのはず。&lt;/p&gt;
-
-&lt;h2 id=&#34;使ってないプラグイン:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;使ってないプラグイン&lt;/h2&gt;
-
-&lt;h3 id=&#34;guns-vim-clojure-static-https-github-com-guns-vim-clojure-static:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/guns/vim-clojure-static&#34;&gt;guns/vim-clojure-static&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;シンタックスハイライト、インデントのためのプラグイン。&lt;/p&gt;
-
-&lt;p&gt;あと&lt;code&gt;clojure.core&lt;/code&gt;の名前空間にある補完機能があるらしい。&lt;/p&gt;
-
-&lt;p&gt;なんかあってもなくてもあんまり変わらなかった（設定しきれなかった？）ので使うのをやめた。&lt;/p&gt;
-
-&lt;h3 id=&#34;vim-scripts-paredit-vim-https-github-com-vim-scripts-paredit-vim:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/vim-scripts/paredit.vim&#34;&gt;vim-scripts/paredit.vim&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;括弧の位置をあれこれ出来るやつ、だと思う。&lt;/p&gt;
-
-&lt;p&gt;ちょっと脳みそがそんなにたくさんの事を一気に覚えるのは無理だったので、一旦使うのをやめた。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>[Clojure]ringのCSRFトークンを生成する</title>
-      <link>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</link>
-      <pubDate>Sun, 22 Mar 2015 19:23:27 +0900</pubDate>
-      
-      <guid>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</guid>
-      <description>&lt;p&gt;ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、&lt;/p&gt;
-
-&lt;p&gt;デフォルトだとPOSTリクエストした時にCSRFトークンチェックが入るようになってると思う。&lt;/p&gt;
-
-&lt;p&gt;で、そのトークンの作成の仕方を毎回調べてるのでメモっときたい。&lt;/p&gt;
-
-&lt;p&gt;チェックの処理は&lt;code&gt;site-defaults&lt;/code&gt;の、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def app
-  (wrap-defaults app-routes site-defaults))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;:security&lt;/code&gt;のところで設定出来る。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def site-defaults
-  &amp;quot;A default configuration for a browser-accessible website, based on current
-  best practice.&amp;quot;
-  {:params    {:urlencoded true
-               :multipart  true
-               :nested     true
-               :keywordize true}
-   :cookies   true
-   :session   {:flash true
-               :cookie-attrs {:http-only true}}
-   :security  {:anti-forgery   true
-               :xss-protection {:enable? true, :mode :block}
-               :frame-options  :sameorigin
-               :content-type-options :nosniff}
-   :static    {:resources &amp;quot;public&amp;quot;}
-   :responses {:not-modified-responses true
-               :absolute-redirects     true
-               :content-types          true}})
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これを&lt;code&gt;false&lt;/code&gt;にしちゃえばもちろんCSRFのチェックはされなくなるんだけど、まあ普通はするべきだよね。&lt;/p&gt;
-
-&lt;p&gt;トークンの生成の仕方はこう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(ns sample.handler
-  (:require [ring.util.anti-forgery :refer :all]))
-(anti-forgery-field)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;ring.util.anti-forgery&lt;/code&gt;の中身はこんな感じ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(ns ring.util.anti-forgery
-  &amp;quot;Utility functions for inserting anti-forgery tokens into HTML forms.&amp;quot;
-  (:use [hiccup core form]
-        ring.middleware.anti-forgery))
-
-(defn anti-forgery-field
-  &amp;quot;Create a hidden field with the session anti-forgery token as its value.
-  This ensures that the form it&#39;s inside won&#39;t be stopped by the anti-forgery
-  middleware.&amp;quot;
-  []
-  (html (hidden-field &amp;quot;__anti-forgery-token&amp;quot; *anti-forgery-token*)))
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

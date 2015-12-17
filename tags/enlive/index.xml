@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Enlive on Unresolved</title>
-    <link>http://yet.unresolved.xyz/tags/enlive/</link>
+    <link>http://localhost:51283/tags/enlive/</link>
     <description>Recent content in Enlive on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 14 Jan 2015 01:01:39 +0900</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/tags/enlive/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:51283/tags/enlive/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Clojureのテンプレートエンジンについて</title>
-      <link>http://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/</link>
+      <link>http://localhost:51283/blog/2015/01/14/use-template-engine-in-clojure/</link>
       <pubDate>Wed, 14 Jan 2015 01:01:39 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/</guid>
+      <guid>http://localhost:51283/blog/2015/01/14/use-template-engine-in-clojure/</guid>
       <description>
 
 &lt;p&gt;練習のためにClojureでいくつかのWebアプリを作ってみたんだけど、どの言語でもなんだかんだ手間になるテンプレートの扱いについてまとめてみる。&lt;/p&gt;

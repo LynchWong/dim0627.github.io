@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Laravel on Unresolved</title>
-    <link>http://yet.unresolved.xyz/tags/laravel/</link>
+    <link>http://localhost:51283/tags/laravel/</link>
     <description>Recent content in Laravel on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 04 Nov 2015 12:18:07 +0900</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/tags/laravel/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:51283/tags/laravel/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>ELB越しのLaravelでHTTPSを使おうとして困った話</title>
-      <link>http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/</link>
+      <link>http://localhost:51283/blog/2015/11/04/using-https-in-laravel/</link>
       <pubDate>Wed, 04 Nov 2015 12:18:07 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/</guid>
+      <guid>http://localhost:51283/blog/2015/11/04/using-https-in-laravel/</guid>
       <description>
 
 &lt;h2 id=&#34;ssl証明書はelbに設置する:56aef34fa740ed018dee02e37b63f347&#34;&gt;SSL証明書はELBに設置する&lt;/h2&gt;
@@ -97,10 +97,10 @@
     
     <item>
       <title>[Laravel5.1]発行されたSQLと実行計画を取得する</title>
-      <link>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</link>
+      <link>http://localhost:51283/blog/2015/09/30/get-explain-at-laravel/</link>
       <pubDate>Wed, 30 Sep 2015 13:44:48 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</guid>
+      <guid>http://localhost:51283/blog/2015/09/30/get-explain-at-laravel/</guid>
       <description>
 
 &lt;p&gt;インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしい。&lt;/p&gt;

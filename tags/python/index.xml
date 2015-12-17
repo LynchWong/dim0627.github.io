@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Unresolved</title>
-    <link>http://yet.unresolved.xyz/tags/python/</link>
+    <link>http://localhost:51283/tags/python/</link>
     <description>Recent content in Python on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 12 Jan 2015 00:19:33 +0900</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:51283/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Python on GAEで3rdパーティライブラリを使う</title>
-      <link>http://yet.unresolved.xyz/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/</link>
+      <link>http://localhost:51283/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/</link>
       <pubDate>Mon, 12 Jan 2015 00:19:33 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/</guid>
+      <guid>http://localhost:51283/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/</guid>
       <description>
 
 &lt;p&gt;ひさびさに&lt;a href=&#34;https://cloud.google.com/appengine/&#34;&gt;Google App Engine&lt;/a&gt;を使おうとしたらGoogle Cloud Platformだかなんだかでいろいろと変わってて戸惑った。&lt;/p&gt;

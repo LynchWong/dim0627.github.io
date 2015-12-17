@@ -2,19 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Technologies on Unresolved</title>
-    <link>http://yet.unresolved.xyz/technology/</link>
+    <link>http://localhost:51283/technology/</link>
     <description>Recent content in Technologies on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Dec 2015 11:22:28 +0900</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/technology/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Dec 2015 10:39:55 +0900</lastBuildDate>
+    <atom:link href="http://localhost:51283/technology/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ACCOUNT KILLERというサービスが面白い</title>
+      <link>http://localhost:51283/blog/2015/12/17/about-of-account-killer/</link>
+      <pubDate>Thu, 17 Dec 2015 10:39:55 +0900</pubDate>
+      
+      <guid>http://localhost:51283/blog/2015/12/17/about-of-account-killer/</guid>
+      <description>
+
+&lt;p&gt;WordPress.comとGravatarを退会しようと思ったんだけどなんか退会画面が見つからない。&lt;/p&gt;
+
+&lt;p&gt;いろいろ調べてみるとこの記事に行き着いた。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://d.hatena.ne.jp/m-hiyama/20150915/1442277074&#34;&gt;WordPress.comとGravatarのアカウントは一度登録したら何があっても絶対に削除できない - 檜山正幸のキマイラ飼育記&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;WordPress.comとGravatarのアカウントは一度登録したら何があっても絶対に削除できない！？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;まじかよ、なんてひどいサービスだ。&lt;/p&gt;
+
+&lt;p&gt;それはまあよくて、どっちにしろWordPressがひどいのは知ってたし。&lt;/p&gt;
+
+&lt;p&gt;この記事で紹介されてるACCOUNT KILLERというサービスが面白かった。&lt;/p&gt;
+
+&lt;h2 id=&#34;account-killer:c71ef8cc15c5192625af25f3fd00e149&#34;&gt;ACCOUNT KILLER？&lt;/h2&gt;
+
+&lt;p&gt;先の記事を引用させてもらうと、&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;ここは、Webサイト／サービスをホワイトリスト（退会容易）とブラックリスト（退会困難）に分けていて、Gravatarはブラック。ブラックもブラック、なんと退会が不可能なのです。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;世の中の有名なサービスの退会難易度をまとめてくれてるらしい。先にこれ見ときゃよかったなー。&lt;/p&gt;
+
+&lt;p&gt;退会出来ないサービスなんて登録したくないよね。さすがWordPress。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考にさせていただきました:c71ef8cc15c5192625af25f3fd00e149&#34;&gt;参考にさせていただきました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://d.hatena.ne.jp/m-hiyama/20150915/1442277074&#34;&gt;WordPress.comとGravatarのアカウントは一度登録したら何があっても絶対に削除できない - 檜山正幸のキマイラ飼育記&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Googleの構造化データの扱いが変わった気がする</title>
-      <link>http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</link>
+      <link>http://localhost:51283/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</link>
       <pubDate>Fri, 11 Dec 2015 11:22:28 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</guid>
+      <guid>http://localhost:51283/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</guid>
       <description>
 
 &lt;p&gt;このブログも、他の運営してるサイトも、今日になってエラーが発生するようになった。&lt;/p&gt;
@@ -23,11 +63,11 @@
 
 &lt;p&gt;エラーは2種類発生していて、ひとつめがこれ。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-12-11/error1.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-12-11/error1.png&#34; class=&#34;image&#34; alt=&#34;error&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:51283/images/2015-12-11/error1.png&#34;&gt;&lt;img src=&#34;http://localhost:51283/images/2015-12-11/error1.png&#34; class=&#34;image&#34; alt=&#34;error&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;もうひとつがこれ。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-12-11/error2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-12-11/error2.png&#34; class=&#34;image&#34; alt=&#34;error&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:51283/images/2015-12-11/error2.png&#34;&gt;&lt;img src=&#34;http://localhost:51283/images/2015-12-11/error2.png&#34; class=&#34;image&#34; alt=&#34;error&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;あれ？&lt;code&gt;author&lt;/code&gt;はもともと必須だっけ？&lt;/p&gt;
 
@@ -108,10 +148,10 @@
     
     <item>
       <title>プロダクションのWordPressを捨てHugoに移行した</title>
-      <link>http://yet.unresolved.xyz/blog/2015/12/10/using-hugo-in-production/</link>
+      <link>http://localhost:51283/blog/2015/12/10/using-hugo-in-production/</link>
       <pubDate>Thu, 10 Dec 2015 14:49:18 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/12/10/using-hugo-in-production/</guid>
+      <guid>http://localhost:51283/blog/2015/12/10/using-hugo-in-production/</guid>
       <description>
 
 &lt;p&gt;あんまり仕事のことは書かないつもりだったんだけど、このブログの生成でもお世話になっている&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;を結構本気で使ったのでそのことをまとめてみます。&lt;/p&gt;
@@ -315,10 +355,10 @@ Make every program a Filter.&lt;/p&gt;
     
     <item>
       <title>ELB越しのLaravelでHTTPSを使おうとして困った話</title>
-      <link>http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/</link>
+      <link>http://localhost:51283/blog/2015/11/04/using-https-in-laravel/</link>
       <pubDate>Wed, 04 Nov 2015 12:18:07 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/</guid>
+      <guid>http://localhost:51283/blog/2015/11/04/using-https-in-laravel/</guid>
       <description>
 
 &lt;h2 id=&#34;ssl証明書はelbに設置する:56aef34fa740ed018dee02e37b63f347&#34;&gt;SSL証明書はELBに設置する&lt;/h2&gt;
@@ -401,10 +441,10 @@ Make every program a Filter.&lt;/p&gt;
     
     <item>
       <title>Hugo0.15でSummaryが日本語に対応するっぽい</title>
-      <link>http://yet.unresolved.xyz/blog/2015/10/09/hugo-support-cjk-language/</link>
+      <link>http://localhost:51283/blog/2015/10/09/hugo-support-cjk-language/</link>
       <pubDate>Fri, 09 Oct 2015 22:15:51 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/10/09/hugo-support-cjk-language/</guid>
+      <guid>http://localhost:51283/blog/2015/10/09/hugo-support-cjk-language/</guid>
       <description>&lt;p&gt;会社のMacにも&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;をセットアップしてあるんだけど、テーマの編集とかの続きを家でやろうとしたら&lt;code&gt;.Summary&lt;/code&gt;が異なる挙動をしてることに気づいた。&lt;/p&gt;
 
 &lt;p&gt;どうやらHugoのバージョンによって、日本語の解釈がうまくいったりいかなかったりするみたい。&lt;/p&gt;
@@ -466,10 +506,10 @@ Make every program a Filter.&lt;/p&gt;
     
     <item>
       <title>OWASP ZAPでBASIC認証を突破する</title>
-      <link>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</link>
+      <link>http://localhost:51283/blog/2015/09/30/using-basic-auth-in-owasp-zap/</link>
       <pubDate>Wed, 30 Sep 2015 16:24:53 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</guid>
+      <guid>http://localhost:51283/blog/2015/09/30/using-basic-auth-in-owasp-zap/</guid>
       <description>
 
 &lt;p&gt;調べても意外と見つからない。&lt;/p&gt;
@@ -504,10 +544,10 @@ Make every program a Filter.&lt;/p&gt;
     
     <item>
       <title>[Laravel5.1]発行されたSQLと実行計画を取得する</title>
-      <link>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</link>
+      <link>http://localhost:51283/blog/2015/09/30/get-explain-at-laravel/</link>
       <pubDate>Wed, 30 Sep 2015 13:44:48 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</guid>
+      <guid>http://localhost:51283/blog/2015/09/30/get-explain-at-laravel/</guid>
       <description>
 
 &lt;p&gt;インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしい。&lt;/p&gt;
@@ -587,10 +627,10 @@ Make every program a Filter.&lt;/p&gt;
     
     <item>
       <title>Amazon LinuxをVagrantで使いたい</title>
-      <link>http://yet.unresolved.xyz/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/</link>
+      <link>http://localhost:51283/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/</link>
       <pubDate>Wed, 26 Aug 2015 23:12:02 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/</guid>
+      <guid>http://localhost:51283/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/</guid>
       <description>
 
 &lt;p&gt;開発はCentOS、本番はAmazonLinuxにしようとしたら意外と違うところが多くてProvisioningがだるかったので。&lt;/p&gt;
@@ -628,7 +668,7 @@ Make every program a Filter.&lt;/p&gt;
 
 &lt;p&gt;こんな感じに。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-08-26/bucket.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-08-26/bucket.png&#34; class=&#34;image&#34; alt=&#34;bucket&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:51283/images/2015-08-26/bucket.png&#34;&gt;&lt;img src=&#34;http://localhost:51283/images/2015-08-26/bucket.png&#34; class=&#34;image&#34; alt=&#34;bucket&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;そしたら違うエラー。&lt;/p&gt;
 
@@ -674,10 +714,10 @@ Ubuntu 12.04、12.10、13.04、13.10、14.04、14.10&lt;/p&gt;
     
     <item>
       <title>focusoutイベントでfocus中の要素が取得できない</title>
-      <link>http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/</link>
+      <link>http://localhost:51283/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/</link>
       <pubDate>Tue, 14 Jul 2015 00:05:16 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/</guid>
+      <guid>http://localhost:51283/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/</guid>
       <description>
 
 &lt;p&gt;何を血迷ったかサジェストを自作しようとしてしまってつらい目にあった話。&lt;/p&gt;
@@ -741,10 +781,10 @@ $(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() 
     
     <item>
       <title>Hugo向けの新しいテーマを作った</title>
-      <link>http://yet.unresolved.xyz/blog/2015/06/20/making-new-theme-robust-for-hugo/</link>
+      <link>http://localhost:51283/blog/2015/06/20/making-new-theme-robust-for-hugo/</link>
       <pubDate>Sat, 20 Jun 2015 11:30:06 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/06/20/making-new-theme-robust-for-hugo/</guid>
+      <guid>http://localhost:51283/blog/2015/06/20/making-new-theme-robust-for-hugo/</guid>
       <description>
 
 &lt;p&gt;前に作ったやつが飽きてしまったので、そもそもForkするんじゃなくて0から作ることにしました。&lt;/p&gt;
@@ -755,7 +795,7 @@ $(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() 
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/dim0627/hugo_theme_robust&#34;&gt;dim0627/hugo_theme_robust&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-06-20/theme_tn.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-06-20/theme_tn.png&#34; class=&#34;image&#34; alt=&#34;theme_tn&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:51283/images/2015-06-20/theme_tn.png&#34;&gt;&lt;img src=&#34;http://localhost:51283/images/2015-06-20/theme_tn.png&#34; class=&#34;image&#34; alt=&#34;theme_tn&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;トップの最新4記事は2カラム、それ以降は4カラムで表示するようにしてる。もちろんレスポンシブで。&lt;/p&gt;
 
@@ -793,10 +833,10 @@ $(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() 
     
     <item>
       <title>例によってpaiza online hackathon5をClojureで解いてみた</title>
-      <link>http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/</link>
+      <link>http://localhost:51283/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/</link>
       <pubDate>Wed, 06 May 2015 09:54:46 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/</guid>
+      <guid>http://localhost:51283/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/</guid>
       <description>
 
 &lt;p&gt;まずい更新することがない。&lt;/p&gt;
@@ -905,10 +945,10 @@ $(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() 
     
     <item>
       <title>tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する</title>
-      <link>http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/</link>
+      <link>http://localhost:51283/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/</link>
       <pubDate>Wed, 01 Apr 2015 22:42:40 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/</guid>
+      <guid>http://localhost:51283/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/</guid>
       <description>
 
 &lt;p&gt;こんな感じ。&lt;/p&gt;
@@ -931,15 +971,15 @@ bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
     
     <item>
       <title>tmux-powerlineのステータスラインが描画ごとに増える</title>
-      <link>http://yet.unresolved.xyz/blog/2015/03/30/status-line-of-tmux-powerline-overlap/</link>
+      <link>http://localhost:51283/blog/2015/03/30/status-line-of-tmux-powerline-overlap/</link>
       <pubDate>Mon, 30 Mar 2015 23:56:58 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/03/30/status-line-of-tmux-powerline-overlap/</guid>
+      <guid>http://localhost:51283/blog/2015/03/30/status-line-of-tmux-powerline-overlap/</guid>
       <description>&lt;p&gt;iTerm2での話。&lt;/p&gt;
 
 &lt;p&gt;こいつのせい。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-03-31/iterm.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-03-31/iterm.png&#34; class=&#34;image&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:51283/images/2015-03-31/iterm.png&#34;&gt;&lt;img src=&#34;http://localhost:51283/images/2015-03-31/iterm.png&#34; class=&#34;image&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;でもこれがないと、素の時に使うVimで&lt;a href=&#34;https://github.com/itchyny/lightline.vim&#34;&gt;itchyny/lightline.vim&lt;/a&gt;がズレるんだよなあ。&lt;/p&gt;
 
@@ -951,10 +991,10 @@ bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
     
     <item>
       <title>VimのClojureプラグイン覚書</title>
-      <link>http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/</link>
+      <link>http://localhost:51283/blog/2015/03/22/using-clojure-plugin-on-the-vim/</link>
       <pubDate>Sun, 22 Mar 2015 19:47:22 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/</guid>
+      <guid>http://localhost:51283/blog/2015/03/22/using-clojure-plugin-on-the-vim/</guid>
       <description>
 
 &lt;p&gt;VimでClojure書くときのあれこれをいっつも忘れるのでまとめておこうと思う。&lt;/p&gt;
@@ -1041,10 +1081,10 @@ bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
     
     <item>
       <title>[Clojure]ringのCSRFトークンを生成する</title>
-      <link>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</link>
+      <link>http://localhost:51283/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</link>
       <pubDate>Sun, 22 Mar 2015 19:23:27 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</guid>
+      <guid>http://localhost:51283/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</guid>
       <description>&lt;p&gt;ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、&lt;/p&gt;
 
 &lt;p&gt;デフォルトだとPOSTリクエストした時にCSRFトークンチェックが入るようになってると思う。&lt;/p&gt;
@@ -1102,161 +1142,6 @@ bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
   []
   (html (hidden-field &amp;quot;__anti-forgery-token&amp;quot; *anti-forgery-token*)))
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Ansibleを使ってMySQLが動く環境を手っ取り早く作る</title>
-      <link>http://yet.unresolved.xyz/blog/2015/03/16/create-mysql-environment-using-the-ansible/</link>
-      <pubDate>Mon, 16 Mar 2015 23:15:49 +0900</pubDate>
-      
-      <guid>http://yet.unresolved.xyz/blog/2015/03/16/create-mysql-environment-using-the-ansible/</guid>
-      <description>
-
-&lt;p&gt;ちょっと友人と共同で開発しているWebアプリがあって、DBの用意も手軽に共有したいのでAnsibleでやることに。&lt;/p&gt;
-
-&lt;p&gt;まあ僕はViewしか触ってないから別になくてもいいんだけど・・・。&lt;/p&gt;
-
-&lt;h2 id=&#34;hostsを書く:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;hostsを書く&lt;/h2&gt;
-
-&lt;p&gt;Ansibleが取り扱うマシンの定義をしておかなきゃいけない。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Vagrantfile&lt;/code&gt;で作られる仮想マシンのipを固定して、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;  config.vm.network &amp;quot;private_network&amp;quot;, ip: &amp;quot;192.168.33.20&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ansibleに読み込ませる&lt;code&gt;hosts&lt;/code&gt;に定義しよう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[vagrant]
-192.168.33.20
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ansibleのsshがrefuseで止められる場合は、&lt;code&gt;vagrant ssh-config &amp;gt;&amp;gt; ~/.ssh/config&lt;/code&gt;とかしておけば多分大丈夫。&lt;/p&gt;
-
-&lt;h2 id=&#34;vagrantfileでプロビジョニング出来るようにする:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;Vagrantfileでプロビジョニング出来るようにする&lt;/h2&gt;
-
-&lt;p&gt;せっかくだし&lt;code&gt;vagrant up&lt;/code&gt;か&lt;code&gt;vagrant provision&lt;/code&gt;でプロビジョニングしてほしい。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Vagrantfile&lt;/code&gt;にこんな感じの記述をすれば、初回実施時にAnsibleのPlaybookを実行してくれるらしい。&lt;/p&gt;
-
-&lt;p&gt;Ansibleはなんかコマンド覚えらんないしちょうどいいね。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;  config.vm.provision &amp;quot;ansible&amp;quot; do |ansible|
-    ansible.playbook = &amp;quot;env/dev-playbook.yml&amp;quot;
-    ansible.inventory_path = &amp;quot;env/hosts&amp;quot;
-    ansible.limit = &#39;all&#39;
-  end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;今回は&lt;code&gt;Vagrantfile&lt;/code&gt;があるディレクトリに&lt;code&gt;env&lt;/code&gt;ってディレクトリを作って、そこに設定ファイルを置くことにした。&lt;/p&gt;
-
-&lt;p&gt;Playbookとかもここに入れていくよ。&lt;/p&gt;
-
-&lt;h2 id=&#34;ansible-galaxyを使う:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;Ansible Galaxyを使う&lt;/h2&gt;
-
-&lt;p&gt;AnsibleはPlaybookと呼ばれるymlファイルにプロビジョニングの定義をしていく。&lt;/p&gt;
-
-&lt;p&gt;でも正直、個人的に使う環境のためにガリガリ書くのはバカらしいよね。&lt;/p&gt;
-
-&lt;p&gt;特にMySQLなんて相当な数の人が使ってるだろうし、そのノウハウを使わせてもらいたい。&lt;/p&gt;
-
-&lt;p&gt;Ansibleには&lt;a href=&#34;https://galaxy.ansible.com/&#34;&gt;Ansible Galaxy&lt;/a&gt;っていうWebサービスがあって、モジュール単位のよく使う定義をアップできるみたい。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://galaxy.ansible.com/&#34;&gt;Ansible Galaxy | Find, reuse, and share the best Ansible content&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;AnsibleではMySQLやらhttpdやらの個々のモジュールをroleと呼んでるらしい。&lt;/p&gt;
-
-&lt;p&gt;つまり、&lt;a href=&#34;https://galaxy.ansible.com/list#/roles&#34;&gt;Browse Roles&lt;/a&gt;からMySQLのroleを探せばよい。&lt;/p&gt;
-
-&lt;p&gt;検索結果、デフォルトで評価の降順にしておいて欲しいんだけど・・・。&lt;/p&gt;
-
-&lt;p&gt;今回は&lt;a href=&#34;https://galaxy.ansible.com/list#/roles/509&#34;&gt;ANXS.mysql&lt;/a&gt;という奴を使わせてもらうことにしました。&lt;/p&gt;
-
-&lt;p&gt;理由は、評価がそれなりに高くて、MySQLの設定が見たまんまでやれそうだったから。&lt;/p&gt;
-
-&lt;h3 id=&#34;ansible-galaxyからroleをインストールする:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;Ansible Galaxyからroleをインストールする&lt;/h3&gt;
-
-&lt;p&gt;Ansible Galaxyからの導入は&lt;code&gt;ansible-galaxy install ANXS.mysql&lt;/code&gt;みたいにやれば出来る。&lt;/p&gt;
-
-&lt;p&gt;でもこれじゃあ、このPCにだけroleが導入されちゃうし、どんなroleが必要だったのか後々わからなくなっちゃうね。&lt;/p&gt;
-
-&lt;p&gt;だから他の人が環境を作るときに困っちゃう。&lt;/p&gt;
-
-&lt;p&gt;そういう時のために&lt;code&gt;requirements.txt&lt;/code&gt;っていうのを作るのが主流らしい。&lt;/p&gt;
-
-&lt;p&gt;これはAnsible Galaxyから導入するroleを記述しておくものみたいで、今回はこんな感じの記述になった。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;- src: ANXS.mysql
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;シンプル。&lt;/p&gt;
-
-&lt;p&gt;導入するときは&lt;code&gt;ansible-galaxy install -p ./env/roles -r env/requirements.yml&lt;/code&gt;みたいにやればいい。&lt;/p&gt;
-
-&lt;p&gt;pythonっぽい。&lt;/p&gt;
-
-&lt;p&gt;これで環境を作る手順を統一することができた。&lt;/p&gt;
-
-&lt;p&gt;このコマンドは覚えられなそうだから、プロジェクトで使うWikiとかに書いておいたほうがいいね。&lt;/p&gt;
-
-&lt;p&gt;ちなみに、roleはAnsible Galaxyにあるものだけじゃなくて、GitHubにあるものとかも導入できるらしい。&lt;/p&gt;
-
-&lt;h3 id=&#34;playbookを書く:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;Playbookを書く&lt;/h3&gt;
-
-&lt;p&gt;じゃあインストールしてきたroleをもとにPlaybookを書こう。&lt;/p&gt;
-
-&lt;p&gt;設定の仕方はだいたいAnsible Galaxyに書いてあるんだけど、書いてないのも多いから選ぶときに気をつけたほうがいいかも。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://galaxy.ansible.com/list#/roles/509&#34;&gt;ANXS.mysql&lt;/a&gt;の場合はこんな感じ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;- hosts: vagrant
-  user: vagrant
-  sudo: yes
-  vars_files:
-    - mysql.yml
-  roles:
-  - { role: ANXS.mysql }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;roles&lt;/code&gt;で使うroleを指定していて、&lt;code&gt;vars_files&lt;/code&gt;がroleで使う設定を外だしするための記述。&lt;/p&gt;
-
-&lt;p&gt;外だししたファイルがこれ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Basic settings
-mysql_port: 3306                        # The port on which mysql listens
-mysql_bind_address: &amp;quot;0.0.0.0&amp;quot;           # The address the mysql server binds on
-mysql_root_password: &#39;root&#39;             # The root password
-
-mysql_character_set_server: &#39;utf8&#39;
-mysql_collation_server: &#39;utf8_general_ci&#39;
-
-# List of databases to be created (optional)
-mysql_databases:
-  - name: dev
-    collation: &amp;quot;utf8_general_ci&amp;quot;        # optional, defaults to &amp;quot;utf8_general_ci&amp;quot;
-    encoding: &amp;quot;utf8&amp;quot;                    # optional, defaults to &amp;quot;utf8&amp;quot;
-
-# List of users to be created (optional)
-mysql_users:
-  - name: dev
-    pass: dev
-    priv: &amp;quot;*.*:ALL&amp;quot;                     # optional, defaults to &amp;quot;*.*:ALL&amp;quot;
-    host: &amp;quot;%&amp;quot;                           # optional, defaults to &amp;quot;localhost&amp;quot;
-
-# GLOBAL Setting
-monit_protection: false                 # true or false, requires ANXS.monit
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ansible Galaxyに載っているものからコピってきて、不要なものを消しただけ。&lt;/p&gt;
-
-&lt;h2 id=&#34;プロビジョニングする:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;プロビジョニングする&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;vagrant up&lt;/code&gt;か&lt;code&gt;vagrant provision&lt;/code&gt;すればやってくれる。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://galaxy.ansible.com/list#/roles/509&#34;&gt;ANXS.mysql&lt;/a&gt;の場合はMySQLユーザの作成とデータベースの作成までやってくれる。&lt;/p&gt;
-
-&lt;p&gt;テーブルとかは別途スキーマ定義を用意するだろうし、ここまでやってくれれば十分だね。&lt;/p&gt;
 </description>
     </item>
     

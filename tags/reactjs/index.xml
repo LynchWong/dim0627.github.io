@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Reactjs on Unresolved</title>
-    <link>http://yet.unresolved.xyz/tags/reactjs/</link>
+    <link>http://localhost:51283/tags/reactjs/</link>
     <description>Recent content in Reactjs on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 14 Feb 2015 19:30:22 +0900</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/tags/reactjs/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:51283/tags/reactjs/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Apigility &#43; React.jsでタスク管理ツールを作ってみる</title>
-      <link>http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/</link>
+      <link>http://localhost:51283/blog/2015/02/14/make-task-manager-by-using-apigility/</link>
       <pubDate>Sat, 14 Feb 2015 19:30:22 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/</guid>
+      <guid>http://localhost:51283/blog/2015/02/14/make-task-manager-by-using-apigility/</guid>
       <description>
 
 &lt;p&gt;これに行ってきました。&lt;/p&gt;
@@ -52,7 +52,7 @@
 
 &lt;p&gt;画面を開くとこんな感じのが出てくる。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/apigility_top.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/apigility_top.png&#34; class=&#34;image&#34; alt=&#34;apigility_top&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:51283/images/2015-02-14/apigility_top.png&#34;&gt;&lt;img src=&#34;http://localhost:51283/images/2015-02-14/apigility_top.png&#34; class=&#34;image&#34; alt=&#34;apigility_top&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;ロゴがかわいいね。&lt;/p&gt;
 
@@ -71,11 +71,11 @@
 
 &lt;p&gt;&lt;code&gt;Settings&lt;/code&gt;の&lt;code&gt;Database Adapters&lt;/code&gt;から定義を追加出来る。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/database.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/database.png&#34; class=&#34;image&#34; alt=&#34;database&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:51283/images/2015-02-14/database.png&#34;&gt;&lt;img src=&#34;http://localhost:51283/images/2015-02-14/database.png&#34; class=&#34;image&#34; alt=&#34;database&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;今回はこんな感じで設定。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/def_database.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/def_database.png&#34; class=&#34;image&#34; alt=&#34;def_database&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:51283/images/2015-02-14/def_database.png&#34;&gt;&lt;img src=&#34;http://localhost:51283/images/2015-02-14/def_database.png&#34; class=&#34;image&#34; alt=&#34;def_database&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;apiを追加する:a8f13c6c06505842468ef355c1de93c5&#34;&gt;APIを追加する&lt;/h2&gt;
 
@@ -83,7 +83,7 @@
 
 &lt;p&gt;今回はTasksという名前で作成した。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/create_api.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/create_api.png&#34; class=&#34;image&#34; alt=&#34;create_api&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:51283/images/2015-02-14/create_api.png&#34;&gt;&lt;img src=&#34;http://localhost:51283/images/2015-02-14/create_api.png&#34; class=&#34;image&#34; alt=&#34;create_api&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;粒度がわかりづらいけど、ここで作ったAPIに対して個々のサービスを追加していく。&lt;/p&gt;
 
@@ -103,23 +103,23 @@
 
 &lt;p&gt;というわけで、&lt;code&gt;REST Service Name&lt;/code&gt;をtasks、&lt;code&gt;DB-Connected&lt;/code&gt;はさっき作ったアダプタとテーブル名を設定。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/create_service.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/create_service.png&#34; class=&#34;image&#34; alt=&#34;create_service&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:51283/images/2015-02-14/create_service.png&#34;&gt;&lt;img src=&#34;http://localhost:51283/images/2015-02-14/create_service.png&#34; class=&#34;image&#34; alt=&#34;create_service&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;こんな感じになる。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/def_service.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/def_service.png&#34; class=&#34;image&#34; alt=&#34;def_service&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:51283/images/2015-02-14/def_service.png&#34;&gt;&lt;img src=&#34;http://localhost:51283/images/2015-02-14/def_service.png&#34; class=&#34;image&#34; alt=&#34;def_service&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;接続できるか試してみよう。&lt;/p&gt;
 
 &lt;p&gt;データがないので、まずはPOSTで格納してみる。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/post_tasks.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/post_tasks.png&#34; class=&#34;image&#34; alt=&#34;post_tasks&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:51283/images/2015-02-14/post_tasks.png&#34;&gt;&lt;img src=&#34;http://localhost:51283/images/2015-02-14/post_tasks.png&#34; class=&#34;image&#34; alt=&#34;post_tasks&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;いけてるっぽい。&lt;/p&gt;
 
 &lt;p&gt;取得は？&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/get_tasks.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/get_tasks.png&#34; class=&#34;image&#34; alt=&#34;get_tasks&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:51283/images/2015-02-14/get_tasks.png&#34;&gt;&lt;img src=&#34;http://localhost:51283/images/2015-02-14/get_tasks.png&#34; class=&#34;image&#34; alt=&#34;get_tasks&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;おお！取れる！&lt;/p&gt;
 
@@ -143,7 +143,7 @@
 
 &lt;p&gt;表示はこんな感じで、&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/view.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/view.png&#34; class=&#34;image&#34; alt=&#34;view&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:51283/images/2015-02-14/view.png&#34;&gt;&lt;img src=&#34;http://localhost:51283/images/2015-02-14/view.png&#34; class=&#34;image&#34; alt=&#34;view&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;こんなHTMLでやりました。&lt;/p&gt;
 

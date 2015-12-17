@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Schema.Org on Unresolved</title>
-    <link>http://yet.unresolved.xyz/tags/schema/index.org/</link>
+    <link>http://localhost:51283/tags/schema/index.org/</link>
     <description>Recent content in Schema.Org on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Dec 2015 11:22:28 +0900</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/tags/schema.org/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:51283/tags/schema.org/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Googleの構造化データの扱いが変わった気がする</title>
-      <link>http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</link>
+      <link>http://localhost:51283/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</link>
       <pubDate>Fri, 11 Dec 2015 11:22:28 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</guid>
+      <guid>http://localhost:51283/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</guid>
       <description>
 
 &lt;p&gt;このブログも、他の運営してるサイトも、今日になってエラーが発生するようになった。&lt;/p&gt;
@@ -23,11 +23,11 @@
 
 &lt;p&gt;エラーは2種類発生していて、ひとつめがこれ。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-12-11/error1.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-12-11/error1.png&#34; class=&#34;image&#34; alt=&#34;error&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:51283/images/2015-12-11/error1.png&#34;&gt;&lt;img src=&#34;http://localhost:51283/images/2015-12-11/error1.png&#34; class=&#34;image&#34; alt=&#34;error&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;もうひとつがこれ。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-12-11/error2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-12-11/error2.png&#34; class=&#34;image&#34; alt=&#34;error&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:51283/images/2015-12-11/error2.png&#34;&gt;&lt;img src=&#34;http://localhost:51283/images/2015-12-11/error2.png&#34; class=&#34;image&#34; alt=&#34;error&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;あれ？&lt;code&gt;author&lt;/code&gt;はもともと必須だっけ？&lt;/p&gt;
 

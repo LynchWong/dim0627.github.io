@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Leiningen on Unresolved</title>
-    <link>http://yet.unresolved.xyz/tags/leiningen/</link>
+    <link>http://localhost:51283/tags/leiningen/</link>
     <description>Recent content in Leiningen on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 11 Dec 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/tags/leiningen/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:51283/tags/leiningen/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Lobosを使ってマイグレーションをする</title>
-      <link>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</link>
+      <link>http://localhost:51283/blog/2014/12/11/usage-for-lobos-migration/</link>
       <pubDate>Thu, 11 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</guid>
+      <guid>http://localhost:51283/blog/2014/12/11/usage-for-lobos-migration/</guid>
       <description>
 
 &lt;p&gt;1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。&lt;/p&gt;
@@ -191,10 +191,10 @@ lobos_migrations  sites
     
     <item>
       <title>LeiningenでSCSSを自動コンパイルする</title>
-      <link>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</link>
+      <link>http://localhost:51283/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</link>
       <pubDate>Tue, 09 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</guid>
+      <guid>http://localhost:51283/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</guid>
       <description>
 
 &lt;p&gt;Clojureを始めて一週間ほどになりまして。&lt;/p&gt;
