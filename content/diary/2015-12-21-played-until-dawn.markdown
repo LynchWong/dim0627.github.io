@@ -5,11 +5,12 @@ tags: ["until-dawn", "game"]
 title: "「Until Dawn - 惨劇の山荘」をやった"
 ---
 
-ホラーは避けてたんだけど結局やりました。
+ホラーっぽかったから避けてたんだけど結局やりました。
 
-とはいえ実際はホラーらしいホラーではなく、ものすごく面白いサスペンスだったかな。
+とはいえ実際はものすごく面白いサスペンスだったかな。
+少しびっくりするシーンとかもあったけど、全然許容範囲。
 
-本当に冗談抜きで映画みたいだった、参加型の映画。
+本当に冗談抜きで映画みたいだった、参加型の映画みたいな。
 
 
 <a rel="nofollow" href="http://www.amazon.co.jp/gp/product/B00YGXGVNW/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B00YGXGVNW&linkCode=as2&tag=unresolved-22">Until Dawn -惨劇の山荘-</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=B00YGXGVNW" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;display: none;" />
