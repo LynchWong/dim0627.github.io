@@ -36,7 +36,7 @@
       <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz"/>
       <meta itemprop="dateModified" content="2014-10-24T00:00:00&#43;00:00">
       <meta itemprop="headline" content="GitHub Pagesでカスタムドメインを使う">
-      <meta itemprop="description" content="昨日はGAEで今日はGithubかよって感じだけど、こっちは結構詰まったのでメモしたい。 事の発端 このOctopressのblogをカスタムド">
+      <meta itemprop="description" content="昨日はGAEで今日はGithubかよって感じだけど、こっちは結構詰まったのでメモしたい。 GitHubからWarningメールが来るようになっ">
       <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/">
       <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
         <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.png" />
@@ -67,7 +67,7 @@
 
 <p>昨日はGAEで今日はGithubかよって感じだけど、こっちは結構詰まったのでメモしたい。</p>
 
-<h2 id="事の発端:bd764d28564cc0069e229d086834b342">事の発端</h2>
+<h2 id="githubからwarningメールが来るようになった:bd764d28564cc0069e229d086834b342">GitHubからWarningメールが来るようになった</h2>
 
 <p>このOctopressのblogをカスタムドメインにしてから、<code>rake gen_deploy</code>するとGithubからこんなメールが来るようになりました。</p>
 
@@ -83,9 +83,7 @@ GitHub Pages recently underwent some improvements (<a href="https://github.com/b
 <p>If you have any questions please contact us at <a href="https://github.com/contact">https://github.com/contact</a>.</p>
 </blockquote>
 
-<p>英語かよ後で読もう、と思ってもデプロイするたびにメールが来るのは結構うざい。</p>
-
-<p>ので、しっかり読んでみると、<strong>デプロイは出来たんだけど、もっと速く動作させる方法があるからそっちにしない？</strong>って話らしい。</p>
+<p>英語かよ後で読もう、と思ってもデプロイするたびにメールが来るのは結構うざいのでしっかり読んでみると、<strong>デプロイは出来たんだけど、もっと速く動作させる方法があるからそっちにしない？</strong>って話らしい。</p>
 
 <p><a href="https://github.com/blog/1715-faster-more-awesome-github-pages">Faster, More Awesome GitHub Pages</a>を参考にすると、以下の手順を踏めばいいとのこと。</p>
 
@@ -101,17 +99,12 @@ GitHub Pages recently underwent some improvements (<a href="https://github.com/b
 
 <p>DNSプロバイダ側にAレコードを作って、207.97.227.245か204.232.175.78を向ければOK</p>
 
-<p>ちなみにこの3つめは少し厄介らしく、そもそもDNSプロバイダ側でALIASとやらが設定出来ないとだめなんだとか？</p>
-
-<p>こういう系は知識が浅くてだめだなあ。</p>
+<p>ちなみにこの3つめは少し厄介らしく、そもそもDNSプロバイダ側でALIASとやらが設定出来ないとだめなんだとか。こういう系は知識が浅くてだめだなあ。</p>
 
 <h2 id="これで何が起こるの:bd764d28564cc0069e229d086834b342">これで何が起こるの？</h2>
 
-<p>CDNからの配信になるから速いんだとか。</p>
-
-<p>あとDenial of service attackとかいう攻撃の対策になるらしい。</p>
-
-<p>あ、DOS攻撃のことか。略さずに書かれるとわからんもんだね。</p>
+<p>CDNからの配信になるから速いんだとか。あとDenial of service attackとかいう攻撃の対策になるらしい。
+あ、DOS攻撃のことか。略さずに書かれるとわからんもんだね。</p>
 </div>
 
       <aside>

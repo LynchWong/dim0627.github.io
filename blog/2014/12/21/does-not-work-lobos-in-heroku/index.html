@@ -7,7 +7,7 @@
     <meta name="generator" content="Hugo 0.15-DEV" />
 
     
-    <title>Lobosでマイグレーションができない in Heroku - Unresolved</title>
+    <title>HerokuでLobosを使ったマイグレーションができない - Unresolved</title>
     
 
     <link rel="shortcut icon" href="http://yet.unresolved.xyz/favicon.ico">
@@ -35,8 +35,8 @@
     <article itemscope="itemscope" itemtype="http://schema.org/Article">
       <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz"/>
       <meta itemprop="dateModified" content="2014-12-21T00:00:00&#43;00:00">
-      <meta itemprop="headline" content="Lobosでマイグレーションができない in Heroku">
-      <meta itemprop="description" content="ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。 何が起きたか 今だにHeroku">
+      <meta itemprop="headline" content="HerokuでLobosを使ったマイグレーションができない">
+      <meta itemprop="description" content="ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。 マイグレーションしても何も起き">
       <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/">
       <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
         <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.png" />
@@ -56,7 +56,7 @@
       </div>
 
       <header>
-        <h1 class="title">Lobosでマイグレーションができない in Heroku</h1>
+        <h1 class="title">HerokuでLobosを使ったマイグレーションができない</h1>
         <time itemprop="datePublished" pubdate="pubdate" datetime="2014-12-21T00:00:00&#43;00:00">
           Sun, Dec 21, 2014
         </time>
@@ -67,23 +67,17 @@
 
 <p>ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。</p>
 
-<h2 id="何が起きたか:b3814854ab9c35505a0d42182d51f32f">何が起きたか</h2>
+<h2 id="マイグレーションしても何も起きない:b3814854ab9c35505a0d42182d51f32f">マイグレーションしても何も起きない</h2>
 
-<p>今だにHerokuの使い方がようわからんのだけど、</p>
+<p>今だにHerokuの使い方がよくわからないんだけど、とりあえずローカルから向き先変えるよりもSSHの方が楽だったので<code>heroku run bash</code>してやってます。</p>
 
-<p>とりあえずローカルから向き先変えるよりもSSHの方がいっかなってことで<code>heroku run bash</code>してやってます。</p>
-
-<p>ローカルからだとDBをSSLで接続させないといけないし・・・。</p>
-
-<p>んでマイグレーションしようとしたら、</p>
+<p>ローカルからだとDBをSSLで接続させないといけないし・・・。それでマイグレーションしようとしたら、</p>
 
 <pre><code class="language-clojure-repl">user=&gt; (migrate)
 nil
 </code></pre>
 
-<p>何も出ない。</p>
-
-<p>本当はこんな感じで、</p>
+<p>何も出ない。本当はこんな感じで、</p>
 
 <pre><code class="language-clojure-repl">user=&gt; (migrate)
 add-sites-table
@@ -93,9 +87,9 @@ nil
 
 <p>作成されたり変更されたテーブルが出てくるはず。</p>
 
-<h2 id="原因はなんだったのか:b3814854ab9c35505a0d42182d51f32f">原因はなんだったのか</h2>
+<h2 id="lobos-migrationsがロードされてない:b3814854ab9c35505a0d42182d51f32f">lobos.migrationsがロードされてない</h2>
 
-<p><code>lobos.migrations</code>が読まれてない（というかリロードされてない）っぽい。</p>
+<p>どうやら<code>lobos.migrations</code>が読まれてない（というかリロードされてない）っぽい。</p>
 
 <p>そもそも<code>migrate</code>自体はこんな感じで<code>lobos.migration</code>の<code>do-migrations</code>を呼んでます。</p>
 
@@ -170,13 +164,12 @@ user=&gt; (list-migrations)
 user=&gt;
 </code></pre>
 
-<h2 id="解決策:b3814854ab9c35505a0d42182d51f32f">解決策</h2>
+<h2 id="reload-migrations-をfalseにすればいい:b3814854ab9c35505a0d42182d51f32f">*reload-migrations*をfalseにすればいい</h2>
 
 <p>もう正直ここまでで一週間弱悩んだから、lobos使うのやめようかなとも思ったけどまあいい勉強だろうし・・・。</p>
 
-<p>暫定にしかならないけど、とりあえずリロードさせないようにしよう。</p>
-
-<p>ソースコードの通り、<code>*reload-migrations*</code>が<code>true</code>になっている場合にリロードが走るらしい。</p>
+<p>暫定にしかならないけど、とりあえずリロードさせないようにしよう。
+ソースコードの通り、<code>*reload-migrations*</code>が<code>true</code>になっている場合にリロードが走るらしい。</p>
 
 <p>だからこんな感じで<code>false</code>で上書いてしまおう。</p>
 
@@ -199,11 +192,10 @@ nil
 lobos.migration=&gt;
 </code></pre>
 
-<p>これじゃない感がすごいけど、とりあえず通った・・・。</p>
+<p>これじゃない感がすごいけど、とりあえず通った・・・。
+Lobosはもう開発があんまり活発じゃないみたいだなあ。</p>
 
-<p>Lobosはもう開発があんまり活発じゃないみたいだなあ。</p>
-
-<p><code>lobos.migration</code>と<code>lobos.migrations</code>の命名はちょっといけてないような・・・。</p>
+<p><code>lobos.migration</code>と<code>lobos.migrations</code>の命名はちょっといけてないような気がする。</p>
 </div>
 
       <aside>

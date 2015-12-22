@@ -36,7 +36,7 @@
       <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz"/>
       <meta itemprop="dateModified" content="2014-12-09T00:00:00&#43;00:00">
       <meta itemprop="headline" content="LeiningenでSCSSを自動コンパイルする">
-      <meta itemprop="description" content="Clojureを始めて一週間ほどになりまして。 ようやくWebアプリ開発に着手しました。 というわけで開発環境を整えます。 lein-haml-s">
+      <meta itemprop="description" content="Clojureを始めて一週間ほどになりまして、ようやくWebアプリ開発に着手しました。 というわけで開発環境を整えます。 lein-haml-s">
       <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/">
       <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
         <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.png" />
@@ -65,19 +65,13 @@
 
       <div class="body" itemprop="articleBody">
 
-<p>Clojureを始めて一週間ほどになりまして。</p>
-
-<p>ようやくWebアプリ開発に着手しました。</p>
+<p>Clojureを始めて一週間ほどになりまして、ようやくWebアプリ開発に着手しました。</p>
 
 <p>というわけで開発環境を整えます。</p>
 
 <h2 id="lein-haml-sassの導入:aea6c6aa18698925cad2fc33bce27d8b">lein-haml-sassの導入</h2>
 
-<p>まったく贅沢な名前してんな！</p>
-
-<p>いえ、<a href="https://github.com/rtircher/lein-haml-sass">lein-haml-sass</a>は素晴らしいプラグインです。</p>
-
-<p>これを使うとなんとhamlのコンパイルやsass/scssのコンパイルをやってくれます。</p>
+<p><a href="https://github.com/rtircher/lein-haml-sass">lein-haml-sass</a>はhamlのコンパイルやsass/scssのコンパイルをやってくれます。</p>
 
 <p>ていうか<strong>sassとscssの違い</strong>ってなんだっけ？真面目に考えるとわかんないな。</p>
 
@@ -135,13 +129,7 @@
 
 <h2 id="コンパイルする:aea6c6aa18698925cad2fc33bce27d8b">コンパイルする</h2>
 
-<p>さっそく<code>lein sass once</code>してみるも、何も起きない！</p>
-
-<p>あっ、sassとscssでタスクが違う。</p>
-
-<p>ていうかsassフォルダにscss置くのってなんか違う気がしてきた！あとで名前変えよう。</p>
-
-<p>というわけで、<code>lein scss once</code>で無事動きました。</p>
+<p>sassとscssでタスクが違うようなので、間違えないように注意。</p>
 
 <p><code>lein scss auto</code>で変更監視できるっぽい。</p>
 </div>

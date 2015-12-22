@@ -17,15 +17,13 @@
       <guid>http://yet.unresolved.xyz/blog/2015/03/16/create-mysql-environment-using-the-ansible/</guid>
       <description>
 
-&lt;p&gt;ちょっと友人と共同で開発しているWebアプリがあって、DBの用意も手軽に共有したいのでAnsibleでやることに。&lt;/p&gt;
-
-&lt;p&gt;まあ僕はViewしか触ってないから別になくてもいいんだけど・・・。&lt;/p&gt;
+&lt;p&gt;ちょっと友人と共同で開発しているWebアプリがあって、DBの用意も手軽に共有したいのでAnsibleでやることに。
+まあ僕はViewしか触ってないから別になくてもいいんだけど・・・。&lt;/p&gt;
 
 &lt;h2 id=&#34;hostsを書く:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;hostsを書く&lt;/h2&gt;
 
-&lt;p&gt;Ansibleが取り扱うマシンの定義をしておかなきゃいけない。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Vagrantfile&lt;/code&gt;で作られる仮想マシンのipを固定して、&lt;/p&gt;
+&lt;p&gt;Ansibleが取り扱うマシンの定義をしておかなきゃいけない。
+&lt;code&gt;Vagrantfile&lt;/code&gt;で作られる仮想マシンのipを固定して、&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;  config.vm.network &amp;quot;private_network&amp;quot;, ip: &amp;quot;192.168.33.20&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
@@ -53,17 +51,14 @@
   end
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;今回は&lt;code&gt;Vagrantfile&lt;/code&gt;があるディレクトリに&lt;code&gt;env&lt;/code&gt;ってディレクトリを作って、そこに設定ファイルを置くことにした。&lt;/p&gt;
-
-&lt;p&gt;Playbookとかもここに入れていくよ。&lt;/p&gt;
+&lt;p&gt;今回は&lt;code&gt;Vagrantfile&lt;/code&gt;があるディレクトリに&lt;code&gt;env&lt;/code&gt;ってディレクトリを作って、そこに設定ファイルを置くことにした。
+Playbookとかもここに入れていきます。&lt;/p&gt;
 
 &lt;h2 id=&#34;ansible-galaxyを使う:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;Ansible Galaxyを使う&lt;/h2&gt;
 
-&lt;p&gt;AnsibleはPlaybookと呼ばれるymlファイルにプロビジョニングの定義をしていく。&lt;/p&gt;
-
-&lt;p&gt;でも正直、個人的に使う環境のためにガリガリ書くのはバカらしいよね。&lt;/p&gt;
-
-&lt;p&gt;特にMySQLなんて相当な数の人が使ってるだろうし、そのノウハウを使わせてもらいたい。&lt;/p&gt;
+&lt;p&gt;AnsibleはPlaybookと呼ばれるymlファイルにプロビジョニングの定義をしていく。
+でも正直、個人的に使う環境のためにガリガリ書くのはバカらしいよね。
+特にMySQLなんて相当な数の人が使ってるだろうし、そのノウハウを使わせてもらいたい。&lt;/p&gt;
 
 &lt;p&gt;Ansibleには&lt;a href=&#34;https://galaxy.ansible.com/&#34;&gt;Ansible Galaxy&lt;/a&gt;っていうWebサービスがあって、モジュール単位のよく使う定義をアップできるみたい。&lt;/p&gt;
 
@@ -71,11 +66,8 @@
 
 &lt;p&gt;AnsibleではMySQLやらhttpdやらの個々のモジュールをroleと呼んでるらしい。&lt;/p&gt;
 
-&lt;p&gt;つまり、&lt;a href=&#34;https://galaxy.ansible.com/list#/roles&#34;&gt;Browse Roles&lt;/a&gt;からMySQLのroleを探せばよい。&lt;/p&gt;
-
-&lt;p&gt;検索結果、デフォルトで評価の降順にしておいて欲しいんだけど・・・。&lt;/p&gt;
-
-&lt;p&gt;今回は&lt;a href=&#34;https://galaxy.ansible.com/list#/roles/509&#34;&gt;ANXS.mysql&lt;/a&gt;という奴を使わせてもらうことにしました。&lt;/p&gt;
+&lt;p&gt;つまり、&lt;a href=&#34;https://galaxy.ansible.com/list#/roles&#34;&gt;Browse Roles&lt;/a&gt;からMySQLのroleを探せばよい。
+今回は&lt;a href=&#34;https://galaxy.ansible.com/list#/roles/509&#34;&gt;ANXS.mysql&lt;/a&gt;という奴を使わせてもらうことにしました。&lt;/p&gt;
 
 &lt;p&gt;理由は、評価がそれなりに高くて、MySQLの設定が見たまんまでやれそうだったから。&lt;/p&gt;
 
@@ -83,32 +75,24 @@
 
 &lt;p&gt;Ansible Galaxyからの導入は&lt;code&gt;ansible-galaxy install ANXS.mysql&lt;/code&gt;みたいにやれば出来る。&lt;/p&gt;
 
-&lt;p&gt;でもこれじゃあ、このPCにだけroleが導入されちゃうし、どんなroleが必要だったのか後々わからなくなっちゃうね。&lt;/p&gt;
+&lt;p&gt;でもこれじゃあ、このPCにだけroleが導入されちゃうし、どんなroleが必要だったのか後々わからなくなっちゃいますね。
+だから他の人が環境を作るときに困る。&lt;/p&gt;
 
-&lt;p&gt;だから他の人が環境を作るときに困っちゃう。&lt;/p&gt;
-
-&lt;p&gt;そういう時のために&lt;code&gt;requirements.txt&lt;/code&gt;っていうのを作るのが主流らしい。&lt;/p&gt;
-
-&lt;p&gt;これはAnsible Galaxyから導入するroleを記述しておくものみたいで、今回はこんな感じの記述になった。&lt;/p&gt;
+&lt;p&gt;そういう時のために&lt;code&gt;requirements.txt&lt;/code&gt;っていうのを作るのが主流らしい。
+これはAnsible Galaxyから導入するroleを記述しておくものみたいで、今回はこんな感じの記述になった。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;- src: ANXS.mysql
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;シンプル。&lt;/p&gt;
+&lt;p&gt;導入するときは&lt;code&gt;ansible-galaxy install -p ./env/roles -r env/requirements.yml&lt;/code&gt;みたいにやればいい。
+これで環境を作る手順を統一することができました。&lt;/p&gt;
 
-&lt;p&gt;導入するときは&lt;code&gt;ansible-galaxy install -p ./env/roles -r env/requirements.yml&lt;/code&gt;みたいにやればいい。&lt;/p&gt;
-
-&lt;p&gt;pythonっぽい。&lt;/p&gt;
-
-&lt;p&gt;これで環境を作る手順を統一することができた。&lt;/p&gt;
-
-&lt;p&gt;このコマンドは覚えられなそうだから、プロジェクトで使うWikiとかに書いておいたほうがいいね。&lt;/p&gt;
-
-&lt;p&gt;ちなみに、roleはAnsible Galaxyにあるものだけじゃなくて、GitHubにあるものとかも導入できるらしい。&lt;/p&gt;
+&lt;p&gt;このコマンドは覚えられなそうだから、プロジェクトで使うWikiとかに書いておいたほうがいいですね。
+ちなみに、roleはAnsible Galaxyにあるものだけじゃなくて、GitHubにあるものとかも導入できるらしい。&lt;/p&gt;
 
 &lt;h3 id=&#34;playbookを書く:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;Playbookを書く&lt;/h3&gt;
 
-&lt;p&gt;じゃあインストールしてきたroleをもとにPlaybookを書こう。&lt;/p&gt;
+&lt;p&gt;じゃあインストールしてきたroleをもとにPlaybookを書きます。&lt;/p&gt;
 
 &lt;p&gt;設定の仕方はだいたいAnsible Galaxyに書いてあるんだけど、書いてないのも多いから選ぶときに気をつけたほうがいいかも。&lt;/p&gt;
 
@@ -156,11 +140,10 @@ monit_protection: false                 # true or false, requires ANXS.monit
 
 &lt;h2 id=&#34;プロビジョニングする:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;プロビジョニングする&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;vagrant up&lt;/code&gt;か&lt;code&gt;vagrant provision&lt;/code&gt;すればやってくれる。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;vagrant up&lt;/code&gt;か&lt;code&gt;vagrant provision&lt;/code&gt;すればやってくれます。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://galaxy.ansible.com/list#/roles/509&#34;&gt;ANXS.mysql&lt;/a&gt;の場合はMySQLユーザの作成とデータベースの作成までやってくれる。&lt;/p&gt;
-
-&lt;p&gt;テーブルとかは別途スキーマ定義を用意するだろうし、ここまでやってくれれば十分だね。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://galaxy.ansible.com/list#/roles/509&#34;&gt;ANXS.mysql&lt;/a&gt;の場合はMySQLユーザの作成とデータベースの作成までやってくれる。
+テーブルとかは別途スキーマ定義を用意するだろうし、ここまでやってくれれば十分ですね。&lt;/p&gt;
 </description>
     </item>
     
@@ -218,17 +201,13 @@ visible above. Please fix these errors and try again.
 
 &lt;p&gt;herokuにのっけるアプリを作るとき、ローカルではSQLite使ってたんだけどもう色々つらい。&lt;/p&gt;
 
-&lt;p&gt;なんか整数で定義したカラムに文字列入るし！&lt;/p&gt;
-
-&lt;p&gt;なんかオートインクリメントの設定の仕方がPostgreSQLと違うし！&lt;/p&gt;
-
-&lt;p&gt;つらい。&lt;/p&gt;
+&lt;p&gt;なんか整数で定義したカラムに文字列入るし。なんかオートインクリメントの設定の仕方がPostgreSQLと違うし。&lt;/p&gt;
 
 &lt;p&gt;なのでもう、さっとPostgreSQLだけ入った仮想環境を作ってホスト側から繋げるようにしたい。&lt;/p&gt;
 
 &lt;h2 id=&#34;vagrantfileの設定:0c4c654ebb9e6ebcd35111a51a896918&#34;&gt;Vagrantfileの設定&lt;/h2&gt;
 
-&lt;p&gt;もう面倒なのはいやなのでCentOSとIPの設定だけやるよ。&lt;/p&gt;
+&lt;p&gt;もう面倒なのはいやなのでCentOSとIPの設定だけやります。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;# -*- mode: ruby -*-
 # vi: set ft=ruby :
@@ -248,13 +227,11 @@ end
 [vagrant@localhost ~]$ sudo yum install postgresql-contrib
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;さくっと入るやん！&lt;/p&gt;
-
-&lt;h2 id=&#34;どうやって繋ぐのかな:0c4c654ebb9e6ebcd35111a51a896918&#34;&gt;どうやって繋ぐのかな&lt;/h2&gt;
+&lt;h2 id=&#34;postgresqlの使い方がわからない:0c4c654ebb9e6ebcd35111a51a896918&#34;&gt;PostgreSQLの使い方がわからない&lt;/h2&gt;
 
 &lt;p&gt;もうほんとPostgreSQLの使い方がわかんない、MySQLばっか触ってたからわかんない。&lt;/p&gt;
 
-&lt;p&gt;そもそもサービス名はなによ。&lt;/p&gt;
+&lt;p&gt;そもそもサービス名はなんなんだろう。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;[vagrant@localhost ~]$ service postgresql
 Usage: /etc/init.d/postgresql {start|stop|status|restart|condrestart|try-restart|reload|force-reload|initdb}
@@ -266,7 +243,7 @@ postmaster is stopped
                                                            [FAILED]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;code&gt;postgresql&lt;/code&gt;か、でもなんか起動しないね。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;postgresql&lt;/code&gt;か、でもなんか起動しないですね。&lt;/p&gt;
 
 &lt;p&gt;なんか&lt;code&gt;initdb&lt;/code&gt;とやらで初期化をしなきゃいけないらしい。&lt;/p&gt;
 
@@ -308,15 +285,9 @@ or
     /usr/bin/pg_ctl -D /var/lib/pgsql/data -l logfile start
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;んん？&lt;code&gt;/usr/bin/postgres -D /var/lib/pgsql/data&lt;/code&gt;で起動出来るの？&lt;/p&gt;
-
-&lt;p&gt;でも&lt;code&gt;service&lt;/code&gt;でやるよ！&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;[vagrant@localhost ~]$ sudo service postgresql start
 Starting postgresql service:                               [  OK  ]
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;出来るやん！&lt;/p&gt;
 
 &lt;p&gt;ゲスト内で繋がるかな。&lt;/p&gt;
 
@@ -327,7 +298,7 @@ Type &amp;quot;help&amp;quot; for help.
 postgres=# \q
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;出来るやん！&lt;/p&gt;
+&lt;p&gt;いけますね。&lt;/p&gt;
 
 &lt;p&gt;ホスト側からいけるかな。&lt;/p&gt;
 
@@ -364,7 +335,7 @@ Type &amp;quot;help&amp;quot; for help.
 postgres=# \q
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;いけた！&lt;/p&gt;
+&lt;p&gt;いけますね。&lt;/p&gt;
 
 &lt;p&gt;そのうちshellにまとめてprovisioning出来るようにしよう・・・。&lt;/p&gt;
 

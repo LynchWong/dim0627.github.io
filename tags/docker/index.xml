@@ -23,9 +23,7 @@
 
 &lt;p&gt;面倒なので&lt;a href=&#34;https://hub.docker.com/account/signup/&#34;&gt;Docker Hub&lt;/a&gt;からClojureが動く環境を持ってくる。&lt;/p&gt;
 
-&lt;p&gt;オフィシャルリポジトリとやらがあったので、それを使います。&lt;/p&gt;
-
-&lt;p&gt;Leiningenとか一式が入ってるみたい。&lt;/p&gt;
+&lt;p&gt;オフィシャルリポジトリとやらがあったので、それを使います。Leiningenとか一式が入ってるみたい。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://registry.hub.docker.com/_/clojure/&#34;&gt;clojure&lt;/a&gt;&lt;/p&gt;
 
@@ -33,7 +31,7 @@
 
 &lt;p&gt;とりあえず世界に挨拶が出来るくらいのWebアプリを作っちゃおう。&lt;/p&gt;
 
-&lt;p&gt;アプリ自体は重要じゃないので、とりあえずインタラクティブシェル上でちゃちゃっと作っちゃう。&lt;/p&gt;
+&lt;p&gt;アプリ自体は重要じゃないので、とりあえずインタラクティブシェル上で適当にやります。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;b2d$  docker run -i -t clojure /bin/bash
 root@e322a11f087d:/home# lein new compojure aws_webapp
@@ -78,15 +76,15 @@ e9981a715899        clojure:aws         &amp;quot;/bin/bash -c &#39;cd /h   4 se
 
 &lt;p&gt;見れます。&lt;/p&gt;
 
-&lt;p&gt;ringのサーバは起動が遅いので&lt;code&gt;docker logs [names]&lt;/code&gt;で確認しながらやるとよい。&lt;/p&gt;
+&lt;p&gt;ringのサーバは起動が遅いので&lt;code&gt;docker logs [names]&lt;/code&gt;で確認しながらやるといいね。&lt;/p&gt;
 
 &lt;h2 id=&#34;elastic-beanstalkで動かす:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;Elastic Beanstalkで動かす&lt;/h2&gt;
 
 &lt;p&gt;大事なことに気づいたんだけど、BeanstalkはDockerfileとか必要なファイル一式をまとめたzipをアップするらしい。&lt;/p&gt;
 
-&lt;p&gt;そもそもソースもイメージに入れちゃうっていうのは考えとしておかしかったね。&lt;/p&gt;
-
-&lt;p&gt;なのでwarを&lt;code&gt;ADD&lt;/code&gt;で置くのが理想的なのかな。&lt;/p&gt;
+&lt;p&gt;そもそもソースもイメージに入れちゃうっていうのは考えとしておかしいのかも。
+Dockerのベストプラクティスみたいなのがよくわからないや。
+warを&lt;code&gt;ADD&lt;/code&gt;で置くのが理想的なのかな。&lt;/p&gt;
 
 &lt;p&gt;今回は面倒なので、clojureでWebサーバを立ち上げられる&lt;code&gt;http-kit&lt;/code&gt;というライブラリを使ってやってみます。&lt;/p&gt;
 
@@ -100,9 +98,7 @@ e9981a715899        clojure:aws         &amp;quot;/bin/bash -c &#39;cd /h   4 se
 Generating clojure app for AWS Beanstalk and docker
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;こんな感じで作られる。&lt;/p&gt;
-
-&lt;p&gt;jarとかは&lt;code&gt;lein uberjar&lt;/code&gt;で作らなきゃダメかも。&lt;/p&gt;
+&lt;p&gt;こんな感じで作られる。jarとかは&lt;code&gt;lein uberjar&lt;/code&gt;で作らなきゃダメかも。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;.
 |-- Dockerfile
@@ -153,9 +149,8 @@ CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/product
 
 &lt;p&gt;&lt;code&gt;lein zip&lt;/code&gt;でBeanstalk用のzipが&lt;code&gt;target&lt;/code&gt;配下に作成されるので、それをアップロード。&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;Dockerrun.aws.json&lt;/code&gt;でポートの指定とかやってるんだけど、こいつもzipに入れてしまうとtimeoutしてしまった。&lt;/p&gt;
-
-&lt;p&gt;まあそれでも動くんだけどちょっと気持ち悪いので除外。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Dockerrun.aws.json&lt;/code&gt;でポートの指定とかやってるんだけど、こいつもzipに入れてしまうとtimeoutしてしまった。
+まあそれでも動くんだけどちょっと気持ち悪いので除外。&lt;/p&gt;
 
 &lt;p&gt;ポートの指定やらはDockerfileでやってるので問題なく動きます。&lt;/p&gt;
 
@@ -163,9 +158,8 @@ CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/product
 
 &lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-01/deploy.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-01/deploy.png&#34; class=&#34;image&#34; alt=&#34;deploy&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;しかしデプロイは結構時間かかるなー。&lt;/p&gt;
-
-&lt;p&gt;Javaの起動とかライブラリのダウンロードで食ってるのかな・・・。&lt;/p&gt;
+&lt;p&gt;しかしデプロイは結構時間かかるなー。
+Javaの起動とかライブラリのダウンロードで食ってるのかな・・・。&lt;/p&gt;
 
 &lt;h2 id=&#34;参考にさせて頂きました:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
 
@@ -245,18 +239,14 @@ b2d$ docker run hello-world
 
 &lt;p&gt;環境変数&lt;code&gt;$DOCKER_HOST&lt;/code&gt;に&lt;code&gt;tcp://192.168.59.103:2357&lt;/code&gt;が設定されてなきゃいけなかったっぽい。&lt;/p&gt;
 
-&lt;p&gt;これによってboot2dockerで起動したVM中のdockerと接続してるのかな。&lt;/p&gt;
-
-&lt;p&gt;と思ったら、&lt;/p&gt;
+&lt;p&gt;これによってboot2dockerで起動したVM中のdockerと接続してるのかな。と思ったら、&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;b2d$ export DOCKER_HOST=tcp://192.168.59.103:2375
 b2d$ docker run hello-world
 2014/12/30 20:58:41 Cannot connect to the Docker daemon. Is &#39;docker -d&#39; running on this host?
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;環境変数を設定してみるもまたエラー。&lt;/p&gt;
-
-&lt;p&gt;デーモンと接続できない。&lt;/p&gt;
+&lt;p&gt;環境変数を設定してみるもまたエラー。デーモンと接続できない。&lt;/p&gt;
 
 &lt;p&gt;1時間ほど詰まりましたが最悪な原因でした。&lt;/p&gt;
 
@@ -315,209 +305,6 @@ For more examples and ideas, visit:
 &lt;p&gt;&lt;a href=&#34;http://inokara.hateblo.jp/entry/2013/09/30/234806&#34;&gt;docker API を使ってみる - ようへいの日々精進 XP&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://qiita.com/kanekoa/items/cf3cabb23da69c609002&#34;&gt;OS X をサポートした Docker 0.8 を試す - Qiita&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Docker事始め</title>
-      <link>http://yet.unresolved.xyz/blog/2014/11/09/learn-docker/</link>
-      <pubDate>Sun, 09 Nov 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://yet.unresolved.xyz/blog/2014/11/09/learn-docker/</guid>
-      <description>
-
-&lt;p&gt;ちょっとやりたいことがあって、&lt;a href=&#34;http://www.docker.com/&#34;&gt;Docker&lt;/a&gt;を使ってみることに。&lt;/p&gt;
-
-&lt;p&gt;ドキュメントは&lt;a href=&#34;https://docs.docker.com/userguide/dockerizing/&#34;&gt;Dockerizing Applications: A &amp;ldquo;Hello world&amp;rdquo;&lt;/a&gt;から一通り読んだんだけど、&lt;/p&gt;
-
-&lt;p&gt;触りながらやってもちょっと覚えるのが大変そうだからまとめてみる。&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;h2 id=&#34;何が出来る-何に使う:50163fe7ac593e930e96d9451ca55983&#34;&gt;何が出来る？何に使う？&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.vagrantup.com/&#34;&gt;Vagrant&lt;/a&gt;みたいに仮想環境をバンバン立ち上げることが出来るって認識は合ってそう。&lt;/p&gt;
-
-&lt;p&gt;しかしコンテナ型だから速いとかGolangで出来てるとか、各所は難しい話ばっかで&lt;strong&gt;何が出来て何に使う&lt;/strong&gt;ってのがいまいち見えてこないんだな。&lt;/p&gt;
-
-&lt;p&gt;特に僕みたいに、知識はないけどやってみたい人はそれじゃ理解が進まない！&lt;/p&gt;
-
-&lt;p&gt;ちなみに僕の場合、Vagrantはアプリケーション単位に環境を作っています。&lt;/p&gt;
-
-&lt;p&gt;開発するときは、ホストで書く-&amp;gt;ゲストで動かす、って感じに動作環境として使ってるんだけど、&lt;/p&gt;
-
-&lt;p&gt;その点DockerはWebサーバとかDBサーバとか、そういう単位に仮想環境を作ってそれらを連携させたりするのが容易らしい。&lt;/p&gt;
-
-&lt;p&gt;さらに、環境まるごとバージョン管理ができるんだとか。&lt;/p&gt;
-
-&lt;p&gt;作っては捨てる環境ってだけじゃなくて、本番環境みたいに継続維持しなきゃいけない環境とかにも使えるんじゃないのかなあ、っていう印象。&lt;/p&gt;
-
-&lt;p&gt;ただ、こんな記事がある通り、&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://techracho.bpsinc.jp/hachi8833/2014_06_16/17982&#34;&gt;[翻訳] Dockerについてよくある勘違い&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;本番で動かすなら結構な知識が必要だから安易にやるのはちょっとね、ってのが製作陣の考えのよう。&lt;/p&gt;
-
-&lt;p&gt;僕は個人的な環境で使いたいだけだから、特に問題はないね。&lt;/p&gt;
-
-&lt;h2 id=&#34;どんな感じに使う:50163fe7ac593e930e96d9451ca55983&#34;&gt;どんな感じに使う？&lt;/h2&gt;
-
-&lt;p&gt;ドキュメント通りに理解を進めていこう。&lt;/p&gt;
-
-&lt;p&gt;例えば、こんな感じでコンテナを起動した上でechoコマンドを実行したり、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ sudo docker run ubuntu:14.04 /bin/echo &#39;Hello world&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;こんな感じでインタラクティブモードでの起動が出来たりする。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ sudo docker run -t -i ubuntu:14.04 /bin/bash
-root@af8bae53bdd3:/#
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;デーモンとして起動したり、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ sudo docker run -d ubuntu:14.04 /bin/sh -c &amp;quot;while true; do echo hello world; sleep 1; done&amp;quot;
-1e5535038e285177d5214659a068137486f96ee5c2e85a4ac52dc83f2ebe4147
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;起動してるデーモンを1つのプロセスとして確認できたりする。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ sudo docker ps
-CONTAINER ID  IMAGE         COMMAND               CREATED        STATUS       PORTS NAMES
-1e5535038e28  ubuntu:14.04  /bin/sh -c &#39;while tr  2 minutes ago  Up 1 minute        insane_babbage
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;CONTAINER_ID&lt;/code&gt;と&lt;code&gt;NAMES&lt;/code&gt;はコンテナを起動するたびに変わる。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;NAMES&lt;/code&gt;は自分で決めることも出来るとか？&lt;/p&gt;
-
-&lt;p&gt;デーモンとして起動したコンテナの出力を見るにはこんな感じ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ sudo docker logs insane_babbage
-hello world
-hello world
-hello world
-. . .
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;止める時はこう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ sudo docker stop insane_babbage
-insane_babbage
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;webアプリを動かす:50163fe7ac593e930e96d9451ca55983&#34;&gt;Webアプリを動かす&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;-d&lt;/code&gt;オプションでデーモンとして常駐するみたいだけど、&lt;code&gt;-P&lt;/code&gt;でゲストとホスト間のポート転送もやってくれるらしい。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ sudo docker run -d -P training/webapp python app.py
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ポートを指定する場合は&lt;code&gt;-p&lt;/code&gt;オプションを使う。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ sudo docker run -d -p 5000:5000 training/webapp python app.py
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;tail -f&lt;/code&gt;みたいなログ監視をしたい時、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ sudo docker logs -f nostalgic_morse
-* Running on http://0.0.0.0:5000/
-10.0.2.2 - - [23/May/2014 20:16:31] &amp;quot;GET / HTTP/1.1&amp;quot; 200 -
-10.0.2.2 - - [23/May/2014 20:16:31] &amp;quot;GET /favicon.ico HTTP/1.1&amp;quot; 404 -
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;コンテナ内のプロセス確認、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ sudo docker top nostalgic_morse
-PID                 USER                COMMAND
-854                 root                python app.py
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;いろんな情報の表示、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ sudo docker inspect nostalgic_morse
-[{
-    &amp;quot;ID&amp;quot;: &amp;quot;bc533791f3f500b280a9626688bc79e342e3ea0d528efe3a86a51ecb28ea20&amp;quot;,
-    &amp;quot;Created&amp;quot;: &amp;quot;2014-05-26T05:52:40.808952951Z&amp;quot;,
-    &amp;quot;Path&amp;quot;: &amp;quot;python&amp;quot;,
-    &amp;quot;Args&amp;quot;: [
-       &amp;quot;app.py&amp;quot;
-    ],
-    &amp;quot;Config&amp;quot;: {
-       &amp;quot;Hostname&amp;quot;: &amp;quot;bc533791f3f5&amp;quot;,
-       &amp;quot;Domainname&amp;quot;: &amp;quot;&amp;quot;,
-       &amp;quot;User&amp;quot;: &amp;quot;&amp;quot;,
-. . .
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;一度作ったコンテナはすぐに再開出来る。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ sudo docker start nostalgic_morse
-nostalgic_morse
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;作ったコンテナの確認はこんな感じ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ sudo docker ps -a
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;この書き方わからなくて結構困った。&lt;/p&gt;
-
-&lt;h2 id=&#34;独自のイメージを作る:50163fe7ac593e930e96d9451ca55983&#34;&gt;独自のイメージを作る&lt;/h2&gt;
-
-&lt;p&gt;利用目的に沿ったコンテナを作ってみる。&lt;/p&gt;
-
-&lt;p&gt;まずはベースになるイメージを探す。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ sudo docker search sinatra
-NAME                                   DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
-training/sinatra                       Sinatra training image                          0                    [OK]
-marceldegraaf/sinatra                  Sinatra test app                                0
-mattwarren/docker-sinatra-demo                                                         0                    [OK]
-luisbebop/docker-sinatra-hello-world                                                   0                    [OK]
-bmorearty/handson-sinatra              handson-ruby + Sinatra for Hands on with D...   0
-subwiz/sinatra                                                                         0
-bmorearty/sinatra                                                                      0
-. . .
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;持ってくる。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ sudo docker pull training/sinatra
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;インタラクティブモードで色々設定してもいいけど、Dockerfileに設定をまとめてしまった方がいいみたい。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ mkdir sinatra
-$ cd sinatra
-$ touch Dockerfile
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;# This is a FROM ubuntu:14.04
-MAINTAINER Kate Smith &amp;lt;ksmith@example.com&amp;gt;
-RUN apt-get update &amp;amp;&amp;amp; apt-get install -y ruby ruby-dev
-RUN gem install sinatra
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;反映はこう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ sudo docker build -t=&amp;quot;ouruser/sinatra:v2&amp;quot; .
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;変更をイメージとして確定するときは、こんな感じ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ sudo docker commit -m=&amp;quot;Added json gem&amp;quot; -a=&amp;quot;Kate Smith&amp;quot; 0b2616b0e5a8 ouruser/sinatra:v2
-4f177bd27a9ff0f6dc2a830403925b5360bfe0b93d476f7fc3231110e7f71b1c
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;ちょっとまとめる:50163fe7ac593e930e96d9451ca55983&#34;&gt;ちょっとまとめる&lt;/h2&gt;
-
-&lt;p&gt;やっぱりぽいぽい捨てたり、開発者間で同一の環境を作る、というよりかはある程度ロールを明確にした環境を作るのに向いてるのかなあ。&lt;/p&gt;
-
-&lt;p&gt;稼働させる環境を作りながら途中でコミット出来たりするのはかなり安心できそう。&lt;/p&gt;
-
-&lt;p&gt;ちょうど今回やりたかったことに合致しそうなので、もう少し進めてみよう。&lt;/p&gt;
 </description>
     </item>
     

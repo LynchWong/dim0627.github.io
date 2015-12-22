@@ -17,9 +17,10 @@
       <guid>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</guid>
       <description>
 
-&lt;p&gt;1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。&lt;/p&gt;
+&lt;p&gt;1年前くらいには、SQLまで隠蔽するORMとか嫌いだったし、テーブルの自動生成も嫌だったのになあ。
+なんだかんだ便利さに気づいてきた感じがある。&lt;/p&gt;
 
-&lt;p&gt;というわけでClojureを使ってWeb開発をする際も使いたいので、Lobosというスキーマのマニュピレーション、マイグレーションツールを使ってみます。&lt;/p&gt;
+&lt;p&gt;というわけでClojureを使ってWeb開発をする際も使いたいので、&lt;a href=&#34;https://github.com/budu/lobos&#34;&gt;Lobos&lt;/a&gt;というスキーマのマニュピレーション、マイグレーションツールを使ってみます。&lt;/p&gt;
 
 &lt;h2 id=&#34;インストール:a4d3af33140cffc65cf5c9a1e4293067&#34;&gt;インストール&lt;/h2&gt;
 
@@ -30,9 +31,9 @@
 &lt;pre&gt;&lt;code class=&#34;language-clj&#34;&gt;:dependencies [[lobos &amp;quot;1.0.0-beta3&amp;quot;]]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;を追加して&lt;code&gt;lein deps&lt;/code&gt;するだけでおーけー。&lt;/p&gt;
+&lt;p&gt;を追加して&lt;code&gt;lein deps&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;Leiningenのプラグインとして使える&lt;a href=&#34;https://github.com/pupeno/lein-lobos&#34;&gt;pupeno/lein-lobos&lt;/a&gt;ってのもあるようだ。&lt;/p&gt;
+&lt;p&gt;Leiningenのプラグインとして使える&lt;a href=&#34;https://github.com/pupeno/lein-lobos&#34;&gt;pupeno/lein-lobos&lt;/a&gt;ってのもあるみたい。&lt;/p&gt;
 
 &lt;p&gt;こっちも使う場合は、&lt;code&gt;ploject.clj&lt;/code&gt;に&lt;/p&gt;
 
@@ -41,7 +42,7 @@
 
 &lt;p&gt;を追加。&lt;/p&gt;
 
-&lt;p&gt;全体を載っけるとこんな感じに。&lt;/p&gt;
+&lt;p&gt;全体を載せるとこんな感じに。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clj&#34;&gt;(defproject tpc &amp;quot;0.1.0-SNAPSHOT&amp;quot;
   :description &amp;quot;FIXME: write description&amp;quot;
@@ -69,7 +70,7 @@
 
 &lt;h2 id=&#34;テーブル定義をしてみる:a4d3af33140cffc65cf5c9a1e4293067&#34;&gt;テーブル定義をしてみる&lt;/h2&gt;
 
-&lt;p&gt;今回はSQLiteにて実施。&lt;/p&gt;
+&lt;p&gt;今回はSQLiteでやります。&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;src&lt;/code&gt;ディレクトリ直下に&lt;code&gt;lobos&lt;/code&gt;ってディレクトリを作成して、その中にいろいろな設定を突っ込む必要があるらしい。&lt;/p&gt;
 
@@ -137,13 +138,11 @@
 
 &lt;h2 id=&#34;マイグレーションの実行:a4d3af33140cffc65cf5c9a1e4293067&#34;&gt;マイグレーションの実行&lt;/h2&gt;
 
-&lt;p&gt;ここが結構厄介だった。&lt;/p&gt;
+&lt;p&gt;ここが結構厄介だった。
+というか、出来たといえば出来たんだけど、もっと正しい方法があるような気が・・・。&lt;/p&gt;
 
-&lt;p&gt;というか、出来たといえば出来たんだけど、もっと正しい方法があるような気が・・・。&lt;/p&gt;
-
-&lt;p&gt;REPLにて以下を実行。&lt;/p&gt;
-
-&lt;p&gt;WARNINGは多分すでに存在するシンボルを置き換えてしまってることの警告だからとりあえず無視。&lt;/p&gt;
+&lt;p&gt;REPLにて以下を実行。
+WARNINGは多分すでに存在するシンボルを置き換えてしまってることの警告だからとりあえず無視。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clojure-repl&#34;&gt;tpc git:(master)$ lein repl
 (use &#39;(lobos connectivity core schema))nREPL server started on port 50092 on host 127.0.0.1 - nrepl://127.0.0.1:50092
@@ -182,10 +181,6 @@ Enter &amp;quot;.help&amp;quot; for usage hints.
 sqlite&amp;gt; .tables
 lobos_migrations  sites
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;できてる！&lt;/p&gt;
-
-&lt;p&gt;まだまだ名前空間とか&lt;code&gt;require&lt;/code&gt;あたりの理解が甘いなー・・・。&lt;/p&gt;
 </description>
     </item>
     
@@ -197,19 +192,13 @@ lobos_migrations  sites
       <guid>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</guid>
       <description>
 
-&lt;p&gt;Clojureを始めて一週間ほどになりまして。&lt;/p&gt;
-
-&lt;p&gt;ようやくWebアプリ開発に着手しました。&lt;/p&gt;
+&lt;p&gt;Clojureを始めて一週間ほどになりまして、ようやくWebアプリ開発に着手しました。&lt;/p&gt;
 
 &lt;p&gt;というわけで開発環境を整えます。&lt;/p&gt;
 
 &lt;h2 id=&#34;lein-haml-sassの導入:aea6c6aa18698925cad2fc33bce27d8b&#34;&gt;lein-haml-sassの導入&lt;/h2&gt;
 
-&lt;p&gt;まったく贅沢な名前してんな！&lt;/p&gt;
-
-&lt;p&gt;いえ、&lt;a href=&#34;https://github.com/rtircher/lein-haml-sass&#34;&gt;lein-haml-sass&lt;/a&gt;は素晴らしいプラグインです。&lt;/p&gt;
-
-&lt;p&gt;これを使うとなんとhamlのコンパイルやsass/scssのコンパイルをやってくれます。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/rtircher/lein-haml-sass&#34;&gt;lein-haml-sass&lt;/a&gt;はhamlのコンパイルやsass/scssのコンパイルをやってくれます。&lt;/p&gt;
 
 &lt;p&gt;ていうか&lt;strong&gt;sassとscssの違い&lt;/strong&gt;ってなんだっけ？真面目に考えるとわかんないな。&lt;/p&gt;
 
@@ -267,13 +256,7 @@ lobos_migrations  sites
 
 &lt;h2 id=&#34;コンパイルする:aea6c6aa18698925cad2fc33bce27d8b&#34;&gt;コンパイルする&lt;/h2&gt;
 
-&lt;p&gt;さっそく&lt;code&gt;lein sass once&lt;/code&gt;してみるも、何も起きない！&lt;/p&gt;
-
-&lt;p&gt;あっ、sassとscssでタスクが違う。&lt;/p&gt;
-
-&lt;p&gt;ていうかsassフォルダにscss置くのってなんか違う気がしてきた！あとで名前変えよう。&lt;/p&gt;
-
-&lt;p&gt;というわけで、&lt;code&gt;lein scss once&lt;/code&gt;で無事動きました。&lt;/p&gt;
+&lt;p&gt;sassとscssでタスクが違うようなので、間違えないように注意。&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;lein scss auto&lt;/code&gt;で変更監視できるっぽい。&lt;/p&gt;
 </description>

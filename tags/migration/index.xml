@@ -10,7 +10,7 @@
     <atom:link href="http://yet.unresolved.xyz/tags/migration/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Lobosでマイグレーションができない in Heroku</title>
+      <title>HerokuでLobosを使ったマイグレーションができない</title>
       <link>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</link>
       <pubDate>Sun, 21 Dec 2014 00:00:00 +0000</pubDate>
       
@@ -19,23 +19,17 @@
 
 &lt;p&gt;ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。&lt;/p&gt;
 
-&lt;h2 id=&#34;何が起きたか:b3814854ab9c35505a0d42182d51f32f&#34;&gt;何が起きたか&lt;/h2&gt;
+&lt;h2 id=&#34;マイグレーションしても何も起きない:b3814854ab9c35505a0d42182d51f32f&#34;&gt;マイグレーションしても何も起きない&lt;/h2&gt;
 
-&lt;p&gt;今だにHerokuの使い方がようわからんのだけど、&lt;/p&gt;
+&lt;p&gt;今だにHerokuの使い方がよくわからないんだけど、とりあえずローカルから向き先変えるよりもSSHの方が楽だったので&lt;code&gt;heroku run bash&lt;/code&gt;してやってます。&lt;/p&gt;
 
-&lt;p&gt;とりあえずローカルから向き先変えるよりもSSHの方がいっかなってことで&lt;code&gt;heroku run bash&lt;/code&gt;してやってます。&lt;/p&gt;
-
-&lt;p&gt;ローカルからだとDBをSSLで接続させないといけないし・・・。&lt;/p&gt;
-
-&lt;p&gt;んでマイグレーションしようとしたら、&lt;/p&gt;
+&lt;p&gt;ローカルからだとDBをSSLで接続させないといけないし・・・。それでマイグレーションしようとしたら、&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clojure-repl&#34;&gt;user=&amp;gt; (migrate)
 nil
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;何も出ない。&lt;/p&gt;
-
-&lt;p&gt;本当はこんな感じで、&lt;/p&gt;
+&lt;p&gt;何も出ない。本当はこんな感じで、&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clojure-repl&#34;&gt;user=&amp;gt; (migrate)
 add-sites-table
@@ -45,9 +39,9 @@ nil
 
 &lt;p&gt;作成されたり変更されたテーブルが出てくるはず。&lt;/p&gt;
 
-&lt;h2 id=&#34;原因はなんだったのか:b3814854ab9c35505a0d42182d51f32f&#34;&gt;原因はなんだったのか&lt;/h2&gt;
+&lt;h2 id=&#34;lobos-migrationsがロードされてない:b3814854ab9c35505a0d42182d51f32f&#34;&gt;lobos.migrationsがロードされてない&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;lobos.migrations&lt;/code&gt;が読まれてない（というかリロードされてない）っぽい。&lt;/p&gt;
+&lt;p&gt;どうやら&lt;code&gt;lobos.migrations&lt;/code&gt;が読まれてない（というかリロードされてない）っぽい。&lt;/p&gt;
 
 &lt;p&gt;そもそも&lt;code&gt;migrate&lt;/code&gt;自体はこんな感じで&lt;code&gt;lobos.migration&lt;/code&gt;の&lt;code&gt;do-migrations&lt;/code&gt;を呼んでます。&lt;/p&gt;
 
@@ -122,13 +116,12 @@ user=&amp;gt; (list-migrations)
 user=&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;解決策:b3814854ab9c35505a0d42182d51f32f&#34;&gt;解決策&lt;/h2&gt;
+&lt;h2 id=&#34;reload-migrations-をfalseにすればいい:b3814854ab9c35505a0d42182d51f32f&#34;&gt;*reload-migrations*をfalseにすればいい&lt;/h2&gt;
 
 &lt;p&gt;もう正直ここまでで一週間弱悩んだから、lobos使うのやめようかなとも思ったけどまあいい勉強だろうし・・・。&lt;/p&gt;
 
-&lt;p&gt;暫定にしかならないけど、とりあえずリロードさせないようにしよう。&lt;/p&gt;
-
-&lt;p&gt;ソースコードの通り、&lt;code&gt;*reload-migrations*&lt;/code&gt;が&lt;code&gt;true&lt;/code&gt;になっている場合にリロードが走るらしい。&lt;/p&gt;
+&lt;p&gt;暫定にしかならないけど、とりあえずリロードさせないようにしよう。
+ソースコードの通り、&lt;code&gt;*reload-migrations*&lt;/code&gt;が&lt;code&gt;true&lt;/code&gt;になっている場合にリロードが走るらしい。&lt;/p&gt;
 
 &lt;p&gt;だからこんな感じで&lt;code&gt;false&lt;/code&gt;で上書いてしまおう。&lt;/p&gt;
 
@@ -151,11 +144,10 @@ nil
 lobos.migration=&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;これじゃない感がすごいけど、とりあえず通った・・・。&lt;/p&gt;
+&lt;p&gt;これじゃない感がすごいけど、とりあえず通った・・・。
+Lobosはもう開発があんまり活発じゃないみたいだなあ。&lt;/p&gt;
 
-&lt;p&gt;Lobosはもう開発があんまり活発じゃないみたいだなあ。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;lobos.migration&lt;/code&gt;と&lt;code&gt;lobos.migrations&lt;/code&gt;の命名はちょっといけてないような・・・。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;lobos.migration&lt;/code&gt;と&lt;code&gt;lobos.migrations&lt;/code&gt;の命名はちょっといけてないような気がする。&lt;/p&gt;
 </description>
     </item>
     
@@ -167,9 +159,10 @@ lobos.migration=&amp;gt;
       <guid>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</guid>
       <description>
 
-&lt;p&gt;1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。&lt;/p&gt;
+&lt;p&gt;1年前くらいには、SQLまで隠蔽するORMとか嫌いだったし、テーブルの自動生成も嫌だったのになあ。
+なんだかんだ便利さに気づいてきた感じがある。&lt;/p&gt;
 
-&lt;p&gt;というわけでClojureを使ってWeb開発をする際も使いたいので、Lobosというスキーマのマニュピレーション、マイグレーションツールを使ってみます。&lt;/p&gt;
+&lt;p&gt;というわけでClojureを使ってWeb開発をする際も使いたいので、&lt;a href=&#34;https://github.com/budu/lobos&#34;&gt;Lobos&lt;/a&gt;というスキーマのマニュピレーション、マイグレーションツールを使ってみます。&lt;/p&gt;
 
 &lt;h2 id=&#34;インストール:a4d3af33140cffc65cf5c9a1e4293067&#34;&gt;インストール&lt;/h2&gt;
 
@@ -180,9 +173,9 @@ lobos.migration=&amp;gt;
 &lt;pre&gt;&lt;code class=&#34;language-clj&#34;&gt;:dependencies [[lobos &amp;quot;1.0.0-beta3&amp;quot;]]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;を追加して&lt;code&gt;lein deps&lt;/code&gt;するだけでおーけー。&lt;/p&gt;
+&lt;p&gt;を追加して&lt;code&gt;lein deps&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;Leiningenのプラグインとして使える&lt;a href=&#34;https://github.com/pupeno/lein-lobos&#34;&gt;pupeno/lein-lobos&lt;/a&gt;ってのもあるようだ。&lt;/p&gt;
+&lt;p&gt;Leiningenのプラグインとして使える&lt;a href=&#34;https://github.com/pupeno/lein-lobos&#34;&gt;pupeno/lein-lobos&lt;/a&gt;ってのもあるみたい。&lt;/p&gt;
 
 &lt;p&gt;こっちも使う場合は、&lt;code&gt;ploject.clj&lt;/code&gt;に&lt;/p&gt;
 
@@ -191,7 +184,7 @@ lobos.migration=&amp;gt;
 
 &lt;p&gt;を追加。&lt;/p&gt;
 
-&lt;p&gt;全体を載っけるとこんな感じに。&lt;/p&gt;
+&lt;p&gt;全体を載せるとこんな感じに。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clj&#34;&gt;(defproject tpc &amp;quot;0.1.0-SNAPSHOT&amp;quot;
   :description &amp;quot;FIXME: write description&amp;quot;
@@ -219,7 +212,7 @@ lobos.migration=&amp;gt;
 
 &lt;h2 id=&#34;テーブル定義をしてみる:a4d3af33140cffc65cf5c9a1e4293067&#34;&gt;テーブル定義をしてみる&lt;/h2&gt;
 
-&lt;p&gt;今回はSQLiteにて実施。&lt;/p&gt;
+&lt;p&gt;今回はSQLiteでやります。&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;src&lt;/code&gt;ディレクトリ直下に&lt;code&gt;lobos&lt;/code&gt;ってディレクトリを作成して、その中にいろいろな設定を突っ込む必要があるらしい。&lt;/p&gt;
 
@@ -287,13 +280,11 @@ lobos.migration=&amp;gt;
 
 &lt;h2 id=&#34;マイグレーションの実行:a4d3af33140cffc65cf5c9a1e4293067&#34;&gt;マイグレーションの実行&lt;/h2&gt;
 
-&lt;p&gt;ここが結構厄介だった。&lt;/p&gt;
+&lt;p&gt;ここが結構厄介だった。
+というか、出来たといえば出来たんだけど、もっと正しい方法があるような気が・・・。&lt;/p&gt;
 
-&lt;p&gt;というか、出来たといえば出来たんだけど、もっと正しい方法があるような気が・・・。&lt;/p&gt;
-
-&lt;p&gt;REPLにて以下を実行。&lt;/p&gt;
-
-&lt;p&gt;WARNINGは多分すでに存在するシンボルを置き換えてしまってることの警告だからとりあえず無視。&lt;/p&gt;
+&lt;p&gt;REPLにて以下を実行。
+WARNINGは多分すでに存在するシンボルを置き換えてしまってることの警告だからとりあえず無視。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clojure-repl&#34;&gt;tpc git:(master)$ lein repl
 (use &#39;(lobos connectivity core schema))nREPL server started on port 50092 on host 127.0.0.1 - nrepl://127.0.0.1:50092
@@ -332,10 +323,6 @@ Enter &amp;quot;.help&amp;quot; for usage hints.
 sqlite&amp;gt; .tables
 lobos_migrations  sites
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;できてる！&lt;/p&gt;
-
-&lt;p&gt;まだまだ名前空間とか&lt;code&gt;require&lt;/code&gt;あたりの理解が甘いなー・・・。&lt;/p&gt;
 </description>
     </item>
     

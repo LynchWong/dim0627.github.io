@@ -74,9 +74,8 @@
 
 &lt;h2 id=&#34;replを作ろう:4800906b877996c3dc902a23f48b0c5e&#34;&gt;REPLを作ろう&lt;/h2&gt;
 
-&lt;p&gt;なんかSlack上でプログラム打つと実行結果が返ってくるみたいなやつ誰かが作ってたよね？&lt;/p&gt;
-
-&lt;p&gt;あれ調べても出ないんだけどなんでなんだろう。&lt;/p&gt;
+&lt;p&gt;なんかSlack上でプログラム打つと実行結果が返ってくるみたいなやつ誰かが作ってたよね？
+あれ調べても出ないんだけどなんでなんだろう。&lt;/p&gt;
 
 &lt;p&gt;まあとりあえず、作ったばっかの&lt;a href=&#34;https://paiza.io/&#34;&gt;paiza.IO&lt;/a&gt;のAPIを叩くあれを導入してみる。&lt;/p&gt;
 
@@ -105,15 +104,7 @@
 
 &lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-25/slack_repl_run.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-25/slack_repl_run.png&#34; class=&#34;image&#34; alt=&#34;slack_repl_run&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;いけるやん！&lt;/p&gt;
-
-&lt;p&gt;Javaだる！&lt;/p&gt;
-
-&lt;h2 id=&#34;コード:4800906b877996c3dc902a23f48b0c5e&#34;&gt;コード&lt;/h2&gt;
-
-&lt;p&gt;やばい&lt;code&gt;project.clj&lt;/code&gt;とかherokuから持ってきたままだしリファクタリングもしてないし超適当だ&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/dim0627/slack_repl&#34;&gt;dim0627/slack_repl&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Javaは少し面倒だね。&lt;/p&gt;
 </description>
     </item>
     

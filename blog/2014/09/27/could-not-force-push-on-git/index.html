@@ -65,11 +65,10 @@
 
       <div class="body" itemprop="articleBody">
 
-<p>typoを直すために<code>rebase -i</code>やらをやってたんだけど、操作してたのがmasterブランチだったのでどうしてもforce pushがしたかった。</p>
+<p>typoを直すために<code>rebase -i</code>やらをやってたんだけど、操作してたのがmasterブランチだったのでどうしてもforce pushがしたかった。
+一人で使ってたリポジトリだしね。</p>
 
-<p>一人で使ってたリポジトリだしね。</p>
-
-<p>んだけど、<code>-f</code>をつけても</p>
+<p>だけど<code>-f</code>をつけてもrejectされてしまう。</p>
 
 <pre><code class="language-sh">To git://example.com/project1.git
  ! [rejected]        master -&gt; master (non-fast-forward)
@@ -78,11 +77,9 @@ To prevent ... See the 'Note about
 fast-forwards' section of 'git push --help' for details.
 </code></pre>
 
-<p>こんな感じになってしまう・・・。</p>
+<h2 id="denynonfastforwardsプロパティ:c5ac499954fae3df373a4f81754a5ef2">denyNonFastforwardsプロパティ</h2>
 
-<h2 id="解決:c5ac499954fae3df373a4f81754a5ef2">解決</h2>
-
-<p>gitリポジトリのconfigを見たらこんな項目が、</p>
+<p>gitリポジトリのconfigを見たらこんな項目がありました。</p>
 
 <pre><code class="language-yml">[receive]
     denyNonFastforwards = true

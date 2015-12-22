@@ -23,9 +23,7 @@
 
 &lt;p&gt;面倒なので&lt;a href=&#34;https://hub.docker.com/account/signup/&#34;&gt;Docker Hub&lt;/a&gt;からClojureが動く環境を持ってくる。&lt;/p&gt;
 
-&lt;p&gt;オフィシャルリポジトリとやらがあったので、それを使います。&lt;/p&gt;
-
-&lt;p&gt;Leiningenとか一式が入ってるみたい。&lt;/p&gt;
+&lt;p&gt;オフィシャルリポジトリとやらがあったので、それを使います。Leiningenとか一式が入ってるみたい。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://registry.hub.docker.com/_/clojure/&#34;&gt;clojure&lt;/a&gt;&lt;/p&gt;
 
@@ -33,7 +31,7 @@
 
 &lt;p&gt;とりあえず世界に挨拶が出来るくらいのWebアプリを作っちゃおう。&lt;/p&gt;
 
-&lt;p&gt;アプリ自体は重要じゃないので、とりあえずインタラクティブシェル上でちゃちゃっと作っちゃう。&lt;/p&gt;
+&lt;p&gt;アプリ自体は重要じゃないので、とりあえずインタラクティブシェル上で適当にやります。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;b2d$  docker run -i -t clojure /bin/bash
 root@e322a11f087d:/home# lein new compojure aws_webapp
@@ -78,15 +76,15 @@ e9981a715899        clojure:aws         &amp;quot;/bin/bash -c &#39;cd /h   4 se
 
 &lt;p&gt;見れます。&lt;/p&gt;
 
-&lt;p&gt;ringのサーバは起動が遅いので&lt;code&gt;docker logs [names]&lt;/code&gt;で確認しながらやるとよい。&lt;/p&gt;
+&lt;p&gt;ringのサーバは起動が遅いので&lt;code&gt;docker logs [names]&lt;/code&gt;で確認しながらやるといいね。&lt;/p&gt;
 
 &lt;h2 id=&#34;elastic-beanstalkで動かす:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;Elastic Beanstalkで動かす&lt;/h2&gt;
 
 &lt;p&gt;大事なことに気づいたんだけど、BeanstalkはDockerfileとか必要なファイル一式をまとめたzipをアップするらしい。&lt;/p&gt;
 
-&lt;p&gt;そもそもソースもイメージに入れちゃうっていうのは考えとしておかしかったね。&lt;/p&gt;
-
-&lt;p&gt;なのでwarを&lt;code&gt;ADD&lt;/code&gt;で置くのが理想的なのかな。&lt;/p&gt;
+&lt;p&gt;そもそもソースもイメージに入れちゃうっていうのは考えとしておかしいのかも。
+Dockerのベストプラクティスみたいなのがよくわからないや。
+warを&lt;code&gt;ADD&lt;/code&gt;で置くのが理想的なのかな。&lt;/p&gt;
 
 &lt;p&gt;今回は面倒なので、clojureでWebサーバを立ち上げられる&lt;code&gt;http-kit&lt;/code&gt;というライブラリを使ってやってみます。&lt;/p&gt;
 
@@ -100,9 +98,7 @@ e9981a715899        clojure:aws         &amp;quot;/bin/bash -c &#39;cd /h   4 se
 Generating clojure app for AWS Beanstalk and docker
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;こんな感じで作られる。&lt;/p&gt;
-
-&lt;p&gt;jarとかは&lt;code&gt;lein uberjar&lt;/code&gt;で作らなきゃダメかも。&lt;/p&gt;
+&lt;p&gt;こんな感じで作られる。jarとかは&lt;code&gt;lein uberjar&lt;/code&gt;で作らなきゃダメかも。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;.
 |-- Dockerfile
@@ -153,9 +149,8 @@ CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/product
 
 &lt;p&gt;&lt;code&gt;lein zip&lt;/code&gt;でBeanstalk用のzipが&lt;code&gt;target&lt;/code&gt;配下に作成されるので、それをアップロード。&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;Dockerrun.aws.json&lt;/code&gt;でポートの指定とかやってるんだけど、こいつもzipに入れてしまうとtimeoutしてしまった。&lt;/p&gt;
-
-&lt;p&gt;まあそれでも動くんだけどちょっと気持ち悪いので除外。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Dockerrun.aws.json&lt;/code&gt;でポートの指定とかやってるんだけど、こいつもzipに入れてしまうとtimeoutしてしまった。
+まあそれでも動くんだけどちょっと気持ち悪いので除外。&lt;/p&gt;
 
 &lt;p&gt;ポートの指定やらはDockerfileでやってるので問題なく動きます。&lt;/p&gt;
 
@@ -163,9 +158,8 @@ CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/product
 
 &lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-01/deploy.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-01/deploy.png&#34; class=&#34;image&#34; alt=&#34;deploy&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;しかしデプロイは結構時間かかるなー。&lt;/p&gt;
-
-&lt;p&gt;Javaの起動とかライブラリのダウンロードで食ってるのかな・・・。&lt;/p&gt;
+&lt;p&gt;しかしデプロイは結構時間かかるなー。
+Javaの起動とかライブラリのダウンロードで食ってるのかな・・・。&lt;/p&gt;
 
 &lt;h2 id=&#34;参考にさせて頂きました:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
 

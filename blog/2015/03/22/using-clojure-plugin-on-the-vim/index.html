@@ -36,7 +36,7 @@
       <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz"/>
       <meta itemprop="dateModified" content="2015-03-22T19:47:22&#43;09:00">
       <meta itemprop="headline" content="VimのClojureプラグイン覚書">
-      <meta itemprop="description" content="VimでClojure書くときのあれこれをいっつも忘れるのでまとめておこうと思う。 新しいことを覚えたら随時追記していこうかな。 使ってるプラグ">
+      <meta itemprop="description" content="VimでClojure書くときのあれこれをいっつも忘れるのでまとめておこうと思う。新しいことを覚えたら随時追記していこうかな。 使ってるプラグ">
       <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/">
       <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
         <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.png" />
@@ -65,23 +65,17 @@
 
       <div class="body" itemprop="articleBody">
 
-<p>VimでClojure書くときのあれこれをいっつも忘れるのでまとめておこうと思う。</p>
-
-<p>新しいことを覚えたら随時追記していこうかな。</p>
+<p>VimでClojure書くときのあれこれをいっつも忘れるのでまとめておこうと思う。新しいことを覚えたら随時追記していこうかな。</p>
 
 <h2 id="使ってるプラグイン:4fc5f75a648d7ec78080562abdaae3a6">使ってるプラグイン</h2>
 
 <h3 id="tpope-vim-classpath-https-github-com-tpope-vim-classpath:4fc5f75a648d7ec78080562abdaae3a6"><a href="https://github.com/tpope/vim-classpath">tpope/vim-classpath</a></h3>
 
-<p>クラスパスの設定をやってくれる。</p>
-
-<p>何も考えず入れればよい。</p>
+<p>クラスパスの設定をやってくれる。何も考えず入れればよい。</p>
 
 <h3 id="guns-vim-slamhound-https-github-com-guns-vim-slamhound:4fc5f75a648d7ec78080562abdaae3a6"><a href="https://github.com/guns/vim-slamhound">guns/vim-slamhound</a></h3>
 
-<p><code>require</code>の整理をやってくれる。</p>
-
-<p>不要な奴は消してくれるし、ない奴はclasspathから読み込んで追加してくれる。</p>
+<p><code>require</code>の整理をやってくれる。不要な奴は消してくれるし、ない奴はclasspathから読み込んで追加してくれる。</p>
 
 <h3 id="kien-rainbow-parentheses-vim-https-github-com-kien-rainbow-parentheses-vim:4fc5f75a648d7ec78080562abdaae3a6"><a href="https://github.com/kien/rainbow_parentheses.vim">kien/rainbow_parentheses.vim</a></h3>
 
@@ -91,9 +85,8 @@
 
 <p><a href="http://blog.venanti.us/clojure-vim/">My Clojure Toolchain: Vim</a>でもキラープラグインと書かれているfireplace。</p>
 
-<p>VimをREPLと接続してあんなことやこんなことが出来る。</p>
-
-<p>こいつの機能、よく使う割によく忘れるんだよなあ。</p>
+<p>VimをREPLと接続してあんなことやこんなことが出来る。
+このプラグインの機能、よく使う割によく忘れるんだよなあ。</p>
 
 <p>もはやこの記事はこの覚書のために書いたようなもの。</p>
 
@@ -125,9 +118,8 @@
 
 <h3 id="venantius-vim-cljfmt-https-github-com-venantius-vim-cljfmt:4fc5f75a648d7ec78080562abdaae3a6"><a href="https://github.com/venantius/vim-cljfmt">venantius/vim-cljfmt</a></h3>
 
-<p>Clojure用のフォーマッター。</p>
-
-<p>デフォルトで保存時のフォーマットがかかるようになってるので、入れるだけでOKのはず。</p>
+<p>Clojure用のフォーマッター。
+デフォルトで保存時のフォーマットがかかるようになってるので、入れるだけでOKのはず。</p>
 
 <h2 id="使ってないプラグイン:4fc5f75a648d7ec78080562abdaae3a6">使ってないプラグイン</h2>
 
@@ -135,15 +127,13 @@
 
 <p>シンタックスハイライト、インデントのためのプラグイン。</p>
 
-<p>あと<code>clojure.core</code>の名前空間にある補完機能があるらしい。</p>
-
-<p>なんかあってもなくてもあんまり変わらなかった（設定しきれなかった？）ので使うのをやめた。</p>
+<p>あと<code>clojure.core</code>の名前空間にある補完機能があるらしい。
+なんかあってもなくてもあんまり変わらなかった（設定しきれなかった？）ので使うのをやめた。</p>
 
 <h3 id="vim-scripts-paredit-vim-https-github-com-vim-scripts-paredit-vim:4fc5f75a648d7ec78080562abdaae3a6"><a href="https://github.com/vim-scripts/paredit.vim">vim-scripts/paredit.vim</a></h3>
 
-<p>括弧の位置をあれこれ出来るやつ、だと思う。</p>
-
-<p>ちょっと脳みそがそんなにたくさんの事を一気に覚えるのは無理だったので、一旦使うのをやめた。</p>
+<p>括弧の位置をあれこれ出来るやつ、だと思う。
+ちょっと脳みそがそんなにたくさんの事を一気に覚えるのは無理だったので、一旦使うのをやめた。</p>
 </div>
 
       <aside>

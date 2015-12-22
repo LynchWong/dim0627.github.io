@@ -36,7 +36,7 @@
       <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz"/>
       <meta itemprop="dateModified" content="2014-10-23T00:00:00&#43;00:00">
       <meta itemprop="headline" content="クラスタ化インデックスとかカバリングインデックスについてどうせ忘れるからまとめる">
-      <meta itemprop="description" content="SQL Serverを使ってて、ちょっと曖昧にしかわからんなってところがあったので少し調べてみた。 クラスタ化 / 非クラスタ化インデックスの違い MyS">
+      <meta itemprop="description" content="SQL Serverを使ってて、曖昧にしかわからないところがあったので少し調べてみた。 クラスタ化 / 非クラスタ化インデックスの違い MySQLにも同じ">
       <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/">
       <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
         <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.png" />
@@ -65,23 +65,20 @@
 
       <div class="body" itemprop="articleBody">
 
-<p>SQL Serverを使ってて、ちょっと曖昧にしかわからんなってところがあったので少し調べてみた。</p>
+<p>SQL Serverを使ってて、曖昧にしかわからないところがあったので少し調べてみた。</p>
 
 <h2 id="クラスタ化-非クラスタ化インデックスの違い:c92488df51ae62a183920f8a12e0e585">クラスタ化 / 非クラスタ化インデックスの違い</h2>
 
-<p>MySQLにも同じ話があったんだね。</p>
-
-<p>まず参考にしたのはMSDN。</p>
+<p>MySQLにも同じ話があったんだね。まず参考にしたのはMSDN。</p>
 
 <p><a href="http://msdn.microsoft.com/ja-jp/library/ms190457.aspx">クラスター化インデックスと非クラスター化インデックスの概念</a></p>
 
-<p>まさにぴったりのタイトルじゃんと思ったんだけどいまいちよくわからない。</p>
-
-<p>いや、わかったっちゃわかったんだけど、だからどうなるとか、だからどうする、っていうところが掴めなかった。</p>
+<p>まさにぴったりのタイトルじゃんと思ったんだけどいまいちよくわからない。
+いや、わかったっちゃわかったんだけど、だからどうなるとか、だからどうする、っていうところが掴めなかった。</p>
 
 <h3 id="ここでわかったこと:c92488df51ae62a183920f8a12e0e585">ここでわかったこと</h3>
 
-<p><strong>クラスタ化インデックス</strong></p>
+<p>クラスタ化インデックスは、</p>
 
 <ul>
 <li>1テーブルに1つしか作れない。</li>
@@ -89,7 +86,7 @@
 <li>クラスタ化インデックスが設定されていないテーブルはヒープと呼ばれる未ソートの状態になる。</li>
 </ul>
 
-<p><strong>非クラスタ化インデックス</strong></p>
+<p>非クラスタ化インデックスは、</p>
 
 <ul>
 <li>テーブルとは別に構造を持つ。</li>
@@ -102,7 +99,8 @@
 
 <p>ここは非常にわかりやすかった</p>
 
-<p>B-Treeのイメージも、SQL Server上での実装が具体的にイメージ出来たし、非クラスタ化インデックスじゃ結局ランダムI/Oが発生するんだね、ってこともわかった。</p>
+<p>B-Treeのイメージも、SQL Server上での実装が具体的にイメージ出来たし、
+非クラスタ化インデックスじゃ結局ランダムI/Oが発生するんだね、ってこともわかった。</p>
 
 <p><a href="http://www.atmarkit.co.jp/fcoding/articles/delphi/05/delphi05a.html">RDBMSで使われるB木を学ぼう</a></p>
 
@@ -120,9 +118,7 @@
 
 <h2 id="カバリングインデックス:c92488df51ae62a183920f8a12e0e585">カバリングインデックス</h2>
 
-<p>マルチカラムインデックスと混同するよね。</p>
-
-<p>これは結構わかりやすく書いてくれている記事があった。</p>
+<p>マルチカラムインデックスと混同するよね。これは結構わかりやすく書いてくれている記事があった。</p>
 
 <p><a href="http://d.hatena.ne.jp/a666666/20100920/1284992435">MySQLのインデックスを学ぶ (1)</a></p>
 
@@ -136,7 +132,11 @@
 <p>カバーリング インデックスは、WHERE 句およびクエリ列選択の形態をとるすべての列を含む、非クラスタ化インデックスです。</p>
 </blockquote>
 
-<p>誤った認識があればご指摘を。</p>
+<p>誤った認識があればご指摘ください。</p>
+
+<p><a rel="nofollow" href="http://www.amazon.co.jp/gp/product/4873115892/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4873115892&linkCode=as2&tag=unresolved-22">SQLアンチパターン</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=4873115892" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;display: none;" /></p>
+
+<p><a rel="nofollow" href="http://www.amazon.co.jp/gp/product/4798115169/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4798115169&linkCode=as2&tag=unresolved-22">達人に学ぶ SQL徹底指南書 (CodeZine BOOKS)</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=4798115169" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;display: none;" /></p>
 </div>
 
       <aside>

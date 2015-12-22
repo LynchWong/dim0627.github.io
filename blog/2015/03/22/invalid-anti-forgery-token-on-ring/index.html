@@ -63,11 +63,10 @@
         <a href="/technology/" class="section">technology</a>
       </header>
 
-      <div class="body" itemprop="articleBody"><p>ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、</p>
+      <div class="body" itemprop="articleBody"><p>ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、
+デフォルトだとPOSTリクエストした時にCSRFトークンチェックが入るようになっててたまに困る。</p>
 
-<p>デフォルトだとPOSTリクエストした時にCSRFトークンチェックが入るようになってると思う。</p>
-
-<p>で、そのトークンの作成の仕方を毎回調べてるのでメモっときたい。</p>
+<p>なのでトークンの生成方法をメモ。</p>
 
 <p>チェックの処理は<code>site-defaults</code>の、</p>
 
@@ -75,7 +74,7 @@
   (wrap-defaults app-routes site-defaults))
 </code></pre>
 
-<p><code>:security</code>のところで設定出来る。</p>
+<p><code>:security</code>のところで設定出来ます。</p>
 
 <pre><code class="language-clojure">(def site-defaults
   &quot;A default configuration for a browser-accessible website, based on current
@@ -97,7 +96,7 @@
                :content-types          true}})
 </code></pre>
 
-<p>これを<code>false</code>にしちゃえばもちろんCSRFのチェックはされなくなるんだけど、まあ普通はするべきだよね。</p>
+<p>これを<code>false</code>にしちゃえばもちろんCSRFのチェックはされなくなるんだけど、まあ普通はするべきですよね。</p>
 
 <p>トークンの生成の仕方はこう。</p>
 

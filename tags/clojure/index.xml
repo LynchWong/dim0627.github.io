@@ -129,23 +129,17 @@
       <guid>http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/</guid>
       <description>
 
-&lt;p&gt;VimでClojure書くときのあれこれをいっつも忘れるのでまとめておこうと思う。&lt;/p&gt;
-
-&lt;p&gt;新しいことを覚えたら随時追記していこうかな。&lt;/p&gt;
+&lt;p&gt;VimでClojure書くときのあれこれをいっつも忘れるのでまとめておこうと思う。新しいことを覚えたら随時追記していこうかな。&lt;/p&gt;
 
 &lt;h2 id=&#34;使ってるプラグイン:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;使ってるプラグイン&lt;/h2&gt;
 
 &lt;h3 id=&#34;tpope-vim-classpath-https-github-com-tpope-vim-classpath:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/tpope/vim-classpath&#34;&gt;tpope/vim-classpath&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;クラスパスの設定をやってくれる。&lt;/p&gt;
-
-&lt;p&gt;何も考えず入れればよい。&lt;/p&gt;
+&lt;p&gt;クラスパスの設定をやってくれる。何も考えず入れればよい。&lt;/p&gt;
 
 &lt;h3 id=&#34;guns-vim-slamhound-https-github-com-guns-vim-slamhound:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/guns/vim-slamhound&#34;&gt;guns/vim-slamhound&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;&lt;code&gt;require&lt;/code&gt;の整理をやってくれる。&lt;/p&gt;
-
-&lt;p&gt;不要な奴は消してくれるし、ない奴はclasspathから読み込んで追加してくれる。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;require&lt;/code&gt;の整理をやってくれる。不要な奴は消してくれるし、ない奴はclasspathから読み込んで追加してくれる。&lt;/p&gt;
 
 &lt;h3 id=&#34;kien-rainbow-parentheses-vim-https-github-com-kien-rainbow-parentheses-vim:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/kien/rainbow_parentheses.vim&#34;&gt;kien/rainbow_parentheses.vim&lt;/a&gt;&lt;/h3&gt;
 
@@ -155,9 +149,8 @@
 
 &lt;p&gt;&lt;a href=&#34;http://blog.venanti.us/clojure-vim/&#34;&gt;My Clojure Toolchain: Vim&lt;/a&gt;でもキラープラグインと書かれているfireplace。&lt;/p&gt;
 
-&lt;p&gt;VimをREPLと接続してあんなことやこんなことが出来る。&lt;/p&gt;
-
-&lt;p&gt;こいつの機能、よく使う割によく忘れるんだよなあ。&lt;/p&gt;
+&lt;p&gt;VimをREPLと接続してあんなことやこんなことが出来る。
+このプラグインの機能、よく使う割によく忘れるんだよなあ。&lt;/p&gt;
 
 &lt;p&gt;もはやこの記事はこの覚書のために書いたようなもの。&lt;/p&gt;
 
@@ -189,9 +182,8 @@
 
 &lt;h3 id=&#34;venantius-vim-cljfmt-https-github-com-venantius-vim-cljfmt:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/venantius/vim-cljfmt&#34;&gt;venantius/vim-cljfmt&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;Clojure用のフォーマッター。&lt;/p&gt;
-
-&lt;p&gt;デフォルトで保存時のフォーマットがかかるようになってるので、入れるだけでOKのはず。&lt;/p&gt;
+&lt;p&gt;Clojure用のフォーマッター。
+デフォルトで保存時のフォーマットがかかるようになってるので、入れるだけでOKのはず。&lt;/p&gt;
 
 &lt;h2 id=&#34;使ってないプラグイン:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;使ってないプラグイン&lt;/h2&gt;
 
@@ -199,15 +191,13 @@
 
 &lt;p&gt;シンタックスハイライト、インデントのためのプラグイン。&lt;/p&gt;
 
-&lt;p&gt;あと&lt;code&gt;clojure.core&lt;/code&gt;の名前空間にある補完機能があるらしい。&lt;/p&gt;
-
-&lt;p&gt;なんかあってもなくてもあんまり変わらなかった（設定しきれなかった？）ので使うのをやめた。&lt;/p&gt;
+&lt;p&gt;あと&lt;code&gt;clojure.core&lt;/code&gt;の名前空間にある補完機能があるらしい。
+なんかあってもなくてもあんまり変わらなかった（設定しきれなかった？）ので使うのをやめた。&lt;/p&gt;
 
 &lt;h3 id=&#34;vim-scripts-paredit-vim-https-github-com-vim-scripts-paredit-vim:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/vim-scripts/paredit.vim&#34;&gt;vim-scripts/paredit.vim&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;括弧の位置をあれこれ出来るやつ、だと思う。&lt;/p&gt;
-
-&lt;p&gt;ちょっと脳みそがそんなにたくさんの事を一気に覚えるのは無理だったので、一旦使うのをやめた。&lt;/p&gt;
+&lt;p&gt;括弧の位置をあれこれ出来るやつ、だと思う。
+ちょっと脳みそがそんなにたくさんの事を一気に覚えるのは無理だったので、一旦使うのをやめた。&lt;/p&gt;
 </description>
     </item>
     
@@ -217,11 +207,10 @@
       <pubDate>Sun, 22 Mar 2015 19:23:27 +0900</pubDate>
       
       <guid>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</guid>
-      <description>&lt;p&gt;ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、&lt;/p&gt;
+      <description>&lt;p&gt;ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、
+デフォルトだとPOSTリクエストした時にCSRFトークンチェックが入るようになっててたまに困る。&lt;/p&gt;
 
-&lt;p&gt;デフォルトだとPOSTリクエストした時にCSRFトークンチェックが入るようになってると思う。&lt;/p&gt;
-
-&lt;p&gt;で、そのトークンの作成の仕方を毎回調べてるのでメモっときたい。&lt;/p&gt;
+&lt;p&gt;なのでトークンの生成方法をメモ。&lt;/p&gt;
 
 &lt;p&gt;チェックの処理は&lt;code&gt;site-defaults&lt;/code&gt;の、&lt;/p&gt;
 
@@ -229,7 +218,7 @@
   (wrap-defaults app-routes site-defaults))
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;code&gt;:security&lt;/code&gt;のところで設定出来る。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;:security&lt;/code&gt;のところで設定出来ます。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def site-defaults
   &amp;quot;A default configuration for a browser-accessible website, based on current
@@ -251,7 +240,7 @@
                :content-types          true}})
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;これを&lt;code&gt;false&lt;/code&gt;にしちゃえばもちろんCSRFのチェックはされなくなるんだけど、まあ普通はするべきだよね。&lt;/p&gt;
+&lt;p&gt;これを&lt;code&gt;false&lt;/code&gt;にしちゃえばもちろんCSRFのチェックはされなくなるんだけど、まあ普通はするべきですよね。&lt;/p&gt;
 
 &lt;p&gt;トークンの生成の仕方はこう。&lt;/p&gt;
 
@@ -383,17 +372,15 @@
 
 &lt;h2 id=&#34;何が出来る:263a1859984e07d4bd8e496e6113e0fc&#34;&gt;何が出来る？&lt;/h2&gt;
 
-&lt;p&gt;たくさんの言語のREPLが使える！すごい！&lt;/p&gt;
+&lt;p&gt;たくさんの言語のREPLが使える。これ結構すごいと思う。&lt;/p&gt;
 
-&lt;p&gt;ただ、コンパイル言語はそんな気軽に使える感じではないみたい。&lt;/p&gt;
-
-&lt;p&gt;例えばJavaで言えば、&lt;code&gt;System.out.println(&amp;quot;Hello&amp;quot;);&lt;/code&gt;だけじゃなくてクラス定義から含めなきゃいけないみたいに。&lt;/p&gt;
+&lt;p&gt;ただ、コンパイル言語はそんな気軽に使える感じではないみたい。
+例えばJavaで言えば、&lt;code&gt;System.out.println(&amp;quot;Hello&amp;quot;);&lt;/code&gt;だけじゃなくてクラス定義から含めなきゃいけないみたいに。&lt;/p&gt;
 
 &lt;h2 id=&#34;どうやって使う:263a1859984e07d4bd8e496e6113e0fc&#34;&gt;どうやって使う？&lt;/h2&gt;
 
-&lt;p&gt;どうやら&lt;a href=&#34;http://swagger.io/&#34;&gt;Swagger&lt;/a&gt;っていうOSSを使ってるみたい。&lt;/p&gt;
-
-&lt;p&gt;paiza.IO上でのデモも使える。&lt;/p&gt;
+&lt;p&gt;どうやら&lt;a href=&#34;http://swagger.io/&#34;&gt;Swagger&lt;/a&gt;っていうOSSを使ってるみたい。
+paiza.IO上でのデモも使える。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://api.paiza.io/docs/swagger/#!/runners/&#34;&gt;Swagger UI&lt;/a&gt;&lt;/p&gt;
 
@@ -441,11 +428,7 @@
     (get-res run-id)))
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;code&gt;get-res&lt;/code&gt;は後述。&lt;code&gt;get_details&lt;/code&gt;を実行するための関数。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;api_key&lt;/code&gt;ってこれでいいのだろうか。&lt;/p&gt;
-
-&lt;p&gt;とりあえず動いてはいる！&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;get-res&lt;/code&gt;は後述。&lt;code&gt;get_details&lt;/code&gt;を実行するための関数。&lt;code&gt;api_key&lt;/code&gt;ってこれでいいのだろうか。とりあえず動いてはいる。&lt;/p&gt;
 
 &lt;p&gt;実行結果の取得はこんな感じ。&lt;/p&gt;
 
@@ -477,9 +460,7 @@
 
 &lt;p&gt;会社の子からすすめられたのをずっと放置してたんだけど実際やってみたらなかなか面白かった。&lt;/p&gt;
 
-&lt;p&gt;ちなみに実際に手に入るのはハネムーンじゃなくてねるねるねるねかラズパイだったらしい。&lt;/p&gt;
-
-&lt;p&gt;ねるねるねるね・・・。&lt;/p&gt;
+&lt;p&gt;ちなみに実際に手に入るのはハネムーンじゃなくてねるねるねるねかラズパイだったらしい。ねるねるねるね・・・。&lt;/p&gt;
 
 &lt;h2 id=&#34;problem-1:efdfd34ee3c2df97a027c1bccd3ee9c8&#34;&gt;Problem 1&lt;/h2&gt;
 
@@ -644,9 +625,7 @@ m_n&lt;/p&gt;
 
 &lt;p&gt;Webだとそれで乗り切れる部分が多かったんだろうけど、こういった問題を解いて地力をつけることも大切だなあと感じた。&lt;/p&gt;
 
-&lt;p&gt;多分Clojureの界隈で有名な方々が組む答えはまた違うんだろうなあ。&lt;/p&gt;
-
-&lt;p&gt;ぜひそういうのも見てみたいけど、調べてみたらあんまり解いてる人とか公開してる人がいない感じだった。&lt;/p&gt;
+&lt;p&gt;多分Clojureの界隈で有名な方々が組む答えはまた違うんだろうな。ぜひそういうのも見てみたいけど、調べてみたらあんまり解いてる人とか公開してる人がいない感じだった。&lt;/p&gt;
 
 &lt;p&gt;ちなみにラズパイとかは期間が過ぎてるのでもらえません。&lt;/p&gt;
 </description>
@@ -664,9 +643,7 @@ m_n&lt;/p&gt;
 
 &lt;h2 id=&#34;enlive-https-github-com-cgrand-enlive:d03bd055194b84467476c0228f17c156&#34;&gt;&lt;a href=&#34;https://github.com/cgrand/enlive&#34;&gt;Enlive&lt;/a&gt;&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/gp/product/B007Q4T040/ref=as_li_tf_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B007Q4T040&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;Clojure Programming&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=B007Q4T040&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important; display:inline;width:0;&#34; /&gt;を執筆されたChristophe Grand氏のライブラリ。&lt;/p&gt;
-
-&lt;p&gt;CSSのセレクタでバインドを行うという、すごく画期的な方法でテンプレート機能を実現させてる。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/gp/product/B007Q4T040/ref=as_li_tf_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B007Q4T040&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;Clojure Programming&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=B007Q4T040&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important; display:none;&#34; /&gt;を執筆されたChristophe Grand氏のライブラリ。CSSのセレクタでバインドを行うという、すごく画期的な方法でテンプレート機能を実現させてる。&lt;/p&gt;
 
 &lt;p&gt;例えばこんな感じでテンプレートのHTMLがあれば、&lt;/p&gt;
 
@@ -687,23 +664,17 @@ m_n&lt;/p&gt;
   [:head :title] (html/content &amp;quot;Enlive starter kit&amp;quot;))
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;HTMLが素でかけるから、デザイナさんとの協業がすごく捗りそう。&lt;/p&gt;
-
-&lt;p&gt;サンプルのHTMLをそのまま使って、Clojure側でサンプルの値を置き換えたりリピートさせたりすれば済んじゃう。&lt;/p&gt;
+&lt;p&gt;HTMLが素でかけるから、デザイナさんとの協業がすごく捗りそう。サンプルのHTMLをそのまま使って、Clojure側でサンプルの値を置き換えたりリピートさせたりすれば済んじゃう。&lt;/p&gt;
 
 &lt;p&gt;今回は一人で使ったからそういう場面はなかったけど、サーバを起動しなくてもデザインが見れる &amp;amp; 直せるっていうのは便利な場面があるかなあと。&lt;/p&gt;
 
-&lt;p&gt;ただ、結構CSSを書いたりしてるほうだけど、バインドの学習コストは意外と高いなと思った。&lt;/p&gt;
-
-&lt;p&gt;効率的に手早くバインドさせるには、Enliveを使う想定のHTML構造にする必要がありそうな印象だった。&lt;/p&gt;
+&lt;p&gt;ただ、結構CSSを書いたりしてるほうだけど、バインドの学習コストは意外と高いなと思った。効率的に手早くバインドさせるには、Enliveを使う想定のDOM構造にする必要がありそうな印象だった。&lt;/p&gt;
 
 &lt;p&gt;覚えてしまえばものすごく活躍しそう。&lt;/p&gt;
 
 &lt;h2 id=&#34;hiccup-https-github-com-weavejester-hiccup:d03bd055194b84467476c0228f17c156&#34;&gt;&lt;a href=&#34;https://github.com/weavejester/hiccup&#34;&gt;Hiccup&lt;/a&gt;&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://github.com/weavejester/compojure&#34;&gt;Compojure&lt;/a&gt;や&lt;a href=&#34;https://github.com/weavejester/environ&#34;&gt;Environ&lt;/a&gt;、&lt;a href=&#34;https://github.com/weavejester/lein-ring&#34;&gt;Ring&lt;/a&gt;などの作者、James Reeves氏のライブラリ。&lt;/p&gt;
-
-&lt;p&gt;HTMLを完全にClojureでラップしてるので、ClojureだけでWebアプリを完結させられる。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/weavejester/compojure&#34;&gt;Compojure&lt;/a&gt;や&lt;a href=&#34;https://github.com/weavejester/environ&#34;&gt;Environ&lt;/a&gt;、&lt;a href=&#34;https://github.com/weavejester/lein-ring&#34;&gt;Ring&lt;/a&gt;などの作者、James Reeves氏のライブラリ。HTMLを完全にClojureでラップしてるので、ClojureだけでWebアプリを完結させられる。&lt;/p&gt;
 
 &lt;p&gt;こんな感じ。&lt;/p&gt;
 
@@ -715,15 +686,12 @@ user=&amp;gt; (html [:p])
 
 &lt;p&gt;Clojureのコンパイルが走るので、タグの不整合(閉じタグがないとか)が一切起こらないっていうのは魅力だと思う。&lt;/p&gt;
 
-&lt;p&gt;欠点を挙げるとすれば、改行なしでHTMLが出力されるからブラウザからソースを見るのが厳しい。ていうか無理。&lt;/p&gt;
-
-&lt;p&gt;設定でなんとか出来るんだろうか？&lt;/p&gt;
+&lt;p&gt;欠点を挙げるとすれば、改行なしでHTMLが出力されるからブラウザからソースを見るのが厳しい。ていうか無理。設定でなんとか出来るんだろうか？&lt;/p&gt;
 
 &lt;p&gt;でもChromeの開発者ツールとか使えばフォーマットして表示してくれるし、全然クリティカルな問題じゃない。&lt;/p&gt;
 
-&lt;p&gt;もう1点は、例えば広告のスクリプトみたいにコピペで貼り付けたい文字列とかの出力がちょっとめんどう。&lt;/p&gt;
-
-&lt;p&gt;Hiccupの世界にただのタグを入れるのは見栄えも悪いし、僕はこんな感じで外だしすることで対応した。&lt;/p&gt;
+&lt;p&gt;もう1点は、例えば広告のスクリプトみたいにコピペで貼り付けたい文字列とかの出力がちょっとめんどう。
+Hiccupの世界にただのタグを入れるのは見栄えも悪いし、僕はこんな感じで外だしすることで対応した。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def partial-ad-big (str &amp;quot;&amp;lt;script async src=&amp;quot;&amp;quot;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&amp;quot;&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
 &amp;lt;ins class=&amp;quot;&amp;quot;adsbygoogle&amp;quot;&amp;quot;
@@ -735,15 +703,11 @@ user=&amp;gt; (html [:p])
 &amp;lt;/script&amp;gt;&amp;quot;))
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;個人的にはHiccupのほうがさくっと理解できてさくっと書けたかな。&lt;/p&gt;
-
-&lt;p&gt;ループ処理もClojureがかければそのまま書けちゃうし。&lt;/p&gt;
+&lt;p&gt;個人的にはHiccupのほうがさくっと理解できてさくっと書けたかな。ループ処理もClojureがかければそのまま書けちゃうし。&lt;/p&gt;
 
 &lt;p&gt;ClojureとHTMLの親和性はすごく高いと思っていて、Hiccupはそれを最大限に活用することが出来てるなあという感じ。&lt;/p&gt;
 
 &lt;p&gt;ある言語を他の言語でラップするのって再学習が必要だし非効率で嫌いだったんだけど、HiccupはHTMLの冗長さが減るし、学習する価値のあるライブラリだと思った。&lt;/p&gt;
-
-&lt;p&gt;ゆくゆくはどっちもしっかり使えるようになりたい。&lt;/p&gt;
 </description>
     </item>
     
@@ -761,9 +725,7 @@ user=&amp;gt; (html [:p])
 
 &lt;p&gt;面倒なので&lt;a href=&#34;https://hub.docker.com/account/signup/&#34;&gt;Docker Hub&lt;/a&gt;からClojureが動く環境を持ってくる。&lt;/p&gt;
 
-&lt;p&gt;オフィシャルリポジトリとやらがあったので、それを使います。&lt;/p&gt;
-
-&lt;p&gt;Leiningenとか一式が入ってるみたい。&lt;/p&gt;
+&lt;p&gt;オフィシャルリポジトリとやらがあったので、それを使います。Leiningenとか一式が入ってるみたい。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://registry.hub.docker.com/_/clojure/&#34;&gt;clojure&lt;/a&gt;&lt;/p&gt;
 
@@ -771,7 +733,7 @@ user=&amp;gt; (html [:p])
 
 &lt;p&gt;とりあえず世界に挨拶が出来るくらいのWebアプリを作っちゃおう。&lt;/p&gt;
 
-&lt;p&gt;アプリ自体は重要じゃないので、とりあえずインタラクティブシェル上でちゃちゃっと作っちゃう。&lt;/p&gt;
+&lt;p&gt;アプリ自体は重要じゃないので、とりあえずインタラクティブシェル上で適当にやります。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;b2d$  docker run -i -t clojure /bin/bash
 root@e322a11f087d:/home# lein new compojure aws_webapp
@@ -816,15 +778,15 @@ e9981a715899        clojure:aws         &amp;quot;/bin/bash -c &#39;cd /h   4 se
 
 &lt;p&gt;見れます。&lt;/p&gt;
 
-&lt;p&gt;ringのサーバは起動が遅いので&lt;code&gt;docker logs [names]&lt;/code&gt;で確認しながらやるとよい。&lt;/p&gt;
+&lt;p&gt;ringのサーバは起動が遅いので&lt;code&gt;docker logs [names]&lt;/code&gt;で確認しながらやるといいね。&lt;/p&gt;
 
 &lt;h2 id=&#34;elastic-beanstalkで動かす:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;Elastic Beanstalkで動かす&lt;/h2&gt;
 
 &lt;p&gt;大事なことに気づいたんだけど、BeanstalkはDockerfileとか必要なファイル一式をまとめたzipをアップするらしい。&lt;/p&gt;
 
-&lt;p&gt;そもそもソースもイメージに入れちゃうっていうのは考えとしておかしかったね。&lt;/p&gt;
-
-&lt;p&gt;なのでwarを&lt;code&gt;ADD&lt;/code&gt;で置くのが理想的なのかな。&lt;/p&gt;
+&lt;p&gt;そもそもソースもイメージに入れちゃうっていうのは考えとしておかしいのかも。
+Dockerのベストプラクティスみたいなのがよくわからないや。
+warを&lt;code&gt;ADD&lt;/code&gt;で置くのが理想的なのかな。&lt;/p&gt;
 
 &lt;p&gt;今回は面倒なので、clojureでWebサーバを立ち上げられる&lt;code&gt;http-kit&lt;/code&gt;というライブラリを使ってやってみます。&lt;/p&gt;
 
@@ -838,9 +800,7 @@ e9981a715899        clojure:aws         &amp;quot;/bin/bash -c &#39;cd /h   4 se
 Generating clojure app for AWS Beanstalk and docker
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;こんな感じで作られる。&lt;/p&gt;
-
-&lt;p&gt;jarとかは&lt;code&gt;lein uberjar&lt;/code&gt;で作らなきゃダメかも。&lt;/p&gt;
+&lt;p&gt;こんな感じで作られる。jarとかは&lt;code&gt;lein uberjar&lt;/code&gt;で作らなきゃダメかも。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;.
 |-- Dockerfile
@@ -891,9 +851,8 @@ CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/product
 
 &lt;p&gt;&lt;code&gt;lein zip&lt;/code&gt;でBeanstalk用のzipが&lt;code&gt;target&lt;/code&gt;配下に作成されるので、それをアップロード。&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;Dockerrun.aws.json&lt;/code&gt;でポートの指定とかやってるんだけど、こいつもzipに入れてしまうとtimeoutしてしまった。&lt;/p&gt;
-
-&lt;p&gt;まあそれでも動くんだけどちょっと気持ち悪いので除外。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Dockerrun.aws.json&lt;/code&gt;でポートの指定とかやってるんだけど、こいつもzipに入れてしまうとtimeoutしてしまった。
+まあそれでも動くんだけどちょっと気持ち悪いので除外。&lt;/p&gt;
 
 &lt;p&gt;ポートの指定やらはDockerfileでやってるので問題なく動きます。&lt;/p&gt;
 
@@ -901,9 +860,8 @@ CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/product
 
 &lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-01/deploy.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-01/deploy.png&#34; class=&#34;image&#34; alt=&#34;deploy&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;しかしデプロイは結構時間かかるなー。&lt;/p&gt;
-
-&lt;p&gt;Javaの起動とかライブラリのダウンロードで食ってるのかな・・・。&lt;/p&gt;
+&lt;p&gt;しかしデプロイは結構時間かかるなー。
+Javaの起動とかライブラリのダウンロードで食ってるのかな・・・。&lt;/p&gt;
 
 &lt;h2 id=&#34;参考にさせて頂きました:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
 
@@ -918,7 +876,7 @@ CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/product
     </item>
     
     <item>
-      <title>Lobosでマイグレーションができない in Heroku</title>
+      <title>HerokuでLobosを使ったマイグレーションができない</title>
       <link>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</link>
       <pubDate>Sun, 21 Dec 2014 00:00:00 +0000</pubDate>
       
@@ -927,23 +885,17 @@ CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/product
 
 &lt;p&gt;ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。&lt;/p&gt;
 
-&lt;h2 id=&#34;何が起きたか:b3814854ab9c35505a0d42182d51f32f&#34;&gt;何が起きたか&lt;/h2&gt;
+&lt;h2 id=&#34;マイグレーションしても何も起きない:b3814854ab9c35505a0d42182d51f32f&#34;&gt;マイグレーションしても何も起きない&lt;/h2&gt;
 
-&lt;p&gt;今だにHerokuの使い方がようわからんのだけど、&lt;/p&gt;
+&lt;p&gt;今だにHerokuの使い方がよくわからないんだけど、とりあえずローカルから向き先変えるよりもSSHの方が楽だったので&lt;code&gt;heroku run bash&lt;/code&gt;してやってます。&lt;/p&gt;
 
-&lt;p&gt;とりあえずローカルから向き先変えるよりもSSHの方がいっかなってことで&lt;code&gt;heroku run bash&lt;/code&gt;してやってます。&lt;/p&gt;
-
-&lt;p&gt;ローカルからだとDBをSSLで接続させないといけないし・・・。&lt;/p&gt;
-
-&lt;p&gt;んでマイグレーションしようとしたら、&lt;/p&gt;
+&lt;p&gt;ローカルからだとDBをSSLで接続させないといけないし・・・。それでマイグレーションしようとしたら、&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clojure-repl&#34;&gt;user=&amp;gt; (migrate)
 nil
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;何も出ない。&lt;/p&gt;
-
-&lt;p&gt;本当はこんな感じで、&lt;/p&gt;
+&lt;p&gt;何も出ない。本当はこんな感じで、&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clojure-repl&#34;&gt;user=&amp;gt; (migrate)
 add-sites-table
@@ -953,9 +905,9 @@ nil
 
 &lt;p&gt;作成されたり変更されたテーブルが出てくるはず。&lt;/p&gt;
 
-&lt;h2 id=&#34;原因はなんだったのか:b3814854ab9c35505a0d42182d51f32f&#34;&gt;原因はなんだったのか&lt;/h2&gt;
+&lt;h2 id=&#34;lobos-migrationsがロードされてない:b3814854ab9c35505a0d42182d51f32f&#34;&gt;lobos.migrationsがロードされてない&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;lobos.migrations&lt;/code&gt;が読まれてない（というかリロードされてない）っぽい。&lt;/p&gt;
+&lt;p&gt;どうやら&lt;code&gt;lobos.migrations&lt;/code&gt;が読まれてない（というかリロードされてない）っぽい。&lt;/p&gt;
 
 &lt;p&gt;そもそも&lt;code&gt;migrate&lt;/code&gt;自体はこんな感じで&lt;code&gt;lobos.migration&lt;/code&gt;の&lt;code&gt;do-migrations&lt;/code&gt;を呼んでます。&lt;/p&gt;
 
@@ -1030,13 +982,12 @@ user=&amp;gt; (list-migrations)
 user=&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;解決策:b3814854ab9c35505a0d42182d51f32f&#34;&gt;解決策&lt;/h2&gt;
+&lt;h2 id=&#34;reload-migrations-をfalseにすればいい:b3814854ab9c35505a0d42182d51f32f&#34;&gt;*reload-migrations*をfalseにすればいい&lt;/h2&gt;
 
 &lt;p&gt;もう正直ここまでで一週間弱悩んだから、lobos使うのやめようかなとも思ったけどまあいい勉強だろうし・・・。&lt;/p&gt;
 
-&lt;p&gt;暫定にしかならないけど、とりあえずリロードさせないようにしよう。&lt;/p&gt;
-
-&lt;p&gt;ソースコードの通り、&lt;code&gt;*reload-migrations*&lt;/code&gt;が&lt;code&gt;true&lt;/code&gt;になっている場合にリロードが走るらしい。&lt;/p&gt;
+&lt;p&gt;暫定にしかならないけど、とりあえずリロードさせないようにしよう。
+ソースコードの通り、&lt;code&gt;*reload-migrations*&lt;/code&gt;が&lt;code&gt;true&lt;/code&gt;になっている場合にリロードが走るらしい。&lt;/p&gt;
 
 &lt;p&gt;だからこんな感じで&lt;code&gt;false&lt;/code&gt;で上書いてしまおう。&lt;/p&gt;
 
@@ -1059,11 +1010,10 @@ nil
 lobos.migration=&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;これじゃない感がすごいけど、とりあえず通った・・・。&lt;/p&gt;
+&lt;p&gt;これじゃない感がすごいけど、とりあえず通った・・・。
+Lobosはもう開発があんまり活発じゃないみたいだなあ。&lt;/p&gt;
 
-&lt;p&gt;Lobosはもう開発があんまり活発じゃないみたいだなあ。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;lobos.migration&lt;/code&gt;と&lt;code&gt;lobos.migrations&lt;/code&gt;の命名はちょっといけてないような・・・。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;lobos.migration&lt;/code&gt;と&lt;code&gt;lobos.migrations&lt;/code&gt;の命名はちょっといけてないような気がする。&lt;/p&gt;
 </description>
     </item>
     
@@ -1075,9 +1025,10 @@ lobos.migration=&amp;gt;
       <guid>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</guid>
       <description>
 
-&lt;p&gt;1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。&lt;/p&gt;
+&lt;p&gt;1年前くらいには、SQLまで隠蔽するORMとか嫌いだったし、テーブルの自動生成も嫌だったのになあ。
+なんだかんだ便利さに気づいてきた感じがある。&lt;/p&gt;
 
-&lt;p&gt;というわけでClojureを使ってWeb開発をする際も使いたいので、Lobosというスキーマのマニュピレーション、マイグレーションツールを使ってみます。&lt;/p&gt;
+&lt;p&gt;というわけでClojureを使ってWeb開発をする際も使いたいので、&lt;a href=&#34;https://github.com/budu/lobos&#34;&gt;Lobos&lt;/a&gt;というスキーマのマニュピレーション、マイグレーションツールを使ってみます。&lt;/p&gt;
 
 &lt;h2 id=&#34;インストール:a4d3af33140cffc65cf5c9a1e4293067&#34;&gt;インストール&lt;/h2&gt;
 
@@ -1088,9 +1039,9 @@ lobos.migration=&amp;gt;
 &lt;pre&gt;&lt;code class=&#34;language-clj&#34;&gt;:dependencies [[lobos &amp;quot;1.0.0-beta3&amp;quot;]]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;を追加して&lt;code&gt;lein deps&lt;/code&gt;するだけでおーけー。&lt;/p&gt;
+&lt;p&gt;を追加して&lt;code&gt;lein deps&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;Leiningenのプラグインとして使える&lt;a href=&#34;https://github.com/pupeno/lein-lobos&#34;&gt;pupeno/lein-lobos&lt;/a&gt;ってのもあるようだ。&lt;/p&gt;
+&lt;p&gt;Leiningenのプラグインとして使える&lt;a href=&#34;https://github.com/pupeno/lein-lobos&#34;&gt;pupeno/lein-lobos&lt;/a&gt;ってのもあるみたい。&lt;/p&gt;
 
 &lt;p&gt;こっちも使う場合は、&lt;code&gt;ploject.clj&lt;/code&gt;に&lt;/p&gt;
 
@@ -1099,7 +1050,7 @@ lobos.migration=&amp;gt;
 
 &lt;p&gt;を追加。&lt;/p&gt;
 
-&lt;p&gt;全体を載っけるとこんな感じに。&lt;/p&gt;
+&lt;p&gt;全体を載せるとこんな感じに。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clj&#34;&gt;(defproject tpc &amp;quot;0.1.0-SNAPSHOT&amp;quot;
   :description &amp;quot;FIXME: write description&amp;quot;
@@ -1127,7 +1078,7 @@ lobos.migration=&amp;gt;
 
 &lt;h2 id=&#34;テーブル定義をしてみる:a4d3af33140cffc65cf5c9a1e4293067&#34;&gt;テーブル定義をしてみる&lt;/h2&gt;
 
-&lt;p&gt;今回はSQLiteにて実施。&lt;/p&gt;
+&lt;p&gt;今回はSQLiteでやります。&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;src&lt;/code&gt;ディレクトリ直下に&lt;code&gt;lobos&lt;/code&gt;ってディレクトリを作成して、その中にいろいろな設定を突っ込む必要があるらしい。&lt;/p&gt;
 
@@ -1195,13 +1146,11 @@ lobos.migration=&amp;gt;
 
 &lt;h2 id=&#34;マイグレーションの実行:a4d3af33140cffc65cf5c9a1e4293067&#34;&gt;マイグレーションの実行&lt;/h2&gt;
 
-&lt;p&gt;ここが結構厄介だった。&lt;/p&gt;
+&lt;p&gt;ここが結構厄介だった。
+というか、出来たといえば出来たんだけど、もっと正しい方法があるような気が・・・。&lt;/p&gt;
 
-&lt;p&gt;というか、出来たといえば出来たんだけど、もっと正しい方法があるような気が・・・。&lt;/p&gt;
-
-&lt;p&gt;REPLにて以下を実行。&lt;/p&gt;
-
-&lt;p&gt;WARNINGは多分すでに存在するシンボルを置き換えてしまってることの警告だからとりあえず無視。&lt;/p&gt;
+&lt;p&gt;REPLにて以下を実行。
+WARNINGは多分すでに存在するシンボルを置き換えてしまってることの警告だからとりあえず無視。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clojure-repl&#34;&gt;tpc git:(master)$ lein repl
 (use &#39;(lobos connectivity core schema))nREPL server started on port 50092 on host 127.0.0.1 - nrepl://127.0.0.1:50092
@@ -1240,10 +1189,6 @@ Enter &amp;quot;.help&amp;quot; for usage hints.
 sqlite&amp;gt; .tables
 lobos_migrations  sites
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;できてる！&lt;/p&gt;
-
-&lt;p&gt;まだまだ名前空間とか&lt;code&gt;require&lt;/code&gt;あたりの理解が甘いなー・・・。&lt;/p&gt;
 </description>
     </item>
     
@@ -1255,19 +1200,13 @@ lobos_migrations  sites
       <guid>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</guid>
       <description>
 
-&lt;p&gt;Clojureを始めて一週間ほどになりまして。&lt;/p&gt;
-
-&lt;p&gt;ようやくWebアプリ開発に着手しました。&lt;/p&gt;
+&lt;p&gt;Clojureを始めて一週間ほどになりまして、ようやくWebアプリ開発に着手しました。&lt;/p&gt;
 
 &lt;p&gt;というわけで開発環境を整えます。&lt;/p&gt;
 
 &lt;h2 id=&#34;lein-haml-sassの導入:aea6c6aa18698925cad2fc33bce27d8b&#34;&gt;lein-haml-sassの導入&lt;/h2&gt;
 
-&lt;p&gt;まったく贅沢な名前してんな！&lt;/p&gt;
-
-&lt;p&gt;いえ、&lt;a href=&#34;https://github.com/rtircher/lein-haml-sass&#34;&gt;lein-haml-sass&lt;/a&gt;は素晴らしいプラグインです。&lt;/p&gt;
-
-&lt;p&gt;これを使うとなんとhamlのコンパイルやsass/scssのコンパイルをやってくれます。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/rtircher/lein-haml-sass&#34;&gt;lein-haml-sass&lt;/a&gt;はhamlのコンパイルやsass/scssのコンパイルをやってくれます。&lt;/p&gt;
 
 &lt;p&gt;ていうか&lt;strong&gt;sassとscssの違い&lt;/strong&gt;ってなんだっけ？真面目に考えるとわかんないな。&lt;/p&gt;
 
@@ -1325,13 +1264,7 @@ lobos_migrations  sites
 
 &lt;h2 id=&#34;コンパイルする:aea6c6aa18698925cad2fc33bce27d8b&#34;&gt;コンパイルする&lt;/h2&gt;
 
-&lt;p&gt;さっそく&lt;code&gt;lein sass once&lt;/code&gt;してみるも、何も起きない！&lt;/p&gt;
-
-&lt;p&gt;あっ、sassとscssでタスクが違う。&lt;/p&gt;
-
-&lt;p&gt;ていうかsassフォルダにscss置くのってなんか違う気がしてきた！あとで名前変えよう。&lt;/p&gt;
-
-&lt;p&gt;というわけで、&lt;code&gt;lein scss once&lt;/code&gt;で無事動きました。&lt;/p&gt;
+&lt;p&gt;sassとscssでタスクが違うようなので、間違えないように注意。&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;lein scss auto&lt;/code&gt;で変更監視できるっぽい。&lt;/p&gt;
 </description>

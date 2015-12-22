@@ -100,9 +100,10 @@
       <guid>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</guid>
       <description>
 
-&lt;p&gt;1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。&lt;/p&gt;
+&lt;p&gt;1年前くらいには、SQLまで隠蔽するORMとか嫌いだったし、テーブルの自動生成も嫌だったのになあ。
+なんだかんだ便利さに気づいてきた感じがある。&lt;/p&gt;
 
-&lt;p&gt;というわけでClojureを使ってWeb開発をする際も使いたいので、Lobosというスキーマのマニュピレーション、マイグレーションツールを使ってみます。&lt;/p&gt;
+&lt;p&gt;というわけでClojureを使ってWeb開発をする際も使いたいので、&lt;a href=&#34;https://github.com/budu/lobos&#34;&gt;Lobos&lt;/a&gt;というスキーマのマニュピレーション、マイグレーションツールを使ってみます。&lt;/p&gt;
 
 &lt;h2 id=&#34;インストール:a4d3af33140cffc65cf5c9a1e4293067&#34;&gt;インストール&lt;/h2&gt;
 
@@ -113,9 +114,9 @@
 &lt;pre&gt;&lt;code class=&#34;language-clj&#34;&gt;:dependencies [[lobos &amp;quot;1.0.0-beta3&amp;quot;]]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;を追加して&lt;code&gt;lein deps&lt;/code&gt;するだけでおーけー。&lt;/p&gt;
+&lt;p&gt;を追加して&lt;code&gt;lein deps&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;Leiningenのプラグインとして使える&lt;a href=&#34;https://github.com/pupeno/lein-lobos&#34;&gt;pupeno/lein-lobos&lt;/a&gt;ってのもあるようだ。&lt;/p&gt;
+&lt;p&gt;Leiningenのプラグインとして使える&lt;a href=&#34;https://github.com/pupeno/lein-lobos&#34;&gt;pupeno/lein-lobos&lt;/a&gt;ってのもあるみたい。&lt;/p&gt;
 
 &lt;p&gt;こっちも使う場合は、&lt;code&gt;ploject.clj&lt;/code&gt;に&lt;/p&gt;
 
@@ -124,7 +125,7 @@
 
 &lt;p&gt;を追加。&lt;/p&gt;
 
-&lt;p&gt;全体を載っけるとこんな感じに。&lt;/p&gt;
+&lt;p&gt;全体を載せるとこんな感じに。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clj&#34;&gt;(defproject tpc &amp;quot;0.1.0-SNAPSHOT&amp;quot;
   :description &amp;quot;FIXME: write description&amp;quot;
@@ -152,7 +153,7 @@
 
 &lt;h2 id=&#34;テーブル定義をしてみる:a4d3af33140cffc65cf5c9a1e4293067&#34;&gt;テーブル定義をしてみる&lt;/h2&gt;
 
-&lt;p&gt;今回はSQLiteにて実施。&lt;/p&gt;
+&lt;p&gt;今回はSQLiteでやります。&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;src&lt;/code&gt;ディレクトリ直下に&lt;code&gt;lobos&lt;/code&gt;ってディレクトリを作成して、その中にいろいろな設定を突っ込む必要があるらしい。&lt;/p&gt;
 
@@ -220,13 +221,11 @@
 
 &lt;h2 id=&#34;マイグレーションの実行:a4d3af33140cffc65cf5c9a1e4293067&#34;&gt;マイグレーションの実行&lt;/h2&gt;
 
-&lt;p&gt;ここが結構厄介だった。&lt;/p&gt;
+&lt;p&gt;ここが結構厄介だった。
+というか、出来たといえば出来たんだけど、もっと正しい方法があるような気が・・・。&lt;/p&gt;
 
-&lt;p&gt;というか、出来たといえば出来たんだけど、もっと正しい方法があるような気が・・・。&lt;/p&gt;
-
-&lt;p&gt;REPLにて以下を実行。&lt;/p&gt;
-
-&lt;p&gt;WARNINGは多分すでに存在するシンボルを置き換えてしまってることの警告だからとりあえず無視。&lt;/p&gt;
+&lt;p&gt;REPLにて以下を実行。
+WARNINGは多分すでに存在するシンボルを置き換えてしまってることの警告だからとりあえず無視。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clojure-repl&#34;&gt;tpc git:(master)$ lein repl
 (use &#39;(lobos connectivity core schema))nREPL server started on port 50092 on host 127.0.0.1 - nrepl://127.0.0.1:50092
@@ -265,10 +264,6 @@ Enter &amp;quot;.help&amp;quot; for usage hints.
 sqlite&amp;gt; .tables
 lobos_migrations  sites
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;できてる！&lt;/p&gt;
-
-&lt;p&gt;まだまだ名前空間とか&lt;code&gt;require&lt;/code&gt;あたりの理解が甘いなー・・・。&lt;/p&gt;
 </description>
     </item>
     
@@ -280,23 +275,20 @@ lobos_migrations  sites
       <guid>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</guid>
       <description>
 
-&lt;p&gt;SQL Serverを使ってて、ちょっと曖昧にしかわからんなってところがあったので少し調べてみた。&lt;/p&gt;
+&lt;p&gt;SQL Serverを使ってて、曖昧にしかわからないところがあったので少し調べてみた。&lt;/p&gt;
 
 &lt;h2 id=&#34;クラスタ化-非クラスタ化インデックスの違い:c92488df51ae62a183920f8a12e0e585&#34;&gt;クラスタ化 / 非クラスタ化インデックスの違い&lt;/h2&gt;
 
-&lt;p&gt;MySQLにも同じ話があったんだね。&lt;/p&gt;
-
-&lt;p&gt;まず参考にしたのはMSDN。&lt;/p&gt;
+&lt;p&gt;MySQLにも同じ話があったんだね。まず参考にしたのはMSDN。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://msdn.microsoft.com/ja-jp/library/ms190457.aspx&#34;&gt;クラスター化インデックスと非クラスター化インデックスの概念&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;まさにぴったりのタイトルじゃんと思ったんだけどいまいちよくわからない。&lt;/p&gt;
-
-&lt;p&gt;いや、わかったっちゃわかったんだけど、だからどうなるとか、だからどうする、っていうところが掴めなかった。&lt;/p&gt;
+&lt;p&gt;まさにぴったりのタイトルじゃんと思ったんだけどいまいちよくわからない。
+いや、わかったっちゃわかったんだけど、だからどうなるとか、だからどうする、っていうところが掴めなかった。&lt;/p&gt;
 
 &lt;h3 id=&#34;ここでわかったこと:c92488df51ae62a183920f8a12e0e585&#34;&gt;ここでわかったこと&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;クラスタ化インデックス&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;クラスタ化インデックスは、&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;1テーブルに1つしか作れない。&lt;/li&gt;
@@ -304,7 +296,7 @@ lobos_migrations  sites
 &lt;li&gt;クラスタ化インデックスが設定されていないテーブルはヒープと呼ばれる未ソートの状態になる。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;非クラスタ化インデックス&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;非クラスタ化インデックスは、&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;テーブルとは別に構造を持つ。&lt;/li&gt;
@@ -317,7 +309,8 @@ lobos_migrations  sites
 
 &lt;p&gt;ここは非常にわかりやすかった&lt;/p&gt;
 
-&lt;p&gt;B-Treeのイメージも、SQL Server上での実装が具体的にイメージ出来たし、非クラスタ化インデックスじゃ結局ランダムI/Oが発生するんだね、ってこともわかった。&lt;/p&gt;
+&lt;p&gt;B-Treeのイメージも、SQL Server上での実装が具体的にイメージ出来たし、
+非クラスタ化インデックスじゃ結局ランダムI/Oが発生するんだね、ってこともわかった。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://www.atmarkit.co.jp/fcoding/articles/delphi/05/delphi05a.html&#34;&gt;RDBMSで使われるB木を学ぼう&lt;/a&gt;&lt;/p&gt;
 
@@ -335,9 +328,7 @@ lobos_migrations  sites
 
 &lt;h2 id=&#34;カバリングインデックス:c92488df51ae62a183920f8a12e0e585&#34;&gt;カバリングインデックス&lt;/h2&gt;
 
-&lt;p&gt;マルチカラムインデックスと混同するよね。&lt;/p&gt;
-
-&lt;p&gt;これは結構わかりやすく書いてくれている記事があった。&lt;/p&gt;
+&lt;p&gt;マルチカラムインデックスと混同するよね。これは結構わかりやすく書いてくれている記事があった。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://d.hatena.ne.jp/a666666/20100920/1284992435&#34;&gt;MySQLのインデックスを学ぶ (1)&lt;/a&gt;&lt;/p&gt;
 
@@ -351,7 +342,11 @@ lobos_migrations  sites
 &lt;p&gt;カバーリング インデックスは、WHERE 句およびクエリ列選択の形態をとるすべての列を含む、非クラスタ化インデックスです。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;誤った認識があればご指摘を。&lt;/p&gt;
+&lt;p&gt;誤った認識があればご指摘ください。&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/4873115892/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4873115892&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;SQLアンチパターン&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=4873115892&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/4798115169/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4798115169&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;達人に学ぶ SQL徹底指南書 (CodeZine BOOKS)&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=4798115169&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

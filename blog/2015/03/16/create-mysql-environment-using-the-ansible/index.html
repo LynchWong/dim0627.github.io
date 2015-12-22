@@ -65,15 +65,13 @@
 
       <div class="body" itemprop="articleBody">
 
-<p>ちょっと友人と共同で開発しているWebアプリがあって、DBの用意も手軽に共有したいのでAnsibleでやることに。</p>
-
-<p>まあ僕はViewしか触ってないから別になくてもいいんだけど・・・。</p>
+<p>ちょっと友人と共同で開発しているWebアプリがあって、DBの用意も手軽に共有したいのでAnsibleでやることに。
+まあ僕はViewしか触ってないから別になくてもいいんだけど・・・。</p>
 
 <h2 id="hostsを書く:3b232f4f71049640111f0fd2b2cec1ee">hostsを書く</h2>
 
-<p>Ansibleが取り扱うマシンの定義をしておかなきゃいけない。</p>
-
-<p><code>Vagrantfile</code>で作られる仮想マシンのipを固定して、</p>
+<p>Ansibleが取り扱うマシンの定義をしておかなきゃいけない。
+<code>Vagrantfile</code>で作られる仮想マシンのipを固定して、</p>
 
 <pre><code class="language-ruby">  config.vm.network &quot;private_network&quot;, ip: &quot;192.168.33.20&quot;
 </code></pre>
@@ -101,17 +99,14 @@
   end
 </code></pre>
 
-<p>今回は<code>Vagrantfile</code>があるディレクトリに<code>env</code>ってディレクトリを作って、そこに設定ファイルを置くことにした。</p>
-
-<p>Playbookとかもここに入れていくよ。</p>
+<p>今回は<code>Vagrantfile</code>があるディレクトリに<code>env</code>ってディレクトリを作って、そこに設定ファイルを置くことにした。
+Playbookとかもここに入れていきます。</p>
 
 <h2 id="ansible-galaxyを使う:3b232f4f71049640111f0fd2b2cec1ee">Ansible Galaxyを使う</h2>
 
-<p>AnsibleはPlaybookと呼ばれるymlファイルにプロビジョニングの定義をしていく。</p>
-
-<p>でも正直、個人的に使う環境のためにガリガリ書くのはバカらしいよね。</p>
-
-<p>特にMySQLなんて相当な数の人が使ってるだろうし、そのノウハウを使わせてもらいたい。</p>
+<p>AnsibleはPlaybookと呼ばれるymlファイルにプロビジョニングの定義をしていく。
+でも正直、個人的に使う環境のためにガリガリ書くのはバカらしいよね。
+特にMySQLなんて相当な数の人が使ってるだろうし、そのノウハウを使わせてもらいたい。</p>
 
 <p>Ansibleには<a href="https://galaxy.ansible.com/">Ansible Galaxy</a>っていうWebサービスがあって、モジュール単位のよく使う定義をアップできるみたい。</p>
 
@@ -119,11 +114,8 @@
 
 <p>AnsibleではMySQLやらhttpdやらの個々のモジュールをroleと呼んでるらしい。</p>
 
-<p>つまり、<a href="https://galaxy.ansible.com/list#/roles">Browse Roles</a>からMySQLのroleを探せばよい。</p>
-
-<p>検索結果、デフォルトで評価の降順にしておいて欲しいんだけど・・・。</p>
-
-<p>今回は<a href="https://galaxy.ansible.com/list#/roles/509">ANXS.mysql</a>という奴を使わせてもらうことにしました。</p>
+<p>つまり、<a href="https://galaxy.ansible.com/list#/roles">Browse Roles</a>からMySQLのroleを探せばよい。
+今回は<a href="https://galaxy.ansible.com/list#/roles/509">ANXS.mysql</a>という奴を使わせてもらうことにしました。</p>
 
 <p>理由は、評価がそれなりに高くて、MySQLの設定が見たまんまでやれそうだったから。</p>
 
@@ -131,32 +123,24 @@
 
 <p>Ansible Galaxyからの導入は<code>ansible-galaxy install ANXS.mysql</code>みたいにやれば出来る。</p>
 
-<p>でもこれじゃあ、このPCにだけroleが導入されちゃうし、どんなroleが必要だったのか後々わからなくなっちゃうね。</p>
+<p>でもこれじゃあ、このPCにだけroleが導入されちゃうし、どんなroleが必要だったのか後々わからなくなっちゃいますね。
+だから他の人が環境を作るときに困る。</p>
 
-<p>だから他の人が環境を作るときに困っちゃう。</p>
-
-<p>そういう時のために<code>requirements.txt</code>っていうのを作るのが主流らしい。</p>
-
-<p>これはAnsible Galaxyから導入するroleを記述しておくものみたいで、今回はこんな感じの記述になった。</p>
+<p>そういう時のために<code>requirements.txt</code>っていうのを作るのが主流らしい。
+これはAnsible Galaxyから導入するroleを記述しておくものみたいで、今回はこんな感じの記述になった。</p>
 
 <pre><code>- src: ANXS.mysql
 </code></pre>
 
-<p>シンプル。</p>
+<p>導入するときは<code>ansible-galaxy install -p ./env/roles -r env/requirements.yml</code>みたいにやればいい。
+これで環境を作る手順を統一することができました。</p>
 
-<p>導入するときは<code>ansible-galaxy install -p ./env/roles -r env/requirements.yml</code>みたいにやればいい。</p>
-
-<p>pythonっぽい。</p>
-
-<p>これで環境を作る手順を統一することができた。</p>
-
-<p>このコマンドは覚えられなそうだから、プロジェクトで使うWikiとかに書いておいたほうがいいね。</p>
-
-<p>ちなみに、roleはAnsible Galaxyにあるものだけじゃなくて、GitHubにあるものとかも導入できるらしい。</p>
+<p>このコマンドは覚えられなそうだから、プロジェクトで使うWikiとかに書いておいたほうがいいですね。
+ちなみに、roleはAnsible Galaxyにあるものだけじゃなくて、GitHubにあるものとかも導入できるらしい。</p>
 
 <h3 id="playbookを書く:3b232f4f71049640111f0fd2b2cec1ee">Playbookを書く</h3>
 
-<p>じゃあインストールしてきたroleをもとにPlaybookを書こう。</p>
+<p>じゃあインストールしてきたroleをもとにPlaybookを書きます。</p>
 
 <p>設定の仕方はだいたいAnsible Galaxyに書いてあるんだけど、書いてないのも多いから選ぶときに気をつけたほうがいいかも。</p>
 
@@ -204,11 +188,10 @@ monit_protection: false                 # true or false, requires ANXS.monit
 
 <h2 id="プロビジョニングする:3b232f4f71049640111f0fd2b2cec1ee">プロビジョニングする</h2>
 
-<p><code>vagrant up</code>か<code>vagrant provision</code>すればやってくれる。</p>
+<p><code>vagrant up</code>か<code>vagrant provision</code>すればやってくれます。</p>
 
-<p><a href="https://galaxy.ansible.com/list#/roles/509">ANXS.mysql</a>の場合はMySQLユーザの作成とデータベースの作成までやってくれる。</p>
-
-<p>テーブルとかは別途スキーマ定義を用意するだろうし、ここまでやってくれれば十分だね。</p>
+<p><a href="https://galaxy.ansible.com/list#/roles/509">ANXS.mysql</a>の場合はMySQLユーザの作成とデータベースの作成までやってくれる。
+テーブルとかは別途スキーマ定義を用意するだろうし、ここまでやってくれれば十分ですね。</p>
 </div>
 
       <aside>

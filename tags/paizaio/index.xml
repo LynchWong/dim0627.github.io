@@ -25,17 +25,15 @@
 
 &lt;h2 id=&#34;何が出来る:263a1859984e07d4bd8e496e6113e0fc&#34;&gt;何が出来る？&lt;/h2&gt;
 
-&lt;p&gt;たくさんの言語のREPLが使える！すごい！&lt;/p&gt;
+&lt;p&gt;たくさんの言語のREPLが使える。これ結構すごいと思う。&lt;/p&gt;
 
-&lt;p&gt;ただ、コンパイル言語はそんな気軽に使える感じではないみたい。&lt;/p&gt;
-
-&lt;p&gt;例えばJavaで言えば、&lt;code&gt;System.out.println(&amp;quot;Hello&amp;quot;);&lt;/code&gt;だけじゃなくてクラス定義から含めなきゃいけないみたいに。&lt;/p&gt;
+&lt;p&gt;ただ、コンパイル言語はそんな気軽に使える感じではないみたい。
+例えばJavaで言えば、&lt;code&gt;System.out.println(&amp;quot;Hello&amp;quot;);&lt;/code&gt;だけじゃなくてクラス定義から含めなきゃいけないみたいに。&lt;/p&gt;
 
 &lt;h2 id=&#34;どうやって使う:263a1859984e07d4bd8e496e6113e0fc&#34;&gt;どうやって使う？&lt;/h2&gt;
 
-&lt;p&gt;どうやら&lt;a href=&#34;http://swagger.io/&#34;&gt;Swagger&lt;/a&gt;っていうOSSを使ってるみたい。&lt;/p&gt;
-
-&lt;p&gt;paiza.IO上でのデモも使える。&lt;/p&gt;
+&lt;p&gt;どうやら&lt;a href=&#34;http://swagger.io/&#34;&gt;Swagger&lt;/a&gt;っていうOSSを使ってるみたい。
+paiza.IO上でのデモも使える。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://api.paiza.io/docs/swagger/#!/runners/&#34;&gt;Swagger UI&lt;/a&gt;&lt;/p&gt;
 
@@ -83,11 +81,7 @@
     (get-res run-id)))
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;code&gt;get-res&lt;/code&gt;は後述。&lt;code&gt;get_details&lt;/code&gt;を実行するための関数。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;api_key&lt;/code&gt;ってこれでいいのだろうか。&lt;/p&gt;
-
-&lt;p&gt;とりあえず動いてはいる！&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;get-res&lt;/code&gt;は後述。&lt;code&gt;get_details&lt;/code&gt;を実行するための関数。&lt;code&gt;api_key&lt;/code&gt;ってこれでいいのだろうか。とりあえず動いてはいる。&lt;/p&gt;
 
 &lt;p&gt;実行結果の取得はこんな感じ。&lt;/p&gt;
 

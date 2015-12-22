@@ -36,7 +36,7 @@
       <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz"/>
       <meta itemprop="dateModified" content="2014-12-11T00:00:00&#43;00:00">
       <meta itemprop="headline" content="Lobosを使ってマイグレーションをする">
-      <meta itemprop="description" content="1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークが">
+      <meta itemprop="description" content="1年前くらいには、SQLまで隠蔽するORMとか嫌いだったし、テーブルの自動生成も嫌だったのになあ。 なんだかんだ便利さに気づいてきた感じがある">
       <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/">
       <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
         <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.png" />
@@ -65,9 +65,10 @@
 
       <div class="body" itemprop="articleBody">
 
-<p>1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。</p>
+<p>1年前くらいには、SQLまで隠蔽するORMとか嫌いだったし、テーブルの自動生成も嫌だったのになあ。
+なんだかんだ便利さに気づいてきた感じがある。</p>
 
-<p>というわけでClojureを使ってWeb開発をする際も使いたいので、Lobosというスキーマのマニュピレーション、マイグレーションツールを使ってみます。</p>
+<p>というわけでClojureを使ってWeb開発をする際も使いたいので、<a href="https://github.com/budu/lobos">Lobos</a>というスキーマのマニュピレーション、マイグレーションツールを使ってみます。</p>
 
 <h2 id="インストール:a4d3af33140cffc65cf5c9a1e4293067">インストール</h2>
 
@@ -78,9 +79,9 @@
 <pre><code class="language-clj">:dependencies [[lobos &quot;1.0.0-beta3&quot;]]
 </code></pre>
 
-<p>を追加して<code>lein deps</code>するだけでおーけー。</p>
+<p>を追加して<code>lein deps</code>。</p>
 
-<p>Leiningenのプラグインとして使える<a href="https://github.com/pupeno/lein-lobos">pupeno/lein-lobos</a>ってのもあるようだ。</p>
+<p>Leiningenのプラグインとして使える<a href="https://github.com/pupeno/lein-lobos">pupeno/lein-lobos</a>ってのもあるみたい。</p>
 
 <p>こっちも使う場合は、<code>ploject.clj</code>に</p>
 
@@ -89,7 +90,7 @@
 
 <p>を追加。</p>
 
-<p>全体を載っけるとこんな感じに。</p>
+<p>全体を載せるとこんな感じに。</p>
 
 <pre><code class="language-clj">(defproject tpc &quot;0.1.0-SNAPSHOT&quot;
   :description &quot;FIXME: write description&quot;
@@ -117,7 +118,7 @@
 
 <h2 id="テーブル定義をしてみる:a4d3af33140cffc65cf5c9a1e4293067">テーブル定義をしてみる</h2>
 
-<p>今回はSQLiteにて実施。</p>
+<p>今回はSQLiteでやります。</p>
 
 <p><code>src</code>ディレクトリ直下に<code>lobos</code>ってディレクトリを作成して、その中にいろいろな設定を突っ込む必要があるらしい。</p>
 
@@ -185,13 +186,11 @@
 
 <h2 id="マイグレーションの実行:a4d3af33140cffc65cf5c9a1e4293067">マイグレーションの実行</h2>
 
-<p>ここが結構厄介だった。</p>
+<p>ここが結構厄介だった。
+というか、出来たといえば出来たんだけど、もっと正しい方法があるような気が・・・。</p>
 
-<p>というか、出来たといえば出来たんだけど、もっと正しい方法があるような気が・・・。</p>
-
-<p>REPLにて以下を実行。</p>
-
-<p>WARNINGは多分すでに存在するシンボルを置き換えてしまってることの警告だからとりあえず無視。</p>
+<p>REPLにて以下を実行。
+WARNINGは多分すでに存在するシンボルを置き換えてしまってることの警告だからとりあえず無視。</p>
 
 <pre><code class="language-clojure-repl">tpc git:(master)$ lein repl
 (use '(lobos connectivity core schema))nREPL server started on port 50092 on host 127.0.0.1 - nrepl://127.0.0.1:50092
@@ -230,10 +229,6 @@ Enter &quot;.help&quot; for usage hints.
 sqlite&gt; .tables
 lobos_migrations  sites
 </code></pre>
-
-<p>できてる！</p>
-
-<p>まだまだ名前空間とか<code>require</code>あたりの理解が甘いなー・・・。</p>
 </div>
 
       <aside>

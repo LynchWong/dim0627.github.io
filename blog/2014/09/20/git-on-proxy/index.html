@@ -36,7 +36,7 @@
       <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz"/>
       <meta itemprop="dateModified" content="2014-09-20T00:00:00&#43;00:00">
       <meta itemprop="headline" content="gitのリポジトリ単位にproxyの設定をする">
-      <meta itemprop="description" content="事の発端 会社ではvimを使ってます。 plugin管理にはneobundle.vim使ってます。 .vimrcはGitHubで管理してます。 ne">
+      <meta itemprop="description" content="会社でもvimを使っててて、plugin管理はneobundle.vimを使ってるんだけど、GitHubで管理してる.vimrcを落としてく">
       <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/">
       <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
         <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.png" />
@@ -65,43 +65,23 @@
 
       <div class="body" itemprop="articleBody">
 
-<h2 id="事の発端:ca86a8bf870eabf283b4127081a3d388">事の発端</h2>
+<p>会社でもvimを使っててて、plugin管理は<a href="https://github.com/Shougo/neobundle.vim">neobundle.vim</a>を使ってるんだけど、<a href="https://github.com/">GitHub</a>で管理してる<code>.vimrc</code>を落としてくるときにちょっと手間取った。</p>
 
-<p>会社ではvimを使ってます。</p>
+<p>まあ簡単に言うと社内から外に出るときはproxyを通るから、gitがうまいこと動いてくれなかったんですね。</p>
 
-<p>plugin管理には<a href="https://github.com/Shougo/neobundle.vim">neobundle.vim</a>使ってます。</p>
+<h2 id="gitconfigでなんとかなる:ca86a8bf870eabf283b4127081a3d388">.gitconfigでなんとかなる</h2>
 
-<p><code>.vimrc</code>は<a href="https://github.com/">GitHub</a>で管理してます。</p>
-
-<p>neobundle.vimで管理してるpluginは大抵のものがGitHub上で管理されてるから、インストールとかアップデートをするときはneobundle.vimがGitHubまで見に行ってくれるんですね。</p>
-
-<p>ただ、当然社内はproxyを通していて、gitコマンドが通らない！</p>
-
-<p>ていうかそもそも<strong>GitHubから<code>.vimrc</code>を落としてくることすら出来ない！いいやzipで落とせ！</strong></p>
-
-<p>しかしpluginの導入を手でやるのはだるい・・・。</p>
-
-<p>マジで？サクラエディタで頑張るしかない？</p>
-
-<p>いやいやそんなことはない。</p>
-
-<h2 id="解決:ca86a8bf870eabf283b4127081a3d388">解決</h2>
-
-<p>じゃあこうしようってことで、<code>~/.gitconfig</code>をこんな感じにしたのよ。</p>
+<p>じゃあこうしようってことで、<code>~/.gitconfig</code>をこんな感じにしたんですよ。</p>
 
 <pre><code class="language-sh">[https]
         proxy = http://proxy.com:8080
 </code></pre>
 
-<p>ひとまず解決したんです。</p>
+<p>ひとまず解決したんだけど、そしたら社内のgitが使えなくなった。</p>
 
-<p>そしたら次は<strong>社内のgitに繋がらない！！</strong></p>
-
-<p>マジかよじゃあ<code>~/.gitconfig</code>をちょこちょこ変えるのかよだせえよそれと思ったら既に解決してくれてる人がいた。</p>
+<p>向き先によって切り替える方法は以下の記事にしっかりまとまってました。</p>
 
 <p><a href="http://tanacasino.hatenablog.com/entry/2013/12/21/003750">Git の http proxy に関するまとめ</a></p>
-
-<p>めんどくさかったけど、個々のpluginの<code>config</code>にだけproxyの記述を追加することで解決。</p>
 </div>
 
       <aside>

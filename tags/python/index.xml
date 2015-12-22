@@ -19,9 +19,8 @@
 
 &lt;p&gt;ひさびさに&lt;a href=&#34;https://cloud.google.com/appengine/&#34;&gt;Google App Engine&lt;/a&gt;を使おうとしたらGoogle Cloud Platformだかなんだかでいろいろと変わってて戸惑った。&lt;/p&gt;
 
-&lt;p&gt;何かっていうと3rd Partyのライブラリを使うときにどうやるんだっけなっていうこと。&lt;/p&gt;
-
-&lt;p&gt;昔は&lt;code&gt;requirements.txt&lt;/code&gt;でうまいことやってくれなかったけ？違う？&lt;/p&gt;
+&lt;p&gt;何かというと、3rd Partyのライブラリを使うときにどうやるんだっけなっていうこと。
+昔は&lt;code&gt;requirements.txt&lt;/code&gt;でうまいことやってくれなかったけ？違う？&lt;/p&gt;
 
 &lt;p&gt;普通にBeautifulSoupとか使った気するんだけど、どうやってたんだろうか・・・。&lt;/p&gt;
 
@@ -39,7 +38,8 @@
 
 &lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine&#34;&gt;How to include third party Python libraries in Google App Engine? - Stack Overflow&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;でもずいぶん原始的な方法で、libディレクトリを作ってそこに入れなよって見解らしい。&lt;/p&gt;
+&lt;p&gt;でもずいぶん原始的な方法で、libディレクトリを作ってそこに入れなよって見解らしい。
+あれ？やっぱこれ前は勝手にやってくれてなかった？&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;default git:(master)$ tree -L 2
 .

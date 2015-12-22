@@ -17,23 +17,17 @@
       <guid>http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/</guid>
       <description>
 
-&lt;p&gt;VimでClojure書くときのあれこれをいっつも忘れるのでまとめておこうと思う。&lt;/p&gt;
-
-&lt;p&gt;新しいことを覚えたら随時追記していこうかな。&lt;/p&gt;
+&lt;p&gt;VimでClojure書くときのあれこれをいっつも忘れるのでまとめておこうと思う。新しいことを覚えたら随時追記していこうかな。&lt;/p&gt;
 
 &lt;h2 id=&#34;使ってるプラグイン:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;使ってるプラグイン&lt;/h2&gt;
 
 &lt;h3 id=&#34;tpope-vim-classpath-https-github-com-tpope-vim-classpath:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/tpope/vim-classpath&#34;&gt;tpope/vim-classpath&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;クラスパスの設定をやってくれる。&lt;/p&gt;
-
-&lt;p&gt;何も考えず入れればよい。&lt;/p&gt;
+&lt;p&gt;クラスパスの設定をやってくれる。何も考えず入れればよい。&lt;/p&gt;
 
 &lt;h3 id=&#34;guns-vim-slamhound-https-github-com-guns-vim-slamhound:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/guns/vim-slamhound&#34;&gt;guns/vim-slamhound&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;&lt;code&gt;require&lt;/code&gt;の整理をやってくれる。&lt;/p&gt;
-
-&lt;p&gt;不要な奴は消してくれるし、ない奴はclasspathから読み込んで追加してくれる。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;require&lt;/code&gt;の整理をやってくれる。不要な奴は消してくれるし、ない奴はclasspathから読み込んで追加してくれる。&lt;/p&gt;
 
 &lt;h3 id=&#34;kien-rainbow-parentheses-vim-https-github-com-kien-rainbow-parentheses-vim:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/kien/rainbow_parentheses.vim&#34;&gt;kien/rainbow_parentheses.vim&lt;/a&gt;&lt;/h3&gt;
 
@@ -43,9 +37,8 @@
 
 &lt;p&gt;&lt;a href=&#34;http://blog.venanti.us/clojure-vim/&#34;&gt;My Clojure Toolchain: Vim&lt;/a&gt;でもキラープラグインと書かれているfireplace。&lt;/p&gt;
 
-&lt;p&gt;VimをREPLと接続してあんなことやこんなことが出来る。&lt;/p&gt;
-
-&lt;p&gt;こいつの機能、よく使う割によく忘れるんだよなあ。&lt;/p&gt;
+&lt;p&gt;VimをREPLと接続してあんなことやこんなことが出来る。
+このプラグインの機能、よく使う割によく忘れるんだよなあ。&lt;/p&gt;
 
 &lt;p&gt;もはやこの記事はこの覚書のために書いたようなもの。&lt;/p&gt;
 
@@ -77,9 +70,8 @@
 
 &lt;h3 id=&#34;venantius-vim-cljfmt-https-github-com-venantius-vim-cljfmt:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/venantius/vim-cljfmt&#34;&gt;venantius/vim-cljfmt&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;Clojure用のフォーマッター。&lt;/p&gt;
-
-&lt;p&gt;デフォルトで保存時のフォーマットがかかるようになってるので、入れるだけでOKのはず。&lt;/p&gt;
+&lt;p&gt;Clojure用のフォーマッター。
+デフォルトで保存時のフォーマットがかかるようになってるので、入れるだけでOKのはず。&lt;/p&gt;
 
 &lt;h2 id=&#34;使ってないプラグイン:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;使ってないプラグイン&lt;/h2&gt;
 
@@ -87,15 +79,13 @@
 
 &lt;p&gt;シンタックスハイライト、インデントのためのプラグイン。&lt;/p&gt;
 
-&lt;p&gt;あと&lt;code&gt;clojure.core&lt;/code&gt;の名前空間にある補完機能があるらしい。&lt;/p&gt;
-
-&lt;p&gt;なんかあってもなくてもあんまり変わらなかった（設定しきれなかった？）ので使うのをやめた。&lt;/p&gt;
+&lt;p&gt;あと&lt;code&gt;clojure.core&lt;/code&gt;の名前空間にある補完機能があるらしい。
+なんかあってもなくてもあんまり変わらなかった（設定しきれなかった？）ので使うのをやめた。&lt;/p&gt;
 
 &lt;h3 id=&#34;vim-scripts-paredit-vim-https-github-com-vim-scripts-paredit-vim:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/vim-scripts/paredit.vim&#34;&gt;vim-scripts/paredit.vim&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;括弧の位置をあれこれ出来るやつ、だと思う。&lt;/p&gt;
-
-&lt;p&gt;ちょっと脳みそがそんなにたくさんの事を一気に覚えるのは無理だったので、一旦使うのをやめた。&lt;/p&gt;
+&lt;p&gt;括弧の位置をあれこれ出来るやつ、だと思う。
+ちょっと脳みそがそんなにたくさんの事を一気に覚えるのは無理だったので、一旦使うのをやめた。&lt;/p&gt;
 </description>
     </item>
     
@@ -197,9 +187,7 @@
       <guid>http://yet.unresolved.xyz/blog/2015/02/06/learning-vim-again/</guid>
       <description>
 
-&lt;p&gt;ちょうど1年ほど前からvimを使ってるんだけど、&lt;/p&gt;
-
-&lt;p&gt;例に漏れず僕も使い始めの頃にこのサイトを参考にさせて頂きました。&lt;/p&gt;
+&lt;p&gt;ちょうど1年ほど前からvimを使ってるんだけど、例に漏れず僕も使い始めの頃にこのサイトを参考にさせて頂きました。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://blog.jnito.com/entry/20120101/1325420213&#34;&gt;僕がサクラエディタからVimに乗り換えるまで - give IT a try&lt;/a&gt;&lt;/p&gt;
 
@@ -221,61 +209,51 @@
 
 &lt;p&gt;ようやく実施出来たのでまた忘れたりしないようにメモっておきたい。&lt;/p&gt;
 
-&lt;h2 id=&#34;使ってなかったけどこれから使っていきたい思ったvimコマンド:d126f8f0023b0ae6ada93d9e335f5bcf&#34;&gt;使ってなかったけどこれから使っていきたい思ったvimコマンド&lt;/h2&gt;
+&lt;h2 id=&#34;これから使っていきたい思ったvimコマンド:d126f8f0023b0ae6ada93d9e335f5bcf&#34;&gt;これから使っていきたい思ったvimコマンド&lt;/h2&gt;
 
 &lt;h3 id=&#34;g:d126f8f0023b0ae6ada93d9e335f5bcf&#34;&gt;g;&lt;/h3&gt;
 
-&lt;p&gt;前回編集した箇所に飛ぶ。&lt;/p&gt;
+&lt;p&gt;前回編集した箇所に飛ぶ。結構長いソースとか書いてる時、あっちこっち飛んだりするから面倒に感じてた。&lt;/p&gt;
 
-&lt;p&gt;結構長いソースとか書いてる時、あっちこっち飛んだりするから面倒に感じてた。&lt;/p&gt;
-
-&lt;p&gt;行番号覚えたりっていう不毛なことやってたんだけど、今後はこれで済みそう！&lt;/p&gt;
+&lt;p&gt;行番号覚えたりっていう不毛なことやってたんだけど、今後はこれで済みそう。&lt;/p&gt;
 
 &lt;h3 id=&#34;toc_2:d126f8f0023b0ae6ada93d9e335f5bcf&#34;&gt;&amp;gt;&amp;gt;, &amp;lt;&amp;lt;&lt;/h3&gt;
 
-&lt;p&gt;カーソル行をインデントする。&lt;/p&gt;
-
-&lt;p&gt;毎回行頭に戻って・・・ってやってたのが馬鹿らしい・・・。&lt;/p&gt;
+&lt;p&gt;カーソル行をインデントする。毎回行頭に戻って・・・ってやってたのが馬鹿らしい・・・。&lt;/p&gt;
 
 &lt;h3 id=&#34;e-root-pm:d126f8f0023b0ae6ada93d9e335f5bcf&#34;&gt;:e **/Root.pm&lt;/h3&gt;
 
-&lt;p&gt;ワーキングディレクトリ以下からRoot.pmにマッチするファイルを開く。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;unite.vim&lt;/code&gt;を使ってるからこっちに目がいかなかった。便利そう。&lt;/p&gt;
+&lt;p&gt;ワーキングディレクトリ以下からRoot.pmにマッチするファイルを開く。
+&lt;code&gt;unite.vim&lt;/code&gt;を使ってるからこっちに目がいかなかった。便利そう。&lt;/p&gt;
 
 &lt;h3 id=&#34;e-ro:d126f8f0023b0ae6ada93d9e335f5bcf&#34;&gt;:e **/*Ro&lt;/h3&gt;
 
-&lt;p&gt;ワーキングディレクトリ以下から*Roにマッチするファイルを開く。&lt;/p&gt;
-
-&lt;p&gt;さらに便利そう。&lt;/p&gt;
+&lt;p&gt;ワーキングディレクトリ以下から*Roにマッチするファイルを開く。
+さらに便利そう。&lt;/p&gt;
 
 &lt;h3 id=&#34;gf:d126f8f0023b0ae6ada93d9e335f5bcf&#34;&gt;gf&lt;/h3&gt;
 
-&lt;p&gt;カーソル位置にある単語と同名のファイル名を開く。&lt;/p&gt;
-
-&lt;p&gt;あんまり使わなそうだけど、こんなんあるんだなと感心した。&lt;/p&gt;
+&lt;p&gt;カーソル位置にある単語と同名のファイル名を開く。
+あんまり使わなそうだけど、こんなんあるんだなと感心した。&lt;/p&gt;
 
 &lt;p&gt;そういう場面に出くわしても忘れて普通にファイル開いちゃいそうだな・・・。&lt;/p&gt;
 
 &lt;h3 id=&#34;wqa:d126f8f0023b0ae6ada93d9e335f5bcf&#34;&gt;:wqa&lt;/h3&gt;
 
-&lt;p&gt;全てのウィンドウを閉じて終了する。&lt;/p&gt;
-
-&lt;p&gt;今までは&lt;code&gt;:q&lt;/code&gt;連打してたんだけど、よく考えれば普通にダサいよね。&lt;/p&gt;
+&lt;p&gt;全てのウィンドウを閉じて終了する。
+今までは&lt;code&gt;:q&lt;/code&gt;連打してたんだけど、よく考えれば普通にダサいよね。&lt;/p&gt;
 
 &lt;p&gt;スマートじゃないやり方は大抵何かが間違ってるんだなあと思った。&lt;/p&gt;
 
 &lt;h3 id=&#34;j:d126f8f0023b0ae6ada93d9e335f5bcf&#34;&gt;J&lt;/h3&gt;
 
-&lt;p&gt;カーソル行とその下の行を結合する。&lt;/p&gt;
-
-&lt;p&gt;いつも先頭に戻って・・・ってやってた。&lt;/p&gt;
+&lt;p&gt;カーソル行とその下の行を結合する。いつも先頭に戻って・・・ってやってた。&lt;/p&gt;
 
 &lt;h3 id=&#34;0:d126f8f0023b0ae6ada93d9e335f5bcf&#34;&gt;0&lt;/h3&gt;
 
-&lt;p&gt;インデントのさらに行頭へカーソルを移動する。&lt;/p&gt;
+&lt;p&gt;インデントのさらに行頭へカーソルを移動する。こんなのも知らないとかまじかよって自分でも思った。&lt;/p&gt;
 
-&lt;p&gt;こんなのも知らないとかまじかよ！って自分でも思ったけどいつも&lt;code&gt;^&lt;/code&gt;を使ってたので煩わしかった。&lt;/p&gt;
+&lt;p&gt;いつも&lt;code&gt;^&lt;/code&gt;を使ってたので煩わしかったんですよね。&lt;/p&gt;
 
 &lt;p&gt;ある程度操作が出来るようになるとそれでまかなってしまうから成長しないね・・・。&lt;/p&gt;
 </description>

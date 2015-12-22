@@ -724,11 +724,10 @@ Ubuntu 12.04、12.10、13.04、13.10、14.04、14.10&lt;/p&gt;
 
 &lt;h2 id=&#34;フォーカスアウトしたらサジェストを消したい:1be3a17c6bd3affece21cbd510505d7a&#34;&gt;フォーカスアウトしたらサジェストを消したい&lt;/h2&gt;
 
-&lt;p&gt;入力欄もしくはサジェストからフォーカスアウトした時はサジェストを消したいじゃん。&lt;/p&gt;
+&lt;p&gt;入力欄もしくはサジェストからフォーカスアウトした時はサジェストを消したい。
+でもフォーカスアウトした先にフォーカスしたものが入力欄もしくはサジェストだったらそれは消したくない。&lt;/p&gt;
 
-&lt;p&gt;でもフォーカスアウトした先にフォーカスしたものが入力欄もしくはサジェストだったらそれは消したくないじゃん。&lt;/p&gt;
-
-&lt;p&gt;だからこんなコードを書いた。&lt;/p&gt;
+&lt;p&gt;だからこんなコードを書きました。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;search-text&amp;quot;&amp;gt;
 &amp;lt;div id=&amp;quot;suggest-list&amp;quot;&amp;gt;
@@ -748,15 +747,13 @@ $(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() 
 &amp;lt;/script&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;実際はこの処理を入力だけじゃなくアンカーにも適用したんだけど面倒だから省略。&lt;/p&gt;
-
-&lt;p&gt;しかしこれだと&lt;code&gt;if&lt;/code&gt;の中には入らずサジェストの非表示処理が通ってしまう・・・。&lt;/p&gt;
+&lt;p&gt;実際はこの処理を入力だけじゃなくアンカーにも適用したんだけど面倒だから省略。
+しかしこれだと&lt;code&gt;if&lt;/code&gt;の中には入らずサジェストの非表示処理が通ってしまう・・・。&lt;/p&gt;
 
 &lt;h2 id=&#34;フォーカス処理は一度ブラウザに返してあげる:1be3a17c6bd3affece21cbd510505d7a&#34;&gt;フォーカス処理は一度ブラウザに返してあげる&lt;/h2&gt;
 
-&lt;p&gt;どうやらJavaScriptの処理が進んでる間はフォーカス処理が行われないらしい。&lt;/p&gt;
-
-&lt;p&gt;なので&lt;strong&gt;一度ブラウザに処理が返るような処理&lt;/strong&gt;を挟んでやる必要がある。&lt;/p&gt;
+&lt;p&gt;どうやらJavaScriptの処理が進んでる間はフォーカス処理が行われないらしい。
+なので&lt;strong&gt;一度ブラウザに処理が返るような処理&lt;/strong&gt;を挟んでやる必要がある。&lt;/p&gt;
 
 &lt;p&gt;こんなかんじに。&lt;/p&gt;
 
@@ -797,35 +794,28 @@ $(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() 
 
 &lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-06-20/theme_tn.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-06-20/theme_tn.png&#34; class=&#34;image&#34; alt=&#34;theme_tn&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;トップの最新4記事は2カラム、それ以降は4カラムで表示するようにしてる。もちろんレスポンシブで。&lt;/p&gt;
+&lt;p&gt;トップの最新4記事は2カラム、それ以降は4カラムで表示するようにしてる。&lt;/p&gt;
 
-&lt;p&gt;前はPost一覧とかの画面もあったけど、そもそも必要無いような気がして色々削った。&lt;/p&gt;
+&lt;p&gt;前はPost一覧とかの画面もあったけど、そもそも必要無いような気がして色々削った。
+なので今回はシンプルにトップ、記事詳細、タグ別記事一覧の3ページだけ。&lt;/p&gt;
 
-&lt;p&gt;なので今回はシンプルにトップ、記事詳細、タグ別記事一覧の3ページだけ。&lt;/p&gt;
-
-&lt;p&gt;トップとタグ別記事一覧は同じテンプレートを使ってるから、少し冗長になってしまったなあ。&lt;/p&gt;
-
-&lt;p&gt;Hugoのテンプレート構成が今だによくわかってないから、共通化とかがうまく出来ない・・・。&lt;/p&gt;
+&lt;p&gt;トップとタグ別記事一覧は同じテンプレートを使ってるから、少し冗長になってしまった気はする。
+Hugoのテンプレート構成が今だによくわかってないから、共通化とかがうまく出来ない・・・。&lt;/p&gt;
 
 &lt;h2 id=&#34;工夫したこと:b3f0c0f315f1fbc2ee8323461148b3d4&#34;&gt;工夫したこと&lt;/h2&gt;
 
-&lt;p&gt;前にテーマを作って思ったんだけど、Hugoの強みは各テーマをOverride出来ることなんだよね。&lt;/p&gt;
-
-&lt;p&gt;だからそれ前提で書かないと、Overrideしたいのは一部でも、ファイルまるごとコピるはめになっちゃう。&lt;/p&gt;
+&lt;p&gt;前にテーマを作って思ったんだけど、Hugoの強みは各テーマをOverride出来ることだと思ってます。
+だからそれ前提で書かないと、Overrideしたいのは一部でも、ファイルまるごとコピるはめになっちゃう。&lt;/p&gt;
 
 &lt;p&gt;前はそれでもう何がなんだかわからなくなったので、今回はそれを避けようとした。&lt;/p&gt;
 
-&lt;p&gt;何をしたかというと、空っぽのテンプレートファイルを最初からいろいろな場所に設置しておくことにした。&lt;/p&gt;
-
-&lt;p&gt;Overrideしたい人はこのファイルを各自のディレクトリにコピーして編集すればいいし、&lt;/p&gt;
-
-&lt;p&gt;Overrideしない人はほっとけば影響もない。&lt;/p&gt;
+&lt;p&gt;何をしたかというと、空っぽのテンプレートファイルを最初からいろいろな場所に設置しておくことにした。
+Overrideしたい人はこのファイルを各自のディレクトリにコピーして編集すればいいし、Overrideしない人はほっとけば影響もない。&lt;/p&gt;
 
 &lt;h2 id=&#34;まとめ:b3f0c0f315f1fbc2ee8323461148b3d4&#34;&gt;まとめ&lt;/h2&gt;
 
-&lt;p&gt;数時間でざーっと作ったので、最後のほうはCSSもぶれまくったなあ。&lt;/p&gt;
-
-&lt;p&gt;あとReadmeとかいろいろ書けてない。&lt;/p&gt;
+&lt;p&gt;数時間でざーっと作ったので、最後のほうはCSSもぶれまくったのは反省。
+あとReadmeとかいろいろ書けてない。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/spf13/hugoThemes&#34;&gt;spf13/hugoThemes&lt;/a&gt;にプルリクも送らねば・・・。&lt;/p&gt;
 </description>
@@ -997,23 +987,17 @@ bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
       <guid>http://yet.unresolved.xyz/blog/2015/03/22/using-clojure-plugin-on-the-vim/</guid>
       <description>
 
-&lt;p&gt;VimでClojure書くときのあれこれをいっつも忘れるのでまとめておこうと思う。&lt;/p&gt;
-
-&lt;p&gt;新しいことを覚えたら随時追記していこうかな。&lt;/p&gt;
+&lt;p&gt;VimでClojure書くときのあれこれをいっつも忘れるのでまとめておこうと思う。新しいことを覚えたら随時追記していこうかな。&lt;/p&gt;
 
 &lt;h2 id=&#34;使ってるプラグイン:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;使ってるプラグイン&lt;/h2&gt;
 
 &lt;h3 id=&#34;tpope-vim-classpath-https-github-com-tpope-vim-classpath:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/tpope/vim-classpath&#34;&gt;tpope/vim-classpath&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;クラスパスの設定をやってくれる。&lt;/p&gt;
-
-&lt;p&gt;何も考えず入れればよい。&lt;/p&gt;
+&lt;p&gt;クラスパスの設定をやってくれる。何も考えず入れればよい。&lt;/p&gt;
 
 &lt;h3 id=&#34;guns-vim-slamhound-https-github-com-guns-vim-slamhound:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/guns/vim-slamhound&#34;&gt;guns/vim-slamhound&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;&lt;code&gt;require&lt;/code&gt;の整理をやってくれる。&lt;/p&gt;
-
-&lt;p&gt;不要な奴は消してくれるし、ない奴はclasspathから読み込んで追加してくれる。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;require&lt;/code&gt;の整理をやってくれる。不要な奴は消してくれるし、ない奴はclasspathから読み込んで追加してくれる。&lt;/p&gt;
 
 &lt;h3 id=&#34;kien-rainbow-parentheses-vim-https-github-com-kien-rainbow-parentheses-vim:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/kien/rainbow_parentheses.vim&#34;&gt;kien/rainbow_parentheses.vim&lt;/a&gt;&lt;/h3&gt;
 
@@ -1023,9 +1007,8 @@ bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
 
 &lt;p&gt;&lt;a href=&#34;http://blog.venanti.us/clojure-vim/&#34;&gt;My Clojure Toolchain: Vim&lt;/a&gt;でもキラープラグインと書かれているfireplace。&lt;/p&gt;
 
-&lt;p&gt;VimをREPLと接続してあんなことやこんなことが出来る。&lt;/p&gt;
-
-&lt;p&gt;こいつの機能、よく使う割によく忘れるんだよなあ。&lt;/p&gt;
+&lt;p&gt;VimをREPLと接続してあんなことやこんなことが出来る。
+このプラグインの機能、よく使う割によく忘れるんだよなあ。&lt;/p&gt;
 
 &lt;p&gt;もはやこの記事はこの覚書のために書いたようなもの。&lt;/p&gt;
 
@@ -1057,9 +1040,8 @@ bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
 
 &lt;h3 id=&#34;venantius-vim-cljfmt-https-github-com-venantius-vim-cljfmt:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/venantius/vim-cljfmt&#34;&gt;venantius/vim-cljfmt&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;Clojure用のフォーマッター。&lt;/p&gt;
-
-&lt;p&gt;デフォルトで保存時のフォーマットがかかるようになってるので、入れるだけでOKのはず。&lt;/p&gt;
+&lt;p&gt;Clojure用のフォーマッター。
+デフォルトで保存時のフォーマットがかかるようになってるので、入れるだけでOKのはず。&lt;/p&gt;
 
 &lt;h2 id=&#34;使ってないプラグイン:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;使ってないプラグイン&lt;/h2&gt;
 
@@ -1067,15 +1049,13 @@ bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
 
 &lt;p&gt;シンタックスハイライト、インデントのためのプラグイン。&lt;/p&gt;
 
-&lt;p&gt;あと&lt;code&gt;clojure.core&lt;/code&gt;の名前空間にある補完機能があるらしい。&lt;/p&gt;
-
-&lt;p&gt;なんかあってもなくてもあんまり変わらなかった（設定しきれなかった？）ので使うのをやめた。&lt;/p&gt;
+&lt;p&gt;あと&lt;code&gt;clojure.core&lt;/code&gt;の名前空間にある補完機能があるらしい。
+なんかあってもなくてもあんまり変わらなかった（設定しきれなかった？）ので使うのをやめた。&lt;/p&gt;
 
 &lt;h3 id=&#34;vim-scripts-paredit-vim-https-github-com-vim-scripts-paredit-vim:4fc5f75a648d7ec78080562abdaae3a6&#34;&gt;&lt;a href=&#34;https://github.com/vim-scripts/paredit.vim&#34;&gt;vim-scripts/paredit.vim&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;括弧の位置をあれこれ出来るやつ、だと思う。&lt;/p&gt;
-
-&lt;p&gt;ちょっと脳みそがそんなにたくさんの事を一気に覚えるのは無理だったので、一旦使うのをやめた。&lt;/p&gt;
+&lt;p&gt;括弧の位置をあれこれ出来るやつ、だと思う。
+ちょっと脳みそがそんなにたくさんの事を一気に覚えるのは無理だったので、一旦使うのをやめた。&lt;/p&gt;
 </description>
     </item>
     
@@ -1085,11 +1065,10 @@ bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
       <pubDate>Sun, 22 Mar 2015 19:23:27 +0900</pubDate>
       
       <guid>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</guid>
-      <description>&lt;p&gt;ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、&lt;/p&gt;
+      <description>&lt;p&gt;ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、
+デフォルトだとPOSTリクエストした時にCSRFトークンチェックが入るようになっててたまに困る。&lt;/p&gt;
 
-&lt;p&gt;デフォルトだとPOSTリクエストした時にCSRFトークンチェックが入るようになってると思う。&lt;/p&gt;
-
-&lt;p&gt;で、そのトークンの作成の仕方を毎回調べてるのでメモっときたい。&lt;/p&gt;
+&lt;p&gt;なのでトークンの生成方法をメモ。&lt;/p&gt;
 
 &lt;p&gt;チェックの処理は&lt;code&gt;site-defaults&lt;/code&gt;の、&lt;/p&gt;
 
@@ -1097,7 +1076,7 @@ bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
   (wrap-defaults app-routes site-defaults))
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;code&gt;:security&lt;/code&gt;のところで設定出来る。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;:security&lt;/code&gt;のところで設定出来ます。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def site-defaults
   &amp;quot;A default configuration for a browser-accessible website, based on current
@@ -1119,7 +1098,7 @@ bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
                :content-types          true}})
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;これを&lt;code&gt;false&lt;/code&gt;にしちゃえばもちろんCSRFのチェックはされなくなるんだけど、まあ普通はするべきだよね。&lt;/p&gt;
+&lt;p&gt;これを&lt;code&gt;false&lt;/code&gt;にしちゃえばもちろんCSRFのチェックはされなくなるんだけど、まあ普通はするべきですよね。&lt;/p&gt;
 
 &lt;p&gt;トークンの生成の仕方はこう。&lt;/p&gt;
 

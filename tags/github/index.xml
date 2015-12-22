@@ -19,7 +19,7 @@
 
 &lt;p&gt;昨日はGAEで今日はGithubかよって感じだけど、こっちは結構詰まったのでメモしたい。&lt;/p&gt;
 
-&lt;h2 id=&#34;事の発端:bd764d28564cc0069e229d086834b342&#34;&gt;事の発端&lt;/h2&gt;
+&lt;h2 id=&#34;githubからwarningメールが来るようになった:bd764d28564cc0069e229d086834b342&#34;&gt;GitHubからWarningメールが来るようになった&lt;/h2&gt;
 
 &lt;p&gt;このOctopressのblogをカスタムドメインにしてから、&lt;code&gt;rake gen_deploy&lt;/code&gt;するとGithubからこんなメールが来るようになりました。&lt;/p&gt;
 
@@ -35,9 +35,7 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 &lt;p&gt;If you have any questions please contact us at &lt;a href=&#34;https://github.com/contact&#34;&gt;https://github.com/contact&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;英語かよ後で読もう、と思ってもデプロイするたびにメールが来るのは結構うざい。&lt;/p&gt;
-
-&lt;p&gt;ので、しっかり読んでみると、&lt;strong&gt;デプロイは出来たんだけど、もっと速く動作させる方法があるからそっちにしない？&lt;/strong&gt;って話らしい。&lt;/p&gt;
+&lt;p&gt;英語かよ後で読もう、と思ってもデプロイするたびにメールが来るのは結構うざいのでしっかり読んでみると、&lt;strong&gt;デプロイは出来たんだけど、もっと速く動作させる方法があるからそっちにしない？&lt;/strong&gt;って話らしい。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/blog/1715-faster-more-awesome-github-pages&#34;&gt;Faster, More Awesome GitHub Pages&lt;/a&gt;を参考にすると、以下の手順を踏めばいいとのこと。&lt;/p&gt;
 
@@ -53,17 +51,12 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 
 &lt;p&gt;DNSプロバイダ側にAレコードを作って、207.97.227.245か204.232.175.78を向ければOK&lt;/p&gt;
 
-&lt;p&gt;ちなみにこの3つめは少し厄介らしく、そもそもDNSプロバイダ側でALIASとやらが設定出来ないとだめなんだとか？&lt;/p&gt;
-
-&lt;p&gt;こういう系は知識が浅くてだめだなあ。&lt;/p&gt;
+&lt;p&gt;ちなみにこの3つめは少し厄介らしく、そもそもDNSプロバイダ側でALIASとやらが設定出来ないとだめなんだとか。こういう系は知識が浅くてだめだなあ。&lt;/p&gt;
 
 &lt;h2 id=&#34;これで何が起こるの:bd764d28564cc0069e229d086834b342&#34;&gt;これで何が起こるの？&lt;/h2&gt;
 
-&lt;p&gt;CDNからの配信になるから速いんだとか。&lt;/p&gt;
-
-&lt;p&gt;あとDenial of service attackとかいう攻撃の対策になるらしい。&lt;/p&gt;
-
-&lt;p&gt;あ、DOS攻撃のことか。略さずに書かれるとわからんもんだね。&lt;/p&gt;
+&lt;p&gt;CDNからの配信になるから速いんだとか。あとDenial of service attackとかいう攻撃の対策になるらしい。
+あ、DOS攻撃のことか。略さずに書かれるとわからんもんだね。&lt;/p&gt;
 </description>
     </item>
     
@@ -79,23 +72,14 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 
 &lt;p&gt;&lt;a href=&#34;http://ja.wikipedia.org/wiki/Markdown&#34;&gt;Markdown&lt;/a&gt;が使ってみたかったのと、カッコいいデザインが多そうな&lt;a href=&#34;http://hatenablog.com/&#34;&gt;Hatena&lt;/a&gt;かなーと思ってたんだけど、&lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt;が面白そうなのでとりあえずノリでこっちにしてみるよ。&lt;/p&gt;
 
-&lt;!-- more --&gt;
-
 &lt;h2 id=&#34;github-pages:b7f97f2e97092fbf52749ce6e3f01256&#34;&gt;Github Pages？&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt;は&lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt;に&lt;code&gt;[ユーザ名].github.io&lt;/code&gt;って名前のリポジトリを作るだけで、pushしたページを外部公開出来るサービス。&lt;/p&gt;
-
-&lt;p&gt;そこでよく使われるBlogフレームワーク(?)が&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;らしい。&lt;/p&gt;
-
-&lt;p&gt;どうやらOctopressは&lt;a href=&#34;http://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt;という静的ページジェネレータをさらに活用するためのものとのことで、&lt;/p&gt;
-
-&lt;p&gt;このJekyll(読みはジキル？)はMarkdownとかで書いたテキストファイルを静的ページに変換したりしてくれるものみたい。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt;は&lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt;に&lt;code&gt;[ユーザ名].github.io&lt;/code&gt;って名前のリポジトリを作るだけで、pushしたページを外部公開出来るサービス。
+そこでよく使われるBlogフレームワークが&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;らしい。静的サイトジェネレータってやつだね。&lt;/p&gt;
 
 &lt;h2 id=&#34;octopressをインストールする:b7f97f2e97092fbf52749ce6e3f01256&#34;&gt;Octopressをインストールする&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://octopress.org/docs/setup/&#34;&gt;Octopress Setup&lt;/a&gt;が非常に良く書かれているのと、Octopress自体が見通しよく作られているので特に躓くことなく導入出来ました。&lt;/p&gt;
-
-&lt;p&gt;Octopressは記事を書くPCに導入して丸ごとGitHubにpushしてしまう仕組みらしく、まずは個人のPCに導入が必要。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ git clone git://github.com/imathis/octopress.git octopress
 $ cd octopress
@@ -109,18 +93,14 @@ $ rake install
 
 &lt;p&gt;&lt;a href=&#34;http://octopress.org/docs/deploying/&#34;&gt;Deploying&lt;/a&gt;を見る限り、GitHub Pagesだけじゃなく、HerokuやRsyncでの利用も出来るっぽい。&lt;/p&gt;
 
-&lt;p&gt;なんかVPSとかでも運用してる人がいるっぽいね。&lt;/p&gt;
+&lt;p&gt;結局HTMLが吐き出されるだけだし、まあどこでも運用は出来るよね。&lt;/p&gt;
 
-&lt;p&gt;前述した通り今回はGitHub Pagesを利用することにしました。&lt;/p&gt;
-
-&lt;p&gt;最初に&lt;code&gt;[ユーザ名].github.io&lt;/code&gt;って名前のリポジトリを作っておく必要があるよ。&lt;/p&gt;
+&lt;p&gt;前述した通り今回はGitHub Pagesを利用することにしたので、最初に&lt;code&gt;[ユーザ名].github.io&lt;/code&gt;って名前のリポジトリを作っておく必要があります。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ rake setup_github_pages
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;リポジトリのURLとかが聞かれるので、表示された説明の通り入力。&lt;/p&gt;
-
-&lt;p&gt;pushしとく必要もあるっぽい。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ rake generate
 $ rake deploy
@@ -139,25 +119,15 @@ $ git push origin source
 
 &lt;h2 id=&#34;記事を書く:b7f97f2e97092fbf52749ce6e3f01256&#34;&gt;記事を書く&lt;/h2&gt;
 
-&lt;p&gt;記事は&lt;code&gt;rake new_post[&amp;quot;title&amp;quot;]&lt;/code&gt;で行けるらしい。&lt;/p&gt;
-
-&lt;p&gt;でも僕は&lt;code&gt;alias rake=&amp;quot;noglob rake&amp;quot;&lt;/code&gt;しとかなきゃダメだった。&lt;/p&gt;
+&lt;p&gt;記事は&lt;code&gt;rake new_post[&amp;quot;title&amp;quot;]&lt;/code&gt;で行けるらしい。でも僕は&lt;code&gt;alias rake=&amp;quot;noglob rake&amp;quot;&lt;/code&gt;しとかなきゃダメだった。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://ackintosh.github.io/blog/2013/02/02/cant-create-post/&#34;&gt;Octopressで記事が作れない(zsh)&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;どうやらzshを使ってる人は同様の事象になるっぽい？&lt;/p&gt;
+&lt;p&gt;どうやらzshを使ってる人は同様の現象になるようだ。&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;rake new_post[&amp;quot;title&amp;quot;]&lt;/code&gt;で`source/_posts&amp;rsquo;に記事が作成されるのでそれを編集。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;rake new_post[&amp;quot;title&amp;quot;]&lt;/code&gt;で&lt;code&gt;source/_posts&#39;に記事が作成されるので、それを編集したら&lt;/code&gt;rake generate`でHTMLが生成される。&lt;/p&gt;
 
-&lt;p&gt;Markdown用にエディタ入れようかな。&lt;/p&gt;
-
-&lt;p&gt;記事を書いたら&lt;code&gt;rake generate&lt;/code&gt;で記事が見れる状態のファイルに変換される。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;rake watch&lt;/code&gt;しとくとファイルの変更を監視して常時generateしてくれる。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;rake preview&lt;/code&gt;でWEBrickが立ち上がってローカルで確認出来る。&lt;/p&gt;
-
-&lt;p&gt;必要なものはすべて揃ってて便利。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;rake watch&lt;/code&gt;しとくとファイルの変更を監視して常時generateしてくれるから執筆中はこっちがいいね。&lt;/p&gt;
 </description>
     </item>
     

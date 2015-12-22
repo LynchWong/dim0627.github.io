@@ -74,9 +74,8 @@
 
 &lt;h2 id=&#34;replを作ろう:4800906b877996c3dc902a23f48b0c5e&#34;&gt;REPLを作ろう&lt;/h2&gt;
 
-&lt;p&gt;なんかSlack上でプログラム打つと実行結果が返ってくるみたいなやつ誰かが作ってたよね？&lt;/p&gt;
-
-&lt;p&gt;あれ調べても出ないんだけどなんでなんだろう。&lt;/p&gt;
+&lt;p&gt;なんかSlack上でプログラム打つと実行結果が返ってくるみたいなやつ誰かが作ってたよね？
+あれ調べても出ないんだけどなんでなんだろう。&lt;/p&gt;
 
 &lt;p&gt;まあとりあえず、作ったばっかの&lt;a href=&#34;https://paiza.io/&#34;&gt;paiza.IO&lt;/a&gt;のAPIを叩くあれを導入してみる。&lt;/p&gt;
 
@@ -105,15 +104,7 @@
 
 &lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-25/slack_repl_run.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-25/slack_repl_run.png&#34; class=&#34;image&#34; alt=&#34;slack_repl_run&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;いけるやん！&lt;/p&gt;
-
-&lt;p&gt;Javaだる！&lt;/p&gt;
-
-&lt;h2 id=&#34;コード:4800906b877996c3dc902a23f48b0c5e&#34;&gt;コード&lt;/h2&gt;
-
-&lt;p&gt;やばい&lt;code&gt;project.clj&lt;/code&gt;とかherokuから持ってきたままだしリファクタリングもしてないし超適当だ&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/dim0627/slack_repl&#34;&gt;dim0627/slack_repl&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Javaは少し面倒だね。&lt;/p&gt;
 </description>
     </item>
     
@@ -133,17 +124,15 @@
 
 &lt;h2 id=&#34;何が出来る:263a1859984e07d4bd8e496e6113e0fc&#34;&gt;何が出来る？&lt;/h2&gt;
 
-&lt;p&gt;たくさんの言語のREPLが使える！すごい！&lt;/p&gt;
+&lt;p&gt;たくさんの言語のREPLが使える。これ結構すごいと思う。&lt;/p&gt;
 
-&lt;p&gt;ただ、コンパイル言語はそんな気軽に使える感じではないみたい。&lt;/p&gt;
-
-&lt;p&gt;例えばJavaで言えば、&lt;code&gt;System.out.println(&amp;quot;Hello&amp;quot;);&lt;/code&gt;だけじゃなくてクラス定義から含めなきゃいけないみたいに。&lt;/p&gt;
+&lt;p&gt;ただ、コンパイル言語はそんな気軽に使える感じではないみたい。
+例えばJavaで言えば、&lt;code&gt;System.out.println(&amp;quot;Hello&amp;quot;);&lt;/code&gt;だけじゃなくてクラス定義から含めなきゃいけないみたいに。&lt;/p&gt;
 
 &lt;h2 id=&#34;どうやって使う:263a1859984e07d4bd8e496e6113e0fc&#34;&gt;どうやって使う？&lt;/h2&gt;
 
-&lt;p&gt;どうやら&lt;a href=&#34;http://swagger.io/&#34;&gt;Swagger&lt;/a&gt;っていうOSSを使ってるみたい。&lt;/p&gt;
-
-&lt;p&gt;paiza.IO上でのデモも使える。&lt;/p&gt;
+&lt;p&gt;どうやら&lt;a href=&#34;http://swagger.io/&#34;&gt;Swagger&lt;/a&gt;っていうOSSを使ってるみたい。
+paiza.IO上でのデモも使える。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://api.paiza.io/docs/swagger/#!/runners/&#34;&gt;Swagger UI&lt;/a&gt;&lt;/p&gt;
 
@@ -191,11 +180,7 @@
     (get-res run-id)))
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;code&gt;get-res&lt;/code&gt;は後述。&lt;code&gt;get_details&lt;/code&gt;を実行するための関数。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;api_key&lt;/code&gt;ってこれでいいのだろうか。&lt;/p&gt;
-
-&lt;p&gt;とりあえず動いてはいる！&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;get-res&lt;/code&gt;は後述。&lt;code&gt;get_details&lt;/code&gt;を実行するための関数。&lt;code&gt;api_key&lt;/code&gt;ってこれでいいのだろうか。とりあえず動いてはいる。&lt;/p&gt;
 
 &lt;p&gt;実行結果の取得はこんな感じ。&lt;/p&gt;
 
@@ -214,7 +199,7 @@
     </item>
     
     <item>
-      <title>Lobosでマイグレーションができない in Heroku</title>
+      <title>HerokuでLobosを使ったマイグレーションができない</title>
       <link>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</link>
       <pubDate>Sun, 21 Dec 2014 00:00:00 +0000</pubDate>
       
@@ -223,23 +208,17 @@
 
 &lt;p&gt;ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。&lt;/p&gt;
 
-&lt;h2 id=&#34;何が起きたか:b3814854ab9c35505a0d42182d51f32f&#34;&gt;何が起きたか&lt;/h2&gt;
+&lt;h2 id=&#34;マイグレーションしても何も起きない:b3814854ab9c35505a0d42182d51f32f&#34;&gt;マイグレーションしても何も起きない&lt;/h2&gt;
 
-&lt;p&gt;今だにHerokuの使い方がようわからんのだけど、&lt;/p&gt;
+&lt;p&gt;今だにHerokuの使い方がよくわからないんだけど、とりあえずローカルから向き先変えるよりもSSHの方が楽だったので&lt;code&gt;heroku run bash&lt;/code&gt;してやってます。&lt;/p&gt;
 
-&lt;p&gt;とりあえずローカルから向き先変えるよりもSSHの方がいっかなってことで&lt;code&gt;heroku run bash&lt;/code&gt;してやってます。&lt;/p&gt;
-
-&lt;p&gt;ローカルからだとDBをSSLで接続させないといけないし・・・。&lt;/p&gt;
-
-&lt;p&gt;んでマイグレーションしようとしたら、&lt;/p&gt;
+&lt;p&gt;ローカルからだとDBをSSLで接続させないといけないし・・・。それでマイグレーションしようとしたら、&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clojure-repl&#34;&gt;user=&amp;gt; (migrate)
 nil
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;何も出ない。&lt;/p&gt;
-
-&lt;p&gt;本当はこんな感じで、&lt;/p&gt;
+&lt;p&gt;何も出ない。本当はこんな感じで、&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clojure-repl&#34;&gt;user=&amp;gt; (migrate)
 add-sites-table
@@ -249,9 +228,9 @@ nil
 
 &lt;p&gt;作成されたり変更されたテーブルが出てくるはず。&lt;/p&gt;
 
-&lt;h2 id=&#34;原因はなんだったのか:b3814854ab9c35505a0d42182d51f32f&#34;&gt;原因はなんだったのか&lt;/h2&gt;
+&lt;h2 id=&#34;lobos-migrationsがロードされてない:b3814854ab9c35505a0d42182d51f32f&#34;&gt;lobos.migrationsがロードされてない&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;lobos.migrations&lt;/code&gt;が読まれてない（というかリロードされてない）っぽい。&lt;/p&gt;
+&lt;p&gt;どうやら&lt;code&gt;lobos.migrations&lt;/code&gt;が読まれてない（というかリロードされてない）っぽい。&lt;/p&gt;
 
 &lt;p&gt;そもそも&lt;code&gt;migrate&lt;/code&gt;自体はこんな感じで&lt;code&gt;lobos.migration&lt;/code&gt;の&lt;code&gt;do-migrations&lt;/code&gt;を呼んでます。&lt;/p&gt;
 
@@ -326,13 +305,12 @@ user=&amp;gt; (list-migrations)
 user=&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;解決策:b3814854ab9c35505a0d42182d51f32f&#34;&gt;解決策&lt;/h2&gt;
+&lt;h2 id=&#34;reload-migrations-をfalseにすればいい:b3814854ab9c35505a0d42182d51f32f&#34;&gt;*reload-migrations*をfalseにすればいい&lt;/h2&gt;
 
 &lt;p&gt;もう正直ここまでで一週間弱悩んだから、lobos使うのやめようかなとも思ったけどまあいい勉強だろうし・・・。&lt;/p&gt;
 
-&lt;p&gt;暫定にしかならないけど、とりあえずリロードさせないようにしよう。&lt;/p&gt;
-
-&lt;p&gt;ソースコードの通り、&lt;code&gt;*reload-migrations*&lt;/code&gt;が&lt;code&gt;true&lt;/code&gt;になっている場合にリロードが走るらしい。&lt;/p&gt;
+&lt;p&gt;暫定にしかならないけど、とりあえずリロードさせないようにしよう。
+ソースコードの通り、&lt;code&gt;*reload-migrations*&lt;/code&gt;が&lt;code&gt;true&lt;/code&gt;になっている場合にリロードが走るらしい。&lt;/p&gt;
 
 &lt;p&gt;だからこんな感じで&lt;code&gt;false&lt;/code&gt;で上書いてしまおう。&lt;/p&gt;
 
@@ -355,11 +333,10 @@ nil
 lobos.migration=&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;これじゃない感がすごいけど、とりあえず通った・・・。&lt;/p&gt;
+&lt;p&gt;これじゃない感がすごいけど、とりあえず通った・・・。
+Lobosはもう開発があんまり活発じゃないみたいだなあ。&lt;/p&gt;
 
-&lt;p&gt;Lobosはもう開発があんまり活発じゃないみたいだなあ。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;lobos.migration&lt;/code&gt;と&lt;code&gt;lobos.migrations&lt;/code&gt;の命名はちょっといけてないような・・・。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;lobos.migration&lt;/code&gt;と&lt;code&gt;lobos.migrations&lt;/code&gt;の命名はちょっといけてないような気がする。&lt;/p&gt;
 </description>
     </item>
     

@@ -36,7 +36,7 @@
       <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz"/>
       <meta itemprop="dateModified" content="2015-01-22T15:37:14&#43;09:00">
       <meta itemprop="headline" content="Vagrant &#43; CentOS &#43; PostgreSQLを最速で構築">
-      <meta itemprop="description" content="herokuにのっけるアプリを作るとき、ローカルではSQLite使ってたんだけどもう色々つらい。 なんか整数で定義したカラムに文字列入るし！ な">
+      <meta itemprop="description" content="herokuにのっけるアプリを作るとき、ローカルではSQLite使ってたんだけどもう色々つらい。 なんか整数で定義したカラムに文字列入るし。な">
       <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2015/01/22/install-postgresql-on-centos/">
       <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
         <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.png" />
@@ -67,17 +67,13 @@
 
 <p>herokuにのっけるアプリを作るとき、ローカルではSQLite使ってたんだけどもう色々つらい。</p>
 
-<p>なんか整数で定義したカラムに文字列入るし！</p>
-
-<p>なんかオートインクリメントの設定の仕方がPostgreSQLと違うし！</p>
-
-<p>つらい。</p>
+<p>なんか整数で定義したカラムに文字列入るし。なんかオートインクリメントの設定の仕方がPostgreSQLと違うし。</p>
 
 <p>なのでもう、さっとPostgreSQLだけ入った仮想環境を作ってホスト側から繋げるようにしたい。</p>
 
 <h2 id="vagrantfileの設定:0c4c654ebb9e6ebcd35111a51a896918">Vagrantfileの設定</h2>
 
-<p>もう面倒なのはいやなのでCentOSとIPの設定だけやるよ。</p>
+<p>もう面倒なのはいやなのでCentOSとIPの設定だけやります。</p>
 
 <pre><code class="language-ruby"># -*- mode: ruby -*-
 # vi: set ft=ruby :
@@ -97,13 +93,11 @@ end
 [vagrant@localhost ~]$ sudo yum install postgresql-contrib
 </code></pre>
 
-<p>さくっと入るやん！</p>
-
-<h2 id="どうやって繋ぐのかな:0c4c654ebb9e6ebcd35111a51a896918">どうやって繋ぐのかな</h2>
+<h2 id="postgresqlの使い方がわからない:0c4c654ebb9e6ebcd35111a51a896918">PostgreSQLの使い方がわからない</h2>
 
 <p>もうほんとPostgreSQLの使い方がわかんない、MySQLばっか触ってたからわかんない。</p>
 
-<p>そもそもサービス名はなによ。</p>
+<p>そもそもサービス名はなんなんだろう。</p>
 
 <pre><code>[vagrant@localhost ~]$ service postgresql
 Usage: /etc/init.d/postgresql {start|stop|status|restart|condrestart|try-restart|reload|force-reload|initdb}
@@ -115,7 +109,7 @@ postmaster is stopped
                                                            [FAILED]
 </code></pre>
 
-<p><code>postgresql</code>か、でもなんか起動しないね。</p>
+<p><code>postgresql</code>か、でもなんか起動しないですね。</p>
 
 <p>なんか<code>initdb</code>とやらで初期化をしなきゃいけないらしい。</p>
 
@@ -157,15 +151,9 @@ or
     /usr/bin/pg_ctl -D /var/lib/pgsql/data -l logfile start
 </code></pre>
 
-<p>んん？<code>/usr/bin/postgres -D /var/lib/pgsql/data</code>で起動出来るの？</p>
-
-<p>でも<code>service</code>でやるよ！</p>
-
 <pre><code>[vagrant@localhost ~]$ sudo service postgresql start
 Starting postgresql service:                               [  OK  ]
 </code></pre>
-
-<p>出来るやん！</p>
 
 <p>ゲスト内で繋がるかな。</p>
 
@@ -176,7 +164,7 @@ Type &quot;help&quot; for help.
 postgres=# \q
 </code></pre>
 
-<p>出来るやん！</p>
+<p>いけますね。</p>
 
 <p>ホスト側からいけるかな。</p>
 
@@ -213,7 +201,7 @@ Type &quot;help&quot; for help.
 postgres=# \q
 </code></pre>
 
-<p>いけた！</p>
+<p>いけますね。</p>
 
 <p>そのうちshellにまとめてprovisioning出来るようにしよう・・・。</p>
 

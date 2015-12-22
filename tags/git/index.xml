@@ -19,9 +19,8 @@
 
 &lt;p&gt;ローカル環境でちょこちょこ作ってたやつを本番環境に載せたんだけど、それなりに解決してた環境依存が少し残ってて.gitignoreファイルをちゃんと書くことに。&lt;/p&gt;
 
-&lt;p&gt;しかし本番でcloneしてきたファイルを&lt;strong&gt;ワーキングには残してインデックスから消す&lt;/strong&gt;方法がわからない。&lt;/p&gt;
-
-&lt;p&gt;これだとインデックスからじゃなくワーキングツリーからも消えてしまう。&lt;/p&gt;
+&lt;p&gt;しかし本番でcloneしてきたファイルを&lt;strong&gt;ワーキングには残してインデックスから消す&lt;/strong&gt;方法がわからない。
+これだとインデックスからじゃなくワーキングツリーからも消えてしまう。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ git rm filename
 &lt;/code&gt;&lt;/pre&gt;
@@ -45,11 +44,10 @@
       <guid>http://yet.unresolved.xyz/blog/2014/09/27/could-not-force-push-on-git/</guid>
       <description>
 
-&lt;p&gt;typoを直すために&lt;code&gt;rebase -i&lt;/code&gt;やらをやってたんだけど、操作してたのがmasterブランチだったのでどうしてもforce pushがしたかった。&lt;/p&gt;
+&lt;p&gt;typoを直すために&lt;code&gt;rebase -i&lt;/code&gt;やらをやってたんだけど、操作してたのがmasterブランチだったのでどうしてもforce pushがしたかった。
+一人で使ってたリポジトリだしね。&lt;/p&gt;
 
-&lt;p&gt;一人で使ってたリポジトリだしね。&lt;/p&gt;
-
-&lt;p&gt;んだけど、&lt;code&gt;-f&lt;/code&gt;をつけても&lt;/p&gt;
+&lt;p&gt;だけど&lt;code&gt;-f&lt;/code&gt;をつけてもrejectされてしまう。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;To git://example.com/project1.git
  ! [rejected]        master -&amp;gt; master (non-fast-forward)
@@ -58,11 +56,9 @@ To prevent ... See the &#39;Note about
 fast-forwards&#39; section of &#39;git push --help&#39; for details.
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;こんな感じになってしまう・・・。&lt;/p&gt;
+&lt;h2 id=&#34;denynonfastforwardsプロパティ:c5ac499954fae3df373a4f81754a5ef2&#34;&gt;denyNonFastforwardsプロパティ&lt;/h2&gt;
 
-&lt;h2 id=&#34;解決:c5ac499954fae3df373a4f81754a5ef2&#34;&gt;解決&lt;/h2&gt;
-
-&lt;p&gt;gitリポジトリのconfigを見たらこんな項目が、&lt;/p&gt;
+&lt;p&gt;gitリポジトリのconfigを見たらこんな項目がありました。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;[receive]
     denyNonFastforwards = true
@@ -82,43 +78,23 @@ fast-forwards&#39; section of &#39;git push --help&#39; for details.
       <guid>http://yet.unresolved.xyz/blog/2014/09/20/git-on-proxy/</guid>
       <description>
 
-&lt;h2 id=&#34;事の発端:ca86a8bf870eabf283b4127081a3d388&#34;&gt;事の発端&lt;/h2&gt;
+&lt;p&gt;会社でもvimを使っててて、plugin管理は&lt;a href=&#34;https://github.com/Shougo/neobundle.vim&#34;&gt;neobundle.vim&lt;/a&gt;を使ってるんだけど、&lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt;で管理してる&lt;code&gt;.vimrc&lt;/code&gt;を落としてくるときにちょっと手間取った。&lt;/p&gt;
 
-&lt;p&gt;会社ではvimを使ってます。&lt;/p&gt;
+&lt;p&gt;まあ簡単に言うと社内から外に出るときはproxyを通るから、gitがうまいこと動いてくれなかったんですね。&lt;/p&gt;
 
-&lt;p&gt;plugin管理には&lt;a href=&#34;https://github.com/Shougo/neobundle.vim&#34;&gt;neobundle.vim&lt;/a&gt;使ってます。&lt;/p&gt;
+&lt;h2 id=&#34;gitconfigでなんとかなる:ca86a8bf870eabf283b4127081a3d388&#34;&gt;.gitconfigでなんとかなる&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;.vimrc&lt;/code&gt;は&lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt;で管理してます。&lt;/p&gt;
-
-&lt;p&gt;neobundle.vimで管理してるpluginは大抵のものがGitHub上で管理されてるから、インストールとかアップデートをするときはneobundle.vimがGitHubまで見に行ってくれるんですね。&lt;/p&gt;
-
-&lt;p&gt;ただ、当然社内はproxyを通していて、gitコマンドが通らない！&lt;/p&gt;
-
-&lt;p&gt;ていうかそもそも&lt;strong&gt;GitHubから&lt;code&gt;.vimrc&lt;/code&gt;を落としてくることすら出来ない！いいやzipで落とせ！&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;しかしpluginの導入を手でやるのはだるい・・・。&lt;/p&gt;
-
-&lt;p&gt;マジで？サクラエディタで頑張るしかない？&lt;/p&gt;
-
-&lt;p&gt;いやいやそんなことはない。&lt;/p&gt;
-
-&lt;h2 id=&#34;解決:ca86a8bf870eabf283b4127081a3d388&#34;&gt;解決&lt;/h2&gt;
-
-&lt;p&gt;じゃあこうしようってことで、&lt;code&gt;~/.gitconfig&lt;/code&gt;をこんな感じにしたのよ。&lt;/p&gt;
+&lt;p&gt;じゃあこうしようってことで、&lt;code&gt;~/.gitconfig&lt;/code&gt;をこんな感じにしたんですよ。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;[https]
         proxy = http://proxy.com:8080
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;ひとまず解決したんです。&lt;/p&gt;
+&lt;p&gt;ひとまず解決したんだけど、そしたら社内のgitが使えなくなった。&lt;/p&gt;
 
-&lt;p&gt;そしたら次は&lt;strong&gt;社内のgitに繋がらない！！&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;マジかよじゃあ&lt;code&gt;~/.gitconfig&lt;/code&gt;をちょこちょこ変えるのかよだせえよそれと思ったら既に解決してくれてる人がいた。&lt;/p&gt;
+&lt;p&gt;向き先によって切り替える方法は以下の記事にしっかりまとまってました。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://tanacasino.hatenablog.com/entry/2013/12/21/003750&#34;&gt;Git の http proxy に関するまとめ&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;めんどくさかったけど、個々のpluginの&lt;code&gt;config&lt;/code&gt;にだけproxyの記述を追加することで解決。&lt;/p&gt;
 </description>
     </item>
     

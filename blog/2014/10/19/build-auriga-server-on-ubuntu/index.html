@@ -65,9 +65,8 @@
 
       <div class="body" itemprop="articleBody">
 
-<p>今更だがAurigaの構築をやってみる。</p>
-
-<p>どこもWindows環境での構築方法しか載ってないような印象なんだけどそんなことないのかな。</p>
+<p>今更だがAurigaの構築をやってみる。
+どこもWindows環境での構築方法しか載ってないような印象なんだけどそんなことないのかな。</p>
 
 <h2 id="ソースのダウンロード:877a36750c93f6fdaf9ffc2de1905eb6">ソースのダウンロード</h2>
 
@@ -107,15 +106,12 @@ $ sudo apt-get install zlib1g-dev
 
 <h2 id="grfファイルの準備:877a36750c93f6fdaf9ffc2de1905eb6">grfファイルの準備</h2>
 
-<p>grfファイルを用意しなきゃいけなかったらしい。</p>
+<p>grfファイルを用意しなきゃいけなかったらしい。
+コンパイル前にすることはなかったな。Winならあるのかもね。</p>
 
-<p>コンパイル前にすることはなかったな。Winならあるのかもね。</p>
-
-<p>とりあえずgrfファイルはクライアント側にあるので、公式の<a href="http://ragnarokonline.gungho.jp/beginner/download.html">クライアントダウンロード</a>からダウンロード &amp; インストール。</p>
-
-<p>Ubuntuじゃインストール出来ないから、Windowsでインストールして持ってくんのだるかった・・・。</p>
-
-<p>持ってきたら<code>conf/grf-files.txt</code>に追記。</p>
+<p>とりあえずgrfファイルはクライアント側にあるので、公式の<a href="http://ragnarokonline.gungho.jp/beginner/download.html">クライアントダウンロード</a>からダウンロード &amp; インストール。
+Ubuntuじゃインストール出来ないから、Windowsでインストールして持ってくんのだるかった・・・。
+持ってきたら<code>conf/grf-files.txt</code>に追記。</p>
 
 <p>Aurigaと同じフォルダに入れたのでこんな感じに。</p>
 
@@ -126,20 +122,15 @@ $ sudo apt-get install zlib1g-dev
 
 <h2 id="サーバ起動:877a36750c93f6fdaf9ffc2de1905eb6">サーバ起動</h2>
 
-<p>Linuxの場合起動は<code>auriga-start</code>を使うみたい。</p>
-
-<p>解凍直後は実行権限がないので<code>sudo chmod 744 auriga-start</code>をしとく必要あり。</p>
+<p>Linuxの場合起動は<code>auriga-start</code>を使うみたい。
+解凍直後は実行権限がないので<code>sudo chmod 744 auriga-start</code>をしとく必要あり。</p>
 
 <p>で、<code>./auriga-start start</code>で起動。</p>
 
 <pre><code class="language-sh">chrif: connection to the char server was closed. kick all chars
 </code></pre>
 
-<p>そしてエラー。</p>
-
-<p>ここで一日詰まった。</p>
-
-<p>ログをよく見てみるとこんな感じの出力が。</p>
+<p>そしてエラー。ここで一日詰まった。ログをよく見てみるとこんな感じの出力が。</p>
 
 <pre><code class="language-sh">connect login server error : 3
 </code></pre>
@@ -155,9 +146,8 @@ $ sudo apt-get install zlib1g-dev
 <pre><code class="language-sh">0 s1 p1 - S 0 0 @
 </code></pre>
 
-<p>ちなみに詰まったのは、ここに追記するフォーマットが全然わからなかったから笑</p>
-
-<p>tsvになってるみたいなので、タブ区切りで追加しないと読み込まれません。</p>
+<p>ちなみに詰まったのは、ここに追記するフォーマットが全然わからなかったから。
+tsvになってるみたいなので、タブ区切りで追加しないと読み込まれません。</p>
 
 <h2 id="httpdに接続してみる:877a36750c93f6fdaf9ffc2de1905eb6">httpdに接続してみる</h2>
 

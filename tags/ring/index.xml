@@ -15,11 +15,10 @@
       <pubDate>Sun, 22 Mar 2015 19:23:27 +0900</pubDate>
       
       <guid>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</guid>
-      <description>&lt;p&gt;ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、&lt;/p&gt;
+      <description>&lt;p&gt;ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、
+デフォルトだとPOSTリクエストした時にCSRFトークンチェックが入るようになっててたまに困る。&lt;/p&gt;
 
-&lt;p&gt;デフォルトだとPOSTリクエストした時にCSRFトークンチェックが入るようになってると思う。&lt;/p&gt;
-
-&lt;p&gt;で、そのトークンの作成の仕方を毎回調べてるのでメモっときたい。&lt;/p&gt;
+&lt;p&gt;なのでトークンの生成方法をメモ。&lt;/p&gt;
 
 &lt;p&gt;チェックの処理は&lt;code&gt;site-defaults&lt;/code&gt;の、&lt;/p&gt;
 
@@ -27,7 +26,7 @@
   (wrap-defaults app-routes site-defaults))
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;code&gt;:security&lt;/code&gt;のところで設定出来る。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;:security&lt;/code&gt;のところで設定出来ます。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def site-defaults
   &amp;quot;A default configuration for a browser-accessible website, based on current
@@ -49,7 +48,7 @@
                :content-types          true}})
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;これを&lt;code&gt;false&lt;/code&gt;にしちゃえばもちろんCSRFのチェックはされなくなるんだけど、まあ普通はするべきだよね。&lt;/p&gt;
+&lt;p&gt;これを&lt;code&gt;false&lt;/code&gt;にしちゃえばもちろんCSRFのチェックはされなくなるんだけど、まあ普通はするべきですよね。&lt;/p&gt;
 
 &lt;p&gt;トークンの生成の仕方はこう。&lt;/p&gt;
 

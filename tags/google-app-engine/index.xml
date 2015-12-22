@@ -19,9 +19,8 @@
 
 &lt;p&gt;ひさびさに&lt;a href=&#34;https://cloud.google.com/appengine/&#34;&gt;Google App Engine&lt;/a&gt;を使おうとしたらGoogle Cloud Platformだかなんだかでいろいろと変わってて戸惑った。&lt;/p&gt;
 
-&lt;p&gt;何かっていうと3rd Partyのライブラリを使うときにどうやるんだっけなっていうこと。&lt;/p&gt;
-
-&lt;p&gt;昔は&lt;code&gt;requirements.txt&lt;/code&gt;でうまいことやってくれなかったけ？違う？&lt;/p&gt;
+&lt;p&gt;何かというと、3rd Partyのライブラリを使うときにどうやるんだっけなっていうこと。
+昔は&lt;code&gt;requirements.txt&lt;/code&gt;でうまいことやってくれなかったけ？違う？&lt;/p&gt;
 
 &lt;p&gt;普通にBeautifulSoupとか使った気するんだけど、どうやってたんだろうか・・・。&lt;/p&gt;
 
@@ -39,7 +38,8 @@
 
 &lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine&#34;&gt;How to include third party Python libraries in Google App Engine? - Stack Overflow&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;でもずいぶん原始的な方法で、libディレクトリを作ってそこに入れなよって見解らしい。&lt;/p&gt;
+&lt;p&gt;でもずいぶん原始的な方法で、libディレクトリを作ってそこに入れなよって見解らしい。
+あれ？やっぱこれ前は勝手にやってくれてなかった？&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;default git:(master)$ tree -L 2
 .
@@ -83,11 +83,7 @@ sys.path.insert(0, &#39;lib&#39;)
 
 &lt;h2 id=&#34;googleによるドメインの確認:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;Googleによるドメインの確認&lt;/h2&gt;
 
-&lt;p&gt;ドメインを持っていない人は先に取得しちゃってね。&lt;/p&gt;
-
-&lt;p&gt;ちなみに僕はGMOさん(&lt;a href=&#34;http://www.onamae.com/&#34;&gt;お名前.com&lt;/a&gt;)で取得しました。&lt;/p&gt;
-
-&lt;p&gt;ていうことで以下の手順にそってやっていきます。&lt;/p&gt;
+&lt;p&gt;以下の手順にそってやっていきます。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://cloud.google.com/appengine/docs/domain&#34;&gt;Using a Custom Domain - Google App Engine Google Cloud Platform&lt;/a&gt;&lt;/p&gt;
 
@@ -107,21 +103,19 @@ sys.path.insert(0, &#39;lib&#39;)
 
 &lt;p&gt;TXTレコードの追加は、お名前.comであれば&lt;a href=&#34;http://www.onamae.com/navi/domain.html&#34;&gt;ドメインNavi&lt;/a&gt;から&lt;/p&gt;
 
-&lt;ul&gt;
+&lt;ol&gt;
 &lt;li&gt;ドメイン設定&lt;/li&gt;
 &lt;li&gt;DNS関連機能の設定&lt;/li&gt;
 &lt;li&gt;DNSレコード設定を利用する&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;でここに入力すればOK。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34; class=&#34;image&#34; alt=&#34;input_txt&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;TYPEはTXTにしてVALUEにさっきのテキストを入力。&lt;/p&gt;
-
-&lt;p&gt;場所にもよるけど少し待てば反映されるので、それまでGoogle側の画面で確認ボタンを何度か押してみる。&lt;/p&gt;
-
-&lt;p&gt;反映されてたら確認が通るはず。&lt;/p&gt;
+&lt;p&gt;TYPEはTXTにしてVALUEにさっきのテキストを入力。
+場所にもよるけど少し待てば反映されるので、それまでGoogle側の画面で確認ボタンを何度か押してみる。
+反映されてたら確認が通るはず。&lt;/p&gt;
 
 &lt;h2 id=&#34;ドメインの選択:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;ドメインの選択&lt;/h2&gt;
 
@@ -133,9 +127,8 @@ sys.path.insert(0, &#39;lib&#39;)
 
 &lt;h2 id=&#34;aレコードとaaaaレコードの追加:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;AレコードとAAAAレコードの追加&lt;/h2&gt;
 
-&lt;p&gt;最後はまたDNSレコードの追加。&lt;/p&gt;
-
-&lt;p&gt;ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。&lt;/p&gt;
+&lt;p&gt;最後はまたDNSレコードの追加。
+ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34; class=&#34;image&#34; alt=&#34;step3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 

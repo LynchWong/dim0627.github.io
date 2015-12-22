@@ -36,7 +36,7 @@
       <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz"/>
       <meta itemprop="dateModified" content="2015-02-14T19:30:22&#43;09:00">
       <meta itemprop="headline" content="Apigility &#43; React.jsでタスク管理ツールを作ってみる">
-      <meta itemprop="description" content="これに行ってきました。 Zend 社技術者による最近の PHP 関連の取り組みご紹介 - Zendイベント管理 | Doorkeeper 英語辛かった。 PHP7やらZ Rayやらまあ気にな">
+      <meta itemprop="description" content="これに行ってきました。 Zend 社技術者による最近の PHP 関連の取り組みご紹介 - Zendイベント管理 | Doorkeeper 英語辛かった。PHP7やらZ Rayやらまあ気にな">
       <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/">
       <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
         <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.png" />
@@ -69,23 +69,16 @@
 
 <p><a href="http://zendevent.doorkeeper.jp/events/19917">Zend 社技術者による最近の PHP 関連の取り組みご紹介 - Zendイベント管理 | Doorkeeper</a></p>
 
-<p>英語辛かった。</p>
-
-<p>PHP7やらZ Rayやらまあ気になるものはそれなりにあったんだけど、</p>
-
-<p>その中でも触ってみようかなと思えるくらい興味を持てた<a href="https://apigility.org/">Apigility</a>を触ってみようと思います。</p>
+<p>英語辛かった。PHP7やらZ Rayやらまあ気になるものはそれなりにあったんだけど、その中でも触ってみようかなと思えるくらい興味を持てた<a href="https://apigility.org/">Apigility</a>を触ってみようと思います。</p>
 
 <p>ついでなので使ってみたかったReact.jsも導入してみる。</p>
 
 <h2 id="apigility:a8f13c6c06505842468ef355c1de93c5">Apigility？</h2>
 
-<p>API構築に特化したフレームワークらしい。</p>
+<p>API構築に特化したフレームワークらしい。プレゼンテーションレイヤを完全に分離したアーキテクチャでの利用を想定しているんだと思う。</p>
 
-<p>プレゼンテーションレイヤを完全に分離したアーキテクチャでの利用を想定しているんだと思う。</p>
-
-<p>何が強いかって、DBさえ用意してしまえば後はGUIから操作するだけでAPIが作れてしまう。</p>
-
-<p>DBも多分メジャーどころは大抵使える(と思う)し、APIもRPCはもちろん、RESTfulな設計にもバッチリ対応してるらしい。</p>
+<p>何が強いかって、DBさえ用意してしまえば後はGUIから操作するだけでAPIが作れてしまう。
+DBも多分メジャーどころは大抵使える(と思う)し、APIもRPCはもちろん、RESTfulな設計にもバッチリ対応してるらしい。</p>
 
 <p>今回は勉強も兼ねて、簡単なタスク管理ツールを作ってみます。</p>
 
@@ -96,21 +89,16 @@
 <pre><code>curl -sS https://apigility.org/install | php
 </code></pre>
 
-<p>サーバを再度起動する場合は<code>php -S localhost:8888 -t public public/index.php</code>とかやればOK。</p>
-
-<p>画面を開くとこんな感じのが出てくる。</p>
+<p>サーバを再度起動する場合は<code>php -S localhost:8888 -t public public/index.php</code>とかやればOK。
+画面を開くとこんな感じのが出てくる。</p>
 
 <p><a href="/images/2015-02-14/apigility_top.png"><img src="/images/2015-02-14/apigility_top.png" class="image" alt="apigility_top"></a></p>
 
-<p>ロゴがかわいいね。</p>
-
-<p>ここからAPIの追加やデータベース接続の設定やらが出来ます。</p>
+<p>ロゴがかわいいね。ここからAPIの追加やデータベース接続の設定やらが出来ます。</p>
 
 <h2 id="データベースの準備:a8f13c6c06505842468ef355c1de93c5">データベースの準備</h2>
 
-<p>適当なものなので、SQLiteでやっちゃう。</p>
-
-<p>テーブルはこんな感じで、名前と完了/未完了が持てるだけにしよう。</p>
+<p>適当なものなので、SQLiteでやっちゃう。テーブルはこんな感じで、名前と完了/未完了が持てるだけにしよう。</p>
 
 <pre><code class="language-sql">create table tasks(id integer primary key, name varchar(20), finished integer);
 </code></pre>
@@ -127,23 +115,19 @@
 
 <h2 id="apiを追加する:a8f13c6c06505842468ef355c1de93c5">APIを追加する</h2>
 
-<p><code>APIs</code>の<code>Create New API</code>からAPIを追加する。</p>
-
-<p>今回はTasksという名前で作成した。</p>
+<p><code>APIs</code>の<code>Create New API</code>からAPIを追加する。今回はTasksという名前で作成した。</p>
 
 <p><a href="/images/2015-02-14/create_api.png"><img src="/images/2015-02-14/create_api.png" class="image" alt="create_api"></a></p>
 
 <p>粒度がわかりづらいけど、ここで作ったAPIに対して個々のサービスを追加していく。</p>
 
-<p>大分類みたいなものだと捉えればいいのかな？</p>
+<p>大分類みたいなものだと捉えればいいのかな。</p>
 
 <h2 id="サービスを追加する:a8f13c6c06505842468ef355c1de93c5">サービスを追加する</h2>
 
 <p>さっき作ったTasksAPIに、データベースの<code>tasks</code>テーブルとRESTで紐づくサービスを追加する。</p>
 
-<p>サービスはRESTとRPCから選ぶことが出来て、</p>
-
-<p>RPCを選ぶと自動生成されたPHPのコードに自分で処理を書いていく感じになるみたい。</p>
+<p>サービスはRESTとRPCから選ぶことが出来て、RPCを選ぶと自動生成されたPHPのコードに自分で処理を書いていく感じになるみたい。</p>
 
 <p>んで指定したURLを叩くとその処理が呼ばれる、って感じ。</p>
 
@@ -157,19 +141,15 @@
 
 <p><a href="/images/2015-02-14/def_service.png"><img src="/images/2015-02-14/def_service.png" class="image" alt="def_service"></a></p>
 
-<p>接続できるか試してみよう。</p>
-
-<p>データがないので、まずはPOSTで格納してみる。</p>
+<p>接続できるか試してみましょう。データがないので、まずはPOSTで格納してみる。</p>
 
 <p><a href="/images/2015-02-14/post_tasks.png"><img src="/images/2015-02-14/post_tasks.png" class="image" alt="post_tasks"></a></p>
 
-<p>いけてるっぽい。</p>
-
-<p>取得は？</p>
+<p>いけてるっぽい。取得は？</p>
 
 <p><a href="/images/2015-02-14/get_tasks.png"><img src="/images/2015-02-14/get_tasks.png" class="image" alt="get_tasks"></a></p>
 
-<p>おお！取れる！</p>
+<p>取れますね。</p>
 
 <p>もちろんSQLite側にも、</p>
 
@@ -181,15 +161,9 @@
 
 <h2 id="ビューを作る:a8f13c6c06505842468ef355c1de93c5">ビューを作る</h2>
 
-<p>サーバサイドがあまりにもサクッと終わっちゃったな・・・。</p>
-
 <p>後は画面側を生のHTMLにして、取得と格納は全部JSに任せます。</p>
 
-<p>つってもここはあんまり説明してもしょうがないのでSSとコードだけ。</p>
-
-<p>そうですめんどくさくなりました。</p>
-
-<p>表示はこんな感じで、</p>
+<p>つってもここはあんまり説明してもしょうがないのでSSとコードだけ。表示はこんな感じで、</p>
 
 <p><a href="/images/2015-02-14/view.png"><img src="/images/2015-02-14/view.png" class="image" alt="view"></a></p>
 
@@ -310,27 +284,23 @@ $(&quot;#task-post&quot;).on(&quot;click&quot;, function() {
 });
 </code></pre>
 
-<p>React.js気軽に手出したけど、まじでむずい。</p>
+<p>React.js気軽に手出したけど、まじでむずいですね。</p>
 
 <p>一人で書いてもこんだけぐちゃぐちゃするんだから、複数人でやるときはマジで気をつけないとすごいことになりそう。</p>
 
 <h2 id="まとめ:a8f13c6c06505842468ef355c1de93c5">まとめ</h2>
 
-<p>Apigility、すごく楽。</p>
+<p>Apigility、すごく楽。
+React.jsで心折れかけたけどそれはApigilityには関係ないわけで、サーバサイドの実装は本当にさくっと終わりました。</p>
 
-<p>React.jsで心折れかけたけどそれはApigilityには関係ないわけで、サーバサイドの実装は本当にさくっと終わりました。</p>
+<p>ただ、ドキュメントが致命的なほど少ないと思いました。見逃してるだけなのかな。
+Getting Startedとかはしっかり書かれてるから導入は楽なんだけど、少しでも発展的なものになると何処にも載ってない。</p>
 
-<p>ただ、ドキュメントが致命的なほど少ないよ。</p>
+<p>さらにユーザも少ないから情報が拾えなくて、これをプロダクトで使うとなると辛い場面が多いかなと思った。
+公式のドキュメントは結構ひどくて、2013年からの開発なのに8割くらい工事中だったりする。</p>
 
-<p>Getting Startedとかはしっかり書かれてるから導入は楽なんだけど、少しでも発展的なものになると何処にも載ってない。</p>
-
-<p>さらにユーザも少ないから情報が拾えなくて、これをプロダクトで使うとなると辛い場面が多いかなと思った。</p>
-
-<p>公式のドキュメントは結構ひどくて、2013年からの開発なのに8割くらい工事中だったりする。</p>
-
-<p>だから実際にこれを使いますか？ってなると、「まあ個人利用では使うかもしれませんね」って答えになってしまうかなあ。</p>
-
-<p>でもやっぱりこの楽さは魅力なので、今後整備されていくことに期待。</p>
+<p>だから実際にこれを使いますか？ってなると、「まあ個人利用では使うかもしれませんね」って答えになってしまうかなあ。
+でもやっぱりこの楽さは魅力なので、今後整備されていくことに期待。</p>
 
 <p>React.jsはもう少ししっかり勉強します。</p>
 </div>

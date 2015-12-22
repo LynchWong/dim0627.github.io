@@ -17,19 +17,13 @@
       <guid>http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/</guid>
       <description>
 
-&lt;p&gt;Clojureを始めて一週間ほどになりまして。&lt;/p&gt;
-
-&lt;p&gt;ようやくWebアプリ開発に着手しました。&lt;/p&gt;
+&lt;p&gt;Clojureを始めて一週間ほどになりまして、ようやくWebアプリ開発に着手しました。&lt;/p&gt;
 
 &lt;p&gt;というわけで開発環境を整えます。&lt;/p&gt;
 
 &lt;h2 id=&#34;lein-haml-sassの導入:aea6c6aa18698925cad2fc33bce27d8b&#34;&gt;lein-haml-sassの導入&lt;/h2&gt;
 
-&lt;p&gt;まったく贅沢な名前してんな！&lt;/p&gt;
-
-&lt;p&gt;いえ、&lt;a href=&#34;https://github.com/rtircher/lein-haml-sass&#34;&gt;lein-haml-sass&lt;/a&gt;は素晴らしいプラグインです。&lt;/p&gt;
-
-&lt;p&gt;これを使うとなんとhamlのコンパイルやsass/scssのコンパイルをやってくれます。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/rtircher/lein-haml-sass&#34;&gt;lein-haml-sass&lt;/a&gt;はhamlのコンパイルやsass/scssのコンパイルをやってくれます。&lt;/p&gt;
 
 &lt;p&gt;ていうか&lt;strong&gt;sassとscssの違い&lt;/strong&gt;ってなんだっけ？真面目に考えるとわかんないな。&lt;/p&gt;
 
@@ -87,13 +81,7 @@
 
 &lt;h2 id=&#34;コンパイルする:aea6c6aa18698925cad2fc33bce27d8b&#34;&gt;コンパイルする&lt;/h2&gt;
 
-&lt;p&gt;さっそく&lt;code&gt;lein sass once&lt;/code&gt;してみるも、何も起きない！&lt;/p&gt;
-
-&lt;p&gt;あっ、sassとscssでタスクが違う。&lt;/p&gt;
-
-&lt;p&gt;ていうかsassフォルダにscss置くのってなんか違う気がしてきた！あとで名前変えよう。&lt;/p&gt;
-
-&lt;p&gt;というわけで、&lt;code&gt;lein scss once&lt;/code&gt;で無事動きました。&lt;/p&gt;
+&lt;p&gt;sassとscssでタスクが違うようなので、間違えないように注意。&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;lein scss auto&lt;/code&gt;で変更監視できるっぽい。&lt;/p&gt;
 </description>

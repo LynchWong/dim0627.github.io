@@ -879,11 +879,10 @@ Ubuntu 12.04、12.10、13.04、13.10、14.04、14.10&lt;/p&gt;
 
 &lt;h2 id=&#34;フォーカスアウトしたらサジェストを消したい:1be3a17c6bd3affece21cbd510505d7a&#34;&gt;フォーカスアウトしたらサジェストを消したい&lt;/h2&gt;
 
-&lt;p&gt;入力欄もしくはサジェストからフォーカスアウトした時はサジェストを消したいじゃん。&lt;/p&gt;
+&lt;p&gt;入力欄もしくはサジェストからフォーカスアウトした時はサジェストを消したい。
+でもフォーカスアウトした先にフォーカスしたものが入力欄もしくはサジェストだったらそれは消したくない。&lt;/p&gt;
 
-&lt;p&gt;でもフォーカスアウトした先にフォーカスしたものが入力欄もしくはサジェストだったらそれは消したくないじゃん。&lt;/p&gt;
-
-&lt;p&gt;だからこんなコードを書いた。&lt;/p&gt;
+&lt;p&gt;だからこんなコードを書きました。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;search-text&amp;quot;&amp;gt;
 &amp;lt;div id=&amp;quot;suggest-list&amp;quot;&amp;gt;
@@ -903,15 +902,13 @@ $(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() 
 &amp;lt;/script&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;実際はこの処理を入力だけじゃなくアンカーにも適用したんだけど面倒だから省略。&lt;/p&gt;
-
-&lt;p&gt;しかしこれだと&lt;code&gt;if&lt;/code&gt;の中には入らずサジェストの非表示処理が通ってしまう・・・。&lt;/p&gt;
+&lt;p&gt;実際はこの処理を入力だけじゃなくアンカーにも適用したんだけど面倒だから省略。
+しかしこれだと&lt;code&gt;if&lt;/code&gt;の中には入らずサジェストの非表示処理が通ってしまう・・・。&lt;/p&gt;
 
 &lt;h2 id=&#34;フォーカス処理は一度ブラウザに返してあげる:1be3a17c6bd3affece21cbd510505d7a&#34;&gt;フォーカス処理は一度ブラウザに返してあげる&lt;/h2&gt;
 
-&lt;p&gt;どうやらJavaScriptの処理が進んでる間はフォーカス処理が行われないらしい。&lt;/p&gt;
-
-&lt;p&gt;なので&lt;strong&gt;一度ブラウザに処理が返るような処理&lt;/strong&gt;を挟んでやる必要がある。&lt;/p&gt;
+&lt;p&gt;どうやらJavaScriptの処理が進んでる間はフォーカス処理が行われないらしい。
+なので&lt;strong&gt;一度ブラウザに処理が返るような処理&lt;/strong&gt;を挟んでやる必要がある。&lt;/p&gt;
 
 &lt;p&gt;こんなかんじに。&lt;/p&gt;
 
@@ -952,35 +949,28 @@ $(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() 
 
 &lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-06-20/theme_tn.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-06-20/theme_tn.png&#34; class=&#34;image&#34; alt=&#34;theme_tn&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;トップの最新4記事は2カラム、それ以降は4カラムで表示するようにしてる。もちろんレスポンシブで。&lt;/p&gt;
+&lt;p&gt;トップの最新4記事は2カラム、それ以降は4カラムで表示するようにしてる。&lt;/p&gt;
 
-&lt;p&gt;前はPost一覧とかの画面もあったけど、そもそも必要無いような気がして色々削った。&lt;/p&gt;
+&lt;p&gt;前はPost一覧とかの画面もあったけど、そもそも必要無いような気がして色々削った。
+なので今回はシンプルにトップ、記事詳細、タグ別記事一覧の3ページだけ。&lt;/p&gt;
 
-&lt;p&gt;なので今回はシンプルにトップ、記事詳細、タグ別記事一覧の3ページだけ。&lt;/p&gt;
-
-&lt;p&gt;トップとタグ別記事一覧は同じテンプレートを使ってるから、少し冗長になってしまったなあ。&lt;/p&gt;
-
-&lt;p&gt;Hugoのテンプレート構成が今だによくわかってないから、共通化とかがうまく出来ない・・・。&lt;/p&gt;
+&lt;p&gt;トップとタグ別記事一覧は同じテンプレートを使ってるから、少し冗長になってしまった気はする。
+Hugoのテンプレート構成が今だによくわかってないから、共通化とかがうまく出来ない・・・。&lt;/p&gt;
 
 &lt;h2 id=&#34;工夫したこと:b3f0c0f315f1fbc2ee8323461148b3d4&#34;&gt;工夫したこと&lt;/h2&gt;
 
-&lt;p&gt;前にテーマを作って思ったんだけど、Hugoの強みは各テーマをOverride出来ることなんだよね。&lt;/p&gt;
-
-&lt;p&gt;だからそれ前提で書かないと、Overrideしたいのは一部でも、ファイルまるごとコピるはめになっちゃう。&lt;/p&gt;
+&lt;p&gt;前にテーマを作って思ったんだけど、Hugoの強みは各テーマをOverride出来ることだと思ってます。
+だからそれ前提で書かないと、Overrideしたいのは一部でも、ファイルまるごとコピるはめになっちゃう。&lt;/p&gt;
 
 &lt;p&gt;前はそれでもう何がなんだかわからなくなったので、今回はそれを避けようとした。&lt;/p&gt;
 
-&lt;p&gt;何をしたかというと、空っぽのテンプレートファイルを最初からいろいろな場所に設置しておくことにした。&lt;/p&gt;
-
-&lt;p&gt;Overrideしたい人はこのファイルを各自のディレクトリにコピーして編集すればいいし、&lt;/p&gt;
-
-&lt;p&gt;Overrideしない人はほっとけば影響もない。&lt;/p&gt;
+&lt;p&gt;何をしたかというと、空っぽのテンプレートファイルを最初からいろいろな場所に設置しておくことにした。
+Overrideしたい人はこのファイルを各自のディレクトリにコピーして編集すればいいし、Overrideしない人はほっとけば影響もない。&lt;/p&gt;
 
 &lt;h2 id=&#34;まとめ:b3f0c0f315f1fbc2ee8323461148b3d4&#34;&gt;まとめ&lt;/h2&gt;
 
-&lt;p&gt;数時間でざーっと作ったので、最後のほうはCSSもぶれまくったなあ。&lt;/p&gt;
-
-&lt;p&gt;あとReadmeとかいろいろ書けてない。&lt;/p&gt;
+&lt;p&gt;数時間でざーっと作ったので、最後のほうはCSSもぶれまくったのは反省。
+あとReadmeとかいろいろ書けてない。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/spf13/hugoThemes&#34;&gt;spf13/hugoThemes&lt;/a&gt;にプルリクも送らねば・・・。&lt;/p&gt;
 </description>

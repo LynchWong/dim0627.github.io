@@ -36,7 +36,7 @@
       <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz"/>
       <meta itemprop="dateModified" content="2014-10-23T00:00:00&#43;00:00">
       <meta itemprop="headline" content="Google app engineでカスタムドメインを使う">
-      <meta itemprop="description" content="簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。 Googleによるドメインの確認 ドメインを持っていない人は先に取得しちゃってね">
+      <meta itemprop="description" content="簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。 Googleによるドメインの確認 以下の手順にそってやっていきます。 Using a Custom Domain - Google">
       <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/">
       <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
         <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.png" />
@@ -69,11 +69,7 @@
 
 <h2 id="googleによるドメインの確認:f29605b0f60814e1a345ce000c7a37f6">Googleによるドメインの確認</h2>
 
-<p>ドメインを持っていない人は先に取得しちゃってね。</p>
-
-<p>ちなみに僕はGMOさん(<a href="http://www.onamae.com/">お名前.com</a>)で取得しました。</p>
-
-<p>ていうことで以下の手順にそってやっていきます。</p>
+<p>以下の手順にそってやっていきます。</p>
 
 <p><a href="https://cloud.google.com/appengine/docs/domain">Using a Custom Domain - Google App Engine Google Cloud Platform</a></p>
 
@@ -93,21 +89,19 @@
 
 <p>TXTレコードの追加は、お名前.comであれば<a href="http://www.onamae.com/navi/domain.html">ドメインNavi</a>から</p>
 
-<ul>
+<ol>
 <li>ドメイン設定</li>
 <li>DNS関連機能の設定</li>
 <li>DNSレコード設定を利用する</li>
-</ul>
+</ol>
 
 <p>でここに入力すればOK。</p>
 
 <p><a href="/images/2014-10-23/input_txt.png"><img src="/images/2014-10-23/input_txt.png" class="image" alt="input_txt"></a></p>
 
-<p>TYPEはTXTにしてVALUEにさっきのテキストを入力。</p>
-
-<p>場所にもよるけど少し待てば反映されるので、それまでGoogle側の画面で確認ボタンを何度か押してみる。</p>
-
-<p>反映されてたら確認が通るはず。</p>
+<p>TYPEはTXTにしてVALUEにさっきのテキストを入力。
+場所にもよるけど少し待てば反映されるので、それまでGoogle側の画面で確認ボタンを何度か押してみる。
+反映されてたら確認が通るはず。</p>
 
 <h2 id="ドメインの選択:f29605b0f60814e1a345ce000c7a37f6">ドメインの選択</h2>
 
@@ -119,9 +113,8 @@
 
 <h2 id="aレコードとaaaaレコードの追加:f29605b0f60814e1a345ce000c7a37f6">AレコードとAAAAレコードの追加</h2>
 
-<p>最後はまたDNSレコードの追加。</p>
-
-<p>ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。</p>
+<p>最後はまたDNSレコードの追加。
+ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。</p>
 
 <p><a href="/images/2014-10-23/step3.png"><img src="/images/2014-10-23/step3.png" class="image" alt="step3"></a></p>
 

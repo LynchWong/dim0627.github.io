@@ -27,35 +27,28 @@
 
 &lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-06-20/theme_tn.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-06-20/theme_tn.png&#34; class=&#34;image&#34; alt=&#34;theme_tn&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;トップの最新4記事は2カラム、それ以降は4カラムで表示するようにしてる。もちろんレスポンシブで。&lt;/p&gt;
+&lt;p&gt;トップの最新4記事は2カラム、それ以降は4カラムで表示するようにしてる。&lt;/p&gt;
 
-&lt;p&gt;前はPost一覧とかの画面もあったけど、そもそも必要無いような気がして色々削った。&lt;/p&gt;
+&lt;p&gt;前はPost一覧とかの画面もあったけど、そもそも必要無いような気がして色々削った。
+なので今回はシンプルにトップ、記事詳細、タグ別記事一覧の3ページだけ。&lt;/p&gt;
 
-&lt;p&gt;なので今回はシンプルにトップ、記事詳細、タグ別記事一覧の3ページだけ。&lt;/p&gt;
-
-&lt;p&gt;トップとタグ別記事一覧は同じテンプレートを使ってるから、少し冗長になってしまったなあ。&lt;/p&gt;
-
-&lt;p&gt;Hugoのテンプレート構成が今だによくわかってないから、共通化とかがうまく出来ない・・・。&lt;/p&gt;
+&lt;p&gt;トップとタグ別記事一覧は同じテンプレートを使ってるから、少し冗長になってしまった気はする。
+Hugoのテンプレート構成が今だによくわかってないから、共通化とかがうまく出来ない・・・。&lt;/p&gt;
 
 &lt;h2 id=&#34;工夫したこと:b3f0c0f315f1fbc2ee8323461148b3d4&#34;&gt;工夫したこと&lt;/h2&gt;
 
-&lt;p&gt;前にテーマを作って思ったんだけど、Hugoの強みは各テーマをOverride出来ることなんだよね。&lt;/p&gt;
-
-&lt;p&gt;だからそれ前提で書かないと、Overrideしたいのは一部でも、ファイルまるごとコピるはめになっちゃう。&lt;/p&gt;
+&lt;p&gt;前にテーマを作って思ったんだけど、Hugoの強みは各テーマをOverride出来ることだと思ってます。
+だからそれ前提で書かないと、Overrideしたいのは一部でも、ファイルまるごとコピるはめになっちゃう。&lt;/p&gt;
 
 &lt;p&gt;前はそれでもう何がなんだかわからなくなったので、今回はそれを避けようとした。&lt;/p&gt;
 
-&lt;p&gt;何をしたかというと、空っぽのテンプレートファイルを最初からいろいろな場所に設置しておくことにした。&lt;/p&gt;
-
-&lt;p&gt;Overrideしたい人はこのファイルを各自のディレクトリにコピーして編集すればいいし、&lt;/p&gt;
-
-&lt;p&gt;Overrideしない人はほっとけば影響もない。&lt;/p&gt;
+&lt;p&gt;何をしたかというと、空っぽのテンプレートファイルを最初からいろいろな場所に設置しておくことにした。
+Overrideしたい人はこのファイルを各自のディレクトリにコピーして編集すればいいし、Overrideしない人はほっとけば影響もない。&lt;/p&gt;
 
 &lt;h2 id=&#34;まとめ:b3f0c0f315f1fbc2ee8323461148b3d4&#34;&gt;まとめ&lt;/h2&gt;
 
-&lt;p&gt;数時間でざーっと作ったので、最後のほうはCSSもぶれまくったなあ。&lt;/p&gt;
-
-&lt;p&gt;あとReadmeとかいろいろ書けてない。&lt;/p&gt;
+&lt;p&gt;数時間でざーっと作ったので、最後のほうはCSSもぶれまくったのは反省。
+あとReadmeとかいろいろ書けてない。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/spf13/hugoThemes&#34;&gt;spf13/hugoThemes&lt;/a&gt;にプルリクも送らねば・・・。&lt;/p&gt;
 </description>
@@ -69,11 +62,9 @@
       <guid>http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/</guid>
       <description>
 
-&lt;p&gt;元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。&lt;/p&gt;
-
-&lt;p&gt;でも僕はデザイナーじゃないから、あんまりがっつりやるのもやだよね。&lt;/p&gt;
-
-&lt;p&gt;てことで元のclassicテーマをパクって作ろう。&lt;/p&gt;
+&lt;p&gt;元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。
+でも僕はデザイナーじゃないから、あんまりがっつりやるのもやだよね。
+てことで元のclassicテーマをパクって作ろう。&lt;/p&gt;
 
 &lt;p&gt;Octopressから移行してしまったので、スクリーンショットだけ載せとく。&lt;/p&gt;
 
@@ -81,11 +72,7 @@
 
 &lt;h2 id=&#34;テーマの変え方:04d1c6053c5be0425bfb88e610b78a00&#34;&gt;テーマの変え方&lt;/h2&gt;
 
-&lt;p&gt;そもそも変え方すら知らない。&lt;/p&gt;
-
-&lt;p&gt;てことで調べた。&lt;/p&gt;
-
-&lt;p&gt;どうやらここにテーマ単位のディレクトリが配置されるらしい。&lt;/p&gt;
+&lt;p&gt;そもそも変え方もよく知らないんだけど、どうやらここにテーマ単位のディレクトリが配置されるらしい。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;octopress git:(source)$ ls .themes
 classic
@@ -95,36 +82,15 @@ classic
 
 &lt;h2 id=&#34;テーマの構成:04d1c6053c5be0425bfb88e610b78a00&#34;&gt;テーマの構成&lt;/h2&gt;
 
-&lt;p&gt;作るにも、テーマの定義に何が必要かがわからぬ。&lt;/p&gt;
-
-&lt;p&gt;classicの中を見てみよう。&lt;/p&gt;
+&lt;p&gt;作るにも、テーマの定義に何が必要かがわからない。
+classicの中を見てみよう。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;octopress git:(source)$ ls .themes/classic
 sass   source
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;んん、シンプル。&lt;/p&gt;
-
-&lt;p&gt;察するに&lt;code&gt;sass&lt;/code&gt;がスタイル系で&lt;code&gt;source&lt;/code&gt;がテンプレート系なのかな？&lt;/p&gt;
-
-&lt;p&gt;別にページレイアウトを変えたいとか、そんなたいそうなことは考えてないので、sass内をいじるだけでよさそう。&lt;/p&gt;
-
-&lt;p&gt;sass内はどうなってるのかな？&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;octopress git:(source)$ ls .themes/classic/sass
-_base.scss     _partials.scss base           custom         partials       plugins        screen.scss
-
-octopress git:(source)$ ls .themes/classic/sass/custom
-_colors.scss _fonts.scss  _layout.scss _styles.scss
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;で、&lt;code&gt;.themes/classic/sass/custom/_styles.scss&lt;/code&gt;がオーバーライド用のファイルなわけだな。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;// This File is imported last, and will override other styles in the cascade
-// Add styles here to make changes without digging in too much
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;本当はsassで書きたいけど今その技術は持ち合わせてないし、ちょっと今やるのも面倒なので普通にCSSを書こう・・・。&lt;/p&gt;
+&lt;p&gt;察するに&lt;code&gt;sass&lt;/code&gt;がスタイル系で&lt;code&gt;source&lt;/code&gt;がテンプレート系なのかな。
+別にページレイアウトを変えたいとか、そんなたいそうなことは考えてないので、sass内をいじるだけでよさそう。&lt;/p&gt;
 
 &lt;p&gt;ということで出来ました。&lt;/p&gt;
 

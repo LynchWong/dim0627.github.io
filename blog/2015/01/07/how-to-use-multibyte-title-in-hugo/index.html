@@ -7,7 +7,7 @@
     <meta name="generator" content="Hugo 0.15-DEV" />
 
     
-    <title>Hugoでマルチバイトのタイトルをスマートに使う方法 - Unresolved</title>
+    <title>Hugoでマルチバイトのタイトルをうまいこと使う - Unresolved</title>
     
 
     <link rel="shortcut icon" href="http://yet.unresolved.xyz/favicon.ico">
@@ -35,7 +35,7 @@
     <article itemscope="itemscope" itemtype="http://schema.org/Article">
       <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz"/>
       <meta itemprop="dateModified" content="2015-01-07T23:56:32&#43;09:00">
-      <meta itemprop="headline" content="Hugoでマルチバイトのタイトルをスマートに使う方法">
+      <meta itemprop="headline" content="Hugoでマルチバイトのタイトルをうまいこと使う">
       <meta itemprop="description" content="Hugoでちょっと困ったこと。 僕はOctopressから移行してきたからなおさらなんだけど、記事のタイトルがURLにされてしまう。 あ、僕はc">
       <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/">
       <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
@@ -56,7 +56,7 @@
       </div>
 
       <header>
-        <h1 class="title">Hugoでマルチバイトのタイトルをスマートに使う方法</h1>
+        <h1 class="title">Hugoでマルチバイトのタイトルをうまいこと使う</h1>
         <time itemprop="datePublished" pubdate="pubdate" datetime="2015-01-07T23:56:32&#43;09:00">
           Wed, Jan 7, 2015
         </time>
@@ -77,9 +77,8 @@
 
 <p>を設定してるからなんだけど。</p>
 
-<p>そうすると日本語とかのマルチバイト文字を使うとパーセントエンコードが走って結構悲惨なことになる。</p>
-
-<p>というか僕の環境だとリンクがきちんと飛べなかった・・・。</p>
+<p>そうすると日本語とかのマルチバイト文字を使うとパーセントエンコードが走って結構悲惨なことになる。
+というか僕の環境だとリンクがきちんと飛べなかった・・・。</p>
 
 <p>Octopressは記事のファイル名がURLになってたから、ファイル名さえ英語なら問題なかったんだよね。</p>
 
@@ -87,15 +86,9 @@
 
 <h2 id="urlの構成と対応策:305b326c361986ca7e3bc18a2fbce87d">URLの構成と対応策</h2>
 
-<p>実は移行の時にちょっと手を加えたりしてたんだけど、あんまり綺麗な方法じゃなかったので納得が行ってなかった。</p>
+<p>Hugoはリンク構造も結構柔軟に変えられるっぽい。</p>
 
-<p>そんな時に公式を読んでたら、<a href="http://gohugo.io/content/organization/">Content Organization</a>の項にこんな図が。</p>
-
-<p><a href="/images/2015-01-07/permalink.png"><img src="/images/2015-01-07/permalink.png" class="image" alt="permalink"></a></p>
-
-<p>どうやら僕が困ってたURLのタイトル部は<code>slug</code>と呼ばれる部分らしい。</p>
-
-<p>ならこんな風に記事内で毎回指定してしまえば綺麗に話が済むのではないか？</p>
+<p>なのでこんな風に記事内で毎回指定してしまえば綺麗に話が済む。</p>
 
 <pre><code class="language-markdown">---
 tags: [&quot;hugo&quot;, &quot;golang&quot;]
@@ -105,19 +98,15 @@ title: &quot;Hugoでマルチバイトのタイトルをスマートに使う方
 ---
 </code></pre>
 
-<p>と思ったらうまくいった。</p>
-
 <p><code>config.yaml</code>はこんな感じ。</p>
 
 <pre><code class="language-yaml">permalinks:
   post: /blog/:year/:month/:day/:slug/
 </code></pre>
 
-<p>なのでOctopressから移行した人はこの方法も検討するといいかもしれません。</p>
+<p>なのでOctopressから移行した人はこの方法も検討するといいかもしれないですね。</p>
 
 <p><code>hugo new</code>した時に生成されるテンプレートは<code>archetypes</code>ディレクトリに配置出来るから、そこでやっておくとよし。</p>
-
-<p>しかし移行時に書き足すのが面倒なんだよなあ。</p>
 </div>
 
       <aside>

@@ -17,9 +17,8 @@
       <guid>http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/</guid>
       <description>
 
-&lt;p&gt;今更だがAurigaの構築をやってみる。&lt;/p&gt;
-
-&lt;p&gt;どこもWindows環境での構築方法しか載ってないような印象なんだけどそんなことないのかな。&lt;/p&gt;
+&lt;p&gt;今更だがAurigaの構築をやってみる。
+どこもWindows環境での構築方法しか載ってないような印象なんだけどそんなことないのかな。&lt;/p&gt;
 
 &lt;h2 id=&#34;ソースのダウンロード:877a36750c93f6fdaf9ffc2de1905eb6&#34;&gt;ソースのダウンロード&lt;/h2&gt;
 
@@ -59,15 +58,12 @@ $ sudo apt-get install zlib1g-dev
 
 &lt;h2 id=&#34;grfファイルの準備:877a36750c93f6fdaf9ffc2de1905eb6&#34;&gt;grfファイルの準備&lt;/h2&gt;
 
-&lt;p&gt;grfファイルを用意しなきゃいけなかったらしい。&lt;/p&gt;
+&lt;p&gt;grfファイルを用意しなきゃいけなかったらしい。
+コンパイル前にすることはなかったな。Winならあるのかもね。&lt;/p&gt;
 
-&lt;p&gt;コンパイル前にすることはなかったな。Winならあるのかもね。&lt;/p&gt;
-
-&lt;p&gt;とりあえずgrfファイルはクライアント側にあるので、公式の&lt;a href=&#34;http://ragnarokonline.gungho.jp/beginner/download.html&#34;&gt;クライアントダウンロード&lt;/a&gt;からダウンロード &amp;amp; インストール。&lt;/p&gt;
-
-&lt;p&gt;Ubuntuじゃインストール出来ないから、Windowsでインストールして持ってくんのだるかった・・・。&lt;/p&gt;
-
-&lt;p&gt;持ってきたら&lt;code&gt;conf/grf-files.txt&lt;/code&gt;に追記。&lt;/p&gt;
+&lt;p&gt;とりあえずgrfファイルはクライアント側にあるので、公式の&lt;a href=&#34;http://ragnarokonline.gungho.jp/beginner/download.html&#34;&gt;クライアントダウンロード&lt;/a&gt;からダウンロード &amp;amp; インストール。
+Ubuntuじゃインストール出来ないから、Windowsでインストールして持ってくんのだるかった・・・。
+持ってきたら&lt;code&gt;conf/grf-files.txt&lt;/code&gt;に追記。&lt;/p&gt;
 
 &lt;p&gt;Aurigaと同じフォルダに入れたのでこんな感じに。&lt;/p&gt;
 
@@ -78,20 +74,15 @@ $ sudo apt-get install zlib1g-dev
 
 &lt;h2 id=&#34;サーバ起動:877a36750c93f6fdaf9ffc2de1905eb6&#34;&gt;サーバ起動&lt;/h2&gt;
 
-&lt;p&gt;Linuxの場合起動は&lt;code&gt;auriga-start&lt;/code&gt;を使うみたい。&lt;/p&gt;
-
-&lt;p&gt;解凍直後は実行権限がないので&lt;code&gt;sudo chmod 744 auriga-start&lt;/code&gt;をしとく必要あり。&lt;/p&gt;
+&lt;p&gt;Linuxの場合起動は&lt;code&gt;auriga-start&lt;/code&gt;を使うみたい。
+解凍直後は実行権限がないので&lt;code&gt;sudo chmod 744 auriga-start&lt;/code&gt;をしとく必要あり。&lt;/p&gt;
 
 &lt;p&gt;で、&lt;code&gt;./auriga-start start&lt;/code&gt;で起動。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;chrif: connection to the char server was closed. kick all chars
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;そしてエラー。&lt;/p&gt;
-
-&lt;p&gt;ここで一日詰まった。&lt;/p&gt;
-
-&lt;p&gt;ログをよく見てみるとこんな感じの出力が。&lt;/p&gt;
+&lt;p&gt;そしてエラー。ここで一日詰まった。ログをよく見てみるとこんな感じの出力が。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;connect login server error : 3
 &lt;/code&gt;&lt;/pre&gt;
@@ -107,9 +98,8 @@ $ sudo apt-get install zlib1g-dev
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;0 s1 p1 - S 0 0 @
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;ちなみに詰まったのは、ここに追記するフォーマットが全然わからなかったから笑&lt;/p&gt;
-
-&lt;p&gt;tsvになってるみたいなので、タブ区切りで追加しないと読み込まれません。&lt;/p&gt;
+&lt;p&gt;ちなみに詰まったのは、ここに追記するフォーマットが全然わからなかったから。
+tsvになってるみたいなので、タブ区切りで追加しないと読み込まれません。&lt;/p&gt;
 
 &lt;h2 id=&#34;httpdに接続してみる:877a36750c93f6fdaf9ffc2de1905eb6&#34;&gt;httpdに接続してみる&lt;/h2&gt;
 

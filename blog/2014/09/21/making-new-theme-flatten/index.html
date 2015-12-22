@@ -65,11 +65,9 @@
 
       <div class="body" itemprop="articleBody">
 
-<p>元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。</p>
-
-<p>でも僕はデザイナーじゃないから、あんまりがっつりやるのもやだよね。</p>
-
-<p>てことで元のclassicテーマをパクって作ろう。</p>
+<p>元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。
+でも僕はデザイナーじゃないから、あんまりがっつりやるのもやだよね。
+てことで元のclassicテーマをパクって作ろう。</p>
 
 <p>Octopressから移行してしまったので、スクリーンショットだけ載せとく。</p>
 
@@ -77,11 +75,7 @@
 
 <h2 id="テーマの変え方:04d1c6053c5be0425bfb88e610b78a00">テーマの変え方</h2>
 
-<p>そもそも変え方すら知らない。</p>
-
-<p>てことで調べた。</p>
-
-<p>どうやらここにテーマ単位のディレクトリが配置されるらしい。</p>
+<p>そもそも変え方もよく知らないんだけど、どうやらここにテーマ単位のディレクトリが配置されるらしい。</p>
 
 <pre><code class="language-sh">octopress git:(source)$ ls .themes
 classic
@@ -91,36 +85,15 @@ classic
 
 <h2 id="テーマの構成:04d1c6053c5be0425bfb88e610b78a00">テーマの構成</h2>
 
-<p>作るにも、テーマの定義に何が必要かがわからぬ。</p>
-
-<p>classicの中を見てみよう。</p>
+<p>作るにも、テーマの定義に何が必要かがわからない。
+classicの中を見てみよう。</p>
 
 <pre><code class="language-sh">octopress git:(source)$ ls .themes/classic
 sass   source
 </code></pre>
 
-<p>んん、シンプル。</p>
-
-<p>察するに<code>sass</code>がスタイル系で<code>source</code>がテンプレート系なのかな？</p>
-
-<p>別にページレイアウトを変えたいとか、そんなたいそうなことは考えてないので、sass内をいじるだけでよさそう。</p>
-
-<p>sass内はどうなってるのかな？</p>
-
-<pre><code class="language-sh">octopress git:(source)$ ls .themes/classic/sass
-_base.scss     _partials.scss base           custom         partials       plugins        screen.scss
-
-octopress git:(source)$ ls .themes/classic/sass/custom
-_colors.scss _fonts.scss  _layout.scss _styles.scss
-</code></pre>
-
-<p>で、<code>.themes/classic/sass/custom/_styles.scss</code>がオーバーライド用のファイルなわけだな。</p>
-
-<pre><code class="language-css">// This File is imported last, and will override other styles in the cascade
-// Add styles here to make changes without digging in too much
-</code></pre>
-
-<p>本当はsassで書きたいけど今その技術は持ち合わせてないし、ちょっと今やるのも面倒なので普通にCSSを書こう・・・。</p>
+<p>察するに<code>sass</code>がスタイル系で<code>source</code>がテンプレート系なのかな。
+別にページレイアウトを変えたいとか、そんなたいそうなことは考えてないので、sass内をいじるだけでよさそう。</p>
 
 <p>ということで出来ました。</p>
 

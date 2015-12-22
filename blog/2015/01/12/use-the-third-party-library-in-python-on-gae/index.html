@@ -36,7 +36,7 @@
       <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz"/>
       <meta itemprop="dateModified" content="2015-01-12T00:19:33&#43;09:00">
       <meta itemprop="headline" content="Python on GAEで3rdパーティライブラリを使う">
-      <meta itemprop="description" content="ひさびさにGoogle App Engineを使おうとしたらGoogle Cloud Platformだかなんだかでいろいろと変わってて戸惑った。 何かっていうと">
+      <meta itemprop="description" content="ひさびさにGoogle App Engineを使おうとしたらGoogle Cloud Platformだかなんだかでいろいろと変わってて戸惑った。 何かというと、">
       <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/">
       <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
         <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.png" />
@@ -67,9 +67,8 @@
 
 <p>ひさびさに<a href="https://cloud.google.com/appengine/">Google App Engine</a>を使おうとしたらGoogle Cloud Platformだかなんだかでいろいろと変わってて戸惑った。</p>
 
-<p>何かっていうと3rd Partyのライブラリを使うときにどうやるんだっけなっていうこと。</p>
-
-<p>昔は<code>requirements.txt</code>でうまいことやってくれなかったけ？違う？</p>
+<p>何かというと、3rd Partyのライブラリを使うときにどうやるんだっけなっていうこと。
+昔は<code>requirements.txt</code>でうまいことやってくれなかったけ？違う？</p>
 
 <p>普通にBeautifulSoupとか使った気するんだけど、どうやってたんだろうか・・・。</p>
 
@@ -87,7 +86,8 @@
 
 <p><a href="http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine">How to include third party Python libraries in Google App Engine? - Stack Overflow</a></p>
 
-<p>でもずいぶん原始的な方法で、libディレクトリを作ってそこに入れなよって見解らしい。</p>
+<p>でもずいぶん原始的な方法で、libディレクトリを作ってそこに入れなよって見解らしい。
+あれ？やっぱこれ前は勝手にやってくれてなかった？</p>
 
 <pre><code class="language-sh">default git:(master)$ tree -L 2
 .

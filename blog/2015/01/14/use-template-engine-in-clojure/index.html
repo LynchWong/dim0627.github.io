@@ -69,9 +69,7 @@
 
 <h2 id="enlive-https-github-com-cgrand-enlive:d03bd055194b84467476c0228f17c156"><a href="https://github.com/cgrand/enlive">Enlive</a></h2>
 
-<p><a href="http://www.amazon.co.jp/gp/product/B007Q4T040/ref=as_li_tf_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B007Q4T040&linkCode=as2&tag=unresolved-22">Clojure Programming</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=B007Q4T040" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important; display:inline;width:0;" />を執筆されたChristophe Grand氏のライブラリ。</p>
-
-<p>CSSのセレクタでバインドを行うという、すごく画期的な方法でテンプレート機能を実現させてる。</p>
+<p><a href="http://www.amazon.co.jp/gp/product/B007Q4T040/ref=as_li_tf_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B007Q4T040&linkCode=as2&tag=unresolved-22">Clojure Programming</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=B007Q4T040" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important; display:none;" />を執筆されたChristophe Grand氏のライブラリ。CSSのセレクタでバインドを行うという、すごく画期的な方法でテンプレート機能を実現させてる。</p>
 
 <p>例えばこんな感じでテンプレートのHTMLがあれば、</p>
 
@@ -92,23 +90,17 @@
   [:head :title] (html/content &quot;Enlive starter kit&quot;))
 </code></pre>
 
-<p>HTMLが素でかけるから、デザイナさんとの協業がすごく捗りそう。</p>
-
-<p>サンプルのHTMLをそのまま使って、Clojure側でサンプルの値を置き換えたりリピートさせたりすれば済んじゃう。</p>
+<p>HTMLが素でかけるから、デザイナさんとの協業がすごく捗りそう。サンプルのHTMLをそのまま使って、Clojure側でサンプルの値を置き換えたりリピートさせたりすれば済んじゃう。</p>
 
 <p>今回は一人で使ったからそういう場面はなかったけど、サーバを起動しなくてもデザインが見れる &amp; 直せるっていうのは便利な場面があるかなあと。</p>
 
-<p>ただ、結構CSSを書いたりしてるほうだけど、バインドの学習コストは意外と高いなと思った。</p>
-
-<p>効率的に手早くバインドさせるには、Enliveを使う想定のHTML構造にする必要がありそうな印象だった。</p>
+<p>ただ、結構CSSを書いたりしてるほうだけど、バインドの学習コストは意外と高いなと思った。効率的に手早くバインドさせるには、Enliveを使う想定のDOM構造にする必要がありそうな印象だった。</p>
 
 <p>覚えてしまえばものすごく活躍しそう。</p>
 
 <h2 id="hiccup-https-github-com-weavejester-hiccup:d03bd055194b84467476c0228f17c156"><a href="https://github.com/weavejester/hiccup">Hiccup</a></h2>
 
-<p><a href="https://github.com/weavejester/compojure">Compojure</a>や<a href="https://github.com/weavejester/environ">Environ</a>、<a href="https://github.com/weavejester/lein-ring">Ring</a>などの作者、James Reeves氏のライブラリ。</p>
-
-<p>HTMLを完全にClojureでラップしてるので、ClojureだけでWebアプリを完結させられる。</p>
+<p><a href="https://github.com/weavejester/compojure">Compojure</a>や<a href="https://github.com/weavejester/environ">Environ</a>、<a href="https://github.com/weavejester/lein-ring">Ring</a>などの作者、James Reeves氏のライブラリ。HTMLを完全にClojureでラップしてるので、ClojureだけでWebアプリを完結させられる。</p>
 
 <p>こんな感じ。</p>
 
@@ -120,15 +112,12 @@ user=&gt; (html [:p])
 
 <p>Clojureのコンパイルが走るので、タグの不整合(閉じタグがないとか)が一切起こらないっていうのは魅力だと思う。</p>
 
-<p>欠点を挙げるとすれば、改行なしでHTMLが出力されるからブラウザからソースを見るのが厳しい。ていうか無理。</p>
-
-<p>設定でなんとか出来るんだろうか？</p>
+<p>欠点を挙げるとすれば、改行なしでHTMLが出力されるからブラウザからソースを見るのが厳しい。ていうか無理。設定でなんとか出来るんだろうか？</p>
 
 <p>でもChromeの開発者ツールとか使えばフォーマットして表示してくれるし、全然クリティカルな問題じゃない。</p>
 
-<p>もう1点は、例えば広告のスクリプトみたいにコピペで貼り付けたい文字列とかの出力がちょっとめんどう。</p>
-
-<p>Hiccupの世界にただのタグを入れるのは見栄えも悪いし、僕はこんな感じで外だしすることで対応した。</p>
+<p>もう1点は、例えば広告のスクリプトみたいにコピペで貼り付けたい文字列とかの出力がちょっとめんどう。
+Hiccupの世界にただのタグを入れるのは見栄えも悪いし、僕はこんな感じで外だしすることで対応した。</p>
 
 <pre><code class="language-clojure">(def partial-ad-big (str &quot;&lt;script async src=&quot;&quot;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;&quot;&gt;&lt;/script&gt;
 &lt;ins class=&quot;&quot;adsbygoogle&quot;&quot;
@@ -140,15 +129,11 @@ user=&gt; (html [:p])
 &lt;/script&gt;&quot;))
 </code></pre>
 
-<p>個人的にはHiccupのほうがさくっと理解できてさくっと書けたかな。</p>
-
-<p>ループ処理もClojureがかければそのまま書けちゃうし。</p>
+<p>個人的にはHiccupのほうがさくっと理解できてさくっと書けたかな。ループ処理もClojureがかければそのまま書けちゃうし。</p>
 
 <p>ClojureとHTMLの親和性はすごく高いと思っていて、Hiccupはそれを最大限に活用することが出来てるなあという感じ。</p>
 
 <p>ある言語を他の言語でラップするのって再学習が必要だし非効率で嫌いだったんだけど、HiccupはHTMLの冗長さが減るし、学習する価値のあるライブラリだと思った。</p>
-
-<p>ゆくゆくはどっちもしっかり使えるようになりたい。</p>
 </div>
 
       <aside>

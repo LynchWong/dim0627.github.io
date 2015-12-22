@@ -21,11 +21,10 @@
 
 &lt;h2 id=&#34;フォーカスアウトしたらサジェストを消したい:1be3a17c6bd3affece21cbd510505d7a&#34;&gt;フォーカスアウトしたらサジェストを消したい&lt;/h2&gt;
 
-&lt;p&gt;入力欄もしくはサジェストからフォーカスアウトした時はサジェストを消したいじゃん。&lt;/p&gt;
+&lt;p&gt;入力欄もしくはサジェストからフォーカスアウトした時はサジェストを消したい。
+でもフォーカスアウトした先にフォーカスしたものが入力欄もしくはサジェストだったらそれは消したくない。&lt;/p&gt;
 
-&lt;p&gt;でもフォーカスアウトした先にフォーカスしたものが入力欄もしくはサジェストだったらそれは消したくないじゃん。&lt;/p&gt;
-
-&lt;p&gt;だからこんなコードを書いた。&lt;/p&gt;
+&lt;p&gt;だからこんなコードを書きました。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;search-text&amp;quot;&amp;gt;
 &amp;lt;div id=&amp;quot;suggest-list&amp;quot;&amp;gt;
@@ -45,15 +44,13 @@ $(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() 
 &amp;lt;/script&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;実際はこの処理を入力だけじゃなくアンカーにも適用したんだけど面倒だから省略。&lt;/p&gt;
-
-&lt;p&gt;しかしこれだと&lt;code&gt;if&lt;/code&gt;の中には入らずサジェストの非表示処理が通ってしまう・・・。&lt;/p&gt;
+&lt;p&gt;実際はこの処理を入力だけじゃなくアンカーにも適用したんだけど面倒だから省略。
+しかしこれだと&lt;code&gt;if&lt;/code&gt;の中には入らずサジェストの非表示処理が通ってしまう・・・。&lt;/p&gt;
 
 &lt;h2 id=&#34;フォーカス処理は一度ブラウザに返してあげる:1be3a17c6bd3affece21cbd510505d7a&#34;&gt;フォーカス処理は一度ブラウザに返してあげる&lt;/h2&gt;
 
-&lt;p&gt;どうやらJavaScriptの処理が進んでる間はフォーカス処理が行われないらしい。&lt;/p&gt;
-
-&lt;p&gt;なので&lt;strong&gt;一度ブラウザに処理が返るような処理&lt;/strong&gt;を挟んでやる必要がある。&lt;/p&gt;
+&lt;p&gt;どうやらJavaScriptの処理が進んでる間はフォーカス処理が行われないらしい。
+なので&lt;strong&gt;一度ブラウザに処理が返るような処理&lt;/strong&gt;を挟んでやる必要がある。&lt;/p&gt;
 
 &lt;p&gt;こんなかんじに。&lt;/p&gt;
 
@@ -88,23 +85,16 @@ $(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() 
 
 &lt;p&gt;&lt;a href=&#34;http://zendevent.doorkeeper.jp/events/19917&#34;&gt;Zend 社技術者による最近の PHP 関連の取り組みご紹介 - Zendイベント管理 | Doorkeeper&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;英語辛かった。&lt;/p&gt;
-
-&lt;p&gt;PHP7やらZ Rayやらまあ気になるものはそれなりにあったんだけど、&lt;/p&gt;
-
-&lt;p&gt;その中でも触ってみようかなと思えるくらい興味を持てた&lt;a href=&#34;https://apigility.org/&#34;&gt;Apigility&lt;/a&gt;を触ってみようと思います。&lt;/p&gt;
+&lt;p&gt;英語辛かった。PHP7やらZ Rayやらまあ気になるものはそれなりにあったんだけど、その中でも触ってみようかなと思えるくらい興味を持てた&lt;a href=&#34;https://apigility.org/&#34;&gt;Apigility&lt;/a&gt;を触ってみようと思います。&lt;/p&gt;
 
 &lt;p&gt;ついでなので使ってみたかったReact.jsも導入してみる。&lt;/p&gt;
 
 &lt;h2 id=&#34;apigility:a8f13c6c06505842468ef355c1de93c5&#34;&gt;Apigility？&lt;/h2&gt;
 
-&lt;p&gt;API構築に特化したフレームワークらしい。&lt;/p&gt;
+&lt;p&gt;API構築に特化したフレームワークらしい。プレゼンテーションレイヤを完全に分離したアーキテクチャでの利用を想定しているんだと思う。&lt;/p&gt;
 
-&lt;p&gt;プレゼンテーションレイヤを完全に分離したアーキテクチャでの利用を想定しているんだと思う。&lt;/p&gt;
-
-&lt;p&gt;何が強いかって、DBさえ用意してしまえば後はGUIから操作するだけでAPIが作れてしまう。&lt;/p&gt;
-
-&lt;p&gt;DBも多分メジャーどころは大抵使える(と思う)し、APIもRPCはもちろん、RESTfulな設計にもバッチリ対応してるらしい。&lt;/p&gt;
+&lt;p&gt;何が強いかって、DBさえ用意してしまえば後はGUIから操作するだけでAPIが作れてしまう。
+DBも多分メジャーどころは大抵使える(と思う)し、APIもRPCはもちろん、RESTfulな設計にもバッチリ対応してるらしい。&lt;/p&gt;
 
 &lt;p&gt;今回は勉強も兼ねて、簡単なタスク管理ツールを作ってみます。&lt;/p&gt;
 
@@ -115,21 +105,16 @@ $(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() 
 &lt;pre&gt;&lt;code&gt;curl -sS https://apigility.org/install | php
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;サーバを再度起動する場合は&lt;code&gt;php -S localhost:8888 -t public public/index.php&lt;/code&gt;とかやればOK。&lt;/p&gt;
-
-&lt;p&gt;画面を開くとこんな感じのが出てくる。&lt;/p&gt;
+&lt;p&gt;サーバを再度起動する場合は&lt;code&gt;php -S localhost:8888 -t public public/index.php&lt;/code&gt;とかやればOK。
+画面を開くとこんな感じのが出てくる。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/apigility_top.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/apigility_top.png&#34; class=&#34;image&#34; alt=&#34;apigility_top&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;ロゴがかわいいね。&lt;/p&gt;
-
-&lt;p&gt;ここからAPIの追加やデータベース接続の設定やらが出来ます。&lt;/p&gt;
+&lt;p&gt;ロゴがかわいいね。ここからAPIの追加やデータベース接続の設定やらが出来ます。&lt;/p&gt;
 
 &lt;h2 id=&#34;データベースの準備:a8f13c6c06505842468ef355c1de93c5&#34;&gt;データベースの準備&lt;/h2&gt;
 
-&lt;p&gt;適当なものなので、SQLiteでやっちゃう。&lt;/p&gt;
-
-&lt;p&gt;テーブルはこんな感じで、名前と完了/未完了が持てるだけにしよう。&lt;/p&gt;
+&lt;p&gt;適当なものなので、SQLiteでやっちゃう。テーブルはこんな感じで、名前と完了/未完了が持てるだけにしよう。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;create table tasks(id integer primary key, name varchar(20), finished integer);
 &lt;/code&gt;&lt;/pre&gt;
@@ -146,23 +131,19 @@ $(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() 
 
 &lt;h2 id=&#34;apiを追加する:a8f13c6c06505842468ef355c1de93c5&#34;&gt;APIを追加する&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;APIs&lt;/code&gt;の&lt;code&gt;Create New API&lt;/code&gt;からAPIを追加する。&lt;/p&gt;
-
-&lt;p&gt;今回はTasksという名前で作成した。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;APIs&lt;/code&gt;の&lt;code&gt;Create New API&lt;/code&gt;からAPIを追加する。今回はTasksという名前で作成した。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/create_api.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/create_api.png&#34; class=&#34;image&#34; alt=&#34;create_api&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;粒度がわかりづらいけど、ここで作ったAPIに対して個々のサービスを追加していく。&lt;/p&gt;
 
-&lt;p&gt;大分類みたいなものだと捉えればいいのかな？&lt;/p&gt;
+&lt;p&gt;大分類みたいなものだと捉えればいいのかな。&lt;/p&gt;
 
 &lt;h2 id=&#34;サービスを追加する:a8f13c6c06505842468ef355c1de93c5&#34;&gt;サービスを追加する&lt;/h2&gt;
 
 &lt;p&gt;さっき作ったTasksAPIに、データベースの&lt;code&gt;tasks&lt;/code&gt;テーブルとRESTで紐づくサービスを追加する。&lt;/p&gt;
 
-&lt;p&gt;サービスはRESTとRPCから選ぶことが出来て、&lt;/p&gt;
-
-&lt;p&gt;RPCを選ぶと自動生成されたPHPのコードに自分で処理を書いていく感じになるみたい。&lt;/p&gt;
+&lt;p&gt;サービスはRESTとRPCから選ぶことが出来て、RPCを選ぶと自動生成されたPHPのコードに自分で処理を書いていく感じになるみたい。&lt;/p&gt;
 
 &lt;p&gt;んで指定したURLを叩くとその処理が呼ばれる、って感じ。&lt;/p&gt;
 
@@ -176,19 +157,15 @@ $(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() 
 
 &lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/def_service.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/def_service.png&#34; class=&#34;image&#34; alt=&#34;def_service&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;接続できるか試してみよう。&lt;/p&gt;
-
-&lt;p&gt;データがないので、まずはPOSTで格納してみる。&lt;/p&gt;
+&lt;p&gt;接続できるか試してみましょう。データがないので、まずはPOSTで格納してみる。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/post_tasks.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/post_tasks.png&#34; class=&#34;image&#34; alt=&#34;post_tasks&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;いけてるっぽい。&lt;/p&gt;
-
-&lt;p&gt;取得は？&lt;/p&gt;
+&lt;p&gt;いけてるっぽい。取得は？&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/get_tasks.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/get_tasks.png&#34; class=&#34;image&#34; alt=&#34;get_tasks&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;おお！取れる！&lt;/p&gt;
+&lt;p&gt;取れますね。&lt;/p&gt;
 
 &lt;p&gt;もちろんSQLite側にも、&lt;/p&gt;
 
@@ -200,15 +177,9 @@ $(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() 
 
 &lt;h2 id=&#34;ビューを作る:a8f13c6c06505842468ef355c1de93c5&#34;&gt;ビューを作る&lt;/h2&gt;
 
-&lt;p&gt;サーバサイドがあまりにもサクッと終わっちゃったな・・・。&lt;/p&gt;
-
 &lt;p&gt;後は画面側を生のHTMLにして、取得と格納は全部JSに任せます。&lt;/p&gt;
 
-&lt;p&gt;つってもここはあんまり説明してもしょうがないのでSSとコードだけ。&lt;/p&gt;
-
-&lt;p&gt;そうですめんどくさくなりました。&lt;/p&gt;
-
-&lt;p&gt;表示はこんな感じで、&lt;/p&gt;
+&lt;p&gt;つってもここはあんまり説明してもしょうがないのでSSとコードだけ。表示はこんな感じで、&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/view.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/view.png&#34; class=&#34;image&#34; alt=&#34;view&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -329,27 +300,23 @@ $(&amp;quot;#task-post&amp;quot;).on(&amp;quot;click&amp;quot;, function() {
 });
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;React.js気軽に手出したけど、まじでむずい。&lt;/p&gt;
+&lt;p&gt;React.js気軽に手出したけど、まじでむずいですね。&lt;/p&gt;
 
 &lt;p&gt;一人で書いてもこんだけぐちゃぐちゃするんだから、複数人でやるときはマジで気をつけないとすごいことになりそう。&lt;/p&gt;
 
 &lt;h2 id=&#34;まとめ:a8f13c6c06505842468ef355c1de93c5&#34;&gt;まとめ&lt;/h2&gt;
 
-&lt;p&gt;Apigility、すごく楽。&lt;/p&gt;
+&lt;p&gt;Apigility、すごく楽。
+React.jsで心折れかけたけどそれはApigilityには関係ないわけで、サーバサイドの実装は本当にさくっと終わりました。&lt;/p&gt;
 
-&lt;p&gt;React.jsで心折れかけたけどそれはApigilityには関係ないわけで、サーバサイドの実装は本当にさくっと終わりました。&lt;/p&gt;
+&lt;p&gt;ただ、ドキュメントが致命的なほど少ないと思いました。見逃してるだけなのかな。
+Getting Startedとかはしっかり書かれてるから導入は楽なんだけど、少しでも発展的なものになると何処にも載ってない。&lt;/p&gt;
 
-&lt;p&gt;ただ、ドキュメントが致命的なほど少ないよ。&lt;/p&gt;
+&lt;p&gt;さらにユーザも少ないから情報が拾えなくて、これをプロダクトで使うとなると辛い場面が多いかなと思った。
+公式のドキュメントは結構ひどくて、2013年からの開発なのに8割くらい工事中だったりする。&lt;/p&gt;
 
-&lt;p&gt;Getting Startedとかはしっかり書かれてるから導入は楽なんだけど、少しでも発展的なものになると何処にも載ってない。&lt;/p&gt;
-
-&lt;p&gt;さらにユーザも少ないから情報が拾えなくて、これをプロダクトで使うとなると辛い場面が多いかなと思った。&lt;/p&gt;
-
-&lt;p&gt;公式のドキュメントは結構ひどくて、2013年からの開発なのに8割くらい工事中だったりする。&lt;/p&gt;
-
-&lt;p&gt;だから実際にこれを使いますか？ってなると、「まあ個人利用では使うかもしれませんね」って答えになってしまうかなあ。&lt;/p&gt;
-
-&lt;p&gt;でもやっぱりこの楽さは魅力なので、今後整備されていくことに期待。&lt;/p&gt;
+&lt;p&gt;だから実際にこれを使いますか？ってなると、「まあ個人利用では使うかもしれませんね」って答えになってしまうかなあ。
+でもやっぱりこの楽さは魅力なので、今後整備されていくことに期待。&lt;/p&gt;
 
 &lt;p&gt;React.jsはもう少ししっかり勉強します。&lt;/p&gt;
 </description>
