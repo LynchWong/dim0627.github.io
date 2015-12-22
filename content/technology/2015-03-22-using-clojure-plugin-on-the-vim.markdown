@@ -5,23 +5,17 @@ tags: ["vim", "clojure"]
 title: "VimのClojureプラグイン覚書"
 ---
 
-VimでClojure書くときのあれこれをいっつも忘れるのでまとめておこうと思う。
-
-新しいことを覚えたら随時追記していこうかな。
+VimでClojure書くときのあれこれをいっつも忘れるのでまとめておこうと思う。新しいことを覚えたら随時追記していこうかな。
 
 ## 使ってるプラグイン
 
 ### [tpope/vim-classpath](https://github.com/tpope/vim-classpath)
 
-クラスパスの設定をやってくれる。
-
-何も考えず入れればよい。
+クラスパスの設定をやってくれる。何も考えず入れればよい。
 
 ### [guns/vim-slamhound](https://github.com/guns/vim-slamhound)
 
-`require`の整理をやってくれる。
-
-不要な奴は消してくれるし、ない奴はclasspathから読み込んで追加してくれる。
+`require`の整理をやってくれる。不要な奴は消してくれるし、ない奴はclasspathから読み込んで追加してくれる。
 
 ### [kien/rainbow_parentheses.vim](https://github.com/kien/rainbow_parentheses.vim)
 
@@ -32,8 +26,7 @@ VimでClojure書くときのあれこれをいっつも忘れるのでまとめ�
 [My Clojure Toolchain: Vim](http://blog.venanti.us/clojure-vim/)でもキラープラグインと書かれているfireplace。
 
 VimをREPLと接続してあんなことやこんなことが出来る。
-
-こいつの機能、よく使う割によく忘れるんだよなあ。
+このプラグインの機能、よく使う割によく忘れるんだよなあ。
 
 もはやこの記事はこの覚書のために書いたようなもの。
 
@@ -66,7 +59,6 @@ Clojure用のLint。
 ### [venantius/vim-cljfmt](https://github.com/venantius/vim-cljfmt)
 
 Clojure用のフォーマッター。
-
 デフォルトで保存時のフォーマットがかかるようになってるので、入れるだけでOKのはず。
 
 ## 使ってないプラグイン
@@ -76,13 +68,10 @@ Clojure用のフォーマッター。
 シンタックスハイライト、インデントのためのプラグイン。
 
 あと`clojure.core`の名前空間にある補完機能があるらしい。
-
 なんかあってもなくてもあんまり変わらなかった（設定しきれなかった？）ので使うのをやめた。
 
 ### [vim-scripts/paredit.vim](https://github.com/vim-scripts/paredit.vim)
 
 括弧の位置をあれこれ出来るやつ、だと思う。
-
 ちょっと脳みそがそんなにたくさんの事を一気に覚えるのは無理だったので、一旦使うのをやめた。
-
 

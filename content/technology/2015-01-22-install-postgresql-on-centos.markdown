@@ -7,17 +7,13 @@ title: "Vagrant + CentOS + PostgreSQLを最速で構築"
 
 herokuにのっけるアプリを作るとき、ローカルではSQLite使ってたんだけどもう色々つらい。
 
-なんか整数で定義したカラムに文字列入るし！
-
-なんかオートインクリメントの設定の仕方がPostgreSQLと違うし！
-
-つらい。
+なんか整数で定義したカラムに文字列入るし。なんかオートインクリメントの設定の仕方がPostgreSQLと違うし。
 
 なのでもう、さっとPostgreSQLだけ入った仮想環境を作ってホスト側から繋げるようにしたい。
 
 ## Vagrantfileの設定
 
-もう面倒なのはいやなのでCentOSとIPの設定だけやるよ。
+もう面倒なのはいやなのでCentOSとIPの設定だけやります。
 
 ``` ruby
 # -*- mode: ruby -*-
@@ -39,13 +35,11 @@ end
 [vagrant@localhost ~]$ sudo yum install postgresql-contrib
 ```
 
-さくっと入るやん！
-
-## どうやって繋ぐのかな
+## PostgreSQLの使い方がわからない
 
 もうほんとPostgreSQLの使い方がわかんない、MySQLばっか触ってたからわかんない。
 
-そもそもサービス名はなによ。
+そもそもサービス名はなんなんだろう。
 
 ```
 [vagrant@localhost ~]$ service postgresql
@@ -58,7 +52,7 @@ postmaster is stopped
                                                            [FAILED]
 ```
 
-`postgresql`か、でもなんか起動しないね。
+`postgresql`か、でもなんか起動しないですね。
 
 なんか`initdb`とやらで初期化をしなきゃいけないらしい。
 
@@ -101,16 +95,10 @@ or
     /usr/bin/pg_ctl -D /var/lib/pgsql/data -l logfile start
 ```
 
-んん？`/usr/bin/postgres -D /var/lib/pgsql/data`で起動出来るの？
-
-でも`service`でやるよ！
-
 ```
 [vagrant@localhost ~]$ sudo service postgresql start
 Starting postgresql service:                               [  OK  ]
 ```
-
-出来るやん！
 
 ゲスト内で繋がるかな。
 
@@ -122,7 +110,7 @@ Type "help" for help.
 postgres=# \q
 ```
 
-出来るやん！
+いけますね。
 
 ホスト側からいけるかな。
 
@@ -163,7 +151,7 @@ Type "help" for help.
 postgres=# \q
 ```
 
-いけた！
+いけますね。
 
 そのうちshellにまとめてprovisioning出来るようにしよう・・・。
 

@@ -7,8 +7,7 @@ slug: "use-the-third-party-library-in-python-on-gae"
 
 ひさびさに[Google App Engine](https://cloud.google.com/appengine/)を使おうとしたらGoogle Cloud Platformだかなんだかでいろいろと変わってて戸惑った。
 
-何かっていうと3rd Partyのライブラリを使うときにどうやるんだっけなっていうこと。
-
+何かというと、3rd Partyのライブラリを使うときにどうやるんだっけなっていうこと。
 昔は`requirements.txt`でうまいことやってくれなかったけ？違う？
 
 普通にBeautifulSoupとか使った気するんだけど、どうやってたんだろうか・・・。
@@ -28,6 +27,7 @@ Google App Engine側に導入されてるライブラリがこれ。
 [How to include third party Python libraries in Google App Engine? - Stack Overflow](http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine)
 
 でもずいぶん原始的な方法で、libディレクトリを作ってそこに入れなよって見解らしい。
+あれ？やっぱこれ前は勝手にやってくれてなかった？
 
 ``` sh
 default git:(master)$ tree -L 2

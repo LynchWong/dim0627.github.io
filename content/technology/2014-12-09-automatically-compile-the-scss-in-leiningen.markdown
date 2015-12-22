@@ -5,19 +5,13 @@ date: 2014-12-09
 tags: ["css", "scss", "sass", "clojure", "leiningen"]
 ---
 
-Clojureを始めて一週間ほどになりまして。
-
-ようやくWebアプリ開発に着手しました。
+Clojureを始めて一週間ほどになりまして、ようやくWebアプリ開発に着手しました。
 
 というわけで開発環境を整えます。
 
 ## lein-haml-sassの導入
 
-まったく贅沢な名前してんな！
-
-いえ、[lein-haml-sass](https://github.com/rtircher/lein-haml-sass)は素晴らしいプラグインです。
-
-これを使うとなんとhamlのコンパイルやsass/scssのコンパイルをやってくれます。
+[lein-haml-sass](https://github.com/rtircher/lein-haml-sass)はhamlのコンパイルやsass/scssのコンパイルをやってくれます。
 
 ていうか**sassとscssの違い**ってなんだっけ？真面目に考えるとわかんないな。
 
@@ -78,12 +72,7 @@ Clojureを始めて一週間ほどになりまして。
 
 ## コンパイルする
 
-さっそく`lein sass once`してみるも、何も起きない！
-
-あっ、sassとscssでタスクが違う。
-
-ていうかsassフォルダにscss置くのってなんか違う気がしてきた！あとで名前変えよう。
-
-というわけで、`lein scss once`で無事動きました。
+sassとscssでタスクが違うようなので、間違えないように注意。
 
 `lein scss auto`で変更監視できるっぽい。
+

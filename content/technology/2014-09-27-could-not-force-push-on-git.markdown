@@ -2,14 +2,13 @@
 slug: "could-not-force-push-on-git"
 title: "gitでforce pushが出来ない"
 date: 2014-09-27
-tags: [git]
+tags: ["git"]
 ---
 
 typoを直すために`rebase -i`やらをやってたんだけど、操作してたのがmasterブランチだったのでどうしてもforce pushがしたかった。
-
 一人で使ってたリポジトリだしね。
 
-んだけど、`-f`をつけても
+だけど`-f`をつけてもrejectされてしまう。
 
 ``` sh
 To git://example.com/project1.git
@@ -19,10 +18,9 @@ To prevent ... See the 'Note about
 fast-forwards' section of 'git push --help' for details.
 ```
 
-こんな感じになってしまう・・・。
+## denyNonFastforwardsプロパティ
 
-## 解決
-gitリポジトリのconfigを見たらこんな項目が、
+gitリポジトリのconfigを見たらこんな項目がありました。
 
 ``` yml
 [receive]
@@ -32,3 +30,4 @@ gitリポジトリのconfigを見たらこんな項目が、
 どうやらこいつを`false`にすればよかったらしい。
 
 最初はtrueになってるもんなのかな・・・。
+

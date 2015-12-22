@@ -9,22 +9,15 @@ title: "Apigility + React.jsでタスク管理ツールを作ってみる"
 
 [Zend 社技術者による最近の PHP 関連の取り組みご紹介 - Zendイベント管理 | Doorkeeper](http://zendevent.doorkeeper.jp/events/19917)
 
-英語辛かった。
-
-PHP7やらZ Rayやらまあ気になるものはそれなりにあったんだけど、
-
-その中でも触ってみようかなと思えるくらい興味を持てた[Apigility](https://apigility.org/)を触ってみようと思います。
+英語辛かった。PHP7やらZ Rayやらまあ気になるものはそれなりにあったんだけど、その中でも触ってみようかなと思えるくらい興味を持てた[Apigility](https://apigility.org/)を触ってみようと思います。
 
 ついでなので使ってみたかったReact.jsも導入してみる。
 
 ## Apigility？
 
-API構築に特化したフレームワークらしい。
-
-プレゼンテーションレイヤを完全に分離したアーキテクチャでの利用を想定しているんだと思う。
+API構築に特化したフレームワークらしい。プレゼンテーションレイヤを完全に分離したアーキテクチャでの利用を想定しているんだと思う。
 
 何が強いかって、DBさえ用意してしまえば後はGUIから操作するだけでAPIが作れてしまう。
-
 DBも多分メジャーどころは大抵使える(と思う)し、APIもRPCはもちろん、RESTfulな設計にもバッチリ対応してるらしい。
 
 今回は勉強も兼ねて、簡単なタスク管理ツールを作ってみます。
@@ -38,20 +31,15 @@ curl -sS https://apigility.org/install | php
 ```
 
 サーバを再度起動する場合は`php -S localhost:8888 -t public public/index.php`とかやればOK。
-
 画面を開くとこんな感じのが出てくる。
 
 [<img src="/images/2015-02-14/apigility_top.png" class="image" alt="apigility_top">](/images/2015-02-14/apigility_top.png)
 
-ロゴがかわいいね。
-
-ここからAPIの追加やデータベース接続の設定やらが出来ます。
+ロゴがかわいいね。ここからAPIの追加やデータベース接続の設定やらが出来ます。
 
 ## データベースの準備
 
-適当なものなので、SQLiteでやっちゃう。
-
-テーブルはこんな感じで、名前と完了/未完了が持てるだけにしよう。
+適当なものなので、SQLiteでやっちゃう。テーブルはこんな感じで、名前と完了/未完了が持てるだけにしよう。
 
 ``` sql
 create table tasks(id integer primary key, name varchar(20), finished integer);
@@ -69,23 +57,19 @@ create table tasks(id integer primary key, name varchar(20), finished integer);
 
 ## APIを追加する
 
-`APIs`の`Create New API`からAPIを追加する。
-
-今回はTasksという名前で作成した。
+`APIs`の`Create New API`からAPIを追加する。今回はTasksという名前で作成した。
 
 [<img src="/images/2015-02-14/create_api.png" class="image" alt="create_api">](/images/2015-02-14/create_api.png)
 
 粒度がわかりづらいけど、ここで作ったAPIに対して個々のサービスを追加していく。
 
-大分類みたいなものだと捉えればいいのかな？
+大分類みたいなものだと捉えればいいのかな。
 
 ## サービスを追加する
 
 さっき作ったTasksAPIに、データベースの`tasks`テーブルとRESTで紐づくサービスを追加する。
 
-サービスはRESTとRPCから選ぶことが出来て、
-
-RPCを選ぶと自動生成されたPHPのコードに自分で処理を書いていく感じになるみたい。
+サービスはRESTとRPCから選ぶことが出来て、RPCを選ぶと自動生成されたPHPのコードに自分で処理を書いていく感じになるみたい。
 
 んで指定したURLを叩くとその処理が呼ばれる、って感じ。
 
@@ -99,19 +83,15 @@ RPCを選ぶと自動生成されたPHPのコードに自分で処理を書い�
 
 [<img src="/images/2015-02-14/def_service.png" class="image" alt="def_service">](/images/2015-02-14/def_service.png)
 
-接続できるか試してみよう。
-
-データがないので、まずはPOSTで格納してみる。
+接続できるか試してみましょう。データがないので、まずはPOSTで格納してみる。
 
 [<img src="/images/2015-02-14/post_tasks.png" class="image" alt="post_tasks">](/images/2015-02-14/post_tasks.png)
 
-いけてるっぽい。
-
-取得は？
+いけてるっぽい。取得は？
 
 [<img src="/images/2015-02-14/get_tasks.png" class="image" alt="get_tasks">](/images/2015-02-14/get_tasks.png)
 
-おお！取れる！
+取れますね。
 
 もちろんSQLite側にも、
 
@@ -124,15 +104,9 @@ sqlite> select * from tasks;
 
 ## ビューを作る
 
-サーバサイドがあまりにもサクッと終わっちゃったな・・・。
-
 後は画面側を生のHTMLにして、取得と格納は全部JSに任せます。
 
-つってもここはあんまり説明してもしょうがないのでSSとコードだけ。
-
-そうですめんどくさくなりました。
-
-表示はこんな感じで、
+つってもここはあんまり説明してもしょうがないのでSSとコードだけ。表示はこんな感じで、
 
 [<img src="/images/2015-02-14/view.png" class="image" alt="view">](/images/2015-02-14/view.png)
 
@@ -255,26 +229,23 @@ $("#task-post").on("click", function() {
 });
 ```
 
-React.js気軽に手出したけど、まじでむずい。
+React.js気軽に手出したけど、まじでむずいですね。
 
 一人で書いてもこんだけぐちゃぐちゃするんだから、複数人でやるときはマジで気をつけないとすごいことになりそう。
 
 ## まとめ
 
 Apigility、すごく楽。
-
 React.jsで心折れかけたけどそれはApigilityには関係ないわけで、サーバサイドの実装は本当にさくっと終わりました。
 
-ただ、ドキュメントが致命的なほど少ないよ。
-
+ただ、ドキュメントが致命的なほど少ないと思いました。見逃してるだけなのかな。
 Getting Startedとかはしっかり書かれてるから導入は楽なんだけど、少しでも発展的なものになると何処にも載ってない。
 
 さらにユーザも少ないから情報が拾えなくて、これをプロダクトで使うとなると辛い場面が多いかなと思った。
-
 公式のドキュメントは結構ひどくて、2013年からの開発なのに8割くらい工事中だったりする。
 
 だから実際にこれを使いますか？ってなると、「まあ個人利用では使うかもしれませんね」って答えになってしまうかなあ。
-
 でもやっぱりこの楽さは魅力なので、今後整備されていくことに期待。
 
 React.jsはもう少ししっかり勉強します。
+

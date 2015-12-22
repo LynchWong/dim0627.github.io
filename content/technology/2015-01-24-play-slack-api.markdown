@@ -63,7 +63,6 @@ herokuでさくっとHello World作って試してみようかな。
 ## REPLを作ろう
 
 なんかSlack上でプログラム打つと実行結果が返ってくるみたいなやつ誰かが作ってたよね？
-
 あれ調べても出ないんだけどなんでなんだろう。
 
 まあとりあえず、作ったばっかの[paiza.IO](https://paiza.io/)のAPIを叩くあれを導入してみる。
@@ -94,13 +93,5 @@ herokuでさくっとHello World作って試してみようかな。
 
 [<img src="/images/2015-01-25/slack_repl_run.png" class="image" alt="slack_repl_run">](/images/2015-01-25/slack_repl_run.png)
 
-いけるやん！
-
-Javaだる！
-
-## コード
-
-やばい`project.clj`とかherokuから持ってきたままだしリファクタリングもしてないし超適当だ
-
-[dim0627/slack_repl](https://github.com/dim0627/slack_repl)
+Javaは少し面倒だね。
 

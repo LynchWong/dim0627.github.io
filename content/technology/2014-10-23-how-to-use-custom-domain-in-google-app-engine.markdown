@@ -9,11 +9,7 @@ tags: ["google app engine", "dns"]
 
 ## Googleによるドメインの確認
 
-ドメインを持っていない人は先に取得しちゃってね。
-
-ちなみに僕はGMOさん([お名前.com](http://www.onamae.com/))で取得しました。
-
-ていうことで以下の手順にそってやっていきます。
+以下の手順にそってやっていきます。
 
 [Using a Custom Domain - Google App Engine Google Cloud Platform](https://cloud.google.com/appengine/docs/domain)
 
@@ -33,18 +29,16 @@ tags: ["google app engine", "dns"]
 
 TXTレコードの追加は、お名前.comであれば[ドメインNavi](http://www.onamae.com/navi/domain.html)から
 
-* ドメイン設定
-* DNS関連機能の設定
-* DNSレコード設定を利用する
+1. ドメイン設定
+2. DNS関連機能の設定
+3. DNSレコード設定を利用する
 
 でここに入力すればOK。
 
 [<img src="/images/2014-10-23/input_txt.png" class="image" alt="input_txt">](/images/2014-10-23/input_txt.png)
 
 TYPEはTXTにしてVALUEにさっきのテキストを入力。
-
 場所にもよるけど少し待てば反映されるので、それまでGoogle側の画面で確認ボタンを何度か押してみる。
-
 反映されてたら確認が通るはず。
 
 ## ドメインの選択
@@ -58,9 +52,9 @@ TYPEはTXTにしてVALUEにさっきのテキストを入力。
 ## AレコードとAAAAレコードの追加
 
 最後はまたDNSレコードの追加。
-
 ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。
 
 [<img src="/images/2014-10-23/step3.png" class="image" alt="step3">](/images/2014-10-23/step3.png)
 
 あとは待ってればそのうち反映されるはず。
+

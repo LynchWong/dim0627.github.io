@@ -6,10 +6,9 @@ title: "[Clojure]ringのCSRFトークンを生成する"
 ---
 
 ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、
+デフォルトだとPOSTリクエストした時にCSRFトークンチェックが入るようになっててたまに困る。
 
-デフォルトだとPOSTリクエストした時にCSRFトークンチェックが入るようになってると思う。
-
-で、そのトークンの作成の仕方を毎回調べてるのでメモっときたい。
+なのでトークンの生成方法をメモ。
 
 チェックの処理は`site-defaults`の、
 
@@ -18,7 +17,7 @@ ClojureのWebアプリは大抵ringでルーティングとかやると思うん
   (wrap-defaults app-routes site-defaults))
 ```
 
-`:security`のところで設定出来る。
+`:security`のところで設定出来ます。
 
 ``` clojure
 (def site-defaults
@@ -41,10 +40,9 @@ ClojureのWebアプリは大抵ringでルーティングとかやると思うん
                :content-types          true}})
 ```
 
-これを`false`にしちゃえばもちろんCSRFのチェックはされなくなるんだけど、まあ普通はするべきだよね。
+これを`false`にしちゃえばもちろんCSRFのチェックはされなくなるんだけど、まあ普通はするべきですよね。
 
 トークンの生成の仕方はこう。
-
 
 ``` clojure
 (ns sample.handler

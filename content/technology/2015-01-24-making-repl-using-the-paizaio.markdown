@@ -13,23 +13,23 @@ title: "paiza.IOのAPIを使ってreplを作る"
 
 ## 何が出来る？
 
-たくさんの言語のREPLが使える！すごい！
+たくさんの言語のREPLが使える。これ結構すごいと思う。
 
 ただ、コンパイル言語はそんな気軽に使える感じではないみたい。
-
 例えばJavaで言えば、`System.out.println("Hello");`だけじゃなくてクラス定義から含めなきゃいけないみたいに。
 
 ## どうやって使う？
 
 どうやら[Swagger](http://swagger.io/)っていうOSSを使ってるみたい。
-
 paiza.IO上でのデモも使える。
 
 [Swagger UI](http://api.paiza.io/docs/swagger/#!/runners/)
 
 なんか動かないなと思ったら`https`で`http`のリソースを参照してたみたいで、ブロックされてた。
 
-    Mixed Content: The page at 'https://api.paiza.io/docs/swagger/#!/runners/' was loaded over HTTPS, but requested an insecure XMLHttpRequest endpoint 'http://api.paiza.io/docs/swagger-docs/runners.json?api_key=guest'. This request has been blocked; the content must be served over HTTPS.
+```
+Mixed Content: The page at 'https://api.paiza.io/docs/swagger/#!/runners/' was loaded over HTTPS, but requested an insecure XMLHttpRequest endpoint 'http://api.paiza.io/docs/swagger-docs/runners.json?api_key=guest'. This request has been blocked; the content must be served over HTTPS.
+```
 
 評価パターンは3つあるみたい。
 
@@ -71,11 +71,7 @@ HTTPアクセスはJavaのクラスを使おうかなと思ったけど、[dakro
     (get-res run-id)))
 ```
 
-`get-res`は後述。`get_details`を実行するための関数。
-
-`api_key`ってこれでいいのだろうか。
-
-とりあえず動いてはいる！
+`get-res`は後述。`get_details`を実行するための関数。`api_key`ってこれでいいのだろうか。とりあえず動いてはいる。
 
 実行結果の取得はこんな感じ。
 

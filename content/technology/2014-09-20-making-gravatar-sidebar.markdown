@@ -2,9 +2,8 @@
 slug: "making-gravatar-sidebar"
 title: "OctopressのサイドバーにGravatarを表示させる"
 date: 2014-09-20
-tags: [ruby, gravatar, octopress]
+tags: ["ruby", "gravatar", "octopress"]
 ---
-## Octopressのサイドバーってどうなってんの？
 
 そもそもOctopressの構成がまだよくわかってないのでそこから勉強しよう。
 
@@ -30,30 +29,16 @@ about.html   twitter.html
 default_asides: [custom/asides/about.html, asides/recent_posts.html, custom/asides/twitter.html]
 ```
 
-## Gravatarの情報って持って来れるの？
+## Gravatarの情報を取得する
 
 ちょっとだけ調べてみたらGravatarの画像だけ持ってくるpluginは用意されてるっぽい。
-
 でもどうせなら自己紹介のところとかも欲しいよね。
 
-で、Gravatarに[開発者向け資料](https://ja.gravatar.com/site/implement/)がありました。
-
+Gravatarに[開発者向け資料](https://ja.gravatar.com/site/implement/)がありました。
 しっかり読んでないけど、[JSONで返せるっぽい](https://ja.gravatar.com/site/implement/profiles/json/)からこれを使えばいいかな。
 
 ハッシュを指定する必要があるみたいなので、公式から取得しとく。
-
-## 作るぞ
-
 なんか最初から`source/_include/custom/asides`に`about.html`ってのがあるし、これにプロフィールを書こうかな。
-
-まず取得したハッシュを`_config.yml`に定義しちゃおう。
-
-``` ruby
-# Gravatar
-gravatar_hash: 1e092e9f2cda827deb8623be2e846936
-```
-
-で、`about.html`からハッシュを参照してJSONを取得しよう。
 
 ``` html
 <section id="about" style="display: none;">
@@ -88,39 +73,7 @@ gravatar_hash: 1e092e9f2cda827deb8623be2e846936
 </script>
 ```
 
-あとはCSSにちょちょいとスタイルをつけるだけ。
-
-独自のスタイルは`.themes/classic/sass/custom/_styles.scss`に書けばいいぽい。
-
-SASSとかも頃合い見て勉強しなきゃいけないかな・・・。
-
-``` css
-img#photo {
-    display: block;
-    margin: auto;
-}
-
-div#displayname {
-    text-align: center;
-    font-weight: bold;
-}
-
-div#aboutme {
-}
-
-div#currentlocation {
-    text-align: center;
-}
-
-div#urls {
-    text-align: center;
-}
-```
-
-とりあえず表示出来たからここまででいいや。
-
-ついでに自分用のtheme作っちゃったから、ある程度整備出来たらgithubにあげよっかな。
-
-
 ## 参考にさせて頂きました
+
 [Gravatarのプロフィールを表示するOctopressのサイドバー](http://blog.awairo.net/blog/2013/12/24/octopress-aside-of-getting-profile-from-gravatar/)
+

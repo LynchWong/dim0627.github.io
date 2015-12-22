@@ -11,9 +11,7 @@ tags: ["aws", "clojure", "docker", "beanstalk"]
 
 面倒なので[Docker Hub](https://hub.docker.com/account/signup/)からClojureが動く環境を持ってくる。
 
-オフィシャルリポジトリとやらがあったので、それを使います。
-
-Leiningenとか一式が入ってるみたい。
+オフィシャルリポジトリとやらがあったので、それを使います。Leiningenとか一式が入ってるみたい。
 
 [clojure](https://registry.hub.docker.com/_/clojure/)
 
@@ -21,7 +19,7 @@ Leiningenとか一式が入ってるみたい。
 
 とりあえず世界に挨拶が出来るくらいのWebアプリを作っちゃおう。
 
-アプリ自体は重要じゃないので、とりあえずインタラクティブシェル上でちゃちゃっと作っちゃう。
+アプリ自体は重要じゃないので、とりあえずインタラクティブシェル上で適当にやります。
 
 ``` sh
 b2d$  docker run -i -t clojure /bin/bash
@@ -70,15 +68,15 @@ b2d$  boot2docker ip
 
 見れます。
 
-ringのサーバは起動が遅いので`docker logs [names]`で確認しながらやるとよい。
+ringのサーバは起動が遅いので`docker logs [names]`で確認しながらやるといいね。
 
 ## Elastic Beanstalkで動かす
 
 大事なことに気づいたんだけど、BeanstalkはDockerfileとか必要なファイル一式をまとめたzipをアップするらしい。
 
-そもそもソースもイメージに入れちゃうっていうのは考えとしておかしかったね。
-
-なのでwarを`ADD`で置くのが理想的なのかな。
+そもそもソースもイメージに入れちゃうっていうのは考えとしておかしいのかも。
+Dockerのベストプラクティスみたいなのがよくわからないや。
+warを`ADD`で置くのが理想的なのかな。
 
 今回は面倒なので、clojureでWebサーバを立ち上げられる`http-kit`というライブラリを使ってやってみます。
 
@@ -93,9 +91,7 @@ temp$ lein new beanstalk-docker-app superapp
 Generating clojure app for AWS Beanstalk and docker
 ```
 
-こんな感じで作られる。
-
-jarとかは`lein uberjar`で作らなきゃダメかも。
+こんな感じで作られる。jarとかは`lein uberjar`で作らなきゃダメかも。
 
 ``` sh
 .
@@ -150,7 +146,6 @@ superapp$ java -jar target/production.jar
 `lein zip`でBeanstalk用のzipが`target`配下に作成されるので、それをアップロード。
 
 `Dockerrun.aws.json`でポートの指定とかやってるんだけど、こいつもzipに入れてしまうとtimeoutしてしまった。
-
 まあそれでも動くんだけどちょっと気持ち悪いので除外。
 
 ポートの指定やらはDockerfileでやってるので問題なく動きます。
@@ -160,7 +155,6 @@ superapp$ java -jar target/production.jar
 [<img src="/images/2015-01-01/deploy.png" class="image" alt="deploy">](/images/2015-01-01/deploy.png)
 
 しかしデプロイは結構時間かかるなー。
-
 Javaの起動とかライブラリのダウンロードで食ってるのかな・・・。
 
 ## 参考にさせて頂きました

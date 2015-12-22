@@ -2,11 +2,10 @@
 slug: "build-auriga-server-on-ubuntu"
 title: "UbuntuにAurigaを構築してみる"
 date: 2014-10-19
-tags: [linux, auriga, clang, ubuntu]
+tags: ["linux", "auriga", "clang", "ubuntu"]
 ---
 
 今更だがAurigaの構築をやってみる。
-
 どこもWindows環境での構築方法しか載ってないような印象なんだけどそんなことないのかな。
 
 ## ソースのダウンロード
@@ -52,13 +51,10 @@ $ sudo apt-get install zlib1g-dev
 ## grfファイルの準備
 
 grfファイルを用意しなきゃいけなかったらしい。
-
 コンパイル前にすることはなかったな。Winならあるのかもね。
 
 とりあえずgrfファイルはクライアント側にあるので、公式の[クライアントダウンロード](http://ragnarokonline.gungho.jp/beginner/download.html)からダウンロード & インストール。
-
 Ubuntuじゃインストール出来ないから、Windowsでインストールして持ってくんのだるかった・・・。
-
 持ってきたら`conf/grf-files.txt`に追記。
 
 Aurigaと同じフォルダに入れたのでこんな感じに。
@@ -72,7 +68,6 @@ grf: ./data.grf
 ## サーバ起動
 
 Linuxの場合起動は`auriga-start`を使うみたい。
-
 解凍直後は実行権限がないので`sudo chmod 744 auriga-start`をしとく必要あり。
 
 で、`./auriga-start start`で起動。
@@ -81,11 +76,7 @@ Linuxの場合起動は`auriga-start`を使うみたい。
 chrif: connection to the char server was closed. kick all chars
 ```
 
-そしてエラー。
-
-ここで一日詰まった。
-
-ログをよく見てみるとこんな感じの出力が。
+そしてエラー。ここで一日詰まった。ログをよく見てみるとこんな感じの出力が。
 
 ``` sh
 connect login server error : 3
@@ -103,8 +94,7 @@ connect login server error : 3
 0 s1 p1 - S 0 0 @
 ```
 
-ちなみに詰まったのは、ここに追記するフォーマットが全然わからなかったから笑
-
+ちなみに詰まったのは、ここに追記するフォーマットが全然わからなかったから。
 tsvになってるみたいなので、タブ区切りで追加しないと読み込まれません。
 
 ## httpdに接続してみる
@@ -138,3 +128,4 @@ CFLAGS += -DNO_HTTPD
 [<img src="/images/2014-10-19/httpd.png" class="image" alt=" httpd">](/images/2014-10-19/httpd.png)
 
 出来ました。
+

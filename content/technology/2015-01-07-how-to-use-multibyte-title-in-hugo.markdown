@@ -1,8 +1,8 @@
 ---
-tags: ["golang", "hugo"]
 date: 2015-01-07T23:56:32+09:00
 slug: "how-to-use-multibyte-title-in-hugo"
-title: "Hugoでマルチバイトのタイトルをスマートに使う方法"
+title: "Hugoでマルチバイトのタイトルをうまいこと使う"
+tags: ["golang", "hugo"]
 ---
 
 [Hugo](http://gohugo.io/)でちょっと困ったこと。
@@ -19,7 +19,6 @@ permalinks:
 を設定してるからなんだけど。
 
 そうすると日本語とかのマルチバイト文字を使うとパーセントエンコードが走って結構悲惨なことになる。
-
 というか僕の環境だとリンクがきちんと飛べなかった・・・。
 
 Octopressは記事のファイル名がURLになってたから、ファイル名さえ英語なら問題なかったんだよね。
@@ -28,15 +27,9 @@ Octopressは記事のファイル名がURLになってたから、ファイル�
 
 ## URLの構成と対応策
 
-実は移行の時にちょっと手を加えたりしてたんだけど、あんまり綺麗な方法じゃなかったので納得が行ってなかった。
+Hugoはリンク構造も結構柔軟に変えられるっぽい。
 
-そんな時に公式を読んでたら、[Content Organization](http://gohugo.io/content/organization/)の項にこんな図が。
-
-[<img src="/images/2015-01-07/permalink.png" class="image" alt="permalink">](/images/2015-01-07/permalink.png)
-
-どうやら僕が困ってたURLのタイトル部は`slug`と呼ばれる部分らしい。
-
-ならこんな風に記事内で毎回指定してしまえば綺麗に話が済むのではないか？
+なのでこんな風に記事内で毎回指定してしまえば綺麗に話が済む。
 
 ``` markdown
 ---
@@ -47,8 +40,6 @@ title: "Hugoでマルチバイトのタイトルをスマートに使う方法"
 ---
 ```
 
-と思ったらうまくいった。
-
 `config.yaml`はこんな感じ。
 
 ``` yaml
@@ -56,8 +47,7 @@ permalinks:
   post: /blog/:year/:month/:day/:slug/
 ```
 
-なのでOctopressから移行した人はこの方法も検討するといいかもしれません。
+なのでOctopressから移行した人はこの方法も検討するといいかもしれないですね。
 
 `hugo new`した時に生成されるテンプレートは`archetypes`ディレクトリに配置出来るから、そこでやっておくとよし。
 
-しかし移行時に書き足すのが面倒なんだよなあ。

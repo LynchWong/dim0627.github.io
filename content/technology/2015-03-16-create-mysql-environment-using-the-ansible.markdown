@@ -6,13 +6,11 @@ title: "Ansibleを使ってMySQLが動く環境を手っ取り早く作る"
 ---
 
 ちょっと友人と共同で開発しているWebアプリがあって、DBの用意も手軽に共有したいのでAnsibleでやることに。
-
 まあ僕はViewしか触ってないから別になくてもいいんだけど・・・。
 
 ## hostsを書く
 
 Ansibleが取り扱うマシンの定義をしておかなきゃいけない。
-
 `Vagrantfile`で作られる仮想マシンのipを固定して、
 
 ``` ruby
@@ -45,15 +43,12 @@ Ansibleはなんかコマンド覚えらんないしちょうどいいね。
 ```
 
 今回は`Vagrantfile`があるディレクトリに`env`ってディレクトリを作って、そこに設定ファイルを置くことにした。
-
-Playbookとかもここに入れていくよ。
+Playbookとかもここに入れていきます。
 
 ## Ansible Galaxyを使う
 
 AnsibleはPlaybookと呼ばれるymlファイルにプロビジョニングの定義をしていく。
-
 でも正直、個人的に使う環境のためにガリガリ書くのはバカらしいよね。
-
 特にMySQLなんて相当な数の人が使ってるだろうし、そのノウハウを使わせてもらいたい。
 
 Ansibleには[Ansible Galaxy](https://galaxy.ansible.com/)っていうWebサービスがあって、モジュール単位のよく使う定義をアップできるみたい。
@@ -63,9 +58,6 @@ Ansibleには[Ansible Galaxy](https://galaxy.ansible.com/)っていうWebサー�
 AnsibleではMySQLやらhttpdやらの個々のモジュールをroleと呼んでるらしい。
 
 つまり、[Browse Roles](https://galaxy.ansible.com/list#/roles)からMySQLのroleを探せばよい。
-
-検索結果、デフォルトで評価の降順にしておいて欲しいんだけど・・・。
-
 今回は[ANXS.mysql](https://galaxy.ansible.com/list#/roles/509)という奴を使わせてもらうことにしました。
 
 理由は、評価がそれなりに高くて、MySQLの設定が見たまんまでやれそうだったから。
@@ -74,33 +66,25 @@ AnsibleではMySQLやらhttpdやらの個々のモジュールをroleと呼ん�
 
 Ansible Galaxyからの導入は`ansible-galaxy install ANXS.mysql`みたいにやれば出来る。
 
-でもこれじゃあ、このPCにだけroleが導入されちゃうし、どんなroleが必要だったのか後々わからなくなっちゃうね。
-
-だから他の人が環境を作るときに困っちゃう。
+でもこれじゃあ、このPCにだけroleが導入されちゃうし、どんなroleが必要だったのか後々わからなくなっちゃいますね。
+だから他の人が環境を作るときに困る。
 
 そういう時のために`requirements.txt`っていうのを作るのが主流らしい。
-
 これはAnsible Galaxyから導入するroleを記述しておくものみたいで、今回はこんな感じの記述になった。
 
 ```
 - src: ANXS.mysql
 ```
 
-シンプル。
-
 導入するときは`ansible-galaxy install -p ./env/roles -r env/requirements.yml`みたいにやればいい。
+これで環境を作る手順を統一することができました。
 
-pythonっぽい。
-
-これで環境を作る手順を統一することができた。
-
-このコマンドは覚えられなそうだから、プロジェクトで使うWikiとかに書いておいたほうがいいね。
-
+このコマンドは覚えられなそうだから、プロジェクトで使うWikiとかに書いておいたほうがいいですね。
 ちなみに、roleはAnsible Galaxyにあるものだけじゃなくて、GitHubにあるものとかも導入できるらしい。
 
 ### Playbookを書く
 
-じゃあインストールしてきたroleをもとにPlaybookを書こう。
+じゃあインストールしてきたroleをもとにPlaybookを書きます。
 
 設定の仕方はだいたいAnsible Galaxyに書いてあるんだけど、書いてないのも多いから選ぶときに気をつけたほうがいいかも。
 
@@ -150,10 +134,8 @@ Ansible Galaxyに載っているものからコピってきて、不要なもの
 
 ## プロビジョニングする
 
-`vagrant up`か`vagrant provision`すればやってくれる。
+`vagrant up`か`vagrant provision`すればやってくれます。
 
 [ANXS.mysql](https://galaxy.ansible.com/list#/roles/509)の場合はMySQLユーザの作成とデータベースの作成までやってくれる。
-
-テーブルとかは別途スキーマ定義を用意するだろうし、ここまでやってくれれば十分だね。
-
+テーブルとかは別途スキーマ定義を用意するだろうし、ここまでやってくれれば十分ですね。
 

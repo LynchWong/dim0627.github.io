@@ -5,9 +5,10 @@ date: 2014-12-11
 tags: ["clojure", "lobos", "database", "migration", "leiningen"]
 ---
 
-1年前くらいには、SQLまで隠蔽するORMとか嫌い！テーブルの自動生成やだ！とか言ってたのに、いつの間にかスキーマ操作なんてフレームワークがやるものだよね、って考えになってしまったよ・・・。
+1年前くらいには、SQLまで隠蔽するORMとか嫌いだったし、テーブルの自動生成も嫌だったのになあ。
+なんだかんだ便利さに気づいてきた感じがある。
 
-というわけでClojureを使ってWeb開発をする際も使いたいので、Lobosというスキーマのマニュピレーション、マイグレーションツールを使ってみます。
+というわけでClojureを使ってWeb開発をする際も使いたいので、[Lobos](https://github.com/budu/lobos)というスキーマのマニュピレーション、マイグレーションツールを使ってみます。
 
 ## インストール
 
@@ -19,9 +20,9 @@ tags: ["clojure", "lobos", "database", "migration", "leiningen"]
 :dependencies [[lobos "1.0.0-beta3"]]
 ```
 
-を追加して`lein deps`するだけでおーけー。
+を追加して`lein deps`。
 
-Leiningenのプラグインとして使える[pupeno/lein-lobos](https://github.com/pupeno/lein-lobos)ってのもあるようだ。
+Leiningenのプラグインとして使える[pupeno/lein-lobos](https://github.com/pupeno/lein-lobos)ってのもあるみたい。
 
 こっちも使う場合は、`ploject.clj`に
 
@@ -31,7 +32,7 @@ Leiningenのプラグインとして使える[pupeno/lein-lobos](https://github.
 
 を追加。
 
-全体を載っけるとこんな感じに。
+全体を載せるとこんな感じに。
 
 ``` clj
 (defproject tpc "0.1.0-SNAPSHOT"
@@ -60,7 +61,7 @@ Leiningenのプラグインとして使える[pupeno/lein-lobos](https://github.
 
 ## テーブル定義をしてみる
 
-今回はSQLiteにて実施。
+今回はSQLiteでやります。
 
 `src`ディレクトリ直下に`lobos`ってディレクトリを作成して、その中にいろいろな設定を突っ込む必要があるらしい。
 
@@ -132,11 +133,9 @@ Leiningenのプラグインとして使える[pupeno/lein-lobos](https://github.
 ## マイグレーションの実行
 
 ここが結構厄介だった。
-
 というか、出来たといえば出来たんだけど、もっと正しい方法があるような気が・・・。
 
 REPLにて以下を実行。
-
 WARNINGは多分すでに存在するシンボルを置き換えてしまってることの警告だからとりあえず無視。
 
 ``` clojure-repl
@@ -179,6 +178,3 @@ sqlite> .tables
 lobos_migrations  sites
 ```
 
-できてる！
-
-まだまだ名前空間とか`require`あたりの理解が甘いなー・・・。

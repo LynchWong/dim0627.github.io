@@ -1,30 +1,24 @@
 ---
 slug: "does-not-work-lobos-in-heroku"
-title: "Lobosでマイグレーションができない in Heroku"
+title: "HerokuでLobosを使ったマイグレーションができない"
 date: 2014-12-21
 tags: ["heroku", "clojure", "migration", "lobos", "postgresql"]
 ---
 
 ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。
 
-## 何が起きたか
+## マイグレーションしても何も起きない
 
-今だにHerokuの使い方がようわからんのだけど、
+今だにHerokuの使い方がよくわからないんだけど、とりあえずローカルから向き先変えるよりもSSHの方が楽だったので`heroku run bash`してやってます。
 
-とりあえずローカルから向き先変えるよりもSSHの方がいっかなってことで`heroku run bash`してやってます。
-
-ローカルからだとDBをSSLで接続させないといけないし・・・。
-
-んでマイグレーションしようとしたら、
+ローカルからだとDBをSSLで接続させないといけないし・・・。それでマイグレーションしようとしたら、
 
 ``` clojure-repl
 user=> (migrate)
 nil
 ```
 
-何も出ない。
-
-本当はこんな感じで、
+何も出ない。本当はこんな感じで、
 
 ``` clojure-repl
 user=> (migrate)
@@ -35,9 +29,9 @@ nil
 
 作成されたり変更されたテーブルが出てくるはず。
 
-## 原因はなんだったのか
+## lobos.migrationsがロードされてない
 
-`lobos.migrations`が読まれてない（というかリロードされてない）っぽい。
+どうやら`lobos.migrations`が読まれてない（というかリロードされてない）っぽい。
 
 そもそも`migrate`自体はこんな感じで`lobos.migration`の`do-migrations`を呼んでます。
 
@@ -117,12 +111,11 @@ user=> (list-migrations)
 user=>
 ```
 
-## 解決策
+## *reload-migrations*をfalseにすればいい
 
 もう正直ここまでで一週間弱悩んだから、lobos使うのやめようかなとも思ったけどまあいい勉強だろうし・・・。
 
 暫定にしかならないけど、とりあえずリロードさせないようにしよう。
-
 ソースコードの通り、`*reload-migrations*`が`true`になっている場合にリロードが走るらしい。
 
 だからこんな感じで`false`で上書いてしまおう。
@@ -148,7 +141,7 @@ lobos.migration=>
 ```
 
 これじゃない感がすごいけど、とりあえず通った・・・。
-
 Lobosはもう開発があんまり活発じゃないみたいだなあ。
 
-`lobos.migration`と`lobos.migrations`の命名はちょっといけてないような・・・。
+`lobos.migration`と`lobos.migrations`の命名はちょっといけてないような気がする。
+

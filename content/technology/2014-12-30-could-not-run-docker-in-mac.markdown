@@ -65,9 +65,7 @@ b2d$ docker run hello-world
 
 環境変数`$DOCKER_HOST`に`tcp://192.168.59.103:2357`が設定されてなきゃいけなかったっぽい。
 
-これによってboot2dockerで起動したVM中のdockerと接続してるのかな。
-
-と思ったら、
+これによってboot2dockerで起動したVM中のdockerと接続してるのかな。と思ったら、
 
 ``` sh
 b2d$ export DOCKER_HOST=tcp://192.168.59.103:2375
@@ -75,9 +73,7 @@ b2d$ docker run hello-world
 2014/12/30 20:58:41 Cannot connect to the Docker daemon. Is 'docker -d' running on this host?
 ```
 
-環境変数を設定してみるもまたエラー。
-
-デーモンと接続できない。
+環境変数を設定してみるもまたエラー。デーモンと接続できない。
 
 1時間ほど詰まりましたが最悪な原因でした。
 
