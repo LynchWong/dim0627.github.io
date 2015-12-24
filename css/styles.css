@@ -49,11 +49,11 @@ code {
 }
 
 h1, h2, h3, h4, h5 ,h6 { margin: 0; }
-h1 { font-size: 1.6rem; }
-h2 { font-size: 1.4rem; }
-h3 { font-size: 1.1rem; }
-h4 { font-size: 1rem; }
-h5 { font-size: 1rem; }
+h1 { font-size: 1.6rem; line-height: 2.4rem; }
+h2 { font-size: 1.4rem; line-height: 2.1rem; }
+h3 { font-size: 1.1rem; line-height: 1.7rem; }
+h4 { font-size: 1rem; line-height: 1.5rem; }
+h5 { font-size: 1rem; line-height: 1.5rem; }
 
 time {
   text-transform: uppercase;
@@ -61,17 +61,14 @@ time {
 
 /* Original */
 header.site {
-  padding: 50px 0;
+  padding: 3rem 0;
 }
 
 header.site .logo {
   text-decoration: none;
   font-family: 'Merriweather', serif;
   font-size: 2rem;
-}
-
-nav.site {
-  padding-bottom: 50px;
+  line-height: 2rem;
 }
 
 .single article h1,
@@ -100,19 +97,19 @@ nav.site {
 .single article h1 a { color: #000; text-decoration: none; }
 
 .single article h2 {
-  margin-top: 60px;
-  margin-bottom: 30px;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
 }
 
 .single article h3 {
-  margin-top: 40px;
-  margin-bottom: 20px;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
   font-weight: 900;
 }
 
 .index header,
 .single header {
-  margin-bottom: 50px;
+  margin-bottom: 2rem;
 }
 
 .single article .body {
@@ -137,7 +134,7 @@ nav.site {
 }
 
 .single article .body {
-  margin-bottom: 50px;
+  margin-bottom: 2rem;
 }
 
 .single article .body img {
@@ -147,7 +144,7 @@ nav.site {
 }
 
 .single article .body p {
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 .single article .body blockquote {
@@ -175,8 +172,8 @@ nav.site {
 }
 
 /* Original:Footer */
-#site-footer {
-  padding: 100px 0;
+footer.site {
+  padding: 3rem 0;
   font-size: .8rem;
 }
 
