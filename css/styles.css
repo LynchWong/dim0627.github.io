@@ -123,14 +123,14 @@ header.site .logo {
   background-color: #f5f5f5;
   border-radius: 2px;
   display: inline-block;
-  padding: 15px;
+  padding: 10px;
   padding-left: 30px;
 }
 
 .single article .body ul li,
 .single article .body ol li {
   font-size: .8rem;
-  line-height: 1.5rem;
+  line-height: 1.6rem;
 }
 
 .single article .body {
