@@ -115,7 +115,7 @@ header.site .logo {
 .single article .body {
   word-wrap: break-word;
   line-height: 2rem;
-  max-width: 700px;
+  max-width: 600px;
 }
 
 .single article .body ul,
