@@ -1,5 +1,5 @@
 ---
-date: 2015-12-14T21:13:20+09:00
+date: 2015-12-31T21:13:20+09:00
 slug: "played-dragon-age-inquisition"
 tags: ["dragon-age-inquisition", "game"]
 title: "ドラゴンエイジインクイジションを3周もやった"
