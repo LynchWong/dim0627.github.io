@@ -2,7 +2,7 @@
 date: 2016-01-02T22:36:11+09:00
 slug: "played-gravity-daze"
 tags: ["gravity-daze", "game"]
-title: "GRAVITY DAZEをやった"
+title: "「GRAVITY DAZE」をやった"
 image: "gravity-daze.jpg"
 ---
 
