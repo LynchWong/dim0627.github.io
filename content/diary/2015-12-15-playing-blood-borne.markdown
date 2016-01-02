@@ -3,6 +3,7 @@ date: 2015-12-15T14:32:45+09:00
 slug: "playing-blood-borne"
 tags: ["bloodborne", "game"]
 title: "今更だけどBloodborneをやってる"
+image: "bloodborne.jpg"
 ---
 
 このブログもようわからんから、日記にしようかな、更新頻度あげたい。

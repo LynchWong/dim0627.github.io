@@ -3,6 +3,7 @@ date: 2015-12-21T10:39:11+09:00
 slug: "played-until-dawn"
 tags: ["until-dawn", "game"]
 title: "「Until Dawn - 惨劇の山荘」をやった"
+image: "until-dawn.png"
 ---
 
 ホラーっぽかったから避けてたんだけど結局やりました。

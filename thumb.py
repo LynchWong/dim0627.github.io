@@ -14,5 +14,5 @@ files = glob.glob(join(path, '*.*'))
 for f in files:
     print 'Generating thumbnail: ' + f
     img = Image.open(f)
-    img.thumbnail( (512, 512) )
+    img.thumbnail((768, 768), Image.ANTIALIAS)
     img.save(join(path, relpath(f, path)))
