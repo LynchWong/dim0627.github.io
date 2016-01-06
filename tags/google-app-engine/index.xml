@@ -91,11 +91,11 @@ sys.path.insert(0, &#39;lib&#39;)
 
 &lt;p&gt;はじめにGoogleが、使いたいドメインが君のものか確認したいとのことなので、verifyへ。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34; class=&#34;image&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;そうするとこんな画面になるので、&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34; class=&#34;image&#34; alt=&#34;input_domain&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34; alt=&#34;input_domain&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;ここに表示されてるテキストを、ドメインを発行した会社さんのほうからTXTレコードとして追加すればOK。&lt;/p&gt;
 
@@ -111,7 +111,7 @@ sys.path.insert(0, &#39;lib&#39;)
 
 &lt;p&gt;でここに入力すればOK。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34; class=&#34;image&#34; alt=&#34;input_txt&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34; alt=&#34;input_txt&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;TYPEはTXTにしてVALUEにさっきのテキストを入力。
 場所にもよるけど少し待てば反映されるので、それまでGoogle側の画面で確認ボタンを何度か押してみる。
@@ -121,7 +121,7 @@ sys.path.insert(0, &#39;lib&#39;)
 
 &lt;p&gt;確認が出来たらサブドメインとしてプレフィックスを付けるのかを決める。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34; class=&#34;image&#34; alt=&#34;step2&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34; alt=&#34;step2&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;これによって最後のステップが変わるけど、僕は確認の時点でサブドメインとして設定したので、Google側では特に付加せずやってます。&lt;/p&gt;
 
@@ -130,7 +130,7 @@ sys.path.insert(0, &#39;lib&#39;)
 &lt;p&gt;最後はまたDNSレコードの追加。
 ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34; class=&#34;image&#34; alt=&#34;step3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34; alt=&#34;step3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;あとは待ってればそのうち反映されるはず。&lt;/p&gt;
 </description>

@@ -409,11 +409,11 @@ Until Dawnのそれは本当に興味をひかれる作りになっていたな�
 
 &lt;p&gt;エラーは2種類発生していて、ひとつめがこれ。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-12-11/error1.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-12-11/error1.png&#34; class=&#34;image&#34; alt=&#34;error&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-12-11/error1.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-12-11/error1.png&#34; alt=&#34;error&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;もうひとつがこれ。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-12-11/error2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-12-11/error2.png&#34; class=&#34;image&#34; alt=&#34;error&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-12-11/error2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-12-11/error2.png&#34; alt=&#34;error&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;あれ？&lt;code&gt;author&lt;/code&gt;はもともと必須だっけ？&lt;/p&gt;
 
@@ -1014,7 +1014,7 @@ Make every program a Filter.&lt;/p&gt;
 
 &lt;p&gt;こんな感じに。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-08-26/bucket.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-08-26/bucket.png&#34; class=&#34;image&#34; alt=&#34;bucket&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-08-26/bucket.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-08-26/bucket.png&#34; alt=&#34;bucket&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;そしたら違うエラー。&lt;/p&gt;
 
@@ -1119,51 +1119,6 @@ $(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() 
 &lt;h2 id=&#34;参考にさせていただきました:1be3a17c6bd3affece21cbd510505d7a&#34;&gt;参考にさせていただきました。&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://qiita.com/jkr_2255/items/17693ab77beea71a871c&#34;&gt;JavaScript - setTimeout(&amp;hellip;,0)などの使いドコロ - Qiita&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hugo向けの新しいテーマを作った</title>
-      <link>http://yet.unresolved.xyz/blog/2015/06/20/making-new-theme-robust-for-hugo/</link>
-      <pubDate>Sat, 20 Jun 2015 11:30:06 +0900</pubDate>
-      
-      <guid>http://yet.unresolved.xyz/blog/2015/06/20/making-new-theme-robust-for-hugo/</guid>
-      <description>
-
-&lt;p&gt;前に作ったやつが飽きてしまったので、そもそもForkするんじゃなくて0から作ることにしました。&lt;/p&gt;
-
-&lt;h2 id=&#34;出来たもの:b3f0c0f315f1fbc2ee8323461148b3d4&#34;&gt;出来たもの&lt;/h2&gt;
-
-&lt;p&gt;こんな感じ。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/dim0627/hugo_theme_robust&#34;&gt;dim0627/hugo_theme_robust&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-06-20/theme_tn.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-06-20/theme_tn.png&#34; class=&#34;image&#34; alt=&#34;theme_tn&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;トップの最新4記事は2カラム、それ以降は4カラムで表示するようにしてる。&lt;/p&gt;
-
-&lt;p&gt;前はPost一覧とかの画面もあったけど、そもそも必要無いような気がして色々削った。
-なので今回はシンプルにトップ、記事詳細、タグ別記事一覧の3ページだけ。&lt;/p&gt;
-
-&lt;p&gt;トップとタグ別記事一覧は同じテンプレートを使ってるから、少し冗長になってしまった気はする。
-Hugoのテンプレート構成が今だによくわかってないから、共通化とかがうまく出来ない・・・。&lt;/p&gt;
-
-&lt;h2 id=&#34;工夫したこと:b3f0c0f315f1fbc2ee8323461148b3d4&#34;&gt;工夫したこと&lt;/h2&gt;
-
-&lt;p&gt;前にテーマを作って思ったんだけど、Hugoの強みは各テーマをOverride出来ることだと思ってます。
-だからそれ前提で書かないと、Overrideしたいのは一部でも、ファイルまるごとコピるはめになっちゃう。&lt;/p&gt;
-
-&lt;p&gt;前はそれでもう何がなんだかわからなくなったので、今回はそれを避けようとした。&lt;/p&gt;
-
-&lt;p&gt;何をしたかというと、空っぽのテンプレートファイルを最初からいろいろな場所に設置しておくことにした。
-Overrideしたい人はこのファイルを各自のディレクトリにコピーして編集すればいいし、Overrideしない人はほっとけば影響もない。&lt;/p&gt;
-
-&lt;h2 id=&#34;まとめ:b3f0c0f315f1fbc2ee8323461148b3d4&#34;&gt;まとめ&lt;/h2&gt;
-
-&lt;p&gt;数時間でざーっと作ったので、最後のほうはCSSもぶれまくったのは反省。
-あとReadmeとかいろいろ書けてない。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/spf13/hugoThemes&#34;&gt;spf13/hugoThemes&lt;/a&gt;にプルリクも送らねば・・・。&lt;/p&gt;
 </description>
     </item>
     
@@ -1276,6 +1231,32 @@ Overrideしたい人はこのファイルを各自のディレクトリにコピ
 &lt;p&gt;爆弾のやつ。&lt;/p&gt;
 
 &lt;p&gt;めんどくさかった。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する</title>
+      <link>http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/</link>
+      <pubDate>Wed, 01 Apr 2015 22:42:40 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/</guid>
+      <description>
+
+&lt;p&gt;こんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# v でペインを縦に分割する
+bind v split-window -h -c &amp;quot;#{pane_current_path}&amp;quot;
+
+# s でペインを横に分割する
+bind s split-window -v -c &amp;quot;#{pane_current_path}&amp;quot;
+
+# 新規ウィンドウでディレクトリを保持
+bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;参考にさせていただきました:0adf99f262be79bb5ee2575ca8ebd7e8&#34;&gt;参考にさせていただきました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://studio3104.hatenablog.com/entry/2014/10/14/131430&#34;&gt;tmux 1.9 でペイン分割時にカレントディレクトリを維持 - Studio3104::BLOG.new&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
