@@ -129,7 +129,7 @@ article.li {
 
 @media (max-width: 768px) {
   article.li {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 }
 
@@ -190,10 +190,6 @@ article.li .summary {
   overflow: hidden;
   word-break: break-all;
   font-size: .8rem;
-}
-
-article.single {
-  margin-bottom: 2rem;
 }
 
 article.single header {
