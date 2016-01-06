@@ -33,7 +33,7 @@ curl -sS https://apigility.org/install | php
 サーバを再度起動する場合は`php -S localhost:8888 -t public public/index.php`とかやればOK。
 画面を開くとこんな感じのが出てくる。
 
-[<img src="/images/2015-02-14/apigility_top.png" class="image" alt="apigility_top">](/images/2015-02-14/apigility_top.png)
+[<img src="/images/2015-02-14/apigility_top.png" alt="apigility_top">](/images/2015-02-14/apigility_top.png)
 
 ロゴがかわいいね。ここからAPIの追加やデータベース接続の設定やらが出来ます。
 
@@ -49,17 +49,17 @@ create table tasks(id integer primary key, name varchar(20), finished integer);
 
 `Settings`の`Database Adapters`から定義を追加出来る。
 
-[<img src="/images/2015-02-14/database.png" class="image" alt="database">](/images/2015-02-14/database.png)
+[<img src="/images/2015-02-14/database.png" alt="database">](/images/2015-02-14/database.png)
 
 今回はこんな感じで設定。
 
-[<img src="/images/2015-02-14/def_database.png" class="image" alt="def_database">](/images/2015-02-14/def_database.png)
+[<img src="/images/2015-02-14/def_database.png" alt="def_database">](/images/2015-02-14/def_database.png)
 
 ## APIを追加する
 
 `APIs`の`Create New API`からAPIを追加する。今回はTasksという名前で作成した。
 
-[<img src="/images/2015-02-14/create_api.png" class="image" alt="create_api">](/images/2015-02-14/create_api.png)
+[<img src="/images/2015-02-14/create_api.png" alt="create_api">](/images/2015-02-14/create_api.png)
 
 粒度がわかりづらいけど、ここで作ったAPIに対して個々のサービスを追加していく。
 
@@ -77,19 +77,19 @@ create table tasks(id integer primary key, name varchar(20), finished integer);
 
 というわけで、`REST Service Name`をtasks、`DB-Connected`はさっき作ったアダプタとテーブル名を設定。
 
-[<img src="/images/2015-02-14/create_service.png" class="image" alt="create_service">](/images/2015-02-14/create_service.png)
+[<img src="/images/2015-02-14/create_service.png" alt="create_service">](/images/2015-02-14/create_service.png)
 
 こんな感じになる。
 
-[<img src="/images/2015-02-14/def_service.png" class="image" alt="def_service">](/images/2015-02-14/def_service.png)
+[<img src="/images/2015-02-14/def_service.png" alt="def_service">](/images/2015-02-14/def_service.png)
 
 接続できるか試してみましょう。データがないので、まずはPOSTで格納してみる。
 
-[<img src="/images/2015-02-14/post_tasks.png" class="image" alt="post_tasks">](/images/2015-02-14/post_tasks.png)
+[<img src="/images/2015-02-14/post_tasks.png" alt="post_tasks">](/images/2015-02-14/post_tasks.png)
 
 いけてるっぽい。取得は？
 
-[<img src="/images/2015-02-14/get_tasks.png" class="image" alt="get_tasks">](/images/2015-02-14/get_tasks.png)
+[<img src="/images/2015-02-14/get_tasks.png" alt="get_tasks">](/images/2015-02-14/get_tasks.png)
 
 取れますね。
 
@@ -108,7 +108,7 @@ sqlite> select * from tasks;
 
 つってもここはあんまり説明してもしょうがないのでSSとコードだけ。表示はこんな感じで、
 
-[<img src="/images/2015-02-14/view.png" class="image" alt="view">](/images/2015-02-14/view.png)
+[<img src="/images/2015-02-14/view.png" alt="view">](/images/2015-02-14/view.png)
 
 こんなHTMLでやりました。
 

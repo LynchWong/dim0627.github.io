@@ -9,7 +9,7 @@ iTerm2での話。
 
 こいつのせい。
 
-[<img src="/images/2015-03-31/iterm.png" class="image" alt="verify">](/images/2015-03-31/iterm.png)
+[<img src="/images/2015-03-31/iterm.png" alt="verify">](/images/2015-03-31/iterm.png)
 
 でもこれがないと、素の時に使うVimで[itchyny/lightline.vim](https://github.com/itchyny/lightline.vim)がズレるんだよなあ。
 

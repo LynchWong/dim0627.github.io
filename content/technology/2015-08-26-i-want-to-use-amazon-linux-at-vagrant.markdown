@@ -41,7 +41,7 @@ A client error (AuthFailure) occurred when calling the CreateInstanceExportTask 
 
 こんな感じに。
 
-[<img src="/images/2015-08-26/bucket.png" class="image" alt="bucket">](/images/2015-08-26/bucket.png)
+[<img src="/images/2015-08-26/bucket.png" alt="bucket">](/images/2015-08-26/bucket.png)
 
 そしたら違うエラー。
 

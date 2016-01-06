@@ -10,11 +10,11 @@ Macを操作しながらプレゼンする人って、たまに画面の一部�
 
 設定画面から、
 
-[<img src="/images/2015-01-25/mac_pref.png" class="image" alt="mac_pref">](/images/2015-01-25/mac_pref.png)
+[<img src="/images/2015-01-25/mac_pref.png" alt="mac_pref">](/images/2015-01-25/mac_pref.png)
 
 でこれ。
 
-[<img src="/images/2015-01-25/mac_accessibility.png" class="image" alt="mac_accessibility">](/images/2015-01-25/mac_accessibility.png)
+[<img src="/images/2015-01-25/mac_accessibility.png" alt="mac_accessibility">](/images/2015-01-25/mac_accessibility.png)
 
 コントロールキー押しながらスクロールするとズーム。
 

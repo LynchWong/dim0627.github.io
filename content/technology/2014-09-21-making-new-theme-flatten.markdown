@@ -11,7 +11,7 @@ tags: ["ruby", "octopress", "design"]
 
 Octopressから移行してしまったので、スクリーンショットだけ載せとく。
 
-[<img src="/images/2014-09-21/flatten.png" class="image" alt="flatten">](/images/2014-09-21/flatten.png)
+[<img src="/images/2014-09-21/flatten.png" alt="flatten">](/images/2014-09-21/flatten.png)
 
 ## テーマの変え方
 

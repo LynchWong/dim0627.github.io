@@ -64,7 +64,7 @@ b2d$  boot2docker ip
 
 このIPの3000ポートに向けてアクセスすれば、
 
-[<img src="/images/2015-01-01/webapp.png" class="image" alt="webapp">](/images/2015-01-01/webapp.png)
+[<img src="/images/2015-01-01/webapp.png" alt="webapp">](/images/2015-01-01/webapp.png)
 
 見れます。
 
@@ -139,7 +139,7 @@ superapp$ java -jar target/production.jar
 13:33:07.710 [main] INFO  superapp.main - serving status message
 ```
 
-[<img src="/images/2015-01-01/beanstalkDockerApp.png" class="image" alt="beanstalkDockerApp">](/images/2015-01-01/beanstalkDockerApp.png)
+[<img src="/images/2015-01-01/beanstalkDockerApp.png" alt="beanstalkDockerApp">](/images/2015-01-01/beanstalkDockerApp.png)
 
 ### デプロイ
 
@@ -152,7 +152,7 @@ superapp$ java -jar target/production.jar
 
 デプロイはこんな感じで成功。
 
-[<img src="/images/2015-01-01/deploy.png" class="image" alt="deploy">](/images/2015-01-01/deploy.png)
+[<img src="/images/2015-01-01/deploy.png" alt="deploy">](/images/2015-01-01/deploy.png)
 
 しかしデプロイは結構時間かかるなー。
 Javaの起動とかライブラリのダウンロードで食ってるのかな・・・。
