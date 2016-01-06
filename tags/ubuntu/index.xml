@@ -1,136 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ubuntu on Unresolved</title>
+    <title>Unresolved </title>
     <link>http://yet.unresolved.xyz/tags/ubuntu/</link>
-    <description>Recent content in Ubuntu on Unresolved</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 Oct 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <author>Daisuke Tsuji</author>
+    <rights>(C) 2016</rights>
+    <updated>2014-10-19 00:00:00 &#43;0000 UTC</updated>
+
     
-    <item>
-      <title>UbuntuにAurigaを構築してみる</title>
-      <link>http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/</link>
-      <pubDate>Sun, 19 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/</guid>
-      <description>
-
-&lt;p&gt;今更だがAurigaの構築をやってみる。
-どこもWindows環境での構築方法しか載ってないような印象なんだけどそんなことないのかな。&lt;/p&gt;
-
-&lt;h2 id=&#34;ソースのダウンロード:877a36750c93f6fdaf9ffc2de1905eb6&#34;&gt;ソースのダウンロード&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://auriga.moe.hm/Auriga/&#34;&gt;Auriga Project&lt;/a&gt;からソースを落とす。&lt;/p&gt;
-
-&lt;p&gt;言うまでもないけどバージョン番号は最新とかで。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ wget -O auriga.zip http://auriga.moe.hm/Auriga/snapshotmanager.php?num=1221
-$ unzip auriga.zip
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;コンパイル:877a36750c93f6fdaf9ffc2de1905eb6&#34;&gt;コンパイル&lt;/h2&gt;
-
-&lt;p&gt;なんか事前の設定とか必要なんだろうけど何も考えずにコンパイルしてみよう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ cd Auriga-1221full
-$ make
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;で、エラーした。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;../common/grfio.c:87:20: fatal error: zlib.h: No such file or directory
-   #include &amp;lt;zlib.h&amp;gt;
-                    ^
-compilation terminated.
-make[1]: *** [../common/grfio.o] Error 1
-make[1]: Leaving directory `/home/daisuketsuji/Downloads/Auriga-1221Full/src/map&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;zlibがないらしい。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ sudo apt-get install zlib1g
-$ sudo apt-get install zlib1g-dev
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これで通った。&lt;/p&gt;
-
-&lt;h2 id=&#34;grfファイルの準備:877a36750c93f6fdaf9ffc2de1905eb6&#34;&gt;grfファイルの準備&lt;/h2&gt;
-
-&lt;p&gt;grfファイルを用意しなきゃいけなかったらしい。
-コンパイル前にすることはなかったな。Winならあるのかもね。&lt;/p&gt;
-
-&lt;p&gt;とりあえずgrfファイルはクライアント側にあるので、公式の&lt;a href=&#34;http://ragnarokonline.gungho.jp/beginner/download.html&#34;&gt;クライアントダウンロード&lt;/a&gt;からダウンロード &amp;amp; インストール。
-Ubuntuじゃインストール出来ないから、Windowsでインストールして持ってくんのだるかった・・・。
-持ってきたら&lt;code&gt;conf/grf-files.txt&lt;/code&gt;に追記。&lt;/p&gt;
-
-&lt;p&gt;Aurigaと同じフォルダに入れたのでこんな感じに。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;grf: ./data.grf
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;不要な行はコメントアウトで。&lt;/p&gt;
-
-&lt;h2 id=&#34;サーバ起動:877a36750c93f6fdaf9ffc2de1905eb6&#34;&gt;サーバ起動&lt;/h2&gt;
-
-&lt;p&gt;Linuxの場合起動は&lt;code&gt;auriga-start&lt;/code&gt;を使うみたい。
-解凍直後は実行権限がないので&lt;code&gt;sudo chmod 744 auriga-start&lt;/code&gt;をしとく必要あり。&lt;/p&gt;
-
-&lt;p&gt;で、&lt;code&gt;./auriga-start start&lt;/code&gt;で起動。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;chrif: connection to the char server was closed. kick all chars
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;そしてエラー。ここで一日詰まった。ログをよく見てみるとこんな感じの出力が。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;connect login server error : 3
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;プロセスを見てみるとloginサーバが生きててcharサーバが死んでるので、charサーバがloginサーバにつなげずに落ちてるんだろう。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;log/&lt;/code&gt;に出力されるログを見ているとどうやらアカウントの設定が必要らしい。&lt;/p&gt;
-
-&lt;p&gt;サーバを一度起動すると、エラーしようがなんだろうが&lt;code&gt;save/&lt;/code&gt;以下にセーブデータが作成されるので、そいつを編集する。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;save/account.txt&lt;/code&gt;に以下を追記。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;0 s1 p1 - S 0 0 @
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ちなみに詰まったのは、ここに追記するフォーマットが全然わからなかったから。
-tsvになってるみたいなので、タブ区切りで追加しないと読み込まれません。&lt;/p&gt;
-
-&lt;h2 id=&#34;httpdに接続してみる:877a36750c93f6fdaf9ffc2de1905eb6&#34;&gt;httpdに接続してみる&lt;/h2&gt;
-
-&lt;p&gt;サーバが起動してる時は&lt;code&gt;http://127.0.0.1:6900/&lt;/code&gt;にアカウント登録用の画面が公開される。&lt;/p&gt;
-
-&lt;p&gt;はずなのに表示出来ない。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;parse_login : session #5 292 0x4547
-parse_login: unknown packet 0x4547 disconnect session #5
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;結構詰まったんだけど、原因究明の鍵は&lt;code&gt;src/login/login_httpd.c:L38&lt;/code&gt;の以下行でした。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;#ifndef NO_HTTPD
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;makeの時にhttpdを無効にしちゃってたみたい。&lt;/p&gt;
-
-&lt;p&gt;なので&lt;code&gt;Makefile&lt;/code&gt;の115行目にあるフラグをコメントアウトすればOK。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;# disable httpd
-CFLAGS += -DNO_HTTPD
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;というわけで、&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-19/httpd.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-19/httpd.png&#34; class=&#34;image&#34; alt=&#34; httpd&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;出来ました。&lt;/p&gt;
-</description>
-    </item>
     
+
   </channel>
 </rss>

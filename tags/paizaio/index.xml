@@ -1,103 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Paizaio on Unresolved</title>
+    <title>Unresolved </title>
     <link>http://yet.unresolved.xyz/tags/paizaio/</link>
-    <description>Recent content in Paizaio on Unresolved</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Jan 2015 00:58:15 +0900</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/tags/paizaio/index.xml" rel="self" type="application/rss+xml" />
+    <author>Daisuke Tsuji</author>
+    <rights>(C) 2016</rights>
+    <updated>2015-01-25 00:58:15 &#43;0900 JST</updated>
+
     
-    <item>
-      <title>paiza.IOのAPIを使ってreplを作る</title>
-      <link>http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/</link>
-      <pubDate>Sun, 25 Jan 2015 00:58:15 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;http://paiza.jp/&#34;&gt;paiza&lt;/a&gt;が面白いAPIを公開してたから、そのうち使ってみたいと思ってたんだよね。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://paiza.io/&#34;&gt;ブラウザでプログラミング・実行ができる「オンライン実行環境」| paiza.IO&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;ちょっとSlackAPIで使ってみたいからこの機会に軽くだけ触ってみる。&lt;/p&gt;
-
-&lt;h2 id=&#34;何が出来る:263a1859984e07d4bd8e496e6113e0fc&#34;&gt;何が出来る？&lt;/h2&gt;
-
-&lt;p&gt;たくさんの言語のREPLが使える。これ結構すごいと思う。&lt;/p&gt;
-
-&lt;p&gt;ただ、コンパイル言語はそんな気軽に使える感じではないみたい。
-例えばJavaで言えば、&lt;code&gt;System.out.println(&amp;quot;Hello&amp;quot;);&lt;/code&gt;だけじゃなくてクラス定義から含めなきゃいけないみたいに。&lt;/p&gt;
-
-&lt;h2 id=&#34;どうやって使う:263a1859984e07d4bd8e496e6113e0fc&#34;&gt;どうやって使う？&lt;/h2&gt;
-
-&lt;p&gt;どうやら&lt;a href=&#34;http://swagger.io/&#34;&gt;Swagger&lt;/a&gt;っていうOSSを使ってるみたい。
-paiza.IO上でのデモも使える。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://api.paiza.io/docs/swagger/#!/runners/&#34;&gt;Swagger UI&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;なんか動かないなと思ったら&lt;code&gt;https&lt;/code&gt;で&lt;code&gt;http&lt;/code&gt;のリソースを参照してたみたいで、ブロックされてた。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Mixed Content: The page at &#39;https://api.paiza.io/docs/swagger/#!/runners/&#39; was loaded over HTTPS, but requested an insecure XMLHttpRequest endpoint &#39;http://api.paiza.io/docs/swagger-docs/runners.json?api_key=guest&#39;. This request has been blocked; the content must be served over HTTPS.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;評価パターンは3つあるみたい。&lt;/p&gt;
-
-&lt;h3 id=&#34;runners-create:263a1859984e07d4bd8e496e6113e0fc&#34;&gt;runners/create&lt;/h3&gt;
-
-&lt;p&gt;コードの実行が出来る。&lt;/p&gt;
-
-&lt;p&gt;レスポンスに&lt;code&gt;id&lt;/code&gt;と&lt;code&gt;status&lt;/code&gt;が返ってきて、この&lt;code&gt;id&lt;/code&gt;を使って実行結果とかを見る。&lt;/p&gt;
-
-&lt;h3 id=&#34;runners-get-status:263a1859984e07d4bd8e496e6113e0fc&#34;&gt;runners/get_status&lt;/h3&gt;
-
-&lt;p&gt;実行結果を見ることが出来る。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;completed&lt;/code&gt;とかそういうレベル。&lt;/p&gt;
-
-&lt;h3 id=&#34;runners-get-details:263a1859984e07d4bd8e496e6113e0fc&#34;&gt;runners/get_details&lt;/h3&gt;
-
-&lt;p&gt;実行結果として出力された値とかを見ることが出来る。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;runners/create&lt;/code&gt;で実行して&lt;code&gt;runners/get_details&lt;/code&gt;で結果を見る感じ。&lt;/p&gt;
-
-&lt;h2 id=&#34;clojureから叩こう:263a1859984e07d4bd8e496e6113e0fc&#34;&gt;Clojureから叩こう&lt;/h2&gt;
-
-&lt;p&gt;使い方はわかったしURL叩けば済む話だしさっさと作っちゃう。&lt;/p&gt;
-
-&lt;p&gt;HTTPアクセスはJavaのクラスを使おうかなと思ったけど、&lt;a href=&#34;https://github.com/dakrone/clj-http&#34;&gt;dakrone/clj-http&lt;/a&gt;っていうすごく優秀！なライブラリがあったのでこれを使います。&lt;/p&gt;
-
-&lt;p&gt;まず&lt;code&gt;runners/create&lt;/code&gt;を実行するところ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(defn repl [language source]
-  (let [run-id (-&amp;gt; (httpc/post &amp;quot;http://api.paiza.io/runners/create&amp;quot;
-                               {:form-params {:source_code source
-                                              :language language
-                                              :api_key &amp;quot;guest&amp;quot;}
-                                :as :json})
-                   :body
-                   :id)]
-    (get-res run-id)))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;get-res&lt;/code&gt;は後述。&lt;code&gt;get_details&lt;/code&gt;を実行するための関数。&lt;code&gt;api_key&lt;/code&gt;ってこれでいいのだろうか。とりあえず動いてはいる。&lt;/p&gt;
-
-&lt;p&gt;実行結果の取得はこんな感じ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(defn get-res [run-id]
-  (let [res (httpc/get (str &amp;quot;http://api.paiza.io/runners/get_details?id=&amp;quot; run-id &amp;quot;&amp;amp;api_key=guest&amp;quot;)
-                           {:as :json})]
-    (if (= (-&amp;gt; res :body :status) &amp;quot;running&amp;quot;)
-      (do (Thread/sleep 100) (recur run-id))
-      (-&amp;gt; res :body :stdout))))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;runners/create&lt;/code&gt;を実行した直後は&lt;code&gt;status&lt;/code&gt;が&lt;code&gt;running&lt;/code&gt;なので、結果が取得できなかった。&lt;/p&gt;
-
-&lt;p&gt;なのでスリープかけながら&lt;code&gt;running&lt;/code&gt;から外れるまで回す苦しい感じに・・・。&lt;/p&gt;
-</description>
-    </item>
     
+
   </channel>
 </rss>
