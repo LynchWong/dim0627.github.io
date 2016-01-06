@@ -1,18 +1,104 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Design on Unresolved</title>
     <link>http://yet.unresolved.xyz/tags/design/</link>
+    <description>Recent content in Design on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2016</rights>
-    <updated>2015-06-20 11:30:06 &#43;0900 JST</updated>
-
+    <lastBuildDate>Sat, 20 Jun 2015 11:30:06 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/design/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>Hugo向けの新しいテーマを作った</title>
+      <link>http://yet.unresolved.xyz/blog/2015/06/20/making-new-theme-robust-for-hugo/</link>
+      <pubDate>Sat, 20 Jun 2015 11:30:06 +0900</pubDate>
       
-    
-      
-    
+      <guid>http://yet.unresolved.xyz/blog/2015/06/20/making-new-theme-robust-for-hugo/</guid>
+      <description>
 
+&lt;p&gt;前に作ったやつが飽きてしまったので、そもそもForkするんじゃなくて0から作ることにしました。&lt;/p&gt;
+
+&lt;h2 id=&#34;出来たもの:b3f0c0f315f1fbc2ee8323461148b3d4&#34;&gt;出来たもの&lt;/h2&gt;
+
+&lt;p&gt;こんな感じ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/dim0627/hugo_theme_robust&#34;&gt;dim0627/hugo_theme_robust&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-06-20/theme_tn.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-06-20/theme_tn.png&#34; class=&#34;image&#34; alt=&#34;theme_tn&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;トップの最新4記事は2カラム、それ以降は4カラムで表示するようにしてる。&lt;/p&gt;
+
+&lt;p&gt;前はPost一覧とかの画面もあったけど、そもそも必要無いような気がして色々削った。
+なので今回はシンプルにトップ、記事詳細、タグ別記事一覧の3ページだけ。&lt;/p&gt;
+
+&lt;p&gt;トップとタグ別記事一覧は同じテンプレートを使ってるから、少し冗長になってしまった気はする。
+Hugoのテンプレート構成が今だによくわかってないから、共通化とかがうまく出来ない・・・。&lt;/p&gt;
+
+&lt;h2 id=&#34;工夫したこと:b3f0c0f315f1fbc2ee8323461148b3d4&#34;&gt;工夫したこと&lt;/h2&gt;
+
+&lt;p&gt;前にテーマを作って思ったんだけど、Hugoの強みは各テーマをOverride出来ることだと思ってます。
+だからそれ前提で書かないと、Overrideしたいのは一部でも、ファイルまるごとコピるはめになっちゃう。&lt;/p&gt;
+
+&lt;p&gt;前はそれでもう何がなんだかわからなくなったので、今回はそれを避けようとした。&lt;/p&gt;
+
+&lt;p&gt;何をしたかというと、空っぽのテンプレートファイルを最初からいろいろな場所に設置しておくことにした。
+Overrideしたい人はこのファイルを各自のディレクトリにコピーして編集すればいいし、Overrideしない人はほっとけば影響もない。&lt;/p&gt;
+
+&lt;h2 id=&#34;まとめ:b3f0c0f315f1fbc2ee8323461148b3d4&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;数時間でざーっと作ったので、最後のほうはCSSもぶれまくったのは反省。
+あとReadmeとかいろいろ書けてない。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/spf13/hugoThemes&#34;&gt;spf13/hugoThemes&lt;/a&gt;にプルリクも送らねば・・・。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Octopressのテーマを作ってみる</title>
+      <link>http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/</link>
+      <pubDate>Sun, 21 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/</guid>
+      <description>
+
+&lt;p&gt;元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。
+でも僕はデザイナーじゃないから、あんまりがっつりやるのもやだよね。
+てことで元のclassicテーマをパクって作ろう。&lt;/p&gt;
+
+&lt;p&gt;Octopressから移行してしまったので、スクリーンショットだけ載せとく。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34; class=&#34;image&#34; alt=&#34;flatten&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;テーマの変え方:04d1c6053c5be0425bfb88e610b78a00&#34;&gt;テーマの変え方&lt;/h2&gt;
+
+&lt;p&gt;そもそも変え方もよく知らないんだけど、どうやらここにテーマ単位のディレクトリが配置されるらしい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;octopress git:(source)$ ls .themes
+classic
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;で、&lt;code&gt;rake install[theme name]&lt;/code&gt;でインストール。&lt;/p&gt;
+
+&lt;h2 id=&#34;テーマの構成:04d1c6053c5be0425bfb88e610b78a00&#34;&gt;テーマの構成&lt;/h2&gt;
+
+&lt;p&gt;作るにも、テーマの定義に何が必要かがわからない。
+classicの中を見てみよう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;octopress git:(source)$ ls .themes/classic
+sass   source
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;察するに&lt;code&gt;sass&lt;/code&gt;がスタイル系で&lt;code&gt;source&lt;/code&gt;がテンプレート系なのかな。
+別にページレイアウトを変えたいとか、そんなたいそうなことは考えてないので、sass内をいじるだけでよさそう。&lt;/p&gt;
+
+&lt;p&gt;ということで出来ました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/dim0627/flatten&#34;&gt;flatten&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;gravatarの件が入っちゃってるから、これは後で分離しなきゃなあ。&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

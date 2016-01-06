@@ -1,114 +1,1283 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Unresolved</title>
     <link>http://yet.unresolved.xyz/</link>
+    <description>Recent content on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2016</rights>
-    <updated>2016-01-02 22:36:11 &#43;0900 JST</updated>
+    <lastBuildDate>Sat, 02 Jan 2016 22:36:11 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>「GRAVITY DAZE」をやった</title>
+      <link>http://yet.unresolved.xyz/blog/2016/01/02/played-gravity-daze/</link>
+      <pubDate>Sat, 02 Jan 2016 22:36:11 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2016/01/02/played-gravity-daze/</guid>
+      <description>
 
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/B015DSR5SS/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B015DSR5SS&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;GRAVITY DAZE 重力的眩暈:上層への帰還において、彼女の内宇宙に生じた摂動&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=B015DSR5SS&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
 
+&lt;p&gt;dazeは「夢中」って意味らしいですね。「重力に夢中」って感じの意味でしょうか。サブタイトルの「眩暈」から察するに、「眩惑」とかそっちの意味かな。&lt;/p&gt;
+
+&lt;p&gt;もともとPS Vitaのソフトだったんですね。
+2の開発が発表されたそうなので、せっかくなので1からやってみることに。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.jp.playstation.com/scej/title/gravitydaze/2/&#34;&gt;GRAVITY DAZE 2 | プレイステーション® オフィシャルサイト&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;しかし名前が長いね。1が「&lt;strong&gt;GRAVITY DAZE/重力的眩暈：上層への帰還において、彼女の内宇宙に生じた摂動&lt;/strong&gt;」で、
+2が「&lt;strong&gt;GRAVITY DAZE 2/重力的眩暈完結編：上層への帰還の果て、彼女の内宇宙に収斂した選択&lt;/strong&gt;」。&lt;/p&gt;
+
+&lt;p&gt;とてもじゃないけど覚える気にはならない。&lt;/p&gt;
+
+&lt;h2 id=&#34;ストーリーがわかりやすくもよく出来てる:cc204d2b630b9328479dcb527f590372&#34;&gt;ストーリーがわかりやすくもよく出来てる&lt;/h2&gt;
+
+&lt;p&gt;グラフィックもどちらかと言うと子供向けなコミックタッチで描かれてるので、雰囲気も少し子供向けな印象を受けたかな。&lt;/p&gt;
+
+&lt;p&gt;ストーリーもそんな深くもなく比較的ありきたりな話だったんだけど、だからこそぐっとくるところがあったりして個人的には好きな感じでした。&lt;/p&gt;
+
+&lt;p&gt;特に最後クロウが帰ってくるところとかやばかったね、おお！て感じ。燃えた。&lt;/p&gt;
+
+&lt;h2 id=&#34;重力操作が直感的:cc204d2b630b9328479dcb527f590372&#34;&gt;重力操作が直感的&lt;/h2&gt;
+
+&lt;p&gt;はじめは、重力操作なんてどうやんだよ、絶対わかりづらい操作になるだろ、って思ってたんだけど、意外とそうでもなかった。
+これは開発者の方々の努力なんだろうなあと。&lt;/p&gt;
+
+&lt;p&gt;このゲームの操作は、&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;重力を無効にする&lt;/li&gt;
+&lt;li&gt;行きたい方向にカメラを向けて重力をかける&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;っていう2段階のシンプルなステップになっているので、これが複雑さを抑えた大きなポイントなんだと思う。&lt;/p&gt;
+
+&lt;h2 id=&#34;街が素敵:cc204d2b630b9328479dcb527f590372&#34;&gt;街が素敵&lt;/h2&gt;
+
+&lt;p&gt;重力を操るというだけあって3次元にあっちこっち動き回れるんだけど、その面白さを損なわないためのステージ作りがされてたと思う。&lt;/p&gt;
+
+&lt;p&gt;街も何階層にもなっていて、重力操作がただ単に空を飛んで行くだけのお手軽機能じゃなく、街を堪能するための機能になってるなと感じた。&lt;/p&gt;
+
+&lt;p&gt;街のデザインも良かったね、古風であるような未来的であるような。&lt;/p&gt;
+
+&lt;p&gt;でも序盤に出てきた現代的な風景画はなんだったんだろう。2に繋がるのかな。&lt;/p&gt;
+
+&lt;h2 id=&#34;主人公が可愛い:cc204d2b630b9328479dcb527f590372&#34;&gt;主人公が可愛い&lt;/h2&gt;
+
+&lt;p&gt;これだけでかなりのポイントを稼げてしまう気がする。&lt;/p&gt;
+
+&lt;p&gt;ちょっとあざとさもある感じの主人公なんだけど、まあ男はそれも許容したくなっちゃうもんだよね。&lt;/p&gt;
+
+&lt;p&gt;うざいキャラとかも結構出てくるんだけど、スタッフロールを見てたらなんだかんだどのキャラも良いなあと思いました。
+知らない間に感情移入してたのかな。&lt;/p&gt;
+
+&lt;h2 id=&#34;bgmが良い:cc204d2b630b9328479dcb527f590372&#34;&gt;BGMが良い&lt;/h2&gt;
+
+&lt;p&gt;これはまあ人それぞれだよね。&lt;/p&gt;
+
+&lt;p&gt;個人的にはどこの音楽もすごく良かった。街の印象と良く合ってたなと思う。&lt;/p&gt;
+
+&lt;h2 id=&#34;決め技がダサい:cc204d2b630b9328479dcb527f590372&#34;&gt;決め技がダサい&lt;/h2&gt;
+
+&lt;p&gt;ボス戦の最後、謎の決め技があります。これがひたすらダサい。&lt;/p&gt;
+
+&lt;p&gt;なんか戦隊物みたいな感じ。これはいらなかったな。&lt;/p&gt;
+
+&lt;h2 id=&#34;操作性があと一息:cc204d2b630b9328479dcb527f590372&#34;&gt;操作性があと一息&lt;/h2&gt;
+
+&lt;p&gt;非常に良かった操作性なんだけど、とは言えあと一息なところも感じたりした。&lt;/p&gt;
+
+&lt;p&gt;当たり判定とか、今あたったじゃん！今あたってないじゃん！みたいなのがすごく多かった。慣れてなかっただけなのかもしれないけど。&lt;/p&gt;
+
+&lt;p&gt;あとカメラ移動がきつかったな。操作しづらいとかじゃなくて、全方面から攻撃が飛んで来るから検知出来ないというか。&lt;/p&gt;
+
+&lt;p&gt;回避も比較的使い物になりそうだったんだけど、攻撃がカメラに捉えられないから避けようがない。これは立ち回りでなんとか出来るかもね。&lt;/p&gt;
+
+&lt;h2 id=&#34;クエストが退屈:cc204d2b630b9328479dcb527f590372&#34;&gt;クエストが退屈&lt;/h2&gt;
+
+&lt;p&gt;サイドクエストみたいなのがあるんだけど、面白いのと退屈なのが半々だった。&lt;/p&gt;
+
+&lt;p&gt;なんか火事を消すために貯水槽を掴んで投げるクエストがあるんだけど、これも操作性が悪すぎてイライラするだけ。&lt;/p&gt;
+
+&lt;p&gt;クエスト自体も終わりが明示されてないから途中でやり直さなきゃいけなくなったりしてひどい出来だと思った。&lt;/p&gt;
+
+&lt;p&gt;サイドクエストはほとんどトロフィーのためにある感じだったな。&lt;/p&gt;
+
+&lt;h2 id=&#34;余談:cc204d2b630b9328479dcb527f590372&#34;&gt;余談&lt;/h2&gt;
+
+&lt;p&gt;気づいたら5時間くらいでクリアしてしまった。これでこの値段はちょっと厳しいな。&lt;/p&gt;
+
+&lt;p&gt;トロフィーは何も考えずに1回クリアして31%。サイドクエストクリアして50ちょい。ボリュームがトロフィーに集中してるわけでもないね。全体的に小さすぎる。&lt;/p&gt;
+
+&lt;p&gt;Bloodborneは時計塔のマリアを倒したところ。こいつマジ強かったわ。でもなんか世間じゃ雑魚ボスらしいね。&lt;/p&gt;
+
+&lt;p&gt;漁村は辛すぎて2個目のランタンにたどり着いたところで投げた。無理。元気でたらまたやる。&lt;/p&gt;
+
+&lt;p&gt;でもどうせゴース倒せないんだろうな。&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/B015DSR5SS/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B015DSR5SS&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;GRAVITY DAZE 重力的眩暈:上層への帰還において、彼女の内宇宙に生じた摂動&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=B015DSR5SS&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>電子書籍に移行したい</title>
+      <link>http://yet.unresolved.xyz/blog/2015/12/24/want-to-migrate-to-e-books/</link>
+      <pubDate>Thu, 24 Dec 2015 11:07:10 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/12/24/want-to-migrate-to-e-books/</guid>
+      <description>
+
+&lt;p&gt;あー、クリスマスですね、クリスマスに日記か・・・、でもせっかく書く気になったし書くよ。&lt;/p&gt;
+
+&lt;h2 id=&#34;本が邪魔:f2a370996f1a3e4ba17896f6335d101a&#34;&gt;本が邪魔&lt;/h2&gt;
+
+&lt;p&gt;家の本がすごく邪魔なんだよね、幅を取ってる。
+おかげでパソコンデスクも置けてないし、結構前からこれをなんとかしたいなあと考えてる。&lt;/p&gt;
+
+&lt;p&gt;というわけで今ある本の電子書籍化を考えたんだけど、とりあえず最初は業者に頼んで一括で電子化するのがいいのかな。&lt;/p&gt;
+
+&lt;p&gt;いい感じの業者を全然知らないので幾つか調べたものをまとめてみよう。&lt;/p&gt;
+
+&lt;h3 id=&#34;bookscan-ブックスキャン-本-蔵書電子書籍化サービス-大和印刷-https-www-bookscan-co-jp:f2a370996f1a3e4ba17896f6335d101a&#34;&gt;&lt;a href=&#34;https://www.bookscan.co.jp/&#34;&gt;BOOKSCAN(ブックスキャン) 本・蔵書電子書籍化サービス - 大和印刷&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;一番有力視してるところ。なんか裁断から電子化まで全部やってくれるみたい。&lt;/p&gt;
+
+&lt;p&gt;PDFはWebサービス上からダウンロード出来るみたいで、DVDで欲しければ追加料金で出来るとのこと。結構いたれりつくせりのサービスですね。&lt;/p&gt;
+
+&lt;h3 id=&#34;書籍や本を裁断しないで電子書籍化するスキャン代行サービス-そのままスキャン-http-sei-syou-com-gclid-cj0keqiaqemzbrdh2vgkmmnqoegbeiqaqjpuydkrqkyy3dorrhwn3sdwnwji18zbayviw-y94meowogaaonl8p8haq:f2a370996f1a3e4ba17896f6335d101a&#34;&gt;&lt;a href=&#34;http://sei-syou.com/?gclid=Cj0KEQiAqemzBRDh2vGKmMnqoegBEiQAqJPuyDKRQKyY3DoRrhwN3SDWNWJI18zbAYvIw-y94MEoWogaAonl8P8HAQ&#34;&gt;書籍や本を裁断しないで電子書籍化するスキャン代行サービス｜そのままスキャン&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;タイトルに惹かれた。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;そのままスキャンでは&lt;strong&gt;本を裁断せずにスキャンし電子書籍化&lt;/strong&gt;してお客様のもとへ納品しています。 裁断することなく書籍をスキャンすることで、一般書籍から古書や社内報、カタログなどを傷つけることなく電子書籍化できます。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;でもよく考えたら省スペース化という目的にそぐわないのでダメかなあ。&lt;/p&gt;
+
+&lt;h3 id=&#34;未来book-本-書類の電子化サービス-https-www-miraibook-com:f2a370996f1a3e4ba17896f6335d101a&#34;&gt;&lt;a href=&#34;https://www.miraibook.com/&#34;&gt;未来BOOK 本・書類の電子化サービス&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;ここも裁断からPDF化までやってくれる、特筆すべきこともない普通の電子化サービスなのかな。&lt;/p&gt;
+
+&lt;h3 id=&#34;スキャン代行で高品質-低価格-24時間で電子書籍化-http-www-scan24hr-com:f2a370996f1a3e4ba17896f6335d101a&#34;&gt;&lt;a href=&#34;http://www.scan24hr.com/&#34;&gt;スキャン代行で高品質・低価格・24時間で電子書籍化&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;24時間でやってくれるのはすごいね、でも急ぐかと言うと別にあんまり急がない。&lt;/p&gt;
+
+&lt;p&gt;というかここはサービス名がわかりづらすぎるよ。&lt;/p&gt;
+
+&lt;h2 id=&#34;裁断した後が困りそう:f2a370996f1a3e4ba17896f6335d101a&#34;&gt;裁断した後が困りそう&lt;/h2&gt;
+
+&lt;p&gt;全部電子化して本棚が綺麗になりました！となるのはいいけど、その後が困りそう。&lt;/p&gt;
+
+&lt;p&gt;今世に出回ってる本がすべて電子化されてるかというとまだまだそうじゃないし、新しく本を買うときにまた裁断の手間が出るなあと。&lt;/p&gt;
+
+&lt;p&gt;そうなると自分で裁断からPDF化が出来るようにしとくべきなんだろうけど、そのコストのために結構ためらってる。
+まあたかが知れてるんだろうけど・・・。&lt;/p&gt;
+
+&lt;h2 id=&#34;そもそも電子書籍は読みやすいのか:f2a370996f1a3e4ba17896f6335d101a&#34;&gt;そもそも電子書籍は読みやすいのか&lt;/h2&gt;
+
+&lt;p&gt;僕は結構本を読むのが遅いタイプだから、紙の本でどれくらいまで読めたかなーってのが感覚でわかるのが嬉しかったりするんですよね。&lt;/p&gt;
+
+&lt;p&gt;だから電子書籍はどうだろう、まあそんなに差し支えはないんだろうけど、実際読んでみないとわからない読みづらさとかがありそうで少し怖いな。&lt;/p&gt;
+
+&lt;p&gt;本は紙だから良いんだみたいな信仰とかそういうのは特にないです。&lt;/p&gt;
+
+&lt;h2 id=&#34;余談:f2a370996f1a3e4ba17896f6335d101a&#34;&gt;余談&lt;/h2&gt;
+
+&lt;p&gt;まあ年末の大掃除をしてから考えましょう。めんどくさいし。&lt;/p&gt;
+
+&lt;p&gt;BloodborneはついにDLCを買った。&lt;/p&gt;
+
+&lt;p&gt;作りなおしたキャラもLv.70の千景+9まで進んだので、そいつでさらっとうろついたけどもう案外行けそう。
+なんか目の赤いハンターに殺されたけど。&lt;/p&gt;
+
+&lt;p&gt;しかしあれだよね、隠し街ヤハグルはマジで苦手だわ、難しすぎる。
+とりあえずDLCも行きたいけど、メンシスの悪夢まではクリアしとこうかな。&lt;/p&gt;
+
+&lt;p&gt;今日はクリスマスだけど僕は狩りに出かけます。&lt;/p&gt;
+
+&lt;p&gt;年末はFallout4をやる。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>「Until Dawn - 惨劇の山荘」をやった</title>
+      <link>http://yet.unresolved.xyz/blog/2015/12/21/played-until-dawn/</link>
+      <pubDate>Mon, 21 Dec 2015 10:39:11 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/12/21/played-until-dawn/</guid>
+      <description>
+
+&lt;p&gt;ホラーっぽかったから避けてたんだけど結局やりました。&lt;/p&gt;
+
+&lt;p&gt;とはいえ実際はものすごく面白いサスペンスだったかな。
+少しびっくりするシーンとかもあったけど、全然許容範囲。&lt;/p&gt;
+
+&lt;p&gt;本当に冗談抜きで映画みたいだった、参加型の映画みたいな。&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/B00YGXGVNW/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B00YGXGVNW&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;Until Dawn -惨劇の山荘-&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=B00YGXGVNW&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;推測したくなるストーリー:696915bdfbd39b994ccbd0c59fa0e7ee&#34;&gt;推測したくなるストーリー&lt;/h2&gt;
+
+&lt;p&gt;序盤からすぐに引き込まれるようなストーリーだった。&lt;/p&gt;
+
+&lt;p&gt;え？どうなってんの？何がどうなった？って感じで疑問ばかりなんだけど、
+不快な疑問じゃなくてちゃんと知りたくなる疑問というか。&lt;/p&gt;
+
+&lt;p&gt;わかりやすすぎる伏線とかやり過ぎなミステリアスとかって結構辟易しちゃうけど、
+Until Dawnのそれは本当に興味をひかれる作りになっていたなあと思う。&lt;/p&gt;
+
+&lt;p&gt;徐々に解明されていく謎もすごく心地よかった、でもテンポが凄くいいから、
+解明してはいくものの、それも間違った推理なんじゃないか・・・って推理に推理を重ねてしまったり。&lt;/p&gt;
+
+&lt;h2 id=&#34;文化の違い:696915bdfbd39b994ccbd0c59fa0e7ee&#34;&gt;文化の違い&lt;/h2&gt;
+
+&lt;p&gt;ことの発端がほぼいじめみたいなものなんだけど、あれは不快だったな。
+それはこの作品の評価とかじゃなくて、まあいじめって嫌だよねってだけの話。&lt;/p&gt;
+
+&lt;p&gt;あれは文化の違いなのかなあ、日本でもああいうのあるのかな、とにかく嫌な気持ちにはなった。&lt;/p&gt;
+
+&lt;p&gt;そんでそんな仲間とまた旅行に来れる神経もよくわからなかったな、っていうか仲間も結構仲悪いし。
+一緒に居て楽しいのかな・・・。&lt;/p&gt;
+
+&lt;p&gt;っていうか基本的にムカつくキャラが多かった。&lt;/p&gt;
+
+&lt;h2 id=&#34;ゴア規制の酷さ:696915bdfbd39b994ccbd0c59fa0e7ee&#34;&gt;ゴア規制の酷さ&lt;/h2&gt;
+
+&lt;p&gt;ゴアシーンがおもいっきり規制されてた。
+これは本当に、この作品の良さをかなり大幅に削ってると思った。&lt;/p&gt;
+
+&lt;p&gt;その規制の仕方ってのが、&lt;strong&gt;ただ画面を真っ暗に暗転させるだけ&lt;/strong&gt;だから、何が起きたかわからなくなっちゃうんだよね。&lt;/p&gt;
+
+&lt;p&gt;一番ひどいなって思ったのが、ドアを開けた人が叫び声をあげるシーンがあるんだけど、真っ暗だからなんで叫んだのかわからない。
+説明もされないからあそこは何があったのか理解しようにも理解出来ない。&lt;/p&gt;
+
+&lt;p&gt;あとでネットで調べたら、ドアを開けたら詰まってた死体の山が転がってきたシーンだったんだとか。&lt;/p&gt;
+
+&lt;p&gt;しょうがないのはわかるんだけど、やり方ってものがあったんじゃないかな。&lt;/p&gt;
+
+&lt;h2 id=&#34;ラストの期待:696915bdfbd39b994ccbd0c59fa0e7ee&#34;&gt;ラストの期待&lt;/h2&gt;
+
+&lt;p&gt;やっぱり序盤からサスペンスとか人間関係のドラマだと思ってたからそういう期待をしてたんだよね。&lt;/p&gt;
+
+&lt;p&gt;あいつが犯人かな？とか、実はこういうことなのかな？って、現実にありえることでいろいろと考えてたから、
+なんかオカルトチックな方に話が動いた時はちょっと落胆してしまった。&lt;/p&gt;
+
+&lt;p&gt;そういう話も好きなんだけど、変にトリックを期待してたというか。&lt;/p&gt;
+
+&lt;h2 id=&#34;余談:696915bdfbd39b994ccbd0c59fa0e7ee&#34;&gt;余談&lt;/h2&gt;
+
+&lt;p&gt;簡単に言うとめちゃくちゃ面白かったです、ホラー系（じゃないけど）が平気な人はぜひやってほしいなと思った。
+かまいたちの夜とかそういうの好きな人は絶対はまると思う。&lt;/p&gt;
+
+&lt;p&gt;あとどうでもいいけど全体的に寒そうだった。あんな格好で雪山行ったら、ウェンディゴが居なくても死んじゃうよ・・・。&lt;/p&gt;
+
+&lt;p&gt;あと火炎放射器のおじさんかっこよかったな、でもああいうのの駆除は国がやったほうが良いと思います。&lt;/p&gt;
+
+&lt;p&gt;Bloodborneはキャラを作り直してる。千景用に血質と技術にステを振り直したいなと思って。
+2日で悪夢の辺境まで行けたからまあよし。&lt;/p&gt;
+
+&lt;p&gt;今日はFallout4とGRAVITY DAZEを買って帰ろう。&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/B00YGXGVNW/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B00YGXGVNW&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;Until Dawn -惨劇の山荘-&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=B00YGXGVNW&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ACCOUNT KILLERというサービスが面白い</title>
+      <link>http://yet.unresolved.xyz/blog/2015/12/17/about-account-killer/</link>
+      <pubDate>Thu, 17 Dec 2015 10:39:55 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/12/17/about-account-killer/</guid>
+      <description>
+
+&lt;p&gt;WordPress.comとGravatarを退会しようと思ったんだけどなんか退会画面が見つからない。&lt;/p&gt;
+
+&lt;p&gt;いろいろ調べてみるとこの記事に行き着いた。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://d.hatena.ne.jp/m-hiyama/20150915/1442277074&#34;&gt;WordPress.comとGravatarのアカウントは一度登録したら何があっても絶対に削除できない - 檜山正幸のキマイラ飼育記&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;WordPress.comとGravatarのアカウントは一度登録したら何があっても絶対に削除できない！？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;まじかよ、なんてひどいサービスだ。&lt;/p&gt;
+
+&lt;p&gt;それはまあよくて、どっちにしろWordPressがひどいのは知ってたし。&lt;/p&gt;
+
+&lt;p&gt;この記事で紹介されてるACCOUNT KILLERというサービスが面白かった。&lt;/p&gt;
+
+&lt;h2 id=&#34;account-killer:283d2a7a74a226c22e2344c11ac9de1b&#34;&gt;ACCOUNT KILLER？&lt;/h2&gt;
+
+&lt;p&gt;先の記事を引用させてもらうと、&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;ここは、Webサイト／サービスをホワイトリスト（退会容易）とブラックリスト（退会困難）に分けていて、Gravatarはブラック。ブラックもブラック、なんと退会が不可能なのです。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;世の中の有名なサービスの退会難易度をまとめてくれてるらしい。先にこれ見ときゃよかったなー。&lt;/p&gt;
+
+&lt;p&gt;退会出来ないサービスなんて登録したくないよね。さすがWordPress。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考にさせていただきました:283d2a7a74a226c22e2344c11ac9de1b&#34;&gt;参考にさせていただきました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://d.hatena.ne.jp/m-hiyama/20150915/1442277074&#34;&gt;WordPress.comとGravatarのアカウントは一度登録したら何があっても絶対に削除できない - 檜山正幸のキマイラ飼育記&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>今更だけどBloodborneをやってる</title>
+      <link>http://yet.unresolved.xyz/blog/2015/12/15/playing-blood-borne/</link>
+      <pubDate>Tue, 15 Dec 2015 14:32:45 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/12/15/playing-blood-borne/</guid>
+      <description>
+
+&lt;p&gt;このブログもようわからんから、日記にしようかな、更新頻度あげたい。&lt;/p&gt;
+
+&lt;p&gt;BloodborneのDLCが出たらしいですね、Old Huntersとかいう。これを機にBloodborneをちゃんとやってます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/B015DSR5HE/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B015DSR5HE&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;Bloodborne The Old Hunters Edition 初回限定版&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=B015DSR5HE&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;そもそもなんで今さらなのかと言うと、僕がこれをやり始めたのは発売当時のロードが糞遅い頃で、あの遅さに耐えられなかったんですね。まあいまでもそんなに早くないけど。&lt;/p&gt;
+
+&lt;p&gt;あと僕が下手くそすぎて死にまくったっていうのもあります、三國無双的なノリでやったのが悪かったです。
+ていうか最初は回避が糞下手でさ、回避ってロックオンしてる時としてない時で随分変わるでしょ、あれに気づかずミスりまくったんだよね。&lt;/p&gt;
+
+&lt;p&gt;あとあと、僕がオンラインプレイを毛嫌いしてたからなのもありますね、なんかマイペースにやりたくてさ、オンラインが面白いのに。&lt;/p&gt;
+
+&lt;h2 id=&#34;オンラインはやっぱ面白い:7517338e3e9f1beceb18ca47100cf1fd&#34;&gt;オンラインはやっぱ面白い&lt;/h2&gt;
+
+&lt;p&gt;お手伝いに行くのも来てもらうのもめっちゃいいですね、楽しい。&lt;/p&gt;
+
+&lt;p&gt;ジェスチャーだけでしかコミュニケーションが取れないところも好き、一期一会だね。&lt;/p&gt;
+
+&lt;p&gt;たまにワールドワイドでプレイして、海外の人の世界に行ったりするとまた違うものもありますね。
+挨拶も無しに突っ込んで行ったりして、あー文化が違うのかなーとか少し感じたりします。&lt;/p&gt;
+
+&lt;p&gt;ていうか僕は結構突っ込んで死ぬタイプなので、チェックポイントまでが結構長いこのゲームはあんまり向いてないんですよね。&lt;/p&gt;
+
+&lt;p&gt;だからお手伝いさんに来てもらわないと全然進めない。ほんと助かってます。&lt;/p&gt;
+
+&lt;h2 id=&#34;レベル上げすぎて辛い:7517338e3e9f1beceb18ca47100cf1fd&#34;&gt;レベル上げすぎて辛い&lt;/h2&gt;
+
+&lt;p&gt;僕は結構、どのゲームでも最初の方のステージでグダグダやるのが好きなんです。ヘタレなんでね。&lt;/p&gt;
+
+&lt;p&gt;だからこのゲームも最初の方のステージでお手伝いしまくってたらレベルが上がりすぎてしまって、
+最近は、2周目なのかなんなのかわからないけどめちゃくちゃ強い人の世界に迷い込んだりするんですね。&lt;/p&gt;
+
+&lt;p&gt;そういう人の世界の敵ってめっちゃくちゃ強いから、ほんと、ただの足手まとい。&lt;/p&gt;
+
+&lt;p&gt;レベル差はなんか調べたところ20差までしかマッチングしない？とかなんかあるみたいですね、むやみに上げすぎました。&lt;/p&gt;
+
+&lt;p&gt;あ、そうはいってもまだ65です。えっと、どこだっけな、隠し街ヤハグルのボスを倒して、メンシスの悪夢に行こうとしてるところ。&lt;/p&gt;
+
+&lt;p&gt;千景ほしいんだよね、お金稼ぎしなきゃ。&lt;/p&gt;
+
+&lt;h2 id=&#34;たまに友達が出来る:7517338e3e9f1beceb18ca47100cf1fd&#34;&gt;たまに友達が出来る&lt;/h2&gt;
+
+&lt;p&gt;なんかたまにすっげー強い人に手伝ってもらったりして、なんかメッセージもらったりしてます。&lt;/p&gt;
+
+&lt;p&gt;日本人じゃない人が多めなのかな、千景の読み方を教えたり英語でやりとりしたりなんか新鮮です。&lt;/p&gt;
+
+&lt;h2 id=&#34;とりあえずdlcエリアに行きたい:7517338e3e9f1beceb18ca47100cf1fd&#34;&gt;とりあえずDLCエリアに行きたい&lt;/h2&gt;
+
+&lt;p&gt;とは言え全クリするつもりはなくて、多分全クリするとDLCエリア行けないよね？
+つってもDLCまだ買ってないんだけどね、ラスボス手前まで行ってDLCの方やろうかなあとは思ってます。&lt;/p&gt;
+
+&lt;p&gt;取りこぼしも結構あるんだよなあ、黒獣パール倒し損ねたし。あそこのマップ強すぎない？人攫いの人マジで倒せなくてスルーしてたらいつのまにか行けなくなっちゃったよ。&lt;/p&gt;
+
+&lt;h2 id=&#34;gravity-dazeもやりたい:7517338e3e9f1beceb18ca47100cf1fd&#34;&gt;GRAVITY DAZEもやりたい&lt;/h2&gt;
+
+&lt;p&gt;一段落してないけどもう買っちゃおう。&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/B015DSR5HE/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B015DSR5HE&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;Bloodborne The Old Hunters Edition 初回限定版&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=B015DSR5HE&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/B015DSR5SS/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B015DSR5SS&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;GRAVITY DAZE 重力的眩暈:上層への帰還において、彼女の内宇宙に生じた摂動&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=B015DSR5SS&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Googleの構造化データの扱いが変わった気がする</title>
+      <link>http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</link>
+      <pubDate>Fri, 11 Dec 2015 11:22:28 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</guid>
+      <description>
+
+&lt;p&gt;このブログも、他の運営してるサイトも、今日になってエラーが発生するようになった。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/structured-data/testing-tool/&#34;&gt;Structured Data Testing Tool&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;エラーは2種類発生していて、ひとつめがこれ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-12-11/error1.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-12-11/error1.png&#34; class=&#34;image&#34; alt=&#34;error&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;もうひとつがこれ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-12-11/error2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-12-11/error2.png&#34; class=&#34;image&#34; alt=&#34;error&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;あれ？&lt;code&gt;author&lt;/code&gt;はもともと必須だっけ？&lt;/p&gt;
+
+&lt;h2 id=&#34;構造化データ:1cba147eb8c5721b87c65951056c9faa&#34;&gt;構造化データ？&lt;/h2&gt;
+
+&lt;p&gt;マイクロデータとかって呼ばれたりもする。&lt;/p&gt;
+
+&lt;p&gt;HTMLにもう少し踏み込んだ側面的な意味を持たせるためのもの。&lt;/p&gt;
+
+&lt;p&gt;Googleの説明が、どのように使われるかも記載されていてわかりやすい。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/structured-data/&#34;&gt;Promote Your Content with Structured Data Markup  |  Structured Data  |  Google Developers&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;エラーの原因:1cba147eb8c5721b87c65951056c9faa&#34;&gt;エラーの原因&lt;/h2&gt;
+
+&lt;p&gt;今回はArticleの&lt;code&gt;image&lt;/code&gt;とか&lt;code&gt;publisher&lt;/code&gt;もろもろでエラーが発生しました。&lt;/p&gt;
+
+&lt;p&gt;これまでは大丈夫だったのになんでだろう。&lt;/p&gt;
+
+&lt;p&gt;この記載を見ると、どうやら構造が間違っているらしい。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/structured-data/rich-snippets/articles?hl=ja&#34;&gt;Enabling Rich Snippets for Articles  |  Structured Data  |  Google Developers&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;imageプロパティ:1cba147eb8c5721b87c65951056c9faa&#34;&gt;imageプロパティ&lt;/h3&gt;
+
+&lt;p&gt;これまで僕は、画像要素を次のように記載していたのだけど、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;meta itemprop=&amp;quot;image&amp;quot; content=&amp;quot;http://example.com/images/10999.jpg&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こう記載するのが正しいようだ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div itemprop=&amp;quot;image&amp;quot; itemscope itemtype=&amp;quot;https://schema.org/ImageObject&amp;quot;&amp;gt;
+  &amp;lt;img src=&amp;quot;https://google.com/thumbnail1.jpg&amp;quot;/&amp;gt;
+  &amp;lt;meta itemprop=&amp;quot;url&amp;quot; content=&amp;quot;https://google.com/thumbnail1.jpg&amp;quot;&amp;gt;
+  &amp;lt;meta itemprop=&amp;quot;width&amp;quot; content=&amp;quot;800&amp;quot;&amp;gt;
+  &amp;lt;meta itemprop=&amp;quot;height&amp;quot; content=&amp;quot;800&amp;quot;&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;ImageObject&lt;/code&gt;の子で居なきゃいけないんだね。&lt;/p&gt;
+
+&lt;p&gt;さらに&lt;code&gt;width&lt;/code&gt;と&lt;code&gt;height&lt;/code&gt;も必須になってる。
+前は要らなかったような記憶があるんだけど・・・。&lt;/p&gt;
+
+&lt;h3 id=&#34;publisherプロパティ:1cba147eb8c5721b87c65951056c9faa&#34;&gt;publisherプロパティ&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;publisher&lt;/code&gt;はこう記載されている。&lt;/p&gt;
+
+&lt;p&gt;これは運営元の組織を指すのかな。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div itemprop=&amp;quot;publisher&amp;quot; itemscope itemtype=&amp;quot;https://schema.org/Organization&amp;quot;&amp;gt;
+  &amp;lt;div itemprop=&amp;quot;logo&amp;quot; itemscope itemtype=&amp;quot;https://schema.org/ImageObject&amp;quot;&amp;gt;
+    &amp;lt;img src=&amp;quot;https://google.com/logo.jpg&amp;quot;/&amp;gt;
+    &amp;lt;meta itemprop=&amp;quot;url&amp;quot; content=&amp;quot;https://google.com/logo.jpg&amp;quot;&amp;gt;
+    &amp;lt;meta itemprop=&amp;quot;width&amp;quot; content=&amp;quot;600&amp;quot;&amp;gt;
+    &amp;lt;meta itemprop=&amp;quot;height&amp;quot; content=&amp;quot;60&amp;quot;&amp;gt;
+  &amp;lt;/div&amp;gt;
+  &amp;lt;meta itemprop=&amp;quot;name&amp;quot; content=&amp;quot;Google&amp;quot;&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;nameプロパティ:1cba147eb8c5721b87c65951056c9faa&#34;&gt;nameプロパティ&lt;/h3&gt;
+
+&lt;p&gt;何故かこのエラーだけどうやっても消えない。&lt;/p&gt;
+
+&lt;p&gt;謎なので分かり次第追記しよう。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;追記&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;この記事を書き終えてから再度試してみたら消えました。&lt;/p&gt;
+
+&lt;p&gt;Structured Data Testing Tool自体が改修中だったのだろうか。&lt;/p&gt;
+
+&lt;p&gt;どちらにせよこの辺はこれからも随時変わっていくポイントだろうから、定期的にチェックと対応をしていかなきゃいけないですね。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>プロダクションのWordPressを捨てHugoに移行した</title>
+      <link>http://yet.unresolved.xyz/blog/2015/12/10/using-hugo-in-production/</link>
+      <pubDate>Thu, 10 Dec 2015 14:49:18 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/12/10/using-hugo-in-production/</guid>
+      <description>
+
+&lt;p&gt;あんまり仕事のことは書かないつもりだったんだけど、このブログの生成でもお世話になっている&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;を結構本気で使ったのでそのことをまとめてみます。&lt;/p&gt;
+
+&lt;h2 id=&#34;hugoをプロダクションで使った:5f9546be55588508513a850a19b4c520&#34;&gt;Hugoをプロダクションで使った&lt;/h2&gt;
+
+&lt;p&gt;いま僕が働いている会社では事業の一つとしてメディアを運営しています。
+僕が入ったとき、それはWordPressで運用がなされていて、&lt;a href=&#34;http://www.advancedcustomfields.com/&#34;&gt;Advanced Custom Fields&lt;/a&gt;を使ったガチガチのカスタム具合でした。&lt;/p&gt;
+
+&lt;p&gt;しかしありがちなことにプラグインの管理もなされず、構築した人は外部の人、つまり動いてはいるけどそれ以上でも以下でもなかったんですね。&lt;/p&gt;
+
+&lt;p&gt;さらにライターさんの話を聞いてみれば「なんか入力欄がいっぱいあってライティングがめんどくさい」とのこと。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;誰も幸せになっていない状態&lt;/strong&gt;というわけですね。&lt;/p&gt;
+
+&lt;p&gt;僕が初めてそれを見た時、まず思ったのは&lt;strong&gt;「触りたくない」&lt;/strong&gt;ということでした。&lt;/p&gt;
+
+&lt;p&gt;WordPressはドメインとガチガチに紐づくし（プラグインでなんとかなるけど）、テーマのカスタマイズだとかのコストや、現状調査をするコストが無駄だと思ったんですね。&lt;/p&gt;
+
+&lt;p&gt;また、Advanced Custom Fieldsを使っているということはテーマも特注でしょう。&lt;/p&gt;
+
+&lt;p&gt;というわけでリプレースを提案しました。
+快く受け入れてくれた社員の方々には本当に感謝しています。&lt;/p&gt;
+
+&lt;h2 id=&#34;なぜhugoなのか:5f9546be55588508513a850a19b4c520&#34;&gt;なぜHugoなのか&lt;/h2&gt;
+
+&lt;p&gt;やはりMarkdownは優秀だと思っていて、メディア程度の文章ならDBに突っ込むよりMarkdownでファイル管理したいなと思いました。&lt;/p&gt;
+
+&lt;p&gt;というわけでライターさんには無理を言ってMarkdownを覚えてもらいました。
+これも快く受け入れてくれたライターさんの度量の広さに感謝しています。&lt;/p&gt;
+
+&lt;p&gt;正直僕はハナから静的サイトジェネレータを使う気でいて、候補に考えていたのはJekyllとHugoでした。
+何故かと言うと、Jekyllはドキュメント量が期待できると思っていたし、Hugoはそもそも使い慣れてる点を評価したからです。&lt;/p&gt;
+
+&lt;p&gt;しかしJekyllは使いませんでした。Octopressをやめた時同様、生成が遅すぎたんです。
+約500超の記事生成に18秒ほどかかり、チューニングなどを検討するよりもやめたほうが早いと判断しました。&lt;/p&gt;
+
+&lt;p&gt;というわけで案外さっくりとHugoに行き着くことになったわけです。&lt;/p&gt;
+
+&lt;h2 id=&#34;運用体制のこと:5f9546be55588508513a850a19b4c520&#34;&gt;運用体制のこと&lt;/h2&gt;
+
+&lt;p&gt;静的サイトジェネレータを使うということは何かしらの方法でMarkdownを取り込み、生成したHTMLをアップロードしなければなりません。&lt;/p&gt;
+
+&lt;p&gt;とはいえ管理画面だとかを作ってMarkdownを吐き出させるのは無駄なコストにしか思えないし、
+素直にMarkdownが書けてそのままHugoを動かす環境に取り込める仕組みを考える必要がありました。&lt;/p&gt;
+
+&lt;p&gt;なるだけコードを書きたくなかったのです。&lt;/p&gt;
+
+&lt;p&gt;僕の開発部ではBitBucketのプライベートレポジトリを活用しています。&lt;/p&gt;
+
+&lt;p&gt;GitHubも同様で、SCMのホスティングサービスではGUIで直接ファイルをいじる機能があります。
+実際これを使ったことはあまりないのですが、今回はこの機能に管理画面の代替品になってもらうことにしました。&lt;/p&gt;
+
+&lt;p&gt;なのでライターさんはWordPressの管理画面を捨て、BitBucketを管理画面として使うことになるわけです。&lt;/p&gt;
+
+&lt;p&gt;実際これでだいたいの運用は回っています。ですが1つだけ想定していなかったポイントがありました。&lt;/p&gt;
+
+&lt;p&gt;それは&lt;strong&gt;画像のアップロードが出来ない&lt;/strong&gt;ことです。
+記事に使いたい画像をGUIからアップすることが出来なかったのです。&lt;/p&gt;
+
+&lt;p&gt;幸いこの問題は、デザイナさんがGitに慣れていたこともあり、SourceTreeから画像をアップしてくれることになりました。&lt;/p&gt;
+
+&lt;p&gt;つくづく社員の方に恵まれていると思います。&lt;/p&gt;
+
+&lt;h2 id=&#34;移行するためにやったこと:5f9546be55588508513a850a19b4c520&#34;&gt;移行するためにやったこと&lt;/h2&gt;
+
+&lt;p&gt;では僕が大きく時間を割いたポイントをお話します。&lt;/p&gt;
+
+&lt;p&gt;それは次の2点です。&lt;/p&gt;
+
+&lt;h3 id=&#34;wordpressからのエクスポート:5f9546be55588508513a850a19b4c520&#34;&gt;WordPressからのエクスポート&lt;/h3&gt;
+
+&lt;p&gt;既存記事をMarkdownとして取り出す必要がありました。
+これはいろいろなツールを検討したのですが、結局最終的にはスクレイピングして力技で取得しました。&lt;/p&gt;
+
+&lt;p&gt;Pythonで抽出を行ったのですが、使い捨てプログラムということで適当に書きすぎたこともあり、500記事の抽出に数分かかるような有様になりました。&lt;/p&gt;
+
+&lt;p&gt;ちなみにHugo用の移行ツールも何種類かあるようです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/tools/#migration:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Hugo - Tools&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;テーマの作成:5f9546be55588508513a850a19b4c520&#34;&gt;テーマの作成&lt;/h3&gt;
+
+&lt;p&gt;Markdownが生成出来てしまえばあとはHugoのルールに乗っかるだけなので、サイトが形作られるのはあっというまでした。&lt;/p&gt;
+
+&lt;p&gt;とはいえGolangのテンプレートの仕様に慣れがなかったため、初めは想定した動作をしてもらえずイライラする場面も多かったです。&lt;/p&gt;
+
+&lt;h2 id=&#34;hugoを使うことの強み:5f9546be55588508513a850a19b4c520&#34;&gt;Hugoを使うことの強み&lt;/h2&gt;
+
+&lt;p&gt;僕が感じた強みはシンプルさでした。&lt;/p&gt;
+
+&lt;p&gt;UNIX哲学にこんな言葉があります。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;全てのプログラムはフィルタとして振る舞うようにせよ。&lt;br /&gt;
+Make every program a Filter.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/UNIX%E5%93%B2%E5%AD%A6&#34;&gt;UNIX哲学 - Wikipedia&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;おそらくこれに該当するもっともな例はシェルだと思うのですが、実はHugoもまさにこれを体現しているようなもので、Markdownを一定のルールに従ってテーマというフィルタに通すだけのプログラムになっています。&lt;/p&gt;
+
+&lt;p&gt;なのでそのルールさえ理解してしまえばテーマを作るのは容易で、約1週間程度でほぼ完成形につくり上げることが出来ました。&lt;/p&gt;
+
+&lt;h2 id=&#34;hugoを使うことの弱み:5f9546be55588508513a850a19b4c520&#34;&gt;Hugoを使うことの弱み&lt;/h2&gt;
+
+&lt;p&gt;とはいえ静的サイトジェネレータだからこその弱みもあると思っています。&lt;/p&gt;
+
+&lt;h3 id=&#34;テンプレートエンジンが難しい:5f9546be55588508513a850a19b4c520&#34;&gt;テンプレートエンジンが難しい&lt;/h3&gt;
+
+&lt;p&gt;テンプレートの書き方によってはパフォーマンスがガッツリ落ちる時があり、たかが500記事でも18秒ほどかかってしまうこともありました。&lt;/p&gt;
+
+&lt;p&gt;これではHugoの強みである速さを活かしきれてないことになってしまいますね。&lt;/p&gt;
+
+&lt;p&gt;結局チューニングをしたものの、やはり企業として運営しているサイトのため要求も多く、現在は7秒程度で生成する状況で落ち着きました。&lt;/p&gt;
+
+&lt;p&gt;ゆくゆくはせめて3秒以内に抑えたいとは思っています。&lt;/p&gt;
+
+&lt;p&gt;また、個人的にGolangのテンプレートと相性が悪いようで、その点は結構苦労しました。&lt;/p&gt;
+
+&lt;h3 id=&#34;よく読まれている記事が抽出出来ない:5f9546be55588508513a850a19b4c520&#34;&gt;よく読まれている記事が抽出出来ない&lt;/h3&gt;
+
+&lt;p&gt;これはもうどうしょうもないので、GoogleAnalyticsにアクセスしてJSONを吐き出しておくスクリプトを用意しました。&lt;/p&gt;
+
+&lt;p&gt;HugoはJSONを読み込んで記事を生成するような構成にしています。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/extras/datafiles/&#34;&gt;Hugo - Data Files&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;このデータファイルという機能は非常に優秀で、タグやカテゴリを英名 - 和名変換するためにも利用しています。簡易KVSですね。&lt;/p&gt;
+
+&lt;h3 id=&#34;サムネイルの作成が出来ない:5f9546be55588508513a850a19b4c520&#34;&gt;サムネイルの作成が出来ない&lt;/h3&gt;
+
+&lt;p&gt;これもどうしょうもないので、スクリプトを用意しました。&lt;/p&gt;
+
+&lt;p&gt;Pythonで書けば数行で出来てしまうため、10分20分で実装出来たのはラッキーでした。&lt;/p&gt;
+
+&lt;p&gt;これがないとPageSpeedInsightのスコアが大きく下がるため、見落とさずに対応できて良かったです。&lt;/p&gt;
+
+&lt;h2 id=&#34;運用を始めてみて:5f9546be55588508513a850a19b4c520&#34;&gt;運用を始めてみて&lt;/h2&gt;
+
+&lt;p&gt;僕の操作ミスでサービスダウンさせた場面は2度ほどありましたが、Hugoだから発生した問題は1つもありません。&lt;/p&gt;
+
+&lt;p&gt;レスポンスタイムは大きく向上し、PageSpeedInsightもほぼ全ページが90点超えとなりました（これはHugo関係ないが）。&lt;/p&gt;
+
+&lt;p&gt;しかしライターさんにMarkdownを覚えてもらったのはやはり少し気にかかっていて、Hugo特有のメタデータなどは出来る限りフォローに入るよう気をつけています。&lt;/p&gt;
+
+&lt;p&gt;また、生成はcronで定時処理しており、その処理ログをSlackに流すようにしています。&lt;/p&gt;
+
+&lt;p&gt;Slack側では「ERROR」という文言を含むメッセージが発せられた場合にアラートがあげられるようにしており、簡易的な監視ツールとして手軽に立ち上げられたのではないかと思っています。&lt;/p&gt;
+
+&lt;p&gt;そして、この運用による恩恵もいくつかあります。&lt;/p&gt;
+
+&lt;h3 id=&#34;プルリクエストが使えるようになった:5f9546be55588508513a850a19b4c520&#34;&gt;プルリクエストが使えるようになった&lt;/h3&gt;
+
+&lt;p&gt;メディアということで大量の記事を抱えているわけですが、その個々の記事のクオリティを上げることも重要な作業です。&lt;/p&gt;
+
+&lt;p&gt;この運用だとBitBucket上に記事データがあるため、プルリクエストをライターさんになげる運用ができるようになりました。&lt;/p&gt;
+
+&lt;p&gt;ソーシャルコーディングならぬ、ソーシャルライティングですね。&lt;/p&gt;
+
+&lt;h3 id=&#34;編集履歴が残るようになった:5f9546be55588508513a850a19b4c520&#34;&gt;編集履歴が残るようになった&lt;/h3&gt;
+
+&lt;p&gt;これはWordPressでも機能としてあるのかもしれませんが、Gitによる強力なバージョン管理が行えるようになりました。&lt;/p&gt;
+
+&lt;p&gt;記事ファイルがどのような変遷をたどってきたか、どの行を誰が書いたのかがわかるのは大きなメリットだと思います。&lt;/p&gt;
+
+&lt;h3 id=&#34;記事の一括操作が出来るようになった:5f9546be55588508513a850a19b4c520&#34;&gt;記事の一括操作が出来るようになった&lt;/h3&gt;
+
+&lt;p&gt;記事データがテキストファイルで存在するため、一括置換が容易になりました。&lt;/p&gt;
+
+&lt;p&gt;これまでもタグやカテゴリの設定しなおし等を行いたい場面があったようですが、そういった作業も人間の手を介さずに一瞬で行えるようになりました。&lt;/p&gt;
+
+&lt;p&gt;記事を柔軟に扱うという点では、WordPressでの運用より10歩も20歩も前進出来たように思います。&lt;/p&gt;
+
+&lt;p&gt;データをテキストファイルで保持できているので、エンジニアとしてもプラシーボ的な安心があります。&lt;/p&gt;
+
+&lt;h3 id=&#34;校正が自動化出来るようになった:5f9546be55588508513a850a19b4c520&#34;&gt;校正が自動化出来るようになった&lt;/h3&gt;
+
+&lt;p&gt;文章を扱うサービスということもあり、ライティングルールを定めています。&lt;/p&gt;
+
+&lt;p&gt;とはいえ現状どうかというと、結構な割合で守られていません。
+しかしこれは書き手のチェックに委ねられていたため、しかたのないことだと思います。&lt;/p&gt;
+
+&lt;p&gt;今回はテキストファイルとしてデータがあるので、正規表現でチェック出来るような校正はシェル化出来ました。&lt;/p&gt;
+
+&lt;p&gt;これは毎週金曜日の夕方に処理されるようになっており、アラートが上がった記事はSlackに通知されるようになっています。&lt;/p&gt;
+
+&lt;p&gt;また、サイズの大きい画像などが格納された場合も同様で、この処理の際にアラートがあがるようにしてあります。&lt;/p&gt;
+
+&lt;h2 id=&#34;終わりに:5f9546be55588508513a850a19b4c520&#34;&gt;終わりに&lt;/h2&gt;
+
+&lt;p&gt;というわけでWordPressから静的サイトジェネレータへの移行を会社でおこなった話を書きました。&lt;/p&gt;
+
+&lt;p&gt;現在は非常に安定して運用が出来ており、なおかつ非常に早いスピードで改修が出来ています。&lt;/p&gt;
+
+&lt;p&gt;WordPressでの運用に手こずっている方は、一度静的サイトジェネレータでの運用も検討してはいいのではないでしょうか。&lt;/p&gt;
+
+&lt;p&gt;素晴らしきプロダクトである&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;と開発者である&lt;a href=&#34;http://spf13.com/&#34;&gt;Steve Francia氏&lt;/a&gt;に感謝。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ELB越しのLaravelでHTTPSを使おうとして困った話</title>
+      <link>http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/</link>
+      <pubDate>Wed, 04 Nov 2015 12:18:07 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/</guid>
+      <description>
+
+&lt;h2 id=&#34;ssl証明書はelbに設置する:56aef34fa740ed018dee02e37b63f347&#34;&gt;SSL証明書はELBに設置する&lt;/h2&gt;
+
+&lt;p&gt;何が普通なのか知らないけど、今回立ち上げた構成では&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;CLIENT -&amp;gt; ELB(80 or 443) -&amp;gt; WEB(80)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;っていう構成にしていました（するつもりだった）。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://dev.classmethod.jp/cloud/aws/aws-beginner-elb-ssl/&#34;&gt;【初心者向け】ELBにSSL証明書をインストールする ｜ Developers.IO&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;問題はリリース当日に:56aef34fa740ed018dee02e37b63f347&#34;&gt;問題はリリース当日に&lt;/h2&gt;
+
+&lt;p&gt;リリースしてみたら何やら証明書のエラーが出てる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Your connection to this site is private, but someone on the network might be able to change the look of the page.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;このページはSSL証明書が効いてるんだけど、ネットワーク上の何かがそうじゃなくしちゃうかもね？&lt;/p&gt;
+
+&lt;p&gt;原因は&lt;strong&gt;httpsじゃないURLに飛ばすformタグがページに存在する&lt;/strong&gt;せいでした。&lt;/p&gt;
+
+&lt;p&gt;開発環境でもオレオレ証明書を用意したりしてHTTPSで通信するようにしておくべきでした。&lt;/p&gt;
+
+&lt;h2 id=&#34;laravelのrouteメソッド:56aef34fa740ed018dee02e37b63f347&#34;&gt;Laravelのrouteメソッド&lt;/h2&gt;
+
+&lt;p&gt;URLのレンダリングはLaravelの&lt;code&gt;route&lt;/code&gt;メソッドを使っています。&lt;/p&gt;
+
+&lt;p&gt;これは結構気に入っていて、後でURLを変えたいって時にある程度コストを軽減してくれる（んじゃないか）と思っているから。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://laravel.com/docs/5.1/routing#named-routes&#34;&gt;HTTP Routing - Laravel - The PHP Framework For Web Artisans&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;でも今回はこのメソッドが&lt;strong&gt;HTTPのURLをレンダリングした&lt;/strong&gt;せいで問題が起こりました。&lt;/p&gt;
+
+&lt;h2 id=&#34;laravelでhttpsのurlを取り扱う:56aef34fa740ed018dee02e37b63f347&#34;&gt;LaravelでHTTPSのURLを取り扱う&lt;/h2&gt;
+
+&lt;p&gt;LaravelのRoutingはこんな感じなんだけど、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;Route::get(&#39;/&#39;, [&#39;as&#39; =&amp;gt; &#39;home&#39;, function() { return view(&#39;home.index&#39;); }]);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;HTTPSのみを許容することも出来るらしい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;Route::get(&#39;/&#39;, [&#39;https&#39;, &#39;as&#39; =&amp;gt; &#39;home&#39;, function() { return view(&#39;home.index&#39;); }]);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こうしておけば&lt;code&gt;route&lt;/code&gt;メソッドでレンダリングされるURLもHTTPSになる。&lt;/p&gt;
+
+&lt;h2 id=&#34;そして問題が起きる:56aef34fa740ed018dee02e37b63f347&#34;&gt;そして問題が起きる&lt;/h2&gt;
+
+&lt;p&gt;先ほどの通り、LaravelでHTTPSの設定をすると&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;HTTPSのみを受け付ける&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;route&lt;/code&gt;メソッドがHTTPSのURLのをレンダリングする&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;事になります。&lt;/p&gt;
+
+&lt;p&gt;今回ELBの奥にあるLaravelが載ったインスタンスはnginxが80ポートを待ち受けています。&lt;/p&gt;
+
+&lt;p&gt;なのでHTTPSだけを許容されると困るんですね、443で通信しなきゃいけない。&lt;/p&gt;
+
+&lt;h2 id=&#34;解決策:56aef34fa740ed018dee02e37b63f347&#34;&gt;解決策&lt;/h2&gt;
+
+&lt;p&gt;わがままを言えば&lt;strong&gt;LaravelがHTTPを受け付けて&lt;code&gt;route&lt;/code&gt;メソッドがHTTPSのURLをレンダリングする&lt;/strong&gt;と嬉しい。&lt;/p&gt;
+
+&lt;p&gt;けどその方法は見つからず（構成としてナンセンスなんだろう）、ELBとLaravelが載ったインスタンスの両方にSSL証明書を設置することにしました。&lt;/p&gt;
+
+&lt;p&gt;というわけでこういう形。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;CLIENT -&amp;gt; ELB(80 or 443) -&amp;gt; WEB(443)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;めでたしめでたし。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hugo0.15でSummaryが日本語に対応するっぽい</title>
+      <link>http://yet.unresolved.xyz/blog/2015/10/09/hugo-support-cjk-language/</link>
+      <pubDate>Fri, 09 Oct 2015 22:15:51 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/10/09/hugo-support-cjk-language/</guid>
+      <description>&lt;p&gt;会社のMacにも&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;をセットアップしてあるんだけど、テーマの編集とかの続きを家でやろうとしたら&lt;code&gt;.Summary&lt;/code&gt;が異なる挙動をしてることに気づいた。&lt;/p&gt;
+
+&lt;p&gt;どうやらHugoのバージョンによって、日本語の解釈がうまくいったりいかなかったりするみたい。&lt;/p&gt;
+
+&lt;p&gt;ソースを読んでたらどうやら日本語のサポートもされてるようだ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/spf13/hugo/blob/823334875d396bdc15770c335c2029a01a7ef2ce/hugolib/page.go&#34;&gt;hugo/page.go at 823334875d396bdc15770c335c2029a01a7ef2ce · spf13/hugo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;随分追ってみたんだけど&lt;code&gt;Metadata&lt;/code&gt;が何を返すのかよくわからず、コミットを見てたらCJKうんたらが追加されたのは最近っぽいことがわかった。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/spf13/hugo/commit/823334875d396bdc15770c335c2029a01a7ef2ce?diff=split&#34;&gt;WordCount and Summary support CJK Language · spf13/hugo@8233348&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;PRのコメントを読んでみると、configになんか書けばなんとかなりそうな雰囲気。&lt;/p&gt;
+
+&lt;p&gt;でもなんで会社のMacは期待した挙動をしてるんだ？&lt;/p&gt;
+
+&lt;p&gt;Goのバージョンが新しいから？&lt;/p&gt;
+
+&lt;p&gt;今のHugoなら&lt;code&gt;config.yaml&lt;/code&gt;にこう書けば日本語もきちんと処理をするようになってた。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;HasCJKLanguage: true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これできちんと70文字？70word？でSummaryが生成されるようになる。&lt;/p&gt;
+
+&lt;p&gt;静的サイトジェネレータも実行環境によって挙動が変わることがあると少し面倒だなあ。&lt;/p&gt;
+
+&lt;p&gt;Golangは他人の書いたソースが読みやすくて良い。&lt;/p&gt;
+
+&lt;p&gt;書くのはあんまりすきじゃないけど。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;追記&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Search Consoleから被リンクを辿ってたら以下の記事にたどり着いた。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://deprode.net/log/logs/2015-11-05/&#34;&gt;2015 11 05 - log&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;上記ブログのauthor様が仰るとおり、僕のHugoの環境はStableじゃなくてDevです。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;meta name=&amp;quot;generator&amp;quot; content=&amp;quot;Hugo 0.15-DEV&amp;quot; /&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;僕のブログのせいで戸惑わせてしまい、大変失礼しました。&lt;/p&gt;
+
+&lt;p&gt;このことに伴い、記事のタイトルを&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;HugoのSummaryが日本語に対応した&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;から&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Hugo0.15でSummaryが日本語に対応するっぽい&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;に変更しました。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>OWASP ZAPでBASIC認証を突破する</title>
+      <link>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</link>
+      <pubDate>Wed, 30 Sep 2015 16:24:53 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</guid>
+      <description>
+
+&lt;p&gt;調べても意外と見つからない。&lt;/p&gt;
+
+&lt;p&gt;要はリクエストヘッダに認証情報をくっつけられればいいんだけどその方法がわからない。&lt;/p&gt;
+
+&lt;h2 id=&#34;リクエストヘッダに情報を差し込む:6779ddb6118e231a79097670a186005c&#34;&gt;リクエストヘッダに情報を差し込む&lt;/h2&gt;
+
+&lt;p&gt;Stand AloneのScriptを作ってこんな感じでヘッダを差し込めるらしい&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt; org.parosproxy.paros.network.HttpSender.addListener(
+   new org.zaproxy.zap.network.HttpSenderListener {
+     getListenerOrder: function() {
+       return 1;
+     },
+
+     onHttpRequestSend: function(msg, initiator) {
+       msg.getRequestHeader().setHeader(
+         &amp;quot;Authorization&amp;quot;, &amp;quot;Basic ZHJwaGxxxxxxBob3Rv&amp;quot;);
+     },
+
+     onHttpResponseReceive: function(msg, initiator) {
+     }
+ });
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;参考にさせて頂きました:6779ddb6118e231a79097670a186005c&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.pupha.net/archives/2654/&#34;&gt;OWASP ZAP で送信されるリクエストに自動で独自ヘッダを追加する方法 - Web Application Security Memo&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[Laravel5.1]発行されたSQLと実行計画を取得する</title>
+      <link>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</link>
+      <pubDate>Wed, 30 Sep 2015 13:44:48 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</guid>
+      <description>
+
+&lt;p&gt;インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしい。&lt;/p&gt;
+
+&lt;h2 id=&#34;sqlの発行をフックする:f8b9f4d61afe8ca86b89085edc23a796&#34;&gt;SQLの発行をフックする&lt;/h2&gt;
+
+&lt;p&gt;ここに書いてあるとおり。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://laravel.com/docs/5.1/database#listening-for-query-events&#34;&gt;Database: Getting Started - Laravel - The PHP Framework For Web Artisans&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;DB&lt;/code&gt;の&lt;code&gt;listen&lt;/code&gt;メソッドに&lt;code&gt;$sql, $bindings, $time&lt;/code&gt;を受け取るClosureを渡せる。&lt;/p&gt;
+
+&lt;p&gt;なので&lt;code&gt;App\Providers\AppServiceProvider&lt;/code&gt;の&lt;code&gt;boot()&lt;/code&gt;メソッドに、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;    public function boot()
+    {
+        \DB::listen(function($sql, $bindings, $time) {
+            $bindings = implode(&#39;, &#39;, $bindings);
+            $method = request()-&amp;gt;method();
+            $url = request()-&amp;gt;url();
+            \Log::info(&amp;quot;Query [{$method}:{$url}] [{$time}s] $sql, [$bindings]&amp;quot;);
+        });
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;とかやればよい。&lt;/p&gt;
+
+&lt;h2 id=&#34;実行計画も取る:f8b9f4d61afe8ca86b89085edc23a796&#34;&gt;実行計画も取る&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;    public function boot()
+    {
+        \DB::listen(function($sql, $bindings, $time) {
+
+            if (preg_match(&amp;quot;/^select/&amp;quot;, $sql)) {
+                $explain = \DB::select(&amp;quot;explain {$sql}&amp;quot;, $bindings);
+                \Log::info($explain);
+            }
+
+            $bindings = implode(&#39;, &#39;, $bindings);
+            $method = request()-&amp;gt;method();
+            $url = request()-&amp;gt;url();
+            \Log::info(&amp;quot;Query [{$method}:{$url}] [{$time}s] $sql, [$bindings]&amp;quot;);
+        });
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こう。&lt;/p&gt;
+
+&lt;p&gt;updateとかもフックしちゃうと2回発行されたりして面倒なので、selectだけ。&lt;/p&gt;
+
+&lt;p&gt;selectに絞らないとしても、explainの取得がさらにフックされて・・・ってなるので、&lt;/p&gt;
+
+&lt;p&gt;何かしら絞る必要はあり。&lt;/p&gt;
+
+&lt;h2 id=&#34;本番では取らない:f8b9f4d61afe8ca86b89085edc23a796&#34;&gt;本番では取らない&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;    public function boot()
+    {
+        \DB::listen(function($sql, $bindings, $time) {
+
+            if (config(&#39;app.env&#39;) !== &#39;production&#39; &amp;amp;&amp;amp; preg_match(&amp;quot;/^select/&amp;quot;, $sql)) {
+                $explain = \DB::select(&amp;quot;explain {$sql}&amp;quot;, $bindings);
+                \Log::info($explain);
+            }
+
+            $bindings = implode(&#39;, &#39;, $bindings);
+            $method = request()-&amp;gt;method();
+            $url = request()-&amp;gt;url();
+            \Log::info(&amp;quot;Query [{$method}:{$url}] [{$time}s] $sql, [$bindings]&amp;quot;);
+        });
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こんな感じ。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Amazon LinuxをVagrantで使いたい</title>
+      <link>http://yet.unresolved.xyz/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/</link>
+      <pubDate>Wed, 26 Aug 2015 23:12:02 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/</guid>
+      <description>
+
+&lt;p&gt;開発はCentOS、本番はAmazonLinuxにしようとしたら意外と違うところが多くてProvisioningがだるかったので。&lt;/p&gt;
+
+&lt;h2 id=&#34;ec2-create-instance-export-task:219da61ce6f755e0018f6c81d16e9cbc&#34;&gt;ec2-create-instance-export-task&lt;/h2&gt;
+
+&lt;p&gt;ec2-create-instance-export-taskっていうCLIのコマンドが用意されているらしい。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/ExportingEC2Instances.html&#34;&gt;Amazon EC2 インスタンスをエクスポートする - Amazon Elastic Compute Cloud&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;このコマンドでEC2のinstance_idを指定してS3にイメージファイルをエクスポートできるとのこと。&lt;/p&gt;
+
+&lt;p&gt;書式はこんな。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ec2-create-instance-export-task instance_id –e target_environment –f disk_image_format -c container_format –b s3_bucket
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;pipで入れたからこんな感じになったよ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;aws ec2 create-instance-export-task --instance-id i-82xxx70 --target-environment vmware --export-to-s3-task DiskImageFormat=vmdk,ContainerFormat=ova,S3Bucket=images.xxxxx.jp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;そしたらこんなエラー。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;A client error (AuthFailure) occurred when calling the CreateInstanceExportTask operation: vm-import-export@amazon.com must have WRITE and READ_ACL permission on the S3 bucket.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;しっかり説明を読むと、&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;エクスポートされたインスタンスを格納する Amazon S3 バケットを作成します。Amazon S3 バケットでは、[vm-import-export@amazon.com] アカウントへの [Upload/Delete] および [View Permissions] アクセスが付与される必要があります。詳細については、Amazon Simple Storage Service コンソールユーザーガイド の Creating a Bucket および Editing Bucket Permissions を参照してください。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;なるほどなるほど。&lt;/p&gt;
+
+&lt;p&gt;こんな感じに。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-08-26/bucket.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-08-26/bucket.png&#34; class=&#34;image&#34; alt=&#34;bucket&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;そしたら違うエラー。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;A client error (NotExportable) occurred when calling the CreateInstanceExportTask operation: Only imported instances can be exported.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ん？&lt;/p&gt;
+
+&lt;p&gt;前提条件を読んでなかった。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/VMImportPrerequisites.html#vmimport-image-formats&#34;&gt;VM Import/Export の前提条件 - Amazon Elastic Compute Cloud&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Linux/Unix（64 ビット）&lt;/p&gt;
+
+&lt;p&gt;Red Hat Enterprise Linux (RHEL) 5.1-5.11、6.1-6.6、7.0-7.1&lt;/p&gt;
+
+&lt;p&gt;Note
+Amazon EC2 で実行するときに必要なドライバが存在しないため、RHEL 6.0 はサポートされていません。
+VM Import は、RHEL インスタンスのライセンスポータビリティをサポートしています。既存の RHEL ライセンスは、関連付けられた RHEL インスタンスと一緒にインポートされます。Red Hat Cloud Access の適格性の詳細については、Red Hat ウェブサイトの適格性を参照してください。
+CentOS 5.1～5.11、6.1～6.6、7.0-7.1&lt;/p&gt;
+
+&lt;p&gt;Note
+Amazon EC2 で実行するときに必要なドライバが存在しないため、CentOS 6.0 はサポートされていません。
+Ubuntu 12.04、12.10、13.04、13.10、14.04、14.10&lt;/p&gt;
+
+&lt;p&gt;Debian 6.0.0-6.0.8, 7.0.0-7.2.0&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;あっ・・・。&lt;/p&gt;
+
+&lt;h2 id=&#34;これでいいや:219da61ce6f755e0018f6c81d16e9cbc&#34;&gt;これでいいや&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.geekandi.com/2014/04/13/amazon-linux-vagrant-box-images/&#34;&gt;Amazon Linux Vagrant Box Images | Geek and I&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ちょっと古いし不安だけど、どうせ個人的なやつだし・・・。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考にさせていただきました:219da61ce6f755e0018f6c81d16e9cbc&#34;&gt;参考にさせていただきました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/21920993/convert-amazon-ec2-ami-to-virtual-or-vagrant-box&#34;&gt;virtualbox - Convert Amazon EC2 AMI to Virtual or Vagrant box - Stack Overflow&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>focusoutイベントでfocus中の要素が取得できない</title>
+      <link>http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/</link>
+      <pubDate>Tue, 14 Jul 2015 00:05:16 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/</guid>
+      <description>
+
+&lt;p&gt;何を血迷ったかサジェストを自作しようとしてしまってつらい目にあった話。&lt;/p&gt;
+
+&lt;h2 id=&#34;フォーカスアウトしたらサジェストを消したい:1be3a17c6bd3affece21cbd510505d7a&#34;&gt;フォーカスアウトしたらサジェストを消したい&lt;/h2&gt;
+
+&lt;p&gt;入力欄もしくはサジェストからフォーカスアウトした時はサジェストを消したい。
+でもフォーカスアウトした先にフォーカスしたものが入力欄もしくはサジェストだったらそれは消したくない。&lt;/p&gt;
+
+&lt;p&gt;だからこんなコードを書きました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;search-text&amp;quot;&amp;gt;
+&amp;lt;div id=&amp;quot;suggest-list&amp;quot;&amp;gt;
+  &amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;suggest&amp;lt;/a&amp;gt;
+  &amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;suggest&amp;lt;/a&amp;gt;
+  &amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;suggest&amp;lt;/a&amp;gt;
+&amp;lt;/div&amp;gt;
+
+&amp;lt;script&amp;gt;
+$(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() {
+  if ($(&amp;quot;#suggest-list&amp;quot;).find(&amp;quot;:focus&amp;quot;).length !== 0) {
+    console.log(&amp;quot;Not hide!&amp;quot;);
+    return;
+  }
+  console.log(&amp;quot;hide!&amp;quot;);
+});
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;実際はこの処理を入力だけじゃなくアンカーにも適用したんだけど面倒だから省略。
+しかしこれだと&lt;code&gt;if&lt;/code&gt;の中には入らずサジェストの非表示処理が通ってしまう・・・。&lt;/p&gt;
+
+&lt;h2 id=&#34;フォーカス処理は一度ブラウザに返してあげる:1be3a17c6bd3affece21cbd510505d7a&#34;&gt;フォーカス処理は一度ブラウザに返してあげる&lt;/h2&gt;
+
+&lt;p&gt;どうやらJavaScriptの処理が進んでる間はフォーカス処理が行われないらしい。
+なので&lt;strong&gt;一度ブラウザに処理が返るような処理&lt;/strong&gt;を挟んでやる必要がある。&lt;/p&gt;
+
+&lt;p&gt;こんなかんじに。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;$(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() {
+  setTimeout(function() {
+    if ($(&amp;quot;#suggest-list&amp;quot;).find(&amp;quot;:focus&amp;quot;).length !== 0) {
+      console.log(&amp;quot;Not hide!&amp;quot;);
+      return;
+    }
+    console.log(&amp;quot;hide!&amp;quot;);
+  }, 0);
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;setTimeout&lt;/code&gt;はJavaScriptの処理を通した後に、ブラウザ側からまた呼び出されるとのこと。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考にさせていただきました:1be3a17c6bd3affece21cbd510505d7a&#34;&gt;参考にさせていただきました。&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://qiita.com/jkr_2255/items/17693ab77beea71a871c&#34;&gt;JavaScript - setTimeout(&amp;hellip;,0)などの使いドコロ - Qiita&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hugo向けの新しいテーマを作った</title>
+      <link>http://yet.unresolved.xyz/blog/2015/06/20/making-new-theme-robust-for-hugo/</link>
+      <pubDate>Sat, 20 Jun 2015 11:30:06 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/06/20/making-new-theme-robust-for-hugo/</guid>
+      <description>
+
+&lt;p&gt;前に作ったやつが飽きてしまったので、そもそもForkするんじゃなくて0から作ることにしました。&lt;/p&gt;
+
+&lt;h2 id=&#34;出来たもの:b3f0c0f315f1fbc2ee8323461148b3d4&#34;&gt;出来たもの&lt;/h2&gt;
+
+&lt;p&gt;こんな感じ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/dim0627/hugo_theme_robust&#34;&gt;dim0627/hugo_theme_robust&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-06-20/theme_tn.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-06-20/theme_tn.png&#34; class=&#34;image&#34; alt=&#34;theme_tn&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;トップの最新4記事は2カラム、それ以降は4カラムで表示するようにしてる。&lt;/p&gt;
+
+&lt;p&gt;前はPost一覧とかの画面もあったけど、そもそも必要無いような気がして色々削った。
+なので今回はシンプルにトップ、記事詳細、タグ別記事一覧の3ページだけ。&lt;/p&gt;
+
+&lt;p&gt;トップとタグ別記事一覧は同じテンプレートを使ってるから、少し冗長になってしまった気はする。
+Hugoのテンプレート構成が今だによくわかってないから、共通化とかがうまく出来ない・・・。&lt;/p&gt;
+
+&lt;h2 id=&#34;工夫したこと:b3f0c0f315f1fbc2ee8323461148b3d4&#34;&gt;工夫したこと&lt;/h2&gt;
+
+&lt;p&gt;前にテーマを作って思ったんだけど、Hugoの強みは各テーマをOverride出来ることだと思ってます。
+だからそれ前提で書かないと、Overrideしたいのは一部でも、ファイルまるごとコピるはめになっちゃう。&lt;/p&gt;
+
+&lt;p&gt;前はそれでもう何がなんだかわからなくなったので、今回はそれを避けようとした。&lt;/p&gt;
+
+&lt;p&gt;何をしたかというと、空っぽのテンプレートファイルを最初からいろいろな場所に設置しておくことにした。
+Overrideしたい人はこのファイルを各自のディレクトリにコピーして編集すればいいし、Overrideしない人はほっとけば影響もない。&lt;/p&gt;
+
+&lt;h2 id=&#34;まとめ:b3f0c0f315f1fbc2ee8323461148b3d4&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;数時間でざーっと作ったので、最後のほうはCSSもぶれまくったのは反省。
+あとReadmeとかいろいろ書けてない。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/spf13/hugoThemes&#34;&gt;spf13/hugoThemes&lt;/a&gt;にプルリクも送らねば・・・。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>例によってpaiza online hackathon5をClojureで解いてみた</title>
+      <link>http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/</link>
+      <pubDate>Wed, 06 May 2015 09:54:46 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/</guid>
+      <description>
+
+&lt;p&gt;まずい更新することがない。&lt;/p&gt;
+
+&lt;p&gt;とりあえずPOHネタでこの場をしのごう。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://paiza.jp/poh/enshura?locale=ja&#34;&gt;マンガ版「俺の許嫁と幼なじみが修羅場すぎる」｜paizaオンラインハッカソン5&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;今回はパフォーマンスとかの問題はなく、ただただロジックが面倒くさいものばっかでした。&lt;/p&gt;
+
+&lt;h2 id=&#34;problem-1:d10396b379fa39f08bc202555c3657f6&#34;&gt;Problem 1&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def in (line-seq (java.io.BufferedReader. *in*)))
+
+(def p1 (-&amp;gt;&amp;gt; in
+             first
+             (take-nth 2)
+             clojure.string/join))
+
+(println p1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;そもそもこれシーケンスで取らなければ&lt;code&gt;first&lt;/code&gt;とかつけなくてよかったんじゃないかなあ。&lt;/p&gt;
+
+&lt;p&gt;そんな方法あるかわかんないけど。&lt;/p&gt;
+
+&lt;h2 id=&#34;problem-2:d10396b379fa39f08bc202555c3657f6&#34;&gt;Problem 2&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def in (map
+         #(Integer/parseInt %)
+         (line-seq (java.io.BufferedReader. *in*))))
+
+(defn take-padding [coll pad]
+  (-&amp;gt;&amp;gt; coll
+       (partition-all pad)
+       (map first)))
+
+(def p2
+  (let [l (rest in)]
+    (map #(apply + %)
+         (for [i (range 7)]
+           (take-padding (drop i l) 7)))))
+
+(print (clojure.string/join &amp;quot;\n&amp;quot; p2))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;結構強引にシーケンス操作を書いたけど、もっと楽にやれる関数が用意されてる気する。&lt;/p&gt;
+
+&lt;h2 id=&#34;problem-3-rena:d10396b379fa39f08bc202555c3657f6&#34;&gt;Problem 3 RENA&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def in (for [e (map #(.split % &amp;quot; &amp;quot;) (line-seq (java.io.BufferedReader. *in*)))]
+          (map #(Integer/parseInt %) e)))
+
+(defn point-to-range [coll]
+  (for [v (map #(partition 2 %) coll)]
+    (let [[s e] v]
+      (for [x (range (- (first s) 1) (first e))
+            y (range (- (second s) 1) (second e))]
+        [x y]))))
+
+(def p3r
+  (let [[w dc rc] (first in)
+        d (take dc (rest in))
+        r (-&amp;gt;&amp;gt; (point-to-range (take-last rc in))
+               (apply concat)
+               distinct)]
+    (for [e r]
+      (nth (nth d (second e)) (first e)))))
+
+(print (apply + p3r))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;エクセル的なやつ。&lt;/p&gt;
+
+&lt;p&gt;めんどくさかった。&lt;/p&gt;
+
+&lt;h2 id=&#34;problem-3-minami:d10396b379fa39f08bc202555c3657f6&#34;&gt;Problem 3 MINAMI&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def in (line-seq (java.io.BufferedReader. *in*)))
+
+(defn h2v [coll n]
+  (for [c (range n)]
+    (map #(nth % c) coll)))
+
+(defn compl [n coll]
+  (concat (take (- n (count coll)) (repeat 0)) coll))
+
+(def p3m
+  (let [tc (for [e (map #(.split % &amp;quot; &amp;quot;) in)]
+             (map #(Integer/parseInt %) e))
+        [x y] (-&amp;gt; tc first)
+        coll (rest tc)]
+    (h2v (-&amp;gt;&amp;gt; (h2v coll x)
+              (map (fn [c] (filter #(not= 2 %) c)))
+              (map #(compl y %))) y)))
+
+(print (clojure.string/join &amp;quot;\n&amp;quot;
+                            (map #(clojure.string/join &amp;quot; &amp;quot; %) p3m)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;爆弾のやつ。&lt;/p&gt;
+
+&lt;p&gt;めんどくさかった。&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

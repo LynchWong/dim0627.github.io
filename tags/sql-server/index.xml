@@ -1,16 +1,96 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Sql Server on Unresolved</title>
     <link>http://yet.unresolved.xyz/tags/sql-server/</link>
+    <description>Recent content in Sql Server on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2016</rights>
-    <updated>2014-10-23 00:00:00 &#43;0000 UTC</updated>
-
+    <lastBuildDate>Thu, 23 Oct 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/sql-server/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>クラスタ化インデックスとかカバリングインデックスについてどうせ忘れるからまとめる</title>
+      <link>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</link>
+      <pubDate>Thu, 23 Oct 2014 00:00:00 +0000</pubDate>
       
-    
+      <guid>http://yet.unresolved.xyz/blog/2014/10/23/about-sqlserver-clusteredindex-and-nonclustered-index/</guid>
+      <description>
 
+&lt;p&gt;SQL Serverを使ってて、曖昧にしかわからないところがあったので少し調べてみた。&lt;/p&gt;
+
+&lt;h2 id=&#34;クラスタ化-非クラスタ化インデックスの違い:c92488df51ae62a183920f8a12e0e585&#34;&gt;クラスタ化 / 非クラスタ化インデックスの違い&lt;/h2&gt;
+
+&lt;p&gt;MySQLにも同じ話があったんだね。まず参考にしたのはMSDN。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://msdn.microsoft.com/ja-jp/library/ms190457.aspx&#34;&gt;クラスター化インデックスと非クラスター化インデックスの概念&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;まさにぴったりのタイトルじゃんと思ったんだけどいまいちよくわからない。
+いや、わかったっちゃわかったんだけど、だからどうなるとか、だからどうする、っていうところが掴めなかった。&lt;/p&gt;
+
+&lt;h3 id=&#34;ここでわかったこと:c92488df51ae62a183920f8a12e0e585&#34;&gt;ここでわかったこと&lt;/h3&gt;
+
+&lt;p&gt;クラスタ化インデックスは、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1テーブルに1つしか作れない。&lt;/li&gt;
+&lt;li&gt;これがあると指定されたインデックスの値によってソートされた構造体が出来る。(テーブルの構造ごとそうなる？)&lt;/li&gt;
+&lt;li&gt;クラスタ化インデックスが設定されていないテーブルはヒープと呼ばれる未ソートの状態になる。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;非クラスタ化インデックスは、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;テーブルとは別に構造を持つ。&lt;/li&gt;
+&lt;li&gt;実データじゃなく、実データへのポインタを持つ。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;次に参考にさせてもらったのがこっち。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.atmarkit.co.jp/ait/articles/0501/18/news097.html&#34;&gt;SQL Serverのインデックス構造（前編） (&lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;2&lt;/sub&gt;)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ここは非常にわかりやすかった&lt;/p&gt;
+
+&lt;p&gt;B-Treeのイメージも、SQL Server上での実装が具体的にイメージ出来たし、
+非クラスタ化インデックスじゃ結局ランダムI/Oが発生するんだね、ってこともわかった。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.atmarkit.co.jp/fcoding/articles/delphi/05/delphi05a.html&#34;&gt;RDBMSで使われるB木を学ぼう&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;ここでわかったこと-1:c92488df51ae62a183920f8a12e0e585&#34;&gt;ここでわかったこと&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;B-Treeなのでリーフノードのレベルが全部同じになる。&lt;/li&gt;
+&lt;li&gt;クラスタ化インデックスを利用したクエリの場合、リーフノードに実データがあるのでランダムI/Oが発生しない。&lt;/li&gt;
+&lt;li&gt;非クラスタ化インデックスを利用したクエリの場合、リーフノードにはポインタしかないので、ランダムI/Oが発生する。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;こっちのページはよくわかんなかった。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://enterprisezine.jp/iti/detail/3357&#34;&gt;SQL Serverの大きな特徴、クラスタ化インデックスを押さえよう！&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;カバリングインデックス:c92488df51ae62a183920f8a12e0e585&#34;&gt;カバリングインデックス&lt;/h2&gt;
+
+&lt;p&gt;マルチカラムインデックスと混同するよね。これは結構わかりやすく書いてくれている記事があった。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://d.hatena.ne.jp/a666666/20100920/1284992435&#34;&gt;MySQLのインデックスを学ぶ (1)&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;クエリが必要とするカラムがすべてインデックスに含まれている場合、インデックスだけを読めば良いのでとても速い、というもの。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://msdn.microsoft.com/ja-jp/library/ff650692.aspx&#34;&gt;SQL インデックスを最適化する方法&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;カバーリング インデックスは、WHERE 句およびクエリ列選択の形態をとるすべての列を含む、非クラスタ化インデックスです。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;誤った認識があればご指摘ください。&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/4873115892/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4873115892&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;SQLアンチパターン&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=4873115892&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/4798115169/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4798115169&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;達人に学ぶ SQL徹底指南書 (CodeZine BOOKS)&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=4798115169&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

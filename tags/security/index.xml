@@ -1,18 +1,116 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unresolved </title>
+    <title>Security on Unresolved</title>
     <link>http://yet.unresolved.xyz/tags/security/</link>
+    <description>Recent content in Security on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Daisuke Tsuji</author>
-    <rights>(C) 2016</rights>
-    <updated>2015-09-30 16:24:53 &#43;0900 JST</updated>
-
+    <lastBuildDate>Wed, 30 Sep 2015 16:24:53 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/security/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>OWASP ZAPでBASIC認証を突破する</title>
+      <link>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</link>
+      <pubDate>Wed, 30 Sep 2015 16:24:53 +0900</pubDate>
       
-    
-      
-    
+      <guid>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</guid>
+      <description>
 
+&lt;p&gt;調べても意外と見つからない。&lt;/p&gt;
+
+&lt;p&gt;要はリクエストヘッダに認証情報をくっつけられればいいんだけどその方法がわからない。&lt;/p&gt;
+
+&lt;h2 id=&#34;リクエストヘッダに情報を差し込む:6779ddb6118e231a79097670a186005c&#34;&gt;リクエストヘッダに情報を差し込む&lt;/h2&gt;
+
+&lt;p&gt;Stand AloneのScriptを作ってこんな感じでヘッダを差し込めるらしい&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt; org.parosproxy.paros.network.HttpSender.addListener(
+   new org.zaproxy.zap.network.HttpSenderListener {
+     getListenerOrder: function() {
+       return 1;
+     },
+
+     onHttpRequestSend: function(msg, initiator) {
+       msg.getRequestHeader().setHeader(
+         &amp;quot;Authorization&amp;quot;, &amp;quot;Basic ZHJwaGxxxxxxBob3Rv&amp;quot;);
+     },
+
+     onHttpResponseReceive: function(msg, initiator) {
+     }
+ });
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;参考にさせて頂きました:6779ddb6118e231a79097670a186005c&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.pupha.net/archives/2654/&#34;&gt;OWASP ZAP で送信されるリクエストに自動で独自ヘッダを追加する方法 - Web Application Security Memo&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[Clojure]ringのCSRFトークンを生成する</title>
+      <link>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</link>
+      <pubDate>Sun, 22 Mar 2015 19:23:27 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</guid>
+      <description>&lt;p&gt;ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、
+デフォルトだとPOSTリクエストした時にCSRFトークンチェックが入るようになっててたまに困る。&lt;/p&gt;
+
+&lt;p&gt;なのでトークンの生成方法をメモ。&lt;/p&gt;
+
+&lt;p&gt;チェックの処理は&lt;code&gt;site-defaults&lt;/code&gt;の、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def app
+  (wrap-defaults app-routes site-defaults))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;:security&lt;/code&gt;のところで設定出来ます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def site-defaults
+  &amp;quot;A default configuration for a browser-accessible website, based on current
+  best practice.&amp;quot;
+  {:params    {:urlencoded true
+               :multipart  true
+               :nested     true
+               :keywordize true}
+   :cookies   true
+   :session   {:flash true
+               :cookie-attrs {:http-only true}}
+   :security  {:anti-forgery   true
+               :xss-protection {:enable? true, :mode :block}
+               :frame-options  :sameorigin
+               :content-type-options :nosniff}
+   :static    {:resources &amp;quot;public&amp;quot;}
+   :responses {:not-modified-responses true
+               :absolute-redirects     true
+               :content-types          true}})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これを&lt;code&gt;false&lt;/code&gt;にしちゃえばもちろんCSRFのチェックはされなくなるんだけど、まあ普通はするべきですよね。&lt;/p&gt;
+
+&lt;p&gt;トークンの生成の仕方はこう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(ns sample.handler
+  (:require [ring.util.anti-forgery :refer :all]))
+(anti-forgery-field)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;ring.util.anti-forgery&lt;/code&gt;の中身はこんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(ns ring.util.anti-forgery
+  &amp;quot;Utility functions for inserting anti-forgery tokens into HTML forms.&amp;quot;
+  (:use [hiccup core form]
+        ring.middleware.anti-forgery))
+
+(defn anti-forgery-field
+  &amp;quot;Create a hidden field with the session anti-forgery token as its value.
+  This ensures that the form it&#39;s inside won&#39;t be stopped by the anti-forgery
+  middleware.&amp;quot;
+  []
+  (html (hidden-field &amp;quot;__anti-forgery-token&amp;quot; *anti-forgery-token*)))
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
