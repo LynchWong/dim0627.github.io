@@ -6,8 +6,38 @@
     <description>Recent content on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 02 Jan 2016 22:36:11 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 07 Jan 2016 21:53:01 +0900</lastBuildDate>
     <atom:link href="http://yet.unresolved.xyz/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>vagrant up時にmountが失敗する</title>
+      <link>http://yet.unresolved.xyz/blog/2016/01/07/virtualbox-mount-failed/</link>
+      <pubDate>Thu, 07 Jan 2016 21:53:01 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2016/01/07/virtualbox-mount-failed/</guid>
+      <description>
+
+&lt;p&gt;これ前にもなった気がするなあ。その時は意外とさくっと直せた気がするんだけど、どうやって直したか覚えてない・・・。&lt;/p&gt;
+
+&lt;p&gt;こちらの記事が非常に参考になりました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://tech.withsin.net/2015/07/10/virtualbox-vagrant-mount-fail/&#34;&gt;VirtualBoxの/vagrantがマウントに失敗 | technote&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;僕はこの記事の、&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;VirtualBox Guest Additions&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;に該当してたようで、当該の操作をしたら直りました。&lt;/p&gt;
+
+&lt;p&gt;そして残念なことにエラーログを取得しそこねた。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考にさせていただきました:73daaa0674d5a9de9870df04f54dfeb7&#34;&gt;参考にさせていただきました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://tech.withsin.net/2015/07/10/virtualbox-vagrant-mount-fail/&#34;&gt;VirtualBoxの/vagrantがマウントに失敗 | technote&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>「GRAVITY DAZE」をやった</title>
@@ -1231,32 +1261,6 @@ $(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() 
 &lt;p&gt;爆弾のやつ。&lt;/p&gt;
 
 &lt;p&gt;めんどくさかった。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する</title>
-      <link>http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/</link>
-      <pubDate>Wed, 01 Apr 2015 22:42:40 +0900</pubDate>
-      
-      <guid>http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/</guid>
-      <description>
-
-&lt;p&gt;こんな感じ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# v でペインを縦に分割する
-bind v split-window -h -c &amp;quot;#{pane_current_path}&amp;quot;
-
-# s でペインを横に分割する
-bind s split-window -v -c &amp;quot;#{pane_current_path}&amp;quot;
-
-# 新規ウィンドウでディレクトリを保持
-bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;参考にさせていただきました:0adf99f262be79bb5ee2575ca8ebd7e8&#34;&gt;参考にさせていただきました&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://studio3104.hatenablog.com/entry/2014/10/14/131430&#34;&gt;tmux 1.9 でペイン分割時にカレントディレクトリを維持 - Studio3104::BLOG.new&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
