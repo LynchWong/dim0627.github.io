@@ -3,6 +3,7 @@ date: 2016-01-07T21:53:01+09:00
 slug: "virtualbox-mount-failed"
 tags: ["vagrant", "virtualbox"]
 title: "vagrant up時にmountが失敗する"
+draft: true
 ---
 
 これ前にもなった気がするなあ。その時は意外とさくっと直せた気がするんだけど、どうやって直したか覚えてない・・・。
