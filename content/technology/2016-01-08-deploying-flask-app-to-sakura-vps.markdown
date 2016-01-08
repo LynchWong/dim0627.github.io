@@ -74,7 +74,6 @@ nginxと連携させる前に、一度このタイミングでアクセス出来
 ### iniファイルでの起動
 
 パラメータをたくさんつけるとコマンドが長くなってしまうので`ini`に落とし込みました。
-
 `xml`とかその他の形式でも行けるみたいです。
 
 ``` ini
@@ -95,8 +94,7 @@ gid = www-group
 ここでも一度アクセスできるかを確認するといいですね。
 
 chdirはカレントディレクトリの指定です。
-
-これがないとコマンドでは動くのに`/etc/init`などからupstartした際に動かない、なんてことになったり。
+これがないとコマンドでは動くのにupstartから起動したら動かない、なんてことになったり。
 
 socketについてはこの記事が詳しいです。
 
@@ -158,3 +156,4 @@ uWSGIが起動して`app.sock`が配備されてる状態であればこれで�
 [Flask + uWSGI + Nginx でハローワールドするまで @ さくらのVPS (CentOS 6.6) - Qiita](http://qiita.com/morinokami/items/e0efb2ae2aa04a1b148b)
 
 [uWSGI で Django を使う方法 — Django 1.4 documentation](http://docs.djangoproject.jp/en/latest/howto/deployment/wsgi/uwsgi.html)
+
