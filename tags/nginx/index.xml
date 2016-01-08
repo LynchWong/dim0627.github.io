@@ -17,9 +17,9 @@
       <guid>http://yet.unresolved.xyz/blog/2016/01/08/deploying-flask-app-to-sakura-vps/</guid>
       <description>
 
-&lt;p&gt;CentOS 6.5、Python2.7でやります。&lt;/p&gt;
+&lt;p&gt;CentOS6.5、Python2.7でやります。&lt;/p&gt;
 
-&lt;p&gt;CentOS 6.5のプリインストールPythonは2.6だと思うのですが、導入方法は書きません。
+&lt;p&gt;CentOS6.5にプリインストールされているPythonは2.6だと思うのですが、Python2.7の導入方法は書きません。
 多分いろいろな環境で動いたり動かなかったりしちゃうと思うので。&lt;/p&gt;
 
 &lt;p&gt;僕はこの記事を参考にしました。非常に簡単かつ完璧に書かれてて助かりました。こんな記事が書けるようになりたい。&lt;/p&gt;
