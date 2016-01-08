@@ -154,9 +154,8 @@ nginxと連携させる前に、一度このタイミングでアクセス出来
 
 <h3 id="iniファイルでの起動:a09f5de2bb121134bcd4cecf283ff09b">iniファイルでの起動</h3>
 
-<p>パラメータをたくさんつけるとコマンドが長くなってしまうので<code>ini</code>に落とし込みました。</p>
-
-<p><code>xml</code>とかその他の形式でも行けるみたいです。</p>
+<p>パラメータをたくさんつけるとコマンドが長くなってしまうので<code>ini</code>に落とし込みました。
+<code>xml</code>とかその他の形式でも行けるみたいです。</p>
 
 <pre><code class="language-ini">[uwsgi]
 chdir = /path/to/src
@@ -174,9 +173,8 @@ gid = www-group
 <p>起動は<code>uwsgi --ini wsgi.ini</code>みたいな感じ。
 ここでも一度アクセスできるかを確認するといいですね。</p>
 
-<p>chdirはカレントディレクトリの指定です。</p>
-
-<p>これがないとコマンドでは動くのに<code>/etc/init</code>などからupstartした際に動かない、なんてことになったり。</p>
+<p>chdirはカレントディレクトリの指定です。
+これがないとコマンドでは動くのにupstartから起動したら動かない、なんてことになったり。</p>
 
 <p>socketについてはこの記事が詳しいです。</p>
 

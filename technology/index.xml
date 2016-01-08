@@ -87,9 +87,8 @@ nginxと連携させる前に、一度このタイミングでアクセス出来
 
 &lt;h3 id=&#34;iniファイルでの起動:a09f5de2bb121134bcd4cecf283ff09b&#34;&gt;iniファイルでの起動&lt;/h3&gt;
 
-&lt;p&gt;パラメータをたくさんつけるとコマンドが長くなってしまうので&lt;code&gt;ini&lt;/code&gt;に落とし込みました。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;xml&lt;/code&gt;とかその他の形式でも行けるみたいです。&lt;/p&gt;
+&lt;p&gt;パラメータをたくさんつけるとコマンドが長くなってしまうので&lt;code&gt;ini&lt;/code&gt;に落とし込みました。
+&lt;code&gt;xml&lt;/code&gt;とかその他の形式でも行けるみたいです。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-ini&#34;&gt;[uwsgi]
 chdir = /path/to/src
@@ -107,9 +106,8 @@ gid = www-group
 &lt;p&gt;起動は&lt;code&gt;uwsgi --ini wsgi.ini&lt;/code&gt;みたいな感じ。
 ここでも一度アクセスできるかを確認するといいですね。&lt;/p&gt;
 
-&lt;p&gt;chdirはカレントディレクトリの指定です。&lt;/p&gt;
-
-&lt;p&gt;これがないとコマンドでは動くのに&lt;code&gt;/etc/init&lt;/code&gt;などからupstartした際に動かない、なんてことになったり。&lt;/p&gt;
+&lt;p&gt;chdirはカレントディレクトリの指定です。
+これがないとコマンドでは動くのにupstartから起動したら動かない、なんてことになったり。&lt;/p&gt;
 
 &lt;p&gt;socketについてはこの記事が詳しいです。&lt;/p&gt;
 
