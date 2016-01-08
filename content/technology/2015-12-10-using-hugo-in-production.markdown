@@ -3,6 +3,7 @@ date: 2015-12-10T14:49:18+09:00
 slug: "using-hugo-in-production"
 tags: ["golang", "hugo", "wordpress", "static-site-generator"]
 title: "プロダクションのWordPressを捨てHugoに移行した"
+toc: true
 ---
 
 あんまり仕事のことは書かないつもりだったんだけど、このブログの生成でもお世話になっている[Hugo](https://gohugo.io/)を結構本気で使ったのでそのことをまとめてみます。
