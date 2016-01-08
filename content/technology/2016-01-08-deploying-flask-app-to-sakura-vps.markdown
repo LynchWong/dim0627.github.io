@@ -2,7 +2,7 @@
 date: 2016-01-08T10:57:35+09:00
 slug: "deploying-flask-app-to-sakura-vps"
 tags: ["python", "flask", "nginx", "wsgi", "centos", "sakura-vps"]
-title: "[Python]Flaskアプリをnginx + wsgiでさくらVPSにデプロイする"
+title: "[Python]Flaskアプリをnginx + uWSGIでさくらVPSにデプロイする"
 ---
 
 CentOS6.5、Python2.7でやります。
