@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://yet.unresolved.xyz/</loc>
-    <lastmod>2016-01-02T22:36:11+09:00</lastmod>
+    <lastmod>2016-01-08T10:57:35+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://yet.unresolved.xyz/blog/2016/01/08/deploying-flask-app-to-sakura-vps/</loc>
+    <lastmod>2016-01-08T10:57:35+09:00</lastmod>
   </url>
   
   <url>
