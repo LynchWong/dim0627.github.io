@@ -1,0 +1,145 @@
+<div class="single">
+  <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.15-DEV" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans|Lobster'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz//index.xml">
+
+    
+    <title>tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する - Unresolved</title>
+    <meta property='og:title' content="tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する - Unresolved">
+    <meta property="og:type" content="article">
+    
+
+    <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/">
+    
+    
+
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+      <header class="site">
+        <div class="title"><a href="http://yet.unresolved.xyz/">Unresolved</a></div>
+      </header>
+    </div>
+
+    <div class="container site">
+
+
+  <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+    <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz/"/>
+    <meta itemprop="dateModified" content="2015-04-01T22:42:40&#43;09:00">
+    <meta itemprop="headline" content="tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する">
+    <meta itemprop="description" content="こんな感じ。 # v でペインを縦に分割する bind v split-window -h -c &quot;#{pane_current_path}&quot; # s でペインを横に分割する bind s split-window -v -c &quot;#{pane_current_path}&quot; # 新規ウィンドウでディレクトリを保持 bind c new-window -c &quot;#{pane_current_path}&quot; 参考に">
+    <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/">
+    <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="http://yet.unresolved.xyz/images/default.jpg" />
+      <meta itemprop="width" content="800">
+      <meta itemprop="height" content="800">
+    </div>
+    <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.jpg">
+        <meta itemprop="width" content="100">
+        <meta itemprop="height" content="100">
+      </div>
+      <meta itemprop="name" content="Unresolved">
+    </div>
+    <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+      <meta itemprop="name" content="Daisuke Tsuji">
+    </div>
+
+    <header>
+
+      <div class="clearfix">
+
+        <div class="image" style="background-image: url(http://yet.unresolved.xyz/images/default.jpg);"></div>
+        <div class="detail">
+          <time itemprop="datePublished" pubdate="pubdate" datetime="2015-04-01T22:42:40&#43;09:00">Wed, Apr 1, 2015</time>
+          
+          <h1 class="title">tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する</h1>
+        </div>
+      </div>
+
+      <div class="share">
+        <a href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f04%2f01%2fremain-current-directory-when-open-new-window-in-tmux%2f&t=tmux%e3%81%a7%e3%82%a6%e3%82%a3%e3%83%b3%e3%83%89%e3%82%a6%e3%82%92%e9%96%8b%e3%81%84%e3%81%9f%e3%82%8a%e7%94%bb%e9%9d%a2%e5%88%86%e5%89%b2%e3%81%97%e3%81%9f%e3%81%a8%e3%81%8d%e3%81%ab%e3%83%87%e3%82%a3%e3%83%ac%e3%82%af%e3%83%88%e3%83%aa%e3%82%92%e7%b6%ad%e6%8c%81%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
+        <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f04%2f01%2fremain-current-directory-when-open-new-window-in-tmux%2f&text=tmux%e3%81%a7%e3%82%a6%e3%82%a3%e3%83%b3%e3%83%89%e3%82%a6%e3%82%92%e9%96%8b%e3%81%84%e3%81%9f%e3%82%8a%e7%94%bb%e9%9d%a2%e5%88%86%e5%89%b2%e3%81%97%e3%81%9f%e3%81%a8%e3%81%8d%e3%81%ab%e3%83%87%e3%82%a3%e3%83%ac%e3%82%af%e3%83%88%e3%83%aa%e3%82%92%e7%b6%ad%e6%8c%81%e3%81%99%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
+        <a href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f04%2f01%2fremain-current-directory-when-open-new-window-in-tmux%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
+        <a href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f04%2f01%2fremain-current-directory-when-open-new-window-in-tmux%2f&title=tmux%e3%81%a7%e3%82%a6%e3%82%a3%e3%83%b3%e3%83%89%e3%82%a6%e3%82%92%e9%96%8b%e3%81%84%e3%81%9f%e3%82%8a%e7%94%bb%e9%9d%a2%e5%88%86%e5%89%b2%e3%81%97%e3%81%9f%e3%81%a8%e3%81%8d%e3%81%ab%e3%83%87%e3%82%a3%e3%83%ac%e3%82%af%e3%83%88%e3%83%aa%e3%82%92%e7%b6%ad%e6%8c%81%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+      </div>
+
+    </header>
+
+    <div class="article-body" itemprop="articleBody">
+
+<p>こんな感じ。</p>
+
+<pre><code># v でペインを縦に分割する
+bind v split-window -h -c &quot;#{pane_current_path}&quot;
+
+# s でペインを横に分割する
+bind s split-window -v -c &quot;#{pane_current_path}&quot;
+
+# 新規ウィンドウでディレクトリを保持
+bind c new-window -c &quot;#{pane_current_path}&quot;
+</code></pre>
+
+<h2 id="参考にさせていただきました:0adf99f262be79bb5ee2575ca8ebd7e8">参考にさせていただきました</h2>
+
+<p><a href="http://studio3104.hatenablog.com/entry/2014/10/14/131430">tmux 1.9 でペイン分割時にカレントディレクトリを維持 - Studio3104::BLOG.new</a></p>
+</div>
+
+    <aside>
+
+      <div class="section"><a href="http://yet.unresolved.xyz/tags/tmux" class="tag">tmux</a></div>
+
+      
+      
+      
+
+    </aside>
+
+  </article>
+
+      </div>
+
+    <div class="container-fluid">
+      <footer class="site">
+        <p>&copy; 2016 Daisuke Tsuji</p>
+        <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
+        <p>Theme <a href="https://github.com/dim0627/hugo_theme_aglaus" target="_blank">Aglaus</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+      </footer>
+    </div>
+
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-55005303-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+    
+
+  </body>
+</html>
+
+</div>

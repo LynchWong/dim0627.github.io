@@ -1,0 +1,368 @@
+<div class="single">
+  <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.15-DEV" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans|Lobster'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz//index.xml">
+
+    
+    <title>Apigility &#43; React.jsでタスク管理ツールを作ってみる - Unresolved</title>
+    <meta property='og:title' content="Apigility &#43; React.jsでタスク管理ツールを作ってみる - Unresolved">
+    <meta property="og:type" content="article">
+    
+
+    <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/">
+    
+    
+
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+      <header class="site">
+        <div class="title"><a href="http://yet.unresolved.xyz/">Unresolved</a></div>
+      </header>
+    </div>
+
+    <div class="container site">
+
+
+  <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+    <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz/"/>
+    <meta itemprop="dateModified" content="2015-02-14T19:30:22&#43;09:00">
+    <meta itemprop="headline" content="Apigility &#43; React.jsでタスク管理ツールを作ってみる">
+    <meta itemprop="description" content="これに行ってきました。 Zend 社技術者による最近の PHP 関連の取り組みご紹介 - Zendイベント管理 | Doorkeeper 英語辛かった。PHP7やらZ Rayやらまあ気にな">
+    <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/">
+    <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="http://yet.unresolved.xyz/images/default.jpg" />
+      <meta itemprop="width" content="800">
+      <meta itemprop="height" content="800">
+    </div>
+    <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.jpg">
+        <meta itemprop="width" content="100">
+        <meta itemprop="height" content="100">
+      </div>
+      <meta itemprop="name" content="Unresolved">
+    </div>
+    <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+      <meta itemprop="name" content="Daisuke Tsuji">
+    </div>
+
+    <header>
+
+      <div class="clearfix">
+
+        <div class="image" style="background-image: url(http://yet.unresolved.xyz/images/default.jpg);"></div>
+        <div class="detail">
+          <time itemprop="datePublished" pubdate="pubdate" datetime="2015-02-14T19:30:22&#43;09:00">Sat, Feb 14, 2015</time>
+          
+          <h1 class="title">Apigility &#43; React.jsでタスク管理ツールを作ってみる</h1>
+        </div>
+      </div>
+
+      <div class="share">
+        <a href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f14%2fmake-task-manager-by-using-apigility%2f&t=Apigility%20%2b%20React.js%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%e3%83%84%e3%83%bc%e3%83%ab%e3%82%92%e4%bd%9c%e3%81%a3%e3%81%a6%e3%81%bf%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
+        <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f14%2fmake-task-manager-by-using-apigility%2f&text=Apigility%20%2b%20React.js%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%e3%83%84%e3%83%bc%e3%83%ab%e3%82%92%e4%bd%9c%e3%81%a3%e3%81%a6%e3%81%bf%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
+        <a href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f14%2fmake-task-manager-by-using-apigility%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
+        <a href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f02%2f14%2fmake-task-manager-by-using-apigility%2f&title=Apigility%20%2b%20React.js%e3%81%a7%e3%82%bf%e3%82%b9%e3%82%af%e7%ae%a1%e7%90%86%e3%83%84%e3%83%bc%e3%83%ab%e3%82%92%e4%bd%9c%e3%81%a3%e3%81%a6%e3%81%bf%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+      </div>
+
+    </header>
+
+    <div class="article-body" itemprop="articleBody">
+
+<p>これに行ってきました。</p>
+
+<p><a href="http://zendevent.doorkeeper.jp/events/19917">Zend 社技術者による最近の PHP 関連の取り組みご紹介 - Zendイベント管理 | Doorkeeper</a></p>
+
+<p>英語辛かった。PHP7やらZ Rayやらまあ気になるものはそれなりにあったんだけど、その中でも触ってみようかなと思えるくらい興味を持てた<a href="https://apigility.org/">Apigility</a>を触ってみようと思います。</p>
+
+<p>ついでなので使ってみたかったReact.jsも導入してみる。</p>
+
+<h2 id="apigility:a8f13c6c06505842468ef355c1de93c5">Apigility？</h2>
+
+<p>API構築に特化したフレームワークらしい。プレゼンテーションレイヤを完全に分離したアーキテクチャでの利用を想定しているんだと思う。</p>
+
+<p>何が強いかって、DBさえ用意してしまえば後はGUIから操作するだけでAPIが作れてしまう。
+DBも多分メジャーどころは大抵使える(と思う)し、APIもRPCはもちろん、RESTfulな設計にもバッチリ対応してるらしい。</p>
+
+<p>今回は勉強も兼ねて、簡単なタスク管理ツールを作ってみます。</p>
+
+<h2 id="インストール:a8f13c6c06505842468ef355c1de93c5">インストール</h2>
+
+<p>このコマンドをべしっとやるだけで、カレントディレクトリにapigilityのディレクトリが切られる &amp; サーバまで起動する。</p>
+
+<pre><code>curl -sS https://apigility.org/install | php
+</code></pre>
+
+<p>サーバを再度起動する場合は<code>php -S localhost:8888 -t public public/index.php</code>とかやればOK。
+画面を開くとこんな感じのが出てくる。</p>
+
+<p><a href="/images/2015-02-14/apigility_top.png"><img src="/images/2015-02-14/apigility_top.png" alt="apigility_top"></a></p>
+
+<p>ロゴがかわいいね。ここからAPIの追加やデータベース接続の設定やらが出来ます。</p>
+
+<h2 id="データベースの準備:a8f13c6c06505842468ef355c1de93c5">データベースの準備</h2>
+
+<p>適当なものなので、SQLiteでやっちゃう。テーブルはこんな感じで、名前と完了/未完了が持てるだけにしよう。</p>
+
+<pre><code class="language-sql">create table tasks(id integer primary key, name varchar(20), finished integer);
+</code></pre>
+
+<h2 id="apigilityからデータベースにつなぐ:a8f13c6c06505842468ef355c1de93c5">Apigilityからデータベースにつなぐ</h2>
+
+<p><code>Settings</code>の<code>Database Adapters</code>から定義を追加出来る。</p>
+
+<p><a href="/images/2015-02-14/database.png"><img src="/images/2015-02-14/database.png" alt="database"></a></p>
+
+<p>今回はこんな感じで設定。</p>
+
+<p><a href="/images/2015-02-14/def_database.png"><img src="/images/2015-02-14/def_database.png" alt="def_database"></a></p>
+
+<h2 id="apiを追加する:a8f13c6c06505842468ef355c1de93c5">APIを追加する</h2>
+
+<p><code>APIs</code>の<code>Create New API</code>からAPIを追加する。今回はTasksという名前で作成した。</p>
+
+<p><a href="/images/2015-02-14/create_api.png"><img src="/images/2015-02-14/create_api.png" alt="create_api"></a></p>
+
+<p>粒度がわかりづらいけど、ここで作ったAPIに対して個々のサービスを追加していく。</p>
+
+<p>大分類みたいなものだと捉えればいいのかな。</p>
+
+<h2 id="サービスを追加する:a8f13c6c06505842468ef355c1de93c5">サービスを追加する</h2>
+
+<p>さっき作ったTasksAPIに、データベースの<code>tasks</code>テーブルとRESTで紐づくサービスを追加する。</p>
+
+<p>サービスはRESTとRPCから選ぶことが出来て、RPCを選ぶと自動生成されたPHPのコードに自分で処理を書いていく感じになるみたい。</p>
+
+<p>んで指定したURLを叩くとその処理が呼ばれる、って感じ。</p>
+
+<p>今回は単純にテーブルとURLをRESTfulに対応付けられればいいのでRESTにしてます。</p>
+
+<p>というわけで、<code>REST Service Name</code>をtasks、<code>DB-Connected</code>はさっき作ったアダプタとテーブル名を設定。</p>
+
+<p><a href="/images/2015-02-14/create_service.png"><img src="/images/2015-02-14/create_service.png" alt="create_service"></a></p>
+
+<p>こんな感じになる。</p>
+
+<p><a href="/images/2015-02-14/def_service.png"><img src="/images/2015-02-14/def_service.png" alt="def_service"></a></p>
+
+<p>接続できるか試してみましょう。データがないので、まずはPOSTで格納してみる。</p>
+
+<p><a href="/images/2015-02-14/post_tasks.png"><img src="/images/2015-02-14/post_tasks.png" alt="post_tasks"></a></p>
+
+<p>いけてるっぽい。取得は？</p>
+
+<p><a href="/images/2015-02-14/get_tasks.png"><img src="/images/2015-02-14/get_tasks.png" alt="get_tasks"></a></p>
+
+<p>取れますね。</p>
+
+<p>もちろんSQLite側にも、</p>
+
+<pre><code>sqlite&gt; select * from tasks;
+1|task1|false
+</code></pre>
+
+<p>入ってます。</p>
+
+<h2 id="ビューを作る:a8f13c6c06505842468ef355c1de93c5">ビューを作る</h2>
+
+<p>後は画面側を生のHTMLにして、取得と格納は全部JSに任せます。</p>
+
+<p>つってもここはあんまり説明してもしょうがないのでSSとコードだけ。表示はこんな感じで、</p>
+
+<p><a href="/images/2015-02-14/view.png"><img src="/images/2015-02-14/view.png" alt="view"></a></p>
+
+<p>こんなHTMLでやりました。</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE HTML&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css&quot;&gt;
+&lt;style&gt;
+#tasks-wrapper {
+  margin: 20px auto;
+  max-width: 500px;
+}
+#tasks {
+}
+.buttons {
+  margin-right: 5px;
+}
+.buttons&gt;button {
+  margin-right: 5px;
+}
+&lt;/style&gt;
+
+&lt;div id=&quot;tasks-wrapper&quot;&gt;
+  &lt;div class=&quot;input-group&quot;&gt;
+    &lt;input type=&quot;text&quot; id=&quot;task-name&quot; class=&quot;form-control&quot; placeholder=&quot;Task name&quot;&gt;
+    &lt;span class=&quot;input-group-btn&quot;&gt;
+      &lt;button id=&quot;task-post&quot; class=&quot;btn btn-success&quot; type=&quot;button&quot;&gt;登録&lt;/button&gt;
+    &lt;/span&gt;
+  &lt;/div&gt;
+  &lt;hr&gt;
+  &lt;div id=&quot;tasks&quot;&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/react/0.12.2/JSXTransformer.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;//code.jquery.com/jquery-2.1.3.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/app.js&quot; type=&quot;text/jsx&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>JSはこんな。</p>
+
+<pre><code class="language-javascript">var Task = React.createClass({
+    del: function(e) {
+        $.ajax({
+            type: &quot;DELETE&quot;,
+            url: &quot;/tasks/&quot; + this.props.id,
+        });
+    },
+    finish: function(e) {
+        $.ajax({
+            type: &quot;PUT&quot;,
+            url: &quot;/tasks/&quot; + this.props.id,
+            data: JSON.stringify({finished: 1}),
+            headers: {
+                &quot;Content-Type&quot;: &quot;application/json&quot;,
+            }
+        });
+    },
+    render: function() {
+        return (&lt;li className=&quot;list-group-item clearfix&quot;&gt;
+                    &lt;div className=&quot;buttons pull-left&quot;&gt;
+                        {this.props.finished == &quot;0&quot; ?
+                            (&lt;button className=&quot;btn btn-primary btn-xs&quot; onClick={this.finish}&gt;完了&lt;/button&gt;)
+                            : &quot;&quot;}
+                        &lt;button className=&quot;btn btn-danger btn-xs&quot; onClick={this.del}&gt;削除&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;span className=&quot;badge&quot;&gt;{this.props.finished == &quot;0&quot; ? &quot;未完了&quot; : &quot;完了&quot;}&lt;/span&gt;
+                    {this.props.name}
+                &lt;/li&gt;);
+    }
+});
+
+var Tasks = React.createClass({
+    getInitialState: function() {
+        return {
+            tasks: [],
+        };
+    },
+    loadTasks: function() {
+        $.get(this.props.source, function(result) {
+            if(this.isMounted()) {
+                this.setState({
+                    tasks: result._embedded.tasks,
+                });
+            }
+        }.bind(this));
+    },
+    componentDidMount: function() {
+        this.loadTasks();
+        setInterval(this.loadTasks, 2000);
+    },
+    render: function() {
+        var tasks = this.state.tasks;
+        return (&lt;ul className=&quot;list-group&quot;&gt;
+        {
+            tasks.map(function(task) {
+                return &lt;Task id={task.id} name={task.name} finished={task.finished} /&gt;
+            }.bind(this)
+        )}&lt;/ul&gt;);
+    }
+});
+
+React.render(
+    &lt;Tasks source=&quot;/tasks&quot; /&gt;,
+    document.getElementById('tasks')
+);
+
+$(&quot;#task-post&quot;).on(&quot;click&quot;, function() {
+    $.ajax(
+        {
+            type: &quot;POST&quot;,
+            url: &quot;/tasks&quot;,
+            data: JSON.stringify({name: $(&quot;#task-name&quot;).val(), finished: 0}),
+            headers: {
+                &quot;Content-Type&quot;: &quot;application/json&quot;,
+            }
+        })
+});
+</code></pre>
+
+<p>React.js気軽に手出したけど、まじでむずいですね。</p>
+
+<p>一人で書いてもこんだけぐちゃぐちゃするんだから、複数人でやるときはマジで気をつけないとすごいことになりそう。</p>
+
+<h2 id="まとめ:a8f13c6c06505842468ef355c1de93c5">まとめ</h2>
+
+<p>Apigility、すごく楽。
+React.jsで心折れかけたけどそれはApigilityには関係ないわけで、サーバサイドの実装は本当にさくっと終わりました。</p>
+
+<p>ただ、ドキュメントが致命的なほど少ないと思いました。見逃してるだけなのかな。
+Getting Startedとかはしっかり書かれてるから導入は楽なんだけど、少しでも発展的なものになると何処にも載ってない。</p>
+
+<p>さらにユーザも少ないから情報が拾えなくて、これをプロダクトで使うとなると辛い場面が多いかなと思った。
+公式のドキュメントは結構ひどくて、2013年からの開発なのに8割くらい工事中だったりする。</p>
+
+<p>だから実際にこれを使いますか？ってなると、「まあ個人利用では使うかもしれませんね」って答えになってしまうかなあ。
+でもやっぱりこの楽さは魅力なので、今後整備されていくことに期待。</p>
+
+<p>React.jsはもう少ししっかり勉強します。</p>
+</div>
+
+    <aside>
+
+      <div class="section"><a href="http://yet.unresolved.xyz/tags/javascript" class="tag">javascript</a><a href="http://yet.unresolved.xyz/tags/reactjs" class="tag">reactjs</a><a href="http://yet.unresolved.xyz/tags/php" class="tag">php</a><a href="http://yet.unresolved.xyz/tags/apigility" class="tag">apigility</a></div>
+
+      
+      
+      
+
+    </aside>
+
+  </article>
+
+      </div>
+
+    <div class="container-fluid">
+      <footer class="site">
+        <p>&copy; 2016 Daisuke Tsuji</p>
+        <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
+        <p>Theme <a href="https://github.com/dim0627/hugo_theme_aglaus" target="_blank">Aglaus</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+      </footer>
+    </div>
+
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-55005303-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+    
+
+  </body>
+</html>
+
+</div>

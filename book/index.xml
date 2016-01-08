@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Books on Unresolved</title>
+    <link>http://yet.unresolved.xyz/book/</link>
+    <description>Recent content in Books on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 26 Jan 2015 14:17:29 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/book/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>「ふつうのLinuxプログラミング」を読んだ</title>
+      <link>http://yet.unresolved.xyz/blog/2015/01/26/ordinary-linux-programming/</link>
+      <pubDate>Mon, 26 Jan 2015 14:17:29 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/01/26/ordinary-linux-programming/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/gp/product/4797328355/ref=as_li_tf_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4797328355&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;ふつうのLinuxプログラミング Linuxの仕組みから学べるgccプログラミングの王道&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=4797328355&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important; display: none;width:0;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;読もうと思ったきっかけ:4c81d64344bd445def23c23666be1353&#34;&gt;読もうと思ったきっかけ&lt;/h2&gt;
+
+&lt;p&gt;Ruby書かないくせにるびまのインタビューの奴が好きで、著者である青木さんの記事を見てた時に知った。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://magazine.rubyist.net/?0017-Hotlinks#l7&#34;&gt;Rubyist Magazine - Rubyist Hotlinks 【第 17 回】 青木峰郎さん&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Kernelとかいつかは触れたいけど実際どこから入ればいいかわからない、って人、結構いると思うんだよね。&lt;/p&gt;
+
+&lt;p&gt;僕もその一人で、この本はなんか、その入り口になるんじゃないかなって期待があった。実際評判も良かったし。&lt;/p&gt;
+
+&lt;h2 id=&#34;前提:4c81d64344bd445def23c23666be1353&#34;&gt;前提&lt;/h2&gt;
+
+&lt;p&gt;C言語、書けないんですよね。高校の頃に書いたっきり、1行も書いてない。&lt;/p&gt;
+
+&lt;p&gt;他人のコードを読む場面もなかったわけじゃないけど、ほぼ初心者としてこの本を読みました。
+プロトタイプ宣言やらヘッダファイルやらを理解してたくらいかな。&lt;/p&gt;
+
+&lt;p&gt;ちなみに対象読者は、&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;構造体とポインタくらいはわかる&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;って書いてあるんだけど、「とにかくプログラミング！」な本ではないので、そこまで必要はなさそう。&lt;/p&gt;
+
+&lt;p&gt;あ、唯一困ったのはLinkedListを使うところで出てきた&lt;code&gt;-&amp;gt;&lt;/code&gt;演算子。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.is.titech.ac.jp/compview/clang/chap11.html&#34;&gt;第 11 章 ポインタとリスト構造&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;この本に書いてあること:4c81d64344bd445def23c23666be1353&#34;&gt;この本に書いてあること&lt;/h2&gt;
+
+&lt;p&gt;Linuxの構造と、その上でのC言語っていう2本軸がある。&lt;/p&gt;
+
+&lt;p&gt;Linuxについては3つの概念をあげていて、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ファイルシステム&lt;/li&gt;
+&lt;li&gt;プロセス&lt;/li&gt;
+&lt;li&gt;ストリーム&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;これをベースに、Linuxが動いてる仕組みを歴史とか思想をまじえて説明がされてる。&lt;/p&gt;
+
+&lt;p&gt;それらをC言語で扱う上での作法とか、注意点とか、プログラムを書く上での話に繋がっていくんだけど、
+APIの紹介だけじゃなくて、「これはこういう理由で使ってはいけません」って話があるのはすごく良かった。&lt;/p&gt;
+
+&lt;p&gt;実際に何か作るときって、大抵どの界隈でも暗黙の了解とかルールがあると思っていて、
+そういうのをきちんとした文献で知ることが出来るのは入門者にとってはありがたい事だと思う。&lt;/p&gt;
+
+&lt;h2 id=&#34;この本を読んで得られたもの:4c81d64344bd445def23c23666be1353&#34;&gt;この本を読んで得られたもの&lt;/h2&gt;
+
+&lt;p&gt;まとめは最後に書くとして、読んでる中で納得したところとか課題が解決した点を章立てにしてみる。&lt;/p&gt;
+
+&lt;h3 id=&#34;linuxの構造について:4c81d64344bd445def23c23666be1353&#34;&gt;Linuxの構造について&lt;/h3&gt;
+
+&lt;p&gt;本書では一貫して前述した3つの概念をベースに説明しているから、思考がブレずに読みやすい。&lt;/p&gt;
+
+&lt;p&gt;また、Linux上でのC言語プログラミング、っていうだけじゃなくて、FHSとか、CPUとメモリについてまでも言及されてる。&lt;/p&gt;
+
+&lt;p&gt;Linuxのディレクトリ構成みたいになんとなく理解しちゃうところが説明されてるのは嬉しい。&lt;/p&gt;
+
+&lt;h3 id=&#34;linuxでc言語を書くためのノウハウ:4c81d64344bd445def23c23666be1353&#34;&gt;LinuxでC言語を書くためのノウハウ&lt;/h3&gt;
+
+&lt;p&gt;言語本ではないからC言語がどうのこうのっていう話はそこまで書いてない。&lt;/p&gt;
+
+&lt;p&gt;ただ、API仕様についてはしっかり書いてあるから、実際にプログラムを書くときにまた読み直したいと思った。&lt;/p&gt;
+
+&lt;p&gt;あと、プログラムを書くだけじゃなくてその周辺技術(manやgdb)についても述べていて、
+どういうタイミングでどういう風に使ったらいいか、っていうノウハウが得られた。&lt;/p&gt;
+
+&lt;h3 id=&#34;プロセスとは何か:4c81d64344bd445def23c23666be1353&#34;&gt;プロセスとは何か&lt;/h3&gt;
+
+&lt;p&gt;プロセスについてはハードウェアと合わせて1つ章が切られていて、結構細かく説明されてる。&lt;/p&gt;
+
+&lt;p&gt;個人的にそうなんだって思ったのは、マルチタスクを実現する上でのCPUとメモリの扱いについて。
+仮想CPU(初めて聞いた)と仮想メモリの概念とどうやって実現してるかについてはなるほどなと思った。&lt;/p&gt;
+
+&lt;p&gt;物理アドレスと論理アドレスっていう物自体は知っていたけど、必要性とかそういう観点で説明されているから理解しやすい。&lt;/p&gt;
+
+&lt;h3 id=&#34;ビルド周りの話:4c81d64344bd445def23c23666be1353&#34;&gt;ビルド周りの話&lt;/h3&gt;
+
+&lt;p&gt;C言語のビルドについて、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;プリプロセス&lt;/li&gt;
+&lt;li&gt;コンパイル&lt;/li&gt;
+&lt;li&gt;アセンブル&lt;/li&gt;
+&lt;li&gt;リンク&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;にわけて説明されてる。&lt;/p&gt;
+
+&lt;p&gt;コンパイルとリンクについては知ってたけどそれ以外については知らなかったし、
+リンクについてはもう少ししっかり理解したいと思ってたから、この章はその理解に役立った。&lt;/p&gt;
+
+&lt;p&gt;スタティックリンクとダイナミックリンクの説明と、どちらを使うべきか、っていう話も載ってる。&lt;/p&gt;
+
+&lt;h3 id=&#34;シグナルについて:4c81d64344bd445def23c23666be1353&#34;&gt;シグナルについて&lt;/h3&gt;
+
+&lt;p&gt;プロセスを殺すとかは普段からやるけど、それをプログラム側で見た場合の話がされてる。&lt;/p&gt;
+
+&lt;p&gt;シグナルを送信する側の実装とか、受ける上での実装とか、さらに注意点までまとめられてるのは良かった。
+ちなみに関数ポインタの存在はここで初めて知った。&lt;/p&gt;
+
+&lt;p&gt;&lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;C&lt;/kbd&gt;で何が起きているかとかの説明も、普段意識しないで使ってるから新鮮。&lt;/p&gt;
+
+&lt;h3 id=&#34;ネットワーク系の話:4c81d64344bd445def23c23666be1353&#34;&gt;ネットワーク系の話&lt;/h3&gt;
+
+&lt;p&gt;HTTPサーバを作る実演があるんだけど、ネットワークについてもネットワーク本に負けないくらい説明がされてる。&lt;/p&gt;
+
+&lt;p&gt;TCPやDNSについても説明があって、プログラム目線で「なぜ必要なのか」っていう切り口で書いてあるから読みやすい。&lt;/p&gt;
+
+&lt;p&gt;ネットワーク本もいくつか読んだし概念については理解してたけど、この本の方がわかりやすかった気がする・・・。&lt;/p&gt;
+
+&lt;h2 id=&#34;終わりに:4c81d64344bd445def23c23666be1353&#34;&gt;終わりに&lt;/h2&gt;
+
+&lt;p&gt;そのうち勉強したいと思ってモヤモヤしてた部分を解決してくれる本でした。&lt;/p&gt;
+
+&lt;p&gt;C言語のAPIについては結構がっつり書かれてて、正直読みながら理解するのは無駄だなと思って読み飛ばす部分もあった。&lt;/p&gt;
+
+&lt;p&gt;ただ、実際にプログラムを書くときにはコマンドライン引数だとか標準入出力をしっかり扱わなきゃいけないわけで、
+この本にはその点がしっかりまとめられてるので、今後も手元に置いてたまに読み直すと思う。&lt;/p&gt;
+
+&lt;p&gt;あと、書籍案内が豊富。&lt;/p&gt;
+
+&lt;p&gt;分野に分けておすすめの本を紹介されてるので、これは今後読んでいく予定。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/gp/product/4797328355/ref=as_li_tf_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4797328355&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;ふつうのLinuxプログラミング Linuxの仕組みから学べるgccプログラミングの王道&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=4797328355&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important; display: none;width:0;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

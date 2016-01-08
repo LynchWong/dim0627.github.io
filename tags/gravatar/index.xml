@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gravatar on Unresolved</title>
+    <link>http://yet.unresolved.xyz/tags/gravatar/</link>
+    <description>Recent content in Gravatar on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Sep 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/gravatar/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>OctopressのサイドバーにGravatarを表示させる</title>
+      <link>http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/</link>
+      <pubDate>Sat, 20 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/</guid>
+      <description>
+
+&lt;p&gt;そもそもOctopressの構成がまだよくわかってないのでそこから勉強しよう。&lt;/p&gt;
+
+&lt;p&gt;どうやらデフォルトで準備されてるサイドバーはここに格納されているらしい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;octopress git:(source)$ ls source/_includes/asides/
+delicious.html    github.html       googleplus.html   pinboard.html     recent_posts.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;で、自分で作りたい場合はここに格納するっぽい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;octopress git:(source)$ ls source/_includes/custom/asides
+about.html   twitter.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;って&lt;code&gt;_config.yml&lt;/code&gt;に書いてあった。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;# list each of the sidebar modules you want to include, in the order you want them to appear.
+# To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like &#39;custom/asides/custom_aside_name.html&#39;
+default_asides: [custom/asides/about.html, asides/recent_posts.html, custom/asides/twitter.html]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;gravatarの情報を取得する:61eb03e5faeba6147c5a5cd44e5e95a1&#34;&gt;Gravatarの情報を取得する&lt;/h2&gt;
+
+&lt;p&gt;ちょっとだけ調べてみたらGravatarの画像だけ持ってくるpluginは用意されてるっぽい。
+でもどうせなら自己紹介のところとかも欲しいよね。&lt;/p&gt;
+
+&lt;p&gt;Gravatarに&lt;a href=&#34;https://ja.gravatar.com/site/implement/&#34;&gt;開発者向け資料&lt;/a&gt;がありました。
+しっかり読んでないけど、&lt;a href=&#34;https://ja.gravatar.com/site/implement/profiles/json/&#34;&gt;JSONで返せるっぽい&lt;/a&gt;からこれを使えばいいかな。&lt;/p&gt;
+
+&lt;p&gt;ハッシュを指定する必要があるみたいなので、公式から取得しとく。
+なんか最初から&lt;code&gt;source/_include/custom/asides&lt;/code&gt;に&lt;code&gt;about.html&lt;/code&gt;ってのがあるし、これにプロフィールを書こうかな。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;section id=&amp;quot;about&amp;quot; style=&amp;quot;display: none;&amp;quot;&amp;gt;
+    &amp;lt;h1&amp;gt;About Me&amp;lt;/h1&amp;gt;
+    &amp;lt;br /&amp;gt;
+    &amp;lt;img id=&amp;quot;photo&amp;quot;&amp;gt;
+    &amp;lt;br /&amp;gt;
+    &amp;lt;div id=&amp;quot;displayname&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+    &amp;lt;br /&amp;gt;
+    &amp;lt;div id=&amp;quot;aboutme&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+    &amp;lt;div id=&amp;quot;currentlocation&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+    &amp;lt;br /&amp;gt;
+    &amp;lt;div id=&amp;quot;urls&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/section&amp;gt;
+&amp;lt;script&amp;gt;
+    $(function() {
+        var url = &amp;quot;https://ja.gravatar.com/{% raw %}{{ site.gravatar_hash }}{% endraw %}.json?callback=?&amp;quot;;
+        $.getJSON(url)
+            .done(function(data) {
+                var entry = data.entry[0];
+                $(&amp;quot;#photo&amp;quot;).attr(&amp;quot;src&amp;quot;, entry.photos[0].value);
+                $(&amp;quot;#displayname&amp;quot;).html(entry.displayName);
+                $(&amp;quot;#aboutme&amp;quot;).html(entry.aboutMe);
+                // $(&amp;quot;#currentlocation&amp;quot;).html(entry.currentLocation);
+                entry.urls.forEach(function(el){
+                    $(&amp;quot;#urls&amp;quot;).append($(&amp;quot;&amp;lt;a href=&#39;&amp;quot; + el.value + &amp;quot;&#39;&amp;gt;&amp;quot; + el.title + &amp;quot;&amp;lt;/a&amp;gt;&amp;lt;br /&amp;gt;&amp;quot;));
+                });
+
+                $(&amp;quot;#about&amp;quot;).show();
+            });
+    });
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;参考にさせて頂きました:61eb03e5faeba6147c5a5cd44e5e95a1&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.awairo.net/blog/2013/12/24/octopress-aside-of-getting-profile-from-gravatar/&#34;&gt;Gravatarのプロフィールを表示するOctopressのサイドバー&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

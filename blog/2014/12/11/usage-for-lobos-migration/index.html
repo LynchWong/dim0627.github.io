@@ -1,0 +1,294 @@
+<div class="single">
+  <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.15-DEV" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans|Lobster'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz//index.xml">
+
+    
+    <title>Lobosを使ってマイグレーションをする - Unresolved</title>
+    <meta property='og:title' content="Lobosを使ってマイグレーションをする - Unresolved">
+    <meta property="og:type" content="article">
+    
+
+    <meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/">
+    
+    
+
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+      <header class="site">
+        <div class="title"><a href="http://yet.unresolved.xyz/">Unresolved</a></div>
+      </header>
+    </div>
+
+    <div class="container site">
+
+
+  <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+    <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz/"/>
+    <meta itemprop="dateModified" content="2014-12-11T00:00:00&#43;00:00">
+    <meta itemprop="headline" content="Lobosを使ってマイグレーションをする">
+    <meta itemprop="description" content="1年前くらいには、SQLまで隠蔽するORMとか嫌いだったし、テーブルの自動生成も嫌だったのになあ。 なんだかんだ便利さに気づいてきた感じがある">
+    <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/">
+    <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="http://yet.unresolved.xyz/images/default.jpg" />
+      <meta itemprop="width" content="800">
+      <meta itemprop="height" content="800">
+    </div>
+    <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.jpg">
+        <meta itemprop="width" content="100">
+        <meta itemprop="height" content="100">
+      </div>
+      <meta itemprop="name" content="Unresolved">
+    </div>
+    <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+      <meta itemprop="name" content="Daisuke Tsuji">
+    </div>
+
+    <header>
+
+      <div class="clearfix">
+
+        <div class="image" style="background-image: url(http://yet.unresolved.xyz/images/default.jpg);"></div>
+        <div class="detail">
+          <time itemprop="datePublished" pubdate="pubdate" datetime="2014-12-11T00:00:00&#43;00:00">Thu, Dec 11, 2014</time>
+          
+          <h1 class="title">Lobosを使ってマイグレーションをする</h1>
+        </div>
+      </div>
+
+      <div class="share">
+        <a href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f12%2f11%2fusage-for-lobos-migration%2f&t=Lobos%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6%e3%83%9e%e3%82%a4%e3%82%b0%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%92%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
+        <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f12%2f11%2fusage-for-lobos-migration%2f&text=Lobos%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6%e3%83%9e%e3%82%a4%e3%82%b0%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%92%e3%81%99%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
+        <a href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f12%2f11%2fusage-for-lobos-migration%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
+        <a href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f12%2f11%2fusage-for-lobos-migration%2f&title=Lobos%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6%e3%83%9e%e3%82%a4%e3%82%b0%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%92%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+      </div>
+
+    </header>
+
+    <div class="article-body" itemprop="articleBody">
+
+<p>1年前くらいには、SQLまで隠蔽するORMとか嫌いだったし、テーブルの自動生成も嫌だったのになあ。
+なんだかんだ便利さに気づいてきた感じがある。</p>
+
+<p>というわけでClojureを使ってWeb開発をする際も使いたいので、<a href="https://github.com/budu/lobos">Lobos</a>というスキーマのマニュピレーション、マイグレーションツールを使ってみます。</p>
+
+<h2 id="インストール:a4d3af33140cffc65cf5c9a1e4293067">インストール</h2>
+
+<p>本体はここ<a href="https://github.com/budu/lobos">budu/lobos</a>。</p>
+
+<p><code>project.clj</code>に</p>
+
+<pre><code class="language-clj">:dependencies [[lobos &quot;1.0.0-beta3&quot;]]
+</code></pre>
+
+<p>を追加して<code>lein deps</code>。</p>
+
+<p>Leiningenのプラグインとして使える<a href="https://github.com/pupeno/lein-lobos">pupeno/lein-lobos</a>ってのもあるみたい。</p>
+
+<p>こっちも使う場合は、<code>ploject.clj</code>に</p>
+
+<pre><code class="language-clj">:plugins [lein-lobos &quot;1.0.0-beta1&quot;]
+</code></pre>
+
+<p>を追加。</p>
+
+<p>全体を載せるとこんな感じに。</p>
+
+<pre><code class="language-clj">(defproject tpc &quot;0.1.0-SNAPSHOT&quot;
+  :description &quot;FIXME: write description&quot;
+  :url &quot;http://example.com/FIXME&quot;
+  :min-lein-version &quot;2.0.0&quot;
+  :dependencies [[org.clojure/clojure &quot;1.6.0&quot;]
+                 [compojure &quot;1.2.0&quot;]
+                 [ring/ring-defaults &quot;0.1.2&quot;]
+                 [enlive &quot;1.1.5&quot;]
+                 [korma &quot;0.4.0&quot;]
+                 [postgresql &quot;9.1-901.jdbc4&quot;]
+                 [lobos &quot;1.0.0-beta3&quot;]]
+  :plugins [[lein-ring &quot;0.8.13&quot;]
+            [lein-haml-sass &quot;0.2.7-SNAPSHOT&quot;]
+            [lein-lobos &quot;1.0.0-beta1&quot;]]
+  :ring {:handler tpc.core.handler/app}
+  :profiles
+  {:dev {:dependencies [[javax.servlet/servlet-api &quot;2.5&quot;]
+                        [ring-mock &quot;0.1.5&quot;]
+                        [org.xerial/sqlite-jdbc &quot;3.6.16&quot;]]}}
+  :scss {:src &quot;resources/scss&quot;
+         :output-directory &quot;resources/public/css&quot;
+         :output-extension &quot;css&quot;})
+</code></pre>
+
+<h2 id="テーブル定義をしてみる:a4d3af33140cffc65cf5c9a1e4293067">テーブル定義をしてみる</h2>
+
+<p>今回はSQLiteでやります。</p>
+
+<p><code>src</code>ディレクトリ直下に<code>lobos</code>ってディレクトリを作成して、その中にいろいろな設定を突っ込む必要があるらしい。</p>
+
+<p>このディレクトリの名前は変えてもいいみたいだけど面倒になりそうだからこのままで。</p>
+
+<p>まずは接続情報を記載する<code>src/lobos/config.clj</code>。</p>
+
+<pre><code class="language-clj">(ns lobos.config
+  (:use lobos.connectivity))
+
+(def db_dev
+     {:classname &quot;org.sqlite.JDBC&quot;
+      :subprotocol &quot;sqlite&quot;
+      :subname &quot;./dev.sqlite3&quot;})
+
+(open-global db_dev)
+</code></pre>
+
+<p>次にスキーマ操作で使われている(と思われる)ヘルパー、<code>src/lobos/helpers.clj</code>を定義。</p>
+
+<pre><code class="language-clj">(ns lobos.helpers
+  (:refer-clojure :exclude [bigint boolean char double float time])
+  (:use (lobos schema)))
+
+(defn surrogate-key [table]
+  (integer table :id :auto-inc :primary-key))
+
+(defn timestamps [table]
+  (-&gt; table
+      (timestamp :updated_on)
+      (timestamp :created_on (default (now)))))
+
+(defn refer-to [table ptable]
+  (let [cname (-&gt; (-&gt;&gt; ptable name butlast (apply str))
+                  (str &quot;_id&quot;)
+                  keyword)]
+    (integer table cname [:refer ptable :id :on-delete :set-null])))
+
+(defmacro tbl [name &amp; elements]
+  `(-&gt; (table ~name)
+       (timestamps)
+       ~@(reverse elements)
+       (surrogate-key)))
+</code></pre>
+
+<p>で、目的のマイグレーション定義を<code>src/lobos/migrations.clj</code>に。</p>
+
+<pre><code class="language-clj">(ns lobos.migrations
+  (:refer-clojure :exclude [alter drop
+                            bigint boolean char double float time])
+  (:use (lobos [migration :only [defmigration]] core schema
+               config helpers)))
+
+(defmigration add-sites-table
+  (up [] (create
+          (tbl :sites
+            (varchar :name 255)
+            (varchar :url 255)
+            (varchar :rss 255)
+            (varchar :image 255)
+            (integer :cat)
+            )))
+  (down [] (drop (table :sites))))
+</code></pre>
+
+<h2 id="マイグレーションの実行:a4d3af33140cffc65cf5c9a1e4293067">マイグレーションの実行</h2>
+
+<p>ここが結構厄介だった。
+というか、出来たといえば出来たんだけど、もっと正しい方法があるような気が・・・。</p>
+
+<p>REPLにて以下を実行。
+WARNINGは多分すでに存在するシンボルを置き換えてしまってることの警告だからとりあえず無視。</p>
+
+<pre><code class="language-clojure-repl">tpc git:(master)$ lein repl
+(use '(lobos connectivity core schema))nREPL server started on port 50092 on host 127.0.0.1 - nrepl://127.0.0.1:50092
+REPL-y 0.3.1
+Clojure 1.6.0
+    Docs: (doc function-name-here)
+          (find-doc &quot;part-of-name-here&quot;)
+  Source: (source function-name-here)
+ Javadoc: (javadoc java-object-or-class-here)
+    Exit: Control+D or (exit) or (quit)
+ Results: Stored in vars *1, *2, *3, an exception in *e
+
+user=&gt; (use '(lobos connectivity core schema))
+WARNING: alter already refers to: #'clojure.core/alter in namespace: user, being replaced by: #'lobos.core/alter
+WARNING: drop already refers to: #'clojure.core/drop in namespace: user, being replaced by: #'lobos.core/drop
+WARNING: boolean already refers to: #'clojure.core/boolean in namespace: user, being replaced by: #'lobos.schema/boolean
+WARNING: char already refers to: #'clojure.core/char in namespace: user, being replaced by: #'lobos.schema/char
+WARNING: double already refers to: #'clojure.core/double in namespace: user, being replaced by: #'lobos.schema/double
+WARNING: bigint already refers to: #'clojure.core/bigint in namespace: user, being replaced by: #'lobos.schema/bigint
+WARNING: float already refers to: #'clojure.core/float in namespace: user, being replaced by: #'lobos.schema/float
+WARNING: time already refers to: #'clojure.core/time in namespace: user, being replaced by: #'lobos.schema/time
+nil
+user=&gt; (require 'lobos.migrations)
+nil
+user=&gt; (migrate)
+add-sites-table
+nil
+user=&gt;
+</code></pre>
+
+<p>確認してみましょう。</p>
+
+<pre><code class="language-sh">tpc git:(master)$ sqlite3 dev.sqlite3
+SQLite version 3.8.5 2014-08-15 22:37:57
+Enter &quot;.help&quot; for usage hints.
+sqlite&gt; .tables
+lobos_migrations  sites
+</code></pre>
+</div>
+
+    <aside>
+
+      <div class="section"><a href="http://yet.unresolved.xyz/tags/clojure" class="tag">clojure</a><a href="http://yet.unresolved.xyz/tags/lobos" class="tag">lobos</a><a href="http://yet.unresolved.xyz/tags/database" class="tag">database</a><a href="http://yet.unresolved.xyz/tags/migration" class="tag">migration</a><a href="http://yet.unresolved.xyz/tags/leiningen" class="tag">leiningen</a></div>
+
+      
+      
+      
+
+    </aside>
+
+  </article>
+
+      </div>
+
+    <div class="container-fluid">
+      <footer class="site">
+        <p>&copy; 2016 Daisuke Tsuji</p>
+        <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
+        <p>Theme <a href="https://github.com/dim0627/hugo_theme_aglaus" target="_blank">Aglaus</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+      </footer>
+    </div>
+
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-55005303-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+    
+
+  </body>
+</html>
+
+</div>
