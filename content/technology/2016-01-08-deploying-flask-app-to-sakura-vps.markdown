@@ -5,9 +5,9 @@ tags: ["python", "flask", "nginx", "wsgi", "centos", "sakura-vps"]
 title: "[Python]Flaskアプリをnginx + wsgiでさくらVPSにデプロイする"
 ---
 
-CentOS 6.5、Python2.7でやります。
+CentOS6.5、Python2.7でやります。
 
-CentOS 6.5のプリインストールPythonは2.6だと思うのですが、導入方法は書きません。
+CentOS6.5にプリインストールされているPythonは2.6だと思うのですが、Python2.7の導入方法は書きません。
 多分いろいろな環境で動いたり動かなかったりしちゃうと思うので。
 
 僕はこの記事を参考にしました。非常に簡単かつ完璧に書かれてて助かりました。こんな記事が書けるようになりたい。
