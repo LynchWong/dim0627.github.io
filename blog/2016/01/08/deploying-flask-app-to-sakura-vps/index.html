@@ -15,8 +15,8 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz//index.xml">
 
     
-    <title>[Python]Flaskアプリをnginx &#43; wsgiでさくらVPSにデプロイする - Unresolved</title>
-    <meta property='og:title' content="[Python]Flaskアプリをnginx &#43; wsgiでさくらVPSにデプロイする - Unresolved">
+    <title>[Python]Flaskアプリをnginx &#43; uWSGIでさくらVPSにデプロイする - Unresolved</title>
+    <meta property='og:title' content="[Python]Flaskアプリをnginx &#43; uWSGIでさくらVPSにデプロイする - Unresolved">
     <meta property="og:type" content="article">
     
 
@@ -41,7 +41,7 @@
 
     <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz/"/>
     <meta itemprop="dateModified" content="2016-01-08T10:57:35&#43;09:00">
-    <meta itemprop="headline" content="[Python]Flaskアプリをnginx &#43; wsgiでさくらVPSにデプロイする">
+    <meta itemprop="headline" content="[Python]Flaskアプリをnginx &#43; uWSGIでさくらVPSにデプロイする">
     <meta itemprop="description" content="CentOS6.5、Python2.7でやります。 CentOS6.5にプリインストールされているPythonは2.6だと思うのですが、Pyt">
     <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2016/01/08/deploying-flask-app-to-sakura-vps/">
     <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
@@ -69,15 +69,15 @@
         <div class="detail">
           <time itemprop="datePublished" pubdate="pubdate" datetime="2016-01-08T10:57:35&#43;09:00">Fri, Jan 8, 2016</time>
           
-          <h1 class="title">[Python]Flaskアプリをnginx &#43; wsgiでさくらVPSにデプロイする</h1>
+          <h1 class="title">[Python]Flaskアプリをnginx &#43; uWSGIでさくらVPSにデプロイする</h1>
         </div>
       </div>
 
       <div class="share">
-        <a href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f08%2fdeploying-flask-app-to-sakura-vps%2f&t=%5bPython%5dFlask%e3%82%a2%e3%83%97%e3%83%aa%e3%82%92nginx%20%2b%20wsgi%e3%81%a7%e3%81%95%e3%81%8f%e3%82%89VPS%e3%81%ab%e3%83%87%e3%83%97%e3%83%ad%e3%82%a4%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
-        <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f08%2fdeploying-flask-app-to-sakura-vps%2f&text=%5bPython%5dFlask%e3%82%a2%e3%83%97%e3%83%aa%e3%82%92nginx%20%2b%20wsgi%e3%81%a7%e3%81%95%e3%81%8f%e3%82%89VPS%e3%81%ab%e3%83%87%e3%83%97%e3%83%ad%e3%82%a4%e3%81%99%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
+        <a href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f08%2fdeploying-flask-app-to-sakura-vps%2f&t=%5bPython%5dFlask%e3%82%a2%e3%83%97%e3%83%aa%e3%82%92nginx%20%2b%20uWSGI%e3%81%a7%e3%81%95%e3%81%8f%e3%82%89VPS%e3%81%ab%e3%83%87%e3%83%97%e3%83%ad%e3%82%a4%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
+        <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f08%2fdeploying-flask-app-to-sakura-vps%2f&text=%5bPython%5dFlask%e3%82%a2%e3%83%97%e3%83%aa%e3%82%92nginx%20%2b%20uWSGI%e3%81%a7%e3%81%95%e3%81%8f%e3%82%89VPS%e3%81%ab%e3%83%87%e3%83%97%e3%83%ad%e3%82%a4%e3%81%99%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
         <a href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f08%2fdeploying-flask-app-to-sakura-vps%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
-        <a href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f08%2fdeploying-flask-app-to-sakura-vps%2f&title=%5bPython%5dFlask%e3%82%a2%e3%83%97%e3%83%aa%e3%82%92nginx%20%2b%20wsgi%e3%81%a7%e3%81%95%e3%81%8f%e3%82%89VPS%e3%81%ab%e3%83%87%e3%83%97%e3%83%ad%e3%82%a4%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+        <a href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f08%2fdeploying-flask-app-to-sakura-vps%2f&title=%5bPython%5dFlask%e3%82%a2%e3%83%97%e3%83%aa%e3%82%92nginx%20%2b%20uWSGI%e3%81%a7%e3%81%95%e3%81%8f%e3%82%89VPS%e3%81%ab%e3%83%87%e3%83%97%e3%83%ad%e3%82%a4%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
       </div>
 
     </header>
