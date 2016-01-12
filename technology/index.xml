@@ -6,8 +6,79 @@
     <description>Recent content in Technologies on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 08 Jan 2016 10:57:35 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 12 Jan 2016 12:04:51 +0900</lastBuildDate>
     <atom:link href="http://yet.unresolved.xyz/technology/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>さくらVPSでpip install lxmlがOOM Killerに殺される</title>
+      <link>http://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-was-oom-killed/</link>
+      <pubDate>Tue, 12 Jan 2016 12:04:51 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-was-oom-killed/</guid>
+      <description>
+
+&lt;p&gt;Python2.7 + BeautifulSoup + lxmlの環境でスクレイピングをしようとしたらlxmlがインストールできなかった。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Installing collected packages: lxml
+  Running setup.py install for lxml
+    Complete output from command /opt/local/bin/python2.7 -c &amp;quot;import setuptools, tokenize;__file__=&#39;/tmp/pip-build-9nMFdz/lxml/setup.py&#39;;exec(compile(getattr(tokenize, &#39;open&#39;, open)(__file__).read()
+.replace(&#39;\r\n&#39;, &#39;\n&#39;), __file__, &#39;exec&#39;))&amp;quot; install --record /tmp/pip-8cwa10-record/install-record.txt --single-version-externally-managed --compile:
+    /opt/local/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: &#39;bugtrack_url&#39;
+      warnings.warn(msg)
+    Building lxml version 3.4.4.
+    Building without Cython.
+    Using build configuration of libxslt 1.1.26
+    Building against libxml2/libxslt in the following directory: /usr/lib64
+    running install
+    running build
+    running build_py
+    copying src/lxml/includes/lxml-version.h -&amp;gt; build/lib.linux-x86_64-2.7/lxml/includes
+    running build_ext
+    building &#39;lxml.etree&#39; extension
+    gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/include/libxml2 -I/tmp/pip-build-9nMFdz/lxml/src/lxml/includes -I/opt/local/include/python
+2.7 -c src/lxml/lxml.etree.c -o build/temp.linux-x86_64-2.7/src/lxml/lxml.etree.o -w
+    gcc: Internal error: Killed (program cc1)
+    Please submit a full bug report.
+    See &amp;lt;http://bugzilla.redhat.com/bugzilla&amp;gt; for instructions.
+    error: command &#39;gcc&#39; failed with exit status 1
+
+    ----------------------------------------
+Command &amp;quot;/opt/local/bin/python2.7 -c &amp;quot;import setuptools, tokenize;__file__=&#39;/tmp/pip-build-9nMFdz/lxml/setup.py&#39;;exec(compile(getattr(tokenize, &#39;open&#39;, open)(__file__).read().replace(&#39;\r\n&#39;, &#39;\n&#39;),
+__file__, &#39;exec&#39;))&amp;quot; install --record /tmp/pip-8cwa10-record/install-record.txt --single-version-externally-managed --compile&amp;quot; failed with error code 1 in /tmp/pip-build-9nMFdz/lxml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;どうやら&lt;code&gt;gcc: Internal error: Killed (program cc1)&lt;/code&gt;はOOM Killerにkillされたってことらしい？&lt;/p&gt;
+
+&lt;p&gt;この記事も参考になりそうだったけど解決には至らなかった。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://scissorhands.jpn.org/2011/11/post-260.html&#34;&gt;さくらインターネット「さくらのレンタルサーバ」にSubversionをインストールする。 - ScissorHands&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;swapファイルで対応する:1586fa651863ddecb24f47c8f1f6626f&#34;&gt;swapファイルで対応する&lt;/h2&gt;
+
+&lt;p&gt;StackOverFlowでswapファイルでやるしかないよみたいな意見が散見されたので、この記事を参考にしました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.wordspeak.org/posts/resolving-build-errors-with-python-lxml.html&#34;&gt;Resolving build errors with python lxml on low memory machines | Wordspeak&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo dd if=/dev/zero of=/swapfile bs=1024 count=500000
+$ sudo mkswap /swapfile
+$ sudo swapon /swapfile
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;でswapファイルを作成してインストールを実行したら出来ました。&lt;/p&gt;
+
+&lt;p&gt;終わったら削除。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ sudo swapoff /swapfile
+$ sudo rm /swapfi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;参考にさせていただきました:1586fa651863ddecb24f47c8f1f6626f&#34;&gt;参考にさせていただきました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://scissorhands.jpn.org/2011/11/post-260.html&#34;&gt;さくらインターネット「さくらのレンタルサーバ」にSubversionをインストールする。 - ScissorHands&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.wordspeak.org/posts/resolving-build-errors-with-python-lxml.html&#34;&gt;Resolving build errors with python lxml on low memory machines | Wordspeak&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>[Python]Flaskアプリをnginx &#43; uWSGIでさくらVPSにデプロイする</title>
@@ -1172,71 +1243,6 @@ bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
 
 &lt;p&gt;括弧の位置をあれこれ出来るやつ、だと思う。
 ちょっと脳みそがそんなにたくさんの事を一気に覚えるのは無理だったので、一旦使うのをやめた。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>[Clojure]ringのCSRFトークンを生成する</title>
-      <link>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</link>
-      <pubDate>Sun, 22 Mar 2015 19:23:27 +0900</pubDate>
-      
-      <guid>http://yet.unresolved.xyz/blog/2015/03/22/invalid-anti-forgery-token-on-ring/</guid>
-      <description>&lt;p&gt;ClojureのWebアプリは大抵ringでルーティングとかやると思うんだけど、
-デフォルトだとPOSTリクエストした時にCSRFトークンチェックが入るようになっててたまに困る。&lt;/p&gt;
-
-&lt;p&gt;なのでトークンの生成方法をメモ。&lt;/p&gt;
-
-&lt;p&gt;チェックの処理は&lt;code&gt;site-defaults&lt;/code&gt;の、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def app
-  (wrap-defaults app-routes site-defaults))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;:security&lt;/code&gt;のところで設定出来ます。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def site-defaults
-  &amp;quot;A default configuration for a browser-accessible website, based on current
-  best practice.&amp;quot;
-  {:params    {:urlencoded true
-               :multipart  true
-               :nested     true
-               :keywordize true}
-   :cookies   true
-   :session   {:flash true
-               :cookie-attrs {:http-only true}}
-   :security  {:anti-forgery   true
-               :xss-protection {:enable? true, :mode :block}
-               :frame-options  :sameorigin
-               :content-type-options :nosniff}
-   :static    {:resources &amp;quot;public&amp;quot;}
-   :responses {:not-modified-responses true
-               :absolute-redirects     true
-               :content-types          true}})
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これを&lt;code&gt;false&lt;/code&gt;にしちゃえばもちろんCSRFのチェックはされなくなるんだけど、まあ普通はするべきですよね。&lt;/p&gt;
-
-&lt;p&gt;トークンの生成の仕方はこう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(ns sample.handler
-  (:require [ring.util.anti-forgery :refer :all]))
-(anti-forgery-field)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;ring.util.anti-forgery&lt;/code&gt;の中身はこんな感じ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(ns ring.util.anti-forgery
-  &amp;quot;Utility functions for inserting anti-forgery tokens into HTML forms.&amp;quot;
-  (:use [hiccup core form]
-        ring.middleware.anti-forgery))
-
-(defn anti-forgery-field
-  &amp;quot;Create a hidden field with the session anti-forgery token as its value.
-  This ensures that the form it&#39;s inside won&#39;t be stopped by the anti-forgery
-  middleware.&amp;quot;
-  []
-  (html (hidden-field &amp;quot;__anti-forgery-token&amp;quot; *anti-forgery-token*)))
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

@@ -6,8 +6,79 @@
     <description>Recent content on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 08 Jan 2016 10:57:35 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 12 Jan 2016 12:04:51 +0900</lastBuildDate>
     <atom:link href="http://yet.unresolved.xyz/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>さくらVPSでpip install lxmlがOOM Killerに殺される</title>
+      <link>http://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-was-oom-killed/</link>
+      <pubDate>Tue, 12 Jan 2016 12:04:51 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-was-oom-killed/</guid>
+      <description>
+
+&lt;p&gt;Python2.7 + BeautifulSoup + lxmlの環境でスクレイピングをしようとしたらlxmlがインストールできなかった。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Installing collected packages: lxml
+  Running setup.py install for lxml
+    Complete output from command /opt/local/bin/python2.7 -c &amp;quot;import setuptools, tokenize;__file__=&#39;/tmp/pip-build-9nMFdz/lxml/setup.py&#39;;exec(compile(getattr(tokenize, &#39;open&#39;, open)(__file__).read()
+.replace(&#39;\r\n&#39;, &#39;\n&#39;), __file__, &#39;exec&#39;))&amp;quot; install --record /tmp/pip-8cwa10-record/install-record.txt --single-version-externally-managed --compile:
+    /opt/local/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: &#39;bugtrack_url&#39;
+      warnings.warn(msg)
+    Building lxml version 3.4.4.
+    Building without Cython.
+    Using build configuration of libxslt 1.1.26
+    Building against libxml2/libxslt in the following directory: /usr/lib64
+    running install
+    running build
+    running build_py
+    copying src/lxml/includes/lxml-version.h -&amp;gt; build/lib.linux-x86_64-2.7/lxml/includes
+    running build_ext
+    building &#39;lxml.etree&#39; extension
+    gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/include/libxml2 -I/tmp/pip-build-9nMFdz/lxml/src/lxml/includes -I/opt/local/include/python
+2.7 -c src/lxml/lxml.etree.c -o build/temp.linux-x86_64-2.7/src/lxml/lxml.etree.o -w
+    gcc: Internal error: Killed (program cc1)
+    Please submit a full bug report.
+    See &amp;lt;http://bugzilla.redhat.com/bugzilla&amp;gt; for instructions.
+    error: command &#39;gcc&#39; failed with exit status 1
+
+    ----------------------------------------
+Command &amp;quot;/opt/local/bin/python2.7 -c &amp;quot;import setuptools, tokenize;__file__=&#39;/tmp/pip-build-9nMFdz/lxml/setup.py&#39;;exec(compile(getattr(tokenize, &#39;open&#39;, open)(__file__).read().replace(&#39;\r\n&#39;, &#39;\n&#39;),
+__file__, &#39;exec&#39;))&amp;quot; install --record /tmp/pip-8cwa10-record/install-record.txt --single-version-externally-managed --compile&amp;quot; failed with error code 1 in /tmp/pip-build-9nMFdz/lxml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;どうやら&lt;code&gt;gcc: Internal error: Killed (program cc1)&lt;/code&gt;はOOM Killerにkillされたってことらしい？&lt;/p&gt;
+
+&lt;p&gt;この記事も参考になりそうだったけど解決には至らなかった。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://scissorhands.jpn.org/2011/11/post-260.html&#34;&gt;さくらインターネット「さくらのレンタルサーバ」にSubversionをインストールする。 - ScissorHands&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;swapファイルで対応する:1586fa651863ddecb24f47c8f1f6626f&#34;&gt;swapファイルで対応する&lt;/h2&gt;
+
+&lt;p&gt;StackOverFlowでswapファイルでやるしかないよみたいな意見が散見されたので、この記事を参考にしました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.wordspeak.org/posts/resolving-build-errors-with-python-lxml.html&#34;&gt;Resolving build errors with python lxml on low memory machines | Wordspeak&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo dd if=/dev/zero of=/swapfile bs=1024 count=500000
+$ sudo mkswap /swapfile
+$ sudo swapon /swapfile
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;でswapファイルを作成してインストールを実行したら出来ました。&lt;/p&gt;
+
+&lt;p&gt;終わったら削除。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ sudo swapoff /swapfile
+$ sudo rm /swapfi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;参考にさせていただきました:1586fa651863ddecb24f47c8f1f6626f&#34;&gt;参考にさせていただきました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://scissorhands.jpn.org/2011/11/post-260.html&#34;&gt;さくらインターネット「さくらのレンタルサーバ」にSubversionをインストールする。 - ScissorHands&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.wordspeak.org/posts/resolving-build-errors-with-python-lxml.html&#34;&gt;Resolving build errors with python lxml on low memory machines | Wordspeak&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>[Python]Flaskアプリをnginx &#43; uWSGIでさくらVPSにデプロイする</title>
@@ -1280,118 +1351,6 @@ $(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() 
 &lt;h2 id=&#34;参考にさせていただきました:1be3a17c6bd3affece21cbd510505d7a&#34;&gt;参考にさせていただきました。&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://qiita.com/jkr_2255/items/17693ab77beea71a871c&#34;&gt;JavaScript - setTimeout(&amp;hellip;,0)などの使いドコロ - Qiita&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>例によってpaiza online hackathon5をClojureで解いてみた</title>
-      <link>http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/</link>
-      <pubDate>Wed, 06 May 2015 09:54:46 +0900</pubDate>
-      
-      <guid>http://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/</guid>
-      <description>
-
-&lt;p&gt;まずい更新することがない。&lt;/p&gt;
-
-&lt;p&gt;とりあえずPOHネタでこの場をしのごう。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://paiza.jp/poh/enshura?locale=ja&#34;&gt;マンガ版「俺の許嫁と幼なじみが修羅場すぎる」｜paizaオンラインハッカソン5&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;今回はパフォーマンスとかの問題はなく、ただただロジックが面倒くさいものばっかでした。&lt;/p&gt;
-
-&lt;h2 id=&#34;problem-1:d10396b379fa39f08bc202555c3657f6&#34;&gt;Problem 1&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def in (line-seq (java.io.BufferedReader. *in*)))
-
-(def p1 (-&amp;gt;&amp;gt; in
-             first
-             (take-nth 2)
-             clojure.string/join))
-
-(println p1)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;そもそもこれシーケンスで取らなければ&lt;code&gt;first&lt;/code&gt;とかつけなくてよかったんじゃないかなあ。&lt;/p&gt;
-
-&lt;p&gt;そんな方法あるかわかんないけど。&lt;/p&gt;
-
-&lt;h2 id=&#34;problem-2:d10396b379fa39f08bc202555c3657f6&#34;&gt;Problem 2&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def in (map
-         #(Integer/parseInt %)
-         (line-seq (java.io.BufferedReader. *in*))))
-
-(defn take-padding [coll pad]
-  (-&amp;gt;&amp;gt; coll
-       (partition-all pad)
-       (map first)))
-
-(def p2
-  (let [l (rest in)]
-    (map #(apply + %)
-         (for [i (range 7)]
-           (take-padding (drop i l) 7)))))
-
-(print (clojure.string/join &amp;quot;\n&amp;quot; p2))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;結構強引にシーケンス操作を書いたけど、もっと楽にやれる関数が用意されてる気する。&lt;/p&gt;
-
-&lt;h2 id=&#34;problem-3-rena:d10396b379fa39f08bc202555c3657f6&#34;&gt;Problem 3 RENA&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def in (for [e (map #(.split % &amp;quot; &amp;quot;) (line-seq (java.io.BufferedReader. *in*)))]
-          (map #(Integer/parseInt %) e)))
-
-(defn point-to-range [coll]
-  (for [v (map #(partition 2 %) coll)]
-    (let [[s e] v]
-      (for [x (range (- (first s) 1) (first e))
-            y (range (- (second s) 1) (second e))]
-        [x y]))))
-
-(def p3r
-  (let [[w dc rc] (first in)
-        d (take dc (rest in))
-        r (-&amp;gt;&amp;gt; (point-to-range (take-last rc in))
-               (apply concat)
-               distinct)]
-    (for [e r]
-      (nth (nth d (second e)) (first e)))))
-
-(print (apply + p3r))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;エクセル的なやつ。&lt;/p&gt;
-
-&lt;p&gt;めんどくさかった。&lt;/p&gt;
-
-&lt;h2 id=&#34;problem-3-minami:d10396b379fa39f08bc202555c3657f6&#34;&gt;Problem 3 MINAMI&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def in (line-seq (java.io.BufferedReader. *in*)))
-
-(defn h2v [coll n]
-  (for [c (range n)]
-    (map #(nth % c) coll)))
-
-(defn compl [n coll]
-  (concat (take (- n (count coll)) (repeat 0)) coll))
-
-(def p3m
-  (let [tc (for [e (map #(.split % &amp;quot; &amp;quot;) in)]
-             (map #(Integer/parseInt %) e))
-        [x y] (-&amp;gt; tc first)
-        coll (rest tc)]
-    (h2v (-&amp;gt;&amp;gt; (h2v coll x)
-              (map (fn [c] (filter #(not= 2 %) c)))
-              (map #(compl y %))) y)))
-
-(print (clojure.string/join &amp;quot;\n&amp;quot;
-                            (map #(clojure.string/join &amp;quot; &amp;quot; %) p3m)))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;爆弾のやつ。&lt;/p&gt;
-
-&lt;p&gt;めんどくさかった。&lt;/p&gt;
 </description>
     </item>
     
