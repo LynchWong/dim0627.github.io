@@ -11,10 +11,10 @@
     
     <item>
       <title>さくらVPSでpip install lxmlがOOM Killerに殺される</title>
-      <link>http://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-was-oom-killed/</link>
+      <link>http://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-was-killed-by-oom-killer/</link>
       <pubDate>Tue, 12 Jan 2016 12:04:51 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-was-oom-killed/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-was-killed-by-oom-killer/</guid>
       <description>
 
 &lt;p&gt;Python2.7 + BeautifulSoup + lxmlの環境でスクレイピングをしようとしたらlxmlがインストールできなかった。&lt;/p&gt;
@@ -53,7 +53,7 @@ __file__, &#39;exec&#39;))&amp;quot; install --record /tmp/pip-8cwa10-record/ins
 
 &lt;p&gt;&lt;a href=&#34;http://scissorhands.jpn.org/2011/11/post-260.html&#34;&gt;さくらインターネット「さくらのレンタルサーバ」にSubversionをインストールする。 - ScissorHands&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;swapファイルで対応する:1586fa651863ddecb24f47c8f1f6626f&#34;&gt;swapファイルで対応する&lt;/h2&gt;
+&lt;h2 id=&#34;swapファイルで対応する:0faca4b1e2b3fd10a94e2b505a498951&#34;&gt;swapファイルで対応する&lt;/h2&gt;
 
 &lt;p&gt;StackOverFlowでswapファイルでやるしかないよみたいな意見が散見されたので、この記事を参考にしました。&lt;/p&gt;
 
@@ -72,7 +72,7 @@ $ sudo swapon /swapfile
 $ sudo rm /swapfi
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;参考にさせていただきました:1586fa651863ddecb24f47c8f1f6626f&#34;&gt;参考にさせていただきました&lt;/h2&gt;
+&lt;h2 id=&#34;参考にさせていただきました:0faca4b1e2b3fd10a94e2b505a498951&#34;&gt;参考にさせていただきました&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://scissorhands.jpn.org/2011/11/post-260.html&#34;&gt;さくらインターネット「さくらのレンタルサーバ」にSubversionをインストールする。 - ScissorHands&lt;/a&gt;&lt;/p&gt;
 
