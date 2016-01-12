@@ -60,7 +60,7 @@ $ sudo swapon /swapfile
 
 ``` shell
 $ sudo swapoff /swapfile
-$ sudo rm /swapfi
+$ sudo rm /swapfile
 ```
 
 ## 参考にさせていただきました
