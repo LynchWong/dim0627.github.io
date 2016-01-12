@@ -59,7 +59,7 @@ __file__, &#39;exec&#39;))&amp;quot; install --record /tmp/pip-8cwa10-record/ins
 
 &lt;p&gt;&lt;a href=&#34;https://www.wordspeak.org/posts/resolving-build-errors-with-python-lxml.html&#34;&gt;Resolving build errors with python lxml on low memory machines | Wordspeak&lt;/a&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ sudo dd if=/dev/zero of=/swapfile bs=1024 count=500000
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ sudo dd if=/dev/zero of=/swapfile bs=1024 count=500000
 $ sudo mkswap /swapfile
 $ sudo swapon /swapfile
 &lt;/code&gt;&lt;/pre&gt;
@@ -68,7 +68,7 @@ $ sudo swapon /swapfile
 
 &lt;p&gt;終わったら削除。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ sudo swapoff /swapfile
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ sudo swapoff /swapfile
 $ sudo rm /swapfile
 &lt;/code&gt;&lt;/pre&gt;
 

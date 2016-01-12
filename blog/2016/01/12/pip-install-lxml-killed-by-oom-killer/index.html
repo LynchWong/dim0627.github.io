@@ -128,7 +128,7 @@ __file__, 'exec'))&quot; install --record /tmp/pip-8cwa10-record/install-record.
 
 <p><a href="https://www.wordspeak.org/posts/resolving-build-errors-with-python-lxml.html">Resolving build errors with python lxml on low memory machines | Wordspeak</a></p>
 
-<pre><code>$ sudo dd if=/dev/zero of=/swapfile bs=1024 count=500000
+<pre><code class="language-sh">$ sudo dd if=/dev/zero of=/swapfile bs=1024 count=500000
 $ sudo mkswap /swapfile
 $ sudo swapon /swapfile
 </code></pre>
@@ -137,7 +137,7 @@ $ sudo swapon /swapfile
 
 <p>終わったら削除。</p>
 
-<pre><code class="language-shell">$ sudo swapoff /swapfile
+<pre><code class="language-sh">$ sudo swapoff /swapfile
 $ sudo rm /swapfile
 </code></pre>
 
