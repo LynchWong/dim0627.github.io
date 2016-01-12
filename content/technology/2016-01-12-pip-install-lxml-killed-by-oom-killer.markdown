@@ -1,6 +1,6 @@
 ---
 date: 2016-01-12T12:04:51+09:00
-slug: "pip-install-lxml-was-killed-by-oom-killer"
+slug: "pip-install-lxml-killed-by-oom-killer"
 tags: ['python', 'pip', 'oom-killer']
 title: 'さくらVPSでpip install lxmlがOOM Killerに殺される'
 ---
