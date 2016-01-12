@@ -69,7 +69,7 @@ $ sudo swapon /swapfile
 &lt;p&gt;終わったら削除。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ sudo swapoff /swapfile
-$ sudo rm /swapfi
+$ sudo rm /swapfile
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;参考にさせていただきました:bc1e3babd27cd8320e4e2f6865a6df73&#34;&gt;参考にさせていただきました&lt;/h2&gt;
