@@ -48,7 +48,7 @@ StackOverFlowでswapファイルでやるしかないよみたいな意見が散
 
 [Resolving build errors with python lxml on low memory machines | Wordspeak](https://www.wordspeak.org/posts/resolving-build-errors-with-python-lxml.html)
 
-```
+``` sh
 $ sudo dd if=/dev/zero of=/swapfile bs=1024 count=500000
 $ sudo mkswap /swapfile
 $ sudo swapon /swapfile
@@ -58,7 +58,7 @@ $ sudo swapon /swapfile
 
 終わったら削除。
 
-``` shell
+``` sh
 $ sudo swapoff /swapfile
 $ sudo rm /swapfile
 ```
