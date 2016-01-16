@@ -67,7 +67,7 @@ title: "「君の膵臓をたべたい」を読んだ"
 
 でもこの言葉を読んで、少し感情的かもしれないけど、それはそれで良い考え方なのかもしれないなと思った。
 
-人間難しく考え過ぎると疲れちゃうから、良い方向に幸せな方向に考えてみるとも必要なのかなと。
+人間難しく考え過ぎると疲れちゃうから、良い方向に幸せな方向に考えてみることも必要なのかなと。
 高校生らしい、幼さありきの素直な考えっていうのが少し新鮮に感じた。
 
 <a rel="nofollow" href="http://www.amazon.co.jp/gp/product/4575239054/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4575239054&linkCode=as2&tag=unresolved-22">君の膵臓をたべたい</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=4575239054" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;display: none;" />
