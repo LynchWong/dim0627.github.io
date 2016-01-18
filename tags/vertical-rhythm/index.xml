@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Design on Unresolved</title>
-    <link>http://yet.unresolved.xyz/tags/design/</link>
-    <description>Recent content in Design on Unresolved</description>
+    <title>Vertical Rhythm on Unresolved</title>
+    <link>http://yet.unresolved.xyz/tags/vertical-rhythm/</link>
+    <description>Recent content in Vertical Rhythm on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 18 Jan 2016 11:04:21 +0900</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/tags/design/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://yet.unresolved.xyz/tags/vertical-rhythm/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>読みやすい文章のデザインとバーティカルリズム</title>
@@ -147,52 +147,6 @@
 &lt;p&gt;&lt;a href=&#34;http://ameblo.jp/ca-1pixel/entry-11837685575.html&#34;&gt;デザインは8の倍数でできている｜1 pixel｜サイバーエージェント公式クリエイターズブログ&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://uxmilk.jp/translation/the_year_in_design&#34;&gt;2015年のデザイントレンドを振り返る | UX MILK&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Octopressのテーマを作ってみる</title>
-      <link>http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/</link>
-      <pubDate>Sun, 21 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/</guid>
-      <description>
-
-&lt;p&gt;元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。
-でも僕はデザイナーじゃないから、あんまりがっつりやるのもやだよね。
-てことで元のclassicテーマをパクって作ろう。&lt;/p&gt;
-
-&lt;p&gt;Octopressから移行してしまったので、スクリーンショットだけ載せとく。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34; alt=&#34;flatten&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;テーマの変え方:04d1c6053c5be0425bfb88e610b78a00&#34;&gt;テーマの変え方&lt;/h2&gt;
-
-&lt;p&gt;そもそも変え方もよく知らないんだけど、どうやらここにテーマ単位のディレクトリが配置されるらしい。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;octopress git:(source)$ ls .themes
-classic
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;で、&lt;code&gt;rake install[theme name]&lt;/code&gt;でインストール。&lt;/p&gt;
-
-&lt;h2 id=&#34;テーマの構成:04d1c6053c5be0425bfb88e610b78a00&#34;&gt;テーマの構成&lt;/h2&gt;
-
-&lt;p&gt;作るにも、テーマの定義に何が必要かがわからない。
-classicの中を見てみよう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;octopress git:(source)$ ls .themes/classic
-sass   source
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;察するに&lt;code&gt;sass&lt;/code&gt;がスタイル系で&lt;code&gt;source&lt;/code&gt;がテンプレート系なのかな。
-別にページレイアウトを変えたいとか、そんなたいそうなことは考えてないので、sass内をいじるだけでよさそう。&lt;/p&gt;
-
-&lt;p&gt;ということで出来ました。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/dim0627/flatten&#34;&gt;flatten&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;gravatarの件が入っちゃってるから、これは後で分離しなきゃなあ。&lt;/p&gt;
 </description>
     </item>
     
