@@ -6,8 +6,34 @@
     <description>Recent content on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Jan 2016 11:04:21 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 20 Jan 2016 16:15:58 +0900</lastBuildDate>
     <atom:link href="http://yet.unresolved.xyz/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Asset Pipelineのコンパイル対象を追加する</title>
+      <link>http://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</link>
+      <pubDate>Wed, 20 Jan 2016 16:15:58 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</guid>
+      <description>&lt;p&gt;デフォルトだと&lt;code&gt;application.css&lt;/code&gt;とかじゃないですか。
+でも例えば管理画面を作ったりとかでごっそりデザインの違うページを作るときに少し困ったんです。&lt;/p&gt;
+
+&lt;p&gt;まあ普通はそういう時、モジュールごと完全に分けるべきなのか・・・。疎結合ね・・・。&lt;/p&gt;
+
+&lt;p&gt;解決方法はエラーに出てました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ActionView::Template::Error (Asset was not declared to be precompiled in production.
+Add `Rails.application.config.assets.precompile += %w( application_target.css )` to `config/initializers/assets.rb` and restart your server):
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;config/initializers/assets.rb&lt;/code&gt;に追記すればいい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;Rails.application.config.assets.precompile += %w( application_target.css )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Rails覚えらんないよー&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>読みやすい文章のデザインとバーティカルリズム</title>
@@ -1345,89 +1371,6 @@ Make every program a Filter.&lt;/p&gt;
 &lt;h2 id=&#34;参考にさせて頂きました:6779ddb6118e231a79097670a186005c&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://www.pupha.net/archives/2654/&#34;&gt;OWASP ZAP で送信されるリクエストに自動で独自ヘッダを追加する方法 - Web Application Security Memo&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>[Laravel5.1]発行されたSQLと実行計画を取得する</title>
-      <link>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</link>
-      <pubDate>Wed, 30 Sep 2015 13:44:48 +0900</pubDate>
-      
-      <guid>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</guid>
-      <description>
-
-&lt;p&gt;インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしい。&lt;/p&gt;
-
-&lt;h2 id=&#34;sqlの発行をフックする:f8b9f4d61afe8ca86b89085edc23a796&#34;&gt;SQLの発行をフックする&lt;/h2&gt;
-
-&lt;p&gt;ここに書いてあるとおり。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://laravel.com/docs/5.1/database#listening-for-query-events&#34;&gt;Database: Getting Started - Laravel - The PHP Framework For Web Artisans&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;DB&lt;/code&gt;の&lt;code&gt;listen&lt;/code&gt;メソッドに&lt;code&gt;$sql, $bindings, $time&lt;/code&gt;を受け取るClosureを渡せる。&lt;/p&gt;
-
-&lt;p&gt;なので&lt;code&gt;App\Providers\AppServiceProvider&lt;/code&gt;の&lt;code&gt;boot()&lt;/code&gt;メソッドに、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;    public function boot()
-    {
-        \DB::listen(function($sql, $bindings, $time) {
-            $bindings = implode(&#39;, &#39;, $bindings);
-            $method = request()-&amp;gt;method();
-            $url = request()-&amp;gt;url();
-            \Log::info(&amp;quot;Query [{$method}:{$url}] [{$time}s] $sql, [$bindings]&amp;quot;);
-        });
-    }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;とかやればよい。&lt;/p&gt;
-
-&lt;h2 id=&#34;実行計画も取る:f8b9f4d61afe8ca86b89085edc23a796&#34;&gt;実行計画も取る&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;    public function boot()
-    {
-        \DB::listen(function($sql, $bindings, $time) {
-
-            if (preg_match(&amp;quot;/^select/&amp;quot;, $sql)) {
-                $explain = \DB::select(&amp;quot;explain {$sql}&amp;quot;, $bindings);
-                \Log::info($explain);
-            }
-
-            $bindings = implode(&#39;, &#39;, $bindings);
-            $method = request()-&amp;gt;method();
-            $url = request()-&amp;gt;url();
-            \Log::info(&amp;quot;Query [{$method}:{$url}] [{$time}s] $sql, [$bindings]&amp;quot;);
-        });
-    }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;こう。&lt;/p&gt;
-
-&lt;p&gt;updateとかもフックしちゃうと2回発行されたりして面倒なので、selectだけ。&lt;/p&gt;
-
-&lt;p&gt;selectに絞らないとしても、explainの取得がさらにフックされて・・・ってなるので、&lt;/p&gt;
-
-&lt;p&gt;何かしら絞る必要はあり。&lt;/p&gt;
-
-&lt;h2 id=&#34;本番では取らない:f8b9f4d61afe8ca86b89085edc23a796&#34;&gt;本番では取らない&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;    public function boot()
-    {
-        \DB::listen(function($sql, $bindings, $time) {
-
-            if (config(&#39;app.env&#39;) !== &#39;production&#39; &amp;amp;&amp;amp; preg_match(&amp;quot;/^select/&amp;quot;, $sql)) {
-                $explain = \DB::select(&amp;quot;explain {$sql}&amp;quot;, $bindings);
-                \Log::info($explain);
-            }
-
-            $bindings = implode(&#39;, &#39;, $bindings);
-            $method = request()-&amp;gt;method();
-            $url = request()-&amp;gt;url();
-            \Log::info(&amp;quot;Query [{$method}:{$url}] [{$time}s] $sql, [$bindings]&amp;quot;);
-        });
-    }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;こんな感じ。&lt;/p&gt;
 </description>
     </item>
     

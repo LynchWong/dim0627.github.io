@@ -6,8 +6,34 @@
     <description>Recent content in Ruby on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 Jan 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 Jan 2016 16:15:58 +0900</lastBuildDate>
     <atom:link href="http://yet.unresolved.xyz/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Asset Pipelineのコンパイル対象を追加する</title>
+      <link>http://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</link>
+      <pubDate>Wed, 20 Jan 2016 16:15:58 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</guid>
+      <description>&lt;p&gt;デフォルトだと&lt;code&gt;application.css&lt;/code&gt;とかじゃないですか。
+でも例えば管理画面を作ったりとかでごっそりデザインの違うページを作るときに少し困ったんです。&lt;/p&gt;
+
+&lt;p&gt;まあ普通はそういう時、モジュールごと完全に分けるべきなのか・・・。疎結合ね・・・。&lt;/p&gt;
+
+&lt;p&gt;解決方法はエラーに出てました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ActionView::Template::Error (Asset was not declared to be precompiled in production.
+Add `Rails.application.config.assets.precompile += %w( application_target.css )` to `config/initializers/assets.rb` and restart your server):
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;config/initializers/assets.rb&lt;/code&gt;に追記すればいい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;Rails.application.config.assets.precompile += %w( application_target.css )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Rails覚えらんないよー&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>ブログをOctopressからHugoに移行した</title>

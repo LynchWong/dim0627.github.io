@@ -6,8 +6,34 @@
     <description>Recent content in Technologies on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Jan 2016 11:04:21 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 20 Jan 2016 16:15:58 +0900</lastBuildDate>
     <atom:link href="http://yet.unresolved.xyz/technology/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Asset Pipelineのコンパイル対象を追加する</title>
+      <link>http://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</link>
+      <pubDate>Wed, 20 Jan 2016 16:15:58 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</guid>
+      <description>&lt;p&gt;デフォルトだと&lt;code&gt;application.css&lt;/code&gt;とかじゃないですか。
+でも例えば管理画面を作ったりとかでごっそりデザインの違うページを作るときに少し困ったんです。&lt;/p&gt;
+
+&lt;p&gt;まあ普通はそういう時、モジュールごと完全に分けるべきなのか・・・。疎結合ね・・・。&lt;/p&gt;
+
+&lt;p&gt;解決方法はエラーに出てました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ActionView::Template::Error (Asset was not declared to be precompiled in production.
+Add `Rails.application.config.assets.precompile += %w( application_target.css )` to `config/initializers/assets.rb` and restart your server):
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;config/initializers/assets.rb&lt;/code&gt;に追記すればいい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;Rails.application.config.assets.precompile += %w( application_target.css )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Rails覚えらんないよー&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>読みやすい文章のデザインとバーティカルリズム</title>
@@ -1284,26 +1310,6 @@ bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
 &lt;h2 id=&#34;参考にさせていただきました:0adf99f262be79bb5ee2575ca8ebd7e8&#34;&gt;参考にさせていただきました&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://studio3104.hatenablog.com/entry/2014/10/14/131430&#34;&gt;tmux 1.9 でペイン分割時にカレントディレクトリを維持 - Studio3104::BLOG.new&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>tmux-powerlineのステータスラインが描画ごとに増える</title>
-      <link>http://yet.unresolved.xyz/blog/2015/03/30/status-line-of-tmux-powerline-overlap/</link>
-      <pubDate>Mon, 30 Mar 2015 23:56:58 +0900</pubDate>
-      
-      <guid>http://yet.unresolved.xyz/blog/2015/03/30/status-line-of-tmux-powerline-overlap/</guid>
-      <description>&lt;p&gt;iTerm2での話。&lt;/p&gt;
-
-&lt;p&gt;こいつのせい。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-03-31/iterm.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-03-31/iterm.png&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;でもこれがないと、素の時に使うVimで&lt;a href=&#34;https://github.com/itchyny/lightline.vim&#34;&gt;itchyny/lightline.vim&lt;/a&gt;がズレるんだよなあ。&lt;/p&gt;
-
-&lt;p&gt;これはなに？Vimとtmuxで統一出来るの？&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://qiita.com/tkhr/items/8cc17c02dea1803be9c6&#34;&gt;tmux - Powerline導入例 - Qiita&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
