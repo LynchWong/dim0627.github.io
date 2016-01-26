@@ -6,8 +6,25 @@
     <description>Recent content in Technologies on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 Jan 2016 16:15:58 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 26 Jan 2016 14:34:43 +0900</lastBuildDate>
     <atom:link href="http://yet.unresolved.xyz/technology/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>crontabのValidationが出来るcrontab.guruが便利</title>
+      <link>http://yet.unresolved.xyz/blog/2016/01/26/cron-validator/</link>
+      <pubDate>Tue, 26 Jan 2016 14:34:43 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2016/01/26/cron-validator/</guid>
+      <description>&lt;p&gt;cron、僕は好きです。ありものでなんとか出来るところが好きです。
+でも記法はいつも忘れるんですよね。あと正しいのかどうなのかがチェックしづらい。
+そこでこの&lt;a href=&#34;http://crontab.guru/&#34;&gt;crontab.guru&lt;/a&gt;が非常に便利でした。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://crontab.guru/&#34;&gt;crontab.guru - the cron schedule expression editor&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;正しさのチェックに加えていつ実行されるのかを文章で教えてくれる。
+記法についても注釈があるのでこのサイトで完結してしまう。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Asset Pipelineのコンパイル対象を追加する</title>
@@ -1284,32 +1301,6 @@ $(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() 
 &lt;p&gt;爆弾のやつ。&lt;/p&gt;
 
 &lt;p&gt;めんどくさかった。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する</title>
-      <link>http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/</link>
-      <pubDate>Wed, 01 Apr 2015 22:42:40 +0900</pubDate>
-      
-      <guid>http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/</guid>
-      <description>
-
-&lt;p&gt;こんな感じ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# v でペインを縦に分割する
-bind v split-window -h -c &amp;quot;#{pane_current_path}&amp;quot;
-
-# s でペインを横に分割する
-bind s split-window -v -c &amp;quot;#{pane_current_path}&amp;quot;
-
-# 新規ウィンドウでディレクトリを保持
-bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;参考にさせていただきました:0adf99f262be79bb5ee2575ca8ebd7e8&#34;&gt;参考にさせていただきました&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://studio3104.hatenablog.com/entry/2014/10/14/131430&#34;&gt;tmux 1.9 でペイン分割時にカレントディレクトリを維持 - Studio3104::BLOG.new&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
