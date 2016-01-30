@@ -5,14 +5,14 @@ tags: []
 title: "「教養としての日本近現代史」を読んだ"
 ---
 
-<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/4396615485/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4396615485&linkCode=as2&tag=unresolved-22">ニュースがよくわかる教養としての日本近現代史</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=4396615485" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;display: none;" />
-
 ## 読もうと思ったきっかけ
 
 恥ずかしながら歴史とか地理とかの教養が全くなくて、
 社会人として知らなければいけないという意識がずっとあった。
 もちろんニュースとかそういうので得られる知識もあると思うけど、
 そういう前提になってる知識とかも知っておきたいなあと思ったので、本書を読んでみることに。
+
+<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/4396615485/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4396615485&linkCode=as2&tag=unresolved-22">ニュースがよくわかる教養としての日本近現代史</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=4396615485" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;display: none;" />
 
 ## 事実を列挙するだけじゃない
 
