@@ -3,7 +3,6 @@ body {
 }
 
 article.single .article-body p {
-  line-height: 2rem;
   text-align: justify;
   word-break: break-all;
 }
