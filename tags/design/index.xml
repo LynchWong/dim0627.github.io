@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Design on Unresolved</title>
-    <link>http://localhost:1313/tags/design/</link>
+    <link>http://yet.unresolved.xyz/tags/design/</link>
     <description>Recent content in Design on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 18 Jan 2016 11:04:21 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/design/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://yet.unresolved.xyz/tags/design/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>読みやすい文章のデザインとバーティカルリズム</title>
-      <link>http://localhost:1313/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/</link>
+      <link>http://yet.unresolved.xyz/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/</link>
       <pubDate>Mon, 18 Jan 2016 11:04:21 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/</guid>
       <description>
 
 &lt;p&gt;これは僕の考えをつらつらと棚卸ししているだけであって、他のサイトの批判や自惚れた感情を書き出した記事ではありません。
@@ -151,98 +151,11 @@
     </item>
     
     <item>
-      <title>ブログのデザインをリニューアルした</title>
-      <link>http://localhost:1313/blog/2015/12/15/renewal-this-blog-design/</link>
-      <pubDate>Tue, 15 Dec 2015 15:18:03 +0900</pubDate>
-      
-      <guid>http://localhost:1313/blog/2015/12/15/renewal-this-blog-design/</guid>
-      <description>
-
-&lt;p&gt;なんか最近飽きっぽくて、リニューアル症候群のひどい版に陥ってる感はある。&lt;/p&gt;
-
-&lt;p&gt;まあでも今回のはそれなりに納得がいってるのでちゃんと記事に残そうかな。&lt;/p&gt;
-
-&lt;h2 id=&#34;デザインのことがわからない:202dee404cc53d5ca2d5125da3b23125&#34;&gt;デザインのことがわからない&lt;/h2&gt;
-
-&lt;p&gt;僕はデザイナじゃないしセンスもないのでろくなことも言えないんだけど、
-素人目にもかっこいいものとかそうじゃないものってのはあるよね。&lt;/p&gt;
-
-&lt;p&gt;自分のブログくらいはそりゃもちろんかっこよくしておきたいわけで、これまでいくつかHugoのテーマを作ってきました。&lt;/p&gt;
-
-&lt;p&gt;結局メンテしてないから、ゴミを放出してしまったなって反省はあるけどね。&lt;/p&gt;
-
-&lt;h2 id=&#34;デザイナさんとの仕事:202dee404cc53d5ca2d5125da3b23125&#34;&gt;デザイナさんとの仕事&lt;/h2&gt;
-
-&lt;p&gt;今の会社で初めてまともにデザイナさんと仕事をしてるんだけど、やっぱり気づくことがあったりする。&lt;/p&gt;
-
-&lt;p&gt;デザインはどの要素を取ってもきちんと理由があって、更にその前段の当たり前のルールだとかもあったり。&lt;/p&gt;
-
-&lt;p&gt;僕みたいに適当に作ってきた人間には目からうろこな気づきもあるんだよね。&lt;/p&gt;
-
-&lt;p&gt;それで自分のブログのデザインに嫌気がさして、長く使えるデザインに作り直そうかなと。&lt;/p&gt;
-
-&lt;h2 id=&#34;他人のデザインをコーディングする:202dee404cc53d5ca2d5125da3b23125&#34;&gt;他人のデザインをコーディングする&lt;/h2&gt;
-
-&lt;p&gt;仕事ではマークアップは僕がやってます。&lt;/p&gt;
-
-&lt;p&gt;HTML/CSSは結構これまでも書いてきたからそんなに困ることはないんだけど、
-やっぱり自分で考えて自分で書くと、知らないうちに&lt;strong&gt;楽な実装をするためのデザイン&lt;/strong&gt;になってたりするんだなと思った。&lt;/p&gt;
-
-&lt;p&gt;だからデザイナさんのデザインをコーディングするのは非常にスリリングだったりする。&lt;/p&gt;
-
-&lt;p&gt;あーこれ辛いなー、ややこしいなーって思うことも結構あるんだけど、やっぱやってみると躓いて、ああすればよかった、こうすればよかったって気づきがたくさん得られてる。&lt;/p&gt;
-
-&lt;p&gt;もちろんそう思ったらすぐにリファクタリングしてるけどね。&lt;/p&gt;
-
-&lt;p&gt;でもやっぱりあれだね、HTML/CSSは劣化がはやいね、すぐに破綻の道に入ってしまう。&lt;/p&gt;
-
-&lt;h2 id=&#34;シンプルから始める:202dee404cc53d5ca2d5125da3b23125&#34;&gt;シンプルから始める&lt;/h2&gt;
-
-&lt;p&gt;飽きないデザインってなんだろうなって考えた時に、なんかそれってちょっとやそっとじゃ結論が出るもんじゃないし、
-1つの学問というか、芸術とかの世界に踏み込んじゃう気がしたんだよね。&lt;/p&gt;
-
-&lt;h3 id=&#34;デザインしない:202dee404cc53d5ca2d5125da3b23125&#34;&gt;デザインしない&lt;/h3&gt;
-
-&lt;p&gt;だとしたらプロでもない僕が出来るのは&lt;strong&gt;とりあえず無駄なものがない状態&lt;/strong&gt;にすることなのかなと。&lt;/p&gt;
-
-&lt;p&gt;もっと簡単に言えば、デザイン出来ないからデザインしない、みたいな。&lt;/p&gt;
-
-&lt;p&gt;足りなきゃそこから足していけばいいと思うし。&lt;/p&gt;
-
-&lt;p&gt;ブログの最低限の状態ってなんだろう。タイトルと文章と日付かな、一応は日記だし。
-タグとかは後で、端っこの方に追加していけばいいかな、って考えた結果こうなりました。&lt;/p&gt;
-
-&lt;p&gt;これまでは&lt;code&gt;h2&lt;/code&gt;とか&lt;code&gt;h3&lt;/code&gt;とかを見やすく装飾してたりしたんだけど、それって装飾じゃなきゃ出来ないことなのかな。&lt;/p&gt;
-
-&lt;p&gt;これがWebじゃなくて紙ベースの日記だとしたら、きっと大きめに書いたり1行空けたりして対比してたんじゃないかな。
-さらに言えば&lt;code&gt;h4&lt;/code&gt;以降なんて絶対使わないよな、って結論に至った。&lt;/p&gt;
-
-&lt;h3 id=&#34;たくさんのことをやらない:202dee404cc53d5ca2d5125da3b23125&#34;&gt;たくさんのことをやらない&lt;/h3&gt;
-
-&lt;p&gt;HTMLというかWebデザインというか、いろんな手法があるじゃないですか。&lt;/p&gt;
-
-&lt;p&gt;例えば文字に色を付けるとか、背景を敷くとか、マーカーみたいな下線を入れるとか。
-意味の違うコンテンツを区切るために線を引いたり、背景色を変えてみたり。&lt;/p&gt;
-
-&lt;p&gt;でもそういう手法ってたくさん使わないほうがいいんじゃないかなと思うんですよね。&lt;/p&gt;
-
-&lt;p&gt;基本的に文字もしくは画像で成り立つのがWebページだと思うんだけど、
-だったらその元素となるオブジェクトをうまく配置するだけである程度見やすく出来るんじゃないかなと。&lt;/p&gt;
-
-&lt;p&gt;それでもなお見やすさとかわかりやすさを追求するためにデザインが存在したほうが、なんか合理的な気がするんですよね。&lt;/p&gt;
-
-&lt;p&gt;というわけで今回のリニューアルは、文字と余白だけで見やすく、見出しと文章がわかりやすく、出来たら良いなと。&lt;/p&gt;
-
-&lt;p&gt;まあそうはいっても結局飽きるかもしれないし、飽きなくてもこれから変えていくつもりなんだけどね。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Octopressのテーマを作ってみる</title>
-      <link>http://localhost:1313/blog/2014/09/21/making-new-theme-flatten/</link>
+      <link>http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/</link>
       <pubDate>Sun, 21 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/blog/2014/09/21/making-new-theme-flatten/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/</guid>
       <description>
 
 &lt;p&gt;元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。
@@ -251,7 +164,7 @@
 
 &lt;p&gt;Octopressから移行してしまったので、スクリーンショットだけ載せとく。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2014-09-21/flatten.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2014-09-21/flatten.png&#34; alt=&#34;flatten&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34; alt=&#34;flatten&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;テーマの変え方:04d1c6053c5be0425bfb88e610b78a00&#34;&gt;テーマの変え方&lt;/h2&gt;
 

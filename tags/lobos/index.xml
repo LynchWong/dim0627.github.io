@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lobos on Unresolved</title>
-    <link>http://localhost:1313/tags/lobos/</link>
+    <link>http://yet.unresolved.xyz/tags/lobos/</link>
     <description>Recent content in Lobos on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 21 Dec 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/lobos/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://yet.unresolved.xyz/tags/lobos/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>HerokuでLobosを使ったマイグレーションができない</title>
-      <link>http://localhost:1313/blog/2014/12/21/does-not-work-lobos-in-heroku/</link>
+      <link>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</link>
       <pubDate>Sun, 21 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/blog/2014/12/21/does-not-work-lobos-in-heroku/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</guid>
       <description>
 
 &lt;p&gt;ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。&lt;/p&gt;
@@ -153,10 +153,10 @@ Lobosはもう開発があんまり活発じゃないみたいだなあ。&lt;/p
     
     <item>
       <title>Lobosを使ってマイグレーションをする</title>
-      <link>http://localhost:1313/blog/2014/12/11/usage-for-lobos-migration/</link>
+      <link>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</link>
       <pubDate>Thu, 11 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/blog/2014/12/11/usage-for-lobos-migration/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2014/12/11/usage-for-lobos-migration/</guid>
       <description>
 
 &lt;p&gt;1年前くらいには、SQLまで隠蔽するORMとか嫌いだったし、テーブルの自動生成も嫌だったのになあ。

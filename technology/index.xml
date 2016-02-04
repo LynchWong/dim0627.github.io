@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Technologies on Unresolved</title>
-    <link>http://localhost:1313/technology/</link>
+    <link>http://yet.unresolved.xyz/technology/</link>
     <description>Recent content in Technologies on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 04 Feb 2016 18:00:44 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/technology/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://yet.unresolved.xyz/technology/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>MySQL5.6&#43;ruby-mysql2でlibmysqlclient_16 not found</title>
-      <link>http://localhost:1313/blog/2016/02/04/libmysqlclient16-not-found/</link>
+      <link>http://yet.unresolved.xyz/blog/2016/02/04/libmysqlclient16-not-found/</link>
       <pubDate>Thu, 04 Feb 2016 18:00:44 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2016/02/04/libmysqlclient16-not-found/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2016/02/04/libmysqlclient16-not-found/</guid>
       <description>&lt;p&gt;せっかくなのでMySQLを5.5から5.6にして使おうとしたらエラーした。
 MySQL5.6のインストールはこの記事が非常に分かりやすかった。&lt;/p&gt;
 
@@ -38,10 +38,10 @@ MySQL5.6のインストールはこの記事が非常に分かりやすかった
     
     <item>
       <title>Rails&#43;RDSでMysql2::Error: Illegal mix of collations</title>
-      <link>http://localhost:1313/blog/2016/02/04/illegal-mix-of-collations/</link>
+      <link>http://yet.unresolved.xyz/blog/2016/02/04/illegal-mix-of-collations/</link>
       <pubDate>Thu, 04 Feb 2016 17:52:48 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2016/02/04/illegal-mix-of-collations/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2016/02/04/illegal-mix-of-collations/</guid>
       <description>
 
 &lt;p&gt;エラーの全貌はこう。&lt;/p&gt;
@@ -54,7 +54,7 @@ MySQLの設定を変えなきゃいけないと思い込んでいて、RDSを使
 
 &lt;p&gt;でもRDSもMySQLの設定は変えられるらしい。そりゃそうか。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2016-02-04/params.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2016-02-04/params.png&#34; alt=&#34;params&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2016-02-04/params.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2016-02-04/params.png&#34; alt=&#34;params&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;これで直りました。&lt;/p&gt;
 
@@ -68,82 +68,11 @@ MySQLの設定を変えなきゃいけないと思い込んでいて、RDSを使
     </item>
     
     <item>
-      <title>初心者がRaspberry Piに入門した</title>
-      <link>http://localhost:1313/blog/2016/02/03/raspberry-pi-first-step/</link>
-      <pubDate>Wed, 03 Feb 2016 21:28:53 +0900</pubDate>
-      
-      <guid>http://localhost:1313/blog/2016/02/03/raspberry-pi-first-step/</guid>
-      <description>
-
-&lt;p&gt;Raspberry Piに手を出した。
-入門書とかを買ったりすればよかったんだろうけど、何も考えずに勢いで入門したので結構苦労した。
-せっかくなのでわからなかったこととか困ったことをまとめてみようかと思います。&lt;/p&gt;
-
-&lt;h2 id=&#34;入門しようと思ったきっかけ:8f46f6d44fb8bdaf0c8be4550e9574e0&#34;&gt;入門しようと思ったきっかけ&lt;/h2&gt;
-
-&lt;p&gt;会社のデスクに植物を置いてるんだけど、最後に水をあげた日を忘れそうだなと思ったんですね。
-なので、ボタンを押したら最後にボタンを押した日をディスプレイに表示しておくだけのものを作ろう、と。&lt;/p&gt;
-
-&lt;p&gt;とはいうものの、水をあげた日を忘れるわけがないし、強引に入門するための理由を作ったというのが本当のところ。
-なんかRaspberry Piは、日常生活の中に面白みを加える事が出来るような気がして、それを期待しました。&lt;/p&gt;
-
-&lt;h2 id=&#34;入門前に持っていた知識:8f46f6d44fb8bdaf0c8be4550e9574e0&#34;&gt;入門前に持っていた知識&lt;/h2&gt;
-
-&lt;p&gt;もはや完全に何もわからない状態。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;基盤を買って部品を買ってプログラムを書けばいいんでしょ？&lt;/li&gt;
-&lt;li&gt;HelloWorld的なものってあるの？&lt;/li&gt;
-&lt;li&gt;そもそも最低限必要なものはなんなの？&lt;/li&gt;
-&lt;li&gt;どうやって勉強すればいいの？&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;多分殆どの入門者がこうなんじゃないでしょうか。&lt;/p&gt;
-
-&lt;h2 id=&#34;最初に買ったもの:8f46f6d44fb8bdaf0c8be4550e9574e0&#34;&gt;最初に買ったもの&lt;/h2&gt;
-
-&lt;h2 id=&#34;追加で買ったもの:8f46f6d44fb8bdaf0c8be4550e9574e0&#34;&gt;追加で買ったもの&lt;/h2&gt;
-
-&lt;h2 id=&#34;やってよかったこと:8f46f6d44fb8bdaf0c8be4550e9574e0&#34;&gt;やってよかったこと&lt;/h2&gt;
-
-&lt;p&gt;手探りでモジュールを買ったり色々試したりした中で、
-これは正解だったなあとか、そういうポジティブなことをまとめてみます。&lt;/p&gt;
-
-&lt;h3 id=&#34;ケースはあるといい:8f46f6d44fb8bdaf0c8be4550e9574e0&#34;&gt;ケースはあるといい&lt;/h3&gt;
-
-&lt;p&gt;僕はケース付きのRaspberry Piを買ったんだけど、ケースはあってよかった。
-Raspberry Piは以外と高級感があって、基盤むき出しであれこれいじるのは嫌だなと、手元に来てから思った。&lt;/p&gt;
-
-&lt;p&gt;ケース付きの本体はケース無しのものと値段が変わらなかったりするので、どうせならケース付きを買うのがおすすめ。
-かっこいいケースは高いので慣れてきてから。&lt;/p&gt;
-
-&lt;h3 id=&#34;最初にたくさん買わないほうがいい:8f46f6d44fb8bdaf0c8be4550e9574e0&#34;&gt;最初にたくさん買わないほうがいい&lt;/h3&gt;
-
-&lt;p&gt;やってよかったというか、気をつけてよかったこと。&lt;/p&gt;
-
-&lt;p&gt;Raspberry Piのモジュールは基本的にどれも安いので、Amazonとかで見ているとたくさん買いたくなる。
-とはいえ実際に使うのは最初に買おうと思っていたものだけで、衝動買いしたものは結局使わないことが多かった。&lt;/p&gt;
-
-&lt;p&gt;なのでモジュールを買うときは、目移りしても少しずつ買い足していくのが良いと思う。
-金に糸目をつけない人は買っちゃってもいいと思うけどね。
-モジュールありきの開発っていうのもあり得ると思うし。&lt;/p&gt;
-
-&lt;h2 id=&#34;失敗だったこと:8f46f6d44fb8bdaf0c8be4550e9574e0&#34;&gt;失敗だったこと&lt;/h2&gt;
-
-&lt;p&gt;同様に早とちりしたこととか、無駄になったりしたこをもまとめます。&lt;/p&gt;
-
-&lt;h2 id=&#34;どうやって勉強すればいいのか:8f46f6d44fb8bdaf0c8be4550e9574e0&#34;&gt;どうやって勉強すればいいのか&lt;/h2&gt;
-
-&lt;h2 id=&#34;終わりに:8f46f6d44fb8bdaf0c8be4550e9574e0&#34;&gt;終わりに&lt;/h2&gt;
-</description>
-    </item>
-    
-    <item>
       <title>crontabのValidationが出来るcrontab.guruが便利</title>
-      <link>http://localhost:1313/blog/2016/01/26/cron-validator/</link>
+      <link>http://yet.unresolved.xyz/blog/2016/01/26/cron-validator/</link>
       <pubDate>Tue, 26 Jan 2016 14:34:43 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2016/01/26/cron-validator/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2016/01/26/cron-validator/</guid>
       <description>&lt;p&gt;cron、僕は好きです。ありものでなんとか出来るところが好きです。
 でも記法はいつも忘れるんですよね。あと正しいのかどうなのかがチェックしづらい。
 そこでこの&lt;a href=&#34;http://crontab.guru/&#34;&gt;crontab.guru&lt;/a&gt;が非常に便利でした。&lt;/p&gt;
@@ -157,10 +86,10 @@ Raspberry Piは以外と高級感があって、基盤むき出しであれこ�
     
     <item>
       <title>Asset Pipelineのコンパイル対象を追加する</title>
-      <link>http://localhost:1313/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</link>
+      <link>http://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</link>
       <pubDate>Wed, 20 Jan 2016 16:15:58 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</guid>
       <description>&lt;p&gt;デフォルトだと&lt;code&gt;application.css&lt;/code&gt;とかじゃないですか。
 でも例えば管理画面を作ったりとかでごっそりデザインの違うページを作るときに少し困ったんです。&lt;/p&gt;
 
@@ -183,10 +112,10 @@ Add `Rails.application.config.assets.precompile += %w( application_target.css )`
     
     <item>
       <title>読みやすい文章のデザインとバーティカルリズム</title>
-      <link>http://localhost:1313/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/</link>
+      <link>http://yet.unresolved.xyz/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/</link>
       <pubDate>Mon, 18 Jan 2016 11:04:21 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/</guid>
       <description>
 
 &lt;p&gt;これは僕の考えをつらつらと棚卸ししているだけであって、他のサイトの批判や自惚れた感情を書き出した記事ではありません。
@@ -324,10 +253,10 @@ Add `Rails.application.config.assets.precompile += %w( application_target.css )`
     
     <item>
       <title>さくらVPSでpip install lxmlがOOM Killerに殺される</title>
-      <link>http://localhost:1313/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/</link>
+      <link>http://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/</link>
       <pubDate>Tue, 12 Jan 2016 12:04:51 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/</guid>
       <description>
 
 &lt;p&gt;Python2.7 + BeautifulSoup + lxmlの環境でスクレイピングをしようとしたらlxmlがインストールできなかった。&lt;/p&gt;
@@ -395,10 +324,10 @@ $ sudo rm /swapfile
     
     <item>
       <title>[Python]Flaskアプリをnginx &#43; uWSGIでさくらVPSにデプロイする</title>
-      <link>http://localhost:1313/blog/2016/01/08/deploying-flask-app-to-sakura-vps/</link>
+      <link>http://yet.unresolved.xyz/blog/2016/01/08/deploying-flask-app-to-sakura-vps/</link>
       <pubDate>Fri, 08 Jan 2016 10:57:35 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2016/01/08/deploying-flask-app-to-sakura-vps/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2016/01/08/deploying-flask-app-to-sakura-vps/</guid>
       <description>
 
 &lt;p&gt;CentOS6.5、Python2.7でやります。&lt;/p&gt;
@@ -555,41 +484,11 @@ exec $UWSGI --ini /path/to/wsgi.ini
     </item>
     
     <item>
-      <title>vagrant up時にmountが失敗する</title>
-      <link>http://localhost:1313/blog/2016/01/07/virtualbox-mount-failed/</link>
-      <pubDate>Thu, 07 Jan 2016 21:53:01 +0900</pubDate>
-      
-      <guid>http://localhost:1313/blog/2016/01/07/virtualbox-mount-failed/</guid>
-      <description>
-
-&lt;p&gt;これ前にもなった気がするなあ。その時は意外とさくっと直せた気がするんだけど、どうやって直したか覚えてない・・・。&lt;/p&gt;
-
-&lt;p&gt;こちらの記事が非常に参考になりました。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://tech.withsin.net/2015/07/10/virtualbox-vagrant-mount-fail/&#34;&gt;VirtualBoxの/vagrantがマウントに失敗 | technote&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;僕はこの記事の、&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;VirtualBox Guest Additions&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;に該当してたようで、当該の操作をしたら直りました。&lt;/p&gt;
-
-&lt;p&gt;そして残念なことにエラーログを取得しそこねた。&lt;/p&gt;
-
-&lt;h2 id=&#34;参考にさせていただきました:73daaa0674d5a9de9870df04f54dfeb7&#34;&gt;参考にさせていただきました&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://tech.withsin.net/2015/07/10/virtualbox-vagrant-mount-fail/&#34;&gt;VirtualBoxの/vagrantがマウントに失敗 | technote&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>ACCOUNT KILLERというサービスが面白い</title>
-      <link>http://localhost:1313/blog/2015/12/17/about-account-killer/</link>
+      <link>http://yet.unresolved.xyz/blog/2015/12/17/about-account-killer/</link>
       <pubDate>Thu, 17 Dec 2015 10:39:55 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2015/12/17/about-account-killer/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2015/12/17/about-account-killer/</guid>
       <description>
 
 &lt;p&gt;WordPress.comとGravatarを退会しようと思ったんだけどなんか退会画面が見つからない。&lt;/p&gt;
@@ -626,10 +525,10 @@ exec $UWSGI --ini /path/to/wsgi.ini
     
     <item>
       <title>Googleの構造化データの扱いが変わった気がする</title>
-      <link>http://localhost:1313/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</link>
+      <link>http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</link>
       <pubDate>Fri, 11 Dec 2015 11:22:28 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</guid>
       <description>
 
 &lt;p&gt;このブログも、他の運営してるサイトも、今日になってエラーが発生するようになった。&lt;/p&gt;
@@ -638,11 +537,11 @@ exec $UWSGI --ini /path/to/wsgi.ini
 
 &lt;p&gt;エラーは2種類発生していて、ひとつめがこれ。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2015-12-11/error1.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2015-12-11/error1.png&#34; alt=&#34;error&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-12-11/error1.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-12-11/error1.png&#34; alt=&#34;error&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;もうひとつがこれ。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2015-12-11/error2.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2015-12-11/error2.png&#34; alt=&#34;error&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-12-11/error2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-12-11/error2.png&#34; alt=&#34;error&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;あれ？&lt;code&gt;author&lt;/code&gt;はもともと必須だっけ？&lt;/p&gt;
 
@@ -723,10 +622,10 @@ exec $UWSGI --ini /path/to/wsgi.ini
     
     <item>
       <title>プロダクションのWordPressを捨てHugoに移行した</title>
-      <link>http://localhost:1313/blog/2015/12/10/using-hugo-in-production/</link>
+      <link>http://yet.unresolved.xyz/blog/2015/12/10/using-hugo-in-production/</link>
       <pubDate>Thu, 10 Dec 2015 14:49:18 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2015/12/10/using-hugo-in-production/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2015/12/10/using-hugo-in-production/</guid>
       <description>
 
 &lt;p&gt;あんまり仕事のことは書かないつもりだったんだけど、このブログの生成でもお世話になっている&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;を結構本気で使ったのでそのことをまとめてみます。&lt;/p&gt;
@@ -930,10 +829,10 @@ Make every program a Filter.&lt;/p&gt;
     
     <item>
       <title>ELB越しのLaravelでHTTPSを使おうとして困った話</title>
-      <link>http://localhost:1313/blog/2015/11/04/using-https-in-laravel/</link>
+      <link>http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/</link>
       <pubDate>Wed, 04 Nov 2015 12:18:07 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2015/11/04/using-https-in-laravel/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/</guid>
       <description>
 
 &lt;h2 id=&#34;ssl証明書はelbに設置する:56aef34fa740ed018dee02e37b63f347&#34;&gt;SSL証明書はELBに設置する&lt;/h2&gt;
@@ -1016,10 +915,10 @@ Make every program a Filter.&lt;/p&gt;
     
     <item>
       <title>Hugo0.15でSummaryが日本語に対応するっぽい</title>
-      <link>http://localhost:1313/blog/2015/10/09/hugo-support-cjk-language/</link>
+      <link>http://yet.unresolved.xyz/blog/2015/10/09/hugo-support-cjk-language/</link>
       <pubDate>Fri, 09 Oct 2015 22:15:51 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2015/10/09/hugo-support-cjk-language/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2015/10/09/hugo-support-cjk-language/</guid>
       <description>&lt;p&gt;会社のMacにも&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;をセットアップしてあるんだけど、テーマの編集とかの続きを家でやろうとしたら&lt;code&gt;.Summary&lt;/code&gt;が異なる挙動をしてることに気づいた。&lt;/p&gt;
 
 &lt;p&gt;どうやらHugoのバージョンによって、日本語の解釈がうまくいったりいかなかったりするみたい。&lt;/p&gt;
@@ -1081,10 +980,10 @@ Make every program a Filter.&lt;/p&gt;
     
     <item>
       <title>OWASP ZAPでBASIC認証を突破する</title>
-      <link>http://localhost:1313/blog/2015/09/30/using-basic-auth-in-owasp-zap/</link>
+      <link>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</link>
       <pubDate>Wed, 30 Sep 2015 16:24:53 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2015/09/30/using-basic-auth-in-owasp-zap/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</guid>
       <description>
 
 &lt;p&gt;調べても意外と見つからない。&lt;/p&gt;
@@ -1114,6 +1013,176 @@ Make every program a Filter.&lt;/p&gt;
 &lt;h2 id=&#34;参考にさせて頂きました:6779ddb6118e231a79097670a186005c&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://www.pupha.net/archives/2654/&#34;&gt;OWASP ZAP で送信されるリクエストに自動で独自ヘッダを追加する方法 - Web Application Security Memo&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[Laravel5.1]発行されたSQLと実行計画を取得する</title>
+      <link>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</link>
+      <pubDate>Wed, 30 Sep 2015 13:44:48 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</guid>
+      <description>
+
+&lt;p&gt;インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしい。&lt;/p&gt;
+
+&lt;h2 id=&#34;sqlの発行をフックする:f8b9f4d61afe8ca86b89085edc23a796&#34;&gt;SQLの発行をフックする&lt;/h2&gt;
+
+&lt;p&gt;ここに書いてあるとおり。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://laravel.com/docs/5.1/database#listening-for-query-events&#34;&gt;Database: Getting Started - Laravel - The PHP Framework For Web Artisans&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;DB&lt;/code&gt;の&lt;code&gt;listen&lt;/code&gt;メソッドに&lt;code&gt;$sql, $bindings, $time&lt;/code&gt;を受け取るClosureを渡せる。&lt;/p&gt;
+
+&lt;p&gt;なので&lt;code&gt;App\Providers\AppServiceProvider&lt;/code&gt;の&lt;code&gt;boot()&lt;/code&gt;メソッドに、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;    public function boot()
+    {
+        \DB::listen(function($sql, $bindings, $time) {
+            $bindings = implode(&#39;, &#39;, $bindings);
+            $method = request()-&amp;gt;method();
+            $url = request()-&amp;gt;url();
+            \Log::info(&amp;quot;Query [{$method}:{$url}] [{$time}s] $sql, [$bindings]&amp;quot;);
+        });
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;とかやればよい。&lt;/p&gt;
+
+&lt;h2 id=&#34;実行計画も取る:f8b9f4d61afe8ca86b89085edc23a796&#34;&gt;実行計画も取る&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;    public function boot()
+    {
+        \DB::listen(function($sql, $bindings, $time) {
+
+            if (preg_match(&amp;quot;/^select/&amp;quot;, $sql)) {
+                $explain = \DB::select(&amp;quot;explain {$sql}&amp;quot;, $bindings);
+                \Log::info($explain);
+            }
+
+            $bindings = implode(&#39;, &#39;, $bindings);
+            $method = request()-&amp;gt;method();
+            $url = request()-&amp;gt;url();
+            \Log::info(&amp;quot;Query [{$method}:{$url}] [{$time}s] $sql, [$bindings]&amp;quot;);
+        });
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こう。&lt;/p&gt;
+
+&lt;p&gt;updateとかもフックしちゃうと2回発行されたりして面倒なので、selectだけ。&lt;/p&gt;
+
+&lt;p&gt;selectに絞らないとしても、explainの取得がさらにフックされて・・・ってなるので、&lt;/p&gt;
+
+&lt;p&gt;何かしら絞る必要はあり。&lt;/p&gt;
+
+&lt;h2 id=&#34;本番では取らない:f8b9f4d61afe8ca86b89085edc23a796&#34;&gt;本番では取らない&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;    public function boot()
+    {
+        \DB::listen(function($sql, $bindings, $time) {
+
+            if (config(&#39;app.env&#39;) !== &#39;production&#39; &amp;amp;&amp;amp; preg_match(&amp;quot;/^select/&amp;quot;, $sql)) {
+                $explain = \DB::select(&amp;quot;explain {$sql}&amp;quot;, $bindings);
+                \Log::info($explain);
+            }
+
+            $bindings = implode(&#39;, &#39;, $bindings);
+            $method = request()-&amp;gt;method();
+            $url = request()-&amp;gt;url();
+            \Log::info(&amp;quot;Query [{$method}:{$url}] [{$time}s] $sql, [$bindings]&amp;quot;);
+        });
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こんな感じ。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Amazon LinuxをVagrantで使いたい</title>
+      <link>http://yet.unresolved.xyz/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/</link>
+      <pubDate>Wed, 26 Aug 2015 23:12:02 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/</guid>
+      <description>
+
+&lt;p&gt;開発はCentOS、本番はAmazonLinuxにしようとしたら意外と違うところが多くてProvisioningがだるかったので。&lt;/p&gt;
+
+&lt;h2 id=&#34;ec2-create-instance-export-task:219da61ce6f755e0018f6c81d16e9cbc&#34;&gt;ec2-create-instance-export-task&lt;/h2&gt;
+
+&lt;p&gt;ec2-create-instance-export-taskっていうCLIのコマンドが用意されているらしい。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/ExportingEC2Instances.html&#34;&gt;Amazon EC2 インスタンスをエクスポートする - Amazon Elastic Compute Cloud&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;このコマンドでEC2のinstance_idを指定してS3にイメージファイルをエクスポートできるとのこと。&lt;/p&gt;
+
+&lt;p&gt;書式はこんな。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ec2-create-instance-export-task instance_id –e target_environment –f disk_image_format -c container_format –b s3_bucket
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;pipで入れたからこんな感じになったよ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;aws ec2 create-instance-export-task --instance-id i-82xxx70 --target-environment vmware --export-to-s3-task DiskImageFormat=vmdk,ContainerFormat=ova,S3Bucket=images.xxxxx.jp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;そしたらこんなエラー。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;A client error (AuthFailure) occurred when calling the CreateInstanceExportTask operation: vm-import-export@amazon.com must have WRITE and READ_ACL permission on the S3 bucket.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;しっかり説明を読むと、&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;エクスポートされたインスタンスを格納する Amazon S3 バケットを作成します。Amazon S3 バケットでは、[vm-import-export@amazon.com] アカウントへの [Upload/Delete] および [View Permissions] アクセスが付与される必要があります。詳細については、Amazon Simple Storage Service コンソールユーザーガイド の Creating a Bucket および Editing Bucket Permissions を参照してください。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;なるほどなるほど。&lt;/p&gt;
+
+&lt;p&gt;こんな感じに。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-08-26/bucket.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-08-26/bucket.png&#34; alt=&#34;bucket&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;そしたら違うエラー。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;A client error (NotExportable) occurred when calling the CreateInstanceExportTask operation: Only imported instances can be exported.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ん？&lt;/p&gt;
+
+&lt;p&gt;前提条件を読んでなかった。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/VMImportPrerequisites.html#vmimport-image-formats&#34;&gt;VM Import/Export の前提条件 - Amazon Elastic Compute Cloud&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Linux/Unix（64 ビット）&lt;/p&gt;
+
+&lt;p&gt;Red Hat Enterprise Linux (RHEL) 5.1-5.11、6.1-6.6、7.0-7.1&lt;/p&gt;
+
+&lt;p&gt;Note
+Amazon EC2 で実行するときに必要なドライバが存在しないため、RHEL 6.0 はサポートされていません。
+VM Import は、RHEL インスタンスのライセンスポータビリティをサポートしています。既存の RHEL ライセンスは、関連付けられた RHEL インスタンスと一緒にインポートされます。Red Hat Cloud Access の適格性の詳細については、Red Hat ウェブサイトの適格性を参照してください。
+CentOS 5.1～5.11、6.1～6.6、7.0-7.1&lt;/p&gt;
+
+&lt;p&gt;Note
+Amazon EC2 で実行するときに必要なドライバが存在しないため、CentOS 6.0 はサポートされていません。
+Ubuntu 12.04、12.10、13.04、13.10、14.04、14.10&lt;/p&gt;
+
+&lt;p&gt;Debian 6.0.0-6.0.8, 7.0.0-7.2.0&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;あっ・・・。&lt;/p&gt;
+
+&lt;h2 id=&#34;これでいいや:219da61ce6f755e0018f6c81d16e9cbc&#34;&gt;これでいいや&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.geekandi.com/2014/04/13/amazon-linux-vagrant-box-images/&#34;&gt;Amazon Linux Vagrant Box Images | Geek and I&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ちょっと古いし不安だけど、どうせ個人的なやつだし・・・。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考にさせていただきました:219da61ce6f755e0018f6c81d16e9cbc&#34;&gt;参考にさせていただきました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/21920993/convert-amazon-ec2-ami-to-virtual-or-vagrant-box&#34;&gt;virtualbox - Convert Amazon EC2 AMI to Virtual or Vagrant box - Stack Overflow&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Unresolved</title>
-    <link>http://localhost:1313/tags/python/</link>
+    <link>http://yet.unresolved.xyz/tags/python/</link>
     <description>Recent content in Python on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 12 Jan 2016 12:04:51 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://yet.unresolved.xyz/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>さくらVPSでpip install lxmlがOOM Killerに殺される</title>
-      <link>http://localhost:1313/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/</link>
+      <link>http://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/</link>
       <pubDate>Tue, 12 Jan 2016 12:04:51 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/</guid>
       <description>
 
 &lt;p&gt;Python2.7 + BeautifulSoup + lxmlの環境でスクレイピングをしようとしたらlxmlがインストールできなかった。&lt;/p&gt;
@@ -82,10 +82,10 @@ $ sudo rm /swapfile
     
     <item>
       <title>[Python]Flaskアプリをnginx &#43; uWSGIでさくらVPSにデプロイする</title>
-      <link>http://localhost:1313/blog/2016/01/08/deploying-flask-app-to-sakura-vps/</link>
+      <link>http://yet.unresolved.xyz/blog/2016/01/08/deploying-flask-app-to-sakura-vps/</link>
       <pubDate>Fri, 08 Jan 2016 10:57:35 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2016/01/08/deploying-flask-app-to-sakura-vps/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2016/01/08/deploying-flask-app-to-sakura-vps/</guid>
       <description>
 
 &lt;p&gt;CentOS6.5、Python2.7でやります。&lt;/p&gt;
@@ -243,10 +243,10 @@ exec $UWSGI --ini /path/to/wsgi.ini
     
     <item>
       <title>Python on GAEで3rdパーティライブラリを使う</title>
-      <link>http://localhost:1313/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/</link>
+      <link>http://yet.unresolved.xyz/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/</link>
       <pubDate>Mon, 12 Jan 2015 00:19:33 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/</guid>
       <description>
 
 &lt;p&gt;ひさびさに&lt;a href=&#34;https://cloud.google.com/appengine/&#34;&gt;Google App Engine&lt;/a&gt;を使おうとしたらGoogle Cloud Platformだかなんだかでいろいろと変わってて戸惑った。&lt;/p&gt;

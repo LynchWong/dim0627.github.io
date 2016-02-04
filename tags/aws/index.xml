@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Aws on Unresolved</title>
-    <link>http://localhost:1313/tags/aws/</link>
+    <link>http://yet.unresolved.xyz/tags/aws/</link>
     <description>Recent content in Aws on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 04 Feb 2016 17:52:48 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://yet.unresolved.xyz/tags/aws/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Rails&#43;RDSでMysql2::Error: Illegal mix of collations</title>
-      <link>http://localhost:1313/blog/2016/02/04/illegal-mix-of-collations/</link>
+      <link>http://yet.unresolved.xyz/blog/2016/02/04/illegal-mix-of-collations/</link>
       <pubDate>Thu, 04 Feb 2016 17:52:48 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2016/02/04/illegal-mix-of-collations/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2016/02/04/illegal-mix-of-collations/</guid>
       <description>
 
 &lt;p&gt;エラーの全貌はこう。&lt;/p&gt;
@@ -27,7 +27,7 @@ MySQLの設定を変えなきゃいけないと思い込んでいて、RDSを使
 
 &lt;p&gt;でもRDSもMySQLの設定は変えられるらしい。そりゃそうか。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2016-02-04/params.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2016-02-04/params.png&#34; alt=&#34;params&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2016-02-04/params.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2016-02-04/params.png&#34; alt=&#34;params&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;これで直りました。&lt;/p&gt;
 
@@ -42,10 +42,10 @@ MySQLの設定を変えなきゃいけないと思い込んでいて、RDSを使
     
     <item>
       <title>Amazon LinuxをVagrantで使いたい</title>
-      <link>http://localhost:1313/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/</link>
+      <link>http://yet.unresolved.xyz/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/</link>
       <pubDate>Wed, 26 Aug 2015 23:12:02 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/</guid>
       <description>
 
 &lt;p&gt;開発はCentOS、本番はAmazonLinuxにしようとしたら意外と違うところが多くてProvisioningがだるかったので。&lt;/p&gt;
@@ -83,7 +83,7 @@ MySQLの設定を変えなきゃいけないと思い込んでいて、RDSを使
 
 &lt;p&gt;こんな感じに。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2015-08-26/bucket.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2015-08-26/bucket.png&#34; alt=&#34;bucket&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-08-26/bucket.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-08-26/bucket.png&#34; alt=&#34;bucket&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;そしたら違うエラー。&lt;/p&gt;
 
@@ -129,10 +129,10 @@ Ubuntu 12.04、12.10、13.04、13.10、14.04、14.10&lt;/p&gt;
     
     <item>
       <title>ClojureのWebアプリをDocker &#43; Beanstalkで動かす</title>
-      <link>http://localhost:1313/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</link>
+      <link>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</link>
       <pubDate>Wed, 31 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</guid>
       <description>
 
 &lt;p&gt;たぶんこういうのはドキュメント読んでもわからないので、とにかく一通りの流れを実践してみる。&lt;/p&gt;
@@ -190,7 +190,7 @@ e9981a715899        clojure:aws         &amp;quot;/bin/bash -c &#39;cd /h   4 se
 
 &lt;p&gt;このIPの3000ポートに向けてアクセスすれば、&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2015-01-01/webapp.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2015-01-01/webapp.png&#34; alt=&#34;webapp&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-01/webapp.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-01/webapp.png&#34; alt=&#34;webapp&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;見れます。&lt;/p&gt;
 
@@ -261,7 +261,7 @@ CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/product
 13:33:07.710 [main] INFO  superapp.main - serving status message
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2015-01-01/beanstalkDockerApp.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2015-01-01/beanstalkDockerApp.png&#34; alt=&#34;beanstalkDockerApp&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-01/beanstalkDockerApp.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-01/beanstalkDockerApp.png&#34; alt=&#34;beanstalkDockerApp&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;デプロイ:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;デプロイ&lt;/h3&gt;
 
@@ -274,7 +274,7 @@ CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/product
 
 &lt;p&gt;デプロイはこんな感じで成功。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2015-01-01/deploy.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2015-01-01/deploy.png&#34; alt=&#34;deploy&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-01/deploy.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-01/deploy.png&#34; alt=&#34;deploy&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;しかしデプロイは結構時間かかるなー。
 Javaの起動とかライブラリのダウンロードで食ってるのかな・・・。&lt;/p&gt;

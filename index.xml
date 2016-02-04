@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved</title>
-    <link>http://localhost:1313/</link>
+    <link>http://yet.unresolved.xyz/</link>
     <description>Recent content on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 04 Feb 2016 18:00:44 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://yet.unresolved.xyz/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>MySQL5.6&#43;ruby-mysql2でlibmysqlclient_16 not found</title>
-      <link>http://localhost:1313/blog/2016/02/04/libmysqlclient16-not-found/</link>
+      <link>http://yet.unresolved.xyz/blog/2016/02/04/libmysqlclient16-not-found/</link>
       <pubDate>Thu, 04 Feb 2016 18:00:44 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2016/02/04/libmysqlclient16-not-found/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2016/02/04/libmysqlclient16-not-found/</guid>
       <description>&lt;p&gt;せっかくなのでMySQLを5.5から5.6にして使おうとしたらエラーした。
 MySQL5.6のインストールはこの記事が非常に分かりやすかった。&lt;/p&gt;
 
@@ -38,10 +38,10 @@ MySQL5.6のインストールはこの記事が非常に分かりやすかった
     
     <item>
       <title>Rails&#43;RDSでMysql2::Error: Illegal mix of collations</title>
-      <link>http://localhost:1313/blog/2016/02/04/illegal-mix-of-collations/</link>
+      <link>http://yet.unresolved.xyz/blog/2016/02/04/illegal-mix-of-collations/</link>
       <pubDate>Thu, 04 Feb 2016 17:52:48 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2016/02/04/illegal-mix-of-collations/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2016/02/04/illegal-mix-of-collations/</guid>
       <description>
 
 &lt;p&gt;エラーの全貌はこう。&lt;/p&gt;
@@ -54,7 +54,7 @@ MySQLの設定を変えなきゃいけないと思い込んでいて、RDSを使
 
 &lt;p&gt;でもRDSもMySQLの設定は変えられるらしい。そりゃそうか。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2016-02-04/params.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2016-02-04/params.png&#34; alt=&#34;params&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2016-02-04/params.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2016-02-04/params.png&#34; alt=&#34;params&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;これで直りました。&lt;/p&gt;
 
@@ -68,82 +68,11 @@ MySQLの設定を変えなきゃいけないと思い込んでいて、RDSを使
     </item>
     
     <item>
-      <title>初心者がRaspberry Piに入門した</title>
-      <link>http://localhost:1313/blog/2016/02/03/raspberry-pi-first-step/</link>
-      <pubDate>Wed, 03 Feb 2016 21:28:53 +0900</pubDate>
-      
-      <guid>http://localhost:1313/blog/2016/02/03/raspberry-pi-first-step/</guid>
-      <description>
-
-&lt;p&gt;Raspberry Piに手を出した。
-入門書とかを買ったりすればよかったんだろうけど、何も考えずに勢いで入門したので結構苦労した。
-せっかくなのでわからなかったこととか困ったことをまとめてみようかと思います。&lt;/p&gt;
-
-&lt;h2 id=&#34;入門しようと思ったきっかけ:8f46f6d44fb8bdaf0c8be4550e9574e0&#34;&gt;入門しようと思ったきっかけ&lt;/h2&gt;
-
-&lt;p&gt;会社のデスクに植物を置いてるんだけど、最後に水をあげた日を忘れそうだなと思ったんですね。
-なので、ボタンを押したら最後にボタンを押した日をディスプレイに表示しておくだけのものを作ろう、と。&lt;/p&gt;
-
-&lt;p&gt;とはいうものの、水をあげた日を忘れるわけがないし、強引に入門するための理由を作ったというのが本当のところ。
-なんかRaspberry Piは、日常生活の中に面白みを加える事が出来るような気がして、それを期待しました。&lt;/p&gt;
-
-&lt;h2 id=&#34;入門前に持っていた知識:8f46f6d44fb8bdaf0c8be4550e9574e0&#34;&gt;入門前に持っていた知識&lt;/h2&gt;
-
-&lt;p&gt;もはや完全に何もわからない状態。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;基盤を買って部品を買ってプログラムを書けばいいんでしょ？&lt;/li&gt;
-&lt;li&gt;HelloWorld的なものってあるの？&lt;/li&gt;
-&lt;li&gt;そもそも最低限必要なものはなんなの？&lt;/li&gt;
-&lt;li&gt;どうやって勉強すればいいの？&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;多分殆どの入門者がこうなんじゃないでしょうか。&lt;/p&gt;
-
-&lt;h2 id=&#34;最初に買ったもの:8f46f6d44fb8bdaf0c8be4550e9574e0&#34;&gt;最初に買ったもの&lt;/h2&gt;
-
-&lt;h2 id=&#34;追加で買ったもの:8f46f6d44fb8bdaf0c8be4550e9574e0&#34;&gt;追加で買ったもの&lt;/h2&gt;
-
-&lt;h2 id=&#34;やってよかったこと:8f46f6d44fb8bdaf0c8be4550e9574e0&#34;&gt;やってよかったこと&lt;/h2&gt;
-
-&lt;p&gt;手探りでモジュールを買ったり色々試したりした中で、
-これは正解だったなあとか、そういうポジティブなことをまとめてみます。&lt;/p&gt;
-
-&lt;h3 id=&#34;ケースはあるといい:8f46f6d44fb8bdaf0c8be4550e9574e0&#34;&gt;ケースはあるといい&lt;/h3&gt;
-
-&lt;p&gt;僕はケース付きのRaspberry Piを買ったんだけど、ケースはあってよかった。
-Raspberry Piは以外と高級感があって、基盤むき出しであれこれいじるのは嫌だなと、手元に来てから思った。&lt;/p&gt;
-
-&lt;p&gt;ケース付きの本体はケース無しのものと値段が変わらなかったりするので、どうせならケース付きを買うのがおすすめ。
-かっこいいケースは高いので慣れてきてから。&lt;/p&gt;
-
-&lt;h3 id=&#34;最初にたくさん買わないほうがいい:8f46f6d44fb8bdaf0c8be4550e9574e0&#34;&gt;最初にたくさん買わないほうがいい&lt;/h3&gt;
-
-&lt;p&gt;やってよかったというか、気をつけてよかったこと。&lt;/p&gt;
-
-&lt;p&gt;Raspberry Piのモジュールは基本的にどれも安いので、Amazonとかで見ているとたくさん買いたくなる。
-とはいえ実際に使うのは最初に買おうと思っていたものだけで、衝動買いしたものは結局使わないことが多かった。&lt;/p&gt;
-
-&lt;p&gt;なのでモジュールを買うときは、目移りしても少しずつ買い足していくのが良いと思う。
-金に糸目をつけない人は買っちゃってもいいと思うけどね。
-モジュールありきの開発っていうのもあり得ると思うし。&lt;/p&gt;
-
-&lt;h2 id=&#34;失敗だったこと:8f46f6d44fb8bdaf0c8be4550e9574e0&#34;&gt;失敗だったこと&lt;/h2&gt;
-
-&lt;p&gt;同様に早とちりしたこととか、無駄になったりしたこをもまとめます。&lt;/p&gt;
-
-&lt;h2 id=&#34;どうやって勉強すればいいのか:8f46f6d44fb8bdaf0c8be4550e9574e0&#34;&gt;どうやって勉強すればいいのか&lt;/h2&gt;
-
-&lt;h2 id=&#34;終わりに:8f46f6d44fb8bdaf0c8be4550e9574e0&#34;&gt;終わりに&lt;/h2&gt;
-</description>
-    </item>
-    
-    <item>
       <title>「教養としての日本近現代史」を読んだ</title>
-      <link>http://localhost:1313/blog/2016/01/30/japan-modern-history-as-a-liberal-arts/</link>
+      <link>http://yet.unresolved.xyz/blog/2016/01/30/japan-modern-history-as-a-liberal-arts/</link>
       <pubDate>Sat, 30 Jan 2016 19:34:21 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2016/01/30/japan-modern-history-as-a-liberal-arts/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2016/01/30/japan-modern-history-as-a-liberal-arts/</guid>
       <description>
 
 &lt;h2 id=&#34;読もうと思ったきっかけ:cc1194a6412a9c835886261dfc9dd734&#34;&gt;読もうと思ったきっかけ&lt;/h2&gt;
@@ -257,10 +186,10 @@ Raspberry Piは以外と高級感があって、基盤むき出しであれこ�
     
     <item>
       <title>crontabのValidationが出来るcrontab.guruが便利</title>
-      <link>http://localhost:1313/blog/2016/01/26/cron-validator/</link>
+      <link>http://yet.unresolved.xyz/blog/2016/01/26/cron-validator/</link>
       <pubDate>Tue, 26 Jan 2016 14:34:43 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2016/01/26/cron-validator/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2016/01/26/cron-validator/</guid>
       <description>&lt;p&gt;cron、僕は好きです。ありものでなんとか出来るところが好きです。
 でも記法はいつも忘れるんですよね。あと正しいのかどうなのかがチェックしづらい。
 そこでこの&lt;a href=&#34;http://crontab.guru/&#34;&gt;crontab.guru&lt;/a&gt;が非常に便利でした。&lt;/p&gt;
@@ -274,10 +203,10 @@ Raspberry Piは以外と高級感があって、基盤むき出しであれこ�
     
     <item>
       <title>Asset Pipelineのコンパイル対象を追加する</title>
-      <link>http://localhost:1313/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</link>
+      <link>http://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</link>
       <pubDate>Wed, 20 Jan 2016 16:15:58 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</guid>
       <description>&lt;p&gt;デフォルトだと&lt;code&gt;application.css&lt;/code&gt;とかじゃないですか。
 でも例えば管理画面を作ったりとかでごっそりデザインの違うページを作るときに少し困ったんです。&lt;/p&gt;
 
@@ -300,10 +229,10 @@ Add `Rails.application.config.assets.precompile += %w( application_target.css )`
     
     <item>
       <title>読みやすい文章のデザインとバーティカルリズム</title>
-      <link>http://localhost:1313/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/</link>
+      <link>http://yet.unresolved.xyz/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/</link>
       <pubDate>Mon, 18 Jan 2016 11:04:21 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/</guid>
       <description>
 
 &lt;p&gt;これは僕の考えをつらつらと棚卸ししているだけであって、他のサイトの批判や自惚れた感情を書き出した記事ではありません。
@@ -441,10 +370,10 @@ Add `Rails.application.config.assets.precompile += %w( application_target.css )`
     
     <item>
       <title>「君の膵臓をたべたい」を読んだ</title>
-      <link>http://localhost:1313/blog/2016/01/16/i-want-to-eat-your-pancreas/</link>
+      <link>http://yet.unresolved.xyz/blog/2016/01/16/i-want-to-eat-your-pancreas/</link>
       <pubDate>Sat, 16 Jan 2016 18:59:16 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2016/01/16/i-want-to-eat-your-pancreas/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2016/01/16/i-want-to-eat-your-pancreas/</guid>
       <description>
 
 &lt;p&gt;読みました。&lt;/p&gt;
@@ -528,10 +457,10 @@ Add `Rails.application.config.assets.precompile += %w( application_target.css )`
     
     <item>
       <title>さくらVPSでpip install lxmlがOOM Killerに殺される</title>
-      <link>http://localhost:1313/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/</link>
+      <link>http://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/</link>
       <pubDate>Tue, 12 Jan 2016 12:04:51 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/</guid>
       <description>
 
 &lt;p&gt;Python2.7 + BeautifulSoup + lxmlの環境でスクレイピングをしようとしたらlxmlがインストールできなかった。&lt;/p&gt;
@@ -599,10 +528,10 @@ $ sudo rm /swapfile
     
     <item>
       <title>[Python]Flaskアプリをnginx &#43; uWSGIでさくらVPSにデプロイする</title>
-      <link>http://localhost:1313/blog/2016/01/08/deploying-flask-app-to-sakura-vps/</link>
+      <link>http://yet.unresolved.xyz/blog/2016/01/08/deploying-flask-app-to-sakura-vps/</link>
       <pubDate>Fri, 08 Jan 2016 10:57:35 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2016/01/08/deploying-flask-app-to-sakura-vps/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2016/01/08/deploying-flask-app-to-sakura-vps/</guid>
       <description>
 
 &lt;p&gt;CentOS6.5、Python2.7でやります。&lt;/p&gt;
@@ -759,41 +688,11 @@ exec $UWSGI --ini /path/to/wsgi.ini
     </item>
     
     <item>
-      <title>vagrant up時にmountが失敗する</title>
-      <link>http://localhost:1313/blog/2016/01/07/virtualbox-mount-failed/</link>
-      <pubDate>Thu, 07 Jan 2016 21:53:01 +0900</pubDate>
-      
-      <guid>http://localhost:1313/blog/2016/01/07/virtualbox-mount-failed/</guid>
-      <description>
-
-&lt;p&gt;これ前にもなった気がするなあ。その時は意外とさくっと直せた気がするんだけど、どうやって直したか覚えてない・・・。&lt;/p&gt;
-
-&lt;p&gt;こちらの記事が非常に参考になりました。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://tech.withsin.net/2015/07/10/virtualbox-vagrant-mount-fail/&#34;&gt;VirtualBoxの/vagrantがマウントに失敗 | technote&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;僕はこの記事の、&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;VirtualBox Guest Additions&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;に該当してたようで、当該の操作をしたら直りました。&lt;/p&gt;
-
-&lt;p&gt;そして残念なことにエラーログを取得しそこねた。&lt;/p&gt;
-
-&lt;h2 id=&#34;参考にさせていただきました:73daaa0674d5a9de9870df04f54dfeb7&#34;&gt;参考にさせていただきました&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://tech.withsin.net/2015/07/10/virtualbox-vagrant-mount-fail/&#34;&gt;VirtualBoxの/vagrantがマウントに失敗 | technote&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>「GRAVITY DAZE」をやった</title>
-      <link>http://localhost:1313/blog/2016/01/02/played-gravity-daze/</link>
+      <link>http://yet.unresolved.xyz/blog/2016/01/02/played-gravity-daze/</link>
       <pubDate>Sat, 02 Jan 2016 22:36:11 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2016/01/02/played-gravity-daze/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2016/01/02/played-gravity-daze/</guid>
       <description>
 
 &lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/B015DSR5SS/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B015DSR5SS&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;GRAVITY DAZE 重力的眩暈:上層への帰還において、彼女の内宇宙に生じた摂動&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=B015DSR5SS&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
@@ -900,139 +799,11 @@ exec $UWSGI --ini /path/to/wsgi.ini
     </item>
     
     <item>
-      <title>ドラゴンエイジインクイジションを3周もやった</title>
-      <link>http://localhost:1313/blog/2015/12/31/played-dragon-age-inquisition/</link>
-      <pubDate>Thu, 31 Dec 2015 21:13:20 +0900</pubDate>
-      
-      <guid>http://localhost:1313/blog/2015/12/31/played-dragon-age-inquisition/</guid>
-      <description>
-
-&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/B00JRUJIPW/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B00JRUJIPW&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;ドラゴンエイジ:インクイジション (通常版)&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=B00JRUJIPW&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;3周もやったくらいだし結構楽しめた。DLCも全部買ってしまったぜ。&lt;/p&gt;
-
-&lt;h2 id=&#34;ストーリーの分厚さ:58c8bb317b0683280dea61dd9a265995&#34;&gt;ストーリーの分厚さ&lt;/h2&gt;
-
-&lt;p&gt;ものすごく作りこまれてると思った、最後の方とかコリーフィウス半分ヤケじゃんって感じだけど、それもそれでよかった。&lt;/p&gt;
-
-&lt;p&gt;物語中の分岐も、おそらく網羅は無理なんじゃないかってくらい多くて、ちゃんとストーリーを進めてる実感が持てた。
-逆に次何すればいいんだっけって思うこともあったけど、次することが決まってるのって逆にリアリティがないとも言えるよね。&lt;/p&gt;
-
-&lt;p&gt;あと主人公の職が魔道士とそうじゃない時で節々が変わるんだよね、あれもちゃんと作られてるなと思った。&lt;/p&gt;
-
-&lt;h3 id=&#34;わかりにくいところが多い:58c8bb317b0683280dea61dd9a265995&#34;&gt;わかりにくいところが多い&lt;/h3&gt;
-
-&lt;p&gt;僕はこれ、シリーズを1個もやったこともないんですよね。
-だから正直、ストーリーの土台が全然わからなかったんですよ。&lt;/p&gt;
-
-&lt;p&gt;いや、やったことないから、ってだけじゃない気がするな、固有名詞がすごく多かった気がする。&lt;/p&gt;
-
-&lt;p&gt;あと説明が少ないよね、コーデックスっていう機能で単語の意味や登場人物の紹介は見れるから、そこは親切だなと思ったけどね。&lt;/p&gt;
-
-&lt;h3 id=&#34;現実味がある:58c8bb317b0683280dea61dd9a265995&#34;&gt;現実味がある&lt;/h3&gt;
-
-&lt;p&gt;スカイホールドへの引っ越しとかすごくいいよね、拠点が襲われてどうしょうもなくなるとかマジかよと思った。&lt;/p&gt;
-
-&lt;p&gt;あとあれだね、ヘイブンが襲われてる時に住民を助けることが出来るんだけど、あれ間に合わないんだよね。
-僕が下手なだけなんだけどね。&lt;/p&gt;
-
-&lt;p&gt;そこも現実味があってよかったな、悲しかったけど。&lt;/p&gt;
-
-&lt;p&gt;助けられないとスカイホールドでいなくなってるんだよね。&lt;/p&gt;
-
-&lt;h2 id=&#34;登場人物の過去が良い:58c8bb317b0683280dea61dd9a265995&#34;&gt;登場人物の過去が良い&lt;/h2&gt;
-
-&lt;p&gt;個人的に一番好きだったのはブラックウォールの個人クエストでしたね。&lt;/p&gt;
-
-&lt;p&gt;スカイホールドに移動してからも、随分こう、詮索を嫌がるなあという印象はあったんだよね。
-だけど少しずつ仲良くなって来てるなあという実感もあって、そのタイミングでのクエスト発生だから結構ハラハラした。&lt;/p&gt;
-
-&lt;p&gt;このゲームはあれだよね、主要メンバーの離脱があるから現実味があるよね。&lt;/p&gt;
-
-&lt;p&gt;実は3周もしたのはそれが理由だったりします。メインで戦ってたメンバーが離脱した &amp;amp; することがわかったから。&lt;/p&gt;
-
-&lt;p&gt;ドリアンの話も良かったな、なんかこう、本当に現実世界でも問題になっている事象を取り上げてるよね。&lt;/p&gt;
-
-&lt;h3 id=&#34;メインメンバー:58c8bb317b0683280dea61dd9a265995&#34;&gt;メインメンバー&lt;/h3&gt;
-
-&lt;p&gt;1周目はカサンドラを使ってたんだよね、でも教皇になってしまわれまして、2周目に入ったわけです。&lt;/p&gt;
-
-&lt;p&gt;あとセラが好きでどの周でも使ってたな、あのひねくれた感じが凄く好き。
-でもあいつ会話でどの選択肢選んでもだいたい好感度下がるんだよね、気難しい。&lt;/p&gt;
-
-&lt;p&gt;あとなんだっけあいつ、魔道士の人、マダムって言われてた人、ヴィヴィエンヌか。
-あいつも良いかなと思ったんだけど、旅の道中でメンバーと喧嘩するのでやめました、仲良くしてほしい。&lt;/p&gt;
-
-&lt;p&gt;アイアンブルもお気に入りだった、頼りがいあるよね。
-でもあいつめっちゃ紙装甲なんだよね、意識した装備してもすぐやられちゃう。&lt;/p&gt;
-
-&lt;h2 id=&#34;職種はもうちょいいろいろ欲しかった:58c8bb317b0683280dea61dd9a265995&#34;&gt;職種はもうちょいいろいろ欲しかった&lt;/h2&gt;
-
-&lt;p&gt;最初は主人公をローグにしたんだよね、二刀でズバズバ斬って戦いたいなあと思ったので。&lt;/p&gt;
-
-&lt;p&gt;まあ言われてる通り装甲は結構弱い感じあったけど、火力が高いから戦いやすかった。デスブロウとか威力やばい。&lt;/p&gt;
-
-&lt;p&gt;しかし2次職はあんまり魅力的なのがないね、アサシンにしたんだけど、あんまりパッとした感じはなかった。&lt;/p&gt;
-
-&lt;p&gt;2週目は魔道士にした。2次で裂け目の魔道士。&lt;/p&gt;
-
-&lt;p&gt;魔道士もすごく火力が高くてよかった。火の地雷のやつとか当たりにくい反面ダメージがチートレベルだし。
-でもこれも2次はあんまり魅力的じゃなかったなあ、まあメテオみたいなやつは派手でよかったけどね。
-もっとこう、大魔法みたいなのがあったらよかったな。&lt;/p&gt;
-
-&lt;p&gt;3週目はまたローグをやった、こっちはテンペスト。&lt;/p&gt;
-
-&lt;p&gt;サウザンドカットは派手でいいね、強いし。
-でもそれ以外はまあこれもパッとしなかったかな。職種はちょっと不満かも。&lt;/p&gt;
-
-&lt;h2 id=&#34;戦闘ももうちょい頑張れたのでは:58c8bb317b0683280dea61dd9a265995&#34;&gt;戦闘ももうちょい頑張れたのでは&lt;/h2&gt;
-
-&lt;p&gt;戦闘システムはすごく作りこまれてるなと思った、戦略立てて戦ったり、アクション的に戦ったり。&lt;/p&gt;
-
-&lt;p&gt;でも少し退屈しちゃうことも多かったな、多分これは敵が悪いんじゃないかな。
-回避も離れればいいだけだし、AIも優秀で後は攻撃しっぱなしで余裕で乗りきれてしまった。&lt;/p&gt;
-
-&lt;p&gt;ドラゴンの動きも単調だよね、10体居るけど全部同じ動き。&lt;/p&gt;
-
-&lt;h2 id=&#34;バツボタンで決定はダメだと思う:58c8bb317b0683280dea61dd9a265995&#34;&gt;バツボタンで決定はダメだと思う&lt;/h2&gt;
-
-&lt;p&gt;このゲームはバツボタンが決定で、マルボタンがキャンセルなんですよね。&lt;/p&gt;
-
-&lt;p&gt;これのせいで他のゲームがすごく辛くなった。&lt;/p&gt;
-
-&lt;p&gt;バツはバツでしょ、マルはマルでしょ。せめて設定で変えられるようにして欲しかったな。&lt;/p&gt;
-
-&lt;h2 id=&#34;欠片集めが非常にめんどう:58c8bb317b0683280dea61dd9a265995&#34;&gt;欠片集めが非常にめんどう&lt;/h2&gt;
-
-&lt;p&gt;ゲームで面倒って感じるプレイヤーってどうなのって思うけど、これはだるかったなあ。&lt;/p&gt;
-
-&lt;p&gt;なんていうか、楽しくないギミックが入ってたりしてわかりづらいんだよね、オキュラルム見つからないし、達成感もないし。
-1周目はちゃんとやったけど、2周目以降は一切拾わなかったな。&lt;/p&gt;
-
-&lt;h2 id=&#34;dlcは結構満足した:58c8bb317b0683280dea61dd9a265995&#34;&gt;DLCは結構満足した&lt;/h2&gt;
-
-&lt;p&gt;実はまだクリア出来てないんだな、なんだっけ、最後のやつ。招かれざる客だっけ。
-あれだけまだ終わらせられてない。&lt;/p&gt;
-
-&lt;p&gt;あれの途中で、アイアンブルが抜けるってことがわかってやめて、3周目に入ったんだよね、本編のフラグ立ててないやってことに気づいて。&lt;/p&gt;
-
-&lt;p&gt;とは言え個人的にDLCは結構満足したかな、ハコンの顎とかすごく楽しめた。
-村の聖獣だっけ、あの話とかすごく良いよね、あれで一致団結してハコンの顎に攻め込むとことか。&lt;/p&gt;
-
-&lt;p&gt;地底世界はボスまでが少しマンネリしたけどね、ボスは一番苦戦したわ、正直無理かなって思った。&lt;/p&gt;
-
-&lt;p&gt;だらだら書いたけど楽しめるゲームでしたよ、次作が出たらほぼ確実に買う。&lt;/p&gt;
-
-&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/B00JRUJIPW/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B00JRUJIPW&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;ドラゴンエイジ:インクイジション (通常版)&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=B00JRUJIPW&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>電子書籍に移行したい</title>
-      <link>http://localhost:1313/blog/2015/12/24/want-to-migrate-to-e-books/</link>
+      <link>http://yet.unresolved.xyz/blog/2015/12/24/want-to-migrate-to-e-books/</link>
       <pubDate>Thu, 24 Dec 2015 11:07:10 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2015/12/24/want-to-migrate-to-e-books/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2015/12/24/want-to-migrate-to-e-books/</guid>
       <description>
 
 &lt;p&gt;あー、クリスマスですね、クリスマスに日記か・・・、でもせっかく書く気になったし書くよ。&lt;/p&gt;
@@ -1109,10 +880,10 @@ exec $UWSGI --ini /path/to/wsgi.ini
     
     <item>
       <title>「Until Dawn - 惨劇の山荘」をやった</title>
-      <link>http://localhost:1313/blog/2015/12/21/played-until-dawn/</link>
+      <link>http://yet.unresolved.xyz/blog/2015/12/21/played-until-dawn/</link>
       <pubDate>Mon, 21 Dec 2015 10:39:11 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/2015/12/21/played-until-dawn/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2015/12/21/played-until-dawn/</guid>
       <description>
 
 &lt;p&gt;ホラーっぽかったから避けてたんだけど結局やりました。&lt;/p&gt;
@@ -1187,6 +958,215 @@ Until Dawnのそれは本当に興味をひかれる作りになっていたな�
 &lt;p&gt;今日はFallout4とGRAVITY DAZEを買って帰ろう。&lt;/p&gt;
 
 &lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/B00YGXGVNW/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B00YGXGVNW&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;Until Dawn -惨劇の山荘-&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=B00YGXGVNW&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ACCOUNT KILLERというサービスが面白い</title>
+      <link>http://yet.unresolved.xyz/blog/2015/12/17/about-account-killer/</link>
+      <pubDate>Thu, 17 Dec 2015 10:39:55 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/12/17/about-account-killer/</guid>
+      <description>
+
+&lt;p&gt;WordPress.comとGravatarを退会しようと思ったんだけどなんか退会画面が見つからない。&lt;/p&gt;
+
+&lt;p&gt;いろいろ調べてみるとこの記事に行き着いた。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://d.hatena.ne.jp/m-hiyama/20150915/1442277074&#34;&gt;WordPress.comとGravatarのアカウントは一度登録したら何があっても絶対に削除できない - 檜山正幸のキマイラ飼育記&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;WordPress.comとGravatarのアカウントは一度登録したら何があっても絶対に削除できない！？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;まじかよ、なんてひどいサービスだ。&lt;/p&gt;
+
+&lt;p&gt;それはまあよくて、どっちにしろWordPressがひどいのは知ってたし。&lt;/p&gt;
+
+&lt;p&gt;この記事で紹介されてるACCOUNT KILLERというサービスが面白かった。&lt;/p&gt;
+
+&lt;h2 id=&#34;account-killer:283d2a7a74a226c22e2344c11ac9de1b&#34;&gt;ACCOUNT KILLER？&lt;/h2&gt;
+
+&lt;p&gt;先の記事を引用させてもらうと、&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;ここは、Webサイト／サービスをホワイトリスト（退会容易）とブラックリスト（退会困難）に分けていて、Gravatarはブラック。ブラックもブラック、なんと退会が不可能なのです。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;世の中の有名なサービスの退会難易度をまとめてくれてるらしい。先にこれ見ときゃよかったなー。&lt;/p&gt;
+
+&lt;p&gt;退会出来ないサービスなんて登録したくないよね。さすがWordPress。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考にさせていただきました:283d2a7a74a226c22e2344c11ac9de1b&#34;&gt;参考にさせていただきました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://d.hatena.ne.jp/m-hiyama/20150915/1442277074&#34;&gt;WordPress.comとGravatarのアカウントは一度登録したら何があっても絶対に削除できない - 檜山正幸のキマイラ飼育記&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>今更だけどBloodborneをやってる</title>
+      <link>http://yet.unresolved.xyz/blog/2015/12/15/playing-blood-borne/</link>
+      <pubDate>Tue, 15 Dec 2015 14:32:45 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/12/15/playing-blood-borne/</guid>
+      <description>
+
+&lt;p&gt;このブログもようわからんから、日記にしようかな、更新頻度あげたい。&lt;/p&gt;
+
+&lt;p&gt;BloodborneのDLCが出たらしいですね、Old Huntersとかいう。これを機にBloodborneをちゃんとやってます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/B015DSR5HE/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B015DSR5HE&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;Bloodborne The Old Hunters Edition 初回限定版&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=B015DSR5HE&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;そもそもなんで今さらなのかと言うと、僕がこれをやり始めたのは発売当時のロードが糞遅い頃で、あの遅さに耐えられなかったんですね。まあいまでもそんなに早くないけど。&lt;/p&gt;
+
+&lt;p&gt;あと僕が下手くそすぎて死にまくったっていうのもあります、三國無双的なノリでやったのが悪かったです。
+ていうか最初は回避が糞下手でさ、回避ってロックオンしてる時としてない時で随分変わるでしょ、あれに気づかずミスりまくったんだよね。&lt;/p&gt;
+
+&lt;p&gt;あとあと、僕がオンラインプレイを毛嫌いしてたからなのもありますね、なんかマイペースにやりたくてさ、オンラインが面白いのに。&lt;/p&gt;
+
+&lt;h2 id=&#34;オンラインはやっぱ面白い:7517338e3e9f1beceb18ca47100cf1fd&#34;&gt;オンラインはやっぱ面白い&lt;/h2&gt;
+
+&lt;p&gt;お手伝いに行くのも来てもらうのもめっちゃいいですね、楽しい。&lt;/p&gt;
+
+&lt;p&gt;ジェスチャーだけでしかコミュニケーションが取れないところも好き、一期一会だね。&lt;/p&gt;
+
+&lt;p&gt;たまにワールドワイドでプレイして、海外の人の世界に行ったりするとまた違うものもありますね。
+挨拶も無しに突っ込んで行ったりして、あー文化が違うのかなーとか少し感じたりします。&lt;/p&gt;
+
+&lt;p&gt;ていうか僕は結構突っ込んで死ぬタイプなので、チェックポイントまでが結構長いこのゲームはあんまり向いてないんですよね。&lt;/p&gt;
+
+&lt;p&gt;だからお手伝いさんに来てもらわないと全然進めない。ほんと助かってます。&lt;/p&gt;
+
+&lt;h2 id=&#34;レベル上げすぎて辛い:7517338e3e9f1beceb18ca47100cf1fd&#34;&gt;レベル上げすぎて辛い&lt;/h2&gt;
+
+&lt;p&gt;僕は結構、どのゲームでも最初の方のステージでグダグダやるのが好きなんです。ヘタレなんでね。&lt;/p&gt;
+
+&lt;p&gt;だからこのゲームも最初の方のステージでお手伝いしまくってたらレベルが上がりすぎてしまって、
+最近は、2周目なのかなんなのかわからないけどめちゃくちゃ強い人の世界に迷い込んだりするんですね。&lt;/p&gt;
+
+&lt;p&gt;そういう人の世界の敵ってめっちゃくちゃ強いから、ほんと、ただの足手まとい。&lt;/p&gt;
+
+&lt;p&gt;レベル差はなんか調べたところ20差までしかマッチングしない？とかなんかあるみたいですね、むやみに上げすぎました。&lt;/p&gt;
+
+&lt;p&gt;あ、そうはいってもまだ65です。えっと、どこだっけな、隠し街ヤハグルのボスを倒して、メンシスの悪夢に行こうとしてるところ。&lt;/p&gt;
+
+&lt;p&gt;千景ほしいんだよね、お金稼ぎしなきゃ。&lt;/p&gt;
+
+&lt;h2 id=&#34;たまに友達が出来る:7517338e3e9f1beceb18ca47100cf1fd&#34;&gt;たまに友達が出来る&lt;/h2&gt;
+
+&lt;p&gt;なんかたまにすっげー強い人に手伝ってもらったりして、なんかメッセージもらったりしてます。&lt;/p&gt;
+
+&lt;p&gt;日本人じゃない人が多めなのかな、千景の読み方を教えたり英語でやりとりしたりなんか新鮮です。&lt;/p&gt;
+
+&lt;h2 id=&#34;とりあえずdlcエリアに行きたい:7517338e3e9f1beceb18ca47100cf1fd&#34;&gt;とりあえずDLCエリアに行きたい&lt;/h2&gt;
+
+&lt;p&gt;とは言え全クリするつもりはなくて、多分全クリするとDLCエリア行けないよね？
+つってもDLCまだ買ってないんだけどね、ラスボス手前まで行ってDLCの方やろうかなあとは思ってます。&lt;/p&gt;
+
+&lt;p&gt;取りこぼしも結構あるんだよなあ、黒獣パール倒し損ねたし。あそこのマップ強すぎない？人攫いの人マジで倒せなくてスルーしてたらいつのまにか行けなくなっちゃったよ。&lt;/p&gt;
+
+&lt;h2 id=&#34;gravity-dazeもやりたい:7517338e3e9f1beceb18ca47100cf1fd&#34;&gt;GRAVITY DAZEもやりたい&lt;/h2&gt;
+
+&lt;p&gt;一段落してないけどもう買っちゃおう。&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/B015DSR5HE/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B015DSR5HE&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;Bloodborne The Old Hunters Edition 初回限定版&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=B015DSR5HE&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/B015DSR5SS/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B015DSR5SS&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;GRAVITY DAZE 重力的眩暈:上層への帰還において、彼女の内宇宙に生じた摂動&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=B015DSR5SS&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Googleの構造化データの扱いが変わった気がする</title>
+      <link>http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</link>
+      <pubDate>Fri, 11 Dec 2015 11:22:28 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</guid>
+      <description>
+
+&lt;p&gt;このブログも、他の運営してるサイトも、今日になってエラーが発生するようになった。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/structured-data/testing-tool/&#34;&gt;Structured Data Testing Tool&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;エラーは2種類発生していて、ひとつめがこれ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-12-11/error1.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-12-11/error1.png&#34; alt=&#34;error&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;もうひとつがこれ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-12-11/error2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-12-11/error2.png&#34; alt=&#34;error&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;あれ？&lt;code&gt;author&lt;/code&gt;はもともと必須だっけ？&lt;/p&gt;
+
+&lt;h2 id=&#34;構造化データ:1cba147eb8c5721b87c65951056c9faa&#34;&gt;構造化データ？&lt;/h2&gt;
+
+&lt;p&gt;マイクロデータとかって呼ばれたりもする。&lt;/p&gt;
+
+&lt;p&gt;HTMLにもう少し踏み込んだ側面的な意味を持たせるためのもの。&lt;/p&gt;
+
+&lt;p&gt;Googleの説明が、どのように使われるかも記載されていてわかりやすい。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/structured-data/&#34;&gt;Promote Your Content with Structured Data Markup  |  Structured Data  |  Google Developers&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;エラーの原因:1cba147eb8c5721b87c65951056c9faa&#34;&gt;エラーの原因&lt;/h2&gt;
+
+&lt;p&gt;今回はArticleの&lt;code&gt;image&lt;/code&gt;とか&lt;code&gt;publisher&lt;/code&gt;もろもろでエラーが発生しました。&lt;/p&gt;
+
+&lt;p&gt;これまでは大丈夫だったのになんでだろう。&lt;/p&gt;
+
+&lt;p&gt;この記載を見ると、どうやら構造が間違っているらしい。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/structured-data/rich-snippets/articles?hl=ja&#34;&gt;Enabling Rich Snippets for Articles  |  Structured Data  |  Google Developers&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;imageプロパティ:1cba147eb8c5721b87c65951056c9faa&#34;&gt;imageプロパティ&lt;/h3&gt;
+
+&lt;p&gt;これまで僕は、画像要素を次のように記載していたのだけど、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;meta itemprop=&amp;quot;image&amp;quot; content=&amp;quot;http://example.com/images/10999.jpg&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こう記載するのが正しいようだ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div itemprop=&amp;quot;image&amp;quot; itemscope itemtype=&amp;quot;https://schema.org/ImageObject&amp;quot;&amp;gt;
+  &amp;lt;img src=&amp;quot;https://google.com/thumbnail1.jpg&amp;quot;/&amp;gt;
+  &amp;lt;meta itemprop=&amp;quot;url&amp;quot; content=&amp;quot;https://google.com/thumbnail1.jpg&amp;quot;&amp;gt;
+  &amp;lt;meta itemprop=&amp;quot;width&amp;quot; content=&amp;quot;800&amp;quot;&amp;gt;
+  &amp;lt;meta itemprop=&amp;quot;height&amp;quot; content=&amp;quot;800&amp;quot;&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;ImageObject&lt;/code&gt;の子で居なきゃいけないんだね。&lt;/p&gt;
+
+&lt;p&gt;さらに&lt;code&gt;width&lt;/code&gt;と&lt;code&gt;height&lt;/code&gt;も必須になってる。
+前は要らなかったような記憶があるんだけど・・・。&lt;/p&gt;
+
+&lt;h3 id=&#34;publisherプロパティ:1cba147eb8c5721b87c65951056c9faa&#34;&gt;publisherプロパティ&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;publisher&lt;/code&gt;はこう記載されている。&lt;/p&gt;
+
+&lt;p&gt;これは運営元の組織を指すのかな。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div itemprop=&amp;quot;publisher&amp;quot; itemscope itemtype=&amp;quot;https://schema.org/Organization&amp;quot;&amp;gt;
+  &amp;lt;div itemprop=&amp;quot;logo&amp;quot; itemscope itemtype=&amp;quot;https://schema.org/ImageObject&amp;quot;&amp;gt;
+    &amp;lt;img src=&amp;quot;https://google.com/logo.jpg&amp;quot;/&amp;gt;
+    &amp;lt;meta itemprop=&amp;quot;url&amp;quot; content=&amp;quot;https://google.com/logo.jpg&amp;quot;&amp;gt;
+    &amp;lt;meta itemprop=&amp;quot;width&amp;quot; content=&amp;quot;600&amp;quot;&amp;gt;
+    &amp;lt;meta itemprop=&amp;quot;height&amp;quot; content=&amp;quot;60&amp;quot;&amp;gt;
+  &amp;lt;/div&amp;gt;
+  &amp;lt;meta itemprop=&amp;quot;name&amp;quot; content=&amp;quot;Google&amp;quot;&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;nameプロパティ:1cba147eb8c5721b87c65951056c9faa&#34;&gt;nameプロパティ&lt;/h3&gt;
+
+&lt;p&gt;何故かこのエラーだけどうやっても消えない。&lt;/p&gt;
+
+&lt;p&gt;謎なので分かり次第追記しよう。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;追記&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;この記事を書き終えてから再度試してみたら消えました。&lt;/p&gt;
+
+&lt;p&gt;Structured Data Testing Tool自体が改修中だったのだろうか。&lt;/p&gt;
+
+&lt;p&gt;どちらにせよこの辺はこれからも随時変わっていくポイントだろうから、定期的にチェックと対応をしていかなきゃいけないですね。&lt;/p&gt;
 </description>
     </item>
     
