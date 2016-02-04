@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.16-DEV" />
+    <meta name="generator" content="Hugo 0.15-DEV" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans|Lobster'>
@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/custom.css">
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz//index.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:1313//index.xml">
 
     
     <title>OWASP ZAPでBASIC認証を突破する - Unresolved</title>
@@ -19,7 +19,7 @@
     <meta property="og:type" content="article">
     
 
-    <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/">
+    <meta property="og:url" content="http://localhost:1313/blog/2015/09/30/using-basic-auth-in-owasp-zap/">
     
     
 
@@ -29,7 +29,7 @@
 
     <div class="container-fluid">
       <header class="site">
-        <div class="title"><a href="http://yet.unresolved.xyz/">Unresolved</a></div>
+        <div class="title"><a href="http://localhost:1313/">Unresolved</a></div>
       </header>
     </div>
 
@@ -39,19 +39,19 @@
 <div class="single">
   <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
 
-    <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz/"/>
+    <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://localhost:1313/"/>
     <meta itemprop="dateModified" content="2015-09-30T16:24:53&#43;09:00">
     <meta itemprop="headline" content="OWASP ZAPでBASIC認証を突破する">
     <meta itemprop="description" content="調べても意外と見つからない。 要はリクエストヘッダに認証情報をくっつけられればいいんだけどその方法がわからない。 リクエストヘッダに情報を差し込">
-    <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/">
+    <meta itemprop="url" content="http://localhost:1313/blog/2015/09/30/using-basic-auth-in-owasp-zap/">
     <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="http://yet.unresolved.xyz/images/default.jpg" />
+      <meta itemprop="url" content="http://localhost:1313/images/default.jpg" />
       <meta itemprop="width" content="800">
       <meta itemprop="height" content="800">
     </div>
     <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
       <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-        <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.jpg">
+        <meta itemprop="url" content="http://localhost:1313/images/logo.jpg">
         <meta itemprop="width" content="100">
         <meta itemprop="height" content="100">
       </div>
@@ -65,7 +65,7 @@
 
       <div class="clearfix">
 
-        <div class="image" style="background-image: url(http://yet.unresolved.xyz/images/default.jpg);"></div>
+        <div class="image" style="background-image: url(http://localhost:1313/images/default.jpg);"></div>
         <div class="detail">
           <time itemprop="datePublished" pubdate="pubdate" datetime="2015-09-30T16:24:53&#43;09:00">Wed, Sep 30, 2015</time>
           
@@ -74,10 +74,10 @@
       </div>
 
       <div class="share">
-        <a href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f09%2f30%2fusing-basic-auth-in-owasp-zap%2f&t=OWASP%20ZAP%e3%81%a7BASIC%e8%aa%8d%e8%a8%bc%e3%82%92%e7%aa%81%e7%a0%b4%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
-        <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f09%2f30%2fusing-basic-auth-in-owasp-zap%2f&text=OWASP%20ZAP%e3%81%a7BASIC%e8%aa%8d%e8%a8%bc%e3%82%92%e7%aa%81%e7%a0%b4%e3%81%99%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
-        <a href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f09%2f30%2fusing-basic-auth-in-owasp-zap%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
-        <a href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f09%2f30%2fusing-basic-auth-in-owasp-zap%2f&title=OWASP%20ZAP%e3%81%a7BASIC%e8%aa%8d%e8%a8%bc%e3%82%92%e7%aa%81%e7%a0%b4%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+        <a href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2flocalhost%3a1313%2fblog%2f2015%2f09%2f30%2fusing-basic-auth-in-owasp-zap%2f&t=OWASP%20ZAP%e3%81%a7BASIC%e8%aa%8d%e8%a8%bc%e3%82%92%e7%aa%81%e7%a0%b4%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
+        <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2flocalhost%3a1313%2fblog%2f2015%2f09%2f30%2fusing-basic-auth-in-owasp-zap%2f&text=OWASP%20ZAP%e3%81%a7BASIC%e8%aa%8d%e8%a8%bc%e3%82%92%e7%aa%81%e7%a0%b4%e3%81%99%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
+        <a href="https://plus.google.com/share?url=http%3a%2f%2flocalhost%3a1313%2fblog%2f2015%2f09%2f30%2fusing-basic-auth-in-owasp-zap%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
+        <a href="http://getpocket.com/edit?url=http%3a%2f%2flocalhost%3a1313%2fblog%2f2015%2f09%2f30%2fusing-basic-auth-in-owasp-zap%2f&title=OWASP%20ZAP%e3%81%a7BASIC%e8%aa%8d%e8%a8%bc%e3%82%92%e7%aa%81%e7%a0%b4%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
       </div>
 
     </header>
@@ -117,7 +117,7 @@
 
     <aside>
 
-      <div class="section"><a href="http://yet.unresolved.xyz/tags/security" class="tag">security</a><a href="http://yet.unresolved.xyz/tags/owasp-zap" class="tag">owasp-zap</a></div>
+      <div class="section"><a href="http://localhost:1313/tags/security" class="tag">security</a><a href="http://localhost:1313/tags/owasp-zap" class="tag">owasp-zap</a></div>
 
       
       
@@ -154,6 +154,9 @@
     </script>
     
 
-  </body>
+  <script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
 </html>
 

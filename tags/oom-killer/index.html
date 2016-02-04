@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.16-DEV" />
+    <meta name="generator" content="Hugo 0.15-DEV" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans|Lobster'>
@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/custom.css">
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz//index.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:1313//index.xml">
 
     
     <title>Oom Killer - Unresolved</title>
@@ -19,7 +19,7 @@
     <meta property="og:type" content="article">
     
 
-    <meta property="og:url" content="http://yet.unresolved.xyz/tags/oom-killer/">
+    <meta property="og:url" content="http://localhost:1313/tags/oom-killer/">
     
     
 
@@ -29,7 +29,7 @@
 
     <div class="container-fluid">
       <header class="site">
-        <div class="title"><a href="http://yet.unresolved.xyz/">Unresolved</a></div>
+        <div class="title"><a href="http://localhost:1313/">Unresolved</a></div>
       </header>
     </div>
 
@@ -41,16 +41,16 @@
 
   
   <article class="li">
-  <a href="http://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/" class="clearfix">
+  <a href="http://localhost:1313/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/" class="clearfix">
     <div class="pull-left">
       <div class="image-wrapper">
-        <div class="image" style="background-image: url(http://yet.unresolved.xyz/images/default.jpg);"></div>
+        <div class="image" style="background-image: url(http://localhost:1313/images/default.jpg);"></div>
       </div>
     </div>
     <div class="detail">
       <time>Tue, Jan 12, 2016</time>
       <h2 class="title">さくらVPSでpip install lxmlがOOM Killerに殺される</h2>
-      <div class="summary">Python2.7 + BeautifulSoup + lxmlの環境でスクレイピングをしようとしたらlxmlがインストールできなかった。 Installing collected packages: lxml Running setup.py install for lxml Complete output from command /opt/local/bin/python2.7 -c &quot;import setuptools, tokenize;__file__='/tmp/pip-build-9nMFdz/lxml/setup.py';exec(compile(getattr(tokenize, 'open', open)(__file__).read() .replace('\r\n', '\n'), __file__, 'exec'))&quot; install</div>
+      <div class="summary">Python2.7 + BeautifulSoup + lxmlの環境でスクレイピングをしようとしたらlxmlがインストールできなかった。 Installing collected packages: lxml Running setup.py install for lxml Complete output from command /opt/local/bin/python2.7 -c &quot;import setuptools, tokenize;__file__='/tmp/pip-build-9nMFdz/lxml/setup.py';exec(compile(getattr(tokenize, 'open', open)(__file__).read() .replace('\r\n', '\n'), __file__, 'exec'))&quot; install --record /tmp/pip-8cwa10-record/install-record.txt --single-version-externally-managed --compile: /opt/local/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'bugtrack_url' warnings.warn(msg) Building lxml version 3.4.4.</div>
     </div>
   </a>
 </article>
@@ -87,6 +87,9 @@
     </script>
     
 
-  </body>
+  <script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
 </html>
 

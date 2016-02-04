@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>E Book on Unresolved</title>
-    <link>http://yet.unresolved.xyz/tags/e-book/</link>
+    <link>http://localhost:1313/tags/e-book/</link>
     <description>Recent content in E Book on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 24 Dec 2015 11:07:10 +0900</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/tags/e-book/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/e-book/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>電子書籍に移行したい</title>
-      <link>http://yet.unresolved.xyz/blog/2015/12/24/want-to-migrate-to-e-books/</link>
+      <link>http://localhost:1313/blog/2015/12/24/want-to-migrate-to-e-books/</link>
       <pubDate>Thu, 24 Dec 2015 11:07:10 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/12/24/want-to-migrate-to-e-books/</guid>
+      <guid>http://localhost:1313/blog/2015/12/24/want-to-migrate-to-e-books/</guid>
       <description>
 
 &lt;p&gt;あー、クリスマスですね、クリスマスに日記か・・・、でもせっかく書く気になったし書くよ。&lt;/p&gt;

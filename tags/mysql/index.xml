@@ -2,19 +2,77 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mysql on Unresolved</title>
-    <link>http://yet.unresolved.xyz/tags/mysql/</link>
+    <link>http://localhost:1313/tags/mysql/</link>
     <description>Recent content in Mysql on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Sep 2015 13:44:48 +0900</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Feb 2016 18:00:44 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>MySQL5.6&#43;ruby-mysql2でlibmysqlclient_16 not found</title>
+      <link>http://localhost:1313/blog/2016/02/04/libmysqlclient16-not-found/</link>
+      <pubDate>Thu, 04 Feb 2016 18:00:44 +0900</pubDate>
+      
+      <guid>http://localhost:1313/blog/2016/02/04/libmysqlclient16-not-found/</guid>
+      <description>&lt;p&gt;せっかくなのでMySQLを5.5から5.6にして使おうとしたらエラーした。
+MySQL5.6のインストールはこの記事が非常に分かりやすかった。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.ybbo.net/2014/01/22/%E3%80%90%E3%82%B7%E3%83%B3%E3%83%97%E3%83%AB%E3%80%91centos6%E3%81%ABmysql5-6%E3%82%92yum%E3%81%A7%E7%B0%A1%E5%8D%98%E3%81%AB%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B/&#34;&gt;【シンプル】CentOS6にMySQL5.6をyumで簡単にインストールする手順 | 田舎に住みたいエンジニアの日記&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ところがRails側で&lt;code&gt;ruby-mysql2&lt;/code&gt;と接合させようとするとライブラリ参照でエラー。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;LoadError: /usr/lib64/mysql/libmysqlclient.so.18: version `libmysqlclient_16&#39; not found (required by /var/www/pj/shared/bundle/ruby/2.2.0/extensions/x86_64-linux/2.2.0-static/mysql2-0.3.18/mysql2/mysql2.so) - /var/www/pj/shared/bundle/ruby/2.2.0/extensions/x86_64-linux/2.2.0-static/mysql2-0.3.18/mysql2/mysql2.so
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;困ります。
+どうやら&lt;code&gt;ruby-mysql2&lt;/code&gt;を入れるタイミングで問題があったり、そもそもMySQL5.6のライブラリ側にバグがあるっていう話もあった。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://myfinder.hatenablog.com/entry/2013/04/22/150219&#34;&gt;MySQL5.6 だと ruby-mysql2 が入ったふりをする - まいんだーのはてなブログ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://qiita.com/pollseed/items/b7d187dbbd64b29820d4&#34;&gt;awsでcapistrano動かす作業ログ - Qiita&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;MySQLを入れたり消したりしてたら直ったので原因も対策も不明。謎。もうやめてね。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Rails&#43;RDSでMysql2::Error: Illegal mix of collations</title>
+      <link>http://localhost:1313/blog/2016/02/04/illegal-mix-of-collations/</link>
+      <pubDate>Thu, 04 Feb 2016 17:52:48 +0900</pubDate>
+      
+      <guid>http://localhost:1313/blog/2016/02/04/illegal-mix-of-collations/</guid>
+      <description>
+
+&lt;p&gt;エラーの全貌はこう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ActionView::Template::Error (Mysql2::Error: Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation &#39;like&#39;: SELECT...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;DEFAULT_CHARACTER_SET_NAME&lt;/code&gt;が&lt;code&gt;latin1&lt;/code&gt;になってしまっているらしく、&lt;code&gt;like&lt;/code&gt;検索で落ちてしまった。
+MySQLの設定を変えなきゃいけないと思い込んでいて、RDSを使っていたからどうしょうもないのかと思って結構焦った。&lt;/p&gt;
+
+&lt;p&gt;でもRDSもMySQLの設定は変えられるらしい。そりゃそうか。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2016-02-04/params.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2016-02-04/params.png&#34; alt=&#34;params&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;これで直りました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;ALTER DATABASE table_name COLLATE = &#39;utf8_general_ci&#39;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;参考にさせていただきました:4b3e93c1f0fc95c9a54247a6e176ec82&#34;&gt;参考にさせていただきました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://mariadb.com/kb/en/mariadb/setting-character-sets-and-collations/&#34;&gt;Setting Character Sets and Collations - MariaDB Knowledge Base&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>[Laravel5.1]発行されたSQLと実行計画を取得する</title>
-      <link>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</link>
+      <link>http://localhost:1313/blog/2015/09/30/get-explain-at-laravel/</link>
       <pubDate>Wed, 30 Sep 2015 13:44:48 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</guid>
+      <guid>http://localhost:1313/blog/2015/09/30/get-explain-at-laravel/</guid>
       <description>
 
 &lt;p&gt;インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしい。&lt;/p&gt;

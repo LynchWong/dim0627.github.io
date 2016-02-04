@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on Unresolved</title>
-    <link>http://yet.unresolved.xyz/tags/docker/</link>
+    <link>http://localhost:1313/tags/docker/</link>
     <description>Recent content in Docker on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 31 Dec 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>ClojureのWebアプリをDocker &#43; Beanstalkで動かす</title>
-      <link>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</link>
+      <link>http://localhost:1313/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</link>
       <pubDate>Wed, 31 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</guid>
+      <guid>http://localhost:1313/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</guid>
       <description>
 
 &lt;p&gt;たぶんこういうのはドキュメント読んでもわからないので、とにかく一通りの流れを実践してみる。&lt;/p&gt;
@@ -72,7 +72,7 @@ e9981a715899        clojure:aws         &amp;quot;/bin/bash -c &#39;cd /h   4 se
 
 &lt;p&gt;このIPの3000ポートに向けてアクセスすれば、&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-01/webapp.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-01/webapp.png&#34; alt=&#34;webapp&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2015-01-01/webapp.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2015-01-01/webapp.png&#34; alt=&#34;webapp&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;見れます。&lt;/p&gt;
 
@@ -143,7 +143,7 @@ CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/product
 13:33:07.710 [main] INFO  superapp.main - serving status message
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-01/beanstalkDockerApp.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-01/beanstalkDockerApp.png&#34; alt=&#34;beanstalkDockerApp&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2015-01-01/beanstalkDockerApp.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2015-01-01/beanstalkDockerApp.png&#34; alt=&#34;beanstalkDockerApp&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;デプロイ:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;デプロイ&lt;/h3&gt;
 
@@ -156,7 +156,7 @@ CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/product
 
 &lt;p&gt;デプロイはこんな感じで成功。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-01/deploy.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-01/deploy.png&#34; alt=&#34;deploy&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2015-01-01/deploy.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2015-01-01/deploy.png&#34; alt=&#34;deploy&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;しかしデプロイは結構時間かかるなー。
 Javaの起動とかライブラリのダウンロードで食ってるのかな・・・。&lt;/p&gt;
@@ -175,10 +175,10 @@ Javaの起動とかライブラリのダウンロードで食ってるのかな�
     
     <item>
       <title>boot2dockerでCannot connect to the Docker daemon</title>
-      <link>http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/</link>
+      <link>http://localhost:1313/blog/2014/12/30/could-not-run-docker-in-mac/</link>
       <pubDate>Tue, 30 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/</guid>
+      <guid>http://localhost:1313/blog/2014/12/30/could-not-run-docker-in-mac/</guid>
       <description>
 
 &lt;p&gt;これまでは普通に手で作ったVMのUbuntu上でDockerを触ってたんだけど、なんかあれだしboot2dockerに移行しようかと。&lt;/p&gt;

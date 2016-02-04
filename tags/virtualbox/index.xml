@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Virtualbox on Unresolved</title>
+    <link>http://localhost:1313/tags/virtualbox/</link>
+    <description>Recent content in Virtualbox on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 07 Jan 2016 21:53:01 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/virtualbox/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>vagrant up時にmountが失敗する</title>
+      <link>http://localhost:1313/blog/2016/01/07/virtualbox-mount-failed/</link>
+      <pubDate>Thu, 07 Jan 2016 21:53:01 +0900</pubDate>
+      
+      <guid>http://localhost:1313/blog/2016/01/07/virtualbox-mount-failed/</guid>
+      <description>
+
+&lt;p&gt;これ前にもなった気がするなあ。その時は意外とさくっと直せた気がするんだけど、どうやって直したか覚えてない・・・。&lt;/p&gt;
+
+&lt;p&gt;こちらの記事が非常に参考になりました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://tech.withsin.net/2015/07/10/virtualbox-vagrant-mount-fail/&#34;&gt;VirtualBoxの/vagrantがマウントに失敗 | technote&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;僕はこの記事の、&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;VirtualBox Guest Additions&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;に該当してたようで、当該の操作をしたら直りました。&lt;/p&gt;
+
+&lt;p&gt;そして残念なことにエラーログを取得しそこねた。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考にさせていただきました:73daaa0674d5a9de9870df04f54dfeb7&#34;&gt;参考にさせていただきました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://tech.withsin.net/2015/07/10/virtualbox-vagrant-mount-fail/&#34;&gt;VirtualBoxの/vagrantがマウントに失敗 | technote&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

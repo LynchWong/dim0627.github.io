@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on Unresolved</title>
-    <link>http://yet.unresolved.xyz/tags/hugo/</link>
+    <link>http://localhost:1313/tags/hugo/</link>
     <description>Recent content in Hugo on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Dec 2015 14:49:18 +0900</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>プロダクションのWordPressを捨てHugoに移行した</title>
-      <link>http://yet.unresolved.xyz/blog/2015/12/10/using-hugo-in-production/</link>
+      <link>http://localhost:1313/blog/2015/12/10/using-hugo-in-production/</link>
       <pubDate>Thu, 10 Dec 2015 14:49:18 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/12/10/using-hugo-in-production/</guid>
+      <guid>http://localhost:1313/blog/2015/12/10/using-hugo-in-production/</guid>
       <description>
 
 &lt;p&gt;あんまり仕事のことは書かないつもりだったんだけど、このブログの生成でもお世話になっている&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;を結構本気で使ったのでそのことをまとめてみます。&lt;/p&gt;
@@ -218,10 +218,10 @@ Make every program a Filter.&lt;/p&gt;
     
     <item>
       <title>Hugo0.15でSummaryが日本語に対応するっぽい</title>
-      <link>http://yet.unresolved.xyz/blog/2015/10/09/hugo-support-cjk-language/</link>
+      <link>http://localhost:1313/blog/2015/10/09/hugo-support-cjk-language/</link>
       <pubDate>Fri, 09 Oct 2015 22:15:51 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/10/09/hugo-support-cjk-language/</guid>
+      <guid>http://localhost:1313/blog/2015/10/09/hugo-support-cjk-language/</guid>
       <description>&lt;p&gt;会社のMacにも&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;をセットアップしてあるんだけど、テーマの編集とかの続きを家でやろうとしたら&lt;code&gt;.Summary&lt;/code&gt;が異なる挙動をしてることに気づいた。&lt;/p&gt;
 
 &lt;p&gt;どうやらHugoのバージョンによって、日本語の解釈がうまくいったりいかなかったりするみたい。&lt;/p&gt;
@@ -283,10 +283,10 @@ Make every program a Filter.&lt;/p&gt;
     
     <item>
       <title>Hugoでマルチバイトのタイトルをうまいこと使う</title>
-      <link>http://yet.unresolved.xyz/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/</link>
+      <link>http://localhost:1313/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/</link>
       <pubDate>Wed, 07 Jan 2015 23:56:32 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/</guid>
+      <guid>http://localhost:1313/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;でちょっと困ったこと。&lt;/p&gt;
@@ -336,10 +336,10 @@ title: &amp;quot;Hugoでマルチバイトのタイトルをスマートに使�
     
     <item>
       <title>ブログをOctopressからHugoに移行した</title>
-      <link>http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/</link>
+      <link>http://localhost:1313/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/</link>
       <pubDate>Sun, 04 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/</guid>
+      <guid>http://localhost:1313/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;でのブログもずいぶん慣れてきたところで&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;に移行しました。&lt;/p&gt;

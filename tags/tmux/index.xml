@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tmux on Unresolved</title>
-    <link>http://yet.unresolved.xyz/tags/tmux/</link>
+    <link>http://localhost:1313/tags/tmux/</link>
     <description>Recent content in Tmux on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 01 Apr 2015 22:42:40 +0900</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/tags/tmux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/tmux/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する</title>
-      <link>http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/</link>
+      <link>http://localhost:1313/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/</link>
       <pubDate>Wed, 01 Apr 2015 22:42:40 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/</guid>
+      <guid>http://localhost:1313/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/</guid>
       <description>
 
 &lt;p&gt;こんな感じ。&lt;/p&gt;
@@ -37,15 +37,15 @@ bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
     
     <item>
       <title>tmux-powerlineのステータスラインが描画ごとに増える</title>
-      <link>http://yet.unresolved.xyz/blog/2015/03/30/status-line-of-tmux-powerline-overlap/</link>
+      <link>http://localhost:1313/blog/2015/03/30/status-line-of-tmux-powerline-overlap/</link>
       <pubDate>Mon, 30 Mar 2015 23:56:58 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/03/30/status-line-of-tmux-powerline-overlap/</guid>
+      <guid>http://localhost:1313/blog/2015/03/30/status-line-of-tmux-powerline-overlap/</guid>
       <description>&lt;p&gt;iTerm2での話。&lt;/p&gt;
 
 &lt;p&gt;こいつのせい。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-03-31/iterm.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-03-31/iterm.png&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/images/2015-03-31/iterm.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/2015-03-31/iterm.png&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;でもこれがないと、素の時に使うVimで&lt;a href=&#34;https://github.com/itchyny/lightline.vim&#34;&gt;itchyny/lightline.vim&lt;/a&gt;がズレるんだよなあ。&lt;/p&gt;
 
