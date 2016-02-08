@@ -22,9 +22,7 @@ title: 'Googleの構造化データの扱いが変わった気がする'
 ## 構造化データ？
 
 マイクロデータとかって呼ばれたりもする。
-
 HTMLにもう少し踏み込んだ側面的な意味を持たせるためのもの。
-
 Googleの説明が、どのように使われるかも記載されていてわかりやすい。
 
 [Promote Your Content with Structured Data Markup  |  Structured Data  |  Google Developers](https://developers.google.com/structured-data/)
@@ -32,9 +30,7 @@ Googleの説明が、どのように使われるかも記載されていてわ�
 ## エラーの原因
 
 今回はArticleの`image`とか`publisher`もろもろでエラーが発生しました。
-
 これまでは大丈夫だったのになんでだろう。
-
 この記載を見ると、どうやら構造が間違っているらしい。
 
 [Enabling Rich Snippets for Articles  |  Structured Data  |  Google Developers](https://developers.google.com/structured-data/rich-snippets/articles?hl=ja)
@@ -59,14 +55,12 @@ Googleの説明が、どのように使われるかも記載されていてわ�
 ```
 
 `ImageObject`の子で居なきゃいけないんだね。
-
 さらに`width`と`height`も必須になってる。
 前は要らなかったような記憶があるんだけど・・・。
 
 ### publisherプロパティ
 
 `publisher`はこう記載されている。
-
 これは運営元の組織を指すのかな。
 
 ``` html
@@ -84,14 +78,12 @@ Googleの説明が、どのように使われるかも記載されていてわ�
 ### nameプロパティ
 
 何故かこのエラーだけどうやっても消えない。
-
 謎なので分かり次第追記しよう。
 
 **追記**
 
 この記事を書き終えてから再度試してみたら消えました。
-
 Structured Data Testing Tool自体が改修中だったのだろうか。
-
-どちらにせよこの辺はこれからも随時変わっていくポイントだろうから、定期的にチェックと対応をしていかなきゃいけないですね。
+どちらにせよこの辺はこれからも随時変わっていくポイントだろうから、
+定期的にチェックと対応をしていかなきゃいけないですね。
 
