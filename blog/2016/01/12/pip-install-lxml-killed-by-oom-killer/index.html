@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.15-DEV" />
+    <meta name="generator" content="Hugo 0.16-DEV" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans|Lobster'>
@@ -27,7 +27,7 @@
 
   <body>
 
-    <div class="container-fluid">
+    <div class="container">
       <header class="site">
         <div class="title"><a href="http://yet.unresolved.xyz/">Unresolved</a></div>
       </header>
@@ -42,7 +42,7 @@
     <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz/"/>
     <meta itemprop="dateModified" content="2016-01-12T12:04:51&#43;09:00">
     <meta itemprop="headline" content="さくらVPSでpip install lxmlがOOM Killerに殺される">
-    <meta itemprop="description" content="Python2.7 &#43; BeautifulSoup &#43; lxmlの環境でスクレイピングをしようとしたらlxmlがインストールできなかった。 Installing collected packages: lxml Running setup.py install for lxml Complete output from command /opt/local/bin/python2.7 -c &quot;import setuptools, tokenize;__file__=&#39;/tmp/pip-build-9nMFdz/lxml/setup.py&#39;;exec(compile(getattr(tokenize, &#39;open&#39;, open)(__file__).read() .replace(&#39;\r\n&#39;, &#39;\n&#39;), __file__, &#39;exec&#39;))&quot; install --record /tmp/pip-8cwa10-record/install-record.txt --single-version-externally-managed --compile: /opt/local/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: &#39;bugtrack_url&#39; warnings.warn(msg) Building lxml version 3.4.4.">
+    <meta itemprop="description" content="Python2.7 &#43; BeautifulSoup &#43; lxmlの環境でスクレイピングをしようとしたらlxmlがインストールできなかった。 Installing collected packages: lxml Running setup.py install for lxml Complete output from command /opt/local/bin/python2.7 -c &quot;import setuptools, tokenize;__file__=&#39;/tmp/pip-build-9nMFdz/lxml/setup.py&#39;;exec(compile(getattr(tokenize, &#39;open&#39;, open)(__file__).read() .replace(&#39;\r\n&#39;, &#39;\n&#39;), __file__, &#39;exec&#39;))&quot; install">
     <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/">
     <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
       <meta itemprop="url" content="http://yet.unresolved.xyz/images/default.jpg" />
@@ -61,26 +61,23 @@
       <meta itemprop="name" content="Daisuke Tsuji">
     </div>
 
-    <header>
-
-      <div class="clearfix">
-
+    <header class="clearfix">
+      <div class="pull-left">
         <div class="image" style="background-image: url(http://yet.unresolved.xyz/images/default.jpg);"></div>
-        <div class="detail">
-          <time itemprop="datePublished" pubdate="pubdate" datetime="2016-01-12T12:04:51&#43;09:00">Tue, Jan 12, 2016</time>
-          
-          <h1 class="title">さくらVPSでpip install lxmlがOOM Killerに殺される</h1>
-        </div>
       </div>
 
-      <div class="share">
-        <a href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f12%2fpip-install-lxml-killed-by-oom-killer%2f&t=%e3%81%95%e3%81%8f%e3%82%89VPS%e3%81%a7pip%20install%20lxml%e3%81%8cOOM%20Killer%e3%81%ab%e6%ae%ba%e3%81%95%e3%82%8c%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
-        <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f12%2fpip-install-lxml-killed-by-oom-killer%2f&text=%e3%81%95%e3%81%8f%e3%82%89VPS%e3%81%a7pip%20install%20lxml%e3%81%8cOOM%20Killer%e3%81%ab%e6%ae%ba%e3%81%95%e3%82%8c%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
-        <a href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f12%2fpip-install-lxml-killed-by-oom-killer%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
-        <a href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f12%2fpip-install-lxml-killed-by-oom-killer%2f&title=%e3%81%95%e3%81%8f%e3%82%89VPS%e3%81%a7pip%20install%20lxml%e3%81%8cOOM%20Killer%e3%81%ab%e6%ae%ba%e3%81%95%e3%82%8c%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+      <div class="detail">
+        <time>Tue, Jan 12, 2016</time>
+        <h2 class="title">さくらVPSでpip install lxmlがOOM Killerに殺される</h2>
       </div>
-
     </header>
+
+    <div class="share">
+      <a href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f12%2fpip-install-lxml-killed-by-oom-killer%2f&t=%e3%81%95%e3%81%8f%e3%82%89VPS%e3%81%a7pip%20install%20lxml%e3%81%8cOOM%20Killer%e3%81%ab%e6%ae%ba%e3%81%95%e3%82%8c%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
+      <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f12%2fpip-install-lxml-killed-by-oom-killer%2f&text=%e3%81%95%e3%81%8f%e3%82%89VPS%e3%81%a7pip%20install%20lxml%e3%81%8cOOM%20Killer%e3%81%ab%e6%ae%ba%e3%81%95%e3%82%8c%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
+      <a href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f12%2fpip-install-lxml-killed-by-oom-killer%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
+      <a href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f12%2fpip-install-lxml-killed-by-oom-killer%2f&title=%e3%81%95%e3%81%8f%e3%82%89VPS%e3%81%a7pip%20install%20lxml%e3%81%8cOOM%20Killer%e3%81%ab%e6%ae%ba%e3%81%95%e3%82%8c%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+    </div>
 
     
 
@@ -163,7 +160,7 @@ $ sudo rm /swapfile
 
     </div>
 
-    <div class="container-fluid">
+    <div class="container">
       <footer class="site">
         <p>&copy; 2016 Daisuke Tsuji</p>
         <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>

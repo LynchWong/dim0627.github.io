@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.15-DEV" />
+    <meta name="generator" content="Hugo 0.16-DEV" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans|Lobster'>
@@ -27,7 +27,7 @@
 
   <body>
 
-    <div class="container-fluid">
+    <div class="container">
       <header class="site">
         <div class="title"><a href="http://yet.unresolved.xyz/">Unresolved</a></div>
       </header>
@@ -61,26 +61,23 @@
       <meta itemprop="name" content="Daisuke Tsuji">
     </div>
 
-    <header>
-
-      <div class="clearfix">
-
+    <header class="clearfix">
+      <div class="pull-left">
         <div class="image" style="background-image: url(http://yet.unresolved.xyz/images/default.jpg);"></div>
-        <div class="detail">
-          <time itemprop="datePublished" pubdate="pubdate" datetime="2015-03-22T19:23:27&#43;09:00">Sun, Mar 22, 2015</time>
-          
-          <h1 class="title">[Clojure]ringのCSRFトークンを生成する</h1>
-        </div>
       </div>
 
-      <div class="share">
-        <a href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f03%2f22%2finvalid-anti-forgery-token-on-ring%2f&t=%5bClojure%5dring%e3%81%aeCSRF%e3%83%88%e3%83%bc%e3%82%af%e3%83%b3%e3%82%92%e7%94%9f%e6%88%90%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
-        <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f03%2f22%2finvalid-anti-forgery-token-on-ring%2f&text=%5bClojure%5dring%e3%81%aeCSRF%e3%83%88%e3%83%bc%e3%82%af%e3%83%b3%e3%82%92%e7%94%9f%e6%88%90%e3%81%99%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
-        <a href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f03%2f22%2finvalid-anti-forgery-token-on-ring%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
-        <a href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f03%2f22%2finvalid-anti-forgery-token-on-ring%2f&title=%5bClojure%5dring%e3%81%aeCSRF%e3%83%88%e3%83%bc%e3%82%af%e3%83%b3%e3%82%92%e7%94%9f%e6%88%90%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+      <div class="detail">
+        <time>Sun, Mar 22, 2015</time>
+        <h2 class="title">[Clojure]ringのCSRFトークンを生成する</h2>
       </div>
-
     </header>
+
+    <div class="share">
+      <a href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f03%2f22%2finvalid-anti-forgery-token-on-ring%2f&t=%5bClojure%5dring%e3%81%aeCSRF%e3%83%88%e3%83%bc%e3%82%af%e3%83%b3%e3%82%92%e7%94%9f%e6%88%90%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
+      <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f03%2f22%2finvalid-anti-forgery-token-on-ring%2f&text=%5bClojure%5dring%e3%81%aeCSRF%e3%83%88%e3%83%bc%e3%82%af%e3%83%b3%e3%82%92%e7%94%9f%e6%88%90%e3%81%99%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
+      <a href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f03%2f22%2finvalid-anti-forgery-token-on-ring%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
+      <a href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f03%2f22%2finvalid-anti-forgery-token-on-ring%2f&title=%5bClojure%5dring%e3%81%aeCSRF%e3%83%88%e3%83%bc%e3%82%af%e3%83%b3%e3%82%92%e7%94%9f%e6%88%90%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+    </div>
 
     
 
@@ -157,7 +154,7 @@
 
     </div>
 
-    <div class="container-fluid">
+    <div class="container">
       <footer class="site">
         <p>&copy; 2016 Daisuke Tsuji</p>
         <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>

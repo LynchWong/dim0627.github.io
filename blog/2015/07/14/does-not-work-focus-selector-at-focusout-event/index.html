@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.15-DEV" />
+    <meta name="generator" content="Hugo 0.16-DEV" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans|Lobster'>
@@ -27,7 +27,7 @@
 
   <body>
 
-    <div class="container-fluid">
+    <div class="container">
       <header class="site">
         <div class="title"><a href="http://yet.unresolved.xyz/">Unresolved</a></div>
       </header>
@@ -61,26 +61,23 @@
       <meta itemprop="name" content="Daisuke Tsuji">
     </div>
 
-    <header>
-
-      <div class="clearfix">
-
+    <header class="clearfix">
+      <div class="pull-left">
         <div class="image" style="background-image: url(http://yet.unresolved.xyz/images/default.jpg);"></div>
-        <div class="detail">
-          <time itemprop="datePublished" pubdate="pubdate" datetime="2015-07-14T00:05:16&#43;09:00">Tue, Jul 14, 2015</time>
-          
-          <h1 class="title">focusoutイベントでfocus中の要素が取得できない</h1>
-        </div>
       </div>
 
-      <div class="share">
-        <a href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f07%2f14%2fdoes-not-work-focus-selector-at-focusout-event%2f&t=focusout%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e3%81%a7focus%e4%b8%ad%e3%81%ae%e8%a6%81%e7%b4%a0%e3%81%8c%e5%8f%96%e5%be%97%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
-        <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f07%2f14%2fdoes-not-work-focus-selector-at-focusout-event%2f&text=focusout%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e3%81%a7focus%e4%b8%ad%e3%81%ae%e8%a6%81%e7%b4%a0%e3%81%8c%e5%8f%96%e5%be%97%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
-        <a href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f07%2f14%2fdoes-not-work-focus-selector-at-focusout-event%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
-        <a href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f07%2f14%2fdoes-not-work-focus-selector-at-focusout-event%2f&title=focusout%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e3%81%a7focus%e4%b8%ad%e3%81%ae%e8%a6%81%e7%b4%a0%e3%81%8c%e5%8f%96%e5%be%97%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+      <div class="detail">
+        <time>Tue, Jul 14, 2015</time>
+        <h2 class="title">focusoutイベントでfocus中の要素が取得できない</h2>
       </div>
-
     </header>
+
+    <div class="share">
+      <a href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f07%2f14%2fdoes-not-work-focus-selector-at-focusout-event%2f&t=focusout%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e3%81%a7focus%e4%b8%ad%e3%81%ae%e8%a6%81%e7%b4%a0%e3%81%8c%e5%8f%96%e5%be%97%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
+      <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f07%2f14%2fdoes-not-work-focus-selector-at-focusout-event%2f&text=focusout%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e3%81%a7focus%e4%b8%ad%e3%81%ae%e8%a6%81%e7%b4%a0%e3%81%8c%e5%8f%96%e5%be%97%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
+      <a href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f07%2f14%2fdoes-not-work-focus-selector-at-focusout-event%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
+      <a href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f07%2f14%2fdoes-not-work-focus-selector-at-focusout-event%2f&title=focusout%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e3%81%a7focus%e4%b8%ad%e3%81%ae%e8%a6%81%e7%b4%a0%e3%81%8c%e5%8f%96%e5%be%97%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+    </div>
 
     
 
@@ -156,7 +153,7 @@ $(&quot;#search-text&quot;).on(&quot;focusout&quot;, function() {
 
     </div>
 
-    <div class="container-fluid">
+    <div class="container">
       <footer class="site">
         <p>&copy; 2016 Daisuke Tsuji</p>
         <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>

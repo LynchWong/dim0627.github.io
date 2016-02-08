@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.15-DEV" />
+    <meta name="generator" content="Hugo 0.16-DEV" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans|Lobster'>
@@ -27,7 +27,7 @@
 
   <body>
 
-    <div class="container-fluid">
+    <div class="container">
       <header class="site">
         <div class="title"><a href="http://yet.unresolved.xyz/">Unresolved</a></div>
       </header>
@@ -61,26 +61,23 @@
       <meta itemprop="name" content="Daisuke Tsuji">
     </div>
 
-    <header>
-
-      <div class="clearfix">
-
+    <header class="clearfix">
+      <div class="pull-left">
         <div class="image" style="background-image: url(http://yet.unresolved.xyz/images/default.jpg);"></div>
-        <div class="detail">
-          <time itemprop="datePublished" pubdate="pubdate" datetime="2016-01-20T16:15:58&#43;09:00">Wed, Jan 20, 2016</time>
-          
-          <h1 class="title">Asset Pipelineのコンパイル対象を追加する</h1>
-        </div>
       </div>
 
-      <div class="share">
-        <a href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f20%2fadd-compile-target-of-asset-pipeline-at-rails%2f&t=Asset%20Pipeline%e3%81%ae%e3%82%b3%e3%83%b3%e3%83%91%e3%82%a4%e3%83%ab%e5%af%be%e8%b1%a1%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
-        <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f20%2fadd-compile-target-of-asset-pipeline-at-rails%2f&text=Asset%20Pipeline%e3%81%ae%e3%82%b3%e3%83%b3%e3%83%91%e3%82%a4%e3%83%ab%e5%af%be%e8%b1%a1%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
-        <a href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f20%2fadd-compile-target-of-asset-pipeline-at-rails%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
-        <a href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f20%2fadd-compile-target-of-asset-pipeline-at-rails%2f&title=Asset%20Pipeline%e3%81%ae%e3%82%b3%e3%83%b3%e3%83%91%e3%82%a4%e3%83%ab%e5%af%be%e8%b1%a1%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+      <div class="detail">
+        <time>Wed, Jan 20, 2016</time>
+        <h2 class="title">Asset Pipelineのコンパイル対象を追加する</h2>
       </div>
-
     </header>
+
+    <div class="share">
+      <a href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f20%2fadd-compile-target-of-asset-pipeline-at-rails%2f&t=Asset%20Pipeline%e3%81%ae%e3%82%b3%e3%83%b3%e3%83%91%e3%82%a4%e3%83%ab%e5%af%be%e8%b1%a1%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
+      <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f20%2fadd-compile-target-of-asset-pipeline-at-rails%2f&text=Asset%20Pipeline%e3%81%ae%e3%82%b3%e3%83%b3%e3%83%91%e3%82%a4%e3%83%ab%e5%af%be%e8%b1%a1%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
+      <a href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f20%2fadd-compile-target-of-asset-pipeline-at-rails%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
+      <a href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f20%2fadd-compile-target-of-asset-pipeline-at-rails%2f&title=Asset%20Pipeline%e3%81%ae%e3%82%b3%e3%83%b3%e3%83%91%e3%82%a4%e3%83%ab%e5%af%be%e8%b1%a1%e3%82%92%e8%bf%bd%e5%8a%a0%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+    </div>
 
     
 
@@ -118,7 +115,7 @@ Add `Rails.application.config.assets.precompile += %w( application_target.css )`
 
     </div>
 
-    <div class="container-fluid">
+    <div class="container">
       <footer class="site">
         <p>&copy; 2016 Daisuke Tsuji</p>
         <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>

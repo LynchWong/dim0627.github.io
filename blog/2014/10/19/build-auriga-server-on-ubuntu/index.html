@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.15-DEV" />
+    <meta name="generator" content="Hugo 0.16-DEV" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans|Lobster'>
@@ -27,7 +27,7 @@
 
   <body>
 
-    <div class="container-fluid">
+    <div class="container">
       <header class="site">
         <div class="title"><a href="http://yet.unresolved.xyz/">Unresolved</a></div>
       </header>
@@ -61,26 +61,23 @@
       <meta itemprop="name" content="Daisuke Tsuji">
     </div>
 
-    <header>
-
-      <div class="clearfix">
-
+    <header class="clearfix">
+      <div class="pull-left">
         <div class="image" style="background-image: url(http://yet.unresolved.xyz/images/default.jpg);"></div>
-        <div class="detail">
-          <time itemprop="datePublished" pubdate="pubdate" datetime="2014-10-19T00:00:00&#43;00:00">Sun, Oct 19, 2014</time>
-          
-          <h1 class="title">UbuntuにAurigaを構築してみる</h1>
-        </div>
       </div>
 
-      <div class="share">
-        <a href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f10%2f19%2fbuild-auriga-server-on-ubuntu%2f&t=Ubuntu%e3%81%abAuriga%e3%82%92%e6%a7%8b%e7%af%89%e3%81%97%e3%81%a6%e3%81%bf%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
-        <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f10%2f19%2fbuild-auriga-server-on-ubuntu%2f&text=Ubuntu%e3%81%abAuriga%e3%82%92%e6%a7%8b%e7%af%89%e3%81%97%e3%81%a6%e3%81%bf%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
-        <a href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f10%2f19%2fbuild-auriga-server-on-ubuntu%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
-        <a href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f10%2f19%2fbuild-auriga-server-on-ubuntu%2f&title=Ubuntu%e3%81%abAuriga%e3%82%92%e6%a7%8b%e7%af%89%e3%81%97%e3%81%a6%e3%81%bf%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+      <div class="detail">
+        <time>Sun, Oct 19, 2014</time>
+        <h2 class="title">UbuntuにAurigaを構築してみる</h2>
       </div>
-
     </header>
+
+    <div class="share">
+      <a href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f10%2f19%2fbuild-auriga-server-on-ubuntu%2f&t=Ubuntu%e3%81%abAuriga%e3%82%92%e6%a7%8b%e7%af%89%e3%81%97%e3%81%a6%e3%81%bf%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
+      <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f10%2f19%2fbuild-auriga-server-on-ubuntu%2f&text=Ubuntu%e3%81%abAuriga%e3%82%92%e6%a7%8b%e7%af%89%e3%81%97%e3%81%a6%e3%81%bf%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
+      <a href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f10%2f19%2fbuild-auriga-server-on-ubuntu%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
+      <a href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f10%2f19%2fbuild-auriga-server-on-ubuntu%2f&title=Ubuntu%e3%81%abAuriga%e3%82%92%e6%a7%8b%e7%af%89%e3%81%97%e3%81%a6%e3%81%bf%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+    </div>
 
     
 
@@ -215,7 +212,7 @@ CFLAGS += -DNO_HTTPD
 
     </div>
 
-    <div class="container-fluid">
+    <div class="container">
       <footer class="site">
         <p>&copy; 2016 Daisuke Tsuji</p>
         <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
