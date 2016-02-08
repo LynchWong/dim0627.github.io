@@ -1,5 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script);
+
 body {
   font-family: 'Open Sans', 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+header.site .title a {
+  font-family: 'Kaushan Script', cursive;
 }
 
 article.single .article-body p {
