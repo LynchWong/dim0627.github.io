@@ -29,9 +29,7 @@ Ansibleのsshがrefuseで止められる場合は、`vagrant ssh-config >> ~/.ss
 ## Vagrantfileでプロビジョニング出来るようにする
 
 せっかくだし`vagrant up`か`vagrant provision`でプロビジョニングしてほしい。
-
 `Vagrantfile`にこんな感じの記述をすれば、初回実施時にAnsibleのPlaybookを実行してくれるらしい。
-
 Ansibleはなんかコマンド覚えらんないしちょうどいいね。
 
 ``` ruby
@@ -59,7 +57,6 @@ AnsibleではMySQLやらhttpdやらの個々のモジュールをroleと呼ん�
 
 つまり、[Browse Roles](https://galaxy.ansible.com/list#/roles)からMySQLのroleを探せばよい。
 今回は[ANXS.mysql](https://galaxy.ansible.com/list#/roles/509)という奴を使わせてもらうことにしました。
-
 理由は、評価がそれなりに高くて、MySQLの設定が見たまんまでやれそうだったから。
 
 ### Ansible Galaxyからroleをインストールする
