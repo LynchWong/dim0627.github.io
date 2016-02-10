@@ -37,15 +37,13 @@
 
 &lt;p&gt;このページはSSL証明書が効いてるんだけど、ネットワーク上の何かがそうじゃなくしちゃうかもね？&lt;/p&gt;
 
-&lt;p&gt;原因は&lt;strong&gt;httpsじゃないURLに飛ばすformタグがページに存在する&lt;/strong&gt;せいでした。&lt;/p&gt;
-
-&lt;p&gt;開発環境でもオレオレ証明書を用意したりしてHTTPSで通信するようにしておくべきでした。&lt;/p&gt;
+&lt;p&gt;原因は&lt;strong&gt;httpsじゃないURLに飛ばすformタグがページに存在する&lt;/strong&gt;せいでした。
+開発環境でもオレオレ証明書を用意したりしてHTTPSで通信するようにしておくべきでした。&lt;/p&gt;
 
 &lt;h2 id=&#34;laravelのrouteメソッド:56aef34fa740ed018dee02e37b63f347&#34;&gt;Laravelのrouteメソッド&lt;/h2&gt;
 
-&lt;p&gt;URLのレンダリングはLaravelの&lt;code&gt;route&lt;/code&gt;メソッドを使っています。&lt;/p&gt;
-
-&lt;p&gt;これは結構気に入っていて、後でURLを変えたいって時にある程度コストを軽減してくれる（んじゃないか）と思っているから。&lt;/p&gt;
+&lt;p&gt;URLのレンダリングはLaravelの&lt;code&gt;route&lt;/code&gt;メソッドを使っています。
+この機能は結構気に入っている。後でURLを変えたいって時にある程度コストを軽減してくれる（んじゃないか）と思っているから。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://laravel.com/docs/5.1/routing#named-routes&#34;&gt;HTTP Routing - Laravel - The PHP Framework For Web Artisans&lt;/a&gt;&lt;/p&gt;
 
@@ -53,12 +51,12 @@
 
 &lt;h2 id=&#34;laravelでhttpsのurlを取り扱う:56aef34fa740ed018dee02e37b63f347&#34;&gt;LaravelでHTTPSのURLを取り扱う&lt;/h2&gt;
 
-&lt;p&gt;LaravelのRoutingはこんな感じなんだけど、&lt;/p&gt;
+&lt;p&gt;LaravelのRoutingはこんな感じなんだけど、こう記述すれば&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;Route::get(&#39;/&#39;, [&#39;as&#39; =&amp;gt; &#39;home&#39;, function() { return view(&#39;home.index&#39;); }]);
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;HTTPSのみを許容することも出来るらしい。&lt;/p&gt;
+&lt;p&gt;HTTPSのみを許容することも出来るらしい。さらには&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;Route::get(&#39;/&#39;, [&#39;https&#39;, &#39;as&#39; =&amp;gt; &#39;home&#39;, function() { return view(&#39;home.index&#39;); }]);
 &lt;/code&gt;&lt;/pre&gt;
@@ -76,15 +74,13 @@
 
 &lt;p&gt;事になります。&lt;/p&gt;
 
-&lt;p&gt;今回ELBの奥にあるLaravelが載ったインスタンスはnginxが80ポートを待ち受けています。&lt;/p&gt;
-
-&lt;p&gt;なのでHTTPSだけを許容されると困るんですね、443で通信しなきゃいけない。&lt;/p&gt;
+&lt;p&gt;今回ELBの奥にあるLaravelが載ったインスタンスはnginxが80ポートを待ち受けています。
+なのでHTTPSだけを許容されると困るんですね、443で通信しなきゃいけない。&lt;/p&gt;
 
 &lt;h2 id=&#34;解決策:56aef34fa740ed018dee02e37b63f347&#34;&gt;解決策&lt;/h2&gt;
 
-&lt;p&gt;わがままを言えば&lt;strong&gt;LaravelがHTTPを受け付けて&lt;code&gt;route&lt;/code&gt;メソッドがHTTPSのURLをレンダリングする&lt;/strong&gt;と嬉しい。&lt;/p&gt;
-
-&lt;p&gt;けどその方法は見つからず（構成としてナンセンスなんだろう）、ELBとLaravelが載ったインスタンスの両方にSSL証明書を設置することにしました。&lt;/p&gt;
+&lt;p&gt;わがままを言えば&lt;strong&gt;LaravelがHTTPを受け付けて&lt;code&gt;route&lt;/code&gt;メソッドがHTTPSのURLをレンダリングする&lt;/strong&gt;と嬉しい。
+けどその方法は見つからず（構成としてナンセンスなんだろう）、ELBとLaravelが載ったインスタンスの両方にSSL証明書を設置することにしました。&lt;/p&gt;
 
 &lt;p&gt;というわけでこういう形。&lt;/p&gt;
 

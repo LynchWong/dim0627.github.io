@@ -38,11 +38,9 @@
 
 &lt;h2 id=&#34;vagrantfileでプロビジョニング出来るようにする:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;Vagrantfileでプロビジョニング出来るようにする&lt;/h2&gt;
 
-&lt;p&gt;せっかくだし&lt;code&gt;vagrant up&lt;/code&gt;か&lt;code&gt;vagrant provision&lt;/code&gt;でプロビジョニングしてほしい。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Vagrantfile&lt;/code&gt;にこんな感じの記述をすれば、初回実施時にAnsibleのPlaybookを実行してくれるらしい。&lt;/p&gt;
-
-&lt;p&gt;Ansibleはなんかコマンド覚えらんないしちょうどいいね。&lt;/p&gt;
+&lt;p&gt;せっかくだし&lt;code&gt;vagrant up&lt;/code&gt;か&lt;code&gt;vagrant provision&lt;/code&gt;でプロビジョニングしてほしい。
+&lt;code&gt;Vagrantfile&lt;/code&gt;にこんな感じの記述をすれば、初回実施時にAnsibleのPlaybookを実行してくれるらしい。
+Ansibleはなんかコマンド覚えらんないしちょうどいいね。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;  config.vm.provision &amp;quot;ansible&amp;quot; do |ansible|
     ansible.playbook = &amp;quot;env/dev-playbook.yml&amp;quot;
@@ -67,9 +65,8 @@ Playbookとかもここに入れていきます。&lt;/p&gt;
 &lt;p&gt;AnsibleではMySQLやらhttpdやらの個々のモジュールをroleと呼んでるらしい。&lt;/p&gt;
 
 &lt;p&gt;つまり、&lt;a href=&#34;https://galaxy.ansible.com/list#/roles&#34;&gt;Browse Roles&lt;/a&gt;からMySQLのroleを探せばよい。
-今回は&lt;a href=&#34;https://galaxy.ansible.com/list#/roles/509&#34;&gt;ANXS.mysql&lt;/a&gt;という奴を使わせてもらうことにしました。&lt;/p&gt;
-
-&lt;p&gt;理由は、評価がそれなりに高くて、MySQLの設定が見たまんまでやれそうだったから。&lt;/p&gt;
+今回は&lt;a href=&#34;https://galaxy.ansible.com/list#/roles/509&#34;&gt;ANXS.mysql&lt;/a&gt;という奴を使わせてもらうことにしました。
+理由は、評価がそれなりに高くて、MySQLの設定が見たまんまでやれそうだったから。&lt;/p&gt;
 
 &lt;h3 id=&#34;ansible-galaxyからroleをインストールする:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;Ansible Galaxyからroleをインストールする&lt;/h3&gt;
 
