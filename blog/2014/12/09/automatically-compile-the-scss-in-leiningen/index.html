@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.16-DEV" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans|Lobster'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz//index.xml">
+
+    
+    <title>LeiningenでSCSSを自動コンパイルする - Unresolved</title>
+    <meta property='og:title' content="LeiningenでSCSSを自動コンパイルする - Unresolved">
+    <meta property="og:type" content="article">
+    
+
+    <meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/">
+    
+    
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <header class="site">
+        <div class="title"><a href="http://yet.unresolved.xyz/">Unresolved</a></div>
+      </header>
+    </div>
+
+    <div class="container site">
+
+
+<div class="single">
+  <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+    <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz/"/>
+    <meta itemprop="dateModified" content="2014-12-09T00:00:00&#43;00:00">
+    <meta itemprop="headline" content="LeiningenでSCSSを自動コンパイルする">
+    <meta itemprop="description" content="Clojureを始めて一週間ほどになりまして、ようやくWebアプリ開発に着手しました。 というわけで開発環境を整えます。 lein-haml-s">
+    <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2014/12/09/automatically-compile-the-scss-in-leiningen/">
+    <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="http://yet.unresolved.xyz/images/default.jpg" />
+      <meta itemprop="width" content="800">
+      <meta itemprop="height" content="800">
+    </div>
+    <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.jpg">
+        <meta itemprop="width" content="100">
+        <meta itemprop="height" content="100">
+      </div>
+      <meta itemprop="name" content="Unresolved">
+    </div>
+    <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+      <meta itemprop="name" content="Daisuke Tsuji">
+    </div>
+
+    <header class="clearfix">
+      <div class="pull-left">
+        <div class="image" style="background-image: url(http://yet.unresolved.xyz/images/default.jpg);"></div>
+      </div>
+
+      <div class="detail">
+        <time>Tue, Dec 9, 2014</time>
+        <h1 class="title">LeiningenでSCSSを自動コンパイルする</h1>
+      </div>
+    </header>
+
+    <div class="share">
+      <a href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f12%2f09%2fautomatically-compile-the-scss-in-leiningen%2f&t=Leiningen%e3%81%a7SCSS%e3%82%92%e8%87%aa%e5%8b%95%e3%82%b3%e3%83%b3%e3%83%91%e3%82%a4%e3%83%ab%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
+      <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f12%2f09%2fautomatically-compile-the-scss-in-leiningen%2f&text=Leiningen%e3%81%a7SCSS%e3%82%92%e8%87%aa%e5%8b%95%e3%82%b3%e3%83%b3%e3%83%91%e3%82%a4%e3%83%ab%e3%81%99%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
+      <a href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f12%2f09%2fautomatically-compile-the-scss-in-leiningen%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
+      <a href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2014%2f12%2f09%2fautomatically-compile-the-scss-in-leiningen%2f&title=Leiningen%e3%81%a7SCSS%e3%82%92%e8%87%aa%e5%8b%95%e3%82%b3%e3%83%b3%e3%83%91%e3%82%a4%e3%83%ab%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+    </div>
+
+    
+
+    <div class="article-body" itemprop="articleBody">
+
+<p>Clojureを始めて一週間ほどになりまして、ようやくWebアプリ開発に着手しました。</p>
+
+<p>というわけで開発環境を整えます。</p>
+
+<h2 id="lein-haml-sassの導入:aea6c6aa18698925cad2fc33bce27d8b">lein-haml-sassの導入</h2>
+
+<p><a href="https://github.com/rtircher/lein-haml-sass">lein-haml-sass</a>はhamlのコンパイルやsass/scssのコンパイルをやってくれます。</p>
+
+<p>ていうか<strong>sassとscssの違い</strong>ってなんだっけ？真面目に考えるとわかんないな。</p>
+
+<p><a href="http://www.atmarkit.co.jp/ait/articles/1402/17/news102.html#02">CSSコーディングで泣かないためのSassの基礎知識と10の利点 (<sup>1</sup>&frasl;<sub>3</sub>)</a></p>
+
+<p>へえ・・・。</p>
+
+<p>とりあえず導入します。</p>
+
+<p><code>project.clj</code>に</p>
+
+<pre><code class="language-clj">(defproject example &quot;1.2.3&quot;
+  :plugins [[lein-haml-sass &quot;0.2.7-SNAPSHOT&quot;]])
+</code></pre>
+
+<p>さらに設定も記述。</p>
+
+<p><code>resources/sass/</code>にscssを、<code>resources/public/css/</code>にcssを出力する設定。</p>
+
+<pre><code class="language-clj">(defproject example-project &quot;1.2.3&quot;
+  :haml {:src &quot;resources/haml&quot;
+         :output-directory &quot;resources/public/html&quot;
+         }
+
+  :sass {:src &quot;resources/sass&quot;
+         :output-directory &quot;resources/public/css&quot;
+         }
+
+  :scss {:src &quot;resources/scss&quot;
+         :output-directory &quot;resources/public/css&quot;
+         }
+    )
+</code></pre>
+
+<p>ここまではコピペだけど、僕のファイル自体はこんな感じに。</p>
+
+<pre><code class="language-clj">(defproject tpc &quot;0.1.0-SNAPSHOT&quot;
+  :description &quot;FIXME: write description&quot;
+  :url &quot;http://example.com/FIXME&quot;
+  :min-lein-version &quot;2.0.0&quot;
+  :dependencies [[org.clojure/clojure &quot;1.6.0&quot;]
+                 [compojure &quot;1.2.0&quot;]
+                 [ring/ring-defaults &quot;0.1.2&quot;]
+                 [enlive &quot;1.1.5&quot;]]
+  :plugins [[lein-ring &quot;0.8.13&quot;]
+            [lein-haml-sass &quot;0.2.7-SNAPSHOT&quot;]]
+  :ring {:handler tpc.core.handler/app}
+  :profiles
+  {:dev {:dependencies [[javax.servlet/servlet-api &quot;2.5&quot;]
+                        [ring-mock &quot;0.1.5&quot;]]}}
+  :scss {:src &quot;resources/sass&quot;
+         :output-directory &quot;resources/public/css&quot;
+         :output-extension &quot;css&quot;})
+</code></pre>
+
+<h2 id="コンパイルする:aea6c6aa18698925cad2fc33bce27d8b">コンパイルする</h2>
+
+<p>sassとscssでタスクが違うようなので、間違えないように注意。</p>
+
+<p><code>lein scss auto</code>で変更監視できるっぽい。</p>
+</div>
+
+    <aside>
+
+      <div class="section"><a href="http://yet.unresolved.xyz/tags/css" class="tag">css</a><a href="http://yet.unresolved.xyz/tags/scss" class="tag">scss</a><a href="http://yet.unresolved.xyz/tags/sass" class="tag">sass</a><a href="http://yet.unresolved.xyz/tags/clojure" class="tag">clojure</a><a href="http://yet.unresolved.xyz/tags/leiningen" class="tag">leiningen</a></div>
+
+      
+      
+      
+
+    </aside>
+
+  </article>
+</div>
+
+    </div>
+
+    <div class="container">
+      <footer class="site">
+        <p>&copy; 2016 Daisuke Tsuji</p>
+        <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
+        <p>Theme <a href="https://github.com/dim0627/hugo_theme_aglaus" target="_blank">Aglaus</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+      </footer>
+    </div>
+
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-55005303-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+    
+
+  </body>
+</html>
+

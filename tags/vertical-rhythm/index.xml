@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vertical Rhythm on Unresolved</title>
+    <link>http://yet.unresolved.xyz/tags/vertical-rhythm/</link>
+    <description>Recent content in Vertical Rhythm on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 Jan 2016 11:04:21 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/vertical-rhythm/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>読みやすい文章のデザインとバーティカルリズム</title>
+      <link>http://yet.unresolved.xyz/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/</link>
+      <pubDate>Mon, 18 Jan 2016 11:04:21 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/</guid>
+      <description>
+
+&lt;p&gt;これは僕の考えをつらつらと棚卸ししているだけであって、他のサイトの批判や自惚れた感情を書き出した記事ではありません。
+そう読めたらすみません。&lt;/p&gt;
+
+&lt;p&gt;最近「読みやすい文章のデザイン」に興味を持ってる。
+例えば行間とか文節の余白とか文字のサイズとか。
+1行の文字数は35から45くらいが良いらしい。これは色々な意見があってどれが正しいのか僕にはわからない。&lt;/p&gt;
+
+&lt;p&gt;最近興味を持てることがめっきり減ってしまったので、こういうことでも興味を持って取り組めるのはなんか嬉しい。&lt;/p&gt;
+
+&lt;h2 id=&#34;文章のデザイン:b8d71f99fac6a3ac275ba50d22f78f54&#34;&gt;文章のデザイン&lt;/h2&gt;
+
+&lt;p&gt;僕は前に何処かの記事で書いたとおり、会社でメディアの運営をやっている。
+メディアをうまく運営するために必要なことはたくさんあると思うんだけど、僕はあまりそこのノウハウを持っていない。&lt;/p&gt;
+
+&lt;p&gt;一つわかってるのは、メディアのコアは文章や画像であって、それを如何に見やすくするかが一つの重要なポイントであるということ。
+それに取り組んでいるうちに「文章のデザイン」に興味を持った。&lt;/p&gt;
+
+&lt;h3 id=&#34;検討すべきことを考える:b8d71f99fac6a3ac275ba50d22f78f54&#34;&gt;検討すべきことを考える&lt;/h3&gt;
+
+&lt;p&gt;文章は見出しや文節、時には画像などで構築される。&lt;/p&gt;
+
+&lt;p&gt;まず気にすべきは見出しの上下の余白はどれくらい取るべきなのか、とか。
+行間はどれくらいで、文節の後はどれくらい余白を取ればいいのかとか。
+さらには1行のwidthはどれくらいあればいいとか、簡単に思えて考えれば考えるほどいろいろな要素が出てくる。&lt;/p&gt;
+
+&lt;p&gt;僕が最近悩んだり考えたりしてることはざっくり次の通り。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;見出しの文字サイズと上下の余白&lt;/li&gt;
+&lt;li&gt;文章の行間&lt;/li&gt;
+&lt;li&gt;文節の後の余白&lt;/li&gt;
+&lt;li&gt;文字のサイズ&lt;/li&gt;
+&lt;li&gt;フォント&lt;/li&gt;
+&lt;li&gt;1行に表示すべき文字数&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;スマートデバイスの場合:b8d71f99fac6a3ac275ba50d22f78f54&#34;&gt;スマートデバイスの場合&lt;/h3&gt;
+
+&lt;p&gt;最近ではブラウザといってもPCだけじゃなくスマートデバイスの考慮も入れなくちゃいけない。
+レスポンシブデザインはそこまで難しいものじゃないので、実装の手間はそんなに増えない。
+だけど考えることが2パターンになるのは結構なコストだなと感じている。&lt;/p&gt;
+
+&lt;p&gt;スマートデバイスだと、画面が小さいから文字が大きい方がいいのか？とか、行間とかその他の検討事項をどうすればいいのかに悩んだことがある。&lt;/p&gt;
+
+&lt;p&gt;僕は最初、「画面が小さいから文字は大きくないと読みづらい」と思ってこのブログもそういうデザインにしていた。
+でもふと「読者目線」でいろいろなサイトを見てた時、&lt;strong&gt;文字が大きいと画面に表示される情報量が少なくてスクロールが煩わしい&lt;/strong&gt;と感じることがあった。
+なので最近はスマートデバイスの時は文字を小さくして出来るだけ多くの情報を1画面に表示出来るようにしている。
+実際、文字が小さくて目が疲れることはあっても、読みづらいとかいうことはあまりないのかもしれない。&lt;/p&gt;
+
+&lt;h2 id=&#34;僕のエゴ:b8d71f99fac6a3ac275ba50d22f78f54&#34;&gt;僕のエゴ&lt;/h2&gt;
+
+&lt;p&gt;僕は出来るだけ、このブログは装飾的なデザインを入れないようにしている。
+文章にそれは必要ないと思っているから。&lt;/p&gt;
+
+&lt;p&gt;基本的にどのサイトでも、見出しに色をつけたり色々なところでデザインを入れてブランディングをしたりしている。
+企業として売り出していくからにはそれが必要なのはすごくわかる。
+でも、これは僕のエゴだけど、「それがないと成り立たないデザイン」だけで成り立っている方が美しく感じてしまう。&lt;/p&gt;
+
+&lt;p&gt;それもあって、この記事にはものすごく共感した覚えがある。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://uxmilk.jp/translation/the_year_in_design&#34;&gt;2015年のデザイントレンドを振り返る | UX MILK&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;デザインにおける一つ一つのディテールは、そのデザインが成り立たなくなるギリギリの線まで取り除いていくべきである。&lt;/li&gt;
+&lt;li&gt;スタイルというのはブランドとコンテンツを支えるためにある。目的のないスタイルはただのノイズである。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;装飾としてのデザインは必要なのか:b8d71f99fac6a3ac275ba50d22f78f54&#34;&gt;装飾としてのデザインは必要なのか&lt;/h3&gt;
+
+&lt;p&gt;僕が一番長いこと悩んでいるのは「見出しの見やすさ」のこと。&lt;/p&gt;
+
+&lt;p&gt;見出しは文字サイズを大きくしたり太字にしたり、色々な方法で装飾することが出来る。
+それもh1, h2, h3と見出しのレベルによってそれぞれの装飾が出来てしまう。&lt;/p&gt;
+
+&lt;p&gt;例えば、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;太字にする&lt;/li&gt;
+&lt;li&gt;背景色をつける&lt;/li&gt;
+&lt;li&gt;下線を引く&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;など。これについては色々な人が色々な試行錯誤を繰り返してきてる事柄だと思う。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://liginc.co.jp/web/design/other-design/36320&#34;&gt;美しいWebデザインをタイプ別に！見ないと損するパーツ別ギャラリーサイトまとめ | 株式会社LIG&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://sole-color-blog.com/blog/design/294/&#34;&gt;もう迷わない！見出しデザインの基本理論とアイデア集 | それからデザイン スタッフブログ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;僕の今の結論は、「強調しすぎなければいい」んじゃないかと思っている。
+実際そこまで装飾しなくたって、読みやすさは変わらない。
+余白さえしっかりしていれば、人間は以外としっかりと見出しを捉える目をしているんじゃないかと思う。&lt;/p&gt;
+
+&lt;h2 id=&#34;バーティカルリズム:b8d71f99fac6a3ac275ba50d22f78f54&#34;&gt;バーティカルリズム&lt;/h2&gt;
+
+&lt;p&gt;では適当に余白を付けて適当に文字サイズを決めればいいのかと言うと、僕は結構きっちりしたい人間なので少しモヤッとしてしまう。
+なにか、黄金比的なものがあるんじゃないかと。&lt;/p&gt;
+
+&lt;p&gt;そこで知ったのがバーティカルリズムのこと。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://whiskers.nukos.kitchen/2015/04/05/modular-scale.html&#34;&gt;Modular ScaleとVertical Rhythmを使ったタイポグラフィとレイアウト | Webデザイン、フロントエンド系の技術に関する備忘録 - whiskers&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Vertical Rhythmは1行の高さを1つの単位として、縦のラインのリズムを作る手法です。ノートの罫線をイメージしてもらうとわかり易いと思います。要素やタイポグラフィの高さを罫線を基準にデザインすることで、デザインに感じる違和感を小さくし心地よさを感じさせることができます。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;人間の体に染み付いている文章の余白は、おそらくノートに自分で書いてきた&lt;strong&gt;罫線ベースの余白&lt;/strong&gt;なんだと思う。
+このバーティカルリズムの考えには非常に納得したので、最近はこの考えをベースに文章のデザインをするようにしている。&lt;/p&gt;
+
+&lt;p&gt;バーティカルリズムを用いるようにしてから、&lt;code&gt;font-size&lt;/code&gt;を指定するときは&lt;code&gt;line-height&lt;/code&gt;も一緒に指定するようになった。
+&lt;code&gt;font-size&lt;/code&gt;は好きな値にしているが、&lt;code&gt;line-height&lt;/code&gt;は&lt;code&gt;1rem&lt;/code&gt;や&lt;code&gt;2rem&lt;/code&gt;など、綺麗な数字になるようにしている。そうしないと余白が崩れるので。&lt;/p&gt;
+
+&lt;p&gt;Modular Scaleについてはまだしっかりとメリットや腹落ちする何かが見つけられていないので、実戦投入はしていない。
+しかしやっぱり、こういった理論や理屈に従った考え方があると、デザインのしやすさは大きく変わるなと思った。&lt;/p&gt;
+
+&lt;h2 id=&#34;終わりに:b8d71f99fac6a3ac275ba50d22f78f54&#34;&gt;終わりに&lt;/h2&gt;
+
+&lt;p&gt;そうは言っても、一年前の自分は全く違うことを考えていたわけで、今考えているこれらのことも一年後には「当たり前のこと」になっているんだと思う。
+それでいいし、そうあるべきだと思うけど。&lt;/p&gt;
+
+&lt;p&gt;最近、これまで作ったブログのテーマを上記のように新しく身につけた知識でリファクタリングをしたので、まとめたくなった次第でした。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考にさせて頂きました:b8d71f99fac6a3ac275ba50d22f78f54&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://whiskers.nukos.kitchen/2015/04/05/modular-scale.html&#34;&gt;Modular ScaleとVertical Rhythmを使ったタイポグラフィとレイアウト | Webデザイン、フロントエンド系の技術に関する備忘録 - whiskers&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://ameblo.jp/ca-1pixel/entry-11837685575.html&#34;&gt;デザインは8の倍数でできている｜1 pixel｜サイバーエージェント公式クリエイターズブログ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://uxmilk.jp/translation/the_year_in_design&#34;&gt;2015年のデザイントレンドを振り返る | UX MILK&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

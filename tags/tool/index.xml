@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tool on Unresolved</title>
+    <link>http://yet.unresolved.xyz/tags/tool/</link>
+    <description>Recent content in Tool on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 17 Dec 2015 10:39:55 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ACCOUNT KILLERというサービスが面白い</title>
+      <link>http://yet.unresolved.xyz/blog/2015/12/17/about-account-killer/</link>
+      <pubDate>Thu, 17 Dec 2015 10:39:55 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/12/17/about-account-killer/</guid>
+      <description>
+
+&lt;p&gt;WordPress.comとGravatarを退会しようと思ったんだけどなんか退会画面が見つからない。&lt;/p&gt;
+
+&lt;p&gt;いろいろ調べてみるとこの記事に行き着いた。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://d.hatena.ne.jp/m-hiyama/20150915/1442277074&#34;&gt;WordPress.comとGravatarのアカウントは一度登録したら何があっても絶対に削除できない - 檜山正幸のキマイラ飼育記&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;WordPress.comとGravatarのアカウントは一度登録したら何があっても絶対に削除できない！？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;まじかよ、なんてひどいサービスだ。&lt;/p&gt;
+
+&lt;p&gt;それはまあよくて、どっちにしろWordPressがひどいのは知ってたし。&lt;/p&gt;
+
+&lt;p&gt;この記事で紹介されてるACCOUNT KILLERというサービスが面白かった。&lt;/p&gt;
+
+&lt;h2 id=&#34;account-killer:283d2a7a74a226c22e2344c11ac9de1b&#34;&gt;ACCOUNT KILLER？&lt;/h2&gt;
+
+&lt;p&gt;先の記事を引用させてもらうと、&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;ここは、Webサイト／サービスをホワイトリスト（退会容易）とブラックリスト（退会困難）に分けていて、Gravatarはブラック。ブラックもブラック、なんと退会が不可能なのです。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;世の中の有名なサービスの退会難易度をまとめてくれてるらしい。先にこれ見ときゃよかったなー。&lt;/p&gt;
+
+&lt;p&gt;退会出来ないサービスなんて登録したくないよね。さすがWordPress。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考にさせていただきました:283d2a7a74a226c22e2344c11ac9de1b&#34;&gt;参考にさせていただきました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://d.hatena.ne.jp/m-hiyama/20150915/1442277074&#34;&gt;WordPress.comとGravatarのアカウントは一度登録したら何があっても絶対に削除できない - 檜山正幸のキマイラ飼育記&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

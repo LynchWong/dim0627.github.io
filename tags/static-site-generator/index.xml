@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Static Site Generator on Unresolved</title>
+    <link>http://yet.unresolved.xyz/tags/static-site-generator/</link>
+    <description>Recent content in Static Site Generator on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Dec 2015 14:49:18 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/static-site-generator/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>プロダクションのWordPressを捨てHugoに移行した</title>
+      <link>http://yet.unresolved.xyz/blog/2015/12/10/using-hugo-in-production/</link>
+      <pubDate>Thu, 10 Dec 2015 14:49:18 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/12/10/using-hugo-in-production/</guid>
+      <description>
+
+&lt;p&gt;あんまり仕事のことは書かないつもりだったんだけど、このブログの生成でもお世話になっている&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;を結構本気で使ったのでそのことをまとめてみます。&lt;/p&gt;
+
+&lt;h2 id=&#34;hugoをプロダクションで使った:5f9546be55588508513a850a19b4c520&#34;&gt;Hugoをプロダクションで使った&lt;/h2&gt;
+
+&lt;p&gt;いま僕が働いている会社では事業の一つとしてメディアを運営しています。
+僕が入ったとき、それはWordPressで運用がなされていて、&lt;a href=&#34;http://www.advancedcustomfields.com/&#34;&gt;Advanced Custom Fields&lt;/a&gt;を使ったガチガチのカスタム具合でした。&lt;/p&gt;
+
+&lt;p&gt;しかしありがちなことにプラグインの管理もなされず、構築した人は外部の人、つまり動いてはいるけどそれ以上でも以下でもなかったんですね。&lt;/p&gt;
+
+&lt;p&gt;さらにライターさんの話を聞いてみれば「なんか入力欄がいっぱいあってライティングがめんどくさい」とのこと。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;誰も幸せになっていない状態&lt;/strong&gt;というわけですね。&lt;/p&gt;
+
+&lt;p&gt;僕が初めてそれを見た時、まず思ったのは&lt;strong&gt;「触りたくない」&lt;/strong&gt;ということでした。&lt;/p&gt;
+
+&lt;p&gt;WordPressはドメインとガチガチに紐づくし（プラグインでなんとかなるけど）、テーマのカスタマイズだとかのコストや、現状調査をするコストが無駄だと思ったんですね。&lt;/p&gt;
+
+&lt;p&gt;また、Advanced Custom Fieldsを使っているということはテーマも特注でしょう。&lt;/p&gt;
+
+&lt;p&gt;というわけでリプレースを提案しました。
+快く受け入れてくれた社員の方々には本当に感謝しています。&lt;/p&gt;
+
+&lt;h2 id=&#34;なぜhugoなのか:5f9546be55588508513a850a19b4c520&#34;&gt;なぜHugoなのか&lt;/h2&gt;
+
+&lt;p&gt;やはりMarkdownは優秀だと思っていて、メディア程度の文章ならDBに突っ込むよりMarkdownでファイル管理したいなと思いました。&lt;/p&gt;
+
+&lt;p&gt;というわけでライターさんには無理を言ってMarkdownを覚えてもらいました。
+これも快く受け入れてくれたライターさんの度量の広さに感謝しています。&lt;/p&gt;
+
+&lt;p&gt;正直僕はハナから静的サイトジェネレータを使う気でいて、候補に考えていたのはJekyllとHugoでした。
+何故かと言うと、Jekyllはドキュメント量が期待できると思っていたし、Hugoはそもそも使い慣れてる点を評価したからです。&lt;/p&gt;
+
+&lt;p&gt;しかしJekyllは使いませんでした。Octopressをやめた時同様、生成が遅すぎたんです。
+約500超の記事生成に18秒ほどかかり、チューニングなどを検討するよりもやめたほうが早いと判断しました。&lt;/p&gt;
+
+&lt;p&gt;というわけで案外さっくりとHugoに行き着くことになったわけです。&lt;/p&gt;
+
+&lt;h2 id=&#34;運用体制のこと:5f9546be55588508513a850a19b4c520&#34;&gt;運用体制のこと&lt;/h2&gt;
+
+&lt;p&gt;静的サイトジェネレータを使うということは何かしらの方法でMarkdownを取り込み、生成したHTMLをアップロードしなければなりません。&lt;/p&gt;
+
+&lt;p&gt;とはいえ管理画面だとかを作ってMarkdownを吐き出させるのは無駄なコストにしか思えないし、
+素直にMarkdownが書けてそのままHugoを動かす環境に取り込める仕組みを考える必要がありました。&lt;/p&gt;
+
+&lt;p&gt;なるだけコードを書きたくなかったのです。&lt;/p&gt;
+
+&lt;p&gt;僕の開発部ではBitBucketのプライベートレポジトリを活用しています。&lt;/p&gt;
+
+&lt;p&gt;GitHubも同様で、SCMのホスティングサービスではGUIで直接ファイルをいじる機能があります。
+実際これを使ったことはあまりないのですが、今回はこの機能に管理画面の代替品になってもらうことにしました。&lt;/p&gt;
+
+&lt;p&gt;なのでライターさんはWordPressの管理画面を捨て、BitBucketを管理画面として使うことになるわけです。&lt;/p&gt;
+
+&lt;p&gt;実際これでだいたいの運用は回っています。ですが1つだけ想定していなかったポイントがありました。&lt;/p&gt;
+
+&lt;p&gt;それは&lt;strong&gt;画像のアップロードが出来ない&lt;/strong&gt;ことです。
+記事に使いたい画像をGUIからアップすることが出来なかったのです。&lt;/p&gt;
+
+&lt;p&gt;幸いこの問題は、デザイナさんがGitに慣れていたこともあり、SourceTreeから画像をアップしてくれることになりました。&lt;/p&gt;
+
+&lt;p&gt;つくづく社員の方に恵まれていると思います。&lt;/p&gt;
+
+&lt;h2 id=&#34;移行するためにやったこと:5f9546be55588508513a850a19b4c520&#34;&gt;移行するためにやったこと&lt;/h2&gt;
+
+&lt;p&gt;では僕が大きく時間を割いたポイントをお話します。&lt;/p&gt;
+
+&lt;p&gt;それは次の2点です。&lt;/p&gt;
+
+&lt;h3 id=&#34;wordpressからのエクスポート:5f9546be55588508513a850a19b4c520&#34;&gt;WordPressからのエクスポート&lt;/h3&gt;
+
+&lt;p&gt;既存記事をMarkdownとして取り出す必要がありました。
+これはいろいろなツールを検討したのですが、結局最終的にはスクレイピングして力技で取得しました。&lt;/p&gt;
+
+&lt;p&gt;Pythonで抽出を行ったのですが、使い捨てプログラムということで適当に書きすぎたこともあり、500記事の抽出に数分かかるような有様になりました。&lt;/p&gt;
+
+&lt;p&gt;ちなみにHugo用の移行ツールも何種類かあるようです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/tools/#migration:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Hugo - Tools&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;テーマの作成:5f9546be55588508513a850a19b4c520&#34;&gt;テーマの作成&lt;/h3&gt;
+
+&lt;p&gt;Markdownが生成出来てしまえばあとはHugoのルールに乗っかるだけなので、サイトが形作られるのはあっというまでした。&lt;/p&gt;
+
+&lt;p&gt;とはいえGolangのテンプレートの仕様に慣れがなかったため、初めは想定した動作をしてもらえずイライラする場面も多かったです。&lt;/p&gt;
+
+&lt;h2 id=&#34;hugoを使うことの強み:5f9546be55588508513a850a19b4c520&#34;&gt;Hugoを使うことの強み&lt;/h2&gt;
+
+&lt;p&gt;僕が感じた強みはシンプルさでした。&lt;/p&gt;
+
+&lt;p&gt;UNIX哲学にこんな言葉があります。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;全てのプログラムはフィルタとして振る舞うようにせよ。&lt;br /&gt;
+Make every program a Filter.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/UNIX%E5%93%B2%E5%AD%A6&#34;&gt;UNIX哲学 - Wikipedia&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;おそらくこれに該当するもっともな例はシェルだと思うのですが、実はHugoもまさにこれを体現しているようなもので、Markdownを一定のルールに従ってテーマというフィルタに通すだけのプログラムになっています。&lt;/p&gt;
+
+&lt;p&gt;なのでそのルールさえ理解してしまえばテーマを作るのは容易で、約1週間程度でほぼ完成形につくり上げることが出来ました。&lt;/p&gt;
+
+&lt;h2 id=&#34;hugoを使うことの弱み:5f9546be55588508513a850a19b4c520&#34;&gt;Hugoを使うことの弱み&lt;/h2&gt;
+
+&lt;p&gt;とはいえ静的サイトジェネレータだからこその弱みもあると思っています。&lt;/p&gt;
+
+&lt;h3 id=&#34;テンプレートエンジンが難しい:5f9546be55588508513a850a19b4c520&#34;&gt;テンプレートエンジンが難しい&lt;/h3&gt;
+
+&lt;p&gt;テンプレートの書き方によってはパフォーマンスがガッツリ落ちる時があり、たかが500記事でも18秒ほどかかってしまうこともありました。&lt;/p&gt;
+
+&lt;p&gt;これではHugoの強みである速さを活かしきれてないことになってしまいますね。&lt;/p&gt;
+
+&lt;p&gt;結局チューニングをしたものの、やはり企業として運営しているサイトのため要求も多く、現在は7秒程度で生成する状況で落ち着きました。&lt;/p&gt;
+
+&lt;p&gt;ゆくゆくはせめて3秒以内に抑えたいとは思っています。&lt;/p&gt;
+
+&lt;p&gt;また、個人的にGolangのテンプレートと相性が悪いようで、その点は結構苦労しました。&lt;/p&gt;
+
+&lt;h3 id=&#34;よく読まれている記事が抽出出来ない:5f9546be55588508513a850a19b4c520&#34;&gt;よく読まれている記事が抽出出来ない&lt;/h3&gt;
+
+&lt;p&gt;これはもうどうしょうもないので、GoogleAnalyticsにアクセスしてJSONを吐き出しておくスクリプトを用意しました。&lt;/p&gt;
+
+&lt;p&gt;HugoはJSONを読み込んで記事を生成するような構成にしています。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/extras/datafiles/&#34;&gt;Hugo - Data Files&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;このデータファイルという機能は非常に優秀で、タグやカテゴリを英名 - 和名変換するためにも利用しています。簡易KVSですね。&lt;/p&gt;
+
+&lt;h3 id=&#34;サムネイルの作成が出来ない:5f9546be55588508513a850a19b4c520&#34;&gt;サムネイルの作成が出来ない&lt;/h3&gt;
+
+&lt;p&gt;これもどうしょうもないので、スクリプトを用意しました。&lt;/p&gt;
+
+&lt;p&gt;Pythonで書けば数行で出来てしまうため、10分20分で実装出来たのはラッキーでした。&lt;/p&gt;
+
+&lt;p&gt;これがないとPageSpeedInsightのスコアが大きく下がるため、見落とさずに対応できて良かったです。&lt;/p&gt;
+
+&lt;h2 id=&#34;運用を始めてみて:5f9546be55588508513a850a19b4c520&#34;&gt;運用を始めてみて&lt;/h2&gt;
+
+&lt;p&gt;僕の操作ミスでサービスダウンさせた場面は2度ほどありましたが、Hugoだから発生した問題は1つもありません。&lt;/p&gt;
+
+&lt;p&gt;レスポンスタイムは大きく向上し、PageSpeedInsightもほぼ全ページが90点超えとなりました（これはHugo関係ないが）。&lt;/p&gt;
+
+&lt;p&gt;しかしライターさんにMarkdownを覚えてもらったのはやはり少し気にかかっていて、Hugo特有のメタデータなどは出来る限りフォローに入るよう気をつけています。&lt;/p&gt;
+
+&lt;p&gt;また、生成はcronで定時処理しており、その処理ログをSlackに流すようにしています。&lt;/p&gt;
+
+&lt;p&gt;Slack側では「ERROR」という文言を含むメッセージが発せられた場合にアラートがあげられるようにしており、簡易的な監視ツールとして手軽に立ち上げられたのではないかと思っています。&lt;/p&gt;
+
+&lt;p&gt;そして、この運用による恩恵もいくつかあります。&lt;/p&gt;
+
+&lt;h3 id=&#34;プルリクエストが使えるようになった:5f9546be55588508513a850a19b4c520&#34;&gt;プルリクエストが使えるようになった&lt;/h3&gt;
+
+&lt;p&gt;メディアということで大量の記事を抱えているわけですが、その個々の記事のクオリティを上げることも重要な作業です。&lt;/p&gt;
+
+&lt;p&gt;この運用だとBitBucket上に記事データがあるため、プルリクエストをライターさんになげる運用ができるようになりました。&lt;/p&gt;
+
+&lt;p&gt;ソーシャルコーディングならぬ、ソーシャルライティングですね。&lt;/p&gt;
+
+&lt;h3 id=&#34;編集履歴が残るようになった:5f9546be55588508513a850a19b4c520&#34;&gt;編集履歴が残るようになった&lt;/h3&gt;
+
+&lt;p&gt;これはWordPressでも機能としてあるのかもしれませんが、Gitによる強力なバージョン管理が行えるようになりました。&lt;/p&gt;
+
+&lt;p&gt;記事ファイルがどのような変遷をたどってきたか、どの行を誰が書いたのかがわかるのは大きなメリットだと思います。&lt;/p&gt;
+
+&lt;h3 id=&#34;記事の一括操作が出来るようになった:5f9546be55588508513a850a19b4c520&#34;&gt;記事の一括操作が出来るようになった&lt;/h3&gt;
+
+&lt;p&gt;記事データがテキストファイルで存在するため、一括置換が容易になりました。&lt;/p&gt;
+
+&lt;p&gt;これまでもタグやカテゴリの設定しなおし等を行いたい場面があったようですが、そういった作業も人間の手を介さずに一瞬で行えるようになりました。&lt;/p&gt;
+
+&lt;p&gt;記事を柔軟に扱うという点では、WordPressでの運用より10歩も20歩も前進出来たように思います。&lt;/p&gt;
+
+&lt;p&gt;データをテキストファイルで保持できているので、エンジニアとしてもプラシーボ的な安心があります。&lt;/p&gt;
+
+&lt;h3 id=&#34;校正が自動化出来るようになった:5f9546be55588508513a850a19b4c520&#34;&gt;校正が自動化出来るようになった&lt;/h3&gt;
+
+&lt;p&gt;文章を扱うサービスということもあり、ライティングルールを定めています。&lt;/p&gt;
+
+&lt;p&gt;とはいえ現状どうかというと、結構な割合で守られていません。
+しかしこれは書き手のチェックに委ねられていたため、しかたのないことだと思います。&lt;/p&gt;
+
+&lt;p&gt;今回はテキストファイルとしてデータがあるので、正規表現でチェック出来るような校正はシェル化出来ました。&lt;/p&gt;
+
+&lt;p&gt;これは毎週金曜日の夕方に処理されるようになっており、アラートが上がった記事はSlackに通知されるようになっています。&lt;/p&gt;
+
+&lt;p&gt;また、サイズの大きい画像などが格納された場合も同様で、この処理の際にアラートがあがるようにしてあります。&lt;/p&gt;
+
+&lt;h2 id=&#34;終わりに:5f9546be55588508513a850a19b4c520&#34;&gt;終わりに&lt;/h2&gt;
+
+&lt;p&gt;というわけでWordPressから静的サイトジェネレータへの移行を会社でおこなった話を書きました。&lt;/p&gt;
+
+&lt;p&gt;現在は非常に安定して運用が出来ており、なおかつ非常に早いスピードで改修が出来ています。&lt;/p&gt;
+
+&lt;p&gt;WordPressでの運用に手こずっている方は、一度静的サイトジェネレータでの運用も検討してはいいのではないでしょうか。&lt;/p&gt;
+
+&lt;p&gt;素晴らしきプロダクトである&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;と開発者である&lt;a href=&#34;http://spf13.com/&#34;&gt;Steve Francia氏&lt;/a&gt;に感謝。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

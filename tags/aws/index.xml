@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aws on Unresolved</title>
+    <link>http://yet.unresolved.xyz/tags/aws/</link>
+    <description>Recent content in Aws on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 04 Feb 2016 17:52:48 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Rails&#43;RDSでMysql2::Error: Illegal mix of collations</title>
+      <link>http://yet.unresolved.xyz/blog/2016/02/04/illegal-mix-of-collations/</link>
+      <pubDate>Thu, 04 Feb 2016 17:52:48 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2016/02/04/illegal-mix-of-collations/</guid>
+      <description>
+
+&lt;p&gt;エラーの全貌はこう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ActionView::Template::Error (Mysql2::Error: Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation &#39;like&#39;: SELECT...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;DEFAULT_CHARACTER_SET_NAME&lt;/code&gt;が&lt;code&gt;latin1&lt;/code&gt;になってしまっているらしく、&lt;code&gt;like&lt;/code&gt;検索で落ちてしまった。
+MySQLの設定を変えなきゃいけないと思い込んでいて、RDSを使っていたからどうしょうもないのかと思って結構焦った。&lt;/p&gt;
+
+&lt;p&gt;でもRDSもMySQLの設定は変えられるらしい。そりゃそうか。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2016-02-04/params.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2016-02-04/params.png&#34; alt=&#34;params&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;これで直りました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;ALTER DATABASE table_name COLLATE = &#39;utf8_general_ci&#39;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;参考にさせていただきました:4b3e93c1f0fc95c9a54247a6e176ec82&#34;&gt;参考にさせていただきました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://mariadb.com/kb/en/mariadb/setting-character-sets-and-collations/&#34;&gt;Setting Character Sets and Collations - MariaDB Knowledge Base&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Amazon LinuxをVagrantで使いたい</title>
+      <link>http://yet.unresolved.xyz/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/</link>
+      <pubDate>Wed, 26 Aug 2015 23:12:02 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/</guid>
+      <description>
+
+&lt;p&gt;開発はCentOS、本番はAmazonLinuxにしようとしたら意外と違うところが多くてProvisioningがだるかったので。&lt;/p&gt;
+
+&lt;h2 id=&#34;ec2-create-instance-export-task:219da61ce6f755e0018f6c81d16e9cbc&#34;&gt;ec2-create-instance-export-task&lt;/h2&gt;
+
+&lt;p&gt;ec2-create-instance-export-taskっていうCLIのコマンドが用意されているらしい。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/ExportingEC2Instances.html&#34;&gt;Amazon EC2 インスタンスをエクスポートする - Amazon Elastic Compute Cloud&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;このコマンドでEC2のinstance_idを指定してS3にイメージファイルをエクスポートできるとのこと。&lt;/p&gt;
+
+&lt;p&gt;書式はこんな。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ec2-create-instance-export-task instance_id –e target_environment –f disk_image_format -c container_format –b s3_bucket
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;pipで入れたからこんな感じになったよ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;aws ec2 create-instance-export-task --instance-id i-82xxx70 --target-environment vmware --export-to-s3-task DiskImageFormat=vmdk,ContainerFormat=ova,S3Bucket=images.xxxxx.jp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;そしたらこんなエラー。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;A client error (AuthFailure) occurred when calling the CreateInstanceExportTask operation: vm-import-export@amazon.com must have WRITE and READ_ACL permission on the S3 bucket.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;しっかり説明を読むと、&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;エクスポートされたインスタンスを格納する Amazon S3 バケットを作成します。Amazon S3 バケットでは、[vm-import-export@amazon.com] アカウントへの [Upload/Delete] および [View Permissions] アクセスが付与される必要があります。詳細については、Amazon Simple Storage Service コンソールユーザーガイド の Creating a Bucket および Editing Bucket Permissions を参照してください。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;なるほどなるほど。&lt;/p&gt;
+
+&lt;p&gt;こんな感じに。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-08-26/bucket.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-08-26/bucket.png&#34; alt=&#34;bucket&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;そしたら違うエラー。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;A client error (NotExportable) occurred when calling the CreateInstanceExportTask operation: Only imported instances can be exported.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ん？&lt;/p&gt;
+
+&lt;p&gt;前提条件を読んでなかった。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/VMImportPrerequisites.html#vmimport-image-formats&#34;&gt;VM Import/Export の前提条件 - Amazon Elastic Compute Cloud&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Linux/Unix（64 ビット）&lt;/p&gt;
+
+&lt;p&gt;Red Hat Enterprise Linux (RHEL) 5.1-5.11、6.1-6.6、7.0-7.1&lt;/p&gt;
+
+&lt;p&gt;Note
+Amazon EC2 で実行するときに必要なドライバが存在しないため、RHEL 6.0 はサポートされていません。
+VM Import は、RHEL インスタンスのライセンスポータビリティをサポートしています。既存の RHEL ライセンスは、関連付けられた RHEL インスタンスと一緒にインポートされます。Red Hat Cloud Access の適格性の詳細については、Red Hat ウェブサイトの適格性を参照してください。
+CentOS 5.1～5.11、6.1～6.6、7.0-7.1&lt;/p&gt;
+
+&lt;p&gt;Note
+Amazon EC2 で実行するときに必要なドライバが存在しないため、CentOS 6.0 はサポートされていません。
+Ubuntu 12.04、12.10、13.04、13.10、14.04、14.10&lt;/p&gt;
+
+&lt;p&gt;Debian 6.0.0-6.0.8, 7.0.0-7.2.0&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;あっ・・・。&lt;/p&gt;
+
+&lt;h2 id=&#34;これでいいや:219da61ce6f755e0018f6c81d16e9cbc&#34;&gt;これでいいや&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.geekandi.com/2014/04/13/amazon-linux-vagrant-box-images/&#34;&gt;Amazon Linux Vagrant Box Images | Geek and I&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ちょっと古いし不安だけど、どうせ個人的なやつだし・・・。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考にさせていただきました:219da61ce6f755e0018f6c81d16e9cbc&#34;&gt;参考にさせていただきました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/21920993/convert-amazon-ec2-ami-to-virtual-or-vagrant-box&#34;&gt;virtualbox - Convert Amazon EC2 AMI to Virtual or Vagrant box - Stack Overflow&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ClojureのWebアプリをDocker &#43; Beanstalkで動かす</title>
+      <link>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</link>
+      <pubDate>Wed, 31 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</guid>
+      <description>
+
+&lt;p&gt;たぶんこういうのはドキュメント読んでもわからないので、とにかく一通りの流れを実践してみる。&lt;/p&gt;
+
+&lt;h2 id=&#34;imageの取得:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;Imageの取得&lt;/h2&gt;
+
+&lt;p&gt;面倒なので&lt;a href=&#34;https://hub.docker.com/account/signup/&#34;&gt;Docker Hub&lt;/a&gt;からClojureが動く環境を持ってくる。&lt;/p&gt;
+
+&lt;p&gt;オフィシャルリポジトリとやらがあったので、それを使います。Leiningenとか一式が入ってるみたい。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://registry.hub.docker.com/_/clojure/&#34;&gt;clojure&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;ローカルでの動作確認:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;ローカルでの動作確認&lt;/h2&gt;
+
+&lt;p&gt;とりあえず世界に挨拶が出来るくらいのWebアプリを作っちゃおう。&lt;/p&gt;
+
+&lt;p&gt;アプリ自体は重要じゃないので、とりあえずインタラクティブシェル上で適当にやります。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;b2d$  docker run -i -t clojure /bin/bash
+root@e322a11f087d:/home# lein new compojure aws_webapp
+Retrieving compojure/lein-template/0.4.1/lein-template-0.4.1.pom from clojars
+Retrieving compojure/lein-template/0.4.1/lein-template-0.4.1.jar from clojars
+root@e322a11f087d:/home# ls
+aws_webapp
+root@e322a11f087d:/home# cd aws_webapp/
+root@e322a11f087d:/home/aws_webapp# ls
+README.md  project.clj	resources  src	test
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;と思ったらcompojureテンプレート自体がすでにHello Worldを実装してた・・・。&lt;/p&gt;
+
+&lt;p&gt;そのままサーバ起動しちゃうとこんな感じでブラウザの自動起動のとこでエラーしちゃうので、&lt;code&gt;lein ring server-headless&lt;/code&gt;で起動する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;root@e322a11f087d:/home/aws_webapp# lein ring server
+2015-01-01 05:41:35.432:INFO:oejs.Server:jetty-7.6.8.v20121106
+2015-01-01 05:41:35.486:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:3000
+Started server on port 3000
+Exception in thread &amp;quot;main&amp;quot; java.lang.InternalError: Can&#39;t connect to X11 window server using &#39;localhost:0.0&#39; as the value of the DISPLAY variable., compiling:(/tmp/form-init3570254627486988046.clj:1:72)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;あとはデーモンとして起動しちゃえばローカルでの確認が出来る。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;b2d$  docker run -d -t -p 3000:3000 clojure:aws /bin/bash -c &amp;quot;cd /home/aws_webapp; lein ring server-headless&amp;quot;
+e9981a71589918791d52888a0cb503bea133611395be58574047cd498c9e6f76
+b2d$  docker ps
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS                    NAMES
+e9981a715899        clojure:aws         &amp;quot;/bin/bash -c &#39;cd /h   4 seconds ago       Up 3 seconds        0.0.0.0:3000-&amp;gt;3000/tcp   backstabbing_colden
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;起動しているのはboot2dockerの仮想マシン上なので、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;b2d$  boot2docker ip
+192.168.59.103
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;このIPの3000ポートに向けてアクセスすれば、&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-01/webapp.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-01/webapp.png&#34; alt=&#34;webapp&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;見れます。&lt;/p&gt;
+
+&lt;p&gt;ringのサーバは起動が遅いので&lt;code&gt;docker logs [names]&lt;/code&gt;で確認しながらやるといいね。&lt;/p&gt;
+
+&lt;h2 id=&#34;elastic-beanstalkで動かす:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;Elastic Beanstalkで動かす&lt;/h2&gt;
+
+&lt;p&gt;大事なことに気づいたんだけど、BeanstalkはDockerfileとか必要なファイル一式をまとめたzipをアップするらしい。&lt;/p&gt;
+
+&lt;p&gt;そもそもソースもイメージに入れちゃうっていうのは考えとしておかしいのかも。
+Dockerのベストプラクティスみたいなのがよくわからないや。
+warを&lt;code&gt;ADD&lt;/code&gt;で置くのが理想的なのかな。&lt;/p&gt;
+
+&lt;p&gt;今回は面倒なので、clojureでWebサーバを立ち上げられる&lt;code&gt;http-kit&lt;/code&gt;というライブラリを使ってやってみます。&lt;/p&gt;
+
+&lt;p&gt;ちょうどBeanstalk用のDockerfileとかも用意してくれる&lt;a href=&#34;https://github.com/mrmcc3/beanstalk-docker-app&#34;&gt;mrmcc3/beanstalk-docker-app&lt;/a&gt;というテンプレートがあったので、これを使わせてもらうことに。&lt;/p&gt;
+
+&lt;h3 id=&#34;mrmcc3-beanstalk-docker-appでwebアプリを構築する:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;mrmcc3/beanstalk-docker-appでWebアプリを構築する&lt;/h3&gt;
+
+&lt;p&gt;何はともあれ&lt;code&gt;new&lt;/code&gt;して作り直し。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;temp$ lein new beanstalk-docker-app superapp
+Generating clojure app for AWS Beanstalk and docker
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こんな感じで作られる。jarとかは&lt;code&gt;lein uberjar&lt;/code&gt;で作らなきゃダメかも。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;.
+|-- Dockerfile
+|-- Dockerrun.aws.json
+|-- project.clj
+|-- src
+|   `-- superapp
+|       `-- main.clj
+`-- target
+    |-- classes
+    |   |-- META-INF
+    |   |-- clojure
+    |   |-- org
+    |   `-- superapp
+    |-- production.jar
+    |-- stale
+    |   `-- extract-native.dependencies
+    |-- superapp-0.1.0.jar
+    `-- superapp-0.1.0.zip
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Dockerfileはこんな。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-docker&#34;&gt;# Dockerfile for clojure apps on AWS Elastic Beanstalk
+# v0.0.1
+
+FROM dockerfile/java
+MAINTAINER Michael McClintock, mrmcc3@gmail.com
+ADD target/production.jar /root/
+EXPOSE 8080
+CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/production.jar&amp;quot;]
+
+# SUPPORT JVM OPTS ?
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;動作確認:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;動作確認&lt;/h3&gt;
+
+&lt;p&gt;ローカルでの動作確認はこんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;superapp$ java -jar target/production.jar
+13:33:07.705 [main] INFO  superapp.main - starting superapp
+13:33:07.710 [main] INFO  superapp.main - serving status message
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-01/beanstalkDockerApp.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-01/beanstalkDockerApp.png&#34; alt=&#34;beanstalkDockerApp&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;デプロイ:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;デプロイ&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;lein zip&lt;/code&gt;でBeanstalk用のzipが&lt;code&gt;target&lt;/code&gt;配下に作成されるので、それをアップロード。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Dockerrun.aws.json&lt;/code&gt;でポートの指定とかやってるんだけど、こいつもzipに入れてしまうとtimeoutしてしまった。
+まあそれでも動くんだけどちょっと気持ち悪いので除外。&lt;/p&gt;
+
+&lt;p&gt;ポートの指定やらはDockerfileでやってるので問題なく動きます。&lt;/p&gt;
+
+&lt;p&gt;デプロイはこんな感じで成功。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-01/deploy.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-01/deploy.png&#34; alt=&#34;deploy&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;しかしデプロイは結構時間かかるなー。
+Javaの起動とかライブラリのダウンロードで食ってるのかな・・・。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考にさせて頂きました:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://wslash.com/?p=5584&#34;&gt;Dockerを勉強するための、Docker解説記事のまとめ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://knowledge.sakura.ad.jp/tech/1811/&#34;&gt;これから始める「DockerでかんたんLAMP環境 for CentOS」&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://nudaygames.squarespace.com/blog/2014/12/13/clojure-websocket-server-on-elastic-beanstalk&#34;&gt;CLOJURE WEBSOCKET SERVER ON ELASTIC BEANSTALK&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://inokara.hateblo.jp/entry/2013/12/29/215322&#34;&gt;Dockerfile の書き方「私的」なベストプラクティス（3）〜サービスの起動について〜&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

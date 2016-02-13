@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vagrant on Unresolved</title>
+    <link>http://yet.unresolved.xyz/tags/vagrant/</link>
+    <description>Recent content in Vagrant on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 Mar 2015 23:15:49 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/vagrant/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Ansibleを使ってMySQLが動く環境を手っ取り早く作る</title>
+      <link>http://yet.unresolved.xyz/blog/2015/03/16/create-mysql-environment-using-the-ansible/</link>
+      <pubDate>Mon, 16 Mar 2015 23:15:49 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/03/16/create-mysql-environment-using-the-ansible/</guid>
+      <description>
+
+&lt;p&gt;ちょっと友人と共同で開発しているWebアプリがあって、DBの用意も手軽に共有したいのでAnsibleでやることに。
+まあ僕はViewしか触ってないから別になくてもいいんだけど・・・。&lt;/p&gt;
+
+&lt;h2 id=&#34;hostsを書く:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;hostsを書く&lt;/h2&gt;
+
+&lt;p&gt;Ansibleが取り扱うマシンの定義をしておかなきゃいけない。
+&lt;code&gt;Vagrantfile&lt;/code&gt;で作られる仮想マシンのipを固定して、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;  config.vm.network &amp;quot;private_network&amp;quot;, ip: &amp;quot;192.168.33.20&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ansibleに読み込ませる&lt;code&gt;hosts&lt;/code&gt;に定義しよう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[vagrant]
+192.168.33.20
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ansibleのsshがrefuseで止められる場合は、&lt;code&gt;vagrant ssh-config &amp;gt;&amp;gt; ~/.ssh/config&lt;/code&gt;とかしておけば多分大丈夫。&lt;/p&gt;
+
+&lt;h2 id=&#34;vagrantfileでプロビジョニング出来るようにする:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;Vagrantfileでプロビジョニング出来るようにする&lt;/h2&gt;
+
+&lt;p&gt;せっかくだし&lt;code&gt;vagrant up&lt;/code&gt;か&lt;code&gt;vagrant provision&lt;/code&gt;でプロビジョニングしてほしい。
+&lt;code&gt;Vagrantfile&lt;/code&gt;にこんな感じの記述をすれば、初回実施時にAnsibleのPlaybookを実行してくれるらしい。
+Ansibleはなんかコマンド覚えらんないしちょうどいいね。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;  config.vm.provision &amp;quot;ansible&amp;quot; do |ansible|
+    ansible.playbook = &amp;quot;env/dev-playbook.yml&amp;quot;
+    ansible.inventory_path = &amp;quot;env/hosts&amp;quot;
+    ansible.limit = &#39;all&#39;
+  end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;今回は&lt;code&gt;Vagrantfile&lt;/code&gt;があるディレクトリに&lt;code&gt;env&lt;/code&gt;ってディレクトリを作って、そこに設定ファイルを置くことにした。
+Playbookとかもここに入れていきます。&lt;/p&gt;
+
+&lt;h2 id=&#34;ansible-galaxyを使う:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;Ansible Galaxyを使う&lt;/h2&gt;
+
+&lt;p&gt;AnsibleはPlaybookと呼ばれるymlファイルにプロビジョニングの定義をしていく。
+でも正直、個人的に使う環境のためにガリガリ書くのはバカらしいよね。
+特にMySQLなんて相当な数の人が使ってるだろうし、そのノウハウを使わせてもらいたい。&lt;/p&gt;
+
+&lt;p&gt;Ansibleには&lt;a href=&#34;https://galaxy.ansible.com/&#34;&gt;Ansible Galaxy&lt;/a&gt;っていうWebサービスがあって、モジュール単位のよく使う定義をアップできるみたい。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://galaxy.ansible.com/&#34;&gt;Ansible Galaxy | Find, reuse, and share the best Ansible content&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;AnsibleではMySQLやらhttpdやらの個々のモジュールをroleと呼んでるらしい。&lt;/p&gt;
+
+&lt;p&gt;つまり、&lt;a href=&#34;https://galaxy.ansible.com/list#/roles&#34;&gt;Browse Roles&lt;/a&gt;からMySQLのroleを探せばよい。
+今回は&lt;a href=&#34;https://galaxy.ansible.com/list#/roles/509&#34;&gt;ANXS.mysql&lt;/a&gt;という奴を使わせてもらうことにしました。
+理由は、評価がそれなりに高くて、MySQLの設定が見たまんまでやれそうだったから。&lt;/p&gt;
+
+&lt;h3 id=&#34;ansible-galaxyからroleをインストールする:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;Ansible Galaxyからroleをインストールする&lt;/h3&gt;
+
+&lt;p&gt;Ansible Galaxyからの導入は&lt;code&gt;ansible-galaxy install ANXS.mysql&lt;/code&gt;みたいにやれば出来る。&lt;/p&gt;
+
+&lt;p&gt;でもこれじゃあ、このPCにだけroleが導入されちゃうし、どんなroleが必要だったのか後々わからなくなっちゃいますね。
+だから他の人が環境を作るときに困る。&lt;/p&gt;
+
+&lt;p&gt;そういう時のために&lt;code&gt;requirements.txt&lt;/code&gt;っていうのを作るのが主流らしい。
+これはAnsible Galaxyから導入するroleを記述しておくものみたいで、今回はこんな感じの記述になった。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- src: ANXS.mysql
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;導入するときは&lt;code&gt;ansible-galaxy install -p ./env/roles -r env/requirements.yml&lt;/code&gt;みたいにやればいい。
+これで環境を作る手順を統一することができました。&lt;/p&gt;
+
+&lt;p&gt;このコマンドは覚えられなそうだから、プロジェクトで使うWikiとかに書いておいたほうがいいですね。
+ちなみに、roleはAnsible Galaxyにあるものだけじゃなくて、GitHubにあるものとかも導入できるらしい。&lt;/p&gt;
+
+&lt;h3 id=&#34;playbookを書く:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;Playbookを書く&lt;/h3&gt;
+
+&lt;p&gt;じゃあインストールしてきたroleをもとにPlaybookを書きます。&lt;/p&gt;
+
+&lt;p&gt;設定の仕方はだいたいAnsible Galaxyに書いてあるんだけど、書いてないのも多いから選ぶときに気をつけたほうがいいかも。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://galaxy.ansible.com/list#/roles/509&#34;&gt;ANXS.mysql&lt;/a&gt;の場合はこんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- hosts: vagrant
+  user: vagrant
+  sudo: yes
+  vars_files:
+    - mysql.yml
+  roles:
+  - { role: ANXS.mysql }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;roles&lt;/code&gt;で使うroleを指定していて、&lt;code&gt;vars_files&lt;/code&gt;がroleで使う設定を外だしするための記述。&lt;/p&gt;
+
+&lt;p&gt;外だししたファイルがこれ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Basic settings
+mysql_port: 3306                        # The port on which mysql listens
+mysql_bind_address: &amp;quot;0.0.0.0&amp;quot;           # The address the mysql server binds on
+mysql_root_password: &#39;root&#39;             # The root password
+
+mysql_character_set_server: &#39;utf8&#39;
+mysql_collation_server: &#39;utf8_general_ci&#39;
+
+# List of databases to be created (optional)
+mysql_databases:
+  - name: dev
+    collation: &amp;quot;utf8_general_ci&amp;quot;        # optional, defaults to &amp;quot;utf8_general_ci&amp;quot;
+    encoding: &amp;quot;utf8&amp;quot;                    # optional, defaults to &amp;quot;utf8&amp;quot;
+
+# List of users to be created (optional)
+mysql_users:
+  - name: dev
+    pass: dev
+    priv: &amp;quot;*.*:ALL&amp;quot;                     # optional, defaults to &amp;quot;*.*:ALL&amp;quot;
+    host: &amp;quot;%&amp;quot;                           # optional, defaults to &amp;quot;localhost&amp;quot;
+
+# GLOBAL Setting
+monit_protection: false                 # true or false, requires ANXS.monit
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ansible Galaxyに載っているものからコピってきて、不要なものを消しただけ。&lt;/p&gt;
+
+&lt;h2 id=&#34;プロビジョニングする:3b232f4f71049640111f0fd2b2cec1ee&#34;&gt;プロビジョニングする&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;vagrant up&lt;/code&gt;か&lt;code&gt;vagrant provision&lt;/code&gt;すればやってくれます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://galaxy.ansible.com/list#/roles/509&#34;&gt;ANXS.mysql&lt;/a&gt;の場合はMySQLユーザの作成とデータベースの作成までやってくれる。
+テーブルとかは別途スキーマ定義を用意するだろうし、ここまでやってくれれば十分ですね。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Vagrant &#43; Ansibleでprovided hosts list is empty</title>
+      <link>http://yet.unresolved.xyz/blog/2015/03/16/provided-hosts-list-is-empty/</link>
+      <pubDate>Mon, 16 Mar 2015 22:55:18 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/03/16/provided-hosts-list-is-empty/</guid>
+      <description>
+
+&lt;p&gt;AnsibleでVagrant上のCentOSにMySQLを入れようとしたらこれ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PLAY [vagrant] ****************************************************************
+skipping: no hosts matched
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;Vagrantfile&lt;/code&gt;に&lt;code&gt;inventory_path&lt;/code&gt;を指定しなきゃいけない。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;  config.vm.provision &amp;quot;ansible&amp;quot; do |ansible|
+    ansible.playbook = &amp;quot;env/dev-playbook.yml&amp;quot;
+    ansible.inventory_path = &amp;quot;env/hosts&amp;quot;
+  end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;次はこれ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ERROR: provided hosts list is empty
+Ansible failed to complete successfully. Any error output should be
+visible above. Please fix these errors and try again.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;limit&lt;/code&gt;の指定も必要。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;  config.vm.provision &amp;quot;ansible&amp;quot; do |ansible|
+    ansible.playbook = &amp;quot;env/dev-playbook.yml&amp;quot;
+    ansible.inventory_path = &amp;quot;env/hosts&amp;quot;
+    ansible.limit = &#39;all&#39;
+  end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;参考にさせて頂きました:333088a6c8a5face53f03b54cc61c846&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://narusemotoki.tumblr.com/post/82475978900/vagrant-1-5-ansible-limit-all&#34;&gt;Vagrant 1.5からAnsibleを使うのならlimit = &amp;lsquo;all&amp;rsquo;が必要 - 今日のハック&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Vagrant &#43; CentOS &#43; PostgreSQLを最速で構築</title>
+      <link>http://yet.unresolved.xyz/blog/2015/01/22/install-postgresql-on-centos/</link>
+      <pubDate>Thu, 22 Jan 2015 15:37:14 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/01/22/install-postgresql-on-centos/</guid>
+      <description>
+
+&lt;p&gt;herokuにのっけるアプリを作るとき、ローカルではSQLite使ってたんだけどもう色々つらい。&lt;/p&gt;
+
+&lt;p&gt;なんか整数で定義したカラムに文字列入るし。なんかオートインクリメントの設定の仕方がPostgreSQLと違うし。&lt;/p&gt;
+
+&lt;p&gt;なのでもう、さっとPostgreSQLだけ入った仮想環境を作ってホスト側から繋げるようにしたい。&lt;/p&gt;
+
+&lt;h2 id=&#34;vagrantfileの設定:0c4c654ebb9e6ebcd35111a51a896918&#34;&gt;Vagrantfileの設定&lt;/h2&gt;
+
+&lt;p&gt;もう面倒なのはいやなのでCentOSとIPの設定だけやります。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = &amp;quot;2&amp;quot;
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = &amp;quot;chef/centos-6.5&amp;quot;
+  config.vm.network &amp;quot;private_network&amp;quot;, ip: &amp;quot;192.168.33.10&amp;quot;
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;postgresqlの導入:0c4c654ebb9e6ebcd35111a51a896918&#34;&gt;PostgreSQLの導入&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;[vagrant@localhost ~]$ sudo yum install postgresql
+[vagrant@localhost ~]$ sudo yum install postgresql-server
+[vagrant@localhost ~]$ sudo yum install postgresql-contrib
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;postgresqlの使い方がわからない:0c4c654ebb9e6ebcd35111a51a896918&#34;&gt;PostgreSQLの使い方がわからない&lt;/h2&gt;
+
+&lt;p&gt;もうほんとPostgreSQLの使い方がわかんない、MySQLばっか触ってたからわかんない。&lt;/p&gt;
+
+&lt;p&gt;そもそもサービス名はなんなんだろう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[vagrant@localhost ~]$ service postgresql
+Usage: /etc/init.d/postgresql {start|stop|status|restart|condrestart|try-restart|reload|force-reload|initdb}
+[vagrant@localhost ~]$ service postgresql status
+postmaster is stopped
+[vagrant@localhost ~]$ sudo service postgresql start
+
+/var/lib/pgsql/data is missing. Use &amp;quot;service postgresql initdb&amp;quot; to initialize the cluster first.
+                                                           [FAILED]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;postgresql&lt;/code&gt;か、でもなんか起動しないですね。&lt;/p&gt;
+
+&lt;p&gt;なんか&lt;code&gt;initdb&lt;/code&gt;とやらで初期化をしなきゃいけないらしい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[vagrant@localhost ~]$ sudo -u postgres /usr/bin/initdb -D /var/lib/pgsql/data
+could not change directory to &amp;quot;/home/vagrant&amp;quot;
+The files belonging to this database system will be owned by user &amp;quot;postgres&amp;quot;.
+This user must also own the server process.
+
+The database cluster will be initialized with locale en_US.UTF-8.
+The default database encoding has accordingly been set to UTF8.
+The default text search configuration will be set to &amp;quot;english&amp;quot;.
+
+fixing permissions on existing directory /var/lib/pgsql/data ... ok
+creating subdirectories ... ok
+selecting default max_connections ... 100
+selecting default shared_buffers ... 32MB
+creating configuration files ... ok
+creating template1 database in /var/lib/pgsql/data/base/1 ... ok
+initializing pg_authid ... ok
+initializing dependencies ... ok
+creating system views ... ok
+loading system objects&#39; descriptions ... ok
+creating conversions ... ok
+creating dictionaries ... ok
+setting privileges on built-in objects ... ok
+creating information schema ... ok
+vacuuming database template1 ... ok
+copying template1 to template0 ... ok
+copying template1 to postgres ... ok
+
+WARNING: enabling &amp;quot;trust&amp;quot; authentication for local connections
+You can change this by editing pg_hba.conf or using the -A option the
+next time you run initdb.
+
+Success. You can now start the database server using:
+
+    /usr/bin/postgres -D /var/lib/pgsql/data
+or
+    /usr/bin/pg_ctl -D /var/lib/pgsql/data -l logfile start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;[vagrant@localhost ~]$ sudo service postgresql start
+Starting postgresql service:                               [  OK  ]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ゲスト内で繋がるかな。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[vagrant@localhost ~]$ psql -U postgres
+psql (8.4.20)
+Type &amp;quot;help&amp;quot; for help.
+
+postgres=# \q
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;いけますね。&lt;/p&gt;
+
+&lt;p&gt;ホスト側からいけるかな。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/Develop/clj_rss$ psql -h 192.168.33.10 -U postgres
+psql: could not connect to server: Connection refused
+	Is the server running on host &amp;quot;192.168.33.10&amp;quot; and accepting
+	TCP/IP connections on port 5432?
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;いけないね。&lt;/p&gt;
+
+&lt;h2 id=&#34;接続の設定:0c4c654ebb9e6ebcd35111a51a896918&#34;&gt;接続の設定&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;/var/lib/pgsql/data/postgresql.conf&lt;/code&gt;のコメントアウトを外したり&lt;code&gt;*&lt;/code&gt;にしたりこんな感じに。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;listen_addresses = &#39;*&#39;          # what IP address(es) to listen on;
+                                        # comma-separated list of addresses;
+                                        # defaults to &#39;localhost&#39;, &#39;*&#39; = all
+                                        # (change requires restart)
+port = 5432                             # (change requires restart)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;/var/lib/pgsql/data/pg_hba.conf&lt;/code&gt;にこれを追加する感じに。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;host    all         all         0.0.0.0/0             trust
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;いけるかな？&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/Develop/clj_rss$ psql -h 192.168.33.10 -U postgres
+psql (9.3.5, server 8.4.20)
+Type &amp;quot;help&amp;quot; for help.
+
+postgres=# \q
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;いけますね。&lt;/p&gt;
+
+&lt;p&gt;そのうちshellにまとめてprovisioning出来るようにしよう・・・。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考にさせて頂きました:0c4c654ebb9e6ebcd35111a51a896918&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://iwa4.hatenablog.com/entry/2014/05/30/190000&#34;&gt;Vagrant で Windows に Postgres on CentOS 環境を構築 - 弘法にも筆の誤り&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.dbonline.jp/postgresql/connect/index2.html&#34;&gt;PostgreSQLへの接続 - PostgreSQLへの接続と切断 - PostgreSQLの使い方&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

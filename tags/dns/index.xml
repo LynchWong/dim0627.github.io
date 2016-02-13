@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dns on Unresolved</title>
+    <link>http://yet.unresolved.xyz/tags/dns/</link>
+    <description>Recent content in Dns on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Oct 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/dns/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>GitHub Pagesでカスタムドメインを使う</title>
+      <link>http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/</link>
+      <pubDate>Fri, 24 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/</guid>
+      <description>
+
+&lt;p&gt;昨日はGAEで今日はGithubかよって感じだけど、こっちは結構詰まったのでメモしたい。&lt;/p&gt;
+
+&lt;h2 id=&#34;githubからwarningメールが来るようになった:bd764d28564cc0069e229d086834b342&#34;&gt;GitHubからWarningメールが来るようになった&lt;/h2&gt;
+
+&lt;p&gt;このOctopressのblogをカスタムドメインにしてから、&lt;code&gt;rake gen_deploy&lt;/code&gt;するとGithubからこんなメールが来るようになりました。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;[dim0627.github.io] Page build warning&lt;/p&gt;
+
+&lt;p&gt;The page build completed successfully, but returned the following warning:
+GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://github.com/blog/1715-faster-more-awesome-github-pages&#34;&gt;https://github.com/blog/1715-faster-more-awesome-github-pages&lt;/a&gt;) to make your site faster and more awesome, but we&amp;rsquo;ve noticed that unresolved.dimspace.xyz isn&amp;rsquo;t properly configured to take advantage of these new features. While your site will continue to work just fine, updating your domain&amp;rsquo;s configuration offers some additional speed and performance benefits. Instructions on updating your site&amp;rsquo;s IP address can be found at &lt;a href=&#34;https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages&#34;&gt;https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages&lt;/a&gt;, and of course, you can always get in touch with a human at support@github.com. For the more technical minded folks who want to skip the help docs: your site&amp;rsquo;s DNS records are pointed to a deprecated IP address.&lt;/p&gt;
+
+&lt;p&gt;For information on troubleshooting Jekyll see:
+ &lt;a href=&#34;https://help.github.com/articles/using-jekyll-with-pages#troubleshooting&#34;&gt;https://help.github.com/articles/using-jekyll-with-pages#troubleshooting&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If you have any questions please contact us at &lt;a href=&#34;https://github.com/contact&#34;&gt;https://github.com/contact&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;英語かよ後で読もう、と思ってもデプロイするたびにメールが来るのは結構うざいのでしっかり読んでみると、&lt;strong&gt;デプロイは出来たんだけど、もっと速く動作させる方法があるからそっちにしない？&lt;/strong&gt;って話らしい。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/blog/1715-faster-more-awesome-github-pages&#34;&gt;Faster, More Awesome GitHub Pages&lt;/a&gt;を参考にすると、以下の手順を踏めばいいとのこと。&lt;/p&gt;
+
+&lt;h3 id=&#34;username-github-ioみたいなデフォルトurlの人:bd764d28564cc0069e229d086834b342&#34;&gt;username.github.ioみたいなデフォルトURLの人&lt;/h3&gt;
+
+&lt;p&gt;何もしないでOK&lt;/p&gt;
+
+&lt;h3 id=&#34;www-example-comみたいなサブドメインの人:bd764d28564cc0069e229d086834b342&#34;&gt;www.example.comみたいなサブドメインの人&lt;/h3&gt;
+
+&lt;p&gt;DNSプロバイダ側にCNAMEレコードを作って、username.github.ioに向ければOK&lt;/p&gt;
+
+&lt;h3 id=&#34;example-comみたいにルートドメインの人:bd764d28564cc0069e229d086834b342&#34;&gt;example.comみたいにルートドメインの人&lt;/h3&gt;
+
+&lt;p&gt;DNSプロバイダ側にAレコードを作って、207.97.227.245か204.232.175.78を向ければOK&lt;/p&gt;
+
+&lt;p&gt;ちなみにこの3つめは少し厄介らしく、そもそもDNSプロバイダ側でALIASとやらが設定出来ないとだめなんだとか。こういう系は知識が浅くてだめだなあ。&lt;/p&gt;
+
+&lt;h2 id=&#34;これで何が起こるの:bd764d28564cc0069e229d086834b342&#34;&gt;これで何が起こるの？&lt;/h2&gt;
+
+&lt;p&gt;CDNからの配信になるから速いんだとか。あとDenial of service attackとかいう攻撃の対策になるらしい。
+あ、DOS攻撃のことか。略さずに書かれるとわからんもんだね。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Google app engineでカスタムドメインを使う</title>
+      <link>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</link>
+      <pubDate>Thu, 23 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2014/10/23/how-to-use-custom-domain-in-google-app-engine/</guid>
+      <description>
+
+&lt;p&gt;簡単に終わるだろうと思ってたらそれなりに手順があったのでメモ。&lt;/p&gt;
+
+&lt;h2 id=&#34;googleによるドメインの確認:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;Googleによるドメインの確認&lt;/h2&gt;
+
+&lt;p&gt;以下の手順にそってやっていきます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/appengine/docs/domain&#34;&gt;Using a Custom Domain - Google App Engine Google Cloud Platform&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;作業は&lt;a href=&#34;https://console.developers.google.com/&#34;&gt;Developers Console&lt;/a&gt;から行います。&lt;/p&gt;
+
+&lt;p&gt;はじめにGoogleが、使いたいドメインが君のものか確認したいとのことなので、verifyへ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/verify.png&#34; alt=&#34;verify&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;そうするとこんな画面になるので、&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34; alt=&#34;input_domain&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ここに表示されてるテキストを、ドメインを発行した会社さんのほうからTXTレコードとして追加すればOK。&lt;/p&gt;
+
+&lt;p&gt;なんかこの画面、すごい頻度でChromeがエラー吐きまくったけど、クリックしなければ大丈夫だったのでなんとかしのぎました。&lt;/p&gt;
+
+&lt;p&gt;TXTレコードの追加は、お名前.comであれば&lt;a href=&#34;http://www.onamae.com/navi/domain.html&#34;&gt;ドメインNavi&lt;/a&gt;から&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;ドメイン設定&lt;/li&gt;
+&lt;li&gt;DNS関連機能の設定&lt;/li&gt;
+&lt;li&gt;DNSレコード設定を利用する&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;でここに入力すればOK。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34; alt=&#34;input_txt&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;TYPEはTXTにしてVALUEにさっきのテキストを入力。
+場所にもよるけど少し待てば反映されるので、それまでGoogle側の画面で確認ボタンを何度か押してみる。
+反映されてたら確認が通るはず。&lt;/p&gt;
+
+&lt;h2 id=&#34;ドメインの選択:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;ドメインの選択&lt;/h2&gt;
+
+&lt;p&gt;確認が出来たらサブドメインとしてプレフィックスを付けるのかを決める。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step2.png&#34; alt=&#34;step2&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;これによって最後のステップが変わるけど、僕は確認の時点でサブドメインとして設定したので、Google側では特に付加せずやってます。&lt;/p&gt;
+
+&lt;h2 id=&#34;aレコードとaaaaレコードの追加:f29605b0f60814e1a345ce000c7a37f6&#34;&gt;AレコードとAAAAレコードの追加&lt;/h2&gt;
+
+&lt;p&gt;最後はまたDNSレコードの追加。
+ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-10-23/step3.png&#34; alt=&#34;step3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;あとは待ってればそのうち反映されるはず。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Heroku on Unresolved</title>
+    <link>http://yet.unresolved.xyz/tags/heroku/</link>
+    <description>Recent content in Heroku on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Jan 2015 20:52:46 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/heroku/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>SlackAPIで遊ぶ</title>
+      <link>http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/</link>
+      <pubDate>Sun, 25 Jan 2015 20:52:46 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/</guid>
+      <description>
+
+&lt;p&gt;最近
+&lt;a href=&#34;http://www.amazon.co.jp/gp/product/4797328355/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4797328355&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;ふつうのLinuxプログラミング&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=4797328355&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important; display:inline;width:0;&#34; /&gt;を読んでます。知りたいことが書かれてて楽しい！&lt;/p&gt;
+
+&lt;p&gt;でもずっと本読むのは飽きるよね。なのでSlackのAPIとか触ってみる。&lt;/p&gt;
+
+&lt;h2 id=&#34;slackapiの種類:4800906b877996c3dc902a23f48b0c5e&#34;&gt;SlackAPIの種類&lt;/h2&gt;
+
+&lt;p&gt;SlackのAPIはいくつか種類があるんだね、トリガになるパターンが違うのかな？&lt;/p&gt;
+
+&lt;p&gt;2015年01月24日時点でのAPIをまとめてみる。&lt;/p&gt;
+
+&lt;h3 id=&#34;slack-web-api-https-api-slack-com-web:4800906b877996c3dc902a23f48b0c5e&#34;&gt;&lt;a href=&#34;https://api.slack.com/web&#34;&gt;Slack Web API&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;指定したチャンネルの履歴とかユーザの一覧とか、Slackの情報を取得出来る。&lt;/p&gt;
+
+&lt;p&gt;Web APIなので、URLベースでの取得。&lt;/p&gt;
+
+&lt;h3 id=&#34;real-time-messaging-api-https-api-slack-com-rtm:4800906b877996c3dc902a23f48b0c5e&#34;&gt;&lt;a href=&#34;https://api.slack.com/rtm&#34;&gt;Real Time Messaging API&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Web Socketベースのリアルタイムチャット機能を提供する？&lt;/p&gt;
+
+&lt;p&gt;bot userがどうのこうのっていうのがよくわからない。&lt;/p&gt;
+
+&lt;h3 id=&#34;slackbot-remote-control-https-api-slack-com-slackbot:4800906b877996c3dc902a23f48b0c5e&#34;&gt;&lt;a href=&#34;https://api.slack.com/slackbot&#34;&gt;Slackbot Remote Control&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;SlackBotに喋らせたり出来る。ちょうかわいい。&lt;/p&gt;
+
+&lt;h3 id=&#34;incoming-webhooks-https-api-slack-com-incoming-webhooks:4800906b877996c3dc902a23f48b0c5e&#34;&gt;&lt;a href=&#34;https://api.slack.com/incoming-webhooks&#34;&gt;Incoming Webhooks&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;指定したチャンネルに投稿出来る。&lt;/p&gt;
+
+&lt;h3 id=&#34;outgoing-webhooks-https-api-slack-com-outgoing-webhooks:4800906b877996c3dc902a23f48b0c5e&#34;&gt;&lt;a href=&#34;https://api.slack.com/outgoing-webhooks&#34;&gt;Outgoing Webhooks&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;指定した単語に応じて指定したURLを叩ける。&lt;/p&gt;
+
+&lt;h3 id=&#34;slash-commands-https-api-slack-com-slash-commands:4800906b877996c3dc902a23f48b0c5e&#34;&gt;&lt;a href=&#34;https://api.slack.com/slash-commands&#34;&gt;Slash Commands&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;指定したスラッシュで始まる単語に応じてURLを叩けて、レスポンスがそのまま投稿される。&lt;/p&gt;
+
+&lt;p&gt;今回は発言のタイミングで発火する&lt;a href=&#34;https://api.slack.com/slash-commands&#34;&gt;Slash Commands&lt;/a&gt;を使ってみようかな！&lt;/p&gt;
+
+&lt;h2 id=&#34;スラッシュコマンドの追加:4800906b877996c3dc902a23f48b0c5e&#34;&gt;スラッシュコマンドの追加&lt;/h2&gt;
+
+&lt;p&gt;ここから新しくコマンドの追加が出来る。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://my.slack.com/services/new/slash-commands&#34;&gt;https://my.slack.com/services/new/slash-commands&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-25/new_command.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-25/new_command.png&#34; alt=&#34;new_command&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;herokuでさくっとHello World作って試してみようかな。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-25/command_test.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-25/command_test.png&#34; alt=&#34;command_test&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;おお、出るじゃん！でも&lt;code&gt;Only you can see this message&lt;/code&gt;って出てる、僕しか見れないんだね。&lt;/p&gt;
+
+&lt;h2 id=&#34;replを作ろう:4800906b877996c3dc902a23f48b0c5e&#34;&gt;REPLを作ろう&lt;/h2&gt;
+
+&lt;p&gt;なんかSlack上でプログラム打つと実行結果が返ってくるみたいなやつ誰かが作ってたよね？
+あれ調べても出ないんだけどなんでなんだろう。&lt;/p&gt;
+
+&lt;p&gt;まあとりあえず、作ったばっかの&lt;a href=&#34;https://paiza.io/&#34;&gt;paiza.IO&lt;/a&gt;のAPIを叩くあれを導入してみる。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/&#34;&gt;paiza.ioのAPIを使ってreplを作る | Unresolved&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;スラッシュコマンドAPIは&lt;code&gt;/command args&lt;/code&gt;って感じにやると、指定したURLに&lt;code&gt;text&lt;/code&gt;ってパラメータ名で&lt;code&gt;args&lt;/code&gt;が飛ばされるみたい。&lt;/p&gt;
+
+&lt;p&gt;なので&lt;code&gt;/repl ruby:p &amp;quot;hello&amp;quot;&lt;/code&gt;って感じで実行できるようにしようかな。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-25/slack_repl.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-25/slack_repl.png&#34; alt=&#34;slack_repl&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;別にURL出してもいいんだけど・・・。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;compojure&lt;/code&gt;のルーティングはこんな。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(defroutes app-routes
+  (GET &amp;quot;/&amp;quot; [text]
+       (if (empty? text) &amp;quot;Invalid input.&amp;quot;
+         (let [[language source] (seq (.split text &amp;quot;:&amp;quot;))]
+           (str &amp;quot;[&amp;quot; language &amp;quot;] &amp;quot; source &amp;quot;\r\n-&amp;gt; &amp;quot; (repl language source))))))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;実行してみる:4800906b877996c3dc902a23f48b0c5e&#34;&gt;実行してみる&lt;/h2&gt;
+
+&lt;p&gt;さっき書いた通り、&lt;code&gt;/repl ruby:p &amp;quot;hello&amp;quot;&lt;/code&gt;でいけるかな。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-01-25/slack_repl_run.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-01-25/slack_repl_run.png&#34; alt=&#34;slack_repl_run&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Javaは少し面倒だね。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>paiza.IOのAPIを使ってreplを作る</title>
+      <link>http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/</link>
+      <pubDate>Sun, 25 Jan 2015 00:58:15 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://paiza.jp/&#34;&gt;paiza&lt;/a&gt;が面白いAPIを公開してたから、そのうち使ってみたいと思ってたんだよね。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://paiza.io/&#34;&gt;ブラウザでプログラミング・実行ができる「オンライン実行環境」| paiza.IO&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ちょっとSlackAPIで使ってみたいからこの機会に軽くだけ触ってみる。&lt;/p&gt;
+
+&lt;h2 id=&#34;何が出来る:263a1859984e07d4bd8e496e6113e0fc&#34;&gt;何が出来る？&lt;/h2&gt;
+
+&lt;p&gt;たくさんの言語のREPLが使える。これ結構すごいと思う。&lt;/p&gt;
+
+&lt;p&gt;ただ、コンパイル言語はそんな気軽に使える感じではないみたい。
+例えばJavaで言えば、&lt;code&gt;System.out.println(&amp;quot;Hello&amp;quot;);&lt;/code&gt;だけじゃなくてクラス定義から含めなきゃいけないみたいに。&lt;/p&gt;
+
+&lt;h2 id=&#34;どうやって使う:263a1859984e07d4bd8e496e6113e0fc&#34;&gt;どうやって使う？&lt;/h2&gt;
+
+&lt;p&gt;どうやら&lt;a href=&#34;http://swagger.io/&#34;&gt;Swagger&lt;/a&gt;っていうOSSを使ってるみたい。
+paiza.IO上でのデモも使える。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://api.paiza.io/docs/swagger/#!/runners/&#34;&gt;Swagger UI&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;なんか動かないなと思ったら&lt;code&gt;https&lt;/code&gt;で&lt;code&gt;http&lt;/code&gt;のリソースを参照してたみたいで、ブロックされてた。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Mixed Content: The page at &#39;https://api.paiza.io/docs/swagger/#!/runners/&#39; was loaded over HTTPS, but requested an insecure XMLHttpRequest endpoint &#39;http://api.paiza.io/docs/swagger-docs/runners.json?api_key=guest&#39;. This request has been blocked; the content must be served over HTTPS.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;評価パターンは3つあるみたい。&lt;/p&gt;
+
+&lt;h3 id=&#34;runners-create:263a1859984e07d4bd8e496e6113e0fc&#34;&gt;runners/create&lt;/h3&gt;
+
+&lt;p&gt;コードの実行が出来る。&lt;/p&gt;
+
+&lt;p&gt;レスポンスに&lt;code&gt;id&lt;/code&gt;と&lt;code&gt;status&lt;/code&gt;が返ってきて、この&lt;code&gt;id&lt;/code&gt;を使って実行結果とかを見る。&lt;/p&gt;
+
+&lt;h3 id=&#34;runners-get-status:263a1859984e07d4bd8e496e6113e0fc&#34;&gt;runners/get_status&lt;/h3&gt;
+
+&lt;p&gt;実行結果を見ることが出来る。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;completed&lt;/code&gt;とかそういうレベル。&lt;/p&gt;
+
+&lt;h3 id=&#34;runners-get-details:263a1859984e07d4bd8e496e6113e0fc&#34;&gt;runners/get_details&lt;/h3&gt;
+
+&lt;p&gt;実行結果として出力された値とかを見ることが出来る。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;runners/create&lt;/code&gt;で実行して&lt;code&gt;runners/get_details&lt;/code&gt;で結果を見る感じ。&lt;/p&gt;
+
+&lt;h2 id=&#34;clojureから叩こう:263a1859984e07d4bd8e496e6113e0fc&#34;&gt;Clojureから叩こう&lt;/h2&gt;
+
+&lt;p&gt;使い方はわかったしURL叩けば済む話だしさっさと作っちゃう。&lt;/p&gt;
+
+&lt;p&gt;HTTPアクセスはJavaのクラスを使おうかなと思ったけど、&lt;a href=&#34;https://github.com/dakrone/clj-http&#34;&gt;dakrone/clj-http&lt;/a&gt;っていうすごく優秀！なライブラリがあったのでこれを使います。&lt;/p&gt;
+
+&lt;p&gt;まず&lt;code&gt;runners/create&lt;/code&gt;を実行するところ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(defn repl [language source]
+  (let [run-id (-&amp;gt; (httpc/post &amp;quot;http://api.paiza.io/runners/create&amp;quot;
+                               {:form-params {:source_code source
+                                              :language language
+                                              :api_key &amp;quot;guest&amp;quot;}
+                                :as :json})
+                   :body
+                   :id)]
+    (get-res run-id)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;get-res&lt;/code&gt;は後述。&lt;code&gt;get_details&lt;/code&gt;を実行するための関数。&lt;code&gt;api_key&lt;/code&gt;ってこれでいいのだろうか。とりあえず動いてはいる。&lt;/p&gt;
+
+&lt;p&gt;実行結果の取得はこんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(defn get-res [run-id]
+  (let [res (httpc/get (str &amp;quot;http://api.paiza.io/runners/get_details?id=&amp;quot; run-id &amp;quot;&amp;amp;api_key=guest&amp;quot;)
+                           {:as :json})]
+    (if (= (-&amp;gt; res :body :status) &amp;quot;running&amp;quot;)
+      (do (Thread/sleep 100) (recur run-id))
+      (-&amp;gt; res :body :stdout))))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;runners/create&lt;/code&gt;を実行した直後は&lt;code&gt;status&lt;/code&gt;が&lt;code&gt;running&lt;/code&gt;なので、結果が取得できなかった。&lt;/p&gt;
+
+&lt;p&gt;なのでスリープかけながら&lt;code&gt;running&lt;/code&gt;から外れるまで回す苦しい感じに・・・。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>HerokuでLobosを使ったマイグレーションができない</title>
+      <link>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</link>
+      <pubDate>Sun, 21 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/</guid>
+      <description>
+
+&lt;p&gt;ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。&lt;/p&gt;
+
+&lt;h2 id=&#34;マイグレーションしても何も起きない:b3814854ab9c35505a0d42182d51f32f&#34;&gt;マイグレーションしても何も起きない&lt;/h2&gt;
+
+&lt;p&gt;今だにHerokuの使い方がよくわからないんだけど、とりあえずローカルから向き先変えるよりもSSHの方が楽だったので&lt;code&gt;heroku run bash&lt;/code&gt;してやってます。&lt;/p&gt;
+
+&lt;p&gt;ローカルからだとDBをSSLで接続させないといけないし・・・。それでマイグレーションしようとしたら、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure-repl&#34;&gt;user=&amp;gt; (migrate)
+nil
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;何も出ない。本当はこんな感じで、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure-repl&#34;&gt;user=&amp;gt; (migrate)
+add-sites-table
+add-entries-table
+nil
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;作成されたり変更されたテーブルが出てくるはず。&lt;/p&gt;
+
+&lt;h2 id=&#34;lobos-migrationsがロードされてない:b3814854ab9c35505a0d42182d51f32f&#34;&gt;lobos.migrationsがロードされてない&lt;/h2&gt;
+
+&lt;p&gt;どうやら&lt;code&gt;lobos.migrations&lt;/code&gt;が読まれてない（というかリロードされてない）っぽい。&lt;/p&gt;
+
+&lt;p&gt;そもそも&lt;code&gt;migrate&lt;/code&gt;自体はこんな感じで&lt;code&gt;lobos.migration&lt;/code&gt;の&lt;code&gt;do-migrations&lt;/code&gt;を呼んでます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(defcommand migrate [&amp;amp; names]
+  (let [names (if (empty? names)
+                (mig/pending-migrations db-spec sname)
+                names)]
+    (mig/do-migrations db-spec sname :up names)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;で、&lt;code&gt;do-migrations&lt;/code&gt;はこんな感じで、&lt;code&gt;list-migrations-names&lt;/code&gt;の結果を絞って実行してる。&lt;/p&gt;
+
+&lt;p&gt;たぶんマイグレーション済みのものは除外とかそんな感じなんじゃないだろうか。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(defn do-migrations [db-spec sname with names &amp;amp; [silent]]
+  (let [filter-migs #(only % (list-migrations-names))
+        migrations (-&amp;gt;&amp;gt; names
+                        (map str)
+                        filter-migs
+                        (when-&amp;gt;&amp;gt; (= with :down) reverse)
+                        (map symbol)
+                        (map (partial ns-resolve *migrations-namespace*))
+                        (map var-get))]
+    (binding [*record* nil]
+      (doseq [migration migrations]
+        (let [name (-&amp;gt; migration meta :name)]
+          (when-not silent
+            (println name))
+          (if (= with :up)
+            (do
+              (up migration)
+              (insert-migrations db-spec sname name))
+            (do
+              (down migration)
+              (delete-migrations db-spec sname name))))))))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;で&lt;code&gt;list-migrations-names&lt;/code&gt;の定義がこれ、&lt;code&gt;list-migrations&lt;/code&gt;を呼んでる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(defn list-migrations-names []
+  (map #(-&amp;gt; % meta :name str) (list-migrations)))
+
+(defn list-migrations []
+  (if *reload-migrations*
+    (when (.exists (migrations-file))
+      (swap! migrations (constantly []))
+      (use :reload *migrations-namespace*)
+      @migrations)
+    @migrations))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;この&lt;code&gt;list-migrations&lt;/code&gt;が問題のようで、いや、たぶんHeroku側の環境がよくないんだと思うけど、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;      (use :reload *migrations-namespace*)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;この&lt;code&gt;:reload&lt;/code&gt;が正常に動かなくてマイグレーション対象が取れてない。&lt;/p&gt;
+
+&lt;p&gt;だから&lt;code&gt;list-migrations&lt;/code&gt;を実行した時、1回目はきちんとロードされて、&lt;/p&gt;
+
+&lt;p&gt;2回目は&lt;code&gt;(swap! migrations (constantly []))&lt;/code&gt;で空っぽになったままリロードされてないのが悪かったみたい。&lt;/p&gt;
+
+&lt;p&gt;だからこんな風に、2回目の実行からは空になった&lt;code&gt;migrations&lt;/code&gt;が返ってくる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure-repl&#34;&gt;user=&amp;gt; (use &#39;lobos.migration)
+WARNING: complement already refers to: #&#39;clojure.core/complement in namespace: user, being replaced by: #&#39;lobos.migration/complement
+nil
+user=&amp;gt; (list-migrations)
+[#&amp;lt;migrations$reify__2390 lobos.migrations$reify__2390@445aed&amp;gt; #&amp;lt;migrations$reify__2392 lobos.migrations$reify__2392@42bfb95d&amp;gt;]
+user=&amp;gt; (list-migrations)
+[]
+user=&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;reload-migrations-をfalseにすればいい:b3814854ab9c35505a0d42182d51f32f&#34;&gt;*reload-migrations*をfalseにすればいい&lt;/h2&gt;
+
+&lt;p&gt;もう正直ここまでで一週間弱悩んだから、lobos使うのやめようかなとも思ったけどまあいい勉強だろうし・・・。&lt;/p&gt;
+
+&lt;p&gt;暫定にしかならないけど、とりあえずリロードさせないようにしよう。
+ソースコードの通り、&lt;code&gt;*reload-migrations*&lt;/code&gt;が&lt;code&gt;true&lt;/code&gt;になっている場合にリロードが走るらしい。&lt;/p&gt;
+
+&lt;p&gt;だからこんな感じで&lt;code&gt;false&lt;/code&gt;で上書いてしまおう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure-repl&#34;&gt;user=&amp;gt; (use &#39;lobos.migration)
+WARNING: complement already refers to: #&#39;clojure.core/complement in namespace: user, being replaced by: #&#39;lobos.migration/complement
+nil
+user=&amp;gt; (ns lobos.migration)
+
+IllegalStateException defonce already refers to: #&#39;lobos.utils/defonce in namespace: lobos.migration  clojure.lang.Namespace.warnOrFailOnReplace (Namespace.java:88)
+user=&amp;gt; (def ^{:dynamic true} *reload-migrations* false)
+#&#39;lobos.migration/*reload-migrations*
+lobos.migration=&amp;gt; (use &#39;lobos.core)
+WARNING: alter already refers to: #&#39;clojure.core/alter in namespace: lobos.migration, being replaced by: #&#39;lobos.core/alter
+WARNING: drop already refers to: #&#39;clojure.core/drop in namespace: lobos.migration, being replaced by: #&#39;lobos.core/drop
+nil
+lobos.migration=&amp;gt; (migrate)
+add-sites-table
+add-entries-table
+nil
+lobos.migration=&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これじゃない感がすごいけど、とりあえず通った・・・。
+Lobosはもう開発があんまり活発じゃないみたいだなあ。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;lobos.migration&lt;/code&gt;と&lt;code&gt;lobos.migrations&lt;/code&gt;の命名はちょっといけてないような気がする。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

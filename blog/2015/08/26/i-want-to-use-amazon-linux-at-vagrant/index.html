@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.16-DEV" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans|Lobster'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz//index.xml">
+
+    
+    <title>Amazon LinuxをVagrantで使いたい - Unresolved</title>
+    <meta property='og:title' content="Amazon LinuxをVagrantで使いたい - Unresolved">
+    <meta property="og:type" content="article">
+    
+
+    <meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/">
+    
+    
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <header class="site">
+        <div class="title"><a href="http://yet.unresolved.xyz/">Unresolved</a></div>
+      </header>
+    </div>
+
+    <div class="container site">
+
+
+<div class="single">
+  <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+    <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz/"/>
+    <meta itemprop="dateModified" content="2015-08-26T23:12:02&#43;09:00">
+    <meta itemprop="headline" content="Amazon LinuxをVagrantで使いたい">
+    <meta itemprop="description" content="開発はCentOS、本番はAmazonLinuxにしようとしたら意外と違うところが多くてProvisioningがだるかったので。 ec2-create-instance-export-task ec2-">
+    <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/">
+    <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="http://yet.unresolved.xyz/images/default.jpg" />
+      <meta itemprop="width" content="800">
+      <meta itemprop="height" content="800">
+    </div>
+    <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.jpg">
+        <meta itemprop="width" content="100">
+        <meta itemprop="height" content="100">
+      </div>
+      <meta itemprop="name" content="Unresolved">
+    </div>
+    <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+      <meta itemprop="name" content="Daisuke Tsuji">
+    </div>
+
+    <header class="clearfix">
+      <div class="pull-left">
+        <div class="image" style="background-image: url(http://yet.unresolved.xyz/images/default.jpg);"></div>
+      </div>
+
+      <div class="detail">
+        <time>Wed, Aug 26, 2015</time>
+        <h1 class="title">Amazon LinuxをVagrantで使いたい</h1>
+      </div>
+    </header>
+
+    <div class="share">
+      <a href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f08%2f26%2fi-want-to-use-amazon-linux-at-vagrant%2f&t=Amazon%20Linux%e3%82%92Vagrant%e3%81%a7%e4%bd%bf%e3%81%84%e3%81%9f%e3%81%84" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
+      <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f08%2f26%2fi-want-to-use-amazon-linux-at-vagrant%2f&text=Amazon%20Linux%e3%82%92Vagrant%e3%81%a7%e4%bd%bf%e3%81%84%e3%81%9f%e3%81%84&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
+      <a href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f08%2f26%2fi-want-to-use-amazon-linux-at-vagrant%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
+      <a href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2015%2f08%2f26%2fi-want-to-use-amazon-linux-at-vagrant%2f&title=Amazon%20Linux%e3%82%92Vagrant%e3%81%a7%e4%bd%bf%e3%81%84%e3%81%9f%e3%81%84" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+    </div>
+
+    
+
+    <div class="article-body" itemprop="articleBody">
+
+<p>開発はCentOS、本番はAmazonLinuxにしようとしたら意外と違うところが多くてProvisioningがだるかったので。</p>
+
+<h2 id="ec2-create-instance-export-task:219da61ce6f755e0018f6c81d16e9cbc">ec2-create-instance-export-task</h2>
+
+<p>ec2-create-instance-export-taskっていうCLIのコマンドが用意されているらしい。</p>
+
+<p><a href="http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/ExportingEC2Instances.html">Amazon EC2 インスタンスをエクスポートする - Amazon Elastic Compute Cloud</a></p>
+
+<p>このコマンドでEC2のinstance_idを指定してS3にイメージファイルをエクスポートできるとのこと。</p>
+
+<p>書式はこんな。</p>
+
+<pre><code>ec2-create-instance-export-task instance_id –e target_environment –f disk_image_format -c container_format –b s3_bucket
+</code></pre>
+
+<p>pipで入れたからこんな感じになったよ。</p>
+
+<pre><code>aws ec2 create-instance-export-task --instance-id i-82xxx70 --target-environment vmware --export-to-s3-task DiskImageFormat=vmdk,ContainerFormat=ova,S3Bucket=images.xxxxx.jp
+</code></pre>
+
+<p>そしたらこんなエラー。</p>
+
+<pre><code>A client error (AuthFailure) occurred when calling the CreateInstanceExportTask operation: vm-import-export@amazon.com must have WRITE and READ_ACL permission on the S3 bucket.
+</code></pre>
+
+<p>しっかり説明を読むと、</p>
+
+<blockquote>
+<p>エクスポートされたインスタンスを格納する Amazon S3 バケットを作成します。Amazon S3 バケットでは、[vm-import-export@amazon.com] アカウントへの [Upload/Delete] および [View Permissions] アクセスが付与される必要があります。詳細については、Amazon Simple Storage Service コンソールユーザーガイド の Creating a Bucket および Editing Bucket Permissions を参照してください。</p>
+</blockquote>
+
+<p>なるほどなるほど。</p>
+
+<p>こんな感じに。</p>
+
+<p><a href="/images/2015-08-26/bucket.png"><img src="/images/2015-08-26/bucket.png" alt="bucket"></a></p>
+
+<p>そしたら違うエラー。</p>
+
+<pre><code>A client error (NotExportable) occurred when calling the CreateInstanceExportTask operation: Only imported instances can be exported.
+</code></pre>
+
+<p>ん？</p>
+
+<p>前提条件を読んでなかった。</p>
+
+<p><a href="http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/VMImportPrerequisites.html#vmimport-image-formats">VM Import/Export の前提条件 - Amazon Elastic Compute Cloud</a></p>
+
+<blockquote>
+<p>Linux/Unix（64 ビット）</p>
+
+<p>Red Hat Enterprise Linux (RHEL) 5.1-5.11、6.1-6.6、7.0-7.1</p>
+
+<p>Note
+Amazon EC2 で実行するときに必要なドライバが存在しないため、RHEL 6.0 はサポートされていません。
+VM Import は、RHEL インスタンスのライセンスポータビリティをサポートしています。既存の RHEL ライセンスは、関連付けられた RHEL インスタンスと一緒にインポートされます。Red Hat Cloud Access の適格性の詳細については、Red Hat ウェブサイトの適格性を参照してください。
+CentOS 5.1～5.11、6.1～6.6、7.0-7.1</p>
+
+<p>Note
+Amazon EC2 で実行するときに必要なドライバが存在しないため、CentOS 6.0 はサポートされていません。
+Ubuntu 12.04、12.10、13.04、13.10、14.04、14.10</p>
+
+<p>Debian 6.0.0-6.0.8, 7.0.0-7.2.0</p>
+</blockquote>
+
+<p>あっ・・・。</p>
+
+<h2 id="これでいいや:219da61ce6f755e0018f6c81d16e9cbc">これでいいや</h2>
+
+<p><a href="https://www.geekandi.com/2014/04/13/amazon-linux-vagrant-box-images/">Amazon Linux Vagrant Box Images | Geek and I</a></p>
+
+<p>ちょっと古いし不安だけど、どうせ個人的なやつだし・・・。</p>
+
+<h2 id="参考にさせていただきました:219da61ce6f755e0018f6c81d16e9cbc">参考にさせていただきました</h2>
+
+<p><a href="http://stackoverflow.com/questions/21920993/convert-amazon-ec2-ami-to-virtual-or-vagrant-box">virtualbox - Convert Amazon EC2 AMI to Virtual or Vagrant box - Stack Overflow</a></p>
+</div>
+
+    <aside>
+
+      <div class="section"><a href="http://yet.unresolved.xyz/tags/aws" class="tag">aws</a></div>
+
+      
+      
+      
+
+    </aside>
+
+  </article>
+</div>
+
+    </div>
+
+    <div class="container">
+      <footer class="site">
+        <p>&copy; 2016 Daisuke Tsuji</p>
+        <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
+        <p>Theme <a href="https://github.com/dim0627/hugo_theme_aglaus" target="_blank">Aglaus</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+      </footer>
+    </div>
+
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-55005303-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+    
+
+  </body>
+</html>
+
