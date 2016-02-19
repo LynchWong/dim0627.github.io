@@ -6,8 +6,55 @@
     <description>Recent content in Technologies on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Feb 2016 18:00:44 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 19 Feb 2016 12:44:17 +0900</lastBuildDate>
     <atom:link href="http://yet.unresolved.xyz/technology/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Googleカスタム検索のデザインが崩れる</title>
+      <link>http://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/</link>
+      <pubDate>Fri, 19 Feb 2016 12:44:17 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2016-02-19/cse.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2016-02-19/cse.png&#34; alt=&#34;cse&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;結構ありがちな話らしい。
+探せば同様の事象について掲載している記事もあるけど、
+HTMLをベタで書くという解決方法なので根本的な解決には思えない。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://webkaru.net/wordpress/google-custom-search-design/&#34;&gt;HTMLフォームを使用したGoogleカスタム検索のデザイン変更方法 - WordPressの使い方と設定 - Webkaru&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;なぜ崩れるのか:823fb9b45a070a4729c0c404dd848b3b&#34;&gt;なぜ崩れるのか&lt;/h2&gt;
+
+&lt;p&gt;結論から言えばCSSの&lt;code&gt;box-sizing&lt;/code&gt;の値によって崩れる。
+特にBootstrapを使ってるサイトで崩れることが多いんじゃないかと思うけど、
+Bootstrapはワイルドカードでこういう設定がされている。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;border-box&lt;/code&gt;のほうが扱いやすいことが多いので、この設定に対して文句とかはない。
+こうあるべきだと思うし。&lt;/p&gt;
+
+&lt;h2 id=&#34;崩れを直す方法:823fb9b45a070a4729c0c404dd848b3b&#34;&gt;崩れを直す方法&lt;/h2&gt;
+
+&lt;p&gt;純粋にカスタム検索のスクリプトを特定のタグで囲んで、そのタグに対してワイルドカードで&lt;code&gt;box-sizing&lt;/code&gt;の値を指定してしまえばいい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.cse-wrapper {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ベンダプレフィックスは必要なんだっけ？ちょっとわかんないや。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>MySQL5.6&#43;ruby-mysql2でlibmysqlclient_16 not found</title>
@@ -1084,93 +1131,6 @@ Make every program a Filter.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;こんな感じ。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Amazon LinuxをVagrantで使いたい</title>
-      <link>http://yet.unresolved.xyz/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/</link>
-      <pubDate>Wed, 26 Aug 2015 23:12:02 +0900</pubDate>
-      
-      <guid>http://yet.unresolved.xyz/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/</guid>
-      <description>
-
-&lt;p&gt;開発はCentOS、本番はAmazonLinuxにしようとしたら意外と違うところが多くてProvisioningがだるかったので。&lt;/p&gt;
-
-&lt;h2 id=&#34;ec2-create-instance-export-task:219da61ce6f755e0018f6c81d16e9cbc&#34;&gt;ec2-create-instance-export-task&lt;/h2&gt;
-
-&lt;p&gt;ec2-create-instance-export-taskっていうCLIのコマンドが用意されているらしい。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/ExportingEC2Instances.html&#34;&gt;Amazon EC2 インスタンスをエクスポートする - Amazon Elastic Compute Cloud&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;このコマンドでEC2のinstance_idを指定してS3にイメージファイルをエクスポートできるとのこと。&lt;/p&gt;
-
-&lt;p&gt;書式はこんな。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ec2-create-instance-export-task instance_id –e target_environment –f disk_image_format -c container_format –b s3_bucket
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;pipで入れたからこんな感じになったよ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;aws ec2 create-instance-export-task --instance-id i-82xxx70 --target-environment vmware --export-to-s3-task DiskImageFormat=vmdk,ContainerFormat=ova,S3Bucket=images.xxxxx.jp
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;そしたらこんなエラー。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;A client error (AuthFailure) occurred when calling the CreateInstanceExportTask operation: vm-import-export@amazon.com must have WRITE and READ_ACL permission on the S3 bucket.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;しっかり説明を読むと、&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;エクスポートされたインスタンスを格納する Amazon S3 バケットを作成します。Amazon S3 バケットでは、[vm-import-export@amazon.com] アカウントへの [Upload/Delete] および [View Permissions] アクセスが付与される必要があります。詳細については、Amazon Simple Storage Service コンソールユーザーガイド の Creating a Bucket および Editing Bucket Permissions を参照してください。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;なるほどなるほど。&lt;/p&gt;
-
-&lt;p&gt;こんな感じに。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-08-26/bucket.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-08-26/bucket.png&#34; alt=&#34;bucket&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;そしたら違うエラー。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;A client error (NotExportable) occurred when calling the CreateInstanceExportTask operation: Only imported instances can be exported.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ん？&lt;/p&gt;
-
-&lt;p&gt;前提条件を読んでなかった。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/VMImportPrerequisites.html#vmimport-image-formats&#34;&gt;VM Import/Export の前提条件 - Amazon Elastic Compute Cloud&lt;/a&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Linux/Unix（64 ビット）&lt;/p&gt;
-
-&lt;p&gt;Red Hat Enterprise Linux (RHEL) 5.1-5.11、6.1-6.6、7.0-7.1&lt;/p&gt;
-
-&lt;p&gt;Note
-Amazon EC2 で実行するときに必要なドライバが存在しないため、RHEL 6.0 はサポートされていません。
-VM Import は、RHEL インスタンスのライセンスポータビリティをサポートしています。既存の RHEL ライセンスは、関連付けられた RHEL インスタンスと一緒にインポートされます。Red Hat Cloud Access の適格性の詳細については、Red Hat ウェブサイトの適格性を参照してください。
-CentOS 5.1～5.11、6.1～6.6、7.0-7.1&lt;/p&gt;
-
-&lt;p&gt;Note
-Amazon EC2 で実行するときに必要なドライバが存在しないため、CentOS 6.0 はサポートされていません。
-Ubuntu 12.04、12.10、13.04、13.10、14.04、14.10&lt;/p&gt;
-
-&lt;p&gt;Debian 6.0.0-6.0.8, 7.0.0-7.2.0&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;あっ・・・。&lt;/p&gt;
-
-&lt;h2 id=&#34;これでいいや:219da61ce6f755e0018f6c81d16e9cbc&#34;&gt;これでいいや&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.geekandi.com/2014/04/13/amazon-linux-vagrant-box-images/&#34;&gt;Amazon Linux Vagrant Box Images | Geek and I&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;ちょっと古いし不安だけど、どうせ個人的なやつだし・・・。&lt;/p&gt;
-
-&lt;h2 id=&#34;参考にさせていただきました:219da61ce6f755e0018f6c81d16e9cbc&#34;&gt;参考にさせていただきました&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/21920993/convert-amazon-ec2-ami-to-virtual-or-vagrant-box&#34;&gt;virtualbox - Convert Amazon EC2 AMI to Virtual or Vagrant box - Stack Overflow&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

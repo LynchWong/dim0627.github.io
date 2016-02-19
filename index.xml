@@ -6,8 +6,55 @@
     <description>Recent content on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Feb 2016 18:00:44 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 19 Feb 2016 12:44:17 +0900</lastBuildDate>
     <atom:link href="http://yet.unresolved.xyz/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Googleカスタム検索のデザインが崩れる</title>
+      <link>http://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/</link>
+      <pubDate>Fri, 19 Feb 2016 12:44:17 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2016-02-19/cse.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2016-02-19/cse.png&#34; alt=&#34;cse&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;結構ありがちな話らしい。
+探せば同様の事象について掲載している記事もあるけど、
+HTMLをベタで書くという解決方法なので根本的な解決には思えない。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://webkaru.net/wordpress/google-custom-search-design/&#34;&gt;HTMLフォームを使用したGoogleカスタム検索のデザイン変更方法 - WordPressの使い方と設定 - Webkaru&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;なぜ崩れるのか:823fb9b45a070a4729c0c404dd848b3b&#34;&gt;なぜ崩れるのか&lt;/h2&gt;
+
+&lt;p&gt;結論から言えばCSSの&lt;code&gt;box-sizing&lt;/code&gt;の値によって崩れる。
+特にBootstrapを使ってるサイトで崩れることが多いんじゃないかと思うけど、
+Bootstrapはワイルドカードでこういう設定がされている。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;border-box&lt;/code&gt;のほうが扱いやすいことが多いので、この設定に対して文句とかはない。
+こうあるべきだと思うし。&lt;/p&gt;
+
+&lt;h2 id=&#34;崩れを直す方法:823fb9b45a070a4729c0c404dd848b3b&#34;&gt;崩れを直す方法&lt;/h2&gt;
+
+&lt;p&gt;純粋にカスタム検索のスクリプトを特定のタグで囲んで、そのタグに対してワイルドカードで&lt;code&gt;box-sizing&lt;/code&gt;の値を指定してしまえばいい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.cse-wrapper {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ベンダプレフィックスは必要なんだっけ？ちょっとわかんないや。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>MySQL5.6&#43;ruby-mysql2でlibmysqlclient_16 not found</title>
@@ -1060,95 +1107,6 @@ Until Dawnのそれは本当に興味をひかれる作りになっていたな�
 &lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/B015DSR5HE/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B015DSR5HE&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;Bloodborne The Old Hunters Edition 初回限定版&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=B015DSR5HE&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/B015DSR5SS/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B015DSR5SS&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;GRAVITY DAZE 重力的眩暈:上層への帰還において、彼女の内宇宙に生じた摂動&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=B015DSR5SS&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Googleの構造化データの扱いが変わった気がする</title>
-      <link>http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</link>
-      <pubDate>Fri, 11 Dec 2015 11:22:28 +0900</pubDate>
-      
-      <guid>http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</guid>
-      <description>
-
-&lt;p&gt;このブログも、他の運営してるサイトも、今日になってエラーが発生するようになった。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://developers.google.com/structured-data/testing-tool/&#34;&gt;Structured Data Testing Tool&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;エラーは2種類発生していて、ひとつめがこれ。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-12-11/error1.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-12-11/error1.png&#34; alt=&#34;error&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;もうひとつがこれ。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-12-11/error2.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-12-11/error2.png&#34; alt=&#34;error&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;あれ？&lt;code&gt;author&lt;/code&gt;はもともと必須だっけ？&lt;/p&gt;
-
-&lt;h2 id=&#34;構造化データ:1cba147eb8c5721b87c65951056c9faa&#34;&gt;構造化データ？&lt;/h2&gt;
-
-&lt;p&gt;マイクロデータとかって呼ばれたりもする。
-HTMLにもう少し踏み込んだ側面的な意味を持たせるためのもの。
-Googleの説明が、どのように使われるかも記載されていてわかりやすい。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://developers.google.com/structured-data/&#34;&gt;Promote Your Content with Structured Data Markup  |  Structured Data  |  Google Developers&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;エラーの原因:1cba147eb8c5721b87c65951056c9faa&#34;&gt;エラーの原因&lt;/h2&gt;
-
-&lt;p&gt;今回はArticleの&lt;code&gt;image&lt;/code&gt;とか&lt;code&gt;publisher&lt;/code&gt;もろもろでエラーが発生しました。
-これまでは大丈夫だったのになんでだろう。
-この記載を見ると、どうやら構造が間違っているらしい。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://developers.google.com/structured-data/rich-snippets/articles?hl=ja&#34;&gt;Enabling Rich Snippets for Articles  |  Structured Data  |  Google Developers&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;imageプロパティ:1cba147eb8c5721b87c65951056c9faa&#34;&gt;imageプロパティ&lt;/h3&gt;
-
-&lt;p&gt;これまで僕は、画像要素を次のように記載していたのだけど、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;meta itemprop=&amp;quot;image&amp;quot; content=&amp;quot;http://example.com/images/10999.jpg&amp;quot; /&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;こう記載するのが正しいようだ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div itemprop=&amp;quot;image&amp;quot; itemscope itemtype=&amp;quot;https://schema.org/ImageObject&amp;quot;&amp;gt;
-  &amp;lt;img src=&amp;quot;https://google.com/thumbnail1.jpg&amp;quot;/&amp;gt;
-  &amp;lt;meta itemprop=&amp;quot;url&amp;quot; content=&amp;quot;https://google.com/thumbnail1.jpg&amp;quot;&amp;gt;
-  &amp;lt;meta itemprop=&amp;quot;width&amp;quot; content=&amp;quot;800&amp;quot;&amp;gt;
-  &amp;lt;meta itemprop=&amp;quot;height&amp;quot; content=&amp;quot;800&amp;quot;&amp;gt;
-&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;ImageObject&lt;/code&gt;の子で居なきゃいけないんだね。
-さらに&lt;code&gt;width&lt;/code&gt;と&lt;code&gt;height&lt;/code&gt;も必須になってる。
-前は要らなかったような記憶があるんだけど・・・。&lt;/p&gt;
-
-&lt;h3 id=&#34;publisherプロパティ:1cba147eb8c5721b87c65951056c9faa&#34;&gt;publisherプロパティ&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;publisher&lt;/code&gt;はこう記載されている。
-これは運営元の組織を指すのかな。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div itemprop=&amp;quot;publisher&amp;quot; itemscope itemtype=&amp;quot;https://schema.org/Organization&amp;quot;&amp;gt;
-  &amp;lt;div itemprop=&amp;quot;logo&amp;quot; itemscope itemtype=&amp;quot;https://schema.org/ImageObject&amp;quot;&amp;gt;
-    &amp;lt;img src=&amp;quot;https://google.com/logo.jpg&amp;quot;/&amp;gt;
-    &amp;lt;meta itemprop=&amp;quot;url&amp;quot; content=&amp;quot;https://google.com/logo.jpg&amp;quot;&amp;gt;
-    &amp;lt;meta itemprop=&amp;quot;width&amp;quot; content=&amp;quot;600&amp;quot;&amp;gt;
-    &amp;lt;meta itemprop=&amp;quot;height&amp;quot; content=&amp;quot;60&amp;quot;&amp;gt;
-  &amp;lt;/div&amp;gt;
-  &amp;lt;meta itemprop=&amp;quot;name&amp;quot; content=&amp;quot;Google&amp;quot;&amp;gt;
-&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;nameプロパティ:1cba147eb8c5721b87c65951056c9faa&#34;&gt;nameプロパティ&lt;/h3&gt;
-
-&lt;p&gt;何故かこのエラーだけどうやっても消えない。
-謎なので分かり次第追記しよう。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;追記&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;この記事を書き終えてから再度試してみたら消えました。
-Structured Data Testing Tool自体が改修中だったのだろうか。
-どちらにせよこの辺はこれからも随時変わっていくポイントだろうから、
-定期的にチェックと対応をしていかなきゃいけないですね。&lt;/p&gt;
 </description>
     </item>
     

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google Custom Search Engine on Unresolved</title>
+    <link>http://yet.unresolved.xyz/tags/google-custom-search-engine/</link>
+    <description>Recent content in Google Custom Search Engine on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 19 Feb 2016 12:44:17 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/google-custom-search-engine/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Googleカスタム検索のデザインが崩れる</title>
+      <link>http://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/</link>
+      <pubDate>Fri, 19 Feb 2016 12:44:17 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2016-02-19/cse.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2016-02-19/cse.png&#34; alt=&#34;cse&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;結構ありがちな話らしい。
+探せば同様の事象について掲載している記事もあるけど、
+HTMLをベタで書くという解決方法なので根本的な解決には思えない。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://webkaru.net/wordpress/google-custom-search-design/&#34;&gt;HTMLフォームを使用したGoogleカスタム検索のデザイン変更方法 - WordPressの使い方と設定 - Webkaru&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;なぜ崩れるのか:823fb9b45a070a4729c0c404dd848b3b&#34;&gt;なぜ崩れるのか&lt;/h2&gt;
+
+&lt;p&gt;結論から言えばCSSの&lt;code&gt;box-sizing&lt;/code&gt;の値によって崩れる。
+特にBootstrapを使ってるサイトで崩れることが多いんじゃないかと思うけど、
+Bootstrapはワイルドカードでこういう設定がされている。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;border-box&lt;/code&gt;のほうが扱いやすいことが多いので、この設定に対して文句とかはない。
+こうあるべきだと思うし。&lt;/p&gt;
+
+&lt;h2 id=&#34;崩れを直す方法:823fb9b45a070a4729c0c404dd848b3b&#34;&gt;崩れを直す方法&lt;/h2&gt;
+
+&lt;p&gt;純粋にカスタム検索のスクリプトを特定のタグで囲んで、そのタグに対してワイルドカードで&lt;code&gt;box-sizing&lt;/code&gt;の値を指定してしまえばいい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.cse-wrapper {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ベンダプレフィックスは必要なんだっけ？ちょっとわかんないや。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
