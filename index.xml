@@ -22,9 +22,9 @@
 &lt;h2 id=&#34;なぜ崩れるのか:823fb9b45a070a4729c0c404dd848b3b&#34;&gt;なぜ崩れるのか&lt;/h2&gt;
 
 &lt;p&gt;結論から言えばCSSの&lt;code&gt;box-sizing&lt;/code&gt;の値によって崩れる。
-特にBootstrapを使ってるサイトで崩れることが多いんじゃないだろうか。&lt;/p&gt;
+特にBootstrapを使ってるサイトで崩れることが多いんじゃないでしょうか。&lt;/p&gt;
 
-&lt;p&gt;なぜならBootstrapはワイルドカードでこういう設定がされている。&lt;/p&gt;
+&lt;p&gt;なぜならBootstrapはワイルドカードでこういう設定がされているから。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;* {
     -webkit-box-sizing: border-box;
@@ -33,13 +33,16 @@
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;code&gt;border-box&lt;/code&gt;のほうが扱いやすいことが多いので、この設定に対して文句とかはない。
+&lt;p&gt;該当ソースはここでしょうか。Bootstrapの構造がよくわからない。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/twbs/bootstrap/blob/e38f066d8c203c3e032da0ff23cd2d6098ee2dd6/less/scaffolding.less#L12&#34;&gt;bootstrap/scaffolding.less at e38f066d8c203c3e032da0ff23cd2d6098ee2dd6 · twbs/bootstrap&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;border-box&lt;/code&gt;のほうが扱いやすいことが多いので、この設定に対して文句とかはないです。
 こうあるべきだと思う。&lt;/p&gt;
 
 &lt;h2 id=&#34;崩れを直す方法:823fb9b45a070a4729c0c404dd848b3b&#34;&gt;崩れを直す方法&lt;/h2&gt;
 
-&lt;p&gt;というわけで、カスタム検索のスクリプトを特定のタグで囲んで、そのタグに対してワイルドカードで&lt;code&gt;box-sizing&lt;/code&gt;の値を指定してしまえばいい。
-&lt;code&gt;content-box&lt;/code&gt;に戻せば崩れは直る。&lt;/p&gt;
+&lt;p&gt;というわけで、カスタム検索のスクリプトを特定のタグで囲んで、そのタグに対してワイルドカードで&lt;code&gt;box-sizing&lt;/code&gt;の値を指定してしまえば直る。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;.cse-wrapper * {
     -webkit-box-sizing: content-box;

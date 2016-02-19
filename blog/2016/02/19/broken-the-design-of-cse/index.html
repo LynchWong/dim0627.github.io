@@ -88,9 +88,9 @@
 <h2 id="なぜ崩れるのか:823fb9b45a070a4729c0c404dd848b3b">なぜ崩れるのか</h2>
 
 <p>結論から言えばCSSの<code>box-sizing</code>の値によって崩れる。
-特にBootstrapを使ってるサイトで崩れることが多いんじゃないだろうか。</p>
+特にBootstrapを使ってるサイトで崩れることが多いんじゃないでしょうか。</p>
 
-<p>なぜならBootstrapはワイルドカードでこういう設定がされている。</p>
+<p>なぜならBootstrapはワイルドカードでこういう設定がされているから。</p>
 
 <pre><code>* {
     -webkit-box-sizing: border-box;
@@ -99,13 +99,16 @@
 }
 </code></pre>
 
-<p><code>border-box</code>のほうが扱いやすいことが多いので、この設定に対して文句とかはない。
+<p>該当ソースはここでしょうか。Bootstrapの構造がよくわからない。</p>
+
+<p><a href="https://github.com/twbs/bootstrap/blob/e38f066d8c203c3e032da0ff23cd2d6098ee2dd6/less/scaffolding.less#L12">bootstrap/scaffolding.less at e38f066d8c203c3e032da0ff23cd2d6098ee2dd6 · twbs/bootstrap</a></p>
+
+<p><code>border-box</code>のほうが扱いやすいことが多いので、この設定に対して文句とかはないです。
 こうあるべきだと思う。</p>
 
 <h2 id="崩れを直す方法:823fb9b45a070a4729c0c404dd848b3b">崩れを直す方法</h2>
 
-<p>というわけで、カスタム検索のスクリプトを特定のタグで囲んで、そのタグに対してワイルドカードで<code>box-sizing</code>の値を指定してしまえばいい。
-<code>content-box</code>に戻せば崩れは直る。</p>
+<p>というわけで、カスタム検索のスクリプトを特定のタグで囲んで、そのタグに対してワイルドカードで<code>box-sizing</code>の値を指定してしまえば直る。</p>
 
 <pre><code>.cse-wrapper * {
     -webkit-box-sizing: content-box;
