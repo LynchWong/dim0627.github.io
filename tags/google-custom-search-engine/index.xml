@@ -41,14 +41,15 @@
 &lt;p&gt;というわけで、カスタム検索のスクリプトを特定のタグで囲んで、そのタグに対してワイルドカードで&lt;code&gt;box-sizing&lt;/code&gt;の値を指定してしまえばいい。
 &lt;code&gt;content-box&lt;/code&gt;に戻せば崩れは直る。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;.cse-wrapper {
+&lt;pre&gt;&lt;code&gt;.cse-wrapper * {
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;ベンダプレフィックスは必要なんだっけ？ちょっとわかんないや。&lt;/p&gt;
+&lt;p&gt;ワイルドカードは使いたくないよね、でもしょうがない。
+ベンダプレフィックスは必要なんだっけ？ちょっとわかんないや。&lt;/p&gt;
 
 &lt;h2 id=&#34;この事象について:823fb9b45a070a4729c0c404dd848b3b&#34;&gt;この事象について&lt;/h2&gt;
 
