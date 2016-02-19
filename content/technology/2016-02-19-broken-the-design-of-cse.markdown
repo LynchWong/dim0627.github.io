@@ -50,11 +50,9 @@ title: 'Googleカスタム検索のデザインが崩れる'
 探せば同様の事象について掲載している記事もあるけど、
 HTMLをベタで書くという解決方法なので、根本的な解決ではないように思う。
 
-[HTMLフォームを使用したGoogleカスタム検索のデザイン変更方法 - WordPressの使い方と設定 - Webkaru](http://webkaru.net/wordpress/google-custom-search-design/)
-
-[超軽量♪Googleカスタム検索はJavaScript外すと改造し放題](http://www.02320.net/google_custom_search_optout_js/)
-
-[googleカスタム検索をHTMLに書き換える | 696graphic [BLOG]](http://blog.696.jp/txt/937/)
+* [HTMLフォームを使用したGoogleカスタム検索のデザイン変更方法 - WordPressの使い方と設定 - Webkaru](http://webkaru.net/wordpress/google-custom-search-design/)
+* [超軽量♪Googleカスタム検索はJavaScript外すと改造し放題](http://www.02320.net/google_custom_search_optout_js/)
+* [googleカスタム検索をHTMLに書き換える | 696graphic [BLOG]](http://blog.696.jp/txt/937/)
 
 GoogleもHTMLベタでやっていいよとは言ってるが、Googleカスタム検索の管理画面から発行できるのはコードだし、
 Google自身もこう書いている。
