@@ -31,13 +31,14 @@ title: 'Googleカスタム検索のデザインが崩れる'
 `content-box`に戻せば崩れは直る。
 
 ```
-.cse-wrapper {
+.cse-wrapper * {
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
 }
 ```
 
+ワイルドカードは使いたくないよね、でもしょうがない。
 ベンダプレフィックスは必要なんだっけ？ちょっとわかんないや。
 
 ## この事象について
