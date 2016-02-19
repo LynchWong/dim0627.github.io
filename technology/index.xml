@@ -60,11 +60,11 @@
 探せば同様の事象について掲載している記事もあるけど、
 HTMLをベタで書くという解決方法なので、根本的な解決ではないように思う。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://webkaru.net/wordpress/google-custom-search-design/&#34;&gt;HTMLフォームを使用したGoogleカスタム検索のデザイン変更方法 - WordPressの使い方と設定 - Webkaru&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.02320.net/google_custom_search_optout_js/&#34;&gt;超軽量♪Googleカスタム検索はJavaScript外すと改造し放題&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://blog.696.jp/txt/937/&#34;&gt;googleカスタム検索をHTMLに書き換える | 696graphic [BLOG]&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://webkaru.net/wordpress/google-custom-search-design/&#34;&gt;HTMLフォームを使用したGoogleカスタム検索のデザイン変更方法 - WordPressの使い方と設定 - Webkaru&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.02320.net/google_custom_search_optout_js/&#34;&gt;超軽量♪Googleカスタム検索はJavaScript外すと改造し放題&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.696.jp/txt/937/&#34;&gt;googleカスタム検索をHTMLに書き換える | 696graphic [BLOG]&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;GoogleもHTMLベタでやっていいよとは言ってるが、Googleカスタム検索の管理画面から発行できるのはコードだし、
 Google自身もこう書いている。&lt;/p&gt;
