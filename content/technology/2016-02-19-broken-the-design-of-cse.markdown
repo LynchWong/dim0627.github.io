@@ -10,9 +10,9 @@ title: 'Googleカスタム検索のデザインが崩れる'
 ## なぜ崩れるのか
 
 結論から言えばCSSの`box-sizing`の値によって崩れる。
-特にBootstrapを使ってるサイトで崩れることが多いんじゃないだろうか。
+特にBootstrapを使ってるサイトで崩れることが多いんじゃないでしょうか。
 
-なぜならBootstrapはワイルドカードでこういう設定がされている。
+なぜならBootstrapはワイルドカードでこういう設定がされているから。
 
 ```
 * {
@@ -22,13 +22,16 @@ title: 'Googleカスタム検索のデザインが崩れる'
 }
 ```
 
-`border-box`のほうが扱いやすいことが多いので、この設定に対して文句とかはない。
+該当ソースはここでしょうか。Bootstrapの構造がよくわからない。
+
+[bootstrap/scaffolding.less at e38f066d8c203c3e032da0ff23cd2d6098ee2dd6 · twbs/bootstrap](https://github.com/twbs/bootstrap/blob/e38f066d8c203c3e032da0ff23cd2d6098ee2dd6/less/scaffolding.less#L12)
+
+`border-box`のほうが扱いやすいことが多いので、この設定に対して文句とかはないです。
 こうあるべきだと思う。
 
 ## 崩れを直す方法
 
-というわけで、カスタム検索のスクリプトを特定のタグで囲んで、そのタグに対してワイルドカードで`box-sizing`の値を指定してしまえばいい。
-`content-box`に戻せば崩れは直る。
+というわけで、カスタム検索のスクリプトを特定のタグで囲んで、そのタグに対してワイルドカードで`box-sizing`の値を指定してしまえば直る。
 
 ```
 .cse-wrapper * {
