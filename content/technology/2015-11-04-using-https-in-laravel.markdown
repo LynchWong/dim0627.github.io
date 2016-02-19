@@ -28,14 +28,12 @@ Your connection to this site is private, but someone on the network might be abl
 このページはSSL証明書が効いてるんだけど、ネットワーク上の何かがそうじゃなくしちゃうかもね？
 
 原因は**httpsじゃないURLに飛ばすformタグがページに存在する**せいでした。
-
 開発環境でもオレオレ証明書を用意したりしてHTTPSで通信するようにしておくべきでした。
 
 ## Laravelのrouteメソッド
 
 URLのレンダリングはLaravelの`route`メソッドを使っています。
-
-これは結構気に入っていて、後でURLを変えたいって時にある程度コストを軽減してくれる（んじゃないか）と思っているから。
+この機能は結構気に入っている。後でURLを変えたいって時にある程度コストを軽減してくれる（んじゃないか）と思っているから。
 
 [HTTP Routing - Laravel - The PHP Framework For Web Artisans](http://laravel.com/docs/5.1/routing#named-routes)
 
@@ -43,13 +41,13 @@ URLのレンダリングはLaravelの`route`メソッドを使っています。
 
 ## LaravelでHTTPSのURLを取り扱う
 
-LaravelのRoutingはこんな感じなんだけど、
+LaravelのRoutingはこんな感じなんだけど、こう記述すれば
 
 ``` php
 Route::get('/', ['as' => 'home', function() { return view('home.index'); }]);
 ```
 
-HTTPSのみを許容することも出来るらしい。
+HTTPSのみを許容することも出来るらしい。さらには
 
 ``` php
 Route::get('/', ['https', 'as' => 'home', function() { return view('home.index'); }]);
@@ -67,13 +65,11 @@ Route::get('/', ['https', 'as' => 'home', function() { return view('home.index')
 事になります。
 
 今回ELBの奥にあるLaravelが載ったインスタンスはnginxが80ポートを待ち受けています。
-
 なのでHTTPSだけを許容されると困るんですね、443で通信しなきゃいけない。
 
 ## 解決策
 
 わがままを言えば**LaravelがHTTPを受け付けて`route`メソッドがHTTPSのURLをレンダリングする**と嬉しい。
-
 けどその方法は見つからず（構成としてナンセンスなんだろう）、ELBとLaravelが載ったインスタンスの両方にSSL証明書を設置することにしました。
 
 というわけでこういう形。
