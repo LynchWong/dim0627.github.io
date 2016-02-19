@@ -42,7 +42,7 @@
     <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz/"/>
     <meta itemprop="dateModified" content="2016-02-19T12:44:17&#43;09:00">
     <meta itemprop="headline" content="Googleカスタム検索のデザインが崩れる">
-    <meta itemprop="description" content="結構ありがちな話らしい。 探せば同様の事象について掲載している記事もあるけど、 HTMLをベタで書くという解決方法なので根本的な解決には思えない">
+    <meta itemprop="description" content="なぜ崩れるのか 結論から言えばCSSのbox-sizingの値によって崩れる。 特にBootstrapを使ってるサイトで崩れることが多いんじゃな">
     <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/">
     <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
       <meta itemprop="url" content="http://yet.unresolved.xyz/images/default.jpg" />
@@ -85,17 +85,12 @@
 
 <p><a href="/images/2016-02-19/cse.png"><img src="/images/2016-02-19/cse.png" alt="cse"></a></p>
 
-<p>結構ありがちな話らしい。
-探せば同様の事象について掲載している記事もあるけど、
-HTMLをベタで書くという解決方法なので根本的な解決には思えない。</p>
-
-<p><a href="http://webkaru.net/wordpress/google-custom-search-design/">HTMLフォームを使用したGoogleカスタム検索のデザイン変更方法 - WordPressの使い方と設定 - Webkaru</a></p>
-
 <h2 id="なぜ崩れるのか:823fb9b45a070a4729c0c404dd848b3b">なぜ崩れるのか</h2>
 
 <p>結論から言えばCSSの<code>box-sizing</code>の値によって崩れる。
-特にBootstrapを使ってるサイトで崩れることが多いんじゃないかと思うけど、
-Bootstrapはワイルドカードでこういう設定がされている。</p>
+特にBootstrapを使ってるサイトで崩れることが多いんじゃないだろうか。</p>
+
+<p>なぜならBootstrapはワイルドカードでこういう設定がされている。</p>
 
 <pre><code>* {
     -webkit-box-sizing: border-box;
@@ -105,11 +100,12 @@ Bootstrapはワイルドカードでこういう設定がされている。</p>
 </code></pre>
 
 <p><code>border-box</code>のほうが扱いやすいことが多いので、この設定に対して文句とかはない。
-こうあるべきだと思うし。</p>
+こうあるべきだと思う。</p>
 
 <h2 id="崩れを直す方法:823fb9b45a070a4729c0c404dd848b3b">崩れを直す方法</h2>
 
-<p>純粋にカスタム検索のスクリプトを特定のタグで囲んで、そのタグに対してワイルドカードで<code>box-sizing</code>の値を指定してしまえばいい。</p>
+<p>というわけで、カスタム検索のスクリプトを特定のタグで囲んで、そのタグに対してワイルドカードで<code>box-sizing</code>の値を指定してしまえばいい。
+<code>content-box</code>に戻せば崩れは直る。</p>
 
 <pre><code>.cse-wrapper {
     -webkit-box-sizing: content-box;
@@ -119,6 +115,29 @@ Bootstrapはワイルドカードでこういう設定がされている。</p>
 </code></pre>
 
 <p>ベンダプレフィックスは必要なんだっけ？ちょっとわかんないや。</p>
+
+<h2 id="この事象について:823fb9b45a070a4729c0c404dd848b3b">この事象について</h2>
+
+<p>結構ありがちな話らしい。
+探せば同様の事象について掲載している記事もあるけど、
+HTMLをベタで書くという解決方法なので、根本的な解決ではないように思う。</p>
+
+<p><a href="http://webkaru.net/wordpress/google-custom-search-design/">HTMLフォームを使用したGoogleカスタム検索のデザイン変更方法 - WordPressの使い方と設定 - Webkaru</a></p>
+
+<p><a href="http://www.02320.net/google_custom_search_optout_js/">超軽量♪Googleカスタム検索はJavaScript外すと改造し放題</a></p>
+
+<p><a href="http://blog.696.jp/txt/937/">googleカスタム検索をHTMLに書き換える | 696graphic [BLOG]</a></p>
+
+<p>GoogleもHTMLベタでやっていいよとは言ってるが、Googleカスタム検索の管理画面から発行できるのはコードだし、
+Google自身もこう書いている。</p>
+
+<p><a href="https://support.google.com/customsearch/answer/1351747?hl=ja">HTML フォームを使用した検索ボックスの作成 - カスタム検索 ヘルプ</a></p>
+
+<blockquote>
+<p>HTML フォームのコードは利便性のためにのみ提供されています。Google カスタム検索ではこの問題に対するサポートは提供しておりません。すべての無料の検索エンジンに Google ブランドを表示する必要があります。</p>
+</blockquote>
+
+<p>確かに、JSでのレンダリングだと目に見えて遅延するけどね。</p>
 </div>
 
     <aside>

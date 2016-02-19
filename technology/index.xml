@@ -19,17 +19,12 @@
 
 &lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2016-02-19/cse.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2016-02-19/cse.png&#34; alt=&#34;cse&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;結構ありがちな話らしい。
-探せば同様の事象について掲載している記事もあるけど、
-HTMLをベタで書くという解決方法なので根本的な解決には思えない。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://webkaru.net/wordpress/google-custom-search-design/&#34;&gt;HTMLフォームを使用したGoogleカスタム検索のデザイン変更方法 - WordPressの使い方と設定 - Webkaru&lt;/a&gt;&lt;/p&gt;
-
 &lt;h2 id=&#34;なぜ崩れるのか:823fb9b45a070a4729c0c404dd848b3b&#34;&gt;なぜ崩れるのか&lt;/h2&gt;
 
 &lt;p&gt;結論から言えばCSSの&lt;code&gt;box-sizing&lt;/code&gt;の値によって崩れる。
-特にBootstrapを使ってるサイトで崩れることが多いんじゃないかと思うけど、
-Bootstrapはワイルドカードでこういう設定がされている。&lt;/p&gt;
+特にBootstrapを使ってるサイトで崩れることが多いんじゃないだろうか。&lt;/p&gt;
+
+&lt;p&gt;なぜならBootstrapはワイルドカードでこういう設定がされている。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;* {
     -webkit-box-sizing: border-box;
@@ -39,11 +34,12 @@ Bootstrapはワイルドカードでこういう設定がされている。&lt;/
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;code&gt;border-box&lt;/code&gt;のほうが扱いやすいことが多いので、この設定に対して文句とかはない。
-こうあるべきだと思うし。&lt;/p&gt;
+こうあるべきだと思う。&lt;/p&gt;
 
 &lt;h2 id=&#34;崩れを直す方法:823fb9b45a070a4729c0c404dd848b3b&#34;&gt;崩れを直す方法&lt;/h2&gt;
 
-&lt;p&gt;純粋にカスタム検索のスクリプトを特定のタグで囲んで、そのタグに対してワイルドカードで&lt;code&gt;box-sizing&lt;/code&gt;の値を指定してしまえばいい。&lt;/p&gt;
+&lt;p&gt;というわけで、カスタム検索のスクリプトを特定のタグで囲んで、そのタグに対してワイルドカードで&lt;code&gt;box-sizing&lt;/code&gt;の値を指定してしまえばいい。
+&lt;code&gt;content-box&lt;/code&gt;に戻せば崩れは直る。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;.cse-wrapper {
     -webkit-box-sizing: content-box;
@@ -53,6 +49,29 @@ Bootstrapはワイルドカードでこういう設定がされている。&lt;/
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;ベンダプレフィックスは必要なんだっけ？ちょっとわかんないや。&lt;/p&gt;
+
+&lt;h2 id=&#34;この事象について:823fb9b45a070a4729c0c404dd848b3b&#34;&gt;この事象について&lt;/h2&gt;
+
+&lt;p&gt;結構ありがちな話らしい。
+探せば同様の事象について掲載している記事もあるけど、
+HTMLをベタで書くという解決方法なので、根本的な解決ではないように思う。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://webkaru.net/wordpress/google-custom-search-design/&#34;&gt;HTMLフォームを使用したGoogleカスタム検索のデザイン変更方法 - WordPressの使い方と設定 - Webkaru&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.02320.net/google_custom_search_optout_js/&#34;&gt;超軽量♪Googleカスタム検索はJavaScript外すと改造し放題&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.696.jp/txt/937/&#34;&gt;googleカスタム検索をHTMLに書き換える | 696graphic [BLOG]&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;GoogleもHTMLベタでやっていいよとは言ってるが、Googleカスタム検索の管理画面から発行できるのはコードだし、
+Google自身もこう書いている。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://support.google.com/customsearch/answer/1351747?hl=ja&#34;&gt;HTML フォームを使用した検索ボックスの作成 - カスタム検索 ヘルプ&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;HTML フォームのコードは利便性のためにのみ提供されています。Google カスタム検索ではこの問題に対するサポートは提供しておりません。すべての無料の検索エンジンに Google ブランドを表示する必要があります。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;確かに、JSでのレンダリングだと目に見えて遅延するけどね。&lt;/p&gt;
 </description>
     </item>
     
