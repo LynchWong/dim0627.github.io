@@ -1,7 +1,7 @@
 ---
 date: 2016-02-22T14:36:12+09:00
 slug: "ctf-for-starter"
-tags: []
+tags: ["security", "ctf"]
 title: 「CTF for Starter in IISEC」に行ってきた
 ---
 
