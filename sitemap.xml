@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://yet.unresolved.xyz/</loc>
-    <lastmod>2016-02-19T12:44:17+09:00</lastmod>
+    <lastmod>2016-02-22T14:36:12+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://yet.unresolved.xyz/blog/2016/02/22/ctf-for-starter/</loc>
+    <lastmod>2016-02-22T14:36:12+09:00</lastmod>
   </url>
   
   <url>
