@@ -83,9 +83,8 @@ title: "読みやすい文章のデザインとバーティカルリズム"
 
 など。これについては色々な人が色々な試行錯誤を繰り返してきてる事柄だと思う。
 
-[美しいWebデザインをタイプ別に！見ないと損するパーツ別ギャラリーサイトまとめ | 株式会社LIG](http://liginc.co.jp/web/design/other-design/36320)
-
-[もう迷わない！見出しデザインの基本理論とアイデア集 | それからデザイン スタッフブログ](http://sole-color-blog.com/blog/design/294/)
+* [美しいWebデザインをタイプ別に！見ないと損するパーツ別ギャラリーサイトまとめ | 株式会社LIG](http://liginc.co.jp/web/design/other-design/36320)
+* [もう迷わない！見出しデザインの基本理論とアイデア集 | それからデザイン スタッフブログ](http://sole-color-blog.com/blog/design/294/)
 
 僕の今の結論は、「強調しすぎなければいい」んじゃないかと思っている。
 実際そこまで装飾しなくたって、読みやすさは変わらない。
@@ -120,9 +119,7 @@ Modular Scaleについてはまだしっかりとメリットや腹落ちする�
 
 ## 参考にさせて頂きました
 
-[Modular ScaleとVertical Rhythmを使ったタイポグラフィとレイアウト | Webデザイン、フロントエンド系の技術に関する備忘録 - whiskers](http://whiskers.nukos.kitchen/2015/04/05/modular-scale.html)
-
-[デザインは8の倍数でできている｜1 pixel｜サイバーエージェント公式クリエイターズブログ](http://ameblo.jp/ca-1pixel/entry-11837685575.html)
-
-[2015年のデザイントレンドを振り返る | UX MILK](http://uxmilk.jp/translation/the_year_in_design)
+* [Modular ScaleとVertical Rhythmを使ったタイポグラフィとレイアウト | Webデザイン、フロントエンド系の技術に関する備忘録 - whiskers](http://whiskers.nukos.kitchen/2015/04/05/modular-scale.html)
+* [デザインは8の倍数でできている｜1 pixel｜サイバーエージェント公式クリエイターズブログ](http://ameblo.jp/ca-1pixel/entry-11837685575.html)
+* [2015年のデザイントレンドを振り返る | UX MILK](http://uxmilk.jp/translation/the_year_in_design)
 

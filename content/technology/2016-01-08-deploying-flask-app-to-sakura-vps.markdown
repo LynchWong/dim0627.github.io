@@ -121,9 +121,8 @@ exec $UWSGI --ini /path/to/wsgi.ini
 
 `sudo start app`で起動出来ます。この起動の仕方は初めて知りました。
 
-[How To Serve Flask Applications with uWSGI and Nginx on Ubuntu 14.04 | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-14-04)
-
-[Linux - upstartでデーモン化してみる - Qiita](http://qiita.com/kuni-nakaji/items/f3426bf69be947c594c4)
+* [How To Serve Flask Applications with uWSGI and Nginx on Ubuntu 14.04 | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-14-04)
+* [Linux - upstartでデーモン化してみる - Qiita](http://qiita.com/kuni-nakaji/items/f3426bf69be947c594c4)
 
 ## nginxとの連携
 
@@ -150,11 +149,8 @@ uWSGIが起動して`app.sock`が配備されてる状態であればこれで�
 
 ## 参考にさせていただきました
 
-[Python - ちゃんと運用するときのuWSGI設定メモ - Qiita](http://qiita.com/yasunori/items/64606e63b36b396cf695#etcnginxconfdsample_nginxconf)
-
-[How To Serve Flask Applications with uWSGI and Nginx on Ubuntu 14.04 | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-14-04)
-
-[Flask + uWSGI + Nginx でハローワールドするまで @ さくらのVPS (CentOS 6.6) - Qiita](http://qiita.com/morinokami/items/e0efb2ae2aa04a1b148b)
-
-[uWSGI で Django を使う方法 — Django 1.4 documentation](http://docs.djangoproject.jp/en/latest/howto/deployment/wsgi/uwsgi.html)
+* [Python - ちゃんと運用するときのuWSGI設定メモ - Qiita](http://qiita.com/yasunori/items/64606e63b36b396cf695#etcnginxconfdsample_nginxconf)
+* [How To Serve Flask Applications with uWSGI and Nginx on Ubuntu 14.04 | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-14-04)
+* [Flask + uWSGI + Nginx でハローワールドするまで @ さくらのVPS (CentOS 6.6) - Qiita](http://qiita.com/morinokami/items/e0efb2ae2aa04a1b148b)
+* [uWSGI で Django を使う方法 — Django 1.4 documentation](http://docs.djangoproject.jp/en/latest/howto/deployment/wsgi/uwsgi.html)
 
