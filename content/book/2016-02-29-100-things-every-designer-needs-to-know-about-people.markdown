@@ -17,7 +17,7 @@ title: "「インタフェースデザインの心理学 ―ウェブやアプ�
 
 ## 読もうと思ったきっかけ
 
-以前の[バーティカルリズム](http://yet.unresolved.xyz/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/)にも書いた通り、デザインというか、その理論のようなものに興味を持っている。
+以前の[バーティカルリズムについての記事](http://yet.unresolved.xyz/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/)でも書いた通り、デザインというか、その理論のようなものに興味を持っている。
 それこそデザインのパターンやスキルよりも、この本にあるとおり心理学からのアプローチとか、そういった知識を身につけたかった。
 
 ## 簡潔ながらも考えさせられる内容
