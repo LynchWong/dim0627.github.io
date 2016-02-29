@@ -65,7 +65,6 @@ $ sudo rm /swapfile
 
 ## 参考にさせていただきました
 
-[さくらインターネット「さくらのレンタルサーバ」にSubversionをインストールする。 - ScissorHands](http://scissorhands.jpn.org/2011/11/post-260.html)
-
-[Resolving build errors with python lxml on low memory machines | Wordspeak](https://www.wordspeak.org/posts/resolving-build-errors-with-python-lxml.html)
+* [さくらインターネット「さくらのレンタルサーバ」にSubversionをインストールする。 - ScissorHands](http://scissorhands.jpn.org/2011/11/post-260.html)
+* [Resolving build errors with python lxml on low memory machines | Wordspeak](https://www.wordspeak.org/posts/resolving-build-errors-with-python-lxml.html)
 
