@@ -203,9 +203,10 @@ exec $UWSGI --ini /path/to/wsgi.ini
 
 &lt;p&gt;&lt;code&gt;sudo start app&lt;/code&gt;で起動出来ます。この起動の仕方は初めて知りました。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-14-04&#34;&gt;How To Serve Flask Applications with uWSGI and Nginx on Ubuntu 14.04 | DigitalOcean&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://qiita.com/kuni-nakaji/items/f3426bf69be947c594c4&#34;&gt;Linux - upstartでデーモン化してみる - Qiita&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-14-04&#34;&gt;How To Serve Flask Applications with uWSGI and Nginx on Ubuntu 14.04 | DigitalOcean&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/kuni-nakaji/items/f3426bf69be947c594c4&#34;&gt;Linux - upstartでデーモン化してみる - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&#34;nginxとの連携:a09f5de2bb121134bcd4cecf283ff09b&#34;&gt;nginxとの連携&lt;/h2&gt;
 
@@ -231,13 +232,12 @@ exec $UWSGI --ini /path/to/wsgi.ini
 
 &lt;h2 id=&#34;参考にさせていただきました:a09f5de2bb121134bcd4cecf283ff09b&#34;&gt;参考にさせていただきました&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://qiita.com/yasunori/items/64606e63b36b396cf695#etcnginxconfdsample_nginxconf&#34;&gt;Python - ちゃんと運用するときのuWSGI設定メモ - Qiita&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-14-04&#34;&gt;How To Serve Flask Applications with uWSGI and Nginx on Ubuntu 14.04 | DigitalOcean&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://qiita.com/morinokami/items/e0efb2ae2aa04a1b148b&#34;&gt;Flask + uWSGI + Nginx でハローワールドするまで @ さくらのVPS (CentOS 6.6) - Qiita&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://docs.djangoproject.jp/en/latest/howto/deployment/wsgi/uwsgi.html&#34;&gt;uWSGI で Django を使う方法 — Django 1.4 documentation&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/yasunori/items/64606e63b36b396cf695#etcnginxconfdsample_nginxconf&#34;&gt;Python - ちゃんと運用するときのuWSGI設定メモ - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-14-04&#34;&gt;How To Serve Flask Applications with uWSGI and Nginx on Ubuntu 14.04 | DigitalOcean&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/morinokami/items/e0efb2ae2aa04a1b148b&#34;&gt;Flask + uWSGI + Nginx でハローワールドするまで @ さくらのVPS (CentOS 6.6) - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.djangoproject.jp/en/latest/howto/deployment/wsgi/uwsgi.html&#34;&gt;uWSGI で Django を使う方法 — Django 1.4 documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     

@@ -5,12 +5,11 @@
     <meta name="generator" content="Hugo 0.15-DEV" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans|Lobster'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/custom.css">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz//index.xml">
 
     
@@ -29,75 +28,41 @@
 
     <div class="container">
       <header class="site">
-        <div class="title"><a href="http://yet.unresolved.xyz/">Unresolved</a></div>
+        <a href="http://yet.unresolved.xyz/">Unresolved</a>
       </header>
+
+
+
+<article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+  <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz/"/>
+  <meta itemprop="dateModified" content="2016-01-08T10:57:35&#43;09:00">
+  <meta itemprop="headline" content="[Python]Flaskアプリをnginx &#43; uWSGIでさくらVPSにデプロイする">
+  <meta itemprop="description" content="CentOS6.5、Python2.7でやります。 CentOS6.5にプリインストールされているPythonは2.6だと思うのですが、Pyt">
+  <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2016/01/08/deploying-flask-app-to-sakura-vps/">
+  <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+    <meta itemprop="url" content="http://yet.unresolved.xyz/images/default.jpg" />
+    <meta itemprop="width" content="800">
+    <meta itemprop="height" content="800">
+  </div>
+  <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.jpg">
+      <meta itemprop="width" content="100">
+      <meta itemprop="height" content="100">
     </div>
+    <meta itemprop="name" content="Unresolved">
+  </div>
+  <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+    <meta itemprop="name" content="Daisuke Tsuji">
+  </div>
 
-    <div class="container site">
+  <header>
+    <time class="date" itemprop="datePublished" pubdate="pubdate" datetime="2016-01-08T10:57:35&#43;09:00">Fri, Jan 8, 2016</time>
+    <h1 class="title">[Python]Flaskアプリをnginx &#43; uWSGIでさくらVPSにデプロイする</h1>
+  </header>
 
-
-<div class="single">
-  <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
-
-    <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz/"/>
-    <meta itemprop="dateModified" content="2016-01-08T10:57:35&#43;09:00">
-    <meta itemprop="headline" content="[Python]Flaskアプリをnginx &#43; uWSGIでさくらVPSにデプロイする">
-    <meta itemprop="description" content="CentOS6.5、Python2.7でやります。 CentOS6.5にプリインストールされているPythonは2.6だと思うのですが、Pyt">
-    <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2016/01/08/deploying-flask-app-to-sakura-vps/">
-    <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="http://yet.unresolved.xyz/images/default.jpg" />
-      <meta itemprop="width" content="800">
-      <meta itemprop="height" content="800">
-    </div>
-    <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-      <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-        <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.jpg">
-        <meta itemprop="width" content="100">
-        <meta itemprop="height" content="100">
-      </div>
-      <meta itemprop="name" content="Unresolved">
-    </div>
-    <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-      <meta itemprop="name" content="Daisuke Tsuji">
-    </div>
-
-    <header class="clearfix">
-      <div class="pull-left">
-        <div class="image" style="background-image: url(http://yet.unresolved.xyz/images/default.jpg);"></div>
-      </div>
-
-      <div class="detail">
-        <time>Fri, Jan 8, 2016</time>
-        <h1 class="title">[Python]Flaskアプリをnginx &#43; uWSGIでさくらVPSにデプロイする</h1>
-      </div>
-    </header>
-
-    <div class="share">
-      <a href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f08%2fdeploying-flask-app-to-sakura-vps%2f&t=%5bPython%5dFlask%e3%82%a2%e3%83%97%e3%83%aa%e3%82%92nginx%20%2b%20uWSGI%e3%81%a7%e3%81%95%e3%81%8f%e3%82%89VPS%e3%81%ab%e3%83%87%e3%83%97%e3%83%ad%e3%82%a4%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
-      <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f08%2fdeploying-flask-app-to-sakura-vps%2f&text=%5bPython%5dFlask%e3%82%a2%e3%83%97%e3%83%aa%e3%82%92nginx%20%2b%20uWSGI%e3%81%a7%e3%81%95%e3%81%8f%e3%82%89VPS%e3%81%ab%e3%83%87%e3%83%97%e3%83%ad%e3%82%a4%e3%81%99%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
-      <a href="https://plus.google.com/share?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f08%2fdeploying-flask-app-to-sakura-vps%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
-      <a href="http://getpocket.com/edit?url=http%3a%2f%2fyet.unresolved.xyz%2fblog%2f2016%2f01%2f08%2fdeploying-flask-app-to-sakura-vps%2f&title=%5bPython%5dFlask%e3%82%a2%e3%83%97%e3%83%aa%e3%82%92nginx%20%2b%20uWSGI%e3%81%a7%e3%81%95%e3%81%8f%e3%82%89VPS%e3%81%ab%e3%83%87%e3%83%97%e3%83%ad%e3%82%a4%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
-    </div>
-
-    <div class="toc"><nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#uwsgiをインストールする:a09f5de2bb121134bcd4cecf283ff09b">uWSGIをインストールする</a>
-<ul>
-<li><a href="#uwsgi:a09f5de2bb121134bcd4cecf283ff09b">uWSGI？</a></li>
-<li><a href="#インストール:a09f5de2bb121134bcd4cecf283ff09b">インストール</a></li>
-<li><a href="#パラメータオプションでの起動:a09f5de2bb121134bcd4cecf283ff09b">パラメータオプションでの起動</a></li>
-<li><a href="#iniファイルでの起動:a09f5de2bb121134bcd4cecf283ff09b">iniファイルでの起動</a></li>
-<li><a href="#upstartから起動させる:a09f5de2bb121134bcd4cecf283ff09b">upstartから起動させる</a></li>
-</ul></li>
-<li><a href="#nginxとの連携:a09f5de2bb121134bcd4cecf283ff09b">nginxとの連携</a></li>
-<li><a href="#参考にさせていただきました:a09f5de2bb121134bcd4cecf283ff09b">参考にさせていただきました</a></li>
-</ul></li>
-</ul>
-</nav></div>
-
-    <div class="article-body" itemprop="articleBody">
+  <div class="body" itemprop="articleBody">
 
 <p>CentOS6.5、Python2.7でやります。</p>
 
@@ -214,9 +179,10 @@ exec $UWSGI --ini /path/to/wsgi.ini
 
 <p><code>sudo start app</code>で起動出来ます。この起動の仕方は初めて知りました。</p>
 
-<p><a href="https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-14-04">How To Serve Flask Applications with uWSGI and Nginx on Ubuntu 14.04 | DigitalOcean</a></p>
-
-<p><a href="http://qiita.com/kuni-nakaji/items/f3426bf69be947c594c4">Linux - upstartでデーモン化してみる - Qiita</a></p>
+<ul>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-14-04">How To Serve Flask Applications with uWSGI and Nginx on Ubuntu 14.04 | DigitalOcean</a></li>
+<li><a href="http://qiita.com/kuni-nakaji/items/f3426bf69be947c594c4">Linux - upstartでデーモン化してみる - Qiita</a></li>
+</ul>
 
 <h2 id="nginxとの連携:a09f5de2bb121134bcd4cecf283ff09b">nginxとの連携</h2>
 
@@ -242,54 +208,71 @@ exec $UWSGI --ini /path/to/wsgi.ini
 
 <h2 id="参考にさせていただきました:a09f5de2bb121134bcd4cecf283ff09b">参考にさせていただきました</h2>
 
-<p><a href="http://qiita.com/yasunori/items/64606e63b36b396cf695#etcnginxconfdsample_nginxconf">Python - ちゃんと運用するときのuWSGI設定メモ - Qiita</a></p>
-
-<p><a href="https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-14-04">How To Serve Flask Applications with uWSGI and Nginx on Ubuntu 14.04 | DigitalOcean</a></p>
-
-<p><a href="http://qiita.com/morinokami/items/e0efb2ae2aa04a1b148b">Flask + uWSGI + Nginx でハローワールドするまで @ さくらのVPS (CentOS 6.6) - Qiita</a></p>
-
-<p><a href="http://docs.djangoproject.jp/en/latest/howto/deployment/wsgi/uwsgi.html">uWSGI で Django を使う方法 — Django 1.4 documentation</a></p>
+<ul>
+<li><a href="http://qiita.com/yasunori/items/64606e63b36b396cf695#etcnginxconfdsample_nginxconf">Python - ちゃんと運用するときのuWSGI設定メモ - Qiita</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-14-04">How To Serve Flask Applications with uWSGI and Nginx on Ubuntu 14.04 | DigitalOcean</a></li>
+<li><a href="http://qiita.com/morinokami/items/e0efb2ae2aa04a1b148b">Flask + uWSGI + Nginx でハローワールドするまで @ さくらのVPS (CentOS 6.6) - Qiita</a></li>
+<li><a href="http://docs.djangoproject.jp/en/latest/howto/deployment/wsgi/uwsgi.html">uWSGI で Django を使う方法 — Django 1.4 documentation</a></li>
+</ul>
 </div>
 
-    <aside>
+  <aside class="article tags">
+    
+    <a href="http://yet.unresolved.xyz/tags/python">python</a>
+    
+    <a href="http://yet.unresolved.xyz/tags/flask">flask</a>
+    
+    <a href="http://yet.unresolved.xyz/tags/nginx">nginx</a>
+    
+    <a href="http://yet.unresolved.xyz/tags/wsgi">wsgi</a>
+    
+    <a href="http://yet.unresolved.xyz/tags/centos">centos</a>
+    
+    <a href="http://yet.unresolved.xyz/tags/sakura-vps">sakura-vps</a>
+    
+  </aside>
 
-      <div class="section"><a href="http://yet.unresolved.xyz/tags/python" class="tag">python</a><a href="http://yet.unresolved.xyz/tags/flask" class="tag">flask</a><a href="http://yet.unresolved.xyz/tags/nginx" class="tag">nginx</a><a href="http://yet.unresolved.xyz/tags/wsgi" class="tag">wsgi</a><a href="http://yet.unresolved.xyz/tags/centos" class="tag">centos</a><a href="http://yet.unresolved.xyz/tags/sakura-vps" class="tag">sakura-vps</a></div>
+</article>
 
-      
-      
-      
+<footer class="site">
+  <p>&copy; 2016 Daisuke Tsuji</p>
+  <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
+  <p>Theme <a href="https://github.com/dim0627/hugo_theme_harb" target="_blank">Harb</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+</footer>
 
-    </aside>
-
-  </article>
 </div>
 
-    </div>
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 
-    <div class="container">
-      <footer class="site">
-        <p>&copy; 2016 Daisuke Tsuji</p>
-        <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
-        <p>Theme <a href="https://github.com/dim0627/hugo_theme_aglaus" target="_blank">Aglaus</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
-      </footer>
-    </div>
+<script>
+$(function() {
+  $('.expand-switch').on('click', function() {
+    if ($('.expand-target').is(':visible')) {
+      $('.expand-target').hide();
+      $(this).removeClass('open');
+    } else {
+      $('.expand-target').show();
+      $(this).addClass('open');
+    }
+    return false;
+  });
+});
+</script>
 
-    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
 
-    
-    <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-55005303-1', 'auto');
-    ga('send', 'pageview');
-    </script>
-    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-55005303-1', 'auto');
+ga('send', 'pageview');
+</script>
 
-  </body>
+
+</body>
 </html>
 
