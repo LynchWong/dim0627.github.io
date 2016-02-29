@@ -111,6 +111,7 @@ article .title {
 article .summary {
   color: #78909c;
   line-height: 1.25rem;
+  font-size: .8rem;
 }
 
 article .body {
