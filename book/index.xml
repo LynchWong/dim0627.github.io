@@ -6,8 +6,74 @@
     <description>Recent content in Books on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 30 Jan 2016 19:34:21 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 29 Feb 2016 09:43:13 +0900</lastBuildDate>
     <atom:link href="http://yet.unresolved.xyz/book/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>「インタフェースデザインの心理学 ―ウェブやアプリに新たな視点をもたらす100の指針」を読んだ</title>
+      <link>http://yet.unresolved.xyz/blog/2016/02/29/100-things-every-designer-needs-to-know-about-people/</link>
+      <pubDate>Mon, 29 Feb 2016 09:43:13 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2016/02/29/100-things-every-designer-needs-to-know-about-people/</guid>
+      <description>
+
+&lt;p&gt;&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/4873115574/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4873115574&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;インタフェースデザインの心理学 ―ウェブやアプリに新たな視点をもたらす100の指針&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=4873115574&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;表紙が簡素でおしゃれだけど、こう見えてオライリーの本。
+帯のコピーは「人々の心を捉えるにはどうすればよいのか？」。&lt;/p&gt;
+
+&lt;p&gt;3時間かからないくらいで読み切ることが出来ました。&lt;/p&gt;
+
+&lt;p&gt;ちなみにさっき気づいたけど、どうやら実践編も出版されているらしい。そのうち買うかも。&lt;/p&gt;
+
+&lt;p&gt;&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/4873116082/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4873116082&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;インタフェースデザインの実践教室 ―優れたユーザビリティを実現するアイデアとテクニック&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=4873116082&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;読もうと思ったきっかけ:9ae51b3854d154025e50d513241ba764&#34;&gt;読もうと思ったきっかけ&lt;/h2&gt;
+
+&lt;p&gt;以前の&lt;a href=&#34;http://yet.unresolved.xyz/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/&#34;&gt;バーティカルリズム&lt;/a&gt;にも書いた通り、デザインというか、その理論のようなものに興味を持っている。
+それこそデザインのパターンやスキルよりも、この本にあるとおり心理学からのアプローチとか、そういった知識を身につけたかった。&lt;/p&gt;
+
+&lt;h2 id=&#34;簡潔ながらも考えさせられる内容:9ae51b3854d154025e50d513241ba764&#34;&gt;簡潔ながらも考えさせられる内容&lt;/h2&gt;
+
+&lt;p&gt;よくある「○○のための100の方法」みたいな感じで、この本もデザインに対して心理学からアプローチした上での指針を100個紹介している。
+だから個々の指針についての説明は数ページで終わってしまうんだけど、それが心理学に基づいたものや、統計や実験によるものだからとても説得力がある。&lt;/p&gt;
+
+&lt;p&gt;もちろん指針自体にも興味深いものがあるし、そもそもその指針を見出そうとした着眼点自体も面白かった。心理学者の視点が垣間見れるというか。&lt;/p&gt;
+
+&lt;h2 id=&#34;ハッとさせられた指針:9ae51b3854d154025e50d513241ba764&#34;&gt;ハッとさせられた指針&lt;/h2&gt;
+
+&lt;p&gt;あんまりがっつり紹介しちゃうのは良くないと思うので、さらっと触れるだけ触れてみようと思う。&lt;/p&gt;
+
+&lt;h3 id=&#34;競争意欲はライバルが少ない時に増す:9ae51b3854d154025e50d513241ba764&#34;&gt;競争意欲はライバルが少ない時に増す&lt;/h3&gt;
+
+&lt;p&gt;簡単なテストでも、100人が参加している状況と10人が参加している状況で結果が異なるというもの。
+これはインタフェースデザインというか、ビジネスモデル的なところにも食い込んでくる話だと思う。
+競争させたいのであれば、自分の立ち位置をわかりやすくしてあげることが大事なんだとか。&lt;/p&gt;
+
+&lt;h3 id=&#34;人は忙しい方が満足を感じる:9ae51b3854d154025e50d513241ba764&#34;&gt;人は忙しい方が満足を感じる&lt;/h3&gt;
+
+&lt;p&gt;まあこれは当然かも知れない。
+ここには書かないけど、本書ではこの話を空港の話に例えていて、それが非常にしっくりきた。&lt;/p&gt;
+
+&lt;p&gt;本書が言いたいのはそういうことじゃないと思うけど、仕事が暇だったりするとそれはそれでストレスだったりするよね。&lt;/p&gt;
+
+&lt;h3 id=&#34;グループによる意思決定は必ずしも的確ではない:9ae51b3854d154025e50d513241ba764&#34;&gt;グループによる意思決定は必ずしも的確ではない&lt;/h3&gt;
+
+&lt;p&gt;これもデザインの範疇を超えて、もはやビジネス全体にも言えることだと思う。&lt;/p&gt;
+
+&lt;p&gt;本書では「会議の場」をベースに説明がされていて、人間はグループになることで最善の決定を下せなくなることがある、という話。
+それでも一人よりかはグループのほうが良い、という結果も出てるんだとか。&lt;/p&gt;
+
+&lt;h2 id=&#34;終わりに:9ae51b3854d154025e50d513241ba764&#34;&gt;終わりに&lt;/h2&gt;
+
+&lt;p&gt;今年もまだ前半戦だけど、今のところ今年一番面白い本だった。&lt;/p&gt;
+
+&lt;p&gt;ちょうどいま、家にある本を必要な物以外捨てようと思ってるんだけど、この本は取っておくつもり。
+きっと何度も読み返す時が来ると思う。&lt;/p&gt;
+
+&lt;p&gt;&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/4873115574/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4873115574&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;インタフェースデザインの心理学 ―ウェブやアプリに新たな視点をもたらす100の指針&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=4873115574&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>「教養としての日本近現代史」を読んだ</title>
