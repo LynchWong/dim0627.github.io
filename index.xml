@@ -6,8 +6,78 @@
     <description>Recent content on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Feb 2016 09:43:13 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 01 Mar 2016 14:08:26 +0900</lastBuildDate>
     <atom:link href="http://yet.unresolved.xyz/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>text-rendering: optimizelegibility;を指定するとWebフォントの読み込みがおかしくなる</title>
+      <link>http://yet.unresolved.xyz/blog/2016/03/01/text-rendering-optimizelegibility-and-google-fonts/</link>
+      <pubDate>Tue, 01 Mar 2016 14:08:26 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2016/03/01/text-rendering-optimizelegibility-and-google-fonts/</guid>
+      <description>
+
+&lt;p&gt;よくやるこれ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;body {
+  text-rendering: optimizelegibility;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ちょうどブログのデザインを変えてたら、何故か毎回リロードしないとGoogle Fontsから読ませてるOpen Sansが効かなくなって困った。
+はじめはキャッシュとかChromeの不調かなんかかと思ってたんだけど、AndroidのChromeでも再現するし何かがおかしい。&lt;/p&gt;
+
+&lt;p&gt;上記のプロパティを外したら直ったので、これが原因なのかもしれない。&lt;/p&gt;
+
+&lt;h2 id=&#34;text-rendering:2acb9387331612b63a2d67e9f2d06529&#34;&gt;text-rendering？&lt;/h2&gt;
+
+&lt;p&gt;文字列の描画についてのプロパティ。
+かなりぼんやりした曖昧な情報がネットに溢れてるので、結局なんなのよと言いたくなった人は多いと思う。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://on-ze.com/archives/609&#34;&gt;CSSの［text-rendering: optimizeLegibility;］は指定しないほうが無難かも。 - ONZE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://terkel.jp/archives/2012/09/text-rendering-optimizelegibility/&#34;&gt;text-rendering: optimizeLegibility · terkel.jp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.pro-s.co.jp/engineerblog/design/post_5246.html&#34;&gt;text-renderingって何？！ | Webサイト制作ならプロフェッサ（東京都/品川区）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;僕はそういうとき、MDNを信用して参考にさせてもらってます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/text-rendering&#34;&gt;text-rendering - CSS | MDN&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Summaryにはこうある。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The text-rendering CSS property provides information to the rendering engine about what to optimize for when rendering text.&lt;/p&gt;
+
+&lt;p&gt;The browser makes trade-offs among speed, legibility, and geometric precision.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;text-rendering&lt;/code&gt;はテキストを何に最適化して表示するかの情報をレンダリングエンジンに提示する。&lt;/strong&gt;
+この値によって、ブラウザの処理はレンダリング速度や可読性、配置精度のいずれかのトレードオフとなる。&lt;/p&gt;
+
+&lt;h2 id=&#34;つまり何に使うの:2acb9387331612b63a2d67e9f2d06529&#34;&gt;つまり何に使うの？&lt;/h2&gt;
+
+&lt;p&gt;この3つのどれを求めるのよってのを伝える属性なわけですね。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;描画速度&lt;/li&gt;
+&lt;li&gt;読みやすさ&lt;/li&gt;
+&lt;li&gt;配置の正確さ&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;geometric precision&lt;/code&gt;はちょっと訳せなかったけど、文字の配置精度とかそういう意味だと解釈しました。&lt;/p&gt;
+
+&lt;p&gt;そして注釈。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The text-rendering property is an SVG property that is not defined in any CSS standard. However, Gecko and WebKit browsers let you apply this property to HTML and XML content on Windows, Mac OS X and Linux.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code&gt;text-rendering&lt;/code&gt;はSVGのための属性でCSSの標準実装じゃないんだけど、WebKitとかGeckoだと使えますよと。&lt;/p&gt;
+
+&lt;p&gt;何も考えずに指定するのはNGな気がしますね。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>「インタフェースデザインの心理学 ―ウェブやアプリに新たな視点をもたらす100の指針」を読んだ</title>
@@ -1099,79 +1169,6 @@ exec $UWSGI --ini /path/to/wsgi.ini
 &lt;p&gt;今日はクリスマスだけど僕は狩りに出かけます。&lt;/p&gt;
 
 &lt;p&gt;年末はFallout4をやる。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>「Until Dawn - 惨劇の山荘」をやった</title>
-      <link>http://yet.unresolved.xyz/blog/2015/12/21/played-until-dawn/</link>
-      <pubDate>Mon, 21 Dec 2015 10:39:11 +0900</pubDate>
-      
-      <guid>http://yet.unresolved.xyz/blog/2015/12/21/played-until-dawn/</guid>
-      <description>
-
-&lt;p&gt;ホラーっぽかったから避けてたんだけど結局やりました。&lt;/p&gt;
-
-&lt;p&gt;とはいえ実際はものすごく面白いサスペンスだったかな。
-少しびっくりするシーンとかもあったけど、全然許容範囲。
-本当に冗談抜きで映画みたいだった、参加型の映画みたいな。&lt;/p&gt;
-
-&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/B00YGXGVNW/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B00YGXGVNW&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;Until Dawn -惨劇の山荘-&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=B00YGXGVNW&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;推測したくなるストーリー:696915bdfbd39b994ccbd0c59fa0e7ee&#34;&gt;推測したくなるストーリー&lt;/h2&gt;
-
-&lt;p&gt;序盤からすぐに引き込まれるようなストーリーだった。
-え？どうなってんの？何がどうなった？って感じで疑問ばかりなんだけど、
-不快な疑問じゃなくてちゃんと知りたくなる疑問というか。&lt;/p&gt;
-
-&lt;p&gt;わかりやすすぎる伏線とかやり過ぎなミステリアスとかって結構辟易しちゃうけど、
-Until Dawnのそれは本当に興味をひかれる作りになっていたなあと思う。
-徐々に解明されていく謎もすごく心地よかった、でもテンポが凄くいいから、
-解明してはいくものの、それも間違った推理なんじゃないか・・・って推理に推理を重ねてしまったり。&lt;/p&gt;
-
-&lt;h2 id=&#34;文化の違い:696915bdfbd39b994ccbd0c59fa0e7ee&#34;&gt;文化の違い&lt;/h2&gt;
-
-&lt;p&gt;ことの発端がほぼいじめみたいなものなんだけど、あれは不快だったな。
-それはこの作品の評価とかじゃなくて、まあいじめって嫌だよねってだけの話。
-あれは文化の違いなのかなあ、日本でもああいうのあるのかな、とにかく嫌な気持ちにはなった。&lt;/p&gt;
-
-&lt;p&gt;そんでそんな仲間とまた旅行に来れる神経もよくわからなかったな、っていうか仲間も結構仲悪いし。
-一緒に居て楽しいのかな・・・。
-っていうか基本的にムカつくキャラが多かった。&lt;/p&gt;
-
-&lt;h2 id=&#34;ゴア規制の酷さ:696915bdfbd39b994ccbd0c59fa0e7ee&#34;&gt;ゴア規制の酷さ&lt;/h2&gt;
-
-&lt;p&gt;ゴアシーンがおもいっきり規制されてた。
-これは本当に、この作品の良さをかなり大幅に削ってると思った。
-その規制の仕方ってのが、&lt;strong&gt;ただ画面を真っ暗に暗転させるだけ&lt;/strong&gt;だから、何が起きたかわからなくなっちゃうんだよね。&lt;/p&gt;
-
-&lt;p&gt;一番ひどいなって思ったのが、ドアを開けた人が叫び声をあげるシーンがあるんだけど、真っ暗だからなんで叫んだのかわからない。
-説明もされないからあそこは何があったのか理解しようにも理解出来ない。&lt;/p&gt;
-
-&lt;p&gt;あとでネットで調べたら、ドアを開けたら詰まってた死体の山が転がってきたシーンだったんだとか。
-しょうがないのはわかるんだけど、やり方ってものがあったんじゃないかな。&lt;/p&gt;
-
-&lt;h2 id=&#34;ラストの期待:696915bdfbd39b994ccbd0c59fa0e7ee&#34;&gt;ラストの期待&lt;/h2&gt;
-
-&lt;p&gt;やっぱり序盤からサスペンスとか人間関係のドラマだと思ってたからそういう期待をしてたんだよね。
-あいつが犯人かな？とか、実はこういうことなのかな？って、現実にありえることでいろいろと考えてたから、
-なんかオカルトチックな方に話が動いた時はちょっと落胆してしまった。
-そういう話も好きなんだけど、変にトリックを期待してたというか。&lt;/p&gt;
-
-&lt;h2 id=&#34;余談:696915bdfbd39b994ccbd0c59fa0e7ee&#34;&gt;余談&lt;/h2&gt;
-
-&lt;p&gt;簡単に言うとめちゃくちゃ面白かったです、ホラー系（じゃないけど）が平気な人はぜひやってほしいなと思った。
-かまいたちの夜とかそういうの好きな人は絶対はまると思う。&lt;/p&gt;
-
-&lt;p&gt;あとどうでもいいけど全体的に寒そうだった。あんな格好で雪山行ったら、ウェンディゴが居なくても死んじゃうよ・・・。
-あと火炎放射器のおじさんかっこよかったな、でもああいうのの駆除は国がやったほうが良いと思います。&lt;/p&gt;
-
-&lt;p&gt;Bloodborneはキャラを作り直してる。千景用に血質と技術にステを振り直したいなと思って。
-2日で悪夢の辺境まで行けたからまあよし。&lt;/p&gt;
-
-&lt;p&gt;今日はFallout4とGRAVITY DAZEを買って帰ろう。&lt;/p&gt;
-
-&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/B00YGXGVNW/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B00YGXGVNW&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;Until Dawn -惨劇の山荘-&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=B00YGXGVNW&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

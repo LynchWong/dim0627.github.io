@@ -10,11 +10,10 @@ html {
 }
 
 body {
-  font-family: 'Open Sans', "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;;
+  font-family: "Open Sans", "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   font-size: inherit;
   color: #37474f;
   line-height: 1rem;
-  text-rendering: optimizelegibility;
 }
 
 html,
@@ -226,6 +225,7 @@ aside.article {
 }
 
 aside.article.tags a {
+  display: inline-block;
   background-color: #ECEFF1;
   color: #37474f;
   padding: .25rem .5rem;
