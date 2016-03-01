@@ -11,10 +11,10 @@
     
     <item>
       <title>text-rendering: optimizelegibility;を指定するとWebフォントの読み込みがおかしくなる</title>
-      <link>http://yet.unresolved.xyz/blog/2016/03/01/text-rendering-optimizelegibility-and-google-fonts/</link>
+      <link>http://yet.unresolved.xyz/blog/2016/03/01/text-rendering-optimizelegibility-and-web-fonts/</link>
       <pubDate>Tue, 01 Mar 2016 14:08:26 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/03/01/text-rendering-optimizelegibility-and-google-fonts/</guid>
+      <guid>http://yet.unresolved.xyz/blog/2016/03/01/text-rendering-optimizelegibility-and-web-fonts/</guid>
       <description>
 
 &lt;p&gt;よくやるこれ。&lt;/p&gt;
