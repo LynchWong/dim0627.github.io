@@ -21,7 +21,8 @@ tags: [github, dns]
 
 >If you have any questions please contact us at https://github.com/contact.
 
-英語かよ後で読もう、と思ってもデプロイするたびにメールが来るのは結構うざいのでしっかり読んでみると、**デプロイは出来たんだけど、もっと速く動作させる方法があるからそっちにしない？**って話らしい。
+英語かよ後で読もう、と思ってもデプロイするたびにメールが来るのは結構うざい。
+しっかり読んでみると、**デプロイは出来たんだけど、もっと速く動作させる方法があるからそっちにしない？**って話らしい。
 
 [Faster, More Awesome GitHub Pages](https://github.com/blog/1715-faster-more-awesome-github-pages)を参考にすると、以下の手順を踏めばいいとのこと。
 
@@ -29,16 +30,15 @@ tags: [github, dns]
 
 何もしないでOK
 
-### www.example.comみたいなサブドメインの人
+###  www.example.comみたいなサブドメインの人
 
 DNSプロバイダ側にCNAMEレコードを作って、username.github.ioに向ければOK
 
-
-### example.comみたいにルートドメインの人
+###  example.comみたいにルートドメインの人
 
 DNSプロバイダ側にAレコードを作って、207.97.227.245か204.232.175.78を向ければOK
 
-ちなみにこの3つめは少し厄介らしく、そもそもDNSプロバイダ側でALIASとやらが設定出来ないとだめなんだとか。こういう系は知識が浅くてだめだなあ。
+ちなみにこの3つめは少し厄介らしく、そもそもDNSプロバイダによってはダメらしい。
 
 ## これで何が起こるの？
 

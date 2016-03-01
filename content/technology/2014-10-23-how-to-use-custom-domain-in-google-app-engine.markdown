@@ -14,7 +14,6 @@ tags: ["google app engine", "dns"]
 [Using a Custom Domain - Google App Engine Google Cloud Platform](https://cloud.google.com/appengine/docs/domain)
 
 作業は[Developers Console](https://console.developers.google.com/)から行います。
-
 はじめにGoogleが、使いたいドメインが君のものか確認したいとのことなので、verifyへ。
 
 [<img src="/images/2014-10-23/verify.png" alt="verify">](/images/2014-10-23/verify.png)

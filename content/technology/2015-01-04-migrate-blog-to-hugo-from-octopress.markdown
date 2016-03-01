@@ -69,6 +69,8 @@ Hugoはデフォルトだとファイル内のtitleで記事個別ページのUR
 あと、これまでのSEOをゼロにしたくないからURLは変えたくなくて、やっぱりURLでは英語のタイトルを使いたい。
 これはもうどうしょうもなくて、ファイル内に英語タイトルと日本語タイトルを設定出来るようにした。
 
+[Hugoでマルチバイトのタイトルをうまいこと使う - Unresolved](http://yet.unresolved.xyz/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/)
+
 ここは手作業でやったけど、多分シェルでもうまいことやれると思う。
 
 ### テーマが少ない
@@ -156,12 +158,51 @@ hugo new post/"`date +%Y-%m-%d`-$title.markdown"
 ```
 
 こんな感じで。
-
 ひと段落したけどまだまだ細々といじらなきゃだろうなあ。
+
+### 追記
+
+サブツリーの運用がだるくなったので泥臭い感じに変えました。
+というかなんか回を重ねるごとに遅くなった。
+
+`source`ブランチは生成元のソースを置いて、`public`ディレクトリを`.gitignore`に追加。
+`master`ブランチは生成後のHTMLを置くだけ。
+
+シェルはこう。
+
+``` sh
+#!/bin/bash
+
+echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
+
+# Build the project. 
+rm -rf public/*
+hugo -t $1
+
+# Add changes to git.
+git add -A
+
+# Commit changes.
+msg="rebuilding site `date`"
+if [ $# -eq 1 ]
+  then msg="rebuilding site `date`, theme $1"
+fi
+git commit -m "$msg"
+
+# Push source and build repos.
+git push origin source:source
+
+# Push master sources.
+cd public
+git add -A
+git commit -m "$msg"
+git push origin master:master
+```
+
+最近ダサくても手軽に済むならそれでいいじゃんって考えになってきてて良くない。と思う。
 
 ## 参考にさせて頂きました
 
-[Hosting on GitHub Pages](http://gohugo.io/tutorials/github_pages_blog/)
-
-[Migrating to Hugo From Octopress](http://nathanleclaire.com/blog/2014/12/22/migrating-to-hugo-from-octopress/)
+* [Hosting on GitHub Pages](http://gohugo.io/tutorials/github_pages_blog/)
+* [Migrating to Hugo From Octopress](http://nathanleclaire.com/blog/2014/12/22/migrating-to-hugo-from-octopress/)
 
