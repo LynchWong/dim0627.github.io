@@ -180,66 +180,58 @@ Tokyoの時は特に何かしておかなきゃってのは考えてなかった
 
 サーバサイドな僕が良く使うサイトだったり、使おうと思って使わなかったサイトだったりをあげてこの記事をしめます。
 
-[Iconfinder - 400,000+ free and premium icons](https://www.iconfinder.com/)
+#### [Iconfinder - 400,000+ free and premium icons](https://www.iconfinder.com/)
 
 アイコン的な画像がたくさん探せる。有料のも無料のもあり。
-
 ロゴなんてこれがあればそれなりに見栄えするものが作れる。
 
-[Google Fonts](http://www.google.com/fonts)
+#### [Google Fonts](http://www.google.com/fonts)
 
 フリーフォント。
-
 ロゴなんてこれがあればそれなりに見栄えするものが作れる。
 
-[Bootstrap | The world's most popular mobile-first and responsive front-end framework.](http://getbootstrap.com/)
+#### [Bootstrap | The world's most popular mobile-first and responsive front-end framework.](http://getbootstrap.com/)
 
 言わずと知れたCSSフレームワーク。Twitter社謹製。
 
 いわゆるBootstrap臭さを出さないようにオーバーライドしまくりましょう。
 
-[Kube Web Framework](http://imperavi.com/kube/)
+#### [Kube Web Framework](http://imperavi.com/kube/)
 
 Bootstrap臭さを消せないようって人はこっち。
-
 シンプルでフラットなので、フレンドリーなデザインには向かないと思う。
 
-[Flat Design Gallery &amp; Showcase - An inspirational resource for designers - Flat Inspire](http://flatinspire.com/)
+#### [Flat Design Gallery &amp; Showcase - An inspirational resource for designers - Flat Inspire](http://flatinspire.com/)
 
 Flat Designのショーケース。
-
 パクれってわけじゃなくて、色の16進数とかも出してくれてるしデザインが秀逸なサイトを見てるとインスピレーションが生まれる！と思う。
 
-[lollytin beta 1.4 - A yummy HTML5 blockouterer!](http://lollyt.in/)
+#### [lollytin beta 1.4 - A yummy HTML5 blockouterer!](http://lollyt.in/)
 
 いやいやHTMLとか見るだけで鳥肌立つから！って人のためのジェネレータ。
-
 Bootstrapベースで積み木みたいにHTMLが作れます。
-
 LPの枠組みくらいなら1分くらいで出来そう。後は画像とか文字を挿入して完成！30分でいけるね！
 
-[STARTUP STOCK PHOTOS](http://startupstockphotos.com/)
+#### [STARTUP STOCK PHOTOS](http://startupstockphotos.com/)
 
 起業ぽい感じのWeb素材。
 
-[Pesticide - Kill Your Css Layout Bugs](http://pesticide.io/)
+#### [Pesticide - Kill Your Css Layout Bugs](http://pesticide.io/)
 
 ページの要素に線をつけてくれるChrome Extension。
-
 マージンやパディングの確認に使う。
 
-[Can I use... Support tables for HTML5, CSS3, etc](http://caniuse.com/)
+#### [Can I use... Support tables for HTML5, CSS3, etc](http://caniuse.com/)
 
 W3Cが勧告している仕様について、ブラウザごとの実装状況を確認できる。
-
 IEがさらに嫌いになる。
 
-[App Store Marketing Guidelines - Apple Developer](https://developer.apple.com/app-store/marketing/guidelines/)
+#### [App Store Marketing Guidelines - Apple Developer](https://developer.apple.com/app-store/marketing/guidelines/)
 
 アプリのモックとかに使う画像。
-
 Apple公式なので質はいい。
 
 Android版はたぶんこれ。
 
 [Device Art Generator | Android Developers](http://developer.android.com/distribute/tools/promote/device-art.html)
+
