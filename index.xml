@@ -52,7 +52,7 @@
 &lt;p&gt;The browser makes trade-offs among speed, legibility, and geometric precision.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;text-rendering&lt;/code&gt;はテキストを何に最適化して表示するかの情報をレンダリングエンジンに提示する。&lt;/strong&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;text-rendering&lt;/code&gt;はテキストを何に最適化して表示するかをレンダリングエンジンに提示する。&lt;/strong&gt;
 この値によって、ブラウザの処理はレンダリング速度や可読性、配置精度のいずれかのトレードオフとなる。&lt;/p&gt;
 
 &lt;h2 id=&#34;つまり何に使うの:2acb9387331612b63a2d67e9f2d06529&#34;&gt;つまり何に使うの？&lt;/h2&gt;
