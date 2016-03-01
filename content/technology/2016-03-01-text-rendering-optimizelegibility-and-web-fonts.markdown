@@ -37,7 +37,7 @@ Summaryにはこうある。
 >
 > The browser makes trade-offs among speed, legibility, and geometric precision.
 
-**`text-rendering`はテキストを何に最適化して表示するかの情報をレンダリングエンジンに提示する。**
+**`text-rendering`はテキストを何に最適化して表示するかをレンダリングエンジンに提示する。**
 この値によって、ブラウザの処理はレンダリング速度や可読性、配置精度のいずれかのトレードオフとなる。
 
 ## つまり何に使うの？
