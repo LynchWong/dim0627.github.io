@@ -143,12 +143,26 @@ article .body h6:first-child {
 
 article .body h1,
 article .body h2 {
+  position: relative;
   margin-top: 1.5rem;
   padding: .5rem 0;
   line-height: 1.25rem;
   font-weight: 700;
   border-bottom: 1px solid #CFD8DC;
   box-shadow: 0 2px 0 0 rgba(236,239,241 ,.5);
+}
+
+article .body h1:before,
+article .body h2:before {
+  position: absolute;
+  content: '';
+  display: block;
+  left: 0;
+  bottom: -1px;
+  width: 30%;
+  height: 2px;
+  border-bottom: 1px solid #2196F3;
+  box-shadow: 0 2px 0 0 rgba(33,150,243,.2);
 }
 
 article .body h3 {
