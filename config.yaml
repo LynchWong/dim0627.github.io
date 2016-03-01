@@ -12,7 +12,6 @@ Params:
   Twitter: "dim0627"
   Github: "dim0627"
   ShowRelatedPost: True
-  Disqus: "unresolved"
   SyntaxHighlightTheme: "solarized_dark.min.css"
   ShowTagCloud: True
 
@@ -26,3 +25,5 @@ permalinks:
 
 MetadataFormat: "yaml"
 HasCJKLanguage: true
+disqusShortname: "unresolved"
+
