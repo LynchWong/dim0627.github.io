@@ -129,6 +129,8 @@
 <p>あと、これまでのSEOをゼロにしたくないからURLは変えたくなくて、やっぱりURLでは英語のタイトルを使いたい。
 これはもうどうしょうもなくて、ファイル内に英語タイトルと日本語タイトルを設定出来るようにした。</p>
 
+<p><a href="http://yet.unresolved.xyz/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/">Hugoでマルチバイトのタイトルをうまいこと使う - Unresolved</a></p>
+
 <p>ここは手作業でやったけど、多分シェルでもうまいことやれると思う。</p>
 
 <h3 id="テーマが少ない:6a8fd8223fd13a59d819b0862af33f03">テーマが少ない</h3>
@@ -208,15 +210,55 @@ title=`echo $title | sed &quot;s/\.//g&quot;`
 hugo new post/&quot;`date +%Y-%m-%d`-$title.markdown&quot;
 </code></pre>
 
-<p>こんな感じで。</p>
+<p>こんな感じで。
+ひと段落したけどまだまだ細々といじらなきゃだろうなあ。</p>
 
-<p>ひと段落したけどまだまだ細々といじらなきゃだろうなあ。</p>
+<h3 id="追記:6a8fd8223fd13a59d819b0862af33f03">追記</h3>
+
+<p>サブツリーの運用がだるくなったので泥臭い感じに変えました。
+というかなんか回を重ねるごとに遅くなった。</p>
+
+<p><code>source</code>ブランチは生成元のソースを置いて、<code>public</code>ディレクトリを<code>.gitignore</code>に追加。
+<code>master</code>ブランチは生成後のHTMLを置くだけ。</p>
+
+<p>シェルはこう。</p>
+
+<pre><code class="language-sh">#!/bin/bash
+
+echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
+
+# Build the project. 
+rm -rf public/*
+hugo -t $1
+
+# Add changes to git.
+git add -A
+
+# Commit changes.
+msg=&quot;rebuilding site `date`&quot;
+if [ $# -eq 1 ]
+  then msg=&quot;rebuilding site `date`, theme $1&quot;
+fi
+git commit -m &quot;$msg&quot;
+
+# Push source and build repos.
+git push origin source:source
+
+# Push master sources.
+cd public
+git add -A
+git commit -m &quot;$msg&quot;
+git push origin master:master
+</code></pre>
+
+<p>最近ダサくても手軽に済むならそれでいいじゃんって考えになってきてて良くない。と思う。</p>
 
 <h2 id="参考にさせて頂きました:6a8fd8223fd13a59d819b0862af33f03">参考にさせて頂きました</h2>
 
-<p><a href="http://gohugo.io/tutorials/github_pages_blog/">Hosting on GitHub Pages</a></p>
-
-<p><a href="http://nathanleclaire.com/blog/2014/12/22/migrating-to-hugo-from-octopress/">Migrating to Hugo From Octopress</a></p>
+<ul>
+<li><a href="http://gohugo.io/tutorials/github_pages_blog/">Hosting on GitHub Pages</a></li>
+<li><a href="http://nathanleclaire.com/blog/2014/12/22/migrating-to-hugo-from-octopress/">Migrating to Hugo From Octopress</a></li>
+</ul>
 </div>
 
   <aside class="article tags">

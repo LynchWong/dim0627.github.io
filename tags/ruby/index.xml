@@ -107,6 +107,8 @@ Add `Rails.application.config.assets.precompile += %w( application_target.css )`
 &lt;p&gt;あと、これまでのSEOをゼロにしたくないからURLは変えたくなくて、やっぱりURLでは英語のタイトルを使いたい。
 これはもうどうしょうもなくて、ファイル内に英語タイトルと日本語タイトルを設定出来るようにした。&lt;/p&gt;
 
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/&#34;&gt;Hugoでマルチバイトのタイトルをうまいこと使う - Unresolved&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;ここは手作業でやったけど、多分シェルでもうまいことやれると思う。&lt;/p&gt;
 
 &lt;h3 id=&#34;テーマが少ない:6a8fd8223fd13a59d819b0862af33f03&#34;&gt;テーマが少ない&lt;/h3&gt;
@@ -186,15 +188,55 @@ title=`echo $title | sed &amp;quot;s/\.//g&amp;quot;`
 hugo new post/&amp;quot;`date +%Y-%m-%d`-$title.markdown&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;こんな感じで。&lt;/p&gt;
+&lt;p&gt;こんな感じで。
+ひと段落したけどまだまだ細々といじらなきゃだろうなあ。&lt;/p&gt;
 
-&lt;p&gt;ひと段落したけどまだまだ細々といじらなきゃだろうなあ。&lt;/p&gt;
+&lt;h3 id=&#34;追記:6a8fd8223fd13a59d819b0862af33f03&#34;&gt;追記&lt;/h3&gt;
+
+&lt;p&gt;サブツリーの運用がだるくなったので泥臭い感じに変えました。
+というかなんか回を重ねるごとに遅くなった。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;source&lt;/code&gt;ブランチは生成元のソースを置いて、&lt;code&gt;public&lt;/code&gt;ディレクトリを&lt;code&gt;.gitignore&lt;/code&gt;に追加。
+&lt;code&gt;master&lt;/code&gt;ブランチは生成後のHTMLを置くだけ。&lt;/p&gt;
+
+&lt;p&gt;シェルはこう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;#!/bin/bash
+
+echo -e &amp;quot;\033[0;32mDeploying updates to GitHub...\033[0m&amp;quot;
+
+# Build the project. 
+rm -rf public/*
+hugo -t $1
+
+# Add changes to git.
+git add -A
+
+# Commit changes.
+msg=&amp;quot;rebuilding site `date`&amp;quot;
+if [ $# -eq 1 ]
+  then msg=&amp;quot;rebuilding site `date`, theme $1&amp;quot;
+fi
+git commit -m &amp;quot;$msg&amp;quot;
+
+# Push source and build repos.
+git push origin source:source
+
+# Push master sources.
+cd public
+git add -A
+git commit -m &amp;quot;$msg&amp;quot;
+git push origin master:master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;最近ダサくても手軽に済むならそれでいいじゃんって考えになってきてて良くない。と思う。&lt;/p&gt;
 
 &lt;h2 id=&#34;参考にさせて頂きました:6a8fd8223fd13a59d819b0862af33f03&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://gohugo.io/tutorials/github_pages_blog/&#34;&gt;Hosting on GitHub Pages&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://nathanleclaire.com/blog/2014/12/22/migrating-to-hugo-from-octopress/&#34;&gt;Migrating to Hugo From Octopress&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://gohugo.io/tutorials/github_pages_blog/&#34;&gt;Hosting on GitHub Pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://nathanleclaire.com/blog/2014/12/22/migrating-to-hugo-from-octopress/&#34;&gt;Migrating to Hugo From Octopress&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     

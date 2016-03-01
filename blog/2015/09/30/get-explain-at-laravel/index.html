@@ -73,67 +73,63 @@
 
 <p><a href="http://laravel.com/docs/5.1/database#listening-for-query-events">Database: Getting Started - Laravel - The PHP Framework For Web Artisans</a></p>
 
-<p><code>DB</code>の<code>listen</code>メソッドに<code>$sql, $bindings, $time</code>を受け取るClosureを渡せる。</p>
+<p><code>DB</code>の<code>listen</code>メソッドに<code>$sql, $bindings, $time</code>を受け取るClosureを渡せる。
+なので<code>App\Providers\AppServiceProvider</code>の<code>boot()</code>メソッドに、</p>
 
-<p>なので<code>App\Providers\AppServiceProvider</code>の<code>boot()</code>メソッドに、</p>
-
-<pre><code class="language-php">    public function boot()
-    {
-        \DB::listen(function($sql, $bindings, $time) {
-            $bindings = implode(', ', $bindings);
-            $method = request()-&gt;method();
-            $url = request()-&gt;url();
-            \Log::info(&quot;Query [{$method}:{$url}] [{$time}s] $sql, [$bindings]&quot;);
-        });
-    }
+<pre><code class="language-php">public function boot()
+{
+    \DB::listen(function($sql, $bindings, $time) {
+        $bindings = implode(', ', $bindings);
+        $method = request()-&gt;method();
+        $url = request()-&gt;url();
+        \Log::info(&quot;Query [{$method}:{$url}] [{$time}s] $sql, [$bindings]&quot;);
+    });
+}
 </code></pre>
 
 <p>とかやればよい。</p>
 
 <h2 id="実行計画も取る:f8b9f4d61afe8ca86b89085edc23a796">実行計画も取る</h2>
 
-<pre><code class="language-php">    public function boot()
-    {
-        \DB::listen(function($sql, $bindings, $time) {
+<pre><code class="language-php">public function boot()
+{
+    \DB::listen(function($sql, $bindings, $time) {
 
-            if (preg_match(&quot;/^select/&quot;, $sql)) {
-                $explain = \DB::select(&quot;explain {$sql}&quot;, $bindings);
-                \Log::info($explain);
-            }
+        if (preg_match(&quot;/^select/&quot;, $sql)) {
+            $explain = \DB::select(&quot;explain {$sql}&quot;, $bindings);
+            \Log::info($explain);
+        }
 
-            $bindings = implode(', ', $bindings);
-            $method = request()-&gt;method();
-            $url = request()-&gt;url();
-            \Log::info(&quot;Query [{$method}:{$url}] [{$time}s] $sql, [$bindings]&quot;);
-        });
-    }
+        $bindings = implode(', ', $bindings);
+        $method = request()-&gt;method();
+        $url = request()-&gt;url();
+        \Log::info(&quot;Query [{$method}:{$url}] [{$time}s] $sql, [$bindings]&quot;);
+    });
+}
 </code></pre>
 
 <p>こう。</p>
 
-<p>updateとかもフックしちゃうと2回発行されたりして面倒なので、selectだけ。</p>
-
-<p>selectに絞らないとしても、explainの取得がさらにフックされて・・・ってなるので、</p>
-
-<p>何かしら絞る必要はあり。</p>
+<p>updateとかもフックしちゃうと2回発行されたりして面倒なので、selectだけ。
+selectに絞らないとしても、explainの取得がさらにフックされて・・・ってなるので、何かしら絞る必要はあり。</p>
 
 <h2 id="本番では取らない:f8b9f4d61afe8ca86b89085edc23a796">本番では取らない</h2>
 
-<pre><code class="language-php">    public function boot()
-    {
-        \DB::listen(function($sql, $bindings, $time) {
+<pre><code class="language-php">public function boot()
+{
+    \DB::listen(function($sql, $bindings, $time) {
 
-            if (config('app.env') !== 'production' &amp;&amp; preg_match(&quot;/^select/&quot;, $sql)) {
-                $explain = \DB::select(&quot;explain {$sql}&quot;, $bindings);
-                \Log::info($explain);
-            }
+        if (config('app.env') !== 'production' &amp;&amp; preg_match(&quot;/^select/&quot;, $sql)) {
+            $explain = \DB::select(&quot;explain {$sql}&quot;, $bindings);
+            \Log::info($explain);
+        }
 
-            $bindings = implode(', ', $bindings);
-            $method = request()-&gt;method();
-            $url = request()-&gt;url();
-            \Log::info(&quot;Query [{$method}:{$url}] [{$time}s] $sql, [$bindings]&quot;);
-        });
-    }
+        $bindings = implode(', ', $bindings);
+        $method = request()-&gt;method();
+        $url = request()-&gt;url();
+        \Log::info(&quot;Query [{$method}:{$url}] [{$time}s] $sql, [$bindings]&quot;);
+    });
+}
 </code></pre>
 
 <p>こんな感じ。</p>

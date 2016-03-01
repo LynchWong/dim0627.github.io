@@ -35,7 +35,8 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 &lt;p&gt;If you have any questions please contact us at &lt;a href=&#34;https://github.com/contact&#34;&gt;https://github.com/contact&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;英語かよ後で読もう、と思ってもデプロイするたびにメールが来るのは結構うざいのでしっかり読んでみると、&lt;strong&gt;デプロイは出来たんだけど、もっと速く動作させる方法があるからそっちにしない？&lt;/strong&gt;って話らしい。&lt;/p&gt;
+&lt;p&gt;英語かよ後で読もう、と思ってもデプロイするたびにメールが来るのは結構うざい。
+しっかり読んでみると、&lt;strong&gt;デプロイは出来たんだけど、もっと速く動作させる方法があるからそっちにしない？&lt;/strong&gt;って話らしい。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/blog/1715-faster-more-awesome-github-pages&#34;&gt;Faster, More Awesome GitHub Pages&lt;/a&gt;を参考にすると、以下の手順を踏めばいいとのこと。&lt;/p&gt;
 
@@ -51,7 +52,7 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 
 &lt;p&gt;DNSプロバイダ側にAレコードを作って、207.97.227.245か204.232.175.78を向ければOK&lt;/p&gt;
 
-&lt;p&gt;ちなみにこの3つめは少し厄介らしく、そもそもDNSプロバイダ側でALIASとやらが設定出来ないとだめなんだとか。こういう系は知識が浅くてだめだなあ。&lt;/p&gt;
+&lt;p&gt;ちなみにこの3つめは少し厄介らしく、そもそもDNSプロバイダによってはダメらしい。&lt;/p&gt;
 
 &lt;h2 id=&#34;これで何が起こるの:bd764d28564cc0069e229d086834b342&#34;&gt;これで何が起こるの？&lt;/h2&gt;
 

@@ -289,9 +289,8 @@ Make every program a Filter.&lt;/p&gt;
       <guid>http://yet.unresolved.xyz/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/</guid>
       <description>
 
-&lt;p&gt;&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;でちょっと困ったこと。&lt;/p&gt;
-
-&lt;p&gt;僕は&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;から移行してきたからなおさらなんだけど、記事のタイトルがURLにされてしまう。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;でちょっと困ったことが起きた。
+僕は&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;から移行してきたからなおさらなんだけど、記事のタイトルがURLにされてしまう。&lt;/p&gt;
 
 &lt;p&gt;あ、僕は&lt;code&gt;config.yaml&lt;/code&gt;に&lt;/p&gt;
 
@@ -299,22 +298,23 @@ Make every program a Filter.&lt;/p&gt;
   post: /blog/:year/:month/:day/:title/
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;を設定してるからなんだけど。&lt;/p&gt;
+&lt;p&gt;を設定してたからっていうのもある。&lt;/p&gt;
 
-&lt;p&gt;そうすると日本語とかのマルチバイト文字を使うとパーセントエンコードが走って結構悲惨なことになる。
-というか僕の環境だとリンクがきちんと飛べなかった・・・。&lt;/p&gt;
+&lt;p&gt;そうするとマルチバイト文字を使うとパーセントエンコードが走って結構悲惨なことになってしまった。
+というか僕の環境だとリンクがきちんと飛べなかったんだけど、これはパッチが入って今はもう直ってるらしい。&lt;/p&gt;
 
-&lt;p&gt;Octopressは記事のファイル名がURLになってたから、ファイル名さえ英語なら問題なかったんだよね。&lt;/p&gt;
-
-&lt;p&gt;なので今回やった対処法をメモっとく。&lt;/p&gt;
+&lt;p&gt;Octopressは記事のファイル名がURLになってたから、ファイル名さえ英語なら問題なかったんだよね。
+なので今回やった対処法をメモっておきます。&lt;/p&gt;
 
 &lt;h2 id=&#34;urlの構成と対応策:305b326c361986ca7e3bc18a2fbce87d&#34;&gt;URLの構成と対応策&lt;/h2&gt;
 
-&lt;p&gt;Hugoはリンク構造も結構柔軟に変えられるっぽい。&lt;/p&gt;
+&lt;p&gt;HugoはURL構造も比較的柔軟に変えられるように作られている。&lt;/p&gt;
 
-&lt;p&gt;なのでこんな風に記事内で毎回指定してしまえば綺麗に話が済む。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://gohugo.io/extras/permalinks/&#34;&gt;Hugo - Permalinks&lt;/a&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;---
+&lt;p&gt;この記載を見ると、個々の記事に&lt;code&gt;slug&lt;/code&gt;を指定することも出来るらしい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;---
 tags: [&amp;quot;hugo&amp;quot;, &amp;quot;golang&amp;quot;]
 date: 2015-01-07T23:56:32+09:00
 slug: &amp;quot;how-to-use-multibyte-title-in-hugo&amp;quot;
@@ -322,15 +322,12 @@ title: &amp;quot;Hugoでマルチバイトのタイトルをスマートに使�
 ---
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;code&gt;config.yaml&lt;/code&gt;はこんな感じ。&lt;/p&gt;
+&lt;p&gt;OctopressとURL構造が変わらないようにするには、&lt;code&gt;config.yaml&lt;/code&gt;をこうすればよい。
+個々の記事に&lt;code&gt;slug&lt;/code&gt;を記述する必要があるけどね・・・。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;permalinks:
   post: /blog/:year/:month/:day/:slug/
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;なのでOctopressから移行した人はこの方法も検討するといいかもしれないですね。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;hugo new&lt;/code&gt;した時に生成されるテンプレートは&lt;code&gt;archetypes&lt;/code&gt;ディレクトリに配置出来るから、そこでやっておくとよし。&lt;/p&gt;
 </description>
     </item>
     
@@ -405,6 +402,8 @@ title: &amp;quot;Hugoでマルチバイトのタイトルをスマートに使�
 
 &lt;p&gt;あと、これまでのSEOをゼロにしたくないからURLは変えたくなくて、やっぱりURLでは英語のタイトルを使いたい。
 これはもうどうしょうもなくて、ファイル内に英語タイトルと日本語タイトルを設定出来るようにした。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/&#34;&gt;Hugoでマルチバイトのタイトルをうまいこと使う - Unresolved&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;ここは手作業でやったけど、多分シェルでもうまいことやれると思う。&lt;/p&gt;
 
@@ -485,15 +484,55 @@ title=`echo $title | sed &amp;quot;s/\.//g&amp;quot;`
 hugo new post/&amp;quot;`date +%Y-%m-%d`-$title.markdown&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;こんな感じで。&lt;/p&gt;
+&lt;p&gt;こんな感じで。
+ひと段落したけどまだまだ細々といじらなきゃだろうなあ。&lt;/p&gt;
 
-&lt;p&gt;ひと段落したけどまだまだ細々といじらなきゃだろうなあ。&lt;/p&gt;
+&lt;h3 id=&#34;追記:6a8fd8223fd13a59d819b0862af33f03&#34;&gt;追記&lt;/h3&gt;
+
+&lt;p&gt;サブツリーの運用がだるくなったので泥臭い感じに変えました。
+というかなんか回を重ねるごとに遅くなった。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;source&lt;/code&gt;ブランチは生成元のソースを置いて、&lt;code&gt;public&lt;/code&gt;ディレクトリを&lt;code&gt;.gitignore&lt;/code&gt;に追加。
+&lt;code&gt;master&lt;/code&gt;ブランチは生成後のHTMLを置くだけ。&lt;/p&gt;
+
+&lt;p&gt;シェルはこう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;#!/bin/bash
+
+echo -e &amp;quot;\033[0;32mDeploying updates to GitHub...\033[0m&amp;quot;
+
+# Build the project. 
+rm -rf public/*
+hugo -t $1
+
+# Add changes to git.
+git add -A
+
+# Commit changes.
+msg=&amp;quot;rebuilding site `date`&amp;quot;
+if [ $# -eq 1 ]
+  then msg=&amp;quot;rebuilding site `date`, theme $1&amp;quot;
+fi
+git commit -m &amp;quot;$msg&amp;quot;
+
+# Push source and build repos.
+git push origin source:source
+
+# Push master sources.
+cd public
+git add -A
+git commit -m &amp;quot;$msg&amp;quot;
+git push origin master:master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;最近ダサくても手軽に済むならそれでいいじゃんって考えになってきてて良くない。と思う。&lt;/p&gt;
 
 &lt;h2 id=&#34;参考にさせて頂きました:6a8fd8223fd13a59d819b0862af33f03&#34;&gt;参考にさせて頂きました&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://gohugo.io/tutorials/github_pages_blog/&#34;&gt;Hosting on GitHub Pages&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://nathanleclaire.com/blog/2014/12/22/migrating-to-hugo-from-octopress/&#34;&gt;Migrating to Hugo From Octopress&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://gohugo.io/tutorials/github_pages_blog/&#34;&gt;Hosting on GitHub Pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://nathanleclaire.com/blog/2014/12/22/migrating-to-hugo-from-octopress/&#34;&gt;Migrating to Hugo From Octopress&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
