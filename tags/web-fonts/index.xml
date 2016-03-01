@@ -24,6 +24,11 @@
 }
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;&lt;code&gt;-webkit-font-smoothing: antialiased&lt;/code&gt;と一緒に設定したりするやつ。
+僕は最近、太い文字がマイブームなのでこの設定を外したりしてます。余談だね。&lt;/p&gt;
+
+&lt;h2 id=&#34;webフォントが適用されない:2acb9387331612b63a2d67e9f2d06529&#34;&gt;Webフォントが適用されない&lt;/h2&gt;
+
 &lt;p&gt;ちょうどブログのデザインを変えてたら、何故か毎回リロードしないとGoogle Fontsから読ませてるOpen Sansが効かなくなって困った。
 はじめはキャッシュとかChromeの不調かなんかかと思ってたんだけど、AndroidのChromeでも再現するし何かがおかしい。&lt;/p&gt;
 
