@@ -1,6 +1,6 @@
 ---
 date: 2016-03-01T14:08:26+09:00
-slug: "text-rendering-optimizelegibility-and-google-fonts"
+slug: "text-rendering-optimizelegibility-and-web-fonts"
 tags: ["css", "font", "web-fonts", "google-fonts"]
 title: "text-rendering: optimizelegibility;を指定するとWebフォントの読み込みがおかしくなる"
 ---
