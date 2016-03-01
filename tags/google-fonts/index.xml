@@ -75,7 +75,8 @@
 
 &lt;p&gt;&lt;code&gt;text-rendering&lt;/code&gt;はSVGのための属性でCSSの標準実装じゃないんだけど、WebKitとかGeckoだと使えますよと。&lt;/p&gt;
 
-&lt;p&gt;何も考えずに指定するのはNGな気がしますね。&lt;/p&gt;
+&lt;p&gt;何も考えずに指定するのはNGな気がしますね。
+内容に自信がないのでコメントで指摘ください。&lt;/p&gt;
 </description>
     </item>
     
