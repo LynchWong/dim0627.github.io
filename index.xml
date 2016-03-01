@@ -10,7 +10,7 @@
     <atom:link href="http://yet.unresolved.xyz/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>text-rendering: optimizelegibility;を指定するとWebフォントの読み込みがおかしくなる</title>
+      <title>text-rendering: optimizeLegibility;を指定するとWebフォントの読み込みがおかしくなる</title>
       <link>http://yet.unresolved.xyz/blog/2016/03/01/text-rendering-optimizelegibility-and-web-fonts/</link>
       <pubDate>Tue, 01 Mar 2016 14:08:26 +0900</pubDate>
       
@@ -20,7 +20,7 @@
 &lt;p&gt;よくやるこれ。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;body {
-  text-rendering: optimizelegibility;
+  text-rendering: optimizeLegibility;
 }
 &lt;/code&gt;&lt;/pre&gt;
 
