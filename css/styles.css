@@ -13,7 +13,6 @@ body {
   font-family: "Open Sans", "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   font-size: inherit;
   color: #37474f;
-  line-height: 1rem;
 }
 
 html,
@@ -42,21 +41,36 @@ h1, h2, h3, h4, h5 ,h6 {
 
 /* Override */
 .container {
-  max-width: 650px;
+  max-width: 45rem;
 }
 
 /* Original */
 header.site {
   padding: 1rem 0;
-  border-bottom: 1px solid #CFD8DC;
-  box-shadow: 0 2px 0 0 rgba(236,239,241 ,.5);
+  box-shadow: 0 -1px 0 #CFD8DC inset, 0 2px 0 0 rgba(236,239,241 ,.5);
   margin-bottom: 1rem;
 }
 
 header.site a {
+  display: inline-block;
   font-weight: 700;
   font-size: 1.6rem;
-  line-height: 2rem;
+  line-height: 1.5rem;
+}
+
+header.site a:before,
+header.site a:after {
+  display: inline-block;
+  content: '';
+  height: 1.5rem;
+}
+
+header.site a:before {
+  vertical-align: 0;
+}
+
+header.site a:after {
+  vertical-align: -.5rem;
 }
 
 footer.site {
@@ -66,6 +80,7 @@ footer.site {
   border-top: 1px solid #CFD8DC;
   box-shadow: 0 2px 0 0 rgba(236,239,241 ,.5) inset;
   color: #78909c;
+  line-height: 1rem;
 }
 
 article.li {
@@ -97,20 +112,66 @@ article .date {
   font-size: .8rem;
   font-weight: 700;
   display: block;
+  line-height: 1rem;
+}
+
+article .date::before,
+article .date::after {
+  content: '';
+  display: inline-block;
+  height: 1rem;
+}
+
+article .date::before {
+  vertical-align: 0;
+}
+
+article .date::after {
+  vertical-align: -.5rem;
 }
 
 article .title {
   line-height: 1rem;
   font-weight: 700;
-  margin: .25rem 0;
   font-size: 1rem;
   word-break: break-all;
+}
+
+article .title::before,
+article .title::after {
+  display: inline-block;
+  content: '';
+  height: 1rem;
+}
+
+article .title::before {
+  vertical-align: 0;
+}
+
+article .title::after {
+  vertical-align: -.5rem;
 }
 
 article .summary {
   color: #78909c;
   font-size: .8rem;
   word-break: break-all;
+  line-height: 1rem;
+}
+
+article .summary::before,
+article .summary::after {
+  display: inline-block;
+  content: '';
+  height: 1rem;
+}
+
+article .summary::before {
+  vertical-align: 0;
+}
+
+article .summary::after {
+  vertical-align: -.5rem;
 }
 
 article .body {
@@ -118,9 +179,24 @@ article .body {
 }
 
 article .body p {
-  line-height: 1.75rem;
-  margin: .75rem 0;
+  line-height: 1.5rem;
+  margin: .5rem 0;
   word-break: break-all;
+}
+
+article .body p::before,
+article .body p::after {
+  content: '';
+  display: inline-block;
+  height: 1.5rem;
+}
+
+article .body p::before {
+  vertical-align: 0;
+}
+
+article .body p::after{
+  vertical-align: -1rem;
 }
 
 article .body h1,
@@ -146,19 +222,18 @@ article .body h2 {
   position: relative;
   margin-top: 1.5rem;
   padding: .5rem 0;
-  line-height: 1.25rem;
+  line-height: 1rem;
   font-weight: 700;
-  border-bottom: 1px solid #CFD8DC;
-  box-shadow: 0 2px 0 0 rgba(236,239,241 ,.5);
+  box-shadow: 0 -1px 0 0 #cfd8dc inset , 0 2px 0 0 rgba(236,239,241 ,.5);
 }
 
-article .body h1:before,
-article .body h2:before {
+article .body h1::before,
+article .body h2::before {
   position: absolute;
   content: '';
   display: block;
   left: 0;
-  bottom: -1px;
+  bottom: 0;
   width: 30%;
   height: 2px;
   border-bottom: 1px solid #2196F3;
@@ -189,6 +264,15 @@ article .body blockquote p {
   margin: 0;
 }
 
+article .body blockquote p::before,
+article .body blockquote p::after {
+  height: 1rem;
+}
+
+article .body blockquote p::after {
+  vertical-align: -.5rem;
+}
+
 article .body blockquote ul,
 article .body blockquote ol {
   margin: 0;
@@ -198,10 +282,10 @@ article .body blockquote ol {
 
 article .body ul,
 article .body ol {
-  padding: .5rem;
+  padding: .5rem 0;
   padding-left: 1.5rem;
-  margin: .5rem 0;
-  line-height: 1.25rem;
+  margin: 0;
+  line-height: 1.5rem;
 }
 
 article .body img {
@@ -212,7 +296,7 @@ article .body img {
 
 article .body pre {
   padding: 0;
-  margin: 1rem 0;
+  margin: 0;
   border: none;
   border-radius: 0;
   font-size: .8rem;
@@ -226,12 +310,13 @@ article .body pre code {
 article .body p code {
   background-color: #ECEFF1;
   color: #37474f;
-  padding: .25rem .5rem;
+  padding: .25rem;
   margin: 0 .25rem;
   font-size: .8rem;
   font-weight: 700;
   border-radius: 5px;
   white-space: nowrap;
+  line-height: 1rem;
 }
 
 aside.article {
@@ -247,6 +332,7 @@ aside.article.tags a {
   font-size: .8rem;
   font-weight: 700;
   border-radius: 5px;
+  line-height: 1rem;
 }
 
 .page-title {

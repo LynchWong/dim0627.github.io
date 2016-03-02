@@ -6,8 +6,63 @@
     <description>Recent content in Technologies on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Mar 2016 14:08:26 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 02 Mar 2016 09:55:16 +0900</lastBuildDate>
     <atom:link href="http://yet.unresolved.xyz/technology/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>やはり僕のバーティカルリズムは間違っている</title>
+      <link>http://yet.unresolved.xyz/blog/2016/03/02/i-misunderstood-vertical-rhythm/</link>
+      <pubDate>Wed, 02 Mar 2016 09:55:16 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2016/03/02/i-misunderstood-vertical-rhythm/</guid>
+      <description>
+
+&lt;p&gt;まずこれを見ていただきたい。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2016-03-02/invalid.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2016-03-02/invalid.png&#34; alt=&#34;invalid&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2016年3月現在の僕のブログのデザイン。
+&lt;code&gt;line-height&lt;/code&gt;を意識しているのでブロック自体はバーティカルリズムから外れていない。&lt;/p&gt;
+
+&lt;p&gt;が、文章のベースラインが思いっきりずれてしまっている。
+前から薄々気付いてはいたけど、やはり僕のバーティカルリズムは間違っていた。&lt;/p&gt;
+
+&lt;h2 id=&#34;ベースラインを揃えたバーティカルリズムの実装:443c84079275f642b6c27f534bf108fb&#34;&gt;ベースラインを揃えたバーティカルリズムの実装&lt;/h2&gt;
+
+&lt;p&gt;以下の記事が本当に参考になった。素晴らしい記事だと思う。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://terkel.jp/archives/2014/11/baseline-grid-pseudo-elements/&#34;&gt;擬似要素を利用したベースライン・グリッド · terkel.jp&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;詳細はリンク先を見ていただきたい。もはや尊敬してしまうくらいの内容だったので、転載のようなことはしたくない。&lt;/p&gt;
+
+&lt;p&gt;上記記事によれば、ベースラインを揃えるために&lt;code&gt;before&lt;/code&gt;、&lt;code&gt;after&lt;/code&gt;擬似要素を使ってブロックを押し広げることで実装すればいいとのこと。
+この記事に指導いただいて再実装してみよう。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2016-03-02/valid.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2016-03-02/valid.png&#34; alt=&#34;invalid&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;わかりやすさのために擬似要素に背景色をつけている。
+縦のグリッドが揃っていないことはスルーしてほしい。
+なかなかコストの高い実装になったが、ベースラインを綺麗に揃えることが出来た。&lt;/p&gt;
+
+&lt;p&gt;しかし、画像のように高さの予測できないコンテンツが入り込むと現状崩れてしまう。
+これについては未解決。&lt;/p&gt;
+
+&lt;h2 id=&#34;グリッドを表示するchrome-extension:443c84079275f642b6c27f534bf108fb&#34;&gt;グリッドを表示するChrome Extension&lt;/h2&gt;
+
+&lt;p&gt;この改修をするにあたって以下のChrome Extensionを利用した。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/the-grids/jgfgflhpelebngbkojdfjjekjnkgdcag&#34;&gt;The Grids - Chrome ウェブストア&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;探すのが面倒で導入してなかったが、これを機に使ってみたら想像以上に便利だった。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考にさせていただきました:443c84079275f642b6c27f534bf108fb&#34;&gt;参考にさせていただきました&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://terkel.jp/archives/2014/11/baseline-grid-pseudo-elements/&#34;&gt;擬似要素を利用したベースライン・グリッド · terkel.jp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://terkel.jp/demo/baseline-grid.html&#34;&gt;terkel.jp/demo/baseline-grid.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>text-rendering: optimizeLegibility;を指定するとWebフォントの読み込みがおかしくなる</title>
@@ -25,7 +80,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;code&gt;-webkit-font-smoothing: antialiased&lt;/code&gt;と一緒に設定したりするやつ。
-僕は最近、太い文字がマイブームなのでこの設定を外したりしてます。余談だね。&lt;/p&gt;
+僕は最近、太い文字がマイブームなのでこっちの設定は外したりしてます。余談だね。&lt;/p&gt;
 
 &lt;h2 id=&#34;webフォントが適用されない:2acb9387331612b63a2d67e9f2d06529&#34;&gt;Webフォントが適用されない&lt;/h2&gt;
 
@@ -1130,71 +1185,6 @@ Make every program a Filter.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;めでたしめでたし。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hugo0.15でSummaryが日本語に対応するっぽい</title>
-      <link>http://yet.unresolved.xyz/blog/2015/10/09/hugo-support-cjk-language/</link>
-      <pubDate>Fri, 09 Oct 2015 22:15:51 +0900</pubDate>
-      
-      <guid>http://yet.unresolved.xyz/blog/2015/10/09/hugo-support-cjk-language/</guid>
-      <description>&lt;p&gt;会社のMacにも&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;をセットアップしてあるんだけど、テーマの編集とかの続きを家でやろうとしたら&lt;code&gt;.Summary&lt;/code&gt;が異なる挙動をしてることに気づいた。&lt;/p&gt;
-
-&lt;p&gt;どうやらHugoのバージョンによって、日本語の解釈がうまくいったりいかなかったりするみたい。&lt;/p&gt;
-
-&lt;p&gt;ソースを読んでたらどうやら日本語のサポートもされてるようだ。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/spf13/hugo/blob/823334875d396bdc15770c335c2029a01a7ef2ce/hugolib/page.go&#34;&gt;hugo/page.go at 823334875d396bdc15770c335c2029a01a7ef2ce · spf13/hugo&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;随分追ってみたんだけど&lt;code&gt;Metadata&lt;/code&gt;が何を返すのかよくわからず、コミットを見てたらCJKうんたらが追加されたのは最近っぽいことがわかった。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/spf13/hugo/commit/823334875d396bdc15770c335c2029a01a7ef2ce?diff=split&#34;&gt;WordCount and Summary support CJK Language · spf13/hugo@8233348&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;PRのコメントを読んでみると、configになんか書けばなんとかなりそうな雰囲気。&lt;/p&gt;
-
-&lt;p&gt;でもなんで会社のMacは期待した挙動をしてるんだ？&lt;/p&gt;
-
-&lt;p&gt;Goのバージョンが新しいから？&lt;/p&gt;
-
-&lt;p&gt;今のHugoなら&lt;code&gt;config.yaml&lt;/code&gt;にこう書けば日本語もきちんと処理をするようになってた。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;HasCJKLanguage: true
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これできちんと70文字？70word？でSummaryが生成されるようになる。&lt;/p&gt;
-
-&lt;p&gt;静的サイトジェネレータも実行環境によって挙動が変わることがあると少し面倒だなあ。&lt;/p&gt;
-
-&lt;p&gt;Golangは他人の書いたソースが読みやすくて良い。&lt;/p&gt;
-
-&lt;p&gt;書くのはあんまりすきじゃないけど。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;追記&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Search Consoleから被リンクを辿ってたら以下の記事にたどり着いた。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://deprode.net/log/logs/2015-11-05/&#34;&gt;2015 11 05 - log&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;上記ブログのauthor様が仰るとおり、僕のHugoの環境はStableじゃなくてDevです。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;&amp;lt;meta name=&amp;quot;generator&amp;quot; content=&amp;quot;Hugo 0.15-DEV&amp;quot; /&amp;gt;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;僕のブログのせいで戸惑わせてしまい、大変失礼しました。&lt;/p&gt;
-
-&lt;p&gt;このことに伴い、記事のタイトルを&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;HugoのSummaryが日本語に対応した&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;から&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Hugo0.15でSummaryが日本語に対応するっぽい&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;に変更しました。&lt;/p&gt;
 </description>
     </item>
     

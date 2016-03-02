@@ -6,8 +6,63 @@
     <description>Recent content in Vertical Rhythm on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Jan 2016 11:04:21 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 02 Mar 2016 09:55:16 +0900</lastBuildDate>
     <atom:link href="http://yet.unresolved.xyz/tags/vertical-rhythm/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>やはり僕のバーティカルリズムは間違っている</title>
+      <link>http://yet.unresolved.xyz/blog/2016/03/02/i-misunderstood-vertical-rhythm/</link>
+      <pubDate>Wed, 02 Mar 2016 09:55:16 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2016/03/02/i-misunderstood-vertical-rhythm/</guid>
+      <description>
+
+&lt;p&gt;まずこれを見ていただきたい。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2016-03-02/invalid.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2016-03-02/invalid.png&#34; alt=&#34;invalid&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2016年3月現在の僕のブログのデザイン。
+&lt;code&gt;line-height&lt;/code&gt;を意識しているのでブロック自体はバーティカルリズムから外れていない。&lt;/p&gt;
+
+&lt;p&gt;が、文章のベースラインが思いっきりずれてしまっている。
+前から薄々気付いてはいたけど、やはり僕のバーティカルリズムは間違っていた。&lt;/p&gt;
+
+&lt;h2 id=&#34;ベースラインを揃えたバーティカルリズムの実装:443c84079275f642b6c27f534bf108fb&#34;&gt;ベースラインを揃えたバーティカルリズムの実装&lt;/h2&gt;
+
+&lt;p&gt;以下の記事が本当に参考になった。素晴らしい記事だと思う。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://terkel.jp/archives/2014/11/baseline-grid-pseudo-elements/&#34;&gt;擬似要素を利用したベースライン・グリッド · terkel.jp&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;詳細はリンク先を見ていただきたい。もはや尊敬してしまうくらいの内容だったので、転載のようなことはしたくない。&lt;/p&gt;
+
+&lt;p&gt;上記記事によれば、ベースラインを揃えるために&lt;code&gt;before&lt;/code&gt;、&lt;code&gt;after&lt;/code&gt;擬似要素を使ってブロックを押し広げることで実装すればいいとのこと。
+この記事に指導いただいて再実装してみよう。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2016-03-02/valid.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2016-03-02/valid.png&#34; alt=&#34;invalid&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;わかりやすさのために擬似要素に背景色をつけている。
+縦のグリッドが揃っていないことはスルーしてほしい。
+なかなかコストの高い実装になったが、ベースラインを綺麗に揃えることが出来た。&lt;/p&gt;
+
+&lt;p&gt;しかし、画像のように高さの予測できないコンテンツが入り込むと現状崩れてしまう。
+これについては未解決。&lt;/p&gt;
+
+&lt;h2 id=&#34;グリッドを表示するchrome-extension:443c84079275f642b6c27f534bf108fb&#34;&gt;グリッドを表示するChrome Extension&lt;/h2&gt;
+
+&lt;p&gt;この改修をするにあたって以下のChrome Extensionを利用した。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/the-grids/jgfgflhpelebngbkojdfjjekjnkgdcag&#34;&gt;The Grids - Chrome ウェブストア&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;探すのが面倒で導入してなかったが、これを機に使ってみたら想像以上に便利だった。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考にさせていただきました:443c84079275f642b6c27f534bf108fb&#34;&gt;参考にさせていただきました&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://terkel.jp/archives/2014/11/baseline-grid-pseudo-elements/&#34;&gt;擬似要素を利用したベースライン・グリッド · terkel.jp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://terkel.jp/demo/baseline-grid.html&#34;&gt;terkel.jp/demo/baseline-grid.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>読みやすい文章のデザインとバーティカルリズム</title>

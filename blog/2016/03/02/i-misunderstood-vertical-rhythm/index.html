@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.15-DEV" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
+
+    
+    <title>やはり僕のバーティカルリズムは間違っている - Unresolved</title>
+    <meta property='og:title' content="やはり僕のバーティカルリズムは間違っている - Unresolved">
+    <meta property="og:type" content="article">
+    
+
+    <meta property="og:url" content="http://yet.unresolved.xyz/blog/2016/03/02/i-misunderstood-vertical-rhythm/">
+    
+    
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <header class="site">
+        <a href="http://yet.unresolved.xyz/">Unresolved</a>
+      </header>
+
+
+
+<article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+  <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz/"/>
+  <meta itemprop="dateModified" content="2016-03-02T09:55:16&#43;09:00">
+  <meta itemprop="headline" content="やはり僕のバーティカルリズムは間違っている">
+  <meta itemprop="description" content="まずこれを見ていただきたい。 2016年3月現在の僕のブログのデザイン。 line-heightを意識しているのでブロック自体はバーティカルリズ">
+  <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2016/03/02/i-misunderstood-vertical-rhythm/">
+  <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+    <meta itemprop="url" content="http://yet.unresolved.xyz/images/default.jpg" />
+    <meta itemprop="width" content="800">
+    <meta itemprop="height" content="800">
+  </div>
+  <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.jpg">
+      <meta itemprop="width" content="100">
+      <meta itemprop="height" content="100">
+    </div>
+    <meta itemprop="name" content="Unresolved">
+  </div>
+  <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+    <meta itemprop="name" content="Daisuke Tsuji">
+  </div>
+
+  <header>
+    <time class="date" itemprop="datePublished" pubdate="pubdate" datetime="2016-03-02T09:55:16&#43;09:00">Wed, Mar 2, 2016</time>
+    <h1 class="title">やはり僕のバーティカルリズムは間違っている</h1>
+  </header>
+
+  <div class="body" itemprop="articleBody">
+
+<p>まずこれを見ていただきたい。</p>
+
+<p><a href="/images/2016-03-02/invalid.png"><img src="/images/2016-03-02/invalid.png" alt="invalid"></a></p>
+
+<p>2016年3月現在の僕のブログのデザイン。
+<code>line-height</code>を意識しているのでブロック自体はバーティカルリズムから外れていない。</p>
+
+<p>が、文章のベースラインが思いっきりずれてしまっている。
+前から薄々気付いてはいたけど、やはり僕のバーティカルリズムは間違っていた。</p>
+
+<h2 id="ベースラインを揃えたバーティカルリズムの実装:443c84079275f642b6c27f534bf108fb">ベースラインを揃えたバーティカルリズムの実装</h2>
+
+<p>以下の記事が本当に参考になった。素晴らしい記事だと思う。</p>
+
+<p><a href="http://terkel.jp/archives/2014/11/baseline-grid-pseudo-elements/">擬似要素を利用したベースライン・グリッド · terkel.jp</a></p>
+
+<p>詳細はリンク先を見ていただきたい。もはや尊敬してしまうくらいの内容だったので、転載のようなことはしたくない。</p>
+
+<p>上記記事によれば、ベースラインを揃えるために<code>before</code>、<code>after</code>擬似要素を使ってブロックを押し広げることで実装すればいいとのこと。
+この記事に指導いただいて再実装してみよう。</p>
+
+<p><a href="/images/2016-03-02/valid.png"><img src="/images/2016-03-02/valid.png" alt="invalid"></a></p>
+
+<p>わかりやすさのために擬似要素に背景色をつけている。
+縦のグリッドが揃っていないことはスルーしてほしい。
+なかなかコストの高い実装になったが、ベースラインを綺麗に揃えることが出来た。</p>
+
+<p>しかし、画像のように高さの予測できないコンテンツが入り込むと現状崩れてしまう。
+これについては未解決。</p>
+
+<h2 id="グリッドを表示するchrome-extension:443c84079275f642b6c27f534bf108fb">グリッドを表示するChrome Extension</h2>
+
+<p>この改修をするにあたって以下のChrome Extensionを利用した。</p>
+
+<p><a href="https://chrome.google.com/webstore/detail/the-grids/jgfgflhpelebngbkojdfjjekjnkgdcag">The Grids - Chrome ウェブストア</a></p>
+
+<p>探すのが面倒で導入してなかったが、これを機に使ってみたら想像以上に便利だった。</p>
+
+<h2 id="参考にさせていただきました:443c84079275f642b6c27f534bf108fb">参考にさせていただきました</h2>
+
+<ul>
+<li><a href="http://terkel.jp/archives/2014/11/baseline-grid-pseudo-elements/">擬似要素を利用したベースライン・グリッド · terkel.jp</a></li>
+<li><a href="http://terkel.jp/demo/baseline-grid.html">terkel.jp/demo/baseline-grid.html</a></li>
+</ul>
+</div>
+
+  <aside class="article tags">
+    
+    <a href="http://yet.unresolved.xyz/tags/design">design</a>
+    
+    <a href="http://yet.unresolved.xyz/tags/vertical-rhythm">vertical-rhythm</a>
+    
+  </aside>
+
+  <aside class="article comment">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'unresolved';
+    var disqus_identifier = 'http:\/\/yet.unresolved.xyz\/blog\/2016\/03\/02\/i-misunderstood-vertical-rhythm\/';
+    var disqus_title = 'やはり僕のバーティカルリズムは間違っている';
+    var disqus_url = 'http:\/\/yet.unresolved.xyz\/blog\/2016\/03\/02\/i-misunderstood-vertical-rhythm\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </aside>
+
+</article>
+
+<footer class="site">
+  <p>&copy; 2016 Daisuke Tsuji</p>
+  <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
+  <p>Theme <a href="https://github.com/dim0627/hugo_theme_harb" target="_blank">Harb</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+</footer>
+
+</div>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+$(function() {
+  $('.expand-switch').on('click', function() {
+    if ($('.expand-target').is(':visible')) {
+      $('.expand-target').hide();
+      $(this).removeClass('open');
+    } else {
+      $('.expand-target').show();
+      $(this).addClass('open');
+    }
+    return false;
+  });
+});
+</script>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-55005303-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

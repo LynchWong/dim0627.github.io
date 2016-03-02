@@ -6,8 +6,63 @@
     <description>Recent content on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Mar 2016 14:08:26 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 02 Mar 2016 09:55:16 +0900</lastBuildDate>
     <atom:link href="http://yet.unresolved.xyz/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>やはり僕のバーティカルリズムは間違っている</title>
+      <link>http://yet.unresolved.xyz/blog/2016/03/02/i-misunderstood-vertical-rhythm/</link>
+      <pubDate>Wed, 02 Mar 2016 09:55:16 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2016/03/02/i-misunderstood-vertical-rhythm/</guid>
+      <description>
+
+&lt;p&gt;まずこれを見ていただきたい。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2016-03-02/invalid.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2016-03-02/invalid.png&#34; alt=&#34;invalid&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2016年3月現在の僕のブログのデザイン。
+&lt;code&gt;line-height&lt;/code&gt;を意識しているのでブロック自体はバーティカルリズムから外れていない。&lt;/p&gt;
+
+&lt;p&gt;が、文章のベースラインが思いっきりずれてしまっている。
+前から薄々気付いてはいたけど、やはり僕のバーティカルリズムは間違っていた。&lt;/p&gt;
+
+&lt;h2 id=&#34;ベースラインを揃えたバーティカルリズムの実装:443c84079275f642b6c27f534bf108fb&#34;&gt;ベースラインを揃えたバーティカルリズムの実装&lt;/h2&gt;
+
+&lt;p&gt;以下の記事が本当に参考になった。素晴らしい記事だと思う。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://terkel.jp/archives/2014/11/baseline-grid-pseudo-elements/&#34;&gt;擬似要素を利用したベースライン・グリッド · terkel.jp&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;詳細はリンク先を見ていただきたい。もはや尊敬してしまうくらいの内容だったので、転載のようなことはしたくない。&lt;/p&gt;
+
+&lt;p&gt;上記記事によれば、ベースラインを揃えるために&lt;code&gt;before&lt;/code&gt;、&lt;code&gt;after&lt;/code&gt;擬似要素を使ってブロックを押し広げることで実装すればいいとのこと。
+この記事に指導いただいて再実装してみよう。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2016-03-02/valid.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2016-03-02/valid.png&#34; alt=&#34;invalid&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;わかりやすさのために擬似要素に背景色をつけている。
+縦のグリッドが揃っていないことはスルーしてほしい。
+なかなかコストの高い実装になったが、ベースラインを綺麗に揃えることが出来た。&lt;/p&gt;
+
+&lt;p&gt;しかし、画像のように高さの予測できないコンテンツが入り込むと現状崩れてしまう。
+これについては未解決。&lt;/p&gt;
+
+&lt;h2 id=&#34;グリッドを表示するchrome-extension:443c84079275f642b6c27f534bf108fb&#34;&gt;グリッドを表示するChrome Extension&lt;/h2&gt;
+
+&lt;p&gt;この改修をするにあたって以下のChrome Extensionを利用した。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/the-grids/jgfgflhpelebngbkojdfjjekjnkgdcag&#34;&gt;The Grids - Chrome ウェブストア&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;探すのが面倒で導入してなかったが、これを機に使ってみたら想像以上に便利だった。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考にさせていただきました:443c84079275f642b6c27f534bf108fb&#34;&gt;参考にさせていただきました&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://terkel.jp/archives/2014/11/baseline-grid-pseudo-elements/&#34;&gt;擬似要素を利用したベースライン・グリッド · terkel.jp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://terkel.jp/demo/baseline-grid.html&#34;&gt;terkel.jp/demo/baseline-grid.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>text-rendering: optimizeLegibility;を指定するとWebフォントの読み込みがおかしくなる</title>
@@ -25,7 +80,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;code&gt;-webkit-font-smoothing: antialiased&lt;/code&gt;と一緒に設定したりするやつ。
-僕は最近、太い文字がマイブームなのでこの設定を外したりしてます。余談だね。&lt;/p&gt;
+僕は最近、太い文字がマイブームなのでこっちの設定は外したりしてます。余談だね。&lt;/p&gt;
 
 &lt;h2 id=&#34;webフォントが適用されない:2acb9387331612b63a2d67e9f2d06529&#34;&gt;Webフォントが適用されない&lt;/h2&gt;
 
@@ -1095,86 +1150,6 @@ exec $UWSGI --ini /path/to/wsgi.ini
 &lt;p&gt;でもどうせゴース倒せないんだろうな。&lt;/p&gt;
 
 &lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/B015DSR5SS/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B015DSR5SS&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;GRAVITY DAZE 重力的眩暈:上層への帰還において、彼女の内宇宙に生じた摂動&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=B015DSR5SS&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>電子書籍に移行したい</title>
-      <link>http://yet.unresolved.xyz/blog/2015/12/24/want-to-migrate-to-e-books/</link>
-      <pubDate>Thu, 24 Dec 2015 11:07:10 +0900</pubDate>
-      
-      <guid>http://yet.unresolved.xyz/blog/2015/12/24/want-to-migrate-to-e-books/</guid>
-      <description>
-
-&lt;p&gt;あー、クリスマスですね、クリスマスに日記か・・・、でもせっかく書く気になったし書くよ。&lt;/p&gt;
-
-&lt;h2 id=&#34;本が邪魔:f2a370996f1a3e4ba17896f6335d101a&#34;&gt;本が邪魔&lt;/h2&gt;
-
-&lt;p&gt;家の本がすごく邪魔なんだよね、幅を取ってる。
-おかげでパソコンデスクも置けてないし、結構前からこれをなんとかしたいなあと考えてる。&lt;/p&gt;
-
-&lt;p&gt;というわけで今ある本の電子書籍化を考えたんだけど、とりあえず最初は業者に頼んで一括で電子化するのがいいのかな。&lt;/p&gt;
-
-&lt;p&gt;いい感じの業者を全然知らないので幾つか調べたものをまとめてみよう。&lt;/p&gt;
-
-&lt;h3 id=&#34;bookscan-ブックスキャン-本-蔵書電子書籍化サービス-大和印刷-https-www-bookscan-co-jp:f2a370996f1a3e4ba17896f6335d101a&#34;&gt;&lt;a href=&#34;https://www.bookscan.co.jp/&#34;&gt;BOOKSCAN(ブックスキャン) 本・蔵書電子書籍化サービス - 大和印刷&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;一番有力視してるところ。なんか裁断から電子化まで全部やってくれるみたい。&lt;/p&gt;
-
-&lt;p&gt;PDFはWebサービス上からダウンロード出来るみたいで、DVDで欲しければ追加料金で出来るとのこと。結構いたれりつくせりのサービスですね。&lt;/p&gt;
-
-&lt;h3 id=&#34;書籍や本を裁断しないで電子書籍化するスキャン代行サービス-そのままスキャン-http-sei-syou-com-gclid-cj0keqiaqemzbrdh2vgkmmnqoegbeiqaqjpuydkrqkyy3dorrhwn3sdwnwji18zbayviw-y94meowogaaonl8p8haq:f2a370996f1a3e4ba17896f6335d101a&#34;&gt;&lt;a href=&#34;http://sei-syou.com/?gclid=Cj0KEQiAqemzBRDh2vGKmMnqoegBEiQAqJPuyDKRQKyY3DoRrhwN3SDWNWJI18zbAYvIw-y94MEoWogaAonl8P8HAQ&#34;&gt;書籍や本を裁断しないで電子書籍化するスキャン代行サービス｜そのままスキャン&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;タイトルに惹かれた。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;そのままスキャンでは&lt;strong&gt;本を裁断せずにスキャンし電子書籍化&lt;/strong&gt;してお客様のもとへ納品しています。 裁断することなく書籍をスキャンすることで、一般書籍から古書や社内報、カタログなどを傷つけることなく電子書籍化できます。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;でもよく考えたら省スペース化という目的にそぐわないのでダメかなあ。&lt;/p&gt;
-
-&lt;h3 id=&#34;未来book-本-書類の電子化サービス-https-www-miraibook-com:f2a370996f1a3e4ba17896f6335d101a&#34;&gt;&lt;a href=&#34;https://www.miraibook.com/&#34;&gt;未来BOOK 本・書類の電子化サービス&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;ここも裁断からPDF化までやってくれる、特筆すべきこともない普通の電子化サービスなのかな。&lt;/p&gt;
-
-&lt;h3 id=&#34;スキャン代行で高品質-低価格-24時間で電子書籍化-http-www-scan24hr-com:f2a370996f1a3e4ba17896f6335d101a&#34;&gt;&lt;a href=&#34;http://www.scan24hr.com/&#34;&gt;スキャン代行で高品質・低価格・24時間で電子書籍化&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;24時間でやってくれるのはすごいね、でも急ぐかと言うと別にあんまり急がない。&lt;/p&gt;
-
-&lt;p&gt;というかここはサービス名がわかりづらすぎるよ。&lt;/p&gt;
-
-&lt;h2 id=&#34;裁断した後が困りそう:f2a370996f1a3e4ba17896f6335d101a&#34;&gt;裁断した後が困りそう&lt;/h2&gt;
-
-&lt;p&gt;全部電子化して本棚が綺麗になりました！となるのはいいけど、その後が困りそう。&lt;/p&gt;
-
-&lt;p&gt;今世に出回ってる本がすべて電子化されてるかというとまだまだそうじゃないし、新しく本を買うときにまた裁断の手間が出るなあと。&lt;/p&gt;
-
-&lt;p&gt;そうなると自分で裁断からPDF化が出来るようにしとくべきなんだろうけど、そのコストのために結構ためらってる。
-まあたかが知れてるんだろうけど・・・。&lt;/p&gt;
-
-&lt;h2 id=&#34;そもそも電子書籍は読みやすいのか:f2a370996f1a3e4ba17896f6335d101a&#34;&gt;そもそも電子書籍は読みやすいのか&lt;/h2&gt;
-
-&lt;p&gt;僕は結構本を読むのが遅いタイプだから、紙の本でどれくらいまで読めたかなーってのが感覚でわかるのが嬉しかったりするんですよね。&lt;/p&gt;
-
-&lt;p&gt;だから電子書籍はどうだろう、まあそんなに差し支えはないんだろうけど、実際読んでみないとわからない読みづらさとかがありそうで少し怖いな。&lt;/p&gt;
-
-&lt;p&gt;本は紙だから良いんだみたいな信仰とかそういうのは特にないです。&lt;/p&gt;
-
-&lt;h2 id=&#34;余談:f2a370996f1a3e4ba17896f6335d101a&#34;&gt;余談&lt;/h2&gt;
-
-&lt;p&gt;まあ年末の大掃除をしてから考えましょう。めんどくさいし。&lt;/p&gt;
-
-&lt;p&gt;BloodborneはついにDLCを買った。&lt;/p&gt;
-
-&lt;p&gt;作りなおしたキャラもLv.70の千景+9まで進んだので、そいつでさらっとうろついたけどもう案外行けそう。
-なんか目の赤いハンターに殺されたけど。&lt;/p&gt;
-
-&lt;p&gt;しかしあれだよね、隠し街ヤハグルはマジで苦手だわ、難しすぎる。
-とりあえずDLCも行きたいけど、メンシスの悪夢まではクリアしとこうかな。&lt;/p&gt;
-
-&lt;p&gt;今日はクリスマスだけど僕は狩りに出かけます。&lt;/p&gt;
-
-&lt;p&gt;年末はFallout4をやる。&lt;/p&gt;
 </description>
     </item>
     
