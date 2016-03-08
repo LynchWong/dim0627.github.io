@@ -1,31 +1,454 @@
 <!DOCTYPE html>
-<html>
+<html ⚡>
   <head>
     <meta charset="utf-8">
     <meta name="generator" content="Hugo 0.15-DEV" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
-    
+    <meta property="og:title" content="ClojureのWebアプリをDocker &#43; Beanstalkで動かす" />
+<meta property="og:description" content="たぶんこういうのはドキュメント読んでもわからないので、とにかく一通りの流れを実践してみる。 Imageの取得 面倒なのでDocker HubからC" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/" />
+
+
+<meta property="og:updated_time" content="2014-12-31T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
     <title>ClojureのWebアプリをDocker &#43; Beanstalkで動かす - Unresolved</title>
-    <meta property='og:title' content="ClojureのWebアプリをDocker &#43; Beanstalkで動かす - Unresolved">
-    <meta property="og:type" content="article">
+
+    <link rel="canonical" href="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage":{
+    "@type":"WebPage",
+    "@id":"http:\/\/yet.unresolved.xyz\/"
+  },
+  "headline": "ClojureのWebアプリをDocker \x2b Beanstalkで動かす - Unresolved",
+  "image": {
+    "@type": "ImageObject",
+    "url": "http:\/\/yet.unresolved.xyz\/images/logo.png",
+    "height": 128,
+    "width": 128
+  },
+  "datePublished": "2016-03-04T08:00:00+08:00",
+  "dateModified": "2016-03-03T08:00:00+08:00",
+  "author": {
+    "@type": "Person",
+    "name": "Daisuke Tsuji",
+    "image": "http:\/\/yet.unresolved.xyz\/images/logo.png"
+  },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Daisuke Tsuji",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http:\/\/yet.unresolved.xyz\/images/logo.png",
+      "height": 128,
+      "width": 128
+    }
+  },
+  "description": "たぶんこういうのはドキュメント読んでもわからないので、とにかく一通りの流れを実践してみる。 Imageの取得 面倒なのでDocker HubからC"
+}
+    </script>
     
 
-    <meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/">
-    
-    
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+      <script async src="https://cdn.ampproject.org/v0.js"></script>
+      <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+
+      <style amp-custom>
+ 
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+body {
+  font-family: "Open Sans", "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-size: inherit;
+  color: #37474f;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: #2196F3;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: #1976D2;
+}
+
+h1, h2, h3, h4, h5 ,h6 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+ 
+.container {
+  max-width: 45rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+ 
+header.site {
+  padding: 1rem 0;
+  box-shadow: 0 -1px 0 #CFD8DC inset, 0 2px 0 0 rgba(236,239,241 ,.5);
+  margin-bottom: 1rem;
+}
+
+header.site a {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.5rem;
+}
+
+header.site a:before,
+header.site a:after {
+  display: inline-block;
+  content: '';
+  height: 1.5rem;
+}
+
+header.site a:before {
+  vertical-align: 0;
+}
+
+header.site a:after {
+  vertical-align: -.5rem;
+}
+
+footer.site {
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  font-size: .8rem;
+  border-top: 1px solid #CFD8DC;
+  box-shadow: 0 2px 0 0 rgba(236,239,241 ,.5) inset;
+  color: #78909c;
+  line-height: 1rem;
+}
+
+article.li {
+  margin-bottom: 1.5rem;
+}
+
+article.li:last-child {
+  margin-bottom: 0;
+}
+
+article.li>a {
+  display: block;
+}
+
+article.li>a:hover {
+  text-decoration: none;
+}
+
+article.li>a:hover .title {
+  text-decoration: underline;
+}
+
+article.single header {
+  margin-bottom: 2rem;
+}
+
+article .date {
+  color: #78909c;
+  font-size: .8rem;
+  font-weight: 700;
+  display: block;
+  line-height: 1rem;
+}
+
+article .date::before,
+article .date::after {
+  content: '';
+  display: inline-block;
+  height: 1rem;
+}
+
+article .date::before {
+  vertical-align: 0;
+}
+
+article .date::after {
+  vertical-align: -.5rem;
+}
+
+article .title {
+  line-height: 1rem;
+  font-weight: 700;
+  font-size: 1rem;
+  word-break: break-all;
+}
+
+article .title::before,
+article .title::after {
+  display: inline-block;
+  content: '';
+  height: 1rem;
+}
+
+article .title::before {
+  vertical-align: 0;
+}
+
+article .title::after {
+  vertical-align: -.5rem;
+}
+
+article .summary {
+  color: #78909c;
+  font-size: .8rem;
+  word-break: break-all;
+  line-height: 1rem;
+}
+
+article .summary::before,
+article .summary::after {
+  display: inline-block;
+  content: '';
+  height: 1rem;
+}
+
+article .summary::before {
+  vertical-align: 0;
+}
+
+article .summary::after {
+  vertical-align: -.5rem;
+}
+
+article .body {
+  margin-bottom: 2rem;
+}
+
+article .body p {
+  line-height: 1.5rem;
+  margin: .5rem 0;
+  word-break: break-all;
+}
+
+article .body p::before,
+article .body p::after {
+  content: '';
+  display: inline-block;
+  height: 1.5rem;
+}
+
+article .body p::before {
+  vertical-align: 0;
+}
+
+article .body p::after{
+  vertical-align: -1rem;
+}
+
+article .body h1,
+article .body h2,
+article .body h3,
+article .body h4,
+article .body h5,
+article .body h6 {
+  word-break: break-all;
+}
+
+article .body h1:first-child,
+article .body h2:first-child,
+article .body h3:first-child,
+article .body h4:first-child,
+article .body h5:first-child,
+article .body h6:first-child {
+  margin-top: 0;
+}
+
+article .body h1,
+article .body h2 {
+  position: relative;
+  margin-top: 1.5rem;
+  padding: .5rem 0;
+  line-height: 1rem;
+  font-weight: 700;
+  box-shadow: 0 -1px 0 0 #cfd8dc inset , 0 2px 0 0 rgba(236,239,241 ,.5);
+}
+
+article .body h1::before,
+article .body h2::before {
+  position: absolute;
+  content: '';
+  display: block;
+  left: 0;
+  bottom: 0;
+  width: 30%;
+  height: 2px;
+  border-bottom: 1px solid #2196F3;
+  box-shadow: 0 2px 0 0 rgba(33,150,243,.2);
+}
+
+article .body h3 {
+  margin-top: 1.5rem;
+  line-height: 1rem;
+  font-weight: 700;
+}
+
+article .body h4 {
+  margin-top: 1.5rem;
+  text-decoration: underline;
+}
+
+article .body blockquote {
+  font-size: .8rem;
+  padding: .5rem;
+  border-left: none;
+  margin: .5rem 0;
+  background-color: #eceff1;
+}
+
+article .body blockquote p {
+  line-height: 1rem;
+  margin: 0;
+}
+
+article .body blockquote p::before,
+article .body blockquote p::after {
+  height: 1rem;
+}
+
+article .body blockquote p::after {
+  vertical-align: -.5rem;
+}
+
+article .body blockquote ul,
+article .body blockquote ol {
+  margin: 0;
+  padding: 0;
+  padding-left: 1.5rem;
+}
+
+article .body ul,
+article .body ol {
+  padding: .5rem 0;
+  padding-left: 1.5rem;
+  margin: 0;
+  line-height: 1.5rem;
+}
+
+article .body amp-img {
+  max-width: 100%;
+  box-shadow: 0 0 0 .25rem #eceff1;
+  margin: 1rem 0;
+}
+
+article .body pre {
+  padding: .5rem;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  font-size: .8rem;
+  line-height: 1rem;
+  overflow: auto;
+  background-color: #eceff1;
+}
+
+article .body p code {
+  background-color: #ECEFF1;
+  color: #37474f;
+  padding: .25rem;
+  margin: 0 .25rem;
+  font-size: .8rem;
+  font-weight: 700;
+  border-radius: 5px;
+  white-space: nowrap;
+  line-height: 1rem;
+}
+
+aside.article {
+  margin-bottom: 2rem;
+}
+
+aside.article.tags a {
+  display: inline-block;
+  background-color: #ECEFF1;
+  color: #37474f;
+  padding: .25rem .5rem;
+  margin: 0 .25rem;
+  font-size: .8rem;
+  font-weight: 700;
+  border-radius: 5px;
+  line-height: 1rem;
+}
+
+.page-title {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+div.site {
+  margin-bottom: 2rem;
+}
+
+nav.page {
+  margin-bottom: 2rem;
+}
+
+nav.page a {
+  font-size: .8rem;
+  font-weight: 700;
+}
+</style>
+
 
   </head>
 
   <body>
+    <amp-analytics type="googleanalytics" id="analytics1">
+      <script type="application/json">
+{
+  "vars": {
+    "account": "UA-55005303-1"
+  },
+  "triggers": {
+    "trackPageview": {
+      "on": "visible",
+      "request": "pageview"
+    }
+  }
+}
+      </script>
+    </amp-analytics>
 
     <div class="container">
       <header class="site">
@@ -36,30 +459,8 @@
 
 <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
 
-  <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://yet.unresolved.xyz/"/>
-  <meta itemprop="dateModified" content="2014-12-31T00:00:00&#43;00:00">
-  <meta itemprop="headline" content="ClojureのWebアプリをDocker &#43; Beanstalkで動かす">
-  <meta itemprop="description" content="たぶんこういうのはドキュメント読んでもわからないので、とにかく一通りの流れを実践してみる。 Imageの取得 面倒なのでDocker HubからC">
-  <meta itemprop="url" content="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/">
-  <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-    <meta itemprop="url" content="http://yet.unresolved.xyz/images/default.jpg" />
-    <meta itemprop="width" content="800">
-    <meta itemprop="height" content="800">
-  </div>
-  <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="http://yet.unresolved.xyz/images/logo.jpg">
-      <meta itemprop="width" content="100">
-      <meta itemprop="height" content="100">
-    </div>
-    <meta itemprop="name" content="Unresolved">
-  </div>
-  <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-    <meta itemprop="name" content="Daisuke Tsuji">
-  </div>
-
   <header>
-    <time class="date" itemprop="datePublished" pubdate="pubdate" datetime="2014-12-31T00:00:00&#43;00:00">Wed, Dec 31, 2014</time>
+    <time class="date">Wed, Dec 31, 2014</time>
     <h1 class="title">ClojureのWebアプリをDocker &#43; Beanstalkで動かす</h1>
   </header>
 
@@ -120,7 +521,8 @@ e9981a715899        clojure:aws         &quot;/bin/bash -c 'cd /h   4 seconds ag
 
 <p>このIPの3000ポートに向けてアクセスすれば、</p>
 
-<p><a href="/images/2015-01-01/webapp.png"><img src="/images/2015-01-01/webapp.png" alt="webapp"></a></p>
+<amp-img src="/images/2014-12-31/webapp.png" alt="webapp" width=672 height=465 layout="responsive"></amp-img>
+
 
 <p>見れます。</p>
 
@@ -191,7 +593,8 @@ CMD [&quot;java&quot;, &quot;-jar&quot;, &quot;/root/production.jar&quot;]
 13:33:07.710 [main] INFO  superapp.main - serving status message
 </code></pre>
 
-<p><a href="/images/2015-01-01/beanstalkDockerApp.png"><img src="/images/2015-01-01/beanstalkDockerApp.png" alt="beanstalkDockerApp"></a></p>
+<amp-img src="/images/2014-12-31/beanstalkDockerApp.png" alt="beanstalkDockerApp" width=599 height=420 layout="responsive"></amp-img>
+
 
 <h3 id="デプロイ:e7598df47e85c79be6b3ca007edb9ce3">デプロイ</h3>
 
@@ -204,20 +607,20 @@ CMD [&quot;java&quot;, &quot;-jar&quot;, &quot;/root/production.jar&quot;]
 
 <p>デプロイはこんな感じで成功。</p>
 
-<p><a href="/images/2015-01-01/deploy.png"><img src="/images/2015-01-01/deploy.png" alt="deploy"></a></p>
+<amp-img src="/images/2014-12-31/deploy.png" alt="deploy" width=1180 height=559 layout="responsive"></amp-img>
+
 
 <p>しかしデプロイは結構時間かかるなー。
 Javaの起動とかライブラリのダウンロードで食ってるのかな・・・。</p>
 
 <h2 id="参考にさせて頂きました:e7598df47e85c79be6b3ca007edb9ce3">参考にさせて頂きました</h2>
 
-<p><a href="http://wslash.com/?p=5584">Dockerを勉強するための、Docker解説記事のまとめ</a></p>
-
-<p><a href="http://knowledge.sakura.ad.jp/tech/1811/">これから始める「DockerでかんたんLAMP環境 for CentOS」</a></p>
-
-<p><a href="http://nudaygames.squarespace.com/blog/2014/12/13/clojure-websocket-server-on-elastic-beanstalk">CLOJURE WEBSOCKET SERVER ON ELASTIC BEANSTALK</a></p>
-
-<p><a href="http://inokara.hateblo.jp/entry/2013/12/29/215322">Dockerfile の書き方「私的」なベストプラクティス（3）〜サービスの起動について〜</a></p>
+<ul>
+<li><a href="http://wslash.com/?p=5584">Dockerを勉強するための、Docker解説記事のまとめ</a></li>
+<li><a href="http://knowledge.sakura.ad.jp/tech/1811/">これから始める「DockerでかんたんLAMP環境 for CentOS」</a></li>
+<li><a href="http://nudaygames.squarespace.com/blog/2014/12/13/clojure-websocket-server-on-elastic-beanstalk">CLOJURE WEBSOCKET SERVER ON ELASTIC BEANSTALK</a></li>
+<li><a href="http://inokara.hateblo.jp/entry/2013/12/29/215322">Dockerfile の書き方「私的」なベストプラクティス（3）〜サービスの起動について〜</a></li>
+</ul>
 </div>
 
   <aside class="article tags">
@@ -232,24 +635,6 @@ Javaの起動とかライブラリのダウンロードで食ってるのかな�
     
   </aside>
 
-  <aside class="article comment">
-    <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'unresolved';
-    var disqus_identifier = 'http:\/\/yet.unresolved.xyz\/blog\/2014\/12\/31\/clojure-on-docker-and-aws-beanstalk\/';
-    var disqus_title = 'ClojureのWebアプリをDocker \x2b Beanstalkで動かす';
-    var disqus_url = 'http:\/\/yet.unresolved.xyz\/blog\/2014\/12\/31\/clojure-on-docker-and-aws-beanstalk\/';
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-  </aside>
-
 </article>
 
 <footer class="site">
@@ -259,37 +644,6 @@ Javaの起動とかライブラリのダウンロードで食ってるのかな�
 </footer>
 
 </div>
-
-<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-<script>
-$(function() {
-  $('.expand-switch').on('click', function() {
-    if ($('.expand-target').is(':visible')) {
-      $('.expand-target').hide();
-      $(this).removeClass('open');
-    } else {
-      $('.expand-target').show();
-      $(this).addClass('open');
-    }
-    return false;
-  });
-});
-</script>
-
-
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-55005303-1', 'auto');
-ga('send', 'pageview');
-</script>
-
 
 </body>
 </html>

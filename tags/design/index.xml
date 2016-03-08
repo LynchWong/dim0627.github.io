@@ -19,7 +19,8 @@
 
 &lt;p&gt;まずこれを見ていただきたい。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2016-03-02/invalid.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2016-03-02/invalid.png&#34; alt=&#34;invalid&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2016-03-02/invalid.png&#34; alt=&#34;invalid&#34; width=1140 height=724 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+
 
 &lt;p&gt;2016年3月現在の僕のブログのデザイン。
 &lt;code&gt;line-height&lt;/code&gt;を意識しているのでブロック自体はバーティカルリズムから外れていない。&lt;/p&gt;
@@ -38,7 +39,8 @@
 &lt;p&gt;上記記事によれば、ベースラインを揃えるために&lt;code&gt;before&lt;/code&gt;、&lt;code&gt;after&lt;/code&gt;擬似要素を使ってブロックを押し広げることで実装すればいいとのこと。
 この記事に指導いただいて再実装してみよう。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2016-03-02/valid.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2016-03-02/valid.png&#34; alt=&#34;invalid&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2016-03-02/valid.png&#34; alt=&#34;valid&#34; width=1130 height=784 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+
 
 &lt;p&gt;わかりやすさのために擬似要素に背景色をつけている。
 縦のグリッドが揃っていないことはスルーしてほしい。
@@ -72,7 +74,7 @@
       <guid>http://yet.unresolved.xyz/blog/2016/02/29/100-things-every-designer-needs-to-know-about-people/</guid>
       <description>
 
-&lt;p&gt;&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/4873115574/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4873115574&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;インタフェースデザインの心理学 ―ウェブやアプリに新たな視点をもたらす100の指針&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=4873115574&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/4873115574/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4873115574&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;インタフェースデザインの心理学 ―ウェブやアプリに新たな視点をもたらす100の指針&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;表紙が簡素でおしゃれだけど、こう見えてオライリーの本。
 帯のコピーは「&lt;strong&gt;人々の心を捉えるにはどうすればよいのか？&lt;/strong&gt;」。
@@ -80,7 +82,7 @@
 
 &lt;p&gt;ちなみにさっき気づいたけど、どうやら実践編も出版されているらしい。そのうち買うかも。&lt;/p&gt;
 
-&lt;p&gt;&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/4873116082/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4873116082&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;インタフェースデザインの実践教室 ―優れたユーザビリティを実現するアイデアとテクニック&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=4873116082&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/4873116082/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4873116082&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;インタフェースデザインの実践教室 ―優れたユーザビリティを実現するアイデアとテクニック&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;読もうと思ったきっかけ:9ae51b3854d154025e50d513241ba764&#34;&gt;読もうと思ったきっかけ&lt;/h2&gt;
 
@@ -125,7 +127,7 @@
 &lt;p&gt;ちょうどいま、家にある本を必要な物以外捨てようと思ってるんだけど、この本は取っておくつもり。
 きっと何度も読み返す時が来ると思う。&lt;/p&gt;
 
-&lt;p&gt;&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/4873115574/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4873115574&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;インタフェースデザインの心理学 ―ウェブやアプリに新たな視点をもたらす100の指針&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&amp;l=as2&amp;o=9&amp;a=4873115574&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;display: none;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/4873115574/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4873115574&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;インタフェースデザインの心理学 ―ウェブやアプリに新たな視点をもたらす100の指針&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -137,7 +139,8 @@
       <guid>http://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/</guid>
       <description>
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2016-02-19/cse.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2016-02-19/cse.png&#34; alt=&#34;cse&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2016-02-19/cse.png&#34; alt=&#34;cse&#34; width=674 height=150 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+
 
 &lt;h2 id=&#34;なぜ崩れるのか:823fb9b45a070a4729c0c404dd848b3b&#34;&gt;なぜ崩れるのか&lt;/h2&gt;
 
@@ -355,7 +358,8 @@ Google自身もこう書いている。&lt;/p&gt;
 
 &lt;p&gt;Octopressから移行してしまったので、スクリーンショットだけ載せとく。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34; alt=&#34;flatten&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34; alt=&#34;flatten&#34; width=1000 height=695 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+
 
 &lt;h2 id=&#34;テーマの変え方:04d1c6053c5be0425bfb88e610b78a00&#34;&gt;テーマの変え方&lt;/h2&gt;
 
