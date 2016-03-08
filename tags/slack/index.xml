@@ -90,8 +90,8 @@ bot userがどうのこうのっていうのがよくわからない。&lt;/p&gt
 
 &lt;p&gt;さっき書いた通り、&lt;code&gt;/repl ruby:p &amp;quot;hello&amp;quot;&lt;/code&gt;でいけるかな。&lt;/p&gt;
 
-&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2015-01-25/slack_repl_run.png&#34; alt=&#34;slack_repl_run&#34; width=433 height=311 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
-
+&lt;p&gt;&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2015-01-25/slack_repl_run.png&#34; alt=&#34;slack_repl_run&#34; width=433 height=311 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;/p&gt;
 
 &lt;p&gt;Javaは少し面倒ですね。&lt;/p&gt;
 </description>
