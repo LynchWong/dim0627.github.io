@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Amp on Unresolved</title>
+    <link>http://yet.unresolved.xyz/tags/amp/</link>
+    <description>Recent content in Amp on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 08 Mar 2016 15:25:13 +0900</lastBuildDate>
+    <atom:link href="http://yet.unresolved.xyz/tags/amp/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>AMP対応をした</title>
+      <link>http://yet.unresolved.xyz/blog/2016/03/08/accelerated-mobile-pages/</link>
+      <pubDate>Tue, 08 Mar 2016 15:25:13 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2016/03/08/accelerated-mobile-pages/</guid>
+      <description>
+
+&lt;p&gt;巷で話題のAMP対応をしました。
+僕のブログはこの規模なので、別ページとして作るのではなく純粋にページ自体を作り変えました。&lt;/p&gt;
+
+&lt;h2 id=&#34;amp:248155386e4621d756694486f44e789c&#34;&gt;AMP？&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.ampproject.org/&#34;&gt;Accelerated Mobile Pages Project&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;For many, reading on the mobile web is a slow, clunky and frustrating experience - but it doesn’t have to be that way. The Accelerated Mobile Pages (AMP) Project is an open source initiative that embodies the vision that publishers can create mobile optimized content once and have it load instantly everywhere.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;モバイル用に爆速な感じのページを作ろうぜってやつですね。
+そのためにHTMLをゴリゴリ書き換えなければいけないです。&lt;/p&gt;
+
+&lt;p&gt;いろいろなサイトを見てると、AMP対応のために別ページを用意して&lt;code&gt;rel&lt;/code&gt;を張るパターンが多いようでした。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.ampproject.org/docs/guides/discovery.html#linking-pages-with-ltlinkgt&#34;&gt;Make Your Page Discoverable&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;link rel=&amp;quot;amphtml&amp;quot; href=&amp;quot;https://www.example.com/url/to/amp/document.html&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;始め方:248155386e4621d756694486f44e789c&#34;&gt;始め方&lt;/h2&gt;
+
+&lt;p&gt;ドキュメントはかなり整理されているので、特に詰まることなく実装は出来ると思います。&lt;/p&gt;
+
+&lt;p&gt;このページにある通り、必須の項目を&lt;code&gt;head&lt;/code&gt;タグ内に入れたりするだけで始められます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.ampproject.org/docs/get_started/create/basic_markup.html&#34;&gt;Create Your AMP HTML Page&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;!doctype html&amp;gt;
+&amp;lt;html amp lang=&amp;quot;en&amp;quot;&amp;gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
+    &amp;lt;title&amp;gt;Hello, AMPs&amp;lt;/title&amp;gt;
+    &amp;lt;link rel=&amp;quot;canonical&amp;quot; href=&amp;quot;http://example.ampproject.org/article-metadata.html&amp;quot; /&amp;gt;
+    &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,minimum-scale=1,initial-scale=1&amp;quot;&amp;gt;
+    &amp;lt;script type=&amp;quot;application/ld+json&amp;quot;&amp;gt;
+      {
+        &amp;quot;@context&amp;quot;: &amp;quot;http://schema.org&amp;quot;,
+        &amp;quot;@type&amp;quot;: &amp;quot;NewsArticle&amp;quot;,
+        &amp;quot;headline&amp;quot;: &amp;quot;Open-source framework for publishing content&amp;quot;,
+        &amp;quot;datePublished&amp;quot;: &amp;quot;2015-10-07T12:02:41Z&amp;quot;,
+        &amp;quot;image&amp;quot;: [
+          &amp;quot;logo.jpg&amp;quot;
+        ]
+      }
+    &amp;lt;/script&amp;gt;
+    &amp;lt;style amp-boilerplate&amp;gt;body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}&amp;lt;/style&amp;gt;&amp;lt;noscript&amp;gt;&amp;lt;style amp-boilerplate&amp;gt;body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}&amp;lt;/style&amp;gt;&amp;lt;/noscript&amp;gt;
+    &amp;lt;script async src=&amp;quot;https://cdn.ampproject.org/v0.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
+    &amp;lt;h1&amp;gt;Welcome to the mobile web&amp;lt;/h1&amp;gt;
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt;に&lt;code&gt;amp&lt;/code&gt;もしくは「⚡」を入れることでAMP対応を明示するようです。
+せっかくなので、このブログは絵文字で対応しました。&lt;/p&gt;
+
+&lt;h2 id=&#34;html上の制約:248155386e4621d756694486f44e789c&#34;&gt;HTML上の制約&lt;/h2&gt;
+
+&lt;p&gt;基本的にAMPは機能拡張ではなく制限なので、既存のHTMLの置き換えや削除で対応出来ます。&lt;/p&gt;
+
+&lt;h3 id=&#34;画像の差し込み:248155386e4621d756694486f44e789c&#34;&gt;画像の差し込み&lt;/h3&gt;
+
+&lt;p&gt;まず最初に説明されているのは画像の表示について。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;amp-img src=&amp;quot;welcome.jpg&amp;quot; alt=&amp;quot;Welcome&amp;quot; height=&amp;quot;400&amp;quot; width=&amp;quot;800&amp;quot;&amp;gt;&amp;lt;/amp-img&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;AMP用のタグが用意されているので、それに置き換える必要があります。
+&lt;code&gt;layout&lt;/code&gt;などの属性も用意されているので、少しだけ融通は効くようです。&lt;code&gt;width&lt;/code&gt;と&lt;code&gt;height&lt;/code&gt;は必須のようでした。きついですね。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.ampproject.org/docs/guides/amp_replacements.html#include-an-image&#34;&gt;Include Iframes and Media#include-an-image&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;横幅に応じて良きに計らってほしいのですが、僕はその記述をドキュメントから見つけられませんでした。&lt;/p&gt;
+
+&lt;h3 id=&#34;スタイルシート:248155386e4621d756694486f44e789c&#34;&gt;スタイルシート&lt;/h3&gt;
+
+&lt;p&gt;スタイルシートは&lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;内にベタで置くことになっているようです。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;style amp-custom&amp;gt;
+  /* any custom style goes here */
+  body {
+    background-color: white;
+  }
+  amp-img {
+    background-color: gray;
+    border: 1px solid black;
+  }
+&amp;lt;/style&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;この&lt;code&gt;&amp;lt;style amp-custom&amp;gt;&lt;/code&gt;タグは1ページに1個までとの制約があるようで、&lt;code&gt;:not()&lt;/code&gt;など、禁止されている機能もあるようです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.ampproject.org/docs/guides/responsive/style_pages.html#disallowed-styles&#34;&gt;How to Style Your Pages#disallowed-styles&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;外部スタイルシートは原則&lt;strong&gt;フォント読み込み&lt;/strong&gt;のみ可、とのことです。Google Fontsなどですね。
+つまりBootstrapやSkeletonなどのCSSフレームワークはベタで書く必要があるのでしょうか。もしかしたらベストプラクティスがあるのかもしれません。
+僕は今回使わないことにしました。（&lt;code&gt;.container&lt;/code&gt;とグリッドシステムくらいしか使っていなかったので。）&lt;/p&gt;
+
+&lt;h3 id=&#34;javascript:248155386e4621d756694486f44e789c&#34;&gt;JavaScript&lt;/h3&gt;
+
+&lt;p&gt;原則禁止のようです。
+Google Analytics等は専用の記述が用意されていました。こういった例外的な扱いが他にもいくつかあるようです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/analytics/devguides/collection/amp-analytics/&#34;&gt;Adding Analytics to your AMP pages  |  Analytics for AMP Pages  |  Google Developers&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;このブログではコードハイライトのために&lt;a href=&#34;https://highlightjs.org/&#34;&gt;highlight.js&lt;/a&gt;を使っていたのですが、それもこの対応で外しました。&lt;/p&gt;
+
+&lt;h2 id=&#34;バリデーション:248155386e4621d756694486f44e789c&#34;&gt;バリデーション&lt;/h2&gt;
+
+&lt;p&gt;当該ページのURL末尾に&lt;code&gt;#development=1&lt;/code&gt;をつけてChromeでアクセスすれば、Chrome DevTools consoleにバリデーション結果が表示されるようになっています。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.ampproject.org/docs/guides/validate.html&#34;&gt;Validate AMP Pages&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;個々のエラーメッセージに応じた対応方法なども記載されているので、やはりドキュメントは充実していますね。&lt;/p&gt;
+
+&lt;h2 id=&#34;終わりに:248155386e4621d756694486f44e789c&#34;&gt;終わりに&lt;/h2&gt;
+
+&lt;p&gt;JS禁止などを見てもわかるように、やはりAMPはAMP用のページを別で作るのが理想的な気がします。
+会社で運営しているサイトも対応をしたいのですが、あまりコストの低い作業でもないので一旦保留にしています。&lt;/p&gt;
+
+&lt;p&gt;Google Search Console等でもAMP対応の状況が表示されるようになっているので、おそらくAMPはこのまま実用化まで行くのではないかと思っています。&lt;/p&gt;
+
+&lt;p&gt;仕様も今後変わっていくと思うので、その辺も追う元気があれば対応していきたいと思います。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

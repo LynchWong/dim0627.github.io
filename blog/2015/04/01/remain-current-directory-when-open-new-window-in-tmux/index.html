@@ -7,27 +7,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
-    <meta property="og:title" content="tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する" />
-<meta property="og:description" content="こんな感じ。 # v でペインを縦に分割する bind v split-window -h -c &quot;#{pane_current_path}&quot; # s でペインを横に分割する bind s split-window -v -c &quot;#{pane_current_path}&quot; # 新規ウィンドウでディレクトリを保持 bind c new-window -c &quot;#{pane_current_path}&quot; 参考に" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/" />
-
-
-<meta property="og:updated_time" content="2015-04-01T22:42:40&#43;09:00"/>
-
-
-
-
-
-
-
-
-
-
-
     <title>tmuxでウィンドウを開いたり画面分割したときにディレクトリを維持する - Unresolved</title>
 
-    <link rel="canonical" href="http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/" />
+    <link rel="canonical" href="http://yet.unresolved.xyz/blog/2015/04/01/remain-current-directory-when-open-new-window-in-tmux/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
     
@@ -421,12 +403,20 @@ div.site {
 }
 
 nav.page {
+  position: relative;
   margin-bottom: 2rem;
+  min-height: 1rem;
 }
 
 nav.page a {
+  position: absolute;
+  display: inline-block;
   font-size: .8rem;
   font-weight: 700;
+}
+
+nav.page a.next {
+  right: 0;
 }
 </style>
 

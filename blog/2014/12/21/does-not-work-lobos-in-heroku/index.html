@@ -7,27 +7,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
-    <meta property="og:title" content="HerokuでLobosを使ったマイグレーションができない" />
-<meta property="og:description" content="ClojureのWebアプリがとりあえず動くところまで行ったんだけど、Herokuにのせようとしたら詰まった。 マイグレーションしても何も起き" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/" />
-
-
-<meta property="og:updated_time" content="2014-12-21T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
-
     <title>HerokuでLobosを使ったマイグレーションができない - Unresolved</title>
 
-    <link rel="canonical" href="http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/" />
+    <link rel="canonical" href="http://yet.unresolved.xyz/blog/2014/12/21/does-not-work-lobos-in-heroku/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
     
@@ -421,12 +403,20 @@ div.site {
 }
 
 nav.page {
+  position: relative;
   margin-bottom: 2rem;
+  min-height: 1rem;
 }
 
 nav.page a {
+  position: absolute;
+  display: inline-block;
   font-size: .8rem;
   font-weight: 700;
+}
+
+nav.page a.next {
+  right: 0;
 }
 </style>
 

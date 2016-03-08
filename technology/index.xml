@@ -6,8 +6,145 @@
     <description>Recent content in Technologies on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Mar 2016 09:55:16 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 08 Mar 2016 15:25:13 +0900</lastBuildDate>
     <atom:link href="http://yet.unresolved.xyz/technology/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>AMP対応をした</title>
+      <link>http://yet.unresolved.xyz/blog/2016/03/08/accelerated-mobile-pages/</link>
+      <pubDate>Tue, 08 Mar 2016 15:25:13 +0900</pubDate>
+      
+      <guid>http://yet.unresolved.xyz/blog/2016/03/08/accelerated-mobile-pages/</guid>
+      <description>
+
+&lt;p&gt;巷で話題のAMP対応をしました。
+僕のブログはこの規模なので、別ページとして作るのではなく純粋にページ自体を作り変えました。&lt;/p&gt;
+
+&lt;h2 id=&#34;amp:248155386e4621d756694486f44e789c&#34;&gt;AMP？&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.ampproject.org/&#34;&gt;Accelerated Mobile Pages Project&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;For many, reading on the mobile web is a slow, clunky and frustrating experience - but it doesn’t have to be that way. The Accelerated Mobile Pages (AMP) Project is an open source initiative that embodies the vision that publishers can create mobile optimized content once and have it load instantly everywhere.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;モバイル用に爆速な感じのページを作ろうぜってやつですね。
+そのためにHTMLをゴリゴリ書き換えなければいけないです。&lt;/p&gt;
+
+&lt;p&gt;いろいろなサイトを見てると、AMP対応のために別ページを用意して&lt;code&gt;rel&lt;/code&gt;を張るパターンが多いようでした。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.ampproject.org/docs/guides/discovery.html#linking-pages-with-ltlinkgt&#34;&gt;Make Your Page Discoverable&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;link rel=&amp;quot;amphtml&amp;quot; href=&amp;quot;https://www.example.com/url/to/amp/document.html&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;始め方:248155386e4621d756694486f44e789c&#34;&gt;始め方&lt;/h2&gt;
+
+&lt;p&gt;ドキュメントはかなり整理されているので、特に詰まることなく実装は出来ると思います。&lt;/p&gt;
+
+&lt;p&gt;このページにある通り、必須の項目を&lt;code&gt;head&lt;/code&gt;タグ内に入れたりするだけで始められます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.ampproject.org/docs/get_started/create/basic_markup.html&#34;&gt;Create Your AMP HTML Page&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;!doctype html&amp;gt;
+&amp;lt;html amp lang=&amp;quot;en&amp;quot;&amp;gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
+    &amp;lt;title&amp;gt;Hello, AMPs&amp;lt;/title&amp;gt;
+    &amp;lt;link rel=&amp;quot;canonical&amp;quot; href=&amp;quot;http://example.ampproject.org/article-metadata.html&amp;quot; /&amp;gt;
+    &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,minimum-scale=1,initial-scale=1&amp;quot;&amp;gt;
+    &amp;lt;script type=&amp;quot;application/ld+json&amp;quot;&amp;gt;
+      {
+        &amp;quot;@context&amp;quot;: &amp;quot;http://schema.org&amp;quot;,
+        &amp;quot;@type&amp;quot;: &amp;quot;NewsArticle&amp;quot;,
+        &amp;quot;headline&amp;quot;: &amp;quot;Open-source framework for publishing content&amp;quot;,
+        &amp;quot;datePublished&amp;quot;: &amp;quot;2015-10-07T12:02:41Z&amp;quot;,
+        &amp;quot;image&amp;quot;: [
+          &amp;quot;logo.jpg&amp;quot;
+        ]
+      }
+    &amp;lt;/script&amp;gt;
+    &amp;lt;style amp-boilerplate&amp;gt;body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}&amp;lt;/style&amp;gt;&amp;lt;noscript&amp;gt;&amp;lt;style amp-boilerplate&amp;gt;body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}&amp;lt;/style&amp;gt;&amp;lt;/noscript&amp;gt;
+    &amp;lt;script async src=&amp;quot;https://cdn.ampproject.org/v0.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
+    &amp;lt;h1&amp;gt;Welcome to the mobile web&amp;lt;/h1&amp;gt;
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt;に&lt;code&gt;amp&lt;/code&gt;もしくは「⚡」を入れることでAMP対応を明示するようです。
+せっかくなので、このブログは絵文字で対応しました。&lt;/p&gt;
+
+&lt;h2 id=&#34;html上の制約:248155386e4621d756694486f44e789c&#34;&gt;HTML上の制約&lt;/h2&gt;
+
+&lt;p&gt;基本的にAMPは機能拡張ではなく制限なので、既存のHTMLの置き換えや削除で対応出来ます。&lt;/p&gt;
+
+&lt;h3 id=&#34;画像の差し込み:248155386e4621d756694486f44e789c&#34;&gt;画像の差し込み&lt;/h3&gt;
+
+&lt;p&gt;まず最初に説明されているのは画像の表示について。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;amp-img src=&amp;quot;welcome.jpg&amp;quot; alt=&amp;quot;Welcome&amp;quot; height=&amp;quot;400&amp;quot; width=&amp;quot;800&amp;quot;&amp;gt;&amp;lt;/amp-img&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;AMP用のタグが用意されているので、それに置き換える必要があります。
+&lt;code&gt;layout&lt;/code&gt;などの属性も用意されているので、少しだけ融通は効くようです。&lt;code&gt;width&lt;/code&gt;と&lt;code&gt;height&lt;/code&gt;は必須のようでした。きついですね。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.ampproject.org/docs/guides/amp_replacements.html#include-an-image&#34;&gt;Include Iframes and Media#include-an-image&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;横幅に応じて良きに計らってほしいのですが、僕はその記述をドキュメントから見つけられませんでした。&lt;/p&gt;
+
+&lt;h3 id=&#34;スタイルシート:248155386e4621d756694486f44e789c&#34;&gt;スタイルシート&lt;/h3&gt;
+
+&lt;p&gt;スタイルシートは&lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;内にベタで置くことになっているようです。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;style amp-custom&amp;gt;
+  /* any custom style goes here */
+  body {
+    background-color: white;
+  }
+  amp-img {
+    background-color: gray;
+    border: 1px solid black;
+  }
+&amp;lt;/style&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;この&lt;code&gt;&amp;lt;style amp-custom&amp;gt;&lt;/code&gt;タグは1ページに1個までとの制約があるようで、&lt;code&gt;:not()&lt;/code&gt;など、禁止されている機能もあるようです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.ampproject.org/docs/guides/responsive/style_pages.html#disallowed-styles&#34;&gt;How to Style Your Pages#disallowed-styles&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;外部スタイルシートは原則&lt;strong&gt;フォント読み込み&lt;/strong&gt;のみ可、とのことです。Google Fontsなどですね。
+つまりBootstrapやSkeletonなどのCSSフレームワークはベタで書く必要があるのでしょうか。もしかしたらベストプラクティスがあるのかもしれません。
+僕は今回使わないことにしました。（&lt;code&gt;.container&lt;/code&gt;とグリッドシステムくらいしか使っていなかったので。）&lt;/p&gt;
+
+&lt;h3 id=&#34;javascript:248155386e4621d756694486f44e789c&#34;&gt;JavaScript&lt;/h3&gt;
+
+&lt;p&gt;原則禁止のようです。
+Google Analytics等は専用の記述が用意されていました。こういった例外的な扱いが他にもいくつかあるようです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/analytics/devguides/collection/amp-analytics/&#34;&gt;Adding Analytics to your AMP pages  |  Analytics for AMP Pages  |  Google Developers&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;このブログではコードハイライトのために&lt;a href=&#34;https://highlightjs.org/&#34;&gt;highlight.js&lt;/a&gt;を使っていたのですが、それもこの対応で外しました。&lt;/p&gt;
+
+&lt;h2 id=&#34;バリデーション:248155386e4621d756694486f44e789c&#34;&gt;バリデーション&lt;/h2&gt;
+
+&lt;p&gt;当該ページのURL末尾に&lt;code&gt;#development=1&lt;/code&gt;をつけてChromeでアクセスすれば、Chrome DevTools consoleにバリデーション結果が表示されるようになっています。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.ampproject.org/docs/guides/validate.html&#34;&gt;Validate AMP Pages&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;個々のエラーメッセージに応じた対応方法なども記載されているので、やはりドキュメントは充実していますね。&lt;/p&gt;
+
+&lt;h2 id=&#34;終わりに:248155386e4621d756694486f44e789c&#34;&gt;終わりに&lt;/h2&gt;
+
+&lt;p&gt;JS禁止などを見てもわかるように、やはりAMPはAMP用のページを別で作るのが理想的な気がします。
+会社で運営しているサイトも対応をしたいのですが、あまりコストの低い作業でもないので一旦保留にしています。&lt;/p&gt;
+
+&lt;p&gt;Google Search Console等でもAMP対応の状況が表示されるようになっているので、おそらくAMPはこのまま実用化まで行くのではないかと思っています。&lt;/p&gt;
+
+&lt;p&gt;仕様も今後変わっていくと思うので、その辺も追う元気があれば対応していきたいと思います。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>やはり僕のバーティカルリズムは間違っている</title>
@@ -1109,88 +1246,6 @@ Make every program a Filter.&lt;/p&gt;
 &lt;p&gt;WordPressでの運用に手こずっている方は、一度静的サイトジェネレータでの運用も検討してはいいのではないでしょうか。&lt;/p&gt;
 
 &lt;p&gt;素晴らしきプロダクトである&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;と開発者である&lt;a href=&#34;http://spf13.com/&#34;&gt;Steve Francia氏&lt;/a&gt;に感謝。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>ELB越しのLaravelでHTTPSを使おうとして困った話</title>
-      <link>http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/</link>
-      <pubDate>Wed, 04 Nov 2015 12:18:07 +0900</pubDate>
-      
-      <guid>http://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/</guid>
-      <description>
-
-&lt;h2 id=&#34;ssl証明書はelbに設置する:56aef34fa740ed018dee02e37b63f347&#34;&gt;SSL証明書はELBに設置する&lt;/h2&gt;
-
-&lt;p&gt;何が普通なのか知らないけど、今回立ち上げた構成では&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;CLIENT -&amp;gt; ELB(80 or 443) -&amp;gt; WEB(80)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;っていう構成にしていました（するつもりだった）。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://dev.classmethod.jp/cloud/aws/aws-beginner-elb-ssl/&#34;&gt;【初心者向け】ELBにSSL証明書をインストールする ｜ Developers.IO&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;問題はリリース当日に:56aef34fa740ed018dee02e37b63f347&#34;&gt;問題はリリース当日に&lt;/h2&gt;
-
-&lt;p&gt;リリースしてみたら何やら証明書のエラーが出てる。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Your connection to this site is private, but someone on the network might be able to change the look of the page.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;このページはSSL証明書が効いてるんだけど、ネットワーク上の何かがそうじゃなくしちゃうかもね？&lt;/p&gt;
-
-&lt;p&gt;原因は&lt;strong&gt;httpsじゃないURLに飛ばすformタグがページに存在する&lt;/strong&gt;せいでした。
-開発環境でもオレオレ証明書を用意したりしてHTTPSで通信するようにしておくべきでした。&lt;/p&gt;
-
-&lt;h2 id=&#34;laravelのrouteメソッド:56aef34fa740ed018dee02e37b63f347&#34;&gt;Laravelのrouteメソッド&lt;/h2&gt;
-
-&lt;p&gt;URLのレンダリングはLaravelの&lt;code&gt;route&lt;/code&gt;メソッドを使っています。
-この機能は結構気に入っている。後でURLを変えたいって時にある程度コストを軽減してくれる（んじゃないか）と思っているから。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://laravel.com/docs/5.1/routing#named-routes&#34;&gt;HTTP Routing - Laravel - The PHP Framework For Web Artisans&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;でも今回はこのメソッドが&lt;strong&gt;HTTPのURLをレンダリングした&lt;/strong&gt;せいで問題が起こりました。&lt;/p&gt;
-
-&lt;h2 id=&#34;laravelでhttpsのurlを取り扱う:56aef34fa740ed018dee02e37b63f347&#34;&gt;LaravelでHTTPSのURLを取り扱う&lt;/h2&gt;
-
-&lt;p&gt;LaravelのRoutingはこんな感じなんだけど、こう記述すれば&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;Route::get(&#39;/&#39;, [&#39;as&#39; =&amp;gt; &#39;home&#39;, function() { return view(&#39;home.index&#39;); }]);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;HTTPSのみを許容することも出来るらしい。さらには&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;Route::get(&#39;/&#39;, [&#39;https&#39;, &#39;as&#39; =&amp;gt; &#39;home&#39;, function() { return view(&#39;home.index&#39;); }]);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;こうしておけば&lt;code&gt;route&lt;/code&gt;メソッドでレンダリングされるURLもHTTPSになる。&lt;/p&gt;
-
-&lt;h2 id=&#34;そして問題が起きる:56aef34fa740ed018dee02e37b63f347&#34;&gt;そして問題が起きる&lt;/h2&gt;
-
-&lt;p&gt;先ほどの通り、LaravelでHTTPSの設定をすると&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;HTTPSのみを受け付ける&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;route&lt;/code&gt;メソッドがHTTPSのURLのをレンダリングする&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;事になります。&lt;/p&gt;
-
-&lt;p&gt;今回ELBの奥にあるLaravelが載ったインスタンスはnginxが80ポートを待ち受けています。
-なのでHTTPSだけを許容されると困るんですね、443で通信しなきゃいけない。&lt;/p&gt;
-
-&lt;h2 id=&#34;解決策:56aef34fa740ed018dee02e37b63f347&#34;&gt;解決策&lt;/h2&gt;
-
-&lt;p&gt;わがままを言えば&lt;strong&gt;LaravelがHTTPを受け付けて&lt;code&gt;route&lt;/code&gt;メソッドがHTTPSのURLをレンダリングする&lt;/strong&gt;と嬉しい。
-けどその方法は見つからず（構成としてナンセンスなんだろう）、ELBとLaravelが載ったインスタンスの両方にSSL証明書を設置することにしました。&lt;/p&gt;
-
-&lt;p&gt;というわけでこういう形。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;CLIENT -&amp;gt; ELB(80 or 443) -&amp;gt; WEB(443)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;めでたしめでたし。&lt;/p&gt;
 </description>
     </item>
     

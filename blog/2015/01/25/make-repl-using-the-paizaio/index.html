@@ -7,27 +7,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
-    <meta property="og:title" content="paiza.IOのAPIを使ってreplを作る" />
-<meta property="og:description" content="paizaが面白いAPIを公開してたから、そのうち使ってみたいと思ってたんだよね。 ブラウザでプログラミング・実行ができる「オンライン実行環境" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/" />
-
-
-<meta property="og:updated_time" content="2015-01-25T00:58:15&#43;09:00"/>
-
-
-
-
-
-
-
-
-
-
-
     <title>paiza.IOのAPIを使ってreplを作る - Unresolved</title>
 
-    <link rel="canonical" href="http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/" />
+    <link rel="canonical" href="http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
     
@@ -421,12 +403,20 @@ div.site {
 }
 
 nav.page {
+  position: relative;
   margin-bottom: 2rem;
+  min-height: 1rem;
 }
 
 nav.page a {
+  position: absolute;
+  display: inline-block;
   font-size: .8rem;
   font-weight: 700;
+}
+
+nav.page a.next {
+  right: 0;
 }
 </style>
 

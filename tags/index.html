@@ -7,26 +7,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
-    <meta property="og:title" content="Tags" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://yet.unresolved.xyz/tags/" />
-
-
-
-
-
-
-
-
-
-
-
-
-
     <title>Tags - Unresolved</title>
 
-    <link rel="canonical" href="http://yet.unresolved.xyz/tags/" />
+    <link rel="canonical" href="http://yet.unresolved.xyz/tags/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
     
@@ -384,12 +367,20 @@ div.site {
 }
 
 nav.page {
+  position: relative;
   margin-bottom: 2rem;
+  min-height: 1rem;
 }
 
 nav.page a {
+  position: absolute;
+  display: inline-block;
   font-size: .8rem;
   font-weight: 700;
+}
+
+nav.page a.next {
+  right: 0;
 }
 </style>
 
@@ -424,6 +415,8 @@ nav.page a {
   <header class="page-title">Tags</header>
 
   <div class="site">
+    
+    <a href="/tags/amp/">amp</a>
     
     <a href="/tags/ansible/">ansible</a>
     
@@ -480,6 +473,8 @@ nav.page a {
     <a href="/tags/github/">github</a>
     
     <a href="/tags/golang/">golang</a>
+    
+    <a href="/tags/google/">google</a>
     
     <a href="/tags/google-app-engine/">google-app-engine</a>
     

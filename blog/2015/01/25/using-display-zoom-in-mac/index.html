@@ -7,27 +7,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
-    <meta property="og:title" content="Macで画面の一部をズームする" />
-<meta property="og:description" content="Macを操作しながらプレゼンする人って、たまに画面の一部だけをズームしたりするよね。 あれどうやるのか気になってたんだけど、標準の機能で出来る" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/01/25/using-display-zoom-in-mac/" />
-
-
-<meta property="og:updated_time" content="2015-01-25T23:02:59&#43;09:00"/>
-
-
-
-
-
-
-
-
-
-
-
     <title>Macで画面の一部をズームする - Unresolved</title>
 
-    <link rel="canonical" href="http://yet.unresolved.xyz/blog/2015/01/25/using-display-zoom-in-mac/" />
+    <link rel="canonical" href="http://yet.unresolved.xyz/blog/2015/01/25/using-display-zoom-in-mac/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
     
@@ -421,12 +403,20 @@ div.site {
 }
 
 nav.page {
+  position: relative;
   margin-bottom: 2rem;
+  min-height: 1rem;
 }
 
 nav.page a {
+  position: absolute;
+  display: inline-block;
   font-size: .8rem;
   font-weight: 700;
+}
+
+nav.page a.next {
+  right: 0;
 }
 </style>
 

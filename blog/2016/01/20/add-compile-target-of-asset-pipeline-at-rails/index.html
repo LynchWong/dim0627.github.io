@@ -7,27 +7,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
-    <meta property="og:title" content="Asset Pipelineのコンパイル対象を追加する" />
-<meta property="og:description" content="デフォルトだとapplication.cssとかじゃないですか。 でも例えば管理画面を作ったりとかでごっそりデザインの違うページを作るときに少" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/" />
-
-
-<meta property="og:updated_time" content="2016-01-20T16:15:58&#43;09:00"/>
-
-
-
-
-
-
-
-
-
-
-
     <title>Asset Pipelineのコンパイル対象を追加する - Unresolved</title>
 
-    <link rel="canonical" href="http://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/" />
+    <link rel="canonical" href="http://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
     
@@ -421,12 +403,20 @@ div.site {
 }
 
 nav.page {
+  position: relative;
   margin-bottom: 2rem;
+  min-height: 1rem;
 }
 
 nav.page a {
+  position: absolute;
+  display: inline-block;
   font-size: .8rem;
   font-weight: 700;
+}
+
+nav.page a.next {
+  right: 0;
 }
 </style>
 

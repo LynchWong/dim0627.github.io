@@ -7,27 +7,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
-    <meta property="og:title" content="やはり僕のバーティカルリズムは間違っている" />
-<meta property="og:description" content="まずこれを見ていただきたい。 2016年3月現在の僕のブログのデザイン。 line-heightを意識しているのでブロック自体はバーティカルリズ" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://yet.unresolved.xyz/blog/2016/03/02/i-misunderstood-vertical-rhythm/" />
-
-
-<meta property="og:updated_time" content="2016-03-02T09:55:16&#43;09:00"/>
-
-
-
-
-
-
-
-
-
-
-
     <title>やはり僕のバーティカルリズムは間違っている - Unresolved</title>
 
-    <link rel="canonical" href="http://yet.unresolved.xyz/blog/2016/03/02/i-misunderstood-vertical-rhythm/" />
+    <link rel="canonical" href="http://yet.unresolved.xyz/blog/2016/03/02/i-misunderstood-vertical-rhythm/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
     
@@ -421,12 +403,20 @@ div.site {
 }
 
 nav.page {
+  position: relative;
   margin-bottom: 2rem;
+  min-height: 1rem;
 }
 
 nav.page a {
+  position: absolute;
+  display: inline-block;
   font-size: .8rem;
   font-weight: 700;
+}
+
+nav.page a.next {
+  right: 0;
 }
 </style>
 

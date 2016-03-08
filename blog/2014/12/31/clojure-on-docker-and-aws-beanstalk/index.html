@@ -7,27 +7,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
-    <meta property="og:title" content="ClojureのWebアプリをDocker &#43; Beanstalkで動かす" />
-<meta property="og:description" content="たぶんこういうのはドキュメント読んでもわからないので、とにかく一通りの流れを実践してみる。 Imageの取得 面倒なのでDocker HubからC" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/" />
-
-
-<meta property="og:updated_time" content="2014-12-31T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
-
     <title>ClojureのWebアプリをDocker &#43; Beanstalkで動かす - Unresolved</title>
 
-    <link rel="canonical" href="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/" />
+    <link rel="canonical" href="http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
     
@@ -421,12 +403,20 @@ div.site {
 }
 
 nav.page {
+  position: relative;
   margin-bottom: 2rem;
+  min-height: 1rem;
 }
 
 nav.page a {
+  position: absolute;
+  display: inline-block;
   font-size: .8rem;
   font-weight: 700;
+}
+
+nav.page a.next {
+  right: 0;
 }
 </style>
 

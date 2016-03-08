@@ -7,27 +7,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
-    <meta property="og:title" content="Hugo0.15でSummaryが日本語に対応するっぽい" />
-<meta property="og:description" content="会社のMacにもHugoをセットアップしてあるんだけど、テーマの編集とかの続きを家でやろうとしたら.Summaryが異なる挙動をしてることに" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/10/09/hugo-support-cjk-language/" />
-
-
-<meta property="og:updated_time" content="2015-10-09T22:15:51&#43;09:00"/>
-
-
-
-
-
-
-
-
-
-
-
     <title>Hugo0.15でSummaryが日本語に対応するっぽい - Unresolved</title>
 
-    <link rel="canonical" href="http://yet.unresolved.xyz/blog/2015/10/09/hugo-support-cjk-language/" />
+    <link rel="canonical" href="http://yet.unresolved.xyz/blog/2015/10/09/hugo-support-cjk-language/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
     
@@ -421,12 +403,20 @@ div.site {
 }
 
 nav.page {
+  position: relative;
   margin-bottom: 2rem;
+  min-height: 1rem;
 }
 
 nav.page a {
+  position: absolute;
+  display: inline-block;
   font-size: .8rem;
   font-weight: 700;
+}
+
+nav.page a.next {
+  right: 0;
 }
 </style>
 

@@ -7,27 +7,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
-    <meta property="og:title" content="text-rendering: optimizeLegibility;を指定するとWebフォントの読み込みがおかしくなる" />
-<meta property="og:description" content="よくやるこれ。 body { text-rendering: optimizeLegibility; } -webkit-font-smoothing: antialiasedと一緒に設定したりするやつ。 僕は最近、太い文字がマイブームなのでこっちの設定は外したりしてま" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://yet.unresolved.xyz/blog/2016/03/01/text-rendering-optimizelegibility-and-web-fonts/" />
-
-
-<meta property="og:updated_time" content="2016-03-01T14:08:26&#43;09:00"/>
-
-
-
-
-
-
-
-
-
-
-
     <title>text-rendering: optimizeLegibility;を指定するとWebフォントの読み込みがおかしくなる - Unresolved</title>
 
-    <link rel="canonical" href="http://yet.unresolved.xyz/blog/2016/03/01/text-rendering-optimizelegibility-and-web-fonts/" />
+    <link rel="canonical" href="http://yet.unresolved.xyz/blog/2016/03/01/text-rendering-optimizelegibility-and-web-fonts/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
     
@@ -421,12 +403,20 @@ div.site {
 }
 
 nav.page {
+  position: relative;
   margin-bottom: 2rem;
+  min-height: 1rem;
 }
 
 nav.page a {
+  position: absolute;
+  display: inline-block;
   font-size: .8rem;
   font-weight: 700;
+}
+
+nav.page a.next {
+  right: 0;
 }
 </style>
 

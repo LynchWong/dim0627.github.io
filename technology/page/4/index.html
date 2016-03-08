@@ -7,26 +7,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
-    <meta property="og:title" content="Technologies" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://yet.unresolved.xyz/technology/" />
-
-
-<meta property="og:updated_time" content="2015-02-05T21:36:25&#43;09:00"/>
-
-
-
-
-
-
-
-
-
-
     <title>Technologies - Unresolved</title>
 
-    <link rel="canonical" href="http://yet.unresolved.xyz/technology/" />
+    <link rel="canonical" href="http://yet.unresolved.xyz/technology/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
     
@@ -384,12 +367,20 @@ div.site {
 }
 
 nav.page {
+  position: relative;
   margin-bottom: 2rem;
+  min-height: 1rem;
 }
 
 nav.page a {
+  position: absolute;
+  display: inline-block;
   font-size: .8rem;
   font-weight: 700;
+}
+
+nav.page a.next {
+  right: 0;
 }
 </style>
 
@@ -424,6 +415,18 @@ nav.page a {
   <header class="page-title">Technologies</header>
 
   <div class="site">
+    
+    <article class="li">
+  <a href="http://yet.unresolved.xyz/blog/2015/02/06/learning-vim-again/">
+    <header>
+      <div class="date">Fri, Feb 6, 2015</div>
+      <div class="title">今だからやるvimコマンド再学習</div>
+    </header>
+
+    <div class="summary">ちょうど1年ほど前からvimを使ってるんだけど、例に漏れず僕も使い始めの頃にこのサイトを参考にさせて頂きました。 僕がサクラエディタからVim...</div>
+  </a>
+</article>
+
     
     <article class="li">
   <a href="http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/">
@@ -533,26 +536,12 @@ nav.page a {
 </article>
 
     
-    <article class="li">
-  <a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">
-    <header>
-      <div class="date">Sun, Jan 4, 2015</div>
-      <div class="title">ブログをOctopressからHugoに移行した</div>
-    </header>
-
-    <div class="summary">Octopressでのブログもずいぶん慣れてきたところでHugoに移行しました。 一晩徹夜して、カスタマイズからGitHub Pagesでの公開...</div>
-  </a>
-</article>
-
-    
   </div>
 
   
 <nav class="page">
-  <div class="row">
-    <div class="col-xs-6 text-left"><a href="/technology/page/3">PREV</a></div>
-    <div class="col-xs-6 text-right"><a href="/technology/page/5">NEXT</a></div>
-  </div>
+  <a href="/technology/page/3" class="prev">PREV</a>
+  <a href="/technology/page/5" class="next">NEXT</a>
 </nav>
 
 

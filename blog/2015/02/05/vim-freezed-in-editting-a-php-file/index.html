@@ -7,27 +7,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
-    <meta property="og:title" content="PHPファイルの定数に触るとvimがフリーズする" />
-<meta property="og:description" content="neocomplcacheのこの設定が甘かった。 let g:neocomplcache_omni_patterns.php = &#39;[^. \t]-&gt;\h\w*\|\h\w*::&#39; 参考になったのはこの記事。 vim-jp » Hack #193: neocomplcacheの設定について知る 後編" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/" />
-
-
-<meta property="og:updated_time" content="2015-02-05T21:36:25&#43;09:00"/>
-
-
-
-
-
-
-
-
-
-
-
     <title>PHPファイルの定数に触るとvimがフリーズする - Unresolved</title>
 
-    <link rel="canonical" href="http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/" />
+    <link rel="canonical" href="http://yet.unresolved.xyz/blog/2015/02/05/vim-freezed-in-editting-a-php-file/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
     
@@ -421,12 +403,20 @@ div.site {
 }
 
 nav.page {
+  position: relative;
   margin-bottom: 2rem;
+  min-height: 1rem;
 }
 
 nav.page a {
+  position: absolute;
+  display: inline-block;
   font-size: .8rem;
   font-weight: 700;
+}
+
+nav.page a.next {
+  right: 0;
 }
 </style>
 

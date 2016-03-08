@@ -7,26 +7,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
-    <meta property="og:title" content="Clojure" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://yet.unresolved.xyz/tags/clojure/" />
-
-
-<meta property="og:updated_time" content="2014-12-09T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
     <title>Clojure - Unresolved</title>
 
-    <link rel="canonical" href="http://yet.unresolved.xyz/tags/clojure/" />
+    <link rel="canonical" href="http://yet.unresolved.xyz/tags/clojure/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
     
@@ -384,12 +367,20 @@ div.site {
 }
 
 nav.page {
+  position: relative;
   margin-bottom: 2rem;
+  min-height: 1rem;
 }
 
 nav.page a {
+  position: absolute;
+  display: inline-block;
   font-size: .8rem;
   font-weight: 700;
+}
+
+nav.page a.next {
+  right: 0;
 }
 </style>
 
@@ -441,10 +432,8 @@ nav.page a {
 
   
 <nav class="page">
-  <div class="row">
-    <div class="col-xs-6 text-left"><a href="/tags/clojure/page/1">PREV</a></div>
-    <div class="col-xs-6 text-right"></div>
-  </div>
+  <a href="/tags/clojure/page/1" class="prev">PREV</a>
+  
 </nav>
 
 

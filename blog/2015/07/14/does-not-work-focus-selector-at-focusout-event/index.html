@@ -7,27 +7,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
-    <meta property="og:title" content="focusoutイベントでfocus中の要素が取得できない" />
-<meta property="og:description" content="何を血迷ったかサジェストを自作しようとしてしまってつらい目にあった話。 フォーカスアウトしたらサジェストを消したい 入力欄もしくはサジェストから" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/" />
-
-
-<meta property="og:updated_time" content="2015-07-14T00:05:16&#43;09:00"/>
-
-
-
-
-
-
-
-
-
-
-
     <title>focusoutイベントでfocus中の要素が取得できない - Unresolved</title>
 
-    <link rel="canonical" href="http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/" />
+    <link rel="canonical" href="http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
     
@@ -421,12 +403,20 @@ div.site {
 }
 
 nav.page {
+  position: relative;
   margin-bottom: 2rem;
+  min-height: 1rem;
 }
 
 nav.page a {
+  position: absolute;
+  display: inline-block;
   font-size: .8rem;
   font-weight: 700;
+}
+
+nav.page a.next {
+  right: 0;
 }
 </style>
 

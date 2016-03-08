@@ -7,26 +7,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://yet.unresolved.xyz/index.xml">
 
-    <meta property="og:title" content="Unresolved" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://yet.unresolved.xyz/" />
-
-
-<meta property="og:updated_time" content="2015-01-25T20:52:46&#43;09:00"/>
-
-
-
-
-
-
-
-
-
-
     <title>Unresolved</title>
 
-    <link rel="canonical" href="http://yet.unresolved.xyz/" />
+    <link rel="canonical" href="http://yet.unresolved.xyz/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
     
@@ -384,12 +367,20 @@ div.site {
 }
 
 nav.page {
+  position: relative;
   margin-bottom: 2rem;
+  min-height: 1rem;
 }
 
 nav.page a {
+  position: absolute;
+  display: inline-block;
   font-size: .8rem;
   font-weight: 700;
+}
+
+nav.page a.next {
+  right: 0;
 }
 </style>
 
@@ -422,6 +413,18 @@ nav.page a {
 <div class="index">
 
   <div class="site">
+    
+    <article class="li">
+  <a href="http://yet.unresolved.xyz/blog/2015/01/25/using-display-zoom-in-mac/">
+    <header>
+      <div class="date">Sun, Jan 25, 2015</div>
+      <div class="title">Macで画面の一部をズームする</div>
+    </header>
+
+    <div class="summary">Macを操作しながらプレゼンする人って、たまに画面の一部だけをズームしたりするよね。 あれどうやるのか気になってたんだけど、標準の機能で出来る...</div>
+  </a>
+</article>
+
     
     <article class="li">
   <a href="http://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/">
@@ -531,26 +534,12 @@ nav.page a {
 </article>
 
     
-    <article class="li">
-  <a href="http://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/">
-    <header>
-      <div class="date">Tue, Dec 30, 2014</div>
-      <div class="title">boot2dockerでCannot connect to the Docker daemon</div>
-    </header>
-
-    <div class="summary">これまでは普通に手で作ったVMのUbuntu上でDockerを触ってたんだけど、なんかあれだしboot2dockerに移行しようかと。 いろい...</div>
-  </a>
-</article>
-
-    
   </div>
 
   
 <nav class="page">
-  <div class="row">
-    <div class="col-xs-6 text-left"><a href="/page/4">PREV</a></div>
-    <div class="col-xs-6 text-right"><a href="/page/6">NEXT</a></div>
-  </div>
+  <a href="/page/4" class="prev">PREV</a>
+  <a href="/page/6" class="next">NEXT</a>
 </nav>
 
 
