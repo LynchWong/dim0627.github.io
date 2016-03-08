@@ -100,7 +100,7 @@ AMP用のタグが用意されているので、それに置き換える必要�
 </style>
 ```
 
-この`<style amp-custom>`タグは1ページに1個までとの制約があるようで、`:not()`など、禁止されている機能もあるようです。
+この`<style amp-custom>`タグは1ページに1個までとの制約があったり、`:not()`など、禁止されている機能もあるようです。
 
 [How to Style Your Pages#disallowed-styles](https://www.ampproject.org/docs/guides/responsive/style_pages.html#disallowed-styles)
 
