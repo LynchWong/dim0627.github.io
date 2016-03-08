@@ -11,11 +11,11 @@ title: 'Googleの構造化データの扱いが変わった気がする'
 
 エラーは2種類発生していて、ひとつめがこれ。
 
-[<img src="/images/2015-12-11/error1.png" alt="error">](/images/2015-12-11/error1.png)
+{{% img src="/images/2015-12-11/error1.png" alt="error" w="1026" h="314" %}}
 
 もうひとつがこれ。
 
-[<img src="/images/2015-12-11/error2.png" alt="error">](/images/2015-12-11/error2.png)
+{{% img src="/images/2015-12-11/error2.png" alt="error" w="826" h="368" %}}
 
 あれ？`author`はもともと必須だっけ？
 

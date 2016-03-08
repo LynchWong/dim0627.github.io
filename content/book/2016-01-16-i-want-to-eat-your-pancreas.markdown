@@ -9,7 +9,7 @@ title: "「君の膵臓をたべたい」を読んだ"
 
 タイトルから猟奇的な作品なんですかねと思ってたんだけど、全然そんなことはなかった。
 
-<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/4575239054/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4575239054&linkCode=as2&tag=unresolved-22">君の膵臓をたべたい</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=4575239054" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;display: none;" />
+<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/4575239054/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4575239054&linkCode=as2&tag=unresolved-22">君の膵臓をたべたい</a>
 
 ## 呼び方で表現する難しいニュアンス
 
@@ -40,7 +40,7 @@ title: "「君の膵臓をたべたい」を読んだ"
 
 人間誰もが経験する人間関係の面倒臭さとその回避策、そこからしっかりとぬけ出す春樹の変化（≠成長）が何故かステイク・ランドを思い出させた。
 
-<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/B0053I0A72/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B0053I0A72&linkCode=as2&tag=unresolved-22">ステイク・ランド 戦いの旅路 [DVD]</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=B0053I0A72" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;display: none;" />
+<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/B0053I0A72/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B0053I0A72&linkCode=as2&tag=unresolved-22">ステイク・ランド 戦いの旅路 [DVD]</a>
 
 全然違うけど。ゾンビ映画だけど。
 これを見た時は「なんだよ！超つええおっさんがゾンビ殺しまくる奴じゃないのかよ！」って落胆したなあ。今思えばいい作品だった。
@@ -70,5 +70,5 @@ title: "「君の膵臓をたべたい」を読んだ"
 人間難しく考え過ぎると疲れちゃうから、良い方向に幸せな方向に考えてみることも必要なのかなと。
 高校生らしい、幼さありきの素直な考えっていうのが少し新鮮に感じた。
 
-<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/4575239054/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4575239054&linkCode=as2&tag=unresolved-22">君の膵臓をたべたい</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=4575239054" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;display: none;" />
+<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/4575239054/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4575239054&linkCode=as2&tag=unresolved-22">君の膵臓をたべたい</a>
 

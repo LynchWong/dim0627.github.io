@@ -64,7 +64,7 @@ b2d$  boot2docker ip
 
 このIPの3000ポートに向けてアクセスすれば、
 
-[<img src="/images/2015-01-01/webapp.png" alt="webapp">](/images/2015-01-01/webapp.png)
+{{% img src="/images/2014-12-31/webapp.png" alt="webapp" w="672" h="465" %}}
 
 見れます。
 
@@ -139,7 +139,7 @@ superapp$ java -jar target/production.jar
 13:33:07.710 [main] INFO  superapp.main - serving status message
 ```
 
-[<img src="/images/2015-01-01/beanstalkDockerApp.png" alt="beanstalkDockerApp">](/images/2015-01-01/beanstalkDockerApp.png)
+{{% img src="/images/2014-12-31/beanstalkDockerApp.png" alt="beanstalkDockerApp" w="599" h="420" %}}
 
 ### デプロイ
 
@@ -152,18 +152,15 @@ superapp$ java -jar target/production.jar
 
 デプロイはこんな感じで成功。
 
-[<img src="/images/2015-01-01/deploy.png" alt="deploy">](/images/2015-01-01/deploy.png)
+{{% img src="/images/2014-12-31/deploy.png" alt="deploy" w="1180" h="559" %}}
 
 しかしデプロイは結構時間かかるなー。
 Javaの起動とかライブラリのダウンロードで食ってるのかな・・・。
 
 ## 参考にさせて頂きました
 
-[Dockerを勉強するための、Docker解説記事のまとめ](http://wslash.com/?p=5584)
-
-[これから始める「DockerでかんたんLAMP環境 for CentOS」](http://knowledge.sakura.ad.jp/tech/1811/)
-
-[CLOJURE WEBSOCKET SERVER ON ELASTIC BEANSTALK](http://nudaygames.squarespace.com/blog/2014/12/13/clojure-websocket-server-on-elastic-beanstalk)
-
-[Dockerfile の書き方「私的」なベストプラクティス（3）〜サービスの起動について〜](http://inokara.hateblo.jp/entry/2013/12/29/215322)
+* [Dockerを勉強するための、Docker解説記事のまとめ](http://wslash.com/?p=5584)
+* [これから始める「DockerでかんたんLAMP環境 for CentOS」](http://knowledge.sakura.ad.jp/tech/1811/)
+* [CLOJURE WEBSOCKET SERVER ON ELASTIC BEANSTALK](http://nudaygames.squarespace.com/blog/2014/12/13/clojure-websocket-server-on-elastic-beanstalk)
+* [Dockerfile の書き方「私的」なベストプラクティス（3）〜サービスの起動について〜](http://inokara.hateblo.jp/entry/2013/12/29/215322)
 

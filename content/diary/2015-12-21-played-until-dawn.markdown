@@ -13,7 +13,7 @@ image: "until-dawn.png"
 本当に冗談抜きで映画みたいだった、参加型の映画みたいな。
 
 
-<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/B00YGXGVNW/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B00YGXGVNW&linkCode=as2&tag=unresolved-22">Until Dawn -惨劇の山荘-</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=B00YGXGVNW" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;display: none;" />
+<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/B00YGXGVNW/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B00YGXGVNW&linkCode=as2&tag=unresolved-22">Until Dawn -惨劇の山荘-</a>
 
 ## 推測したくなるストーリー
 
@@ -68,5 +68,5 @@ Bloodborneはキャラを作り直してる。千景用に血質と技術にス�
 
 今日はFallout4とGRAVITY DAZEを買って帰ろう。
 
-<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/B00YGXGVNW/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B00YGXGVNW&linkCode=as2&tag=unresolved-22">Until Dawn -惨劇の山荘-</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=B00YGXGVNW" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;display: none;" />
+<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/B00YGXGVNW/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B00YGXGVNW&linkCode=as2&tag=unresolved-22">Until Dawn -惨劇の山荘-</a>
 

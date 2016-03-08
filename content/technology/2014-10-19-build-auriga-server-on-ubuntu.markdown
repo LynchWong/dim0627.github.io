@@ -125,7 +125,7 @@ CFLAGS += -DNO_HTTPD
 
 というわけで、
 
-[<img src="/images/2014-10-19/httpd.png" alt=" httpd">](/images/2014-10-19/httpd.png)
+{{% img src="/images/2014-10-19/httpd.png" alt="httpd" w="468" h="652" %}}
 
 出来ました。
 

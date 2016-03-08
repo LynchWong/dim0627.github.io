@@ -16,7 +16,7 @@ MySQLの設定を変えなきゃいけないと思い込んでいて、RDSを使
 
 でもRDSもMySQLの設定は変えられるらしい。そりゃそうか。
 
-[<img src="/images/2016-02-04/params.png" alt="params">](/images/2016-02-04/params.png)
+{{% img src="/images/2016-02-04/params.png" alt="params" w="974" h="496" %}}
 
 これで直りました。
 

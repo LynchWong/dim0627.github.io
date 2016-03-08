@@ -12,7 +12,7 @@ title: "「教養としての日本近現代史」を読んだ"
 もちろんニュースとかそういうので得られる知識もあると思うけど、
 そういう前提になってる知識とかも知っておきたいなあと思ったので、本書を読んでみることに。
 
-<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/4396615485/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4396615485&linkCode=as2&tag=unresolved-22">ニュースがよくわかる教養としての日本近現代史</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=4396615485" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;display: none;" />
+<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/4396615485/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4396615485&linkCode=as2&tag=unresolved-22">ニュースがよくわかる教養としての日本近現代史</a>
 
 ## 事実を列挙するだけじゃない
 
@@ -102,8 +102,5 @@ title: "「教養としての日本近現代史」を読んだ"
 
 もちろん僕はまだまだ無知で知るべきことはたくさんあるんだけど、これから知っていこうという気持ちを持てたのは本書のおかげだと思う。
 
-
-
-
-<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/4396615485/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4396615485&linkCode=as2&tag=unresolved-22">ニュースがよくわかる教養としての日本近現代史</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=4396615485" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;display: none;" />
+<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/4396615485/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4396615485&linkCode=as2&tag=unresolved-22">ニュースがよくわかる教養としての日本近現代史</a>
 

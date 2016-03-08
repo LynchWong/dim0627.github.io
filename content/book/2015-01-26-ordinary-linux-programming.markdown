@@ -6,7 +6,7 @@ title: "「ふつうのLinuxプログラミング」を読んだ"
 toc: true
 ---
 
-<a href="http://www.amazon.co.jp/gp/product/4797328355/ref=as_li_tf_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4797328355&linkCode=as2&tag=unresolved-22">ふつうのLinuxプログラミング Linuxの仕組みから学べるgccプログラミングの王道</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=4797328355" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important; display: none;width:0;" />
+<a href="http://www.amazon.co.jp/gp/product/4797328355/ref=as_li_tf_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4797328355&linkCode=as2&tag=unresolved-22">ふつうのLinuxプログラミング Linuxの仕組みから学べるgccプログラミングの王道</a>
 
 ## 読もうと思ったきっかけ
 
@@ -129,4 +129,4 @@ C言語のAPIについては結構がっつり書かれてて、正直読みな�
 
 分野に分けておすすめの本を紹介されてるので、これは今後読んでいく予定。
 
-<a href="http://www.amazon.co.jp/gp/product/4797328355/ref=as_li_tf_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4797328355&linkCode=as2&tag=unresolved-22">ふつうのLinuxプログラミング Linuxの仕組みから学べるgccプログラミングの王道</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=4797328355" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important; display: none;width:0;" />
+<a href="http://www.amazon.co.jp/gp/product/4797328355/ref=as_li_tf_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4797328355&linkCode=as2&tag=unresolved-22">ふつうのLinuxプログラミング Linuxの仕組みから学べるgccプログラミングの王道</a>

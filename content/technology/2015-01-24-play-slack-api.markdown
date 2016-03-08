@@ -5,27 +5,16 @@ tags: ["heroku", "slack"]
 title: "SlackAPIで遊ぶ"
 ---
 
-最近
-<a href="http://www.amazon.co.jp/gp/product/4797328355/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4797328355&linkCode=as2&tag=unresolved-22">ふつうのLinuxプログラミング</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=4797328355" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important; display:inline;width:0;" />を読んでます。知りたいことが書かれてて楽しい！
-
-でもずっと本読むのは飽きるよね。なのでSlackのAPIとか触ってみる。
-
-## SlackAPIの種類
-
-SlackのAPIはいくつか種類があるんだね、トリガになるパターンが違うのかな？
-
-2015年01月24日時点でのAPIをまとめてみる。
+SlackのAPIはいくつか種類があるらしい。それぞれトリガとかが変わるっぽい。
 
 ### [Slack Web API](https://api.slack.com/web)
 
 指定したチャンネルの履歴とかユーザの一覧とか、Slackの情報を取得出来る。
-
 Web APIなので、URLベースでの取得。
 
 ### [Real Time Messaging API](https://api.slack.com/rtm)
 
 Web Socketベースのリアルタイムチャット機能を提供する？
-
 bot userがどうのこうのっていうのがよくわからない。
 
 ### [Slackbot Remote Control](https://api.slack.com/slackbot)
@@ -43,8 +32,7 @@ SlackBotに喋らせたり出来る。ちょうかわいい。
 ### [Slash Commands](https://api.slack.com/slash-commands)
 
 指定したスラッシュで始まる単語に応じてURLを叩けて、レスポンスがそのまま投稿される。
-
-今回は発言のタイミングで発火する[Slash Commands](https://api.slack.com/slash-commands)を使ってみようかな！
+今回は発言のタイミングで発火する[Slash Commands](https://api.slack.com/slash-commands)を使ってみよう。
 
 ## スラッシュコマンドの追加
 
@@ -52,28 +40,25 @@ SlackBotに喋らせたり出来る。ちょうかわいい。
 
 [https://my.slack.com/services/new/slash-commands](https://my.slack.com/services/new/slash-commands)
 
-[<img src="/images/2015-01-25/new_command.png" alt="new_command">](/images/2015-01-25/new_command.png)
+{{% img src="/images/2015-01-25/new_command.png" alt="new_command" w="984" h="523" %}}
 
 herokuでさくっとHello World作って試してみようかな。
 
-[<img src="/images/2015-01-25/command_test.png" alt="command_test">](/images/2015-01-25/command_test.png)
+{{% img src="/images/2015-01-25/command_test.png" alt="command_test" w="391" h="115" %}}
 
-おお、出るじゃん！でも`Only you can see this message`って出てる、僕しか見れないんだね。
+おお、出るじゃん！でも`Only you can see this message`って出てる、僕しか見れないっぽい。
 
 ## REPLを作ろう
 
-なんかSlack上でプログラム打つと実行結果が返ってくるみたいなやつ誰かが作ってたよね？
-あれ調べても出ないんだけどなんでなんだろう。
-
+なんかSlack上でプログラム打つと実行結果が返ってくるみたいなやつ誰かが作ってた気がするんだけど気のせいかもしれない。
 まあとりあえず、作ったばっかの[paiza.IO](https://paiza.io/)のAPIを叩くあれを導入してみる。
 
 [paiza.ioのAPIを使ってreplを作る | Unresolved](http://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/)
 
 スラッシュコマンドAPIは`/command args`って感じにやると、指定したURLに`text`ってパラメータ名で`args`が飛ばされるみたい。
+なので`/repl ruby:p "hello"`って感じで実行できるようにしよう。
 
-なので`/repl ruby:p "hello"`って感じで実行できるようにしようかな。
-
-[<img src="/images/2015-01-25/slack_repl.png" alt="slack_repl">](/images/2015-01-25/slack_repl.png)
+{{% img src="/images/2015-01-25/slack_repl.png" alt="slack_repl" w="977" h="463" %}}
 
 別にURL出してもいいんだけど・・・。
 
@@ -91,7 +76,7 @@ herokuでさくっとHello World作って試してみようかな。
 
 さっき書いた通り、`/repl ruby:p "hello"`でいけるかな。
 
-[<img src="/images/2015-01-25/slack_repl_run.png" alt="slack_repl_run">](/images/2015-01-25/slack_repl_run.png)
+{{% img src="/images/2015-01-25/slack_repl_run.png" alt="slack_repl_run" w="433" h="311" %}}
 
-Javaは少し面倒だね。
+Javaは少し面倒ですね。
 

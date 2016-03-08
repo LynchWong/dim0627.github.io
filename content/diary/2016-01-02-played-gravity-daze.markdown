@@ -6,7 +6,7 @@ title: "「GRAVITY DAZE」をやった"
 image: "gravity-daze.jpg"
 ---
 
-<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/B015DSR5SS/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B015DSR5SS&linkCode=as2&tag=unresolved-22">GRAVITY DAZE 重力的眩暈:上層への帰還において、彼女の内宇宙に生じた摂動</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=B015DSR5SS" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;display: none;" />
+<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/B015DSR5SS/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B015DSR5SS&linkCode=as2&tag=unresolved-22">GRAVITY DAZE 重力的眩暈:上層への帰還において、彼女の内宇宙に生じた摂動</a>
 
 dazeは「夢中」って意味らしいですね。「重力に夢中」って感じの意味でしょうか。サブタイトルの「眩暈」から察するに、「眩惑」とかそっちの意味かな。
 
@@ -103,5 +103,5 @@ Bloodborneは時計塔のマリアを倒したところ。こいつマジ強か�
 
 でもどうせゴース倒せないんだろうな。
 
-<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/B015DSR5SS/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B015DSR5SS&linkCode=as2&tag=unresolved-22">GRAVITY DAZE 重力的眩暈:上層への帰還において、彼女の内宇宙に生じた摂動</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=B015DSR5SS" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;display: none;" />
+<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/B015DSR5SS/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B015DSR5SS&linkCode=as2&tag=unresolved-22">GRAVITY DAZE 重力的眩暈:上層への帰還において、彼女の内宇宙に生じた摂動</a>
 

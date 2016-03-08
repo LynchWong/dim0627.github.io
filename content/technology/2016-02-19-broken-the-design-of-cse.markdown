@@ -5,7 +5,7 @@ tags: ['design', 'cse', 'google custom search engine']
 title: 'Googleカスタム検索のデザインが崩れる'
 ---
 
-[<img src="/images/2016-02-19/cse.png" alt="cse">](/images/2016-02-19/cse.png)
+{{% img src="/images/2016-02-19/cse.png" alt="cse" w="674" h="150" %}}
 
 ## なぜ崩れるのか
 

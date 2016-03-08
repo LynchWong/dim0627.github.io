@@ -5,7 +5,7 @@ tags: ["design"]
 title: "「インタフェースデザインの心理学 ―ウェブやアプリに新たな視点をもたらす100の指針」を読んだ"
 ---
 
-<a  href="http://www.amazon.co.jp/gp/product/4873115574/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4873115574&linkCode=as2&tag=unresolved-22">インタフェースデザインの心理学 ―ウェブやアプリに新たな視点をもたらす100の指針</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=4873115574" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;display: none;" />
+<a  href="http://www.amazon.co.jp/gp/product/4873115574/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4873115574&linkCode=as2&tag=unresolved-22">インタフェースデザインの心理学 ―ウェブやアプリに新たな視点をもたらす100の指針</a>
 
 表紙が簡素でおしゃれだけど、こう見えてオライリーの本。
 帯のコピーは「**人々の心を捉えるにはどうすればよいのか？**」。
@@ -13,7 +13,7 @@ title: "「インタフェースデザインの心理学 ―ウェブやアプ�
 
 ちなみにさっき気づいたけど、どうやら実践編も出版されているらしい。そのうち買うかも。
 
-<a  href="http://www.amazon.co.jp/gp/product/4873116082/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4873116082&linkCode=as2&tag=unresolved-22">インタフェースデザインの実践教室 ―優れたユーザビリティを実現するアイデアとテクニック</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=4873116082" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;display: none;" />
+<a  href="http://www.amazon.co.jp/gp/product/4873116082/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4873116082&linkCode=as2&tag=unresolved-22">インタフェースデザインの実践教室 ―優れたユーザビリティを実現するアイデアとテクニック</a>
 
 ## 読もうと思ったきっかけ
 
@@ -58,5 +58,5 @@ title: "「インタフェースデザインの心理学 ―ウェブやアプ�
 ちょうどいま、家にある本を必要な物以外捨てようと思ってるんだけど、この本は取っておくつもり。
 きっと何度も読み返す時が来ると思う。
 
-<a  href="http://www.amazon.co.jp/gp/product/4873115574/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4873115574&linkCode=as2&tag=unresolved-22">インタフェースデザインの心理学 ―ウェブやアプリに新たな視点をもたらす100の指針</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=4873115574" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;display: none;" />
+<a  href="http://www.amazon.co.jp/gp/product/4873115574/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4873115574&linkCode=as2&tag=unresolved-22">インタフェースデザインの心理学 ―ウェブやアプリに新たな視点をもたらす100の指針</a>
 

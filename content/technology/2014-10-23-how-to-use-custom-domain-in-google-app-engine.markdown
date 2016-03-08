@@ -16,11 +16,11 @@ tags: ["google app engine", "dns"]
 作業は[Developers Console](https://console.developers.google.com/)から行います。
 はじめにGoogleが、使いたいドメインが君のものか確認したいとのことなので、verifyへ。
 
-[<img src="/images/2014-10-23/verify.png" alt="verify">](/images/2014-10-23/verify.png)
+{{% img src="/images/2014-10-23/verify.png" alt="verify" w="911" h="741" %}}
 
 そうするとこんな画面になるので、
 
-[<img src="/images/2014-10-23/input_domain.png" alt="input_domain">](/images/2014-10-23/input_domain.png)
+{{% img src="/images/2014-10-23/input_domain.png" alt="input_domain" w="1359" h="594" %}}
 
 ここに表示されてるテキストを、ドメインを発行した会社さんのほうからTXTレコードとして追加すればOK。
 
@@ -34,7 +34,7 @@ TXTレコードの追加は、お名前.comであれば[ドメインNavi](http:/
 
 でここに入力すればOK。
 
-[<img src="/images/2014-10-23/input_txt.png" alt="input_txt">](/images/2014-10-23/input_txt.png)
+{{% img src="/images/2014-10-23/input_txt.png" alt="input_txt" w="972" h="415" %}}
 
 TYPEはTXTにしてVALUEにさっきのテキストを入力。
 場所にもよるけど少し待てば反映されるので、それまでGoogle側の画面で確認ボタンを何度か押してみる。
@@ -44,7 +44,7 @@ TYPEはTXTにしてVALUEにさっきのテキストを入力。
 
 確認が出来たらサブドメインとしてプレフィックスを付けるのかを決める。
 
-[<img src="/images/2014-10-23/step2.png" alt="step2">](/images/2014-10-23/step2.png)
+{{% img src="/images/2014-10-23/step2.png" alt="step2" w="827" h="291" %}}
 
 これによって最後のステップが変わるけど、僕は確認の時点でサブドメインとして設定したので、Google側では特に付加せずやってます。
 
@@ -53,7 +53,7 @@ TYPEはTXTにしてVALUEにさっきのテキストを入力。
 最後はまたDNSレコードの追加。
 ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。
 
-[<img src="/images/2014-10-23/step3.png" alt="step3">](/images/2014-10-23/step3.png)
+{{% img src="/images/2014-10-23/step3.png" alt="step3" w="823" h="313" %}}
 
 あとは待ってればそのうち反映されるはず。
 

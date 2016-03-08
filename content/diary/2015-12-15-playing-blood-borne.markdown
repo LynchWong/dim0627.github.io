@@ -10,7 +10,7 @@ image: "bloodborne.jpg"
 
 BloodborneのDLCが出たらしいですね、Old Huntersとかいう。これを機にBloodborneをちゃんとやってます。
 
-<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/B015DSR5HE/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B015DSR5HE&linkCode=as2&tag=unresolved-22">Bloodborne The Old Hunters Edition 初回限定版</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=B015DSR5HE" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;display: none;" />
+<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/B015DSR5HE/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B015DSR5HE&linkCode=as2&tag=unresolved-22">Bloodborne The Old Hunters Edition 初回限定版</a>
 
 そもそもなんで今さらなのかと言うと、僕がこれをやり始めたのは発売当時のロードが糞遅い頃で、あの遅さに耐えられなかったんですね。まあいまでもそんなに早くないけど。
 
@@ -64,6 +64,6 @@ BloodborneのDLCが出たらしいですね、Old Huntersとかいう。これ�
 
 一段落してないけどもう買っちゃおう。
 
-<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/B015DSR5HE/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B015DSR5HE&linkCode=as2&tag=unresolved-22">Bloodborne The Old Hunters Edition 初回限定版</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=B015DSR5HE" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;display: none;" />
+<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/B015DSR5HE/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B015DSR5HE&linkCode=as2&tag=unresolved-22">Bloodborne The Old Hunters Edition 初回限定版</a>
 
-<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/B015DSR5SS/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B015DSR5SS&linkCode=as2&tag=unresolved-22">GRAVITY DAZE 重力的眩暈:上層への帰還において、彼女の内宇宙に生じた摂動</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=B015DSR5SS" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;display: none;" />
+<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/B015DSR5SS/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B015DSR5SS&linkCode=as2&tag=unresolved-22">GRAVITY DAZE 重力的眩暈:上層への帰還において、彼女の内宇宙に生じた摂動</a>

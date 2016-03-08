@@ -64,7 +64,7 @@ B-Treeのイメージも、SQL Server上での実装が具体的にイメージ�
 
 誤った認識があればご指摘ください。
 
-<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/4873115892/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4873115892&linkCode=as2&tag=unresolved-22">SQLアンチパターン</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=4873115892" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;display: none;" />
+<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/4873115892/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4873115892&linkCode=as2&tag=unresolved-22">SQLアンチパターン</a>
 
-<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/4798115169/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4798115169&linkCode=as2&tag=unresolved-22">達人に学ぶ SQL徹底指南書 (CodeZine BOOKS)</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=unresolved-22&l=as2&o=9&a=4798115169" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;display: none;" />
+<a rel="nofollow" href="http://www.amazon.co.jp/gp/product/4798115169/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4798115169&linkCode=as2&tag=unresolved-22">達人に学ぶ SQL徹底指南書 (CodeZine BOOKS)</a>
 

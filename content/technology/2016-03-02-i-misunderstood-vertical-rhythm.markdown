@@ -7,7 +7,7 @@ title: "やはり僕のバーティカルリズムは間違っている"
 
 まずこれを見ていただきたい。
 
-[<img src="/images/2016-03-02/invalid.png" alt="invalid">](/images/2016-03-02/invalid.png)
+{{% img src="/images/2016-03-02/invalid.png" alt="invalid" w="1140" h="724" %}}
 
 2016年3月現在の僕のブログのデザイン。
 `line-height`を意識しているのでブロック自体はバーティカルリズムから外れていない。
@@ -26,7 +26,7 @@ title: "やはり僕のバーティカルリズムは間違っている"
 上記記事によれば、ベースラインを揃えるために`before`、`after`擬似要素を使ってブロックを押し広げることで実装すればいいとのこと。
 この記事に指導いただいて再実装してみよう。
 
-[<img src="/images/2016-03-02/valid.png" alt="invalid">](/images/2016-03-02/valid.png)
+{{% img src="/images/2016-03-02/valid.png" alt="valid" w="1130" h="784" %}}
 
 わかりやすさのために擬似要素に背景色をつけている。
 縦のグリッドが揃っていないことはスルーしてほしい。
@@ -47,3 +47,4 @@ title: "やはり僕のバーティカルリズムは間違っている"
 
 * [擬似要素を利用したベースライン・グリッド · terkel.jp](http://terkel.jp/archives/2014/11/baseline-grid-pseudo-elements/)
 * [terkel.jp/demo/baseline-grid.html](http://terkel.jp/demo/baseline-grid.html)
+
