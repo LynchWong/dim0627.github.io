@@ -92,7 +92,7 @@
 
 &lt;p&gt;&lt;a href=&#34;https://www.ampproject.org/docs/guides/amp_replacements.html#include-an-image&#34;&gt;Include Iframes and Media#include-an-image&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;横幅に応じて良きに計らってほしいのですが、僕はその記述をドキュメントから見つけられませんでした。&lt;/p&gt;
+&lt;p&gt;サイズを指定しなくても横幅に応じて良きに計らってほしいのですが、僕はその記述をドキュメントから見つけられませんでした。&lt;/p&gt;
 
 &lt;h3 id=&#34;スタイルシート:248155386e4621d756694486f44e789c&#34;&gt;スタイルシート&lt;/h3&gt;
 
