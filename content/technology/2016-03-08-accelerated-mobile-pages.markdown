@@ -81,7 +81,7 @@ AMP用のタグが用意されているので、それに置き換える必要�
 
 [Include Iframes and Media#include-an-image](https://www.ampproject.org/docs/guides/amp_replacements.html#include-an-image)
 
-横幅に応じて良きに計らってほしいのですが、僕はその記述をドキュメントから見つけられませんでした。
+サイズを指定しなくても横幅に応じて良きに計らってほしいのですが、僕はその記述をドキュメントから見つけられませんでした。
 
 ### スタイルシート
 
