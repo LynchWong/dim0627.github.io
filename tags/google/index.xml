@@ -110,7 +110,7 @@
 &amp;lt;/style&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;この&lt;code&gt;&amp;lt;style amp-custom&amp;gt;&lt;/code&gt;タグは1ページに1個までとの制約があるようで、&lt;code&gt;:not()&lt;/code&gt;など、禁止されている機能もあるようです。&lt;/p&gt;
+&lt;p&gt;この&lt;code&gt;&amp;lt;style amp-custom&amp;gt;&lt;/code&gt;タグは1ページに1個までとの制約があったり、&lt;code&gt;:not()&lt;/code&gt;など、禁止されている機能もあるようです。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://www.ampproject.org/docs/guides/responsive/style_pages.html#disallowed-styles&#34;&gt;How to Style Your Pages#disallowed-styles&lt;/a&gt;&lt;/p&gt;
 
