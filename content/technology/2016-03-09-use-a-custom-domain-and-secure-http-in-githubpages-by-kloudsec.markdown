@@ -5,8 +5,6 @@ tags: ["https", "github"]
 title: "KloudsecでHTTPSを使ったカスタムドメインのGithubPagesを構築する"
 ---
 
-Webサイトが遅いとか404がどうとかを検知してくれたりするCDNサービスがあるらしい。
-
 [Kloudsec](https://kloudsec.com/github-pages)
 
 > Kloudsec finds and fixes problems on your website automatically
@@ -88,4 +86,12 @@ KloudsecのPage Optimizerというプラグインはページ速度とかを計�
 {{% img src="/images/2016-03-09/amp.png" alt="amp" w="1140" h="1612" %}}
 
 これはDashboardからPage OptimizerをOFFにすれば解決出来る。
+
+### 追記
+
+ファウンダーの方からメールを頂きました。対応は迅速かつ丁寧で好印象でした。
+レスポンスが遅いのはエッジサーバが日本にないから（ではないか）とのことで、近いうちに置くから待っててくれとのこと。
+
+AMPの件は、将来的にエンドポイントごとにPage OptimizerのON/OFFを切り替えられるようにするかもとのこと。
+AMPについてはチーム全体でどうしようか考えてるそうでした。
 
