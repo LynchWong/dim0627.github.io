@@ -2,7 +2,7 @@
 date: 2016-03-09T12:22:46+09:00
 slug: "use-a-custom-domain-and-secure-http-in-githubpages-by-kloudsec"
 tags: ["https", "github"]
-title: "KloudsecでHTTPSを使ったカスタムドメインのGithubPagesを構築する"
+title: "Kloudsecを使ってカスタムドメインでHTTPSなGithub Pagesを構築する"
 ---
 
 [Kloudsec](https://kloudsec.com/github-pages)
