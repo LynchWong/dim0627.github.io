@@ -254,7 +254,7 @@ git push origin master:master
 
 &lt;p&gt;Octopressから移行してしまったので、スクリーンショットだけ載せとく。&lt;/p&gt;
 
-&lt;a href=&#34;https://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34; target=&#34;_blank&#34;&gt;
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
   &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34; alt=&#34;flatten&#34; width=1000 height=695 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 &lt;/a&gt;
 

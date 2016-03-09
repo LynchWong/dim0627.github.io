@@ -52,14 +52,14 @@ bot userがどうのこうのっていうのがよくわからない。&lt;/p&gt
 
 &lt;p&gt;&lt;a href=&#34;https://my.slack.com/services/new/slash-commands&#34;&gt;https://my.slack.com/services/new/slash-commands&lt;/a&gt;&lt;/p&gt;
 
-&lt;a href=&#34;https://yet.unresolved.xyz/images/2015-01-25/new_command.png&#34; target=&#34;_blank&#34;&gt;
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2015-01-25/new_command.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
   &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2015-01-25/new_command.png&#34; alt=&#34;new_command&#34; width=984 height=523 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 &lt;/a&gt;
 
 
 &lt;p&gt;herokuでさくっとHello World作って試してみようかな。&lt;/p&gt;
 
-&lt;a href=&#34;https://yet.unresolved.xyz/images/2015-01-25/command_test.png&#34; target=&#34;_blank&#34;&gt;
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2015-01-25/command_test.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
   &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2015-01-25/command_test.png&#34; alt=&#34;command_test&#34; width=391 height=115 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 &lt;/a&gt;
 
@@ -76,7 +76,7 @@ bot userがどうのこうのっていうのがよくわからない。&lt;/p&gt
 &lt;p&gt;スラッシュコマンドAPIは&lt;code&gt;/command args&lt;/code&gt;って感じにやると、指定したURLに&lt;code&gt;text&lt;/code&gt;ってパラメータ名で&lt;code&gt;args&lt;/code&gt;が飛ばされるみたい。
 なので&lt;code&gt;/repl ruby:p &amp;quot;hello&amp;quot;&lt;/code&gt;って感じで実行できるようにしよう。&lt;/p&gt;
 
-&lt;a href=&#34;https://yet.unresolved.xyz/images/2015-01-25/slack_repl.png&#34; target=&#34;_blank&#34;&gt;
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2015-01-25/slack_repl.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
   &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2015-01-25/slack_repl.png&#34; alt=&#34;slack_repl&#34; width=977 height=463 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 &lt;/a&gt;
 
@@ -96,7 +96,7 @@ bot userがどうのこうのっていうのがよくわからない。&lt;/p&gt
 
 &lt;p&gt;さっき書いた通り、&lt;code&gt;/repl ruby:p &amp;quot;hello&amp;quot;&lt;/code&gt;でいけるかな。&lt;/p&gt;
 
-&lt;a href=&#34;https://yet.unresolved.xyz/images/2015-01-25/slack_repl_run.png&#34; target=&#34;_blank&#34;&gt;
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2015-01-25/slack_repl_run.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
   &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2015-01-25/slack_repl_run.png&#34; alt=&#34;slack_repl_run&#34; width=433 height=311 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 &lt;/a&gt;
 
