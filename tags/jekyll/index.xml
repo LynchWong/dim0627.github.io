@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jekyll on Unresolved</title>
-    <link>http://yet.unresolved.xyz/tags/jekyll/</link>
+    <link>https://yet.unresolved.xyz/tags/jekyll/</link>
     <description>Recent content in Jekyll on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 17 Sep 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yet.unresolved.xyz/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>GitHub PagesにOctopressをのっけてみる</title>
-      <link>http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/</link>
+      <link>https://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/</link>
       <pubDate>Wed, 17 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;https://ja.wordpress.com/&#34;&gt;WordPress.com&lt;/a&gt;を使ってたんだけど、お金払わないと融通がきかないぽいので移行することに。&lt;/p&gt;

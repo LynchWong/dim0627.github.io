@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Design on Unresolved</title>
-    <link>http://yet.unresolved.xyz/tags/design/</link>
+    <link>https://yet.unresolved.xyz/tags/design/</link>
     <description>Recent content in Design on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 02 Mar 2016 09:55:16 +0900</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/tags/design/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yet.unresolved.xyz/tags/design/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>やはり僕のバーティカルリズムは間違っている</title>
-      <link>http://yet.unresolved.xyz/blog/2016/03/02/i-misunderstood-vertical-rhythm/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/03/02/i-misunderstood-vertical-rhythm/</link>
       <pubDate>Wed, 02 Mar 2016 09:55:16 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/03/02/i-misunderstood-vertical-rhythm/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/03/02/i-misunderstood-vertical-rhythm/</guid>
       <description>
 
 &lt;p&gt;まずこれを見ていただきたい。&lt;/p&gt;
 
-&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2016-03-02/invalid.png&#34; alt=&#34;invalid&#34; width=1140 height=724 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-02/invalid.png&#34; alt=&#34;invalid&#34; width=1140 height=724 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;p&gt;2016年3月現在の僕のブログのデザイン。
@@ -39,7 +39,7 @@
 &lt;p&gt;上記記事によれば、ベースラインを揃えるために&lt;code&gt;before&lt;/code&gt;、&lt;code&gt;after&lt;/code&gt;擬似要素を使ってブロックを押し広げることで実装すればいいとのこと。
 この記事に指導いただいて再実装してみよう。&lt;/p&gt;
 
-&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2016-03-02/valid.png&#34; alt=&#34;valid&#34; width=1130 height=784 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-02/valid.png&#34; alt=&#34;valid&#34; width=1130 height=784 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;p&gt;わかりやすさのために擬似要素に背景色をつけている。
@@ -68,10 +68,10 @@
     
     <item>
       <title>「インタフェースデザインの心理学 ―ウェブやアプリに新たな視点をもたらす100の指針」を読んだ</title>
-      <link>http://yet.unresolved.xyz/blog/2016/02/29/100-things-every-designer-needs-to-know-about-people/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/02/29/100-things-every-designer-needs-to-know-about-people/</link>
       <pubDate>Mon, 29 Feb 2016 09:43:13 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/02/29/100-things-every-designer-needs-to-know-about-people/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/02/29/100-things-every-designer-needs-to-know-about-people/</guid>
       <description>
 
 &lt;p&gt;&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/4873115574/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4873115574&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;インタフェースデザインの心理学 ―ウェブやアプリに新たな視点をもたらす100の指針&lt;/a&gt;&lt;/p&gt;
@@ -133,13 +133,13 @@
     
     <item>
       <title>Googleカスタム検索のデザインが崩れる</title>
-      <link>http://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/</link>
       <pubDate>Fri, 19 Feb 2016 12:44:17 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/</guid>
       <description>
 
-&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2016-02-19/cse.png&#34; alt=&#34;cse&#34; width=674 height=150 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-02-19/cse.png&#34; alt=&#34;cse&#34; width=674 height=150 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;h2 id=&#34;なぜ崩れるのか:823fb9b45a070a4729c0c404dd848b3b&#34;&gt;なぜ崩れるのか&lt;/h2&gt;
@@ -204,10 +204,10 @@ Google自身もこう書いている。&lt;/p&gt;
     
     <item>
       <title>読みやすい文章のデザインとバーティカルリズム</title>
-      <link>http://yet.unresolved.xyz/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/</link>
       <pubDate>Mon, 18 Jan 2016 11:04:21 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/</guid>
       <description>
 
 &lt;p&gt;これは僕の考えをつらつらと棚卸ししているだけであって、他のサイトの批判や自惚れた感情を書き出した記事ではありません。
@@ -346,10 +346,10 @@ Google自身もこう書いている。&lt;/p&gt;
     
     <item>
       <title>Octopressのテーマを作ってみる</title>
-      <link>http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/</link>
+      <link>https://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/</link>
       <pubDate>Sun, 21 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/</guid>
       <description>
 
 &lt;p&gt;元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。
@@ -358,7 +358,7 @@ Google自身もこう書いている。&lt;/p&gt;
 
 &lt;p&gt;Octopressから移行してしまったので、スクリーンショットだけ載せとく。&lt;/p&gt;
 
-&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34; alt=&#34;flatten&#34; width=1000 height=695 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34; alt=&#34;flatten&#34; width=1000 height=695 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;h2 id=&#34;テーマの変え方:04d1c6053c5be0425bfb88e610b78a00&#34;&gt;テーマの変え方&lt;/h2&gt;

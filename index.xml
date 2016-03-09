@@ -2,19 +2,124 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unresolved</title>
-    <link>http://yet.unresolved.xyz/</link>
+    <link>https://yet.unresolved.xyz/</link>
     <description>Recent content on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Mar 2016 15:25:13 +0900</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Mar 2016 12:22:46 +0900</lastBuildDate>
+    <atom:link href="https://yet.unresolved.xyz/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>KloudsecでHTTPSを使ったカスタムドメインのGithubPagesを構築する</title>
+      <link>https://yet.unresolved.xyz/blog/2016/03/09/use-a-custom-domain-and-secure-http-in-githubpages-by-kloudsec/</link>
+      <pubDate>Wed, 09 Mar 2016 12:22:46 +0900</pubDate>
+      
+      <guid>https://yet.unresolved.xyz/blog/2016/03/09/use-a-custom-domain-and-secure-http-in-githubpages-by-kloudsec/</guid>
+      <description>
+
+&lt;p&gt;Webサイトが遅いとか404がどうとかを検知してくれたりするCDNサービスがあるらしい。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://kloudsec.com/github-pages&#34;&gt;Kloudsec&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Kloudsec finds and fixes problems on your website automatically
+Super easy to get started: just point your domain to our CDN’s IP address&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;なんか朝起きたら僕のブログをHTTPS化しないかというメールが来ていて、
+何かと思ったらこのKloudsecというサービスがGitHub Pagesに対応したということらしかった。
+調べてみたらメールをくれたのはファウンダーの方だった。&lt;/p&gt;
+
+&lt;p&gt;おそらくGitHub Pages上にあるサイトをCDNでキャッシュして、ついでにHTTPSにしてくれるというものだと思う。
+だからこっちでやることは、GitHub PagesのプロジェクトURLを登録したりDNSの向き先を変えたりするくらい。&lt;/p&gt;
+
+&lt;p&gt;せっかくだしやるだけやってみようと思う。&lt;/p&gt;
+
+&lt;p&gt;ちなみにこれまでは、CloudFlareを使ってHTTPS化するのが主流だった模様。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://konklone.com/post/github-pages-now-sorta-supports-https-so-use-it&#34;&gt;GitHub Pages Now (Sorta) Supports HTTPS, So Use It&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://1000ch.net/posts/2015/github-pages-custom-domain-in-https.html&#34;&gt;GitHub Pagesに設定しているカスタムドメインをHTTPS対応させる - 1000ch.net&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/superbrothers/items/95e5723e9bd320094537&#34;&gt;カスタムドメインの GitHub Pages で HTTPS を使う - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;対応手順:4d2882a3687d5c7df915f02afec1d585&#34;&gt;対応手順&lt;/h2&gt;
+
+&lt;h3 id=&#34;kloudsecのユーザ登録をする:4d2882a3687d5c7df915f02afec1d585&#34;&gt;Kloudsecのユーザ登録をする&lt;/h3&gt;
+
+&lt;p&gt;このページの下の方から登録出来る。
+GitHub PagesのリポジトリURLを入れることでホスティングしているIPを取得してくれている模様。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://kloudsec.com/github-pages&#34;&gt;Kloudsec&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;dnsの向き先を変える:4d2882a3687d5c7df915f02afec1d585&#34;&gt;DNSの向き先を変える&lt;/h3&gt;
+
+&lt;p&gt;GitHub Pagesでカスタムドメインを使ってる人はCNAMEを設定していると思うので、その辺の設定しなおしをする必要がある。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;GitHubに向いているCNAMEレコードを削除&lt;/li&gt;
+&lt;li&gt;Kloudsecから指定されたAレコード（対象ドメインとwww付きのもの）を新規登録&lt;/li&gt;
+&lt;li&gt;Kloudsecから指定されたTXTレコードを新規登録&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;詰まったところ:4d2882a3687d5c7df915f02afec1d585&#34;&gt;詰まったところ&lt;/h2&gt;
+
+&lt;h3 id=&#34;httpsにならない:4d2882a3687d5c7df915f02afec1d585&#34;&gt;HTTPSにならない&lt;/h3&gt;
+
+&lt;p&gt;KloudsecはLet&amp;rsquo;s EncryptでHTTPS化しているとのこと。
+サイトを登録した直後はHTTPSにならない。というか証明書が取得ペンディングになる。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://letsencrypt.org/&#34;&gt;Let&amp;rsquo;s Encrypt - Free SSL/TLS Certificates&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;これは待ってれば取得完了の旨のメールが届くのでほっとけばよい。&lt;/p&gt;
+
+&lt;h3 id=&#34;ダッシュボード上のエラーが消えない:4d2882a3687d5c7df915f02afec1d585&#34;&gt;ダッシュボード上のエラーが消えない&lt;/h3&gt;
+
+&lt;p&gt;ダッシュボードのトップにこのエラーメッセージが出てどう対応したら良いのかわからなかった。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;One last thing before your website is boosted and secured by Kloudsec&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-09/dashboard.png&#34; alt=&#34;dashboard&#34; width=2332 height=1334 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+
+
+&lt;p&gt;DNSの設定が終わったらあとは勝手に最適化してくれるらしく、それに時間がかかっていたみたい。
+つまりこれについても、こっちで出来ることは待つだけ。&lt;/p&gt;
+
+&lt;h2 id=&#34;問題点:4d2882a3687d5c7df915f02afec1d585&#34;&gt;問題点&lt;/h2&gt;
+
+&lt;h3 id=&#34;遅い:4d2882a3687d5c7df915f02afec1d585&#34;&gt;遅い&lt;/h3&gt;
+
+&lt;p&gt;純粋に遅い。
+GitHubにCNAMEを向けていた時の時間を計測していなかったので比較が出来ないけど、
+Kloudsecはスーパーリロードした際に1秒弱かかっている。&lt;/p&gt;
+
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-09/slow.png&#34; alt=&#34;slow&#34; width=1124 height=810 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+
+
+&lt;p&gt;HTMLのレスポンス時点で遅いので、どうしょうもない。&lt;/p&gt;
+
+&lt;h3 id=&#34;page-optimizerがonだとampがinvalidになる:4d2882a3687d5c7df915f02afec1d585&#34;&gt;Page OptimizerがONだとAMPがinvalidになる&lt;/h3&gt;
+
+&lt;p&gt;KloudsecのPage Optimizerというプラグインはページ速度とかを計るために、ページの末尾にJSを埋め込んでレスポンスを返す。
+また、&lt;code&gt;head&lt;/code&gt;に直接書いたCSSの改行削除等も行っている模様。&lt;/p&gt;
+
+&lt;p&gt;僕のブログは昨日記事にしたとおりAMP対応をしているので、JSが埋め込まれるのは非常に困る。&lt;/p&gt;
+
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-09/amp.png&#34; alt=&#34;amp&#34; width=1140 height=1612 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+
+
+&lt;p&gt;これはDashboardからPage OptimizerをOFFにすれば解決出来る。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>AMP対応をした</title>
-      <link>http://yet.unresolved.xyz/blog/2016/03/08/accelerated-mobile-pages/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/03/08/accelerated-mobile-pages/</link>
       <pubDate>Tue, 08 Mar 2016 15:25:13 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/03/08/accelerated-mobile-pages/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/03/08/accelerated-mobile-pages/</guid>
       <description>
 
 &lt;p&gt;巷で話題のAMP対応をしました。
@@ -148,15 +253,15 @@ Google Analytics等は専用の記述が用意されていました。こうい�
     
     <item>
       <title>やはり僕のバーティカルリズムは間違っている</title>
-      <link>http://yet.unresolved.xyz/blog/2016/03/02/i-misunderstood-vertical-rhythm/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/03/02/i-misunderstood-vertical-rhythm/</link>
       <pubDate>Wed, 02 Mar 2016 09:55:16 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/03/02/i-misunderstood-vertical-rhythm/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/03/02/i-misunderstood-vertical-rhythm/</guid>
       <description>
 
 &lt;p&gt;まずこれを見ていただきたい。&lt;/p&gt;
 
-&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2016-03-02/invalid.png&#34; alt=&#34;invalid&#34; width=1140 height=724 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-02/invalid.png&#34; alt=&#34;invalid&#34; width=1140 height=724 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;p&gt;2016年3月現在の僕のブログのデザイン。
@@ -176,7 +281,7 @@ Google Analytics等は専用の記述が用意されていました。こうい�
 &lt;p&gt;上記記事によれば、ベースラインを揃えるために&lt;code&gt;before&lt;/code&gt;、&lt;code&gt;after&lt;/code&gt;擬似要素を使ってブロックを押し広げることで実装すればいいとのこと。
 この記事に指導いただいて再実装してみよう。&lt;/p&gt;
 
-&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2016-03-02/valid.png&#34; alt=&#34;valid&#34; width=1130 height=784 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-02/valid.png&#34; alt=&#34;valid&#34; width=1130 height=784 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;p&gt;わかりやすさのために擬似要素に背景色をつけている。
@@ -205,10 +310,10 @@ Google Analytics等は専用の記述が用意されていました。こうい�
     
     <item>
       <title>text-rendering: optimizeLegibility;を指定するとWebフォントの読み込みがおかしくなる</title>
-      <link>http://yet.unresolved.xyz/blog/2016/03/01/text-rendering-optimizelegibility-and-web-fonts/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/03/01/text-rendering-optimizelegibility-and-web-fonts/</link>
       <pubDate>Tue, 01 Mar 2016 14:08:26 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/03/01/text-rendering-optimizelegibility-and-web-fonts/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/03/01/text-rendering-optimizelegibility-and-web-fonts/</guid>
       <description>
 
 &lt;p&gt;よくやるこれ。&lt;/p&gt;
@@ -281,10 +386,10 @@ Google Analytics等は専用の記述が用意されていました。こうい�
     
     <item>
       <title>「インタフェースデザインの心理学 ―ウェブやアプリに新たな視点をもたらす100の指針」を読んだ</title>
-      <link>http://yet.unresolved.xyz/blog/2016/02/29/100-things-every-designer-needs-to-know-about-people/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/02/29/100-things-every-designer-needs-to-know-about-people/</link>
       <pubDate>Mon, 29 Feb 2016 09:43:13 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/02/29/100-things-every-designer-needs-to-know-about-people/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/02/29/100-things-every-designer-needs-to-know-about-people/</guid>
       <description>
 
 &lt;p&gt;&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/4873115574/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4873115574&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;インタフェースデザインの心理学 ―ウェブやアプリに新たな視点をもたらす100の指針&lt;/a&gt;&lt;/p&gt;
@@ -346,10 +451,10 @@ Google Analytics等は専用の記述が用意されていました。こうい�
     
     <item>
       <title>「CTF for Starter in IISEC」に行ってきた</title>
-      <link>http://yet.unresolved.xyz/blog/2016/02/22/ctf-for-starter/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/02/22/ctf-for-starter/</link>
       <pubDate>Mon, 22 Feb 2016 14:36:12 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/02/22/ctf-for-starter/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/02/22/ctf-for-starter/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;https://atnd.org/events/74688&#34;&gt;CTF for Starter in IISEC&lt;/a&gt;&lt;/p&gt;
@@ -433,13 +538,13 @@ CTFは参加する気ないけど・・・。&lt;/p&gt;
     
     <item>
       <title>Googleカスタム検索のデザインが崩れる</title>
-      <link>http://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/</link>
       <pubDate>Fri, 19 Feb 2016 12:44:17 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/</guid>
       <description>
 
-&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2016-02-19/cse.png&#34; alt=&#34;cse&#34; width=674 height=150 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-02-19/cse.png&#34; alt=&#34;cse&#34; width=674 height=150 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;h2 id=&#34;なぜ崩れるのか:823fb9b45a070a4729c0c404dd848b3b&#34;&gt;なぜ崩れるのか&lt;/h2&gt;
@@ -504,10 +609,10 @@ Google自身もこう書いている。&lt;/p&gt;
     
     <item>
       <title>MySQL5.6&#43;ruby-mysql2でlibmysqlclient_16 not found</title>
-      <link>http://yet.unresolved.xyz/blog/2016/02/04/libmysqlclient16-not-found/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/02/04/libmysqlclient16-not-found/</link>
       <pubDate>Thu, 04 Feb 2016 18:00:44 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/02/04/libmysqlclient16-not-found/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/02/04/libmysqlclient16-not-found/</guid>
       <description>&lt;p&gt;せっかくなのでMySQLを5.5から5.6にして使おうとしたらエラーした。
 MySQL5.6のインストールはこの記事が非常に分かりやすかった。&lt;/p&gt;
 
@@ -531,10 +636,10 @@ MySQL5.6のインストールはこの記事が非常に分かりやすかった
     
     <item>
       <title>Rails&#43;RDSでMysql2::Error: Illegal mix of collations</title>
-      <link>http://yet.unresolved.xyz/blog/2016/02/04/illegal-mix-of-collations/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/02/04/illegal-mix-of-collations/</link>
       <pubDate>Thu, 04 Feb 2016 17:52:48 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/02/04/illegal-mix-of-collations/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/02/04/illegal-mix-of-collations/</guid>
       <description>
 
 &lt;p&gt;エラーの全貌はこう。&lt;/p&gt;
@@ -547,7 +652,7 @@ MySQLの設定を変えなきゃいけないと思い込んでいて、RDSを使
 
 &lt;p&gt;でもRDSもMySQLの設定は変えられるらしい。そりゃそうか。&lt;/p&gt;
 
-&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2016-02-04/params.png&#34; alt=&#34;params&#34; width=974 height=496 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-02-04/params.png&#34; alt=&#34;params&#34; width=974 height=496 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;p&gt;これで直りました。&lt;/p&gt;
@@ -563,10 +668,10 @@ MySQLの設定を変えなきゃいけないと思い込んでいて、RDSを使
     
     <item>
       <title>「教養としての日本近現代史」を読んだ</title>
-      <link>http://yet.unresolved.xyz/blog/2016/01/30/japan-modern-history-as-a-liberal-arts/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/01/30/japan-modern-history-as-a-liberal-arts/</link>
       <pubDate>Sat, 30 Jan 2016 19:34:21 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/01/30/japan-modern-history-as-a-liberal-arts/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/01/30/japan-modern-history-as-a-liberal-arts/</guid>
       <description>
 
 &lt;h2 id=&#34;読もうと思ったきっかけ:cc1194a6412a9c835886261dfc9dd734&#34;&gt;読もうと思ったきっかけ&lt;/h2&gt;
@@ -680,10 +785,10 @@ MySQLの設定を変えなきゃいけないと思い込んでいて、RDSを使
     
     <item>
       <title>crontabのValidationが出来るcrontab.guruが便利</title>
-      <link>http://yet.unresolved.xyz/blog/2016/01/26/cron-validator/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/01/26/cron-validator/</link>
       <pubDate>Tue, 26 Jan 2016 14:34:43 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/01/26/cron-validator/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/01/26/cron-validator/</guid>
       <description>&lt;p&gt;cron、僕は好きです。ありものでなんとか出来るところが好きです。
 でも記法はいつも忘れるんですよね。あと正しいのかどうなのかがチェックしづらい。
 そこでこの&lt;a href=&#34;http://crontab.guru/&#34;&gt;crontab.guru&lt;/a&gt;が非常に便利でした。&lt;/p&gt;
@@ -697,10 +802,10 @@ MySQLの設定を変えなきゃいけないと思い込んでいて、RDSを使
     
     <item>
       <title>Asset Pipelineのコンパイル対象を追加する</title>
-      <link>http://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</link>
       <pubDate>Wed, 20 Jan 2016 16:15:58 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</guid>
       <description>&lt;p&gt;デフォルトだと&lt;code&gt;application.css&lt;/code&gt;とかじゃないですか。
 でも例えば管理画面を作ったりとかでごっそりデザインの違うページを作るときに少し困ったんです。&lt;/p&gt;
 
@@ -723,10 +828,10 @@ Add `Rails.application.config.assets.precompile += %w( application_target.css )`
     
     <item>
       <title>読みやすい文章のデザインとバーティカルリズム</title>
-      <link>http://yet.unresolved.xyz/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/</link>
       <pubDate>Mon, 18 Jan 2016 11:04:21 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/</guid>
       <description>
 
 &lt;p&gt;これは僕の考えをつらつらと棚卸ししているだけであって、他のサイトの批判や自惚れた感情を書き出した記事ではありません。
@@ -865,10 +970,10 @@ Add `Rails.application.config.assets.precompile += %w( application_target.css )`
     
     <item>
       <title>「君の膵臓をたべたい」を読んだ</title>
-      <link>http://yet.unresolved.xyz/blog/2016/01/16/i-want-to-eat-your-pancreas/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/01/16/i-want-to-eat-your-pancreas/</link>
       <pubDate>Sat, 16 Jan 2016 18:59:16 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/01/16/i-want-to-eat-your-pancreas/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/01/16/i-want-to-eat-your-pancreas/</guid>
       <description>
 
 &lt;p&gt;読みました。&lt;/p&gt;
@@ -952,10 +1057,10 @@ Add `Rails.application.config.assets.precompile += %w( application_target.css )`
     
     <item>
       <title>さくらVPSでpip install lxmlがOOM Killerに殺される</title>
-      <link>http://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/</link>
       <pubDate>Tue, 12 Jan 2016 12:04:51 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/</guid>
       <description>
 
 &lt;p&gt;Python2.7 + BeautifulSoup + lxmlの環境でスクレイピングをしようとしたらlxmlがインストールできなかった。&lt;/p&gt;
@@ -1018,167 +1123,6 @@ $ sudo rm /swapfile
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://scissorhands.jpn.org/2011/11/post-260.html&#34;&gt;さくらインターネット「さくらのレンタルサーバ」にSubversionをインストールする。 - ScissorHands&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.wordspeak.org/posts/resolving-build-errors-with-python-lxml.html&#34;&gt;Resolving build errors with python lxml on low memory machines | Wordspeak&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>[Python]Flaskアプリをnginx &#43; uWSGIでさくらVPSにデプロイする</title>
-      <link>http://yet.unresolved.xyz/blog/2016/01/08/deploying-flask-app-to-sakura-vps/</link>
-      <pubDate>Fri, 08 Jan 2016 10:57:35 +0900</pubDate>
-      
-      <guid>http://yet.unresolved.xyz/blog/2016/01/08/deploying-flask-app-to-sakura-vps/</guid>
-      <description>
-
-&lt;p&gt;CentOS6.5、Python2.7でやります。&lt;/p&gt;
-
-&lt;p&gt;CentOS6.5にプリインストールされているPythonは2.6だと思うのですが、Python2.7の導入方法は書きません。
-多分いろいろな環境で動いたり動かなかったりしちゃうと思うので。&lt;/p&gt;
-
-&lt;p&gt;僕はこの記事を参考にしました。非常に簡単かつ完璧に書かれてて助かりました。こんな記事が書けるようになりたい。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://qiita.com/a_yasui/items/5f453297855791ed648d&#34;&gt;CentOS に Python2.7, Python3.3を入れたメモ - Qiita&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;uwsgiをインストールする:a09f5de2bb121134bcd4cecf283ff09b&#34;&gt;uWSGIをインストールする&lt;/h2&gt;
-
-&lt;p&gt;まあ当然WSGIを使います。PythonをWebアプリとして動かす際のサーバ間仕様ですね。&lt;/p&gt;
-
-&lt;p&gt;WSGIで使えるコンテナはWikiを見る限り幾つかあるようです。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/Web_Server_Gateway_Interface&#34;&gt;Web Server Gateway Interface - Wikipedia&lt;/a&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;WSGIアプリケーションコンテナの例としては、uWSGI, Gunicorn, Apacheモジュール (mod_wsgi, mod_pythonなど), Microsoft IIS（isapi-wsgi, PyISAPIe, ASPゲートウェイを使用）などがある。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;今回はuWSGIを使います。&lt;/p&gt;
-
-&lt;h3 id=&#34;uwsgi:a09f5de2bb121134bcd4cecf283ff09b&#34;&gt;uWSGI？&lt;/h3&gt;
-
-&lt;p&gt;公式より引用。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://uwsgi-docs.readthedocs.org/en/latest/&#34;&gt;The uWSGI project — uWSGI 2.0 documentation&lt;/a&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;The uWSGI project aims at developing a full stack for building hosting services.&lt;/p&gt;
-
-&lt;p&gt;Application servers (for various programming languages and protocols), proxies, process managers and monitors are all implemented using a common api and a common configuration style.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;アプリケーションサーバですね。&lt;/p&gt;
-
-&lt;p&gt;今回はnginxの向こうにuWSGIを置いてサービスを動作させます。&lt;/p&gt;
-
-&lt;h3 id=&#34;インストール:a09f5de2bb121134bcd4cecf283ff09b&#34;&gt;インストール&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;pip install uwsgi
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;なんて簡単！&lt;/p&gt;
-
-&lt;h3 id=&#34;パラメータオプションでの起動:a09f5de2bb121134bcd4cecf283ff09b&#34;&gt;パラメータオプションでの起動&lt;/h3&gt;
-
-&lt;p&gt;uWSGIはコマンドから起動設定も含めた起動が出来ます。&lt;/p&gt;
-
-&lt;p&gt;例えば、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;uwsgi --socket 0.0.0.0:8000 --protocol=http -w wsgi_app
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これで8000ポートで&lt;code&gt;wsgi_app&lt;/code&gt;がhttp全公開になります。
-nginxと連携させる前に、一度このタイミングでアクセス出来るかを見とくと良いですね。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;-w&lt;/code&gt;オプションはわかりづらいのですが、&lt;code&gt;main.py&lt;/code&gt;にアプリの起動が記述されてる場合は&lt;code&gt;main&lt;/code&gt;を指定するみたいですね。&lt;/p&gt;
-
-&lt;p&gt;パラメータは公式のこのページが参考になりそうです。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://uwsgi-docs.readthedocs.org/en/latest/Options.html&#34;&gt;uWSGI Options — uWSGI 2.0 documentation&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;ちょっとしたロジックも書ける様子。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://uwsgi-docs.readthedocs.org/en/latest/ConfigLogic.html&#34;&gt;Configuration logic — uWSGI 2.0 documentation&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;iniファイルでの起動:a09f5de2bb121134bcd4cecf283ff09b&#34;&gt;iniファイルでの起動&lt;/h3&gt;
-
-&lt;p&gt;パラメータをたくさんつけるとコマンドが長くなってしまうので&lt;code&gt;ini&lt;/code&gt;に落とし込みました。
-&lt;code&gt;xml&lt;/code&gt;とかその他の形式でも行けるみたいです。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-ini&#34;&gt;[uwsgi]
-chdir = /path/to/src
-module = wsgi
-socket = /path/to/app.sock
-touch-reload = /path/to/reload.trigger
-logto = /var/log/uwsgi.log
-max-requests = 1000
-chmod-socket = 666
-
-uid = www-user
-gid = www-group
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;起動は&lt;code&gt;uwsgi --ini wsgi.ini&lt;/code&gt;みたいな感じ。
-ここでも一度アクセスできるかを確認するといいですね。&lt;/p&gt;
-
-&lt;p&gt;chdirはカレントディレクトリの指定です。
-これがないとコマンドでは動くのにupstartから起動したら動かない、なんてことになったり。&lt;/p&gt;
-
-&lt;p&gt;socketについてはこの記事が詳しいです。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://qiita.com/yasunori/items/64606e63b36b396cf695#etcnginxconfdsample_nginxconf&#34;&gt;Python - ちゃんと運用するときのuWSGI設定メモ - Qiita&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;プロダクションで使うならその他細かな設定が必要かと思います。&lt;/p&gt;
-
-&lt;h3 id=&#34;upstartから起動させる:a09f5de2bb121134bcd4cecf283ff09b&#34;&gt;upstartから起動させる&lt;/h3&gt;
-
-&lt;p&gt;別に手で起動しても問題ないと思うのですが、多分ナンセンスなので。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;/etc/init/app.conf&lt;/code&gt;を作って、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-conf&#34;&gt;description &amp;quot;uWSGI&amp;quot;
-start on runlevel [2345]
-stop on runlevel [06]
-respawn
-
-env UWSGI=/path/to/uwsgi
-exec $UWSGI --ini /path/to/wsgi.ini
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;sudo start app&lt;/code&gt;で起動出来ます。この起動の仕方は初めて知りました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-14-04&#34;&gt;How To Serve Flask Applications with uWSGI and Nginx on Ubuntu 14.04 | DigitalOcean&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://qiita.com/kuni-nakaji/items/f3426bf69be947c594c4&#34;&gt;Linux - upstartでデーモン化してみる - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;nginxとの連携:a09f5de2bb121134bcd4cecf283ff09b&#34;&gt;nginxとの連携&lt;/h2&gt;
-
-&lt;p&gt;インストールは省きます。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-conf&#34;&gt;server {
-    listen       80;
-    server_name  localhost;
-    charset      utf-8;
-
-    location / {
-        try_files $uri @uwsgi;
-    }
-
-    location @uwsgi {
-        include uwsgi_params;
-        uwsgi_pass unix:/path/to/app.sock;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;uWSGIが起動して&lt;code&gt;app.sock&lt;/code&gt;が配備されてる状態であればこれでアクセス出来るはず。&lt;/p&gt;
-
-&lt;h2 id=&#34;参考にさせていただきました:a09f5de2bb121134bcd4cecf283ff09b&#34;&gt;参考にさせていただきました&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://qiita.com/yasunori/items/64606e63b36b396cf695#etcnginxconfdsample_nginxconf&#34;&gt;Python - ちゃんと運用するときのuWSGI設定メモ - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-14-04&#34;&gt;How To Serve Flask Applications with uWSGI and Nginx on Ubuntu 14.04 | DigitalOcean&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://qiita.com/morinokami/items/e0efb2ae2aa04a1b148b&#34;&gt;Flask + uWSGI + Nginx でハローワールドするまで @ さくらのVPS (CentOS 6.6) - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://docs.djangoproject.jp/en/latest/howto/deployment/wsgi/uwsgi.html&#34;&gt;uWSGI で Django を使う方法 — Django 1.4 documentation&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

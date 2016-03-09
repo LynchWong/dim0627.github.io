@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Oom Killer on Unresolved</title>
-    <link>http://yet.unresolved.xyz/tags/oom-killer/</link>
+    <link>https://yet.unresolved.xyz/tags/oom-killer/</link>
     <description>Recent content in Oom Killer on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 12 Jan 2016 12:04:51 +0900</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/tags/oom-killer/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yet.unresolved.xyz/tags/oom-killer/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>さくらVPSでpip install lxmlがOOM Killerに殺される</title>
-      <link>http://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/</link>
       <pubDate>Tue, 12 Jan 2016 12:04:51 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/</guid>
       <description>
 
 &lt;p&gt;Python2.7 + BeautifulSoup + lxmlの環境でスクレイピングをしようとしたらlxmlがインストールできなかった。&lt;/p&gt;

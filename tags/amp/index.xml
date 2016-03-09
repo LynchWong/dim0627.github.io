@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Amp on Unresolved</title>
-    <link>http://yet.unresolved.xyz/tags/amp/</link>
+    <link>https://yet.unresolved.xyz/tags/amp/</link>
     <description>Recent content in Amp on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 08 Mar 2016 15:25:13 +0900</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/tags/amp/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yet.unresolved.xyz/tags/amp/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>AMP対応をした</title>
-      <link>http://yet.unresolved.xyz/blog/2016/03/08/accelerated-mobile-pages/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/03/08/accelerated-mobile-pages/</link>
       <pubDate>Tue, 08 Mar 2016 15:25:13 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/03/08/accelerated-mobile-pages/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/03/08/accelerated-mobile-pages/</guid>
       <description>
 
 &lt;p&gt;巷で話題のAMP対応をしました。

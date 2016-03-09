@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Structured Data on Unresolved</title>
-    <link>http://yet.unresolved.xyz/tags/structured-data/</link>
+    <link>https://yet.unresolved.xyz/tags/structured-data/</link>
     <description>Recent content in Structured Data on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Dec 2015 11:22:28 +0900</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/tags/structured-data/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yet.unresolved.xyz/tags/structured-data/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Googleの構造化データの扱いが変わった気がする</title>
-      <link>http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</link>
+      <link>https://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</link>
       <pubDate>Fri, 11 Dec 2015 11:22:28 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</guid>
       <description>
 
 &lt;p&gt;このブログも、他の運営してるサイトも、今日になってエラーが発生するようになった。&lt;/p&gt;
@@ -23,12 +23,12 @@
 
 &lt;p&gt;エラーは2種類発生していて、ひとつめがこれ。&lt;/p&gt;
 
-&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2015-12-11/error1.png&#34; alt=&#34;error&#34; width=1026 height=314 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2015-12-11/error1.png&#34; alt=&#34;error&#34; width=1026 height=314 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;p&gt;もうひとつがこれ。&lt;/p&gt;
 
-&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2015-12-11/error2.png&#34; alt=&#34;error&#34; width=826 height=368 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2015-12-11/error2.png&#34; alt=&#34;error&#34; width=826 height=368 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;p&gt;あれ？&lt;code&gt;author&lt;/code&gt;はもともと必須だっけ？&lt;/p&gt;

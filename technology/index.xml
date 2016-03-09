@@ -2,19 +2,124 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Technologies on Unresolved</title>
-    <link>http://yet.unresolved.xyz/technology/</link>
+    <link>https://yet.unresolved.xyz/technology/</link>
     <description>Recent content in Technologies on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Mar 2016 15:25:13 +0900</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/technology/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Mar 2016 12:22:46 +0900</lastBuildDate>
+    <atom:link href="https://yet.unresolved.xyz/technology/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>KloudsecでHTTPSを使ったカスタムドメインのGithubPagesを構築する</title>
+      <link>https://yet.unresolved.xyz/blog/2016/03/09/use-a-custom-domain-and-secure-http-in-githubpages-by-kloudsec/</link>
+      <pubDate>Wed, 09 Mar 2016 12:22:46 +0900</pubDate>
+      
+      <guid>https://yet.unresolved.xyz/blog/2016/03/09/use-a-custom-domain-and-secure-http-in-githubpages-by-kloudsec/</guid>
+      <description>
+
+&lt;p&gt;Webサイトが遅いとか404がどうとかを検知してくれたりするCDNサービスがあるらしい。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://kloudsec.com/github-pages&#34;&gt;Kloudsec&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Kloudsec finds and fixes problems on your website automatically
+Super easy to get started: just point your domain to our CDN’s IP address&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;なんか朝起きたら僕のブログをHTTPS化しないかというメールが来ていて、
+何かと思ったらこのKloudsecというサービスがGitHub Pagesに対応したということらしかった。
+調べてみたらメールをくれたのはファウンダーの方だった。&lt;/p&gt;
+
+&lt;p&gt;おそらくGitHub Pages上にあるサイトをCDNでキャッシュして、ついでにHTTPSにしてくれるというものだと思う。
+だからこっちでやることは、GitHub PagesのプロジェクトURLを登録したりDNSの向き先を変えたりするくらい。&lt;/p&gt;
+
+&lt;p&gt;せっかくだしやるだけやってみようと思う。&lt;/p&gt;
+
+&lt;p&gt;ちなみにこれまでは、CloudFlareを使ってHTTPS化するのが主流だった模様。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://konklone.com/post/github-pages-now-sorta-supports-https-so-use-it&#34;&gt;GitHub Pages Now (Sorta) Supports HTTPS, So Use It&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://1000ch.net/posts/2015/github-pages-custom-domain-in-https.html&#34;&gt;GitHub Pagesに設定しているカスタムドメインをHTTPS対応させる - 1000ch.net&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/superbrothers/items/95e5723e9bd320094537&#34;&gt;カスタムドメインの GitHub Pages で HTTPS を使う - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;対応手順:4d2882a3687d5c7df915f02afec1d585&#34;&gt;対応手順&lt;/h2&gt;
+
+&lt;h3 id=&#34;kloudsecのユーザ登録をする:4d2882a3687d5c7df915f02afec1d585&#34;&gt;Kloudsecのユーザ登録をする&lt;/h3&gt;
+
+&lt;p&gt;このページの下の方から登録出来る。
+GitHub PagesのリポジトリURLを入れることでホスティングしているIPを取得してくれている模様。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://kloudsec.com/github-pages&#34;&gt;Kloudsec&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;dnsの向き先を変える:4d2882a3687d5c7df915f02afec1d585&#34;&gt;DNSの向き先を変える&lt;/h3&gt;
+
+&lt;p&gt;GitHub Pagesでカスタムドメインを使ってる人はCNAMEを設定していると思うので、その辺の設定しなおしをする必要がある。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;GitHubに向いているCNAMEレコードを削除&lt;/li&gt;
+&lt;li&gt;Kloudsecから指定されたAレコード（対象ドメインとwww付きのもの）を新規登録&lt;/li&gt;
+&lt;li&gt;Kloudsecから指定されたTXTレコードを新規登録&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;詰まったところ:4d2882a3687d5c7df915f02afec1d585&#34;&gt;詰まったところ&lt;/h2&gt;
+
+&lt;h3 id=&#34;httpsにならない:4d2882a3687d5c7df915f02afec1d585&#34;&gt;HTTPSにならない&lt;/h3&gt;
+
+&lt;p&gt;KloudsecはLet&amp;rsquo;s EncryptでHTTPS化しているとのこと。
+サイトを登録した直後はHTTPSにならない。というか証明書が取得ペンディングになる。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://letsencrypt.org/&#34;&gt;Let&amp;rsquo;s Encrypt - Free SSL/TLS Certificates&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;これは待ってれば取得完了の旨のメールが届くのでほっとけばよい。&lt;/p&gt;
+
+&lt;h3 id=&#34;ダッシュボード上のエラーが消えない:4d2882a3687d5c7df915f02afec1d585&#34;&gt;ダッシュボード上のエラーが消えない&lt;/h3&gt;
+
+&lt;p&gt;ダッシュボードのトップにこのエラーメッセージが出てどう対応したら良いのかわからなかった。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;One last thing before your website is boosted and secured by Kloudsec&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-09/dashboard.png&#34; alt=&#34;dashboard&#34; width=2332 height=1334 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+
+
+&lt;p&gt;DNSの設定が終わったらあとは勝手に最適化してくれるらしく、それに時間がかかっていたみたい。
+つまりこれについても、こっちで出来ることは待つだけ。&lt;/p&gt;
+
+&lt;h2 id=&#34;問題点:4d2882a3687d5c7df915f02afec1d585&#34;&gt;問題点&lt;/h2&gt;
+
+&lt;h3 id=&#34;遅い:4d2882a3687d5c7df915f02afec1d585&#34;&gt;遅い&lt;/h3&gt;
+
+&lt;p&gt;純粋に遅い。
+GitHubにCNAMEを向けていた時の時間を計測していなかったので比較が出来ないけど、
+Kloudsecはスーパーリロードした際に1秒弱かかっている。&lt;/p&gt;
+
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-09/slow.png&#34; alt=&#34;slow&#34; width=1124 height=810 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+
+
+&lt;p&gt;HTMLのレスポンス時点で遅いので、どうしょうもない。&lt;/p&gt;
+
+&lt;h3 id=&#34;page-optimizerがonだとampがinvalidになる:4d2882a3687d5c7df915f02afec1d585&#34;&gt;Page OptimizerがONだとAMPがinvalidになる&lt;/h3&gt;
+
+&lt;p&gt;KloudsecのPage Optimizerというプラグインはページ速度とかを計るために、ページの末尾にJSを埋め込んでレスポンスを返す。
+また、&lt;code&gt;head&lt;/code&gt;に直接書いたCSSの改行削除等も行っている模様。&lt;/p&gt;
+
+&lt;p&gt;僕のブログは昨日記事にしたとおりAMP対応をしているので、JSが埋め込まれるのは非常に困る。&lt;/p&gt;
+
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-09/amp.png&#34; alt=&#34;amp&#34; width=1140 height=1612 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+
+
+&lt;p&gt;これはDashboardからPage OptimizerをOFFにすれば解決出来る。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>AMP対応をした</title>
-      <link>http://yet.unresolved.xyz/blog/2016/03/08/accelerated-mobile-pages/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/03/08/accelerated-mobile-pages/</link>
       <pubDate>Tue, 08 Mar 2016 15:25:13 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/03/08/accelerated-mobile-pages/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/03/08/accelerated-mobile-pages/</guid>
       <description>
 
 &lt;p&gt;巷で話題のAMP対応をしました。
@@ -148,15 +253,15 @@ Google Analytics等は専用の記述が用意されていました。こうい�
     
     <item>
       <title>やはり僕のバーティカルリズムは間違っている</title>
-      <link>http://yet.unresolved.xyz/blog/2016/03/02/i-misunderstood-vertical-rhythm/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/03/02/i-misunderstood-vertical-rhythm/</link>
       <pubDate>Wed, 02 Mar 2016 09:55:16 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/03/02/i-misunderstood-vertical-rhythm/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/03/02/i-misunderstood-vertical-rhythm/</guid>
       <description>
 
 &lt;p&gt;まずこれを見ていただきたい。&lt;/p&gt;
 
-&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2016-03-02/invalid.png&#34; alt=&#34;invalid&#34; width=1140 height=724 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-02/invalid.png&#34; alt=&#34;invalid&#34; width=1140 height=724 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;p&gt;2016年3月現在の僕のブログのデザイン。
@@ -176,7 +281,7 @@ Google Analytics等は専用の記述が用意されていました。こうい�
 &lt;p&gt;上記記事によれば、ベースラインを揃えるために&lt;code&gt;before&lt;/code&gt;、&lt;code&gt;after&lt;/code&gt;擬似要素を使ってブロックを押し広げることで実装すればいいとのこと。
 この記事に指導いただいて再実装してみよう。&lt;/p&gt;
 
-&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2016-03-02/valid.png&#34; alt=&#34;valid&#34; width=1130 height=784 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-02/valid.png&#34; alt=&#34;valid&#34; width=1130 height=784 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;p&gt;わかりやすさのために擬似要素に背景色をつけている。
@@ -205,10 +310,10 @@ Google Analytics等は専用の記述が用意されていました。こうい�
     
     <item>
       <title>text-rendering: optimizeLegibility;を指定するとWebフォントの読み込みがおかしくなる</title>
-      <link>http://yet.unresolved.xyz/blog/2016/03/01/text-rendering-optimizelegibility-and-web-fonts/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/03/01/text-rendering-optimizelegibility-and-web-fonts/</link>
       <pubDate>Tue, 01 Mar 2016 14:08:26 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/03/01/text-rendering-optimizelegibility-and-web-fonts/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/03/01/text-rendering-optimizelegibility-and-web-fonts/</guid>
       <description>
 
 &lt;p&gt;よくやるこれ。&lt;/p&gt;
@@ -281,10 +386,10 @@ Google Analytics等は専用の記述が用意されていました。こうい�
     
     <item>
       <title>「CTF for Starter in IISEC」に行ってきた</title>
-      <link>http://yet.unresolved.xyz/blog/2016/02/22/ctf-for-starter/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/02/22/ctf-for-starter/</link>
       <pubDate>Mon, 22 Feb 2016 14:36:12 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/02/22/ctf-for-starter/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/02/22/ctf-for-starter/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;https://atnd.org/events/74688&#34;&gt;CTF for Starter in IISEC&lt;/a&gt;&lt;/p&gt;
@@ -368,13 +473,13 @@ CTFは参加する気ないけど・・・。&lt;/p&gt;
     
     <item>
       <title>Googleカスタム検索のデザインが崩れる</title>
-      <link>http://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/</link>
       <pubDate>Fri, 19 Feb 2016 12:44:17 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/</guid>
       <description>
 
-&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2016-02-19/cse.png&#34; alt=&#34;cse&#34; width=674 height=150 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-02-19/cse.png&#34; alt=&#34;cse&#34; width=674 height=150 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;h2 id=&#34;なぜ崩れるのか:823fb9b45a070a4729c0c404dd848b3b&#34;&gt;なぜ崩れるのか&lt;/h2&gt;
@@ -439,10 +544,10 @@ Google自身もこう書いている。&lt;/p&gt;
     
     <item>
       <title>MySQL5.6&#43;ruby-mysql2でlibmysqlclient_16 not found</title>
-      <link>http://yet.unresolved.xyz/blog/2016/02/04/libmysqlclient16-not-found/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/02/04/libmysqlclient16-not-found/</link>
       <pubDate>Thu, 04 Feb 2016 18:00:44 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/02/04/libmysqlclient16-not-found/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/02/04/libmysqlclient16-not-found/</guid>
       <description>&lt;p&gt;せっかくなのでMySQLを5.5から5.6にして使おうとしたらエラーした。
 MySQL5.6のインストールはこの記事が非常に分かりやすかった。&lt;/p&gt;
 
@@ -466,10 +571,10 @@ MySQL5.6のインストールはこの記事が非常に分かりやすかった
     
     <item>
       <title>Rails&#43;RDSでMysql2::Error: Illegal mix of collations</title>
-      <link>http://yet.unresolved.xyz/blog/2016/02/04/illegal-mix-of-collations/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/02/04/illegal-mix-of-collations/</link>
       <pubDate>Thu, 04 Feb 2016 17:52:48 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/02/04/illegal-mix-of-collations/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/02/04/illegal-mix-of-collations/</guid>
       <description>
 
 &lt;p&gt;エラーの全貌はこう。&lt;/p&gt;
@@ -482,7 +587,7 @@ MySQLの設定を変えなきゃいけないと思い込んでいて、RDSを使
 
 &lt;p&gt;でもRDSもMySQLの設定は変えられるらしい。そりゃそうか。&lt;/p&gt;
 
-&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2016-02-04/params.png&#34; alt=&#34;params&#34; width=974 height=496 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-02-04/params.png&#34; alt=&#34;params&#34; width=974 height=496 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;p&gt;これで直りました。&lt;/p&gt;
@@ -498,10 +603,10 @@ MySQLの設定を変えなきゃいけないと思い込んでいて、RDSを使
     
     <item>
       <title>crontabのValidationが出来るcrontab.guruが便利</title>
-      <link>http://yet.unresolved.xyz/blog/2016/01/26/cron-validator/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/01/26/cron-validator/</link>
       <pubDate>Tue, 26 Jan 2016 14:34:43 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/01/26/cron-validator/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/01/26/cron-validator/</guid>
       <description>&lt;p&gt;cron、僕は好きです。ありものでなんとか出来るところが好きです。
 でも記法はいつも忘れるんですよね。あと正しいのかどうなのかがチェックしづらい。
 そこでこの&lt;a href=&#34;http://crontab.guru/&#34;&gt;crontab.guru&lt;/a&gt;が非常に便利でした。&lt;/p&gt;
@@ -515,10 +620,10 @@ MySQLの設定を変えなきゃいけないと思い込んでいて、RDSを使
     
     <item>
       <title>Asset Pipelineのコンパイル対象を追加する</title>
-      <link>http://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</link>
       <pubDate>Wed, 20 Jan 2016 16:15:58 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</guid>
       <description>&lt;p&gt;デフォルトだと&lt;code&gt;application.css&lt;/code&gt;とかじゃないですか。
 でも例えば管理画面を作ったりとかでごっそりデザインの違うページを作るときに少し困ったんです。&lt;/p&gt;
 
@@ -541,10 +646,10 @@ Add `Rails.application.config.assets.precompile += %w( application_target.css )`
     
     <item>
       <title>読みやすい文章のデザインとバーティカルリズム</title>
-      <link>http://yet.unresolved.xyz/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/</link>
       <pubDate>Mon, 18 Jan 2016 11:04:21 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/01/18/design-of-readable-text-and-vertical-rhythm/</guid>
       <description>
 
 &lt;p&gt;これは僕の考えをつらつらと棚卸ししているだけであって、他のサイトの批判や自惚れた感情を書き出した記事ではありません。
@@ -683,10 +788,10 @@ Add `Rails.application.config.assets.precompile += %w( application_target.css )`
     
     <item>
       <title>さくらVPSでpip install lxmlがOOM Killerに殺される</title>
-      <link>http://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/</link>
       <pubDate>Tue, 12 Jan 2016 12:04:51 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/</guid>
       <description>
 
 &lt;p&gt;Python2.7 + BeautifulSoup + lxmlの環境でスクレイピングをしようとしたらlxmlがインストールできなかった。&lt;/p&gt;
@@ -755,10 +860,10 @@ $ sudo rm /swapfile
     
     <item>
       <title>[Python]Flaskアプリをnginx &#43; uWSGIでさくらVPSにデプロイする</title>
-      <link>http://yet.unresolved.xyz/blog/2016/01/08/deploying-flask-app-to-sakura-vps/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/01/08/deploying-flask-app-to-sakura-vps/</link>
       <pubDate>Fri, 08 Jan 2016 10:57:35 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/01/08/deploying-flask-app-to-sakura-vps/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/01/08/deploying-flask-app-to-sakura-vps/</guid>
       <description>
 
 &lt;p&gt;CentOS6.5、Python2.7でやります。&lt;/p&gt;
@@ -916,10 +1021,10 @@ exec $UWSGI --ini /path/to/wsgi.ini
     
     <item>
       <title>ACCOUNT KILLERというサービスが面白い</title>
-      <link>http://yet.unresolved.xyz/blog/2015/12/17/about-account-killer/</link>
+      <link>https://yet.unresolved.xyz/blog/2015/12/17/about-account-killer/</link>
       <pubDate>Thu, 17 Dec 2015 10:39:55 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/12/17/about-account-killer/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2015/12/17/about-account-killer/</guid>
       <description>
 
 &lt;p&gt;WordPress.comとGravatarを退会しようと思ったんだけどなんか退会画面が見つからない。
@@ -953,10 +1058,10 @@ exec $UWSGI --ini /path/to/wsgi.ini
     
     <item>
       <title>Googleの構造化データの扱いが変わった気がする</title>
-      <link>http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</link>
+      <link>https://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</link>
       <pubDate>Fri, 11 Dec 2015 11:22:28 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</guid>
       <description>
 
 &lt;p&gt;このブログも、他の運営してるサイトも、今日になってエラーが発生するようになった。&lt;/p&gt;
@@ -965,12 +1070,12 @@ exec $UWSGI --ini /path/to/wsgi.ini
 
 &lt;p&gt;エラーは2種類発生していて、ひとつめがこれ。&lt;/p&gt;
 
-&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2015-12-11/error1.png&#34; alt=&#34;error&#34; width=1026 height=314 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2015-12-11/error1.png&#34; alt=&#34;error&#34; width=1026 height=314 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;p&gt;もうひとつがこれ。&lt;/p&gt;
 
-&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2015-12-11/error2.png&#34; alt=&#34;error&#34; width=826 height=368 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2015-12-11/error2.png&#34; alt=&#34;error&#34; width=826 height=368 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;p&gt;あれ？&lt;code&gt;author&lt;/code&gt;はもともと必須だっけ？&lt;/p&gt;
@@ -1039,213 +1144,6 @@ Googleの説明が、どのように使われるかも記載されていてわ�
 Structured Data Testing Tool自体が改修中だったのだろうか。
 どちらにせよこの辺はこれからも随時変わっていくポイントだろうから、
 定期的にチェックと対応をしていかなきゃいけないですね。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>プロダクションのWordPressを捨てHugoに移行した</title>
-      <link>http://yet.unresolved.xyz/blog/2015/12/10/using-hugo-in-production/</link>
-      <pubDate>Thu, 10 Dec 2015 14:49:18 +0900</pubDate>
-      
-      <guid>http://yet.unresolved.xyz/blog/2015/12/10/using-hugo-in-production/</guid>
-      <description>
-
-&lt;p&gt;あんまり仕事のことは書かないつもりだったんだけど、このブログの生成でもお世話になっている&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;を結構本気で使ったのでそのことをまとめてみます。&lt;/p&gt;
-
-&lt;h2 id=&#34;hugoをプロダクションで使った:5f9546be55588508513a850a19b4c520&#34;&gt;Hugoをプロダクションで使った&lt;/h2&gt;
-
-&lt;p&gt;いま僕が働いている会社では事業の一つとしてメディアを運営しています。
-僕が入ったとき、それはWordPressで運用がなされていて、&lt;a href=&#34;http://www.advancedcustomfields.com/&#34;&gt;Advanced Custom Fields&lt;/a&gt;を使ったガチガチのカスタム具合でした。&lt;/p&gt;
-
-&lt;p&gt;しかしありがちなことにプラグインの管理もなされず、構築した人は外部の人、つまり動いてはいるけどそれ以上でも以下でもなかったんですね。&lt;/p&gt;
-
-&lt;p&gt;さらにライターさんの話を聞いてみれば「なんか入力欄がいっぱいあってライティングがめんどくさい」とのこと。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;誰も幸せになっていない状態&lt;/strong&gt;というわけですね。&lt;/p&gt;
-
-&lt;p&gt;僕が初めてそれを見た時、まず思ったのは&lt;strong&gt;「触りたくない」&lt;/strong&gt;ということでした。&lt;/p&gt;
-
-&lt;p&gt;WordPressはドメインとガチガチに紐づくし（プラグインでなんとかなるけど）、テーマのカスタマイズだとかのコストや、現状調査をするコストが無駄だと思ったんですね。&lt;/p&gt;
-
-&lt;p&gt;また、Advanced Custom Fieldsを使っているということはテーマも特注でしょう。&lt;/p&gt;
-
-&lt;p&gt;というわけでリプレースを提案しました。
-快く受け入れてくれた社員の方々には本当に感謝しています。&lt;/p&gt;
-
-&lt;h2 id=&#34;なぜhugoなのか:5f9546be55588508513a850a19b4c520&#34;&gt;なぜHugoなのか&lt;/h2&gt;
-
-&lt;p&gt;やはりMarkdownは優秀だと思っていて、メディア程度の文章ならDBに突っ込むよりMarkdownでファイル管理したいなと思いました。&lt;/p&gt;
-
-&lt;p&gt;というわけでライターさんには無理を言ってMarkdownを覚えてもらいました。
-これも快く受け入れてくれたライターさんの度量の広さに感謝しています。&lt;/p&gt;
-
-&lt;p&gt;正直僕はハナから静的サイトジェネレータを使う気でいて、候補に考えていたのはJekyllとHugoでした。
-何故かと言うと、Jekyllはドキュメント量が期待できると思っていたし、Hugoはそもそも使い慣れてる点を評価したからです。&lt;/p&gt;
-
-&lt;p&gt;しかしJekyllは使いませんでした。Octopressをやめた時同様、生成が遅すぎたんです。
-約500超の記事生成に18秒ほどかかり、チューニングなどを検討するよりもやめたほうが早いと判断しました。&lt;/p&gt;
-
-&lt;p&gt;というわけで案外さっくりとHugoに行き着くことになったわけです。&lt;/p&gt;
-
-&lt;h2 id=&#34;運用体制のこと:5f9546be55588508513a850a19b4c520&#34;&gt;運用体制のこと&lt;/h2&gt;
-
-&lt;p&gt;静的サイトジェネレータを使うということは何かしらの方法でMarkdownを取り込み、生成したHTMLをアップロードしなければなりません。&lt;/p&gt;
-
-&lt;p&gt;とはいえ管理画面だとかを作ってMarkdownを吐き出させるのは無駄なコストにしか思えないし、
-素直にMarkdownが書けてそのままHugoを動かす環境に取り込める仕組みを考える必要がありました。&lt;/p&gt;
-
-&lt;p&gt;なるだけコードを書きたくなかったのです。&lt;/p&gt;
-
-&lt;p&gt;僕の開発部ではBitBucketのプライベートレポジトリを活用しています。&lt;/p&gt;
-
-&lt;p&gt;GitHubも同様で、SCMのホスティングサービスではGUIで直接ファイルをいじる機能があります。
-実際これを使ったことはあまりないのですが、今回はこの機能に管理画面の代替品になってもらうことにしました。&lt;/p&gt;
-
-&lt;p&gt;なのでライターさんはWordPressの管理画面を捨て、BitBucketを管理画面として使うことになるわけです。&lt;/p&gt;
-
-&lt;p&gt;実際これでだいたいの運用は回っています。ですが1つだけ想定していなかったポイントがありました。&lt;/p&gt;
-
-&lt;p&gt;それは&lt;strong&gt;画像のアップロードが出来ない&lt;/strong&gt;ことです。
-記事に使いたい画像をGUIからアップすることが出来なかったのです。&lt;/p&gt;
-
-&lt;p&gt;幸いこの問題は、デザイナさんがGitに慣れていたこともあり、SourceTreeから画像をアップしてくれることになりました。&lt;/p&gt;
-
-&lt;p&gt;つくづく社員の方に恵まれていると思います。&lt;/p&gt;
-
-&lt;h2 id=&#34;移行するためにやったこと:5f9546be55588508513a850a19b4c520&#34;&gt;移行するためにやったこと&lt;/h2&gt;
-
-&lt;p&gt;では僕が大きく時間を割いたポイントをお話します。&lt;/p&gt;
-
-&lt;p&gt;それは次の2点です。&lt;/p&gt;
-
-&lt;h3 id=&#34;wordpressからのエクスポート:5f9546be55588508513a850a19b4c520&#34;&gt;WordPressからのエクスポート&lt;/h3&gt;
-
-&lt;p&gt;既存記事をMarkdownとして取り出す必要がありました。
-これはいろいろなツールを検討したのですが、結局最終的にはスクレイピングして力技で取得しました。&lt;/p&gt;
-
-&lt;p&gt;Pythonで抽出を行ったのですが、使い捨てプログラムということで適当に書きすぎたこともあり、500記事の抽出に数分かかるような有様になりました。&lt;/p&gt;
-
-&lt;p&gt;ちなみにHugo用の移行ツールも何種類かあるようです。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://gohugo.io/tools/#migration:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Hugo - Tools&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;テーマの作成:5f9546be55588508513a850a19b4c520&#34;&gt;テーマの作成&lt;/h3&gt;
-
-&lt;p&gt;Markdownが生成出来てしまえばあとはHugoのルールに乗っかるだけなので、サイトが形作られるのはあっというまでした。&lt;/p&gt;
-
-&lt;p&gt;とはいえGolangのテンプレートの仕様に慣れがなかったため、初めは想定した動作をしてもらえずイライラする場面も多かったです。&lt;/p&gt;
-
-&lt;h2 id=&#34;hugoを使うことの強み:5f9546be55588508513a850a19b4c520&#34;&gt;Hugoを使うことの強み&lt;/h2&gt;
-
-&lt;p&gt;僕が感じた強みはシンプルさでした。&lt;/p&gt;
-
-&lt;p&gt;UNIX哲学にこんな言葉があります。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;全てのプログラムはフィルタとして振る舞うようにせよ。&lt;br /&gt;
-Make every program a Filter.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/UNIX%E5%93%B2%E5%AD%A6&#34;&gt;UNIX哲学 - Wikipedia&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;おそらくこれに該当するもっともな例はシェルだと思うのですが、実はHugoもまさにこれを体現しているようなもので、Markdownを一定のルールに従ってテーマというフィルタに通すだけのプログラムになっています。&lt;/p&gt;
-
-&lt;p&gt;なのでそのルールさえ理解してしまえばテーマを作るのは容易で、約1週間程度でほぼ完成形につくり上げることが出来ました。&lt;/p&gt;
-
-&lt;h2 id=&#34;hugoを使うことの弱み:5f9546be55588508513a850a19b4c520&#34;&gt;Hugoを使うことの弱み&lt;/h2&gt;
-
-&lt;p&gt;とはいえ静的サイトジェネレータだからこその弱みもあると思っています。&lt;/p&gt;
-
-&lt;h3 id=&#34;テンプレートエンジンが難しい:5f9546be55588508513a850a19b4c520&#34;&gt;テンプレートエンジンが難しい&lt;/h3&gt;
-
-&lt;p&gt;テンプレートの書き方によってはパフォーマンスがガッツリ落ちる時があり、たかが500記事でも18秒ほどかかってしまうこともありました。&lt;/p&gt;
-
-&lt;p&gt;これではHugoの強みである速さを活かしきれてないことになってしまいますね。&lt;/p&gt;
-
-&lt;p&gt;結局チューニングをしたものの、やはり企業として運営しているサイトのため要求も多く、現在は7秒程度で生成する状況で落ち着きました。&lt;/p&gt;
-
-&lt;p&gt;ゆくゆくはせめて3秒以内に抑えたいとは思っています。&lt;/p&gt;
-
-&lt;p&gt;また、個人的にGolangのテンプレートと相性が悪いようで、その点は結構苦労しました。&lt;/p&gt;
-
-&lt;h3 id=&#34;よく読まれている記事が抽出出来ない:5f9546be55588508513a850a19b4c520&#34;&gt;よく読まれている記事が抽出出来ない&lt;/h3&gt;
-
-&lt;p&gt;これはもうどうしょうもないので、GoogleAnalyticsにアクセスしてJSONを吐き出しておくスクリプトを用意しました。&lt;/p&gt;
-
-&lt;p&gt;HugoはJSONを読み込んで記事を生成するような構成にしています。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://gohugo.io/extras/datafiles/&#34;&gt;Hugo - Data Files&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;このデータファイルという機能は非常に優秀で、タグやカテゴリを英名 - 和名変換するためにも利用しています。簡易KVSですね。&lt;/p&gt;
-
-&lt;h3 id=&#34;サムネイルの作成が出来ない:5f9546be55588508513a850a19b4c520&#34;&gt;サムネイルの作成が出来ない&lt;/h3&gt;
-
-&lt;p&gt;これもどうしょうもないので、スクリプトを用意しました。&lt;/p&gt;
-
-&lt;p&gt;Pythonで書けば数行で出来てしまうため、10分20分で実装出来たのはラッキーでした。&lt;/p&gt;
-
-&lt;p&gt;これがないとPageSpeedInsightのスコアが大きく下がるため、見落とさずに対応できて良かったです。&lt;/p&gt;
-
-&lt;h2 id=&#34;運用を始めてみて:5f9546be55588508513a850a19b4c520&#34;&gt;運用を始めてみて&lt;/h2&gt;
-
-&lt;p&gt;僕の操作ミスでサービスダウンさせた場面は2度ほどありましたが、Hugoだから発生した問題は1つもありません。&lt;/p&gt;
-
-&lt;p&gt;レスポンスタイムは大きく向上し、PageSpeedInsightもほぼ全ページが90点超えとなりました（これはHugo関係ないが）。&lt;/p&gt;
-
-&lt;p&gt;しかしライターさんにMarkdownを覚えてもらったのはやはり少し気にかかっていて、Hugo特有のメタデータなどは出来る限りフォローに入るよう気をつけています。&lt;/p&gt;
-
-&lt;p&gt;また、生成はcronで定時処理しており、その処理ログをSlackに流すようにしています。&lt;/p&gt;
-
-&lt;p&gt;Slack側では「ERROR」という文言を含むメッセージが発せられた場合にアラートがあげられるようにしており、簡易的な監視ツールとして手軽に立ち上げられたのではないかと思っています。&lt;/p&gt;
-
-&lt;p&gt;そして、この運用による恩恵もいくつかあります。&lt;/p&gt;
-
-&lt;h3 id=&#34;プルリクエストが使えるようになった:5f9546be55588508513a850a19b4c520&#34;&gt;プルリクエストが使えるようになった&lt;/h3&gt;
-
-&lt;p&gt;メディアということで大量の記事を抱えているわけですが、その個々の記事のクオリティを上げることも重要な作業です。&lt;/p&gt;
-
-&lt;p&gt;この運用だとBitBucket上に記事データがあるため、プルリクエストをライターさんになげる運用ができるようになりました。&lt;/p&gt;
-
-&lt;p&gt;ソーシャルコーディングならぬ、ソーシャルライティングですね。&lt;/p&gt;
-
-&lt;h3 id=&#34;編集履歴が残るようになった:5f9546be55588508513a850a19b4c520&#34;&gt;編集履歴が残るようになった&lt;/h3&gt;
-
-&lt;p&gt;これはWordPressでも機能としてあるのかもしれませんが、Gitによる強力なバージョン管理が行えるようになりました。&lt;/p&gt;
-
-&lt;p&gt;記事ファイルがどのような変遷をたどってきたか、どの行を誰が書いたのかがわかるのは大きなメリットだと思います。&lt;/p&gt;
-
-&lt;h3 id=&#34;記事の一括操作が出来るようになった:5f9546be55588508513a850a19b4c520&#34;&gt;記事の一括操作が出来るようになった&lt;/h3&gt;
-
-&lt;p&gt;記事データがテキストファイルで存在するため、一括置換が容易になりました。&lt;/p&gt;
-
-&lt;p&gt;これまでもタグやカテゴリの設定しなおし等を行いたい場面があったようですが、そういった作業も人間の手を介さずに一瞬で行えるようになりました。&lt;/p&gt;
-
-&lt;p&gt;記事を柔軟に扱うという点では、WordPressでの運用より10歩も20歩も前進出来たように思います。&lt;/p&gt;
-
-&lt;p&gt;データをテキストファイルで保持できているので、エンジニアとしてもプラシーボ的な安心があります。&lt;/p&gt;
-
-&lt;h3 id=&#34;校正が自動化出来るようになった:5f9546be55588508513a850a19b4c520&#34;&gt;校正が自動化出来るようになった&lt;/h3&gt;
-
-&lt;p&gt;文章を扱うサービスということもあり、ライティングルールを定めています。&lt;/p&gt;
-
-&lt;p&gt;とはいえ現状どうかというと、結構な割合で守られていません。
-しかしこれは書き手のチェックに委ねられていたため、しかたのないことだと思います。&lt;/p&gt;
-
-&lt;p&gt;今回はテキストファイルとしてデータがあるので、正規表現でチェック出来るような校正はシェル化出来ました。&lt;/p&gt;
-
-&lt;p&gt;これは毎週金曜日の夕方に処理されるようになっており、アラートが上がった記事はSlackに通知されるようになっています。&lt;/p&gt;
-
-&lt;p&gt;また、サイズの大きい画像などが格納された場合も同様で、この処理の際にアラートがあがるようにしてあります。&lt;/p&gt;
-
-&lt;h2 id=&#34;終わりに:5f9546be55588508513a850a19b4c520&#34;&gt;終わりに&lt;/h2&gt;
-
-&lt;p&gt;というわけでWordPressから静的サイトジェネレータへの移行を会社でおこなった話を書きました。&lt;/p&gt;
-
-&lt;p&gt;現在は非常に安定して運用が出来ており、なおかつ非常に早いスピードで改修が出来ています。&lt;/p&gt;
-
-&lt;p&gt;WordPressでの運用に手こずっている方は、一度静的サイトジェネレータでの運用も検討してはいいのではないでしょうか。&lt;/p&gt;
-
-&lt;p&gt;素晴らしきプロダクトである&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;と開発者である&lt;a href=&#34;http://spf13.com/&#34;&gt;Steve Francia氏&lt;/a&gt;に感謝。&lt;/p&gt;
 </description>
     </item>
     

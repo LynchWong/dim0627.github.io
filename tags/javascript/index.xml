@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Javascript on Unresolved</title>
-    <link>http://yet.unresolved.xyz/tags/javascript/</link>
+    <link>https://yet.unresolved.xyz/tags/javascript/</link>
     <description>Recent content in Javascript on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 14 Jul 2015 00:05:16 +0900</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yet.unresolved.xyz/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>focusoutイベントでfocus中の要素が取得できない</title>
-      <link>http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/</link>
+      <link>https://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/</link>
       <pubDate>Tue, 14 Jul 2015 00:05:16 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/</guid>
       <description>
 
 &lt;p&gt;何を血迷ったかサジェストを自作しようとしてしまってつらい目にあった話。&lt;/p&gt;
@@ -75,10 +75,10 @@ $(&amp;quot;#search-text&amp;quot;).on(&amp;quot;focusout&amp;quot;, function() 
     
     <item>
       <title>Apigility &#43; React.jsでタスク管理ツールを作ってみる</title>
-      <link>http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/</link>
+      <link>https://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/</link>
       <pubDate>Sat, 14 Feb 2015 19:30:22 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2015/02/14/make-task-manager-by-using-apigility/</guid>
       <description>
 
 &lt;p&gt;これに行ってきました。&lt;/p&gt;
@@ -108,7 +108,7 @@ DBも多分メジャーどころは大抵使える(と思う)し、APIもRPCは�
 &lt;p&gt;サーバを再度起動する場合は&lt;code&gt;php -S localhost:8888 -t public public/index.php&lt;/code&gt;とかやればOK。
 画面を開くとこんな感じのが出てくる。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/apigility_top.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/apigility_top.png&#34; alt=&#34;apigility_top&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://yet.unresolved.xyz/images/2015-02-14/apigility_top.png&#34;&gt;&lt;img src=&#34;https://yet.unresolved.xyz/images/2015-02-14/apigility_top.png&#34; alt=&#34;apigility_top&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;ロゴがかわいいね。ここからAPIの追加やデータベース接続の設定やらが出来ます。&lt;/p&gt;
 
@@ -123,17 +123,17 @@ DBも多分メジャーどころは大抵使える(と思う)し、APIもRPCは�
 
 &lt;p&gt;&lt;code&gt;Settings&lt;/code&gt;の&lt;code&gt;Database Adapters&lt;/code&gt;から定義を追加出来る。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/database.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/database.png&#34; alt=&#34;database&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://yet.unresolved.xyz/images/2015-02-14/database.png&#34;&gt;&lt;img src=&#34;https://yet.unresolved.xyz/images/2015-02-14/database.png&#34; alt=&#34;database&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;今回はこんな感じで設定。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/def_database.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/def_database.png&#34; alt=&#34;def_database&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://yet.unresolved.xyz/images/2015-02-14/def_database.png&#34;&gt;&lt;img src=&#34;https://yet.unresolved.xyz/images/2015-02-14/def_database.png&#34; alt=&#34;def_database&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;apiを追加する:a8f13c6c06505842468ef355c1de93c5&#34;&gt;APIを追加する&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;APIs&lt;/code&gt;の&lt;code&gt;Create New API&lt;/code&gt;からAPIを追加する。今回はTasksという名前で作成した。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/create_api.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/create_api.png&#34; alt=&#34;create_api&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://yet.unresolved.xyz/images/2015-02-14/create_api.png&#34;&gt;&lt;img src=&#34;https://yet.unresolved.xyz/images/2015-02-14/create_api.png&#34; alt=&#34;create_api&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;粒度がわかりづらいけど、ここで作ったAPIに対して個々のサービスを追加していく。&lt;/p&gt;
 
@@ -151,19 +151,19 @@ DBも多分メジャーどころは大抵使える(と思う)し、APIもRPCは�
 
 &lt;p&gt;というわけで、&lt;code&gt;REST Service Name&lt;/code&gt;をtasks、&lt;code&gt;DB-Connected&lt;/code&gt;はさっき作ったアダプタとテーブル名を設定。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/create_service.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/create_service.png&#34; alt=&#34;create_service&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://yet.unresolved.xyz/images/2015-02-14/create_service.png&#34;&gt;&lt;img src=&#34;https://yet.unresolved.xyz/images/2015-02-14/create_service.png&#34; alt=&#34;create_service&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;こんな感じになる。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/def_service.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/def_service.png&#34; alt=&#34;def_service&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://yet.unresolved.xyz/images/2015-02-14/def_service.png&#34;&gt;&lt;img src=&#34;https://yet.unresolved.xyz/images/2015-02-14/def_service.png&#34; alt=&#34;def_service&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;接続できるか試してみましょう。データがないので、まずはPOSTで格納してみる。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/post_tasks.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/post_tasks.png&#34; alt=&#34;post_tasks&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://yet.unresolved.xyz/images/2015-02-14/post_tasks.png&#34;&gt;&lt;img src=&#34;https://yet.unresolved.xyz/images/2015-02-14/post_tasks.png&#34; alt=&#34;post_tasks&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;いけてるっぽい。取得は？&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/get_tasks.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/get_tasks.png&#34; alt=&#34;get_tasks&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://yet.unresolved.xyz/images/2015-02-14/get_tasks.png&#34;&gt;&lt;img src=&#34;https://yet.unresolved.xyz/images/2015-02-14/get_tasks.png&#34; alt=&#34;get_tasks&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;取れますね。&lt;/p&gt;
 
@@ -181,7 +181,7 @@ DBも多分メジャーどころは大抵使える(と思う)し、APIもRPCは�
 
 &lt;p&gt;つってもここはあんまり説明してもしょうがないのでSSとコードだけ。表示はこんな感じで、&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/images/2015-02-14/view.png&#34;&gt;&lt;img src=&#34;http://yet.unresolved.xyz/images/2015-02-14/view.png&#34; alt=&#34;view&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://yet.unresolved.xyz/images/2015-02-14/view.png&#34;&gt;&lt;img src=&#34;https://yet.unresolved.xyz/images/2015-02-14/view.png&#34; alt=&#34;view&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;こんなHTMLでやりました。&lt;/p&gt;
 

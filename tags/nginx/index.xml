@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nginx on Unresolved</title>
-    <link>http://yet.unresolved.xyz/tags/nginx/</link>
+    <link>https://yet.unresolved.xyz/tags/nginx/</link>
     <description>Recent content in Nginx on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 08 Jan 2016 10:57:35 +0900</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yet.unresolved.xyz/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>[Python]Flaskアプリをnginx &#43; uWSGIでさくらVPSにデプロイする</title>
-      <link>http://yet.unresolved.xyz/blog/2016/01/08/deploying-flask-app-to-sakura-vps/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/01/08/deploying-flask-app-to-sakura-vps/</link>
       <pubDate>Fri, 08 Jan 2016 10:57:35 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/01/08/deploying-flask-app-to-sakura-vps/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/01/08/deploying-flask-app-to-sakura-vps/</guid>
       <description>
 
 &lt;p&gt;CentOS6.5、Python2.7でやります。&lt;/p&gt;

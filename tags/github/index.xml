@@ -2,19 +2,124 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Github on Unresolved</title>
-    <link>http://yet.unresolved.xyz/tags/github/</link>
+    <link>https://yet.unresolved.xyz/tags/github/</link>
     <description>Recent content in Github on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Oct 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Mar 2016 12:22:46 +0900</lastBuildDate>
+    <atom:link href="https://yet.unresolved.xyz/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>KloudsecでHTTPSを使ったカスタムドメインのGithubPagesを構築する</title>
+      <link>https://yet.unresolved.xyz/blog/2016/03/09/use-a-custom-domain-and-secure-http-in-githubpages-by-kloudsec/</link>
+      <pubDate>Wed, 09 Mar 2016 12:22:46 +0900</pubDate>
+      
+      <guid>https://yet.unresolved.xyz/blog/2016/03/09/use-a-custom-domain-and-secure-http-in-githubpages-by-kloudsec/</guid>
+      <description>
+
+&lt;p&gt;Webサイトが遅いとか404がどうとかを検知してくれたりするCDNサービスがあるらしい。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://kloudsec.com/github-pages&#34;&gt;Kloudsec&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Kloudsec finds and fixes problems on your website automatically
+Super easy to get started: just point your domain to our CDN’s IP address&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;なんか朝起きたら僕のブログをHTTPS化しないかというメールが来ていて、
+何かと思ったらこのKloudsecというサービスがGitHub Pagesに対応したということらしかった。
+調べてみたらメールをくれたのはファウンダーの方だった。&lt;/p&gt;
+
+&lt;p&gt;おそらくGitHub Pages上にあるサイトをCDNでキャッシュして、ついでにHTTPSにしてくれるというものだと思う。
+だからこっちでやることは、GitHub PagesのプロジェクトURLを登録したりDNSの向き先を変えたりするくらい。&lt;/p&gt;
+
+&lt;p&gt;せっかくだしやるだけやってみようと思う。&lt;/p&gt;
+
+&lt;p&gt;ちなみにこれまでは、CloudFlareを使ってHTTPS化するのが主流だった模様。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://konklone.com/post/github-pages-now-sorta-supports-https-so-use-it&#34;&gt;GitHub Pages Now (Sorta) Supports HTTPS, So Use It&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://1000ch.net/posts/2015/github-pages-custom-domain-in-https.html&#34;&gt;GitHub Pagesに設定しているカスタムドメインをHTTPS対応させる - 1000ch.net&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/superbrothers/items/95e5723e9bd320094537&#34;&gt;カスタムドメインの GitHub Pages で HTTPS を使う - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;対応手順:4d2882a3687d5c7df915f02afec1d585&#34;&gt;対応手順&lt;/h2&gt;
+
+&lt;h3 id=&#34;kloudsecのユーザ登録をする:4d2882a3687d5c7df915f02afec1d585&#34;&gt;Kloudsecのユーザ登録をする&lt;/h3&gt;
+
+&lt;p&gt;このページの下の方から登録出来る。
+GitHub PagesのリポジトリURLを入れることでホスティングしているIPを取得してくれている模様。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://kloudsec.com/github-pages&#34;&gt;Kloudsec&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;dnsの向き先を変える:4d2882a3687d5c7df915f02afec1d585&#34;&gt;DNSの向き先を変える&lt;/h3&gt;
+
+&lt;p&gt;GitHub Pagesでカスタムドメインを使ってる人はCNAMEを設定していると思うので、その辺の設定しなおしをする必要がある。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;GitHubに向いているCNAMEレコードを削除&lt;/li&gt;
+&lt;li&gt;Kloudsecから指定されたAレコード（対象ドメインとwww付きのもの）を新規登録&lt;/li&gt;
+&lt;li&gt;Kloudsecから指定されたTXTレコードを新規登録&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;詰まったところ:4d2882a3687d5c7df915f02afec1d585&#34;&gt;詰まったところ&lt;/h2&gt;
+
+&lt;h3 id=&#34;httpsにならない:4d2882a3687d5c7df915f02afec1d585&#34;&gt;HTTPSにならない&lt;/h3&gt;
+
+&lt;p&gt;KloudsecはLet&amp;rsquo;s EncryptでHTTPS化しているとのこと。
+サイトを登録した直後はHTTPSにならない。というか証明書が取得ペンディングになる。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://letsencrypt.org/&#34;&gt;Let&amp;rsquo;s Encrypt - Free SSL/TLS Certificates&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;これは待ってれば取得完了の旨のメールが届くのでほっとけばよい。&lt;/p&gt;
+
+&lt;h3 id=&#34;ダッシュボード上のエラーが消えない:4d2882a3687d5c7df915f02afec1d585&#34;&gt;ダッシュボード上のエラーが消えない&lt;/h3&gt;
+
+&lt;p&gt;ダッシュボードのトップにこのエラーメッセージが出てどう対応したら良いのかわからなかった。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;One last thing before your website is boosted and secured by Kloudsec&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-09/dashboard.png&#34; alt=&#34;dashboard&#34; width=2332 height=1334 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+
+
+&lt;p&gt;DNSの設定が終わったらあとは勝手に最適化してくれるらしく、それに時間がかかっていたみたい。
+つまりこれについても、こっちで出来ることは待つだけ。&lt;/p&gt;
+
+&lt;h2 id=&#34;問題点:4d2882a3687d5c7df915f02afec1d585&#34;&gt;問題点&lt;/h2&gt;
+
+&lt;h3 id=&#34;遅い:4d2882a3687d5c7df915f02afec1d585&#34;&gt;遅い&lt;/h3&gt;
+
+&lt;p&gt;純粋に遅い。
+GitHubにCNAMEを向けていた時の時間を計測していなかったので比較が出来ないけど、
+Kloudsecはスーパーリロードした際に1秒弱かかっている。&lt;/p&gt;
+
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-09/slow.png&#34; alt=&#34;slow&#34; width=1124 height=810 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+
+
+&lt;p&gt;HTMLのレスポンス時点で遅いので、どうしょうもない。&lt;/p&gt;
+
+&lt;h3 id=&#34;page-optimizerがonだとampがinvalidになる:4d2882a3687d5c7df915f02afec1d585&#34;&gt;Page OptimizerがONだとAMPがinvalidになる&lt;/h3&gt;
+
+&lt;p&gt;KloudsecのPage Optimizerというプラグインはページ速度とかを計るために、ページの末尾にJSを埋め込んでレスポンスを返す。
+また、&lt;code&gt;head&lt;/code&gt;に直接書いたCSSの改行削除等も行っている模様。&lt;/p&gt;
+
+&lt;p&gt;僕のブログは昨日記事にしたとおりAMP対応をしているので、JSが埋め込まれるのは非常に困る。&lt;/p&gt;
+
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-09/amp.png&#34; alt=&#34;amp&#34; width=1140 height=1612 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+
+
+&lt;p&gt;これはDashboardからPage OptimizerをOFFにすれば解決出来る。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>GitHub Pagesでカスタムドメインを使う</title>
-      <link>http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/</link>
+      <link>https://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/</link>
       <pubDate>Fri, 24 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2014/10/24/how-to-use-custom-domain-in-github-pages/</guid>
       <description>
 
 &lt;p&gt;昨日はGAEで今日はGithubかよって感じだけど、こっちは結構詰まったのでメモしたい。&lt;/p&gt;
@@ -63,10 +168,10 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
     
     <item>
       <title>GitHub PagesにOctopressをのっけてみる</title>
-      <link>http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/</link>
+      <link>https://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/</link>
       <pubDate>Wed, 17 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2014/09/17/install-the-octopress-on-github-pages/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;https://ja.wordpress.com/&#34;&gt;WordPress.com&lt;/a&gt;を使ってたんだけど、お金払わないと融通がきかないぽいので移行することに。&lt;/p&gt;

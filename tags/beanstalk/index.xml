@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Beanstalk on Unresolved</title>
-    <link>http://yet.unresolved.xyz/tags/beanstalk/</link>
+    <link>https://yet.unresolved.xyz/tags/beanstalk/</link>
     <description>Recent content in Beanstalk on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 31 Dec 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/tags/beanstalk/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yet.unresolved.xyz/tags/beanstalk/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>ClojureのWebアプリをDocker &#43; Beanstalkで動かす</title>
-      <link>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</link>
+      <link>https://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</link>
       <pubDate>Wed, 31 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/</guid>
       <description>
 
 &lt;p&gt;たぶんこういうのはドキュメント読んでもわからないので、とにかく一通りの流れを実践してみる。&lt;/p&gt;
@@ -72,7 +72,7 @@ e9981a715899        clojure:aws         &amp;quot;/bin/bash -c &#39;cd /h   4 se
 
 &lt;p&gt;このIPの3000ポートに向けてアクセスすれば、&lt;/p&gt;
 
-&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2014-12-31/webapp.png&#34; alt=&#34;webapp&#34; width=672 height=465 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2014-12-31/webapp.png&#34; alt=&#34;webapp&#34; width=672 height=465 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;p&gt;見れます。&lt;/p&gt;
@@ -144,7 +144,7 @@ CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/product
 13:33:07.710 [main] INFO  superapp.main - serving status message
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2014-12-31/beanstalkDockerApp.png&#34; alt=&#34;beanstalkDockerApp&#34; width=599 height=420 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2014-12-31/beanstalkDockerApp.png&#34; alt=&#34;beanstalkDockerApp&#34; width=599 height=420 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;h3 id=&#34;デプロイ:e7598df47e85c79be6b3ca007edb9ce3&#34;&gt;デプロイ&lt;/h3&gt;
@@ -158,7 +158,7 @@ CMD [&amp;quot;java&amp;quot;, &amp;quot;-jar&amp;quot;, &amp;quot;/root/product
 
 &lt;p&gt;デプロイはこんな感じで成功。&lt;/p&gt;
 
-&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2014-12-31/deploy.png&#34; alt=&#34;deploy&#34; width=1180 height=559 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2014-12-31/deploy.png&#34; alt=&#34;deploy&#34; width=1180 height=559 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;p&gt;しかしデプロイは結構時間かかるなー。

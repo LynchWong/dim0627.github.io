@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ruby on Unresolved</title>
-    <link>http://yet.unresolved.xyz/tags/ruby/</link>
+    <link>https://yet.unresolved.xyz/tags/ruby/</link>
     <description>Recent content in Ruby on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 20 Jan 2016 16:15:58 +0900</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yet.unresolved.xyz/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Asset Pipelineのコンパイル対象を追加する</title>
-      <link>http://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</link>
       <pubDate>Wed, 20 Jan 2016 16:15:58 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</guid>
       <description>&lt;p&gt;デフォルトだと&lt;code&gt;application.css&lt;/code&gt;とかじゃないですか。
 でも例えば管理画面を作ったりとかでごっそりデザインの違うページを作るときに少し困ったんです。&lt;/p&gt;
 
@@ -37,10 +37,10 @@ Add `Rails.application.config.assets.precompile += %w( application_target.css )`
     
     <item>
       <title>ブログをOctopressからHugoに移行した</title>
-      <link>http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/</link>
+      <link>https://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/</link>
       <pubDate>Sun, 04 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;でのブログもずいぶん慣れてきたところで&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;に移行しました。&lt;/p&gt;
@@ -242,10 +242,10 @@ git push origin master:master
     
     <item>
       <title>Octopressのテーマを作ってみる</title>
-      <link>http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/</link>
+      <link>https://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/</link>
       <pubDate>Sun, 21 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/</guid>
       <description>
 
 &lt;p&gt;元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。
@@ -254,7 +254,7 @@ git push origin master:master
 
 &lt;p&gt;Octopressから移行してしまったので、スクリーンショットだけ載せとく。&lt;/p&gt;
 
-&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34; alt=&#34;flatten&#34; width=1000 height=695 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34; alt=&#34;flatten&#34; width=1000 height=695 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;h2 id=&#34;テーマの変え方:04d1c6053c5be0425bfb88e610b78a00&#34;&gt;テーマの変え方&lt;/h2&gt;
@@ -289,10 +289,10 @@ sass   source
     
     <item>
       <title>OctopressのサイドバーにGravatarを表示させる</title>
-      <link>http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/</link>
+      <link>https://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/</link>
       <pubDate>Sat, 20 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/</guid>
       <description>
 
 &lt;p&gt;そもそもOctopressの構成がまだよくわかってないのでそこから勉強しよう。&lt;/p&gt;

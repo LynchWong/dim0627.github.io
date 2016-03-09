@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mysql on Unresolved</title>
-    <link>http://yet.unresolved.xyz/tags/mysql/</link>
+    <link>https://yet.unresolved.xyz/tags/mysql/</link>
     <description>Recent content in Mysql on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 04 Feb 2016 18:00:44 +0900</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yet.unresolved.xyz/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>MySQL5.6&#43;ruby-mysql2でlibmysqlclient_16 not found</title>
-      <link>http://yet.unresolved.xyz/blog/2016/02/04/libmysqlclient16-not-found/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/02/04/libmysqlclient16-not-found/</link>
       <pubDate>Thu, 04 Feb 2016 18:00:44 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/02/04/libmysqlclient16-not-found/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/02/04/libmysqlclient16-not-found/</guid>
       <description>&lt;p&gt;せっかくなのでMySQLを5.5から5.6にして使おうとしたらエラーした。
 MySQL5.6のインストールはこの記事が非常に分かりやすかった。&lt;/p&gt;
 
@@ -38,10 +38,10 @@ MySQL5.6のインストールはこの記事が非常に分かりやすかった
     
     <item>
       <title>Rails&#43;RDSでMysql2::Error: Illegal mix of collations</title>
-      <link>http://yet.unresolved.xyz/blog/2016/02/04/illegal-mix-of-collations/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/02/04/illegal-mix-of-collations/</link>
       <pubDate>Thu, 04 Feb 2016 17:52:48 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2016/02/04/illegal-mix-of-collations/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/02/04/illegal-mix-of-collations/</guid>
       <description>
 
 &lt;p&gt;エラーの全貌はこう。&lt;/p&gt;
@@ -54,7 +54,7 @@ MySQLの設定を変えなきゃいけないと思い込んでいて、RDSを使
 
 &lt;p&gt;でもRDSもMySQLの設定は変えられるらしい。そりゃそうか。&lt;/p&gt;
 
-&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2016-02-04/params.png&#34; alt=&#34;params&#34; width=974 height=496 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-02-04/params.png&#34; alt=&#34;params&#34; width=974 height=496 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;p&gt;これで直りました。&lt;/p&gt;
@@ -70,10 +70,10 @@ MySQLの設定を変えなきゃいけないと思い込んでいて、RDSを使
     
     <item>
       <title>[Laravel5.1]発行されたSQLと実行計画を取得する</title>
-      <link>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</link>
+      <link>https://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</link>
       <pubDate>Wed, 30 Sep 2015 13:44:48 +0900</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</guid>
       <description>
 
 &lt;p&gt;インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしい。&lt;/p&gt;

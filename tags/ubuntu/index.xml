@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ubuntu on Unresolved</title>
-    <link>http://yet.unresolved.xyz/tags/ubuntu/</link>
+    <link>https://yet.unresolved.xyz/tags/ubuntu/</link>
     <description>Recent content in Ubuntu on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 19 Oct 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://yet.unresolved.xyz/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yet.unresolved.xyz/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>UbuntuにAurigaを構築してみる</title>
-      <link>http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/</link>
+      <link>https://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/</link>
       <pubDate>Sun, 19 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2014/10/19/build-auriga-server-on-ubuntu/</guid>
       <description>
 
 &lt;p&gt;今更だがAurigaの構築をやってみる。
@@ -126,7 +126,7 @@ CFLAGS += -DNO_HTTPD
 
 &lt;p&gt;というわけで、&lt;/p&gt;
 
-&lt;amp-img src=&#34;http://yet.unresolved.xyz/images/2014-10-19/httpd.png&#34; alt=&#34;httpd&#34; width=468 height=652 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2014-10-19/httpd.png&#34; alt=&#34;httpd&#34; width=468 height=652 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;p&gt;出来ました。&lt;/p&gt;
