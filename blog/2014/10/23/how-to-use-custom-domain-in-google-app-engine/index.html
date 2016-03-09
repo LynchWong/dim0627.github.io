@@ -60,6 +60,12 @@ html {
   font-size: 16px;
 }
 
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
 body {
   font-family: "Open Sans", "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   font-size: inherit;
@@ -280,7 +286,7 @@ article .body h2 {
   position: relative;
   margin-top: 1.5rem;
   padding: .5rem 0;
-  line-height: 1.5rem;
+  line-height: 1rem;
   font-weight: 700;
   box-shadow: 0 -1px 0 0 #cfd8dc inset , 0 2px 0 0 rgba(236,239,241 ,.5);
 }
@@ -300,7 +306,7 @@ article .body h2::before {
 
 article .body h3 {
   margin-top: 1.5rem;
-  line-height: 1.5rem;
+  line-height: 1rem;
   font-weight: 700;
 }
 
@@ -467,12 +473,16 @@ nav.page a.next {
 <p>作業は<a href="https://console.developers.google.com/">Developers Console</a>から行います。
 はじめにGoogleが、使いたいドメインが君のものか確認したいとのことなので、verifyへ。</p>
 
-<amp-img src="/images/2014-10-23/verify.png" alt="verify" width=911 height=741 layout="responsive"></amp-img>
+<a href="/images/2014-10-23/verify.png" target="_blank">
+  <amp-img src="/images/2014-10-23/verify.png" alt="verify" width=911 height=741 layout="responsive"></amp-img>
+</a>
 
 
 <p>そうするとこんな画面になるので、</p>
 
-<amp-img src="/images/2014-10-23/input_domain.png" alt="input_domain" width=1359 height=594 layout="responsive"></amp-img>
+<a href="/images/2014-10-23/input_domain.png" target="_blank">
+  <amp-img src="/images/2014-10-23/input_domain.png" alt="input_domain" width=1359 height=594 layout="responsive"></amp-img>
+</a>
 
 
 <p>ここに表示されてるテキストを、ドメインを発行した会社さんのほうからTXTレコードとして追加すればOK。</p>
@@ -489,7 +499,9 @@ nav.page a.next {
 
 <p>でここに入力すればOK。</p>
 
-<amp-img src="/images/2014-10-23/input_txt.png" alt="input_txt" width=972 height=415 layout="responsive"></amp-img>
+<a href="/images/2014-10-23/input_txt.png" target="_blank">
+  <amp-img src="/images/2014-10-23/input_txt.png" alt="input_txt" width=972 height=415 layout="responsive"></amp-img>
+</a>
 
 
 <p>TYPEはTXTにしてVALUEにさっきのテキストを入力。
@@ -500,7 +512,9 @@ nav.page a.next {
 
 <p>確認が出来たらサブドメインとしてプレフィックスを付けるのかを決める。</p>
 
-<amp-img src="/images/2014-10-23/step2.png" alt="step2" width=827 height=291 layout="responsive"></amp-img>
+<a href="/images/2014-10-23/step2.png" target="_blank">
+  <amp-img src="/images/2014-10-23/step2.png" alt="step2" width=827 height=291 layout="responsive"></amp-img>
+</a>
 
 
 <p>これによって最後のステップが変わるけど、僕は確認の時点でサブドメインとして設定したので、Google側では特に付加せずやってます。</p>
@@ -510,7 +524,9 @@ nav.page a.next {
 <p>最後はまたDNSレコードの追加。
 ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。</p>
 
-<amp-img src="/images/2014-10-23/step3.png" alt="step3" width=823 height=313 layout="responsive"></amp-img>
+<a href="/images/2014-10-23/step3.png" target="_blank">
+  <amp-img src="/images/2014-10-23/step3.png" alt="step3" width=823 height=313 layout="responsive"></amp-img>
+</a>
 
 
 <p>あとは待ってればそのうち反映されるはず。</p>

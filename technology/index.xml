@@ -79,7 +79,9 @@ GitHub PagesのリポジトリURLを入れることでホスティングして�
 &lt;p&gt;One last thing before your website is boosted and secured by Kloudsec&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-09/dashboard.png&#34; alt=&#34;dashboard&#34; width=2332 height=1334 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2016-03-09/dashboard.png&#34; target=&#34;_blank&#34;&gt;
+  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-09/dashboard.png&#34; alt=&#34;dashboard&#34; width=2332 height=1334 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;/a&gt;
 
 
 &lt;p&gt;DNSの設定が終わったらあとは勝手に最適化してくれるらしく、それに時間がかかっていたみたい。
@@ -93,7 +95,9 @@ GitHub PagesのリポジトリURLを入れることでホスティングして�
 GitHubにCNAMEを向けていた時の時間を計測していなかったので比較が出来ないけど、
 Kloudsecはスーパーリロードした際に1秒弱かかっている。&lt;/p&gt;
 
-&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-09/slow.png&#34; alt=&#34;slow&#34; width=1124 height=810 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2016-03-09/slow.png&#34; target=&#34;_blank&#34;&gt;
+  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-09/slow.png&#34; alt=&#34;slow&#34; width=1124 height=810 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;/a&gt;
 
 
 &lt;p&gt;HTMLのレスポンス時点で遅いので、どうしょうもない。&lt;/p&gt;
@@ -105,7 +109,9 @@ Kloudsecはスーパーリロードした際に1秒弱かかっている。&lt;/
 
 &lt;p&gt;僕のブログは昨日記事にしたとおりAMP対応をしているので、JSが埋め込まれるのは非常に困る。&lt;/p&gt;
 
-&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-09/amp.png&#34; alt=&#34;amp&#34; width=1140 height=1612 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2016-03-09/amp.png&#34; target=&#34;_blank&#34;&gt;
+  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-09/amp.png&#34; alt=&#34;amp&#34; width=1140 height=1612 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;/a&gt;
 
 
 &lt;p&gt;これはDashboardからPage OptimizerをOFFにすれば解決出来る。&lt;/p&gt;
@@ -267,7 +273,9 @@ Google Analytics等は専用の記述が用意されていました。こうい�
 
 &lt;p&gt;まずこれを見ていただきたい。&lt;/p&gt;
 
-&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-02/invalid.png&#34; alt=&#34;invalid&#34; width=1140 height=724 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2016-03-02/invalid.png&#34; target=&#34;_blank&#34;&gt;
+  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-02/invalid.png&#34; alt=&#34;invalid&#34; width=1140 height=724 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;/a&gt;
 
 
 &lt;p&gt;2016年3月現在の僕のブログのデザイン。
@@ -287,7 +295,9 @@ Google Analytics等は専用の記述が用意されていました。こうい�
 &lt;p&gt;上記記事によれば、ベースラインを揃えるために&lt;code&gt;before&lt;/code&gt;、&lt;code&gt;after&lt;/code&gt;擬似要素を使ってブロックを押し広げることで実装すればいいとのこと。
 この記事に指導いただいて再実装してみよう。&lt;/p&gt;
 
-&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-02/valid.png&#34; alt=&#34;valid&#34; width=1130 height=784 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2016-03-02/valid.png&#34; target=&#34;_blank&#34;&gt;
+  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-02/valid.png&#34; alt=&#34;valid&#34; width=1130 height=784 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;/a&gt;
 
 
 &lt;p&gt;わかりやすさのために擬似要素に背景色をつけている。
@@ -485,7 +495,9 @@ CTFは参加する気ないけど・・・。&lt;/p&gt;
       <guid>https://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/</guid>
       <description>
 
-&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-02-19/cse.png&#34; alt=&#34;cse&#34; width=674 height=150 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2016-02-19/cse.png&#34; target=&#34;_blank&#34;&gt;
+  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-02-19/cse.png&#34; alt=&#34;cse&#34; width=674 height=150 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;/a&gt;
 
 
 &lt;h2 id=&#34;なぜ崩れるのか:823fb9b45a070a4729c0c404dd848b3b&#34;&gt;なぜ崩れるのか&lt;/h2&gt;
@@ -593,7 +605,9 @@ MySQLの設定を変えなきゃいけないと思い込んでいて、RDSを使
 
 &lt;p&gt;でもRDSもMySQLの設定は変えられるらしい。そりゃそうか。&lt;/p&gt;
 
-&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-02-04/params.png&#34; alt=&#34;params&#34; width=974 height=496 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2016-02-04/params.png&#34; target=&#34;_blank&#34;&gt;
+  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-02-04/params.png&#34; alt=&#34;params&#34; width=974 height=496 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;/a&gt;
 
 
 &lt;p&gt;これで直りました。&lt;/p&gt;
@@ -1076,12 +1090,16 @@ exec $UWSGI --ini /path/to/wsgi.ini
 
 &lt;p&gt;エラーは2種類発生していて、ひとつめがこれ。&lt;/p&gt;
 
-&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2015-12-11/error1.png&#34; alt=&#34;error&#34; width=1026 height=314 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2015-12-11/error1.png&#34; target=&#34;_blank&#34;&gt;
+  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2015-12-11/error1.png&#34; alt=&#34;error&#34; width=1026 height=314 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;/a&gt;
 
 
 &lt;p&gt;もうひとつがこれ。&lt;/p&gt;
 
-&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2015-12-11/error2.png&#34; alt=&#34;error&#34; width=826 height=368 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2015-12-11/error2.png&#34; target=&#34;_blank&#34;&gt;
+  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2015-12-11/error2.png&#34; alt=&#34;error&#34; width=826 height=368 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;/a&gt;
 
 
 &lt;p&gt;あれ？&lt;code&gt;author&lt;/code&gt;はもともと必須だっけ？&lt;/p&gt;
