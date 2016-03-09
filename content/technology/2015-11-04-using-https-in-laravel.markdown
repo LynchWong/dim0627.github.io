@@ -33,7 +33,7 @@ Your connection to this site is private, but someone on the network might be abl
 ## Laravelのrouteメソッド
 
 URLのレンダリングはLaravelの`route`メソッドを使っています。
-この機能は結構気に入っている。後でURLを変えたいって時にある程度コストを軽減してくれる（んじゃないか）と思っているから。
+個人的に、この機能は結構気に入っています。後でURLを変えたいって時にある程度コストを軽減してくれる（んじゃないか）と思っているから。
 
 [HTTP Routing - Laravel - The PHP Framework For Web Artisans](http://laravel.com/docs/5.1/routing#named-routes)
 
@@ -41,19 +41,19 @@ URLのレンダリングはLaravelの`route`メソッドを使っています。
 
 ## LaravelでHTTPSのURLを取り扱う
 
-LaravelのRoutingはこんな感じなんだけど、こう記述すれば
+LaravelのRoutingはこんな感じなんだけど、
 
 ``` php
 Route::get('/', ['as' => 'home', function() { return view('home.index'); }]);
 ```
 
-HTTPSのみを許容することも出来るらしい。さらには
+こう記述すればHTTPSのみを許容することも出来るらしい。
 
 ``` php
 Route::get('/', ['https', 'as' => 'home', function() { return view('home.index'); }]);
 ```
 
-こうしておけば`route`メソッドでレンダリングされるURLもHTTPSになる。
+こうすることで`route`メソッドでレンダリングされるURLもHTTPSになる。
 
 ## そして問題が起きる
 
