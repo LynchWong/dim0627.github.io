@@ -43,7 +43,7 @@
 &lt;h2 id=&#34;laravelのrouteメソッド:56aef34fa740ed018dee02e37b63f347&#34;&gt;Laravelのrouteメソッド&lt;/h2&gt;
 
 &lt;p&gt;URLのレンダリングはLaravelの&lt;code&gt;route&lt;/code&gt;メソッドを使っています。
-この機能は結構気に入っている。後でURLを変えたいって時にある程度コストを軽減してくれる（んじゃないか）と思っているから。&lt;/p&gt;
+個人的に、この機能は結構気に入っています。後でURLを変えたいって時にある程度コストを軽減してくれる（んじゃないか）と思っているから。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://laravel.com/docs/5.1/routing#named-routes&#34;&gt;HTTP Routing - Laravel - The PHP Framework For Web Artisans&lt;/a&gt;&lt;/p&gt;
 
@@ -51,17 +51,17 @@
 
 &lt;h2 id=&#34;laravelでhttpsのurlを取り扱う:56aef34fa740ed018dee02e37b63f347&#34;&gt;LaravelでHTTPSのURLを取り扱う&lt;/h2&gt;
 
-&lt;p&gt;LaravelのRoutingはこんな感じなんだけど、こう記述すれば&lt;/p&gt;
+&lt;p&gt;LaravelのRoutingはこんな感じなんだけど、&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;Route::get(&#39;/&#39;, [&#39;as&#39; =&amp;gt; &#39;home&#39;, function() { return view(&#39;home.index&#39;); }]);
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;HTTPSのみを許容することも出来るらしい。さらには&lt;/p&gt;
+&lt;p&gt;こう記述すればHTTPSのみを許容することも出来るらしい。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;Route::get(&#39;/&#39;, [&#39;https&#39;, &#39;as&#39; =&amp;gt; &#39;home&#39;, function() { return view(&#39;home.index&#39;); }]);
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;こうしておけば&lt;code&gt;route&lt;/code&gt;メソッドでレンダリングされるURLもHTTPSになる。&lt;/p&gt;
+&lt;p&gt;こうすることで&lt;code&gt;route&lt;/code&gt;メソッドでレンダリングされるURLもHTTPSになる。&lt;/p&gt;
 
 &lt;h2 id=&#34;そして問題が起きる:56aef34fa740ed018dee02e37b63f347&#34;&gt;そして問題が起きる&lt;/h2&gt;
 
