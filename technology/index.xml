@@ -17,8 +17,6 @@
       <guid>https://yet.unresolved.xyz/blog/2016/03/09/use-a-custom-domain-and-secure-http-in-githubpages-by-kloudsec/</guid>
       <description>
 
-&lt;p&gt;Webサイトが遅いとか404がどうとかを検知してくれたりするCDNサービスがあるらしい。&lt;/p&gt;
-
 &lt;p&gt;&lt;a href=&#34;https://kloudsec.com/github-pages&#34;&gt;Kloudsec&lt;/a&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -111,6 +109,14 @@ Kloudsecはスーパーリロードした際に1秒弱かかっている。&lt;/
 
 
 &lt;p&gt;これはDashboardからPage OptimizerをOFFにすれば解決出来る。&lt;/p&gt;
+
+&lt;h3 id=&#34;追記:4d2882a3687d5c7df915f02afec1d585&#34;&gt;追記&lt;/h3&gt;
+
+&lt;p&gt;ファウンダーの方からメールを頂きました。対応は迅速かつ丁寧で好印象でした。
+レスポンスが遅いのはエッジサーバが日本にないから（ではないか）とのことで、近いうちに置くから待っててくれとのこと。&lt;/p&gt;
+
+&lt;p&gt;AMPの件は、将来的にエンドポイントごとにPage OptimizerのON/OFFを切り替えられるようにするかもとのこと。
+AMPについてはチーム全体でどうしようか考えてるそうでした。&lt;/p&gt;
 </description>
     </item>
     
