@@ -80,16 +80,12 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 &lt;p&gt;作業は&lt;a href=&#34;https://console.developers.google.com/&#34;&gt;Developers Console&lt;/a&gt;から行います。
 はじめにGoogleが、使いたいドメインが君のものか確認したいとのことなので、verifyへ。&lt;/p&gt;
 
-&lt;a href=&#34;https://yet.unresolved.xyz/images/2014-10-23/verify.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
-  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2014-10-23/verify.png&#34; alt=&#34;verify&#34; width=911 height=741 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
-&lt;/a&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2014-10-23/verify.png&#34; alt=&#34;verify&#34; width=911 height=741 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;p&gt;そうするとこんな画面になるので、&lt;/p&gt;
 
-&lt;a href=&#34;https://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
-  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34; alt=&#34;input_domain&#34; width=1359 height=594 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
-&lt;/a&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2014-10-23/input_domain.png&#34; alt=&#34;input_domain&#34; width=1359 height=594 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;p&gt;ここに表示されてるテキストを、ドメインを発行した会社さんのほうからTXTレコードとして追加すればOK。&lt;/p&gt;
@@ -106,9 +102,7 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 
 &lt;p&gt;でここに入力すればOK。&lt;/p&gt;
 
-&lt;a href=&#34;https://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
-  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34; alt=&#34;input_txt&#34; width=972 height=415 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
-&lt;/a&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2014-10-23/input_txt.png&#34; alt=&#34;input_txt&#34; width=972 height=415 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;p&gt;TYPEはTXTにしてVALUEにさっきのテキストを入力。
@@ -119,9 +113,7 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 
 &lt;p&gt;確認が出来たらサブドメインとしてプレフィックスを付けるのかを決める。&lt;/p&gt;
 
-&lt;a href=&#34;https://yet.unresolved.xyz/images/2014-10-23/step2.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
-  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2014-10-23/step2.png&#34; alt=&#34;step2&#34; width=827 height=291 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
-&lt;/a&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2014-10-23/step2.png&#34; alt=&#34;step2&#34; width=827 height=291 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;p&gt;これによって最後のステップが変わるけど、僕は確認の時点でサブドメインとして設定したので、Google側では特に付加せずやってます。&lt;/p&gt;
@@ -131,10 +123,8 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 &lt;p&gt;最後はまたDNSレコードの追加。
 ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。&lt;/p&gt;
 
-&lt;a href=&#34;https://yet.unresolved.xyz/images/2014-10-23/step3.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
-  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2014-10-23/step3.png&#34; alt=&#34;step3&#34; width=823 height=313 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
-&lt;/a&gt;
-
+&lt;p&gt;&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2014-10-23/step3.png&#34; alt=&#34;step3&#34; width=823 height=313 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;/p&gt;
 
 &lt;p&gt;あとは待ってればそのうち反映されるはず。&lt;/p&gt;
 </description>

@@ -114,9 +114,10 @@
 
 &lt;p&gt;&lt;a href=&#34;https://www.ampproject.org/docs/guides/responsive/style_pages.html#disallowed-styles&#34;&gt;How to Style Your Pages#disallowed-styles&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;外部スタイルシートは原則&lt;strong&gt;フォント読み込み&lt;/strong&gt;のみ可、とのことです。Google Fontsなどですね。
-BootstrapやSkeletonなどのCSSフレームワークはどうしたらいいんだろうと思ったのですが、
-そもそもAMPの目的を考えるとCSSをフレームワークが必要なほどのデザインを施すこと自体が間違っているのかもしれません。
+&lt;p&gt;外部スタイルシートは原則&lt;strong&gt;フォント読み込み&lt;/strong&gt;のみ可、とのことです。Google Fontsなどですね。&lt;/p&gt;
+
+&lt;p&gt;BootstrapやSkeletonなどのCSSフレームワークはどうしたらいいんだろうと思ったのですが、
+そもそもAMPの目的を考えると、CSSをフレームワークが必要なほどのデザインを施すこと自体が間違っているのかもしれません。
 ちなみに僕は今回使わないことにしました。（&lt;code&gt;.container&lt;/code&gt;とグリッドシステムくらいしか使っていなかったのでそもそも不要でした。）&lt;/p&gt;
 
 &lt;h3 id=&#34;javascript:248155386e4621d756694486f44e789c&#34;&gt;JavaScript&lt;/h3&gt;

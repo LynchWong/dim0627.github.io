@@ -44,9 +44,7 @@ bind c new-window -c &amp;quot;#{pane_current_path}&amp;quot;
       <description>&lt;p&gt;iTerm2での話。
 こいつのせい。&lt;/p&gt;
 
-&lt;a href=&#34;https://yet.unresolved.xyz/images/2015-03-30/iterm.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
-  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2015-03-30/iterm.png&#34; alt=&#34;iterm&#34; width=924 height=540 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
-&lt;/a&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2015-03-30/iterm.png&#34; alt=&#34;iterm&#34; width=924 height=540 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;p&gt;でもこれがないと、素の時に使うVimで&lt;a href=&#34;https://github.com/itchyny/lightline.vim&#34;&gt;itchyny/lightline.vim&lt;/a&gt;がズレるんだよなあ。&lt;/p&gt;
