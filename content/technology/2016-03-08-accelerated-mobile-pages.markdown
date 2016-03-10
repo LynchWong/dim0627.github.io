@@ -105,8 +105,9 @@ AMP用のタグが用意されているので、それに置き換える必要�
 [How to Style Your Pages#disallowed-styles](https://www.ampproject.org/docs/guides/responsive/style_pages.html#disallowed-styles)
 
 外部スタイルシートは原則**フォント読み込み**のみ可、とのことです。Google Fontsなどですね。
-つまりBootstrapやSkeletonなどのCSSフレームワークはベタで書く必要があるのでしょうか。もしかしたらベストプラクティスがあるのかもしれません。
-僕は今回使わないことにしました。（`.container`とグリッドシステムくらいしか使っていなかったので。）
+BootstrapやSkeletonなどのCSSフレームワークはどうしたらいいんだろうと思ったのですが、
+そもそもAMPの目的を考えるとCSSをフレームワークが必要なほどのデザインを施すこと自体が間違っているのかもしれません。
+ちなみに僕は今回使わないことにしました。（`.container`とグリッドシステムくらいしか使っていなかったのでそもそも不要でした。）
 
 ### JavaScript
 
