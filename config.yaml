@@ -1,11 +1,12 @@
 BaseUrl: "https://yet.unresolved.xyz/"
-LanguageCode: "en-us"
+LanguageCode: "ja-jp"
 Title: "Unresolved"
 
 Params:
   Author: "Daisuke Tsuji"
   GoogleAnalyticsUserID: "UA-55005303-1"
-  SyntaxHighlightTheme: "solarized_dark.min.css"
+  SectionRobots:
+    diary: "noindex,nofollow"
 
 Indexes:
   tag: "tags"
