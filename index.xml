@@ -6,8 +6,61 @@
     <description>Recent content on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Mar 2016 12:22:46 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 11 Mar 2016 12:16:29 +0900</lastBuildDate>
     <atom:link href="https://yet.unresolved.xyz/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>本をほぼすべて捨てた</title>
+      <link>https://yet.unresolved.xyz/blog/2016/03/11/discarded-all-books/</link>
+      <pubDate>Fri, 11 Mar 2016 12:16:29 +0900</pubDate>
+      
+      <guid>https://yet.unresolved.xyz/blog/2016/03/11/discarded-all-books/</guid>
+      <description>&lt;p&gt;以前書いた通り、本が邪魔すぎてずっとなんとかしたかった。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://yet.unresolved.xyz/blog/2015/12/24/want-to-migrate-to-e-books/&#34;&gt;電子書籍に移行したい - Unresolved&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;結局電子書籍には移行せず、売ることにした。
+やっぱり移行後に維持していくコストを考えると、出来れば負いたくないなと思ってしまった。
+でも売りに持っていくのは面倒なので、買い取りに来てくれるしダンボールも用意してくれるところを探した。&lt;/p&gt;
+
+&lt;p&gt;ブックオフでもそういうサービスをやってたと思うけど、せっかくだったので違うサービスを使った。
+とは言え探すのも面倒なくらい辟易してたので、さくっと見つかったBOOK SUPPLYというサービスに頼むことにした。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.booksupply.jp/&#34;&gt;古本買取のブックサプライ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;対応は丁寧ですごく良かった。
+アカウント登録時に住所の番地を入力し忘れたんだけど、電話で問い合わせが来て口頭で対応してくれた。
+土日に連絡が来たので、どんな勤務体系なのか心配になった。&lt;/p&gt;
+
+&lt;p&gt;BOOK SUPPLYは必要なダンボール数を言えば送ってくれて、日時を指定すれば佐川急便の受け取りも手配してくれる。
+ダンボール数は上限があった気がするけど、処分までは基本的に無料でお願いすることが出来る。&lt;/p&gt;
+
+&lt;p&gt;本は配送後に査定をしてくれて、金額をメールで教えてくれる。
+依頼時に、金額によっては返却してほしいとか、どうでもいいからそのまま振り込んで欲しいとか、
+全部寄付してほしいとか、いろいろ選べるのは面白いと思った。&lt;/p&gt;
+
+&lt;p&gt;僕はダンボール2箱を頼んで、チェストにある本の7割くらい（2箱で足りると思ったら足りなかった）を処分した。
+結論から言うと意外と高値で売れた。と思う。&lt;/p&gt;
+
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2016-03-11/sell.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-11/sell.png&#34; alt=&#34;sell&#34; width=982 height=470 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;/a&gt;
+
+
+&lt;p&gt;一般的な売値がどんなもんなのかわからないので、もしかしたらこれでも安いのかもしれないけど、僕は結構満足してる。3,000円くらいかと思ってた。
+対応も良かったので、残りの3割を処分するためにダンボール1箱でもう1度依頼した。&lt;/p&gt;
+
+&lt;p&gt;本は例外なしに捨てたのではなく、後になって困りそうな物は残した。
+実際選別してみると、インフラ関連の技術書のみが残った。
+あとは「&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/4274064069/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4274064069&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;UNIXという考え方―その設計思想と哲学&lt;/a&gt;」みたいに、根底の考え方を記載した本とか。&lt;/p&gt;
+
+&lt;p&gt;インフラ関連の技術書が残るということは、やっぱり僕はインフラに不安を抱いていて、未熟だという自覚があるんだと思った。
+実際、今運営してるサービスでクリティカルな低レイヤーの問題が起きたらスマートに対応できる気がしない。&lt;/p&gt;
+
+&lt;p&gt;とは言えこれでチェストが空いて捨てられるようになったので、目的は達成出来た。
+ものを捨てるということだけでも、色々と考えさせられるもんなんだなと思った。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Kloudsecを使ってカスタムドメインでHTTPSなGithub Pagesを構築する</title>
@@ -79,7 +132,9 @@ GitHub PagesのリポジトリURLを入れることでホスティングして�
 &lt;p&gt;One last thing before your website is boosted and secured by Kloudsec&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-09/dashboard.png&#34; alt=&#34;dashboard&#34; width=2332 height=1334 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2016-03-09/dashboard.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-09/dashboard.png&#34; alt=&#34;dashboard&#34; width=2332 height=1334 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;/a&gt;
 
 
 &lt;p&gt;DNSの設定が終わったらあとは勝手に最適化してくれるらしく、それに時間がかかっていたみたい。
@@ -93,7 +148,9 @@ GitHub PagesのリポジトリURLを入れることでホスティングして�
 GitHubにCNAMEを向けていた時の時間を計測していなかったので比較が出来ないけど、
 Kloudsecはスーパーリロードした際に1秒弱かかっている。&lt;/p&gt;
 
-&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-09/slow.png&#34; alt=&#34;slow&#34; width=1124 height=810 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2016-03-09/slow.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-09/slow.png&#34; alt=&#34;slow&#34; width=1124 height=810 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;/a&gt;
 
 
 &lt;p&gt;HTMLのレスポンス時点で遅いので、どうしょうもない。&lt;/p&gt;
@@ -105,7 +162,9 @@ Kloudsecはスーパーリロードした際に1秒弱かかっている。&lt;/
 
 &lt;p&gt;僕のブログは昨日記事にしたとおりAMP対応をしているので、JSが埋め込まれるのは非常に困る。&lt;/p&gt;
 
-&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-09/amp.png&#34; alt=&#34;amp&#34; width=1140 height=1612 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2016-03-09/amp.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-09/amp.png&#34; alt=&#34;amp&#34; width=1140 height=1612 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;/a&gt;
 
 
 &lt;p&gt;これはDashboardからPage OptimizerをOFFにすれば解決出来る。&lt;/p&gt;
@@ -270,7 +329,9 @@ Google Analytics等は専用の記述が用意されていました。こうい�
 
 &lt;p&gt;まずこれを見ていただきたい。&lt;/p&gt;
 
-&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-02/invalid.png&#34; alt=&#34;invalid&#34; width=1140 height=724 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2016-03-02/invalid.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-02/invalid.png&#34; alt=&#34;invalid&#34; width=1140 height=724 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;/a&gt;
 
 
 &lt;p&gt;2016年3月現在の僕のブログのデザイン。
@@ -290,7 +351,9 @@ Google Analytics等は専用の記述が用意されていました。こうい�
 &lt;p&gt;上記記事によれば、ベースラインを揃えるために&lt;code&gt;before&lt;/code&gt;、&lt;code&gt;after&lt;/code&gt;擬似要素を使ってブロックを押し広げることで実装すればいいとのこと。
 この記事に指導いただいて再実装してみよう。&lt;/p&gt;
 
-&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-02/valid.png&#34; alt=&#34;valid&#34; width=1130 height=784 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2016-03-02/valid.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-02/valid.png&#34; alt=&#34;valid&#34; width=1130 height=784 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;/a&gt;
 
 
 &lt;p&gt;わかりやすさのために擬似要素に背景色をつけている。
@@ -553,7 +616,9 @@ CTFは参加する気ないけど・・・。&lt;/p&gt;
       <guid>https://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/</guid>
       <description>
 
-&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-02-19/cse.png&#34; alt=&#34;cse&#34; width=674 height=150 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2016-02-19/cse.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-02-19/cse.png&#34; alt=&#34;cse&#34; width=674 height=150 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;/a&gt;
 
 
 &lt;h2 id=&#34;なぜ崩れるのか:823fb9b45a070a4729c0c404dd848b3b&#34;&gt;なぜ崩れるのか&lt;/h2&gt;
@@ -661,7 +726,9 @@ MySQLの設定を変えなきゃいけないと思い込んでいて、RDSを使
 
 &lt;p&gt;でもRDSもMySQLの設定は変えられるらしい。そりゃそうか。&lt;/p&gt;
 
-&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-02-04/params.png&#34; alt=&#34;params&#34; width=974 height=496 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2016-02-04/params.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-02-04/params.png&#34; alt=&#34;params&#34; width=974 height=496 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;/a&gt;
 
 
 &lt;p&gt;これで直りました。&lt;/p&gt;
@@ -1061,78 +1128,6 @@ Add `Rails.application.config.assets.precompile += %w( application_target.css )`
 高校生らしい、幼さありきの素直な考えっていうのが少し新鮮に感じた。&lt;/p&gt;
 
 &lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/4575239054/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4575239054&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;君の膵臓をたべたい&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>さくらVPSでpip install lxmlがOOM Killerに殺される</title>
-      <link>https://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/</link>
-      <pubDate>Tue, 12 Jan 2016 12:04:51 +0900</pubDate>
-      
-      <guid>https://yet.unresolved.xyz/blog/2016/01/12/pip-install-lxml-killed-by-oom-killer/</guid>
-      <description>
-
-&lt;p&gt;Python2.7 + BeautifulSoup + lxmlの環境でスクレイピングをしようとしたらlxmlがインストールできなかった。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Installing collected packages: lxml
-  Running setup.py install for lxml
-    Complete output from command /opt/local/bin/python2.7 -c &amp;quot;import setuptools, tokenize;__file__=&#39;/tmp/pip-build-9nMFdz/lxml/setup.py&#39;;exec(compile(getattr(tokenize, &#39;open&#39;, open)(__file__).read()
-.replace(&#39;\r\n&#39;, &#39;\n&#39;), __file__, &#39;exec&#39;))&amp;quot; install --record /tmp/pip-8cwa10-record/install-record.txt --single-version-externally-managed --compile:
-    /opt/local/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: &#39;bugtrack_url&#39;
-      warnings.warn(msg)
-    Building lxml version 3.4.4.
-    Building without Cython.
-    Using build configuration of libxslt 1.1.26
-    Building against libxml2/libxslt in the following directory: /usr/lib64
-    running install
-    running build
-    running build_py
-    copying src/lxml/includes/lxml-version.h -&amp;gt; build/lib.linux-x86_64-2.7/lxml/includes
-    running build_ext
-    building &#39;lxml.etree&#39; extension
-    gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/include/libxml2 -I/tmp/pip-build-9nMFdz/lxml/src/lxml/includes -I/opt/local/include/python
-2.7 -c src/lxml/lxml.etree.c -o build/temp.linux-x86_64-2.7/src/lxml/lxml.etree.o -w
-    gcc: Internal error: Killed (program cc1)
-    Please submit a full bug report.
-    See &amp;lt;http://bugzilla.redhat.com/bugzilla&amp;gt; for instructions.
-    error: command &#39;gcc&#39; failed with exit status 1
-
-    ----------------------------------------
-Command &amp;quot;/opt/local/bin/python2.7 -c &amp;quot;import setuptools, tokenize;__file__=&#39;/tmp/pip-build-9nMFdz/lxml/setup.py&#39;;exec(compile(getattr(tokenize, &#39;open&#39;, open)(__file__).read().replace(&#39;\r\n&#39;, &#39;\n&#39;),
-__file__, &#39;exec&#39;))&amp;quot; install --record /tmp/pip-8cwa10-record/install-record.txt --single-version-externally-managed --compile&amp;quot; failed with error code 1 in /tmp/pip-build-9nMFdz/lxml
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;どうやら&lt;code&gt;gcc: Internal error: Killed (program cc1)&lt;/code&gt;はOOM Killerにkillされたってことらしい？&lt;/p&gt;
-
-&lt;p&gt;この記事も参考になりそうだったけど解決には至らなかった。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://scissorhands.jpn.org/2011/11/post-260.html&#34;&gt;さくらインターネット「さくらのレンタルサーバ」にSubversionをインストールする。 - ScissorHands&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;swapファイルで対応する:bc1e3babd27cd8320e4e2f6865a6df73&#34;&gt;swapファイルで対応する&lt;/h2&gt;
-
-&lt;p&gt;StackOverFlowでswapファイルでやるしかないよみたいな意見が散見されたので、この記事を参考にしました。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.wordspeak.org/posts/resolving-build-errors-with-python-lxml.html&#34;&gt;Resolving build errors with python lxml on low memory machines | Wordspeak&lt;/a&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ sudo dd if=/dev/zero of=/swapfile bs=1024 count=500000
-$ sudo mkswap /swapfile
-$ sudo swapon /swapfile
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;でswapファイルを作成してインストールを実行したら出来ました。&lt;/p&gt;
-
-&lt;p&gt;終わったら削除。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ sudo swapoff /swapfile
-$ sudo rm /swapfile
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;参考にさせていただきました:bc1e3babd27cd8320e4e2f6865a6df73&#34;&gt;参考にさせていただきました&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://scissorhands.jpn.org/2011/11/post-260.html&#34;&gt;さくらインターネット「さくらのレンタルサーバ」にSubversionをインストールする。 - ScissorHands&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.wordspeak.org/posts/resolving-build-errors-with-python-lxml.html&#34;&gt;Resolving build errors with python lxml on low memory machines | Wordspeak&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     

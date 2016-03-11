@@ -2,7 +2,7 @@
 <html ⚡>
   <head>
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.16-DEV" />
+    <meta name="generator" content="Hugo 0.15-DEV" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://yet.unresolved.xyz/index.xml">
@@ -131,26 +131,26 @@ article.single header {
   margin-bottom: 2rem;
 }
 
-article .date {
+article .aside {
   color: #78909c;
   font-size: .8rem;
   font-weight: 700;
-  display: block;
   line-height: 1rem;
+
 }
 
-article .date::before,
-article .date::after {
+article .aside::before,
+article .aside::after {
   content: '';
   display: inline-block;
   height: 1rem;
 }
 
-article .date::before {
+article .aside::before {
   vertical-align: 0;
 }
 
-article .date::after {
+article .aside::after {
   vertical-align: -.5rem;
 }
 
@@ -421,9 +421,25 @@ nav.page a.next {
   <div class="site">
     
     <article class="li">
+  <a href="https://yet.unresolved.xyz/blog/2015/12/17/about-account-killer/">
+    <header>
+      <div class="aside">
+        <time class="date">Thu, Dec 17, 2015</time> - <span class="section">technology</span>
+      </div>
+      <div class="title">ACCOUNT KILLERというサービスが面白い</div>
+    </header>
+
+    <div class="summary">WordPress.comとGravatarを退会しようと思ったんだけどなんか退会画面が見つからない。 いろいろ調べてみるとこの記事に行き着い...</div>
+  </a>
+</article>
+
+    
+    <article class="li">
   <a href="https://yet.unresolved.xyz/blog/2015/12/15/playing-blood-borne/">
     <header>
-      <div class="date">Tue, Dec 15, 2015</div>
+      <div class="aside">
+        <time class="date">Tue, Dec 15, 2015</time> - <span class="section">diary</span>
+      </div>
       <div class="title">今更だけどBloodborneをやってる</div>
     </header>
 
@@ -435,7 +451,9 @@ nav.page a.next {
     <article class="li">
   <a href="https://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/">
     <header>
-      <div class="date">Fri, Dec 11, 2015</div>
+      <div class="aside">
+        <time class="date">Fri, Dec 11, 2015</time> - <span class="section">technology</span>
+      </div>
       <div class="title">Googleの構造化データの扱いが変わった気がする</div>
     </header>
 
@@ -447,7 +465,9 @@ nav.page a.next {
     <article class="li">
   <a href="https://yet.unresolved.xyz/blog/2015/12/10/using-hugo-in-production/">
     <header>
-      <div class="date">Thu, Dec 10, 2015</div>
+      <div class="aside">
+        <time class="date">Thu, Dec 10, 2015</time> - <span class="section">technology</span>
+      </div>
       <div class="title">プロダクションのWordPressを捨てHugoに移行した</div>
     </header>
 
@@ -459,7 +479,9 @@ nav.page a.next {
     <article class="li">
   <a href="https://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/">
     <header>
-      <div class="date">Wed, Nov 4, 2015</div>
+      <div class="aside">
+        <time class="date">Wed, Nov 4, 2015</time> - <span class="section">technology</span>
+      </div>
       <div class="title">ELB越しのLaravelでHTTPSを使おうとして困った話</div>
     </header>
 
@@ -471,7 +493,9 @@ nav.page a.next {
     <article class="li">
   <a href="https://yet.unresolved.xyz/blog/2015/10/09/hugo-support-cjk-language/">
     <header>
-      <div class="date">Fri, Oct 9, 2015</div>
+      <div class="aside">
+        <time class="date">Fri, Oct 9, 2015</time> - <span class="section">technology</span>
+      </div>
       <div class="title">Hugo0.15でSummaryが日本語に対応するっぽい</div>
     </header>
 
@@ -483,7 +507,9 @@ nav.page a.next {
     <article class="li">
   <a href="https://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/">
     <header>
-      <div class="date">Wed, Sep 30, 2015</div>
+      <div class="aside">
+        <time class="date">Wed, Sep 30, 2015</time> - <span class="section">technology</span>
+      </div>
       <div class="title">OWASP ZAPでBASIC認証を突破する</div>
     </header>
 
@@ -495,7 +521,9 @@ nav.page a.next {
     <article class="li">
   <a href="https://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/">
     <header>
-      <div class="date">Wed, Sep 30, 2015</div>
+      <div class="aside">
+        <time class="date">Wed, Sep 30, 2015</time> - <span class="section">technology</span>
+      </div>
       <div class="title">[Laravel5.1]発行されたSQLと実行計画を取得する</div>
     </header>
 
@@ -507,7 +535,9 @@ nav.page a.next {
     <article class="li">
   <a href="https://yet.unresolved.xyz/blog/2015/08/26/i-want-to-use-amazon-linux-at-vagrant/">
     <header>
-      <div class="date">Wed, Aug 26, 2015</div>
+      <div class="aside">
+        <time class="date">Wed, Aug 26, 2015</time> - <span class="section">technology</span>
+      </div>
       <div class="title">Amazon LinuxをVagrantで使いたい</div>
     </header>
 
@@ -519,23 +549,13 @@ nav.page a.next {
     <article class="li">
   <a href="https://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/">
     <header>
-      <div class="date">Tue, Jul 14, 2015</div>
+      <div class="aside">
+        <time class="date">Tue, Jul 14, 2015</time> - <span class="section">technology</span>
+      </div>
       <div class="title">focusoutイベントでfocus中の要素が取得できない</div>
     </header>
 
     <div class="summary">何を血迷ったかサジェストを自作しようとしてしまってつらい目にあった話。 フォーカスアウトしたらサジェストを消したい 入力欄もしくはサジェストから...</div>
-  </a>
-</article>
-
-    
-    <article class="li">
-  <a href="https://yet.unresolved.xyz/blog/2015/05/06/challenged-to-online-hackathon-of-paiza5/">
-    <header>
-      <div class="date">Wed, May 6, 2015</div>
-      <div class="title">例によってpaiza online hackathon5をClojureで解いてみた</div>
-    </header>
-
-    <div class="summary">まずい更新することがない。 とりあえずPOHネタでこの場をしのごう。 マンガ版「俺の許嫁と幼なじみが修羅場すぎる」｜paizaオンラインハッカソ...</div>
   </a>
 </article>
 

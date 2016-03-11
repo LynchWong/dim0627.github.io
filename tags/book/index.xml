@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Book on Unresolved</title>
+    <link>https://yet.unresolved.xyz/tags/book/</link>
+    <description>Recent content in Book on Unresolved</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Mar 2016 12:16:29 +0900</lastBuildDate>
+    <atom:link href="https://yet.unresolved.xyz/tags/book/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>本をほぼすべて捨てた</title>
+      <link>https://yet.unresolved.xyz/blog/2016/03/11/discarded-all-books/</link>
+      <pubDate>Fri, 11 Mar 2016 12:16:29 +0900</pubDate>
+      
+      <guid>https://yet.unresolved.xyz/blog/2016/03/11/discarded-all-books/</guid>
+      <description>&lt;p&gt;以前書いた通り、本が邪魔すぎてずっとなんとかしたかった。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://yet.unresolved.xyz/blog/2015/12/24/want-to-migrate-to-e-books/&#34;&gt;電子書籍に移行したい - Unresolved&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;結局電子書籍には移行せず、売ることにした。
+やっぱり移行後に維持していくコストを考えると、出来れば負いたくないなと思ってしまった。
+でも売りに持っていくのは面倒なので、買い取りに来てくれるしダンボールも用意してくれるところを探した。&lt;/p&gt;
+
+&lt;p&gt;ブックオフでもそういうサービスをやってたと思うけど、せっかくだったので違うサービスを使った。
+とは言え探すのも面倒なくらい辟易してたので、さくっと見つかったBOOK SUPPLYというサービスに頼むことにした。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.booksupply.jp/&#34;&gt;古本買取のブックサプライ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;対応は丁寧ですごく良かった。
+アカウント登録時に住所の番地を入力し忘れたんだけど、電話で問い合わせが来て口頭で対応してくれた。
+土日に連絡が来たので、どんな勤務体系なのか心配になった。&lt;/p&gt;
+
+&lt;p&gt;BOOK SUPPLYは必要なダンボール数を言えば送ってくれて、日時を指定すれば佐川急便の受け取りも手配してくれる。
+ダンボール数は上限があった気がするけど、処分までは基本的に無料でお願いすることが出来る。&lt;/p&gt;
+
+&lt;p&gt;本は配送後に査定をしてくれて、金額をメールで教えてくれる。
+依頼時に、金額によっては返却してほしいとか、どうでもいいからそのまま振り込んで欲しいとか、
+全部寄付してほしいとか、いろいろ選べるのは面白いと思った。&lt;/p&gt;
+
+&lt;p&gt;僕はダンボール2箱を頼んで、チェストにある本の7割くらい（2箱で足りると思ったら足りなかった）を処分した。
+結論から言うと意外と高値で売れた。と思う。&lt;/p&gt;
+
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2016-03-11/sell.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-11/sell.png&#34; alt=&#34;sell&#34; width=982 height=470 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;/a&gt;
+
+
+&lt;p&gt;一般的な売値がどんなもんなのかわからないので、もしかしたらこれでも安いのかもしれないけど、僕は結構満足してる。3,000円くらいかと思ってた。
+対応も良かったので、残りの3割を処分するためにダンボール1箱でもう1度依頼した。&lt;/p&gt;
+
+&lt;p&gt;本は例外なしに捨てたのではなく、後になって困りそうな物は残した。
+実際選別してみると、インフラ関連の技術書のみが残った。
+あとは「&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/4274064069/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4274064069&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;UNIXという考え方―その設計思想と哲学&lt;/a&gt;」みたいに、根底の考え方を記載した本とか。&lt;/p&gt;
+
+&lt;p&gt;インフラ関連の技術書が残るということは、やっぱり僕はインフラに不安を抱いていて、未熟だという自覚があるんだと思った。
+実際、今運営してるサービスでクリティカルな低レイヤーの問題が起きたらスマートに対応できる気がしない。&lt;/p&gt;
+
+&lt;p&gt;とは言えこれでチェストが空いて捨てられるようになったので、目的は達成出来た。
+ものを捨てるということだけでも、色々と考えさせられるもんなんだなと思った。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
