@@ -496,7 +496,10 @@ DBも多分メジャーどころは大抵使える(と思う)し、APIもRPCは�
 <p>サーバを再度起動する場合は<code>php -S localhost:8888 -t public public/index.php</code>とかやればOK。
 画面を開くとこんな感じのが出てくる。</p>
 
-<p><a href="/images/2015-02-14/apigility_top.png"><img src="/images/2015-02-14/apigility_top.png" alt="apigility_top"></a></p>
+<a href="/images/2015-02-14/apigility_top.png" target="_blank" rel="nofollow">
+  <amp-img src="/images/2015-02-14/apigility_top.png" alt="apigility_top" width=1352 height=701 layout="responsive"></amp-img>
+</a>
+
 
 <p>ロゴがかわいいね。ここからAPIの追加やデータベース接続の設定やらが出来ます。</p>
 
@@ -511,17 +514,26 @@ DBも多分メジャーどころは大抵使える(と思う)し、APIもRPCは�
 
 <p><code>Settings</code>の<code>Database Adapters</code>から定義を追加出来る。</p>
 
-<p><a href="/images/2015-02-14/database.png"><img src="/images/2015-02-14/database.png" alt="database"></a></p>
+<a href="/images/2015-02-14/database.png" target="_blank" rel="nofollow">
+  <amp-img src="/images/2015-02-14/database.png" alt="database" width=1251 height=762 layout="responsive"></amp-img>
+</a>
+
 
 <p>今回はこんな感じで設定。</p>
 
-<p><a href="/images/2015-02-14/def_database.png"><img src="/images/2015-02-14/def_database.png" alt="def_database"></a></p>
+<a href="/images/2015-02-14/def_database.png" target="_blank" rel="nofollow">
+  <amp-img src="/images/2015-02-14/def_database.png" alt="def_database" width=862 height=647 layout="responsive"></amp-img>
+</a>
+
 
 <h2 id="apiを追加する:a8f13c6c06505842468ef355c1de93c5">APIを追加する</h2>
 
 <p><code>APIs</code>の<code>Create New API</code>からAPIを追加する。今回はTasksという名前で作成した。</p>
 
-<p><a href="/images/2015-02-14/create_api.png"><img src="/images/2015-02-14/create_api.png" alt="create_api"></a></p>
+<a href="/images/2015-02-14/create_api.png" target="_blank" rel="nofollow">
+  <amp-img src="/images/2015-02-14/create_api.png" alt="create_api" width=567 height=294 layout="responsive"></amp-img>
+</a>
+
 
 <p>粒度がわかりづらいけど、ここで作ったAPIに対して個々のサービスを追加していく。</p>
 
@@ -539,19 +551,31 @@ DBも多分メジャーどころは大抵使える(と思う)し、APIもRPCは�
 
 <p>というわけで、<code>REST Service Name</code>をtasks、<code>DB-Connected</code>はさっき作ったアダプタとテーブル名を設定。</p>
 
-<p><a href="/images/2015-02-14/create_service.png"><img src="/images/2015-02-14/create_service.png" alt="create_service"></a></p>
+<a href="/images/2015-02-14/create_service.png" target="_blank" rel="nofollow">
+  <amp-img src="/images/2015-02-14/create_service.png" alt="create_service" width=1249 height=477 layout="responsive"></amp-img>
+</a>
+
 
 <p>こんな感じになる。</p>
 
-<p><a href="/images/2015-02-14/def_service.png"><img src="/images/2015-02-14/def_service.png" alt="def_service"></a></p>
+<a href="/images/2015-02-14/def_service.png" target="_blank" rel="nofollow">
+  <amp-img src="/images/2015-02-14/def_service.png" alt="def_service" width=857 height=615 layout="responsive"></amp-img>
+</a>
+
 
 <p>接続できるか試してみましょう。データがないので、まずはPOSTで格納してみる。</p>
 
-<p><a href="/images/2015-02-14/post_tasks.png"><img src="/images/2015-02-14/post_tasks.png" alt="post_tasks"></a></p>
+<a href="/images/2015-02-14/post_tasks.png" target="_blank" rel="nofollow">
+  <amp-img src="/images/2015-02-14/post_tasks.png" alt="post_tasks" width=1118 height=673 layout="responsive"></amp-img>
+</a>
+
 
 <p>いけてるっぽい。取得は？</p>
 
-<p><a href="/images/2015-02-14/get_tasks.png"><img src="/images/2015-02-14/get_tasks.png" alt="get_tasks"></a></p>
+<a href="/images/2015-02-14/get_tasks.png" target="_blank" rel="nofollow">
+  <amp-img src="/images/2015-02-14/get_tasks.png" alt="get_tasks" width=1118 height=673 layout="responsive"></amp-img>
+</a>
+
 
 <p>取れますね。</p>
 
@@ -569,7 +593,10 @@ DBも多分メジャーどころは大抵使える(と思う)し、APIもRPCは�
 
 <p>つってもここはあんまり説明してもしょうがないのでSSとコードだけ。表示はこんな感じで、</p>
 
-<p><a href="/images/2015-02-14/view.png"><img src="/images/2015-02-14/view.png" alt="view"></a></p>
+<a href="/images/2015-02-14/view.png" target="_blank" rel="nofollow">
+  <amp-img src="/images/2015-02-14/view.png" alt="view" width=524 height=206 layout="responsive"></amp-img>
+</a>
+
 
 <p>こんなHTMLでやりました。</p>
 
