@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://yet.unresolved.xyz/index.xml">
 
+    
+    
+    
+
     <title>Unresolved</title>
 
     <link rel="canonical" href="https://yet.unresolved.xyz/">
@@ -144,26 +148,26 @@ article.single header {
   margin-bottom: 2rem;
 }
 
-article .date {
+article .aside {
   color: #78909c;
   font-size: .8rem;
   font-weight: 700;
-  display: block;
   line-height: 1rem;
+
 }
 
-article .date::before,
-article .date::after {
+article .aside::before,
+article .aside::after {
   content: '';
   display: inline-block;
   height: 1rem;
 }
 
-article .date::before {
+article .aside::before {
   vertical-align: 0;
 }
 
-article .date::after {
+article .aside::after {
   vertical-align: -.5rem;
 }
 
@@ -436,7 +440,9 @@ nav.page a.next {
     <article class="li">
   <a href="https://yet.unresolved.xyz/blog/2016/03/11/discarded-all-books/">
     <header>
-      <div class="date">Fri, Mar 11, 2016</div>
+      <div class="aside">
+        <time class="date">Fri, Mar 11, 2016</time> - <span class="section">diary</span>
+      </div>
       <div class="title">本をほぼすべて捨てた</div>
     </header>
 
@@ -448,7 +454,9 @@ nav.page a.next {
     <article class="li">
   <a href="https://yet.unresolved.xyz/blog/2016/03/09/use-a-custom-domain-and-secure-http-in-githubpages-by-kloudsec/">
     <header>
-      <div class="date">Wed, Mar 9, 2016</div>
+      <div class="aside">
+        <time class="date">Wed, Mar 9, 2016</time> - <span class="section">technology</span>
+      </div>
       <div class="title">Kloudsecを使ってカスタムドメインでHTTPSなGithub Pagesを構築する</div>
     </header>
 
@@ -460,7 +468,9 @@ nav.page a.next {
     <article class="li">
   <a href="https://yet.unresolved.xyz/blog/2016/03/08/accelerated-mobile-pages/">
     <header>
-      <div class="date">Tue, Mar 8, 2016</div>
+      <div class="aside">
+        <time class="date">Tue, Mar 8, 2016</time> - <span class="section">technology</span>
+      </div>
       <div class="title">AMP対応をした</div>
     </header>
 
@@ -472,7 +482,9 @@ nav.page a.next {
     <article class="li">
   <a href="https://yet.unresolved.xyz/blog/2016/03/02/i-misunderstood-vertical-rhythm/">
     <header>
-      <div class="date">Wed, Mar 2, 2016</div>
+      <div class="aside">
+        <time class="date">Wed, Mar 2, 2016</time> - <span class="section">technology</span>
+      </div>
       <div class="title">やはり僕のバーティカルリズムは間違っている</div>
     </header>
 
@@ -484,7 +496,9 @@ nav.page a.next {
     <article class="li">
   <a href="https://yet.unresolved.xyz/blog/2016/03/01/text-rendering-optimizelegibility-and-web-fonts/">
     <header>
-      <div class="date">Tue, Mar 1, 2016</div>
+      <div class="aside">
+        <time class="date">Tue, Mar 1, 2016</time> - <span class="section">technology</span>
+      </div>
       <div class="title">text-rendering: optimizeLegibility;を指定するとWebフォントの読み込みがおかしくなる</div>
     </header>
 
@@ -496,7 +510,9 @@ nav.page a.next {
     <article class="li">
   <a href="https://yet.unresolved.xyz/blog/2016/02/29/100-things-every-designer-needs-to-know-about-people/">
     <header>
-      <div class="date">Mon, Feb 29, 2016</div>
+      <div class="aside">
+        <time class="date">Mon, Feb 29, 2016</time> - <span class="section">book</span>
+      </div>
       <div class="title">「インタフェースデザインの心理学 ―ウェブやアプリに新たな視点をもたらす100の指針」を読んだ</div>
     </header>
 
@@ -508,7 +524,9 @@ nav.page a.next {
     <article class="li">
   <a href="https://yet.unresolved.xyz/blog/2016/02/22/ctf-for-starter/">
     <header>
-      <div class="date">Mon, Feb 22, 2016</div>
+      <div class="aside">
+        <time class="date">Mon, Feb 22, 2016</time> - <span class="section">technology</span>
+      </div>
       <div class="title">「CTF for Starter in IISEC」に行ってきた</div>
     </header>
 
@@ -520,7 +538,9 @@ nav.page a.next {
     <article class="li">
   <a href="https://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/">
     <header>
-      <div class="date">Fri, Feb 19, 2016</div>
+      <div class="aside">
+        <time class="date">Fri, Feb 19, 2016</time> - <span class="section">technology</span>
+      </div>
       <div class="title">Googleカスタム検索のデザインが崩れる</div>
     </header>
 
@@ -532,7 +552,9 @@ nav.page a.next {
     <article class="li">
   <a href="https://yet.unresolved.xyz/blog/2016/02/04/libmysqlclient16-not-found/">
     <header>
-      <div class="date">Thu, Feb 4, 2016</div>
+      <div class="aside">
+        <time class="date">Thu, Feb 4, 2016</time> - <span class="section">technology</span>
+      </div>
       <div class="title">MySQL5.6&#43;ruby-mysql2でlibmysqlclient_16 not found</div>
     </header>
 
@@ -544,7 +566,9 @@ nav.page a.next {
     <article class="li">
   <a href="https://yet.unresolved.xyz/blog/2016/02/04/illegal-mix-of-collations/">
     <header>
-      <div class="date">Thu, Feb 4, 2016</div>
+      <div class="aside">
+        <time class="date">Thu, Feb 4, 2016</time> - <span class="section">technology</span>
+      </div>
       <div class="title">Rails&#43;RDSでMysql2::Error: Illegal mix of collations</div>
     </header>
 

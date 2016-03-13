@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://yet.unresolved.xyz/index.xml">
 
+    
+    
+    
+
     <title>Kloudsecを使ってカスタムドメインでHTTPSなGithub Pagesを構築する - Unresolved</title>
 
     <link rel="canonical" href="https://yet.unresolved.xyz/blog/2016/03/09/use-a-custom-domain-and-secure-http-in-githubpages-by-kloudsec/">
@@ -168,26 +172,26 @@ article.single header {
   margin-bottom: 2rem;
 }
 
-article .date {
+article .aside {
   color: #78909c;
   font-size: .8rem;
   font-weight: 700;
-  display: block;
   line-height: 1rem;
+
 }
 
-article .date::before,
-article .date::after {
+article .aside::before,
+article .aside::after {
   content: '';
   display: inline-block;
   height: 1rem;
 }
 
-article .date::before {
+article .aside::before {
   vertical-align: 0;
 }
 
-article .date::after {
+article .aside::after {
   vertical-align: -.5rem;
 }
 
@@ -457,8 +461,10 @@ nav.page a.next {
 <article class="single">
 
   <header>
-    <time class="date">Wed, Mar 9, 2016</time>
-    <h1 class="title">Kloudsecを使ってカスタムドメインでHTTPSなGithub Pagesを構築する</h1>
+    <div class="aside">
+      <time class="date">Wed, Mar 9, 2016</time> - <a href="https://yet.unresolved.xyz/technology" class="section">technology</a>
+    </div>
+    <div class="title">Kloudsecを使ってカスタムドメインでHTTPSなGithub Pagesを構築する</div>
   </header>
 
   <div class="body">
@@ -525,7 +531,9 @@ GitHub PagesのリポジトリURLを入れることでホスティングして�
 <p>One last thing before your website is boosted and secured by Kloudsec</p>
 </blockquote>
 
-<amp-img src="/images/2016-03-09/dashboard.png" alt="dashboard" width=2332 height=1334 layout="responsive"></amp-img>
+<a href="/images/2016-03-09/dashboard.png" target="_blank" rel="nofollow">
+  <amp-img src="/images/2016-03-09/dashboard.png" alt="dashboard" width=2332 height=1334 layout="responsive"></amp-img>
+</a>
 
 
 <p>DNSの設定が終わったらあとは勝手に最適化してくれるらしく、それに時間がかかっていたみたい。
@@ -539,7 +547,9 @@ GitHub PagesのリポジトリURLを入れることでホスティングして�
 GitHubにCNAMEを向けていた時の時間を計測していなかったので比較が出来ないけど、
 Kloudsecはスーパーリロードした際に1秒弱かかっている。</p>
 
-<amp-img src="/images/2016-03-09/slow.png" alt="slow" width=1124 height=810 layout="responsive"></amp-img>
+<a href="/images/2016-03-09/slow.png" target="_blank" rel="nofollow">
+  <amp-img src="/images/2016-03-09/slow.png" alt="slow" width=1124 height=810 layout="responsive"></amp-img>
+</a>
 
 
 <p>HTMLのレスポンス時点で遅いので、どうしょうもない。</p>
@@ -551,7 +561,9 @@ Kloudsecはスーパーリロードした際に1秒弱かかっている。</p>
 
 <p>僕のブログは昨日記事にしたとおりAMP対応をしているので、JSが埋め込まれるのは非常に困る。</p>
 
-<amp-img src="/images/2016-03-09/amp.png" alt="amp" width=1140 height=1612 layout="responsive"></amp-img>
+<a href="/images/2016-03-09/amp.png" target="_blank" rel="nofollow">
+  <amp-img src="/images/2016-03-09/amp.png" alt="amp" width=1140 height=1612 layout="responsive"></amp-img>
+</a>
 
 
 <p>これはDashboardからPage OptimizerをOFFにすれば解決出来る。</p>

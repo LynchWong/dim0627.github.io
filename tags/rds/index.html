@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://yet.unresolved.xyz/index.xml">
 
+    
+    
+    
+
     <title>Rds - Unresolved</title>
 
     <link rel="canonical" href="https://yet.unresolved.xyz/tags/rds/">
@@ -144,26 +148,26 @@ article.single header {
   margin-bottom: 2rem;
 }
 
-article .date {
+article .aside {
   color: #78909c;
   font-size: .8rem;
   font-weight: 700;
-  display: block;
   line-height: 1rem;
+
 }
 
-article .date::before,
-article .date::after {
+article .aside::before,
+article .aside::after {
   content: '';
   display: inline-block;
   height: 1rem;
 }
 
-article .date::before {
+article .aside::before {
   vertical-align: 0;
 }
 
-article .date::after {
+article .aside::after {
   vertical-align: -.5rem;
 }
 
@@ -438,7 +442,9 @@ nav.page a.next {
     <article class="li">
   <a href="https://yet.unresolved.xyz/blog/2016/02/04/illegal-mix-of-collations/">
     <header>
-      <div class="date">Thu, Feb 4, 2016</div>
+      <div class="aside">
+        <time class="date">Thu, Feb 4, 2016</time> - <span class="section">technology</span>
+      </div>
       <div class="title">Rails&#43;RDSでMysql2::Error: Illegal mix of collations</div>
     </header>
 

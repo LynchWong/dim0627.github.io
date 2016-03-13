@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://yet.unresolved.xyz/index.xml">
 
+    
+    
+    
+
     <title>focusoutイベントでfocus中の要素が取得できない - Unresolved</title>
 
     <link rel="canonical" href="https://yet.unresolved.xyz/blog/2015/07/14/does-not-work-focus-selector-at-focusout-event/">
@@ -168,26 +172,26 @@ article.single header {
   margin-bottom: 2rem;
 }
 
-article .date {
+article .aside {
   color: #78909c;
   font-size: .8rem;
   font-weight: 700;
-  display: block;
   line-height: 1rem;
+
 }
 
-article .date::before,
-article .date::after {
+article .aside::before,
+article .aside::after {
   content: '';
   display: inline-block;
   height: 1rem;
 }
 
-article .date::before {
+article .aside::before {
   vertical-align: 0;
 }
 
-article .date::after {
+article .aside::after {
   vertical-align: -.5rem;
 }
 
@@ -457,8 +461,10 @@ nav.page a.next {
 <article class="single">
 
   <header>
-    <time class="date">Tue, Jul 14, 2015</time>
-    <h1 class="title">focusoutイベントでfocus中の要素が取得できない</h1>
+    <div class="aside">
+      <time class="date">Tue, Jul 14, 2015</time> - <a href="https://yet.unresolved.xyz/technology" class="section">technology</a>
+    </div>
+    <div class="title">focusoutイベントでfocus中の要素が取得できない</div>
   </header>
 
   <div class="body">

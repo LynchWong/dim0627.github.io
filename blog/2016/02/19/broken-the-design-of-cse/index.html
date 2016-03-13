@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://yet.unresolved.xyz/index.xml">
 
+    
+    
+    
+
     <title>Googleカスタム検索のデザインが崩れる - Unresolved</title>
 
     <link rel="canonical" href="https://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/">
@@ -168,26 +172,26 @@ article.single header {
   margin-bottom: 2rem;
 }
 
-article .date {
+article .aside {
   color: #78909c;
   font-size: .8rem;
   font-weight: 700;
-  display: block;
   line-height: 1rem;
+
 }
 
-article .date::before,
-article .date::after {
+article .aside::before,
+article .aside::after {
   content: '';
   display: inline-block;
   height: 1rem;
 }
 
-article .date::before {
+article .aside::before {
   vertical-align: 0;
 }
 
-article .date::after {
+article .aside::after {
   vertical-align: -.5rem;
 }
 
@@ -457,13 +461,17 @@ nav.page a.next {
 <article class="single">
 
   <header>
-    <time class="date">Fri, Feb 19, 2016</time>
-    <h1 class="title">Googleカスタム検索のデザインが崩れる</h1>
+    <div class="aside">
+      <time class="date">Fri, Feb 19, 2016</time> - <a href="https://yet.unresolved.xyz/technology" class="section">technology</a>
+    </div>
+    <div class="title">Googleカスタム検索のデザインが崩れる</div>
   </header>
 
   <div class="body">
 
-<amp-img src="/images/2016-02-19/cse.png" alt="cse" width=674 height=150 layout="responsive"></amp-img>
+<a href="/images/2016-02-19/cse.png" target="_blank" rel="nofollow">
+  <amp-img src="/images/2016-02-19/cse.png" alt="cse" width=674 height=150 layout="responsive"></amp-img>
+</a>
 
 
 <h2 id="なぜ崩れるのか:823fb9b45a070a4729c0c404dd848b3b">なぜ崩れるのか</h2>

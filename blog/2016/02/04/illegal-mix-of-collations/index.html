@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://yet.unresolved.xyz/index.xml">
 
+    
+    
+    
+
     <title>Rails&#43;RDSでMysql2::Error: Illegal mix of collations - Unresolved</title>
 
     <link rel="canonical" href="https://yet.unresolved.xyz/blog/2016/02/04/illegal-mix-of-collations/">
@@ -168,26 +172,26 @@ article.single header {
   margin-bottom: 2rem;
 }
 
-article .date {
+article .aside {
   color: #78909c;
   font-size: .8rem;
   font-weight: 700;
-  display: block;
   line-height: 1rem;
+
 }
 
-article .date::before,
-article .date::after {
+article .aside::before,
+article .aside::after {
   content: '';
   display: inline-block;
   height: 1rem;
 }
 
-article .date::before {
+article .aside::before {
   vertical-align: 0;
 }
 
-article .date::after {
+article .aside::after {
   vertical-align: -.5rem;
 }
 
@@ -457,8 +461,10 @@ nav.page a.next {
 <article class="single">
 
   <header>
-    <time class="date">Thu, Feb 4, 2016</time>
-    <h1 class="title">Rails&#43;RDSでMysql2::Error: Illegal mix of collations</h1>
+    <div class="aside">
+      <time class="date">Thu, Feb 4, 2016</time> - <a href="https://yet.unresolved.xyz/technology" class="section">technology</a>
+    </div>
+    <div class="title">Rails&#43;RDSでMysql2::Error: Illegal mix of collations</div>
   </header>
 
   <div class="body">
@@ -473,7 +479,9 @@ MySQLの設定を変えなきゃいけないと思い込んでいて、RDSを使
 
 <p>でもRDSもMySQLの設定は変えられるらしい。そりゃそうか。</p>
 
-<amp-img src="/images/2016-02-04/params.png" alt="params" width=974 height=496 layout="responsive"></amp-img>
+<a href="/images/2016-02-04/params.png" target="_blank" rel="nofollow">
+  <amp-img src="/images/2016-02-04/params.png" alt="params" width=974 height=496 layout="responsive"></amp-img>
+</a>
 
 
 <p>これで直りました。</p>
