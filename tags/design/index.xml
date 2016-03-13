@@ -19,9 +19,7 @@
 
 &lt;p&gt;まずこれを見ていただきたい。&lt;/p&gt;
 
-&lt;a href=&#34;https://yet.unresolved.xyz/images/2016-03-02/invalid.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
-  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-02/invalid.png&#34; alt=&#34;invalid&#34; width=1140 height=724 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
-&lt;/a&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-02/invalid.png&#34; alt=&#34;invalid&#34; width=1140 height=724 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;p&gt;2016年3月現在の僕のブログのデザイン。
@@ -41,9 +39,7 @@
 &lt;p&gt;上記記事によれば、ベースラインを揃えるために&lt;code&gt;before&lt;/code&gt;、&lt;code&gt;after&lt;/code&gt;擬似要素を使ってブロックを押し広げることで実装すればいいとのこと。
 この記事に指導いただいて再実装してみよう。&lt;/p&gt;
 
-&lt;a href=&#34;https://yet.unresolved.xyz/images/2016-03-02/valid.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
-  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-02/valid.png&#34; alt=&#34;valid&#34; width=1130 height=784 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
-&lt;/a&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-02/valid.png&#34; alt=&#34;valid&#34; width=1130 height=784 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;p&gt;わかりやすさのために擬似要素に背景色をつけている。
@@ -143,9 +139,7 @@
       <guid>https://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/</guid>
       <description>
 
-&lt;a href=&#34;https://yet.unresolved.xyz/images/2016-02-19/cse.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
-  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-02-19/cse.png&#34; alt=&#34;cse&#34; width=674 height=150 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
-&lt;/a&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-02-19/cse.png&#34; alt=&#34;cse&#34; width=674 height=150 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;h2 id=&#34;なぜ崩れるのか:823fb9b45a070a4729c0c404dd848b3b&#34;&gt;なぜ崩れるのか&lt;/h2&gt;
@@ -364,9 +358,7 @@ Google自身もこう書いている。&lt;/p&gt;
 
 &lt;p&gt;Octopressから移行してしまったので、スクリーンショットだけ載せとく。&lt;/p&gt;
 
-&lt;a href=&#34;https://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
-  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34; alt=&#34;flatten&#34; width=1000 height=695 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
-&lt;/a&gt;
+&lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2014-09-21/flatten.png&#34; alt=&#34;flatten&#34; width=1000 height=695 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 
 
 &lt;h2 id=&#34;テーマの変え方:04d1c6053c5be0425bfb88e610b78a00&#34;&gt;テーマの変え方&lt;/h2&gt;

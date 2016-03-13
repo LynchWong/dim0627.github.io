@@ -2,19 +2,16 @@
 <html ⚡>
   <head>
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.15-DEV" />
+    <meta name="generator" content="Hugo 0.16-DEV" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://yet.unresolved.xyz/index.xml">
-
-    
-    
-    
 
     <title>Kloudsecを使ってカスタムドメインでHTTPSなGithub Pagesを構築する - Unresolved</title>
 
     <link rel="canonical" href="https://yet.unresolved.xyz/blog/2016/03/09/use-a-custom-domain-and-secure-http-in-githubpages-by-kloudsec/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="theme-color" content="#2196f3">
 
     
     <script type="application/ld+json">
@@ -86,14 +83,14 @@ p {
 }
 
 a {
-  color: #2196F3;
+  color: #2196f3;
   text-decoration: none;
 }
 
 a:hover,
 a:focus,
 a:active {
-  color: #1976D2;
+  color: #1976d2;
 }
 
 h1, h2, h3, h4, h5 ,h6 {
@@ -111,7 +108,7 @@ h1, h2, h3, h4, h5 ,h6 {
  
 header.site {
   padding: 1rem 0;
-  box-shadow: 0 -1px 0 #CFD8DC inset, 0 2px 0 0 rgba(236,239,241 ,.5);
+  box-shadow: 0 -1px 0 #cfd8dc inset, 0 2px 0 0 rgba(236,239,241 ,.5);
   margin-bottom: 1rem;
 }
 
@@ -141,7 +138,7 @@ footer.site {
   margin-bottom: 2rem;
   padding: 1rem 0;
   font-size: .8rem;
-  border-top: 1px solid #CFD8DC;
+  border-top: 1px solid #cfd8dc;
   box-shadow: 0 2px 0 0 rgba(236,239,241 ,.5) inset;
   color: #78909c;
   line-height: 1rem;
@@ -171,26 +168,26 @@ article.single header {
   margin-bottom: 2rem;
 }
 
-article .aside {
+article .date {
   color: #78909c;
   font-size: .8rem;
   font-weight: 700;
+  display: block;
   line-height: 1rem;
-
 }
 
-article .aside::before,
-article .aside::after {
+article .date::before,
+article .date::after {
   content: '';
   display: inline-block;
   height: 1rem;
 }
 
-article .aside::before {
+article .date::before {
   vertical-align: 0;
 }
 
-article .aside::after {
+article .date::after {
   vertical-align: -.5rem;
 }
 
@@ -304,7 +301,7 @@ article .body h2::before {
   bottom: 0;
   width: 30%;
   height: 2px;
-  border-bottom: 1px solid #2196F3;
+  border-bottom: 1px solid #2196f3;
   box-shadow: 0 2px 0 0 rgba(33,150,243,.2);
 }
 
@@ -364,7 +361,7 @@ article .body amp-img {
 
 article .body pre {
   padding: .5rem;
-  margin: 0;
+  margin: .5rem 0;
   border: none;
   border-radius: 0;
   font-size: .8rem;
@@ -382,7 +379,7 @@ article .body p code {
   border-radius: 5px;
   white-space: nowrap;
   line-height: 1rem;
-  background-color: #37474F;
+  background-color: #37474f;
   color: #fff;
   text-shadow: 1px 1px 0 #263238;
 }
@@ -393,7 +390,7 @@ aside.article {
 
 aside.article.tags a {
   display: inline-block;
-  background-color: #ECEFF1;
+  background-color: #eceff1;
   color: #37474f;
   padding: .25rem .5rem;
   margin-right: .25rem;
@@ -460,10 +457,8 @@ nav.page a.next {
 <article class="single">
 
   <header>
-    <div class="aside">
-      <time class="date">Wed, Mar 9, 2016</time> - <a href="https://yet.unresolved.xyz/technology" class="section">technology</a>
-    </div>
-    <div class="title">Kloudsecを使ってカスタムドメインでHTTPSなGithub Pagesを構築する</div>
+    <time class="date">Wed, Mar 9, 2016</time>
+    <h1 class="title">Kloudsecを使ってカスタムドメインでHTTPSなGithub Pagesを構築する</h1>
   </header>
 
   <div class="body">
@@ -530,9 +525,7 @@ GitHub PagesのリポジトリURLを入れることでホスティングして�
 <p>One last thing before your website is boosted and secured by Kloudsec</p>
 </blockquote>
 
-<a href="/images/2016-03-09/dashboard.png" target="_blank" rel="nofollow">
-  <amp-img src="/images/2016-03-09/dashboard.png" alt="dashboard" width=2332 height=1334 layout="responsive"></amp-img>
-</a>
+<amp-img src="/images/2016-03-09/dashboard.png" alt="dashboard" width=2332 height=1334 layout="responsive"></amp-img>
 
 
 <p>DNSの設定が終わったらあとは勝手に最適化してくれるらしく、それに時間がかかっていたみたい。
@@ -546,9 +539,7 @@ GitHub PagesのリポジトリURLを入れることでホスティングして�
 GitHubにCNAMEを向けていた時の時間を計測していなかったので比較が出来ないけど、
 Kloudsecはスーパーリロードした際に1秒弱かかっている。</p>
 
-<a href="/images/2016-03-09/slow.png" target="_blank" rel="nofollow">
-  <amp-img src="/images/2016-03-09/slow.png" alt="slow" width=1124 height=810 layout="responsive"></amp-img>
-</a>
+<amp-img src="/images/2016-03-09/slow.png" alt="slow" width=1124 height=810 layout="responsive"></amp-img>
 
 
 <p>HTMLのレスポンス時点で遅いので、どうしょうもない。</p>
@@ -560,9 +551,7 @@ Kloudsecはスーパーリロードした際に1秒弱かかっている。</p>
 
 <p>僕のブログは昨日記事にしたとおりAMP対応をしているので、JSが埋め込まれるのは非常に困る。</p>
 
-<a href="/images/2016-03-09/amp.png" target="_blank" rel="nofollow">
-  <amp-img src="/images/2016-03-09/amp.png" alt="amp" width=1140 height=1612 layout="responsive"></amp-img>
-</a>
+<amp-img src="/images/2016-03-09/amp.png" alt="amp" width=1140 height=1612 layout="responsive"></amp-img>
 
 
 <p>これはDashboardからPage OptimizerをOFFにすれば解決出来る。</p>
