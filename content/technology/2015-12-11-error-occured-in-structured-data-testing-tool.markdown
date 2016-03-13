@@ -11,7 +11,7 @@ title: 'Googleの構造化データの扱いが変わった気がする'
 
 エラーは2種類発生していて、ひとつめがこれ。
 
-{{% img src="/images/2015-12-11/error1.png" alt="error" w="1026" h="314" %}}
+{{% img src="/images/2015-12-11/error1.png" alt="error" w="1026" h="364" %}}
 
 もうひとつがこれ。
 
