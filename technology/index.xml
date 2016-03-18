@@ -254,6 +254,8 @@ AMPについてはチーム全体でどうしようか考えてるそうでし�
 &lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;link rel=&amp;quot;amphtml&amp;quot; href=&amp;quot;https://www.example.com/url/to/amp/document.html&amp;quot;&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;実際対応してみた感想としては、この対応が一番理想的だと思っています。&lt;/p&gt;
+
 &lt;h2 id=&#34;始め方:248155386e4621d756694486f44e789c&#34;&gt;始め方&lt;/h2&gt;
 
 &lt;p&gt;ドキュメントはかなり整理されているので、特に詰まることなく実装は出来ると思います。&lt;/p&gt;
