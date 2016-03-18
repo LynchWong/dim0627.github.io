@@ -25,6 +25,8 @@ title: "AMP対応をした"
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 ```
 
+実際対応してみた感想としては、この対応が一番理想的だと思っています。
+
 ## 始め方
 
 ドキュメントはかなり整理されているので、特に詰まることなく実装は出来ると思います。
