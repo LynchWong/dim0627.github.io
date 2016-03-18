@@ -6,8 +6,107 @@
     <description>Recent content on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Fri, 11 Mar 2016 12:16:29 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 18 Mar 2016 14:23:38 +0900</lastBuildDate>
     <atom:link href="https://yet.unresolved.xyz/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Railsでサービスを作るときに参考にしたサイトのメモ</title>
+      <link>https://yet.unresolved.xyz/blog/2016/03/18/rails-memo/</link>
+      <pubDate>Fri, 18 Mar 2016 14:23:38 +0900</pubDate>
+      
+      <guid>https://yet.unresolved.xyz/blog/2016/03/18/rails-memo/</guid>
+      <description>
+
+&lt;p&gt;メモなのにどっか行ってしまって、後で参考にしたいのにーってことがあったので、もうここに載っけてしまえ。&lt;/p&gt;
+
+&lt;p&gt;とりとめもなくメモったもので整形もしてないけどとりあえず。&lt;/p&gt;
+
+&lt;h2 id=&#34;unicorn:62ec319eb1157394837c57acec06e1bb&#34;&gt;Unicorn&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://omohayui.hatenablog.com/entry/2015/07/18/154837&#34;&gt;nginx + unicorn + Rails でサイトをつくる - omohayui blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/Salinger/items/5350b23f8b4e0dcdbe23&#34;&gt;Rails 4.2 + Unicorn + Nginx でアプリケーションサーバの構築 - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/herokaijp/devcenter/wiki/Rails-unicorn&#34;&gt;Rails unicorn · herokaijp/devcenter Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tachesimazzoca.github.io/wiki/rails3/unicorn.html#toctree-3-2&#34;&gt;Unicorn | Rails3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/kizashi1122/items/c827f0675dff4d82d06c&#34;&gt;Nginx で Rails の assets (css, js) にアクセスできない（403 forbidden が返る） - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/a_ishidaaa/items/74de8bdaecd637063c40&#34;&gt;[Rails]production環境で動かす - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/akito1986/items/56198edcafc222b320a8&#34;&gt;nginx + unicorn + Railsの設定方法 - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://hideack.hatenablog.com/entry/2013/11/16/162905&#34;&gt;unicornでgraceful restartする - テノニッキ (@hideack &amp;rsquo;s diary)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;paging:62ec319eb1157394837c57acec06e1bb&#34;&gt;Paging&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.techscore.com/blog/2013/01/07/rails%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E7%B4%B9%E4%BB%8B-%E3%83%9A%E3%83%BC%E3%82%B8%E3%83%B3%E3%82%B0%E3%82%92%E8%A1%8C%E3%81%86%E3%80%8Ckaminari%E3%80%8D/&#34;&gt;» Railsライブラリ紹介: ページングを行う「kaminari」 TECHSCORE BLOG&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;view-layouts:62ec319eb1157394837c57acec06e1bb&#34;&gt;View layouts&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://guides.rubyonrails.org/action_view_overview.html#content-for&#34;&gt;Action View Overview — Ruby on Rails Guides&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;validation:62ec319eb1157394837c57acec06e1bb&#34;&gt;Validation&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/adzap/validates_timeliness&#34;&gt;adzap/validates_timeliness: Date and time validation plugin for ActiveModel and Rails. Supports multiple ORMs and allows custom date/time formats.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;block:62ec319eb1157394837c57acec06e1bb&#34;&gt;Block&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://biboroku.megaya.net/entry/2015/06/09/234020&#34;&gt;rubyのブロックについてちゃんと勉強し直した - びぼろく！&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://melborne.github.io/2008/08/09/Ruby-Mix-in/&#34;&gt;Rubyのブロックはメソッドに対するメソッドのMix-inだ！&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;string:62ec319eb1157394837c57acec06e1bb&#34;&gt;String&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://ref.xaio.jp/ruby/classes/string/encode&#34;&gt;encode, encode! (String) - Rubyリファレンス&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;csv-upload:62ec319eb1157394837c57acec06e1bb&#34;&gt;CSV Upload&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/13547018/csv-import-issue&#34;&gt;ruby on rails - CSV Import issue - Stack Overflow&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.ruby-lang.org/ja/1.9.3/class/CSV.html&#34;&gt;class CSV (Ruby 1.9.3)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/labocho/items/8559576b71642b79df67&#34;&gt;Ruby - CSV を文字コード変換しつつロード - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;csv-download:62ec319eb1157394837c57acec06e1bb&#34;&gt;CSV Download&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://k-shogo.github.io/article/2013/11/05/rails-csv-download/&#34;&gt;railsにCSV形式でのダウンロード機能を追加する | dev.wan.co&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://ruby-rails.hatenadiary.com/entry/20141119/1416398472&#34;&gt;RailsでCSV/Excelのダウンロード機能の実装方法 - Rails Webook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.ruby-lang.org/ja/1.9.3/class/CSV.html&#34;&gt;class CSV (Ruby 1.9.3)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;routing:62ec319eb1157394837c57acec06e1bb&#34;&gt;routing&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://railsdoc.com/routes&#34;&gt;ルーティング(routes) - - Railsドキュメント&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;scaffold:62ec319eb1157394837c57acec06e1bb&#34;&gt;Scaffold&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://guides.rubyonrails.org/action_view_overview.html#using-action-view-with-rails&#34;&gt;Action View Overview — Ruby on Rails Guides&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;migration-types:62ec319eb1157394837c57acec06e1bb&#34;&gt;migration types&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/4384284/rails-generate-model-fieldtype-what-are-the-options-for-fieldtype&#34;&gt;activerecord - rails generate model field:type -what are the options for field:type? - Stack Overflow&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;link-to:62ec319eb1157394837c57acec06e1bb&#34;&gt;link_to&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/wada811/items/cd952471b75355079ca2&#34;&gt;[Ruby on Rails] link_to の使い方 - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/7052399/adding-hash-parameter-in-the-url-rails-routes&#34;&gt;Adding Hash parameter in the URL Rails Routes - Stack Overflow&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>本をほぼすべて捨てた</title>
@@ -1041,93 +1140,6 @@ Add `Rails.application.config.assets.precompile += %w( application_target.css )`
 &lt;li&gt;&lt;a href=&#34;http://ameblo.jp/ca-1pixel/entry-11837685575.html&#34;&gt;デザインは8の倍数でできている｜1 pixel｜サイバーエージェント公式クリエイターズブログ&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://uxmilk.jp/translation/the_year_in_design&#34;&gt;2015年のデザイントレンドを振り返る | UX MILK&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>「君の膵臓をたべたい」を読んだ</title>
-      <link>https://yet.unresolved.xyz/blog/2016/01/16/i-want-to-eat-your-pancreas/</link>
-      <pubDate>Sat, 16 Jan 2016 18:59:16 +0900</pubDate>
-      
-      <guid>https://yet.unresolved.xyz/blog/2016/01/16/i-want-to-eat-your-pancreas/</guid>
-      <description>
-
-&lt;p&gt;読みました。&lt;/p&gt;
-
-&lt;p&gt;タイトルから猟奇的な作品なんですかねと思ってたんだけど、全然そんなことはなかった。&lt;/p&gt;
-
-&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/4575239054/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4575239054&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;君の膵臓をたべたい&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;呼び方で表現する難しいニュアンス:ef9254801c9a1885be575886c7b1e740&#34;&gt;呼び方で表現する難しいニュアンス&lt;/h2&gt;
-
-&lt;p&gt;主人公である男の子、春樹のことを、もう一人の主人公である桜良は名前ではなく【秘密を知ってるクラスメイト】と呼んでいる。
-括弧の中は場面によってコロコロ変わったりする。&lt;/p&gt;
-
-&lt;p&gt;きっとこれは、実際にそう呼んだのではなくて桜良の心境やお互いの関係、環境を踏まえたラベルなんだと思う。
-文章ではなくこういった方法で表現する難しいニュアンスは非常にうまいなと思った。ラベルは違和感なく率直な意味をつけられるから。&lt;/p&gt;
-
-&lt;h2 id=&#34;人間の面倒臭さと俯瞰する楽さ:ef9254801c9a1885be575886c7b1e740&#34;&gt;人間の面倒臭さと俯瞰する楽さ&lt;/h2&gt;
-
-&lt;p&gt;春樹は自分の中に自分を俯瞰するもう一人の自分を持っていて、&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;第三者的な僕が、人に対して素直に笑う自分を見ていた。いつの間にそんな人間になれたのだろうかと訝しがり、
-反面、感心していた。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;本人もそれを、&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;ずっと、周りの誰にも興味を持たないと思っていたのに。いや、違う。興味を持たないでおこうと思っていたのに。その、僕が。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;と、ちゃんと楽な方向に逃げていることを理解してる。&lt;/p&gt;
-
-&lt;p&gt;物語の終盤で気づくのが、この話は「俯瞰している僕」目線で話が進んでるということ。
-でもそれが桜良との出会いによって「俯瞰されている僕」目線に切り替わる。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;俯瞰の僕に、言ってやろう。僕は、人との関わりを喜んでいた。生まれて初めてだった。
-誰かと一緒にいて、一人になりたいと一度も思わなかったのは。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;人間誰もが経験する人間関係の面倒臭さとその回避策、そこからしっかりとぬけ出す春樹の変化（≠成長）が何故かステイク・ランドを思い出させた。&lt;/p&gt;
-
-&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/B0053I0A72/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B0053I0A72&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;ステイク・ランド 戦いの旅路 [DVD]&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;全然違うけど。ゾンビ映画だけど。
-これを見た時は「なんだよ！超つええおっさんがゾンビ殺しまくる奴じゃないのかよ！」って落胆したなあ。今思えばいい作品だった。&lt;/p&gt;
-
-&lt;h2 id=&#34;高校生の視点と自由意志:ef9254801c9a1885be575886c7b1e740&#34;&gt;高校生の視点と自由意志&lt;/h2&gt;
-
-&lt;p&gt;春樹が、桜良との出会いを「偶然」と言った際の桜良の言葉、&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;違うよ。偶然じゃない。私たちは、皆、自分で選んでここに来たの。君と私がクラスが一緒だったのも、あの日病院にいたのも、偶然じゃない。
-運命なんかでもない。君が今までしてきた選択と、私が今までしてきた選択が、私達を会わせたの。私達は、自分の意思で出会ったんだよ。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;自由意思については哲学的な観点でいろいろな考えがある。
-僕はそれについて詳しくないけど、前に少しだけ触れたことがあって、「人間に自由意志はない」と思っていた。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E6%84%8F%E5%BF%97&#34;&gt;自由意志 - Wikipedia&lt;/a&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;自由意志の問題とは(1)の意志そのもの、いわば「どのように思うか」が自由であるかについて直接的な問いかけをするものであり、意志の成立過程を対象とする必要が出てくる。様々な哲学上の立場が、あらゆる事象は過去未来にかかわらず、既に決定されているか否か（決定論VS非決定論）について、また同様に、自由は決定論と共存できるか否か（両立主義VS非両立主義）について意見を違えている。それゆえに、例えば、固い決定論は、宇宙は決定論的であり、このことが自由意志を不可能にすると主張している。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;ものすごく昔好きだったこのサイトも。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.h5.dion.ne.jp/~terun/doc/jiyuu.html&#34;&gt;自由意志 - 哲学的な何か、あと科学とか&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;いま見ても面白いなあこのサイトは。屁理屈だって言う人もいると思うけどね。&lt;/p&gt;
-
-&lt;p&gt;でもこの言葉を読んで、少し感情的かもしれないけど、それはそれで良い考え方なのかもしれないなと思った。&lt;/p&gt;
-
-&lt;p&gt;人間難しく考え過ぎると疲れちゃうから、良い方向に幸せな方向に考えてみることも必要なのかなと。
-高校生らしい、幼さありきの素直な考えっていうのが少し新鮮に感じた。&lt;/p&gt;
-
-&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/4575239054/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4575239054&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;君の膵臓をたべたい&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

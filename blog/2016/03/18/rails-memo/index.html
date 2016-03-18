@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ⚡>
   <head>
     <meta charset="utf-8">
     <meta name="generator" content="Hugo 0.15-DEV" />
@@ -11,12 +11,48 @@
     
     
 
-    <title>Ruby - Unresolved</title>
+    <title>Railsでサービスを作るときに参考にしたサイトのメモ - Unresolved</title>
 
-    <link rel="canonical" href="https://yet.unresolved.xyz/tags/ruby/">
+    <link rel="canonical" href="https://yet.unresolved.xyz/blog/2016/03/18/rails-memo/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <meta name="theme-color" content="#2196f3">
 
+    
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage":{
+    "@type":"WebPage",
+    "@id":"https:\/\/yet.unresolved.xyz\/"
+  },
+  "headline": "Railsでサービスを作るときに参考にしたサイトのメモ - Unresolved",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/yet.unresolved.xyz\/images/logo.png",
+    "height": 700,
+    "width": 700
+  },
+  "datePublished": "2016-03-18T14:23:38JST",
+  "dateModified": "2016-03-18T14:23:38JST",
+  "author": {
+    "@type": "Person",
+    "name": "Daisuke Tsuji",
+    "image": "https:\/\/yet.unresolved.xyz\/images/logo.png"
+  },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Daisuke Tsuji",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/yet.unresolved.xyz\/images/logo.png",
+      "height": 60,
+      "width": 60
+    }
+  },
+  "description": "メモなのにどっか行ってしまって、後で参考にしたいのにーってことがあったので、もうここに載っけてしまえ。 とりとめもなくメモったもので整形もして"
+}
+    </script>
     
 
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -421,89 +457,118 @@ nav.page a.next {
       </header>
 
 
-<div class="list">
 
-  <header class="page-title">Ruby</header>
+<article class="single">
 
-  <div class="site">
-    
-    <article class="li">
-  <a href="https://yet.unresolved.xyz/blog/2016/03/18/rails-memo/">
-    <header>
-      <div class="aside">
-        <time class="date">Fri, Mar 18, 2016</time> - <span class="section">technology</span>
-      </div>
-      <div class="title">Railsでサービスを作るときに参考にしたサイトのメモ</div>
-    </header>
+  <header>
+    <div class="aside">
+      <time class="date">Fri, Mar 18, 2016</time> - <a href="https://yet.unresolved.xyz/technology" class="section">technology</a>
+    </div>
+    <div class="title">Railsでサービスを作るときに参考にしたサイトのメモ</div>
+  </header>
 
-    <div class="summary">メモなのにどっか行ってしまって、後で参考にしたいのにーってことがあったので、もうここに載っけてしまえ。 とりとめもなくメモったもので整形もして...</div>
-  </a>
-</article>
+  <div class="body">
 
-    
-    <article class="li">
-  <a href="https://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/">
-    <header>
-      <div class="aside">
-        <time class="date">Wed, Jan 20, 2016</time> - <span class="section">technology</span>
-      </div>
-      <div class="title">Asset Pipelineのコンパイル対象を追加する</div>
-    </header>
+<p>メモなのにどっか行ってしまって、後で参考にしたいのにーってことがあったので、もうここに載っけてしまえ。</p>
 
-    <div class="summary">デフォルトだとapplication.cssとかじゃないですか。 でも例えば管理画面を作ったりとかでごっそりデザインの違うページを作るときに少...</div>
-  </a>
-</article>
+<p>とりとめもなくメモったもので整形もしてないけどとりあえず。</p>
 
-    
-    <article class="li">
-  <a href="https://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">
-    <header>
-      <div class="aside">
-        <time class="date">Sun, Jan 4, 2015</time> - <span class="section">technology</span>
-      </div>
-      <div class="title">ブログをOctopressからHugoに移行した</div>
-    </header>
+<h2 id="unicorn:62ec319eb1157394837c57acec06e1bb">Unicorn</h2>
 
-    <div class="summary">Octopressでのブログもずいぶん慣れてきたところでHugoに移行しました。 一晩徹夜して、カスタマイズからGitHub Pagesでの公開...</div>
-  </a>
-</article>
+<ul>
+<li><a href="http://omohayui.hatenablog.com/entry/2015/07/18/154837">nginx + unicorn + Rails でサイトをつくる - omohayui blog</a></li>
+<li><a href="http://qiita.com/Salinger/items/5350b23f8b4e0dcdbe23">Rails 4.2 + Unicorn + Nginx でアプリケーションサーバの構築 - Qiita</a></li>
+<li><a href="https://github.com/herokaijp/devcenter/wiki/Rails-unicorn">Rails unicorn · herokaijp/devcenter Wiki</a></li>
+<li><a href="http://tachesimazzoca.github.io/wiki/rails3/unicorn.html#toctree-3-2">Unicorn | Rails3</a></li>
+<li><a href="http://qiita.com/kizashi1122/items/c827f0675dff4d82d06c">Nginx で Rails の assets (css, js) にアクセスできない（403 forbidden が返る） - Qiita</a></li>
+<li><a href="http://qiita.com/a_ishidaaa/items/74de8bdaecd637063c40">[Rails]production環境で動かす - Qiita</a></li>
+<li><a href="http://qiita.com/akito1986/items/56198edcafc222b320a8">nginx + unicorn + Railsの設定方法 - Qiita</a></li>
+<li><a href="http://hideack.hatenablog.com/entry/2013/11/16/162905">unicornでgraceful restartする - テノニッキ (@hideack &rsquo;s diary)</a></li>
+</ul>
 
-    
-    <article class="li">
-  <a href="https://yet.unresolved.xyz/blog/2014/09/21/making-new-theme-flatten/">
-    <header>
-      <div class="aside">
-        <time class="date">Sun, Sep 21, 2014</time> - <span class="section">technology</span>
-      </div>
-      <div class="title">Octopressのテーマを作ってみる</div>
-    </header>
+<h2 id="paging:62ec319eb1157394837c57acec06e1bb">Paging</h2>
 
-    <div class="summary">元のやつもすっごいかっこよくてよかったんだけど、さすがに他の人とかぶっちゃうのはやだよね。 でも僕はデザイナーじゃないから、あんまりがっつりや...</div>
-  </a>
-</article>
+<ul>
+<li><a href="http://www.techscore.com/blog/2013/01/07/rails%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E7%B4%B9%E4%BB%8B-%E3%83%9A%E3%83%BC%E3%82%B8%E3%83%B3%E3%82%B0%E3%82%92%E8%A1%8C%E3%81%86%E3%80%8Ckaminari%E3%80%8D/">» Railsライブラリ紹介: ページングを行う「kaminari」 TECHSCORE BLOG</a></li>
+</ul>
 
-    
-    <article class="li">
-  <a href="https://yet.unresolved.xyz/blog/2014/09/20/making-gravatar-sidebar/">
-    <header>
-      <div class="aside">
-        <time class="date">Sat, Sep 20, 2014</time> - <span class="section">technology</span>
-      </div>
-      <div class="title">OctopressのサイドバーにGravatarを表示させる</div>
-    </header>
+<h2 id="view-layouts:62ec319eb1157394837c57acec06e1bb">View layouts</h2>
 
-    <div class="summary">そもそもOctopressの構成がまだよくわかってないのでそこから勉強しよう。 どうやらデフォルトで準備されてるサイドバーはここに格納されてい...</div>
-  </a>
-</article>
+<ul>
+<li><a href="http://guides.rubyonrails.org/action_view_overview.html#content-for">Action View Overview — Ruby on Rails Guides</a></li>
+</ul>
 
-    
-  </div>
+<h2 id="validation:62ec319eb1157394837c57acec06e1bb">Validation</h2>
 
-  
+<ul>
+<li><a href="https://github.com/adzap/validates_timeliness">adzap/validates_timeliness: Date and time validation plugin for ActiveModel and Rails. Supports multiple ORMs and allows custom date/time formats.</a></li>
+</ul>
 
+<h2 id="block:62ec319eb1157394837c57acec06e1bb">Block</h2>
 
+<ul>
+<li><a href="http://biboroku.megaya.net/entry/2015/06/09/234020">rubyのブロックについてちゃんと勉強し直した - びぼろく！</a></li>
+<li><a href="http://melborne.github.io/2008/08/09/Ruby-Mix-in/">Rubyのブロックはメソッドに対するメソッドのMix-inだ！</a></li>
+</ul>
 
+<h2 id="string:62ec319eb1157394837c57acec06e1bb">String</h2>
+
+<ul>
+<li><a href="http://ref.xaio.jp/ruby/classes/string/encode">encode, encode! (String) - Rubyリファレンス</a></li>
+</ul>
+
+<h2 id="csv-upload:62ec319eb1157394837c57acec06e1bb">CSV Upload</h2>
+
+<ul>
+<li><a href="http://stackoverflow.com/questions/13547018/csv-import-issue">ruby on rails - CSV Import issue - Stack Overflow</a></li>
+<li><a href="http://docs.ruby-lang.org/ja/1.9.3/class/CSV.html">class CSV (Ruby 1.9.3)</a></li>
+<li><a href="http://qiita.com/labocho/items/8559576b71642b79df67">Ruby - CSV を文字コード変換しつつロード - Qiita</a></li>
+</ul>
+
+<h2 id="csv-download:62ec319eb1157394837c57acec06e1bb">CSV Download</h2>
+
+<ul>
+<li><a href="http://k-shogo.github.io/article/2013/11/05/rails-csv-download/">railsにCSV形式でのダウンロード機能を追加する | dev.wan.co</a></li>
+<li><a href="http://ruby-rails.hatenadiary.com/entry/20141119/1416398472">RailsでCSV/Excelのダウンロード機能の実装方法 - Rails Webook</a></li>
+<li><a href="http://docs.ruby-lang.org/ja/1.9.3/class/CSV.html">class CSV (Ruby 1.9.3)</a></li>
+</ul>
+
+<h2 id="routing:62ec319eb1157394837c57acec06e1bb">routing</h2>
+
+<ul>
+<li><a href="http://railsdoc.com/routes">ルーティング(routes) - - Railsドキュメント</a></li>
+</ul>
+
+<h2 id="scaffold:62ec319eb1157394837c57acec06e1bb">Scaffold</h2>
+
+<ul>
+<li><a href="http://guides.rubyonrails.org/action_view_overview.html#using-action-view-with-rails">Action View Overview — Ruby on Rails Guides</a></li>
+</ul>
+
+<h2 id="migration-types:62ec319eb1157394837c57acec06e1bb">migration types</h2>
+
+<ul>
+<li><a href="http://stackoverflow.com/questions/4384284/rails-generate-model-fieldtype-what-are-the-options-for-fieldtype">activerecord - rails generate model field:type -what are the options for field:type? - Stack Overflow</a></li>
+</ul>
+
+<h2 id="link-to:62ec319eb1157394837c57acec06e1bb">link_to</h2>
+
+<ul>
+<li><a href="http://qiita.com/wada811/items/cd952471b75355079ca2">[Ruby on Rails] link_to の使い方 - Qiita</a></li>
+<li><a href="http://stackoverflow.com/questions/7052399/adding-hash-parameter-in-the-url-rails-routes">Adding Hash parameter in the URL Rails Routes - Stack Overflow</a></li>
+</ul>
 </div>
+
+  <aside class="article tags">
+    
+    <a href="https://yet.unresolved.xyz/tags/ruby">ruby</a>
+    
+    <a href="https://yet.unresolved.xyz/tags/rails">rails</a>
+    
+  </aside>
+
+</article>
+
 <footer class="site">
   <p>&copy; 2016 Daisuke Tsuji</p>
   <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>

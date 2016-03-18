@@ -6,8 +6,107 @@
     <description>Recent content in Technologies on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 09 Mar 2016 12:22:46 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 18 Mar 2016 14:23:38 +0900</lastBuildDate>
     <atom:link href="https://yet.unresolved.xyz/technology/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Railsでサービスを作るときに参考にしたサイトのメモ</title>
+      <link>https://yet.unresolved.xyz/blog/2016/03/18/rails-memo/</link>
+      <pubDate>Fri, 18 Mar 2016 14:23:38 +0900</pubDate>
+      
+      <guid>https://yet.unresolved.xyz/blog/2016/03/18/rails-memo/</guid>
+      <description>
+
+&lt;p&gt;メモなのにどっか行ってしまって、後で参考にしたいのにーってことがあったので、もうここに載っけてしまえ。&lt;/p&gt;
+
+&lt;p&gt;とりとめもなくメモったもので整形もしてないけどとりあえず。&lt;/p&gt;
+
+&lt;h2 id=&#34;unicorn:62ec319eb1157394837c57acec06e1bb&#34;&gt;Unicorn&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://omohayui.hatenablog.com/entry/2015/07/18/154837&#34;&gt;nginx + unicorn + Rails でサイトをつくる - omohayui blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/Salinger/items/5350b23f8b4e0dcdbe23&#34;&gt;Rails 4.2 + Unicorn + Nginx でアプリケーションサーバの構築 - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/herokaijp/devcenter/wiki/Rails-unicorn&#34;&gt;Rails unicorn · herokaijp/devcenter Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tachesimazzoca.github.io/wiki/rails3/unicorn.html#toctree-3-2&#34;&gt;Unicorn | Rails3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/kizashi1122/items/c827f0675dff4d82d06c&#34;&gt;Nginx で Rails の assets (css, js) にアクセスできない（403 forbidden が返る） - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/a_ishidaaa/items/74de8bdaecd637063c40&#34;&gt;[Rails]production環境で動かす - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/akito1986/items/56198edcafc222b320a8&#34;&gt;nginx + unicorn + Railsの設定方法 - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://hideack.hatenablog.com/entry/2013/11/16/162905&#34;&gt;unicornでgraceful restartする - テノニッキ (@hideack &amp;rsquo;s diary)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;paging:62ec319eb1157394837c57acec06e1bb&#34;&gt;Paging&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.techscore.com/blog/2013/01/07/rails%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E7%B4%B9%E4%BB%8B-%E3%83%9A%E3%83%BC%E3%82%B8%E3%83%B3%E3%82%B0%E3%82%92%E8%A1%8C%E3%81%86%E3%80%8Ckaminari%E3%80%8D/&#34;&gt;» Railsライブラリ紹介: ページングを行う「kaminari」 TECHSCORE BLOG&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;view-layouts:62ec319eb1157394837c57acec06e1bb&#34;&gt;View layouts&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://guides.rubyonrails.org/action_view_overview.html#content-for&#34;&gt;Action View Overview — Ruby on Rails Guides&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;validation:62ec319eb1157394837c57acec06e1bb&#34;&gt;Validation&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/adzap/validates_timeliness&#34;&gt;adzap/validates_timeliness: Date and time validation plugin for ActiveModel and Rails. Supports multiple ORMs and allows custom date/time formats.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;block:62ec319eb1157394837c57acec06e1bb&#34;&gt;Block&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://biboroku.megaya.net/entry/2015/06/09/234020&#34;&gt;rubyのブロックについてちゃんと勉強し直した - びぼろく！&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://melborne.github.io/2008/08/09/Ruby-Mix-in/&#34;&gt;Rubyのブロックはメソッドに対するメソッドのMix-inだ！&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;string:62ec319eb1157394837c57acec06e1bb&#34;&gt;String&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://ref.xaio.jp/ruby/classes/string/encode&#34;&gt;encode, encode! (String) - Rubyリファレンス&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;csv-upload:62ec319eb1157394837c57acec06e1bb&#34;&gt;CSV Upload&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/13547018/csv-import-issue&#34;&gt;ruby on rails - CSV Import issue - Stack Overflow&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.ruby-lang.org/ja/1.9.3/class/CSV.html&#34;&gt;class CSV (Ruby 1.9.3)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/labocho/items/8559576b71642b79df67&#34;&gt;Ruby - CSV を文字コード変換しつつロード - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;csv-download:62ec319eb1157394837c57acec06e1bb&#34;&gt;CSV Download&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://k-shogo.github.io/article/2013/11/05/rails-csv-download/&#34;&gt;railsにCSV形式でのダウンロード機能を追加する | dev.wan.co&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://ruby-rails.hatenadiary.com/entry/20141119/1416398472&#34;&gt;RailsでCSV/Excelのダウンロード機能の実装方法 - Rails Webook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.ruby-lang.org/ja/1.9.3/class/CSV.html&#34;&gt;class CSV (Ruby 1.9.3)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;routing:62ec319eb1157394837c57acec06e1bb&#34;&gt;routing&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://railsdoc.com/routes&#34;&gt;ルーティング(routes) - - Railsドキュメント&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;scaffold:62ec319eb1157394837c57acec06e1bb&#34;&gt;Scaffold&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://guides.rubyonrails.org/action_view_overview.html#using-action-view-with-rails&#34;&gt;Action View Overview — Ruby on Rails Guides&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;migration-types:62ec319eb1157394837c57acec06e1bb&#34;&gt;migration types&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/4384284/rails-generate-model-fieldtype-what-are-the-options-for-fieldtype&#34;&gt;activerecord - rails generate model field:type -what are the options for field:type? - Stack Overflow&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;link-to:62ec319eb1157394837c57acec06e1bb&#34;&gt;link_to&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/wada811/items/cd952471b75355079ca2&#34;&gt;[Ruby on Rails] link_to の使い方 - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/7052399/adding-hash-parameter-in-the-url-rails-routes&#34;&gt;Adding Hash parameter in the URL Rails Routes - Stack Overflow&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Kloudsecを使ってカスタムドメインでHTTPSなGithub Pagesを構築する</title>
@@ -1076,101 +1175,6 @@ exec $UWSGI --ini /path/to/wsgi.ini
 &lt;h2 id=&#34;参考にさせていただきました:283d2a7a74a226c22e2344c11ac9de1b&#34;&gt;参考にさせていただきました&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://d.hatena.ne.jp/m-hiyama/20150915/1442277074&#34;&gt;WordPress.comとGravatarのアカウントは一度登録したら何があっても絶対に削除できない - 檜山正幸のキマイラ飼育記&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Googleの構造化データの扱いが変わった気がする</title>
-      <link>https://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</link>
-      <pubDate>Fri, 11 Dec 2015 11:22:28 +0900</pubDate>
-      
-      <guid>https://yet.unresolved.xyz/blog/2015/12/11/error-occured-in-structured-data-testing-tool/</guid>
-      <description>
-
-&lt;p&gt;このブログも、他の運営してるサイトも、今日になってエラーが発生するようになった。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://developers.google.com/structured-data/testing-tool/&#34;&gt;Structured Data Testing Tool&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;エラーは2種類発生していて、ひとつめがこれ。&lt;/p&gt;
-
-&lt;a href=&#34;https://yet.unresolved.xyz/images/2015-12-11/error1.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
-  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2015-12-11/error1.png&#34; alt=&#34;error&#34; width=1026 height=364 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
-&lt;/a&gt;
-
-
-&lt;p&gt;もうひとつがこれ。&lt;/p&gt;
-
-&lt;a href=&#34;https://yet.unresolved.xyz/images/2015-12-11/error2.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
-  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2015-12-11/error2.png&#34; alt=&#34;error&#34; width=826 height=368 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
-&lt;/a&gt;
-
-
-&lt;p&gt;あれ？&lt;code&gt;author&lt;/code&gt;はもともと必須だっけ？&lt;/p&gt;
-
-&lt;h2 id=&#34;構造化データ:1cba147eb8c5721b87c65951056c9faa&#34;&gt;構造化データ？&lt;/h2&gt;
-
-&lt;p&gt;マイクロデータとかって呼ばれたりもする。
-HTMLにもう少し踏み込んだ側面的な意味を持たせるためのもの。
-Googleの説明が、どのように使われるかも記載されていてわかりやすい。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://developers.google.com/structured-data/&#34;&gt;Promote Your Content with Structured Data Markup  |  Structured Data  |  Google Developers&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;エラーの原因:1cba147eb8c5721b87c65951056c9faa&#34;&gt;エラーの原因&lt;/h2&gt;
-
-&lt;p&gt;今回はArticleの&lt;code&gt;image&lt;/code&gt;とか&lt;code&gt;publisher&lt;/code&gt;もろもろでエラーが発生しました。
-これまでは大丈夫だったのになんでだろう。
-この記載を見ると、どうやら構造が間違っているらしい。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://developers.google.com/structured-data/rich-snippets/articles?hl=ja&#34;&gt;Enabling Rich Snippets for Articles  |  Structured Data  |  Google Developers&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;imageプロパティ:1cba147eb8c5721b87c65951056c9faa&#34;&gt;imageプロパティ&lt;/h3&gt;
-
-&lt;p&gt;これまで僕は、画像要素を次のように記載していたのだけど、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;meta itemprop=&amp;quot;image&amp;quot; content=&amp;quot;http://example.com/images/10999.jpg&amp;quot; /&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;こう記載するのが正しいようだ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div itemprop=&amp;quot;image&amp;quot; itemscope itemtype=&amp;quot;https://schema.org/ImageObject&amp;quot;&amp;gt;
-  &amp;lt;img src=&amp;quot;https://google.com/thumbnail1.jpg&amp;quot;/&amp;gt;
-  &amp;lt;meta itemprop=&amp;quot;url&amp;quot; content=&amp;quot;https://google.com/thumbnail1.jpg&amp;quot;&amp;gt;
-  &amp;lt;meta itemprop=&amp;quot;width&amp;quot; content=&amp;quot;800&amp;quot;&amp;gt;
-  &amp;lt;meta itemprop=&amp;quot;height&amp;quot; content=&amp;quot;800&amp;quot;&amp;gt;
-&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;ImageObject&lt;/code&gt;の子で居なきゃいけないんだね。
-さらに&lt;code&gt;width&lt;/code&gt;と&lt;code&gt;height&lt;/code&gt;も必須になってる。
-前は要らなかったような記憶があるんだけど・・・。&lt;/p&gt;
-
-&lt;h3 id=&#34;publisherプロパティ:1cba147eb8c5721b87c65951056c9faa&#34;&gt;publisherプロパティ&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;publisher&lt;/code&gt;はこう記載されている。
-これは運営元の組織を指すのかな。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div itemprop=&amp;quot;publisher&amp;quot; itemscope itemtype=&amp;quot;https://schema.org/Organization&amp;quot;&amp;gt;
-  &amp;lt;div itemprop=&amp;quot;logo&amp;quot; itemscope itemtype=&amp;quot;https://schema.org/ImageObject&amp;quot;&amp;gt;
-    &amp;lt;img src=&amp;quot;https://google.com/logo.jpg&amp;quot;/&amp;gt;
-    &amp;lt;meta itemprop=&amp;quot;url&amp;quot; content=&amp;quot;https://google.com/logo.jpg&amp;quot;&amp;gt;
-    &amp;lt;meta itemprop=&amp;quot;width&amp;quot; content=&amp;quot;600&amp;quot;&amp;gt;
-    &amp;lt;meta itemprop=&amp;quot;height&amp;quot; content=&amp;quot;60&amp;quot;&amp;gt;
-  &amp;lt;/div&amp;gt;
-  &amp;lt;meta itemprop=&amp;quot;name&amp;quot; content=&amp;quot;Google&amp;quot;&amp;gt;
-&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;nameプロパティ:1cba147eb8c5721b87c65951056c9faa&#34;&gt;nameプロパティ&lt;/h3&gt;
-
-&lt;p&gt;何故かこのエラーだけどうやっても消えない。
-謎なので分かり次第追記しよう。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;追記&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;この記事を書き終えてから再度試してみたら消えました。
-Structured Data Testing Tool自体が改修中だったのだろうか。
-どちらにせよこの辺はこれからも随時変わっていくポイントだろうから、
-定期的にチェックと対応をしていかなきゃいけないですね。&lt;/p&gt;
 </description>
     </item>
     
