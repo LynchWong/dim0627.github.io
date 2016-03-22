@@ -18,7 +18,6 @@ title: "Kloudsecを使ってカスタムドメインでHTTPSなGithub Pagesを�
 だからこっちでやることは、GitHub PagesのプロジェクトURLを登録したりDNSの向き先を変えたりするくらい。
 
 せっかくだしやるだけやってみようと思う。
-
 ちなみにこれまでは、CloudFlareを使ってHTTPS化するのが主流だった模様。
 
 * [GitHub Pages Now (Sorta) Supports HTTPS, So Use It](https://konklone.com/post/github-pages-now-sorta-supports-https-so-use-it)
@@ -27,14 +26,8 @@ title: "Kloudsecを使ってカスタムドメインでHTTPSなGithub Pagesを�
 
 ## 対応手順
 
-### Kloudsecのユーザ登録をする
-
-このページの下の方から登録出来る。
+ユーザ登録をしてDNSの設定を直すだけ。このページ（[Kloudsec](https://kloudsec.com/github-pages)）の下の方から登録出来る。
 GitHub PagesのリポジトリURLを入れることでホスティングしているIPを取得してくれている模様。
-
-[Kloudsec](https://kloudsec.com/github-pages)
-
-### DNSの向き先を変える
 
 GitHub Pagesでカスタムドメインを使ってる人はCNAMEを設定していると思うので、その辺の設定しなおしをする必要がある。
 
@@ -42,18 +35,16 @@ GitHub Pagesでカスタムドメインを使ってる人はCNAMEを設定して
 * Kloudsecから指定されたAレコード（対象ドメインとwww付きのもの）を新規登録
 * Kloudsecから指定されたTXTレコードを新規登録
 
-## 詰まったところ
-
-### HTTPSにならない
+## HTTPSにならない
 
 KloudsecはLet's EncryptでHTTPS化しているとのこと。
 サイトを登録した直後はHTTPSにならない。というか証明書が取得ペンディングになる。
 
 [Let's Encrypt - Free SSL/TLS Certificates](https://letsencrypt.org/)
 
-これは待ってれば取得完了の旨のメールが届くのでほっとけばよい。
+これは待ってれば取得完了の旨のメールが届くのでほっとけばよかった。
 
-### ダッシュボード上のエラーが消えない
+## ダッシュボード上のエラーが消えない
 
 ダッシュボードのトップにこのエラーメッセージが出てどう対応したら良いのかわからなかった。
 
@@ -64,11 +55,9 @@ KloudsecはLet's EncryptでHTTPS化しているとのこと。
 DNSの設定が終わったらあとは勝手に最適化してくれるらしく、それに時間がかかっていたみたい。
 つまりこれについても、こっちで出来ることは待つだけ。
 
-## 問題点
+## レスポンスが遅い
 
-### 遅い
-
-純粋に遅い。
+目に見えて遅かった。
 GitHubにCNAMEを向けていた時の時間を計測していなかったので比較が出来ないけど、
 Kloudsecはスーパーリロードした際に1秒弱かかっている。
 
@@ -76,7 +65,7 @@ Kloudsecはスーパーリロードした際に1秒弱かかっている。
 
 HTMLのレスポンス時点で遅いので、どうしょうもない。
 
-### Page OptimizerがONだとAMPがinvalidになる
+## Page OptimizerがONだとAMPがinvalidになる
 
 KloudsecのPage Optimizerというプラグインはページ速度とかを計るために、ページの末尾にJSを埋め込んでレスポンスを返す。
 また、`head`に直接書いたCSSの改行削除等も行っている模様。
