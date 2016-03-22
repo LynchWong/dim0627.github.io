@@ -1,11 +1,11 @@
 ---
 date: 2016-03-22T13:32:47+09:00
-slug: "backgroundimage-is-not-worked-on-cloudflare"
+slug: "backgroundimage-is-not-worked"
 tags: ["cloudflare", "cdn", "css"]
 title: "AndroidでCSSのBackgroundImageが設定されない"
 ---
 
-Androidのスマホからアクセスした時に
+Androidのスマホ（Nexus5 Android 6.0.1）からアクセスした時に
 
 ``` css
 background-image: url(/images/bg.png);
@@ -64,4 +64,9 @@ background: repeat center/auto url(/images/lay.png),
 
 2つのサイトで同様の事象が発生していたんだけど、画像をリサイズしたらこの問題は解決した。
 余裕があれば、もう一度上記の条件を整えて再現するかを確認したいと思う。
+
+### 追記
+
+画像サイズを変えて再現しました。
+なんでなんだ？
 
