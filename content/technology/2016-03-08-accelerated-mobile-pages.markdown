@@ -25,6 +25,8 @@ title: "AMP対応をした"
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 ```
 
+実際対応してみた感想としては、この対応が一番理想的だと思っています。
+
 ## 始め方
 
 ドキュメントはかなり整理されているので、特に詰まることなく実装は出来ると思います。
@@ -101,7 +103,7 @@ AMP用のタグが用意されているので、それに置き換える必要�
 
 [How to Style Your Pages#disallowed-styles](https://www.ampproject.org/docs/guides/responsive/style_pages.html#disallowed-styles)
 
-外部スタイルシートは原則**フォント読み込み**のみ可、とのことです。Google Fontsなどですね。
+外部スタイルシートは原則**フォント読み込みのみ可**、とのことです。Google Fontsなどですね。
 
 BootstrapやSkeletonなどのCSSフレームワークはどうしたらいいんだろうと思ったのですが、
 そもそもAMPの目的を考えると、CSSフレームワークが必要なほどのデザインを施すこと自体が間違っているのかもしれません。
