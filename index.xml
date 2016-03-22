@@ -296,6 +296,8 @@ AMPについてはチーム全体でどうしようか考えてるそうでし�
 &lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;link rel=&amp;quot;amphtml&amp;quot; href=&amp;quot;https://www.example.com/url/to/amp/document.html&amp;quot;&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;実際対応してみた感想としては、この対応が一番理想的だと思っています。&lt;/p&gt;
+
 &lt;h2 id=&#34;始め方:248155386e4621d756694486f44e789c&#34;&gt;始め方&lt;/h2&gt;
 
 &lt;p&gt;ドキュメントはかなり整理されているので、特に詰まることなく実装は出来ると思います。&lt;/p&gt;
@@ -369,7 +371,7 @@ AMPについてはチーム全体でどうしようか考えてるそうでし�
 
 &lt;p&gt;&lt;a href=&#34;https://www.ampproject.org/docs/guides/responsive/style_pages.html#disallowed-styles&#34;&gt;How to Style Your Pages#disallowed-styles&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;外部スタイルシートは原則&lt;strong&gt;フォント読み込み&lt;/strong&gt;のみ可、とのことです。Google Fontsなどですね。&lt;/p&gt;
+&lt;p&gt;外部スタイルシートは原則&lt;strong&gt;フォント読み込みのみ可&lt;/strong&gt;、とのことです。Google Fontsなどですね。&lt;/p&gt;
 
 &lt;p&gt;BootstrapやSkeletonなどのCSSフレームワークはどうしたらいいんだろうと思ったのですが、
 そもそもAMPの目的を考えると、CSSフレームワークが必要なほどのデザインを施すこと自体が間違っているのかもしれません。&lt;/p&gt;
