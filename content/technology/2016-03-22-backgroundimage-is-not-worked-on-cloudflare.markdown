@@ -6,7 +6,13 @@ title: "CloudFlareを経由したWebサイトでBackgroundImageが読み込ま�
 draft: true
 ---
 
-Androidのスマホからアクセスした時に`background-image: url(/images/bg.png);`とかやってる背景画像が読み込まれないっていう現象に陥った。
+Androidのスマホからアクセスした時に
+
+``` css
+background-image: url(/images/bg.png);
+```
+
+とかやってる背景画像が読み込まれないっていう現象に陥った。
 PCからだと再現しないから全然原因が掴めなかったんだけど、考えられるの原因は以下のものくらいしか考えられなかった。
 
 * AMPの対応をしたせい
@@ -16,7 +22,7 @@ PCからだと再現しないから全然原因が掴めなかったんだけど
 
 ショートハンドのはこういうこと。
 
-```
+``` css
 background: repeat center/auto url(/images/lay.png),
             no-repeat bottom/cover url(/images/bg.png);
 ```
@@ -39,5 +45,20 @@ background: repeat center/auto url(/images/lay.png),
 それも、小さい画像は表示されて大きな画像が表示されない。
 ファイルサイズの問題なのだろうか？そうするとやはり、CloudFlareが何かやっている？
 まさか相対パスじゃなくて絶対パスじゃなきゃだめ？とも思ったが変えてみても改善されない。
+こうなったら違うサーバに配置してCloudFlareを経由せずにアクセスしてみれば・・・、でもダメ。
+ってことはCloudFlareも関係ない。
+
+ここまでの対応をまとめてみよう。
+
+* AMPじゃないページで確認
+* ショートハンドをやめて確認
+* キャッシュをクリアして確認
+* 絶対パスに変えて確認
+* CloudFlareを経由しないサーバに配置して確認
+
+これらは全部効果なし。
+
+## 残る可能性はAndroidのみ
+
 
 
