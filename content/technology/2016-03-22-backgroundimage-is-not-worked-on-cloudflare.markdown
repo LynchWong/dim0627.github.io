@@ -2,7 +2,7 @@
 date: 2016-03-22T13:32:47+09:00
 slug: "backgroundimage-is-not-worked-on-cloudflare"
 tags: ["cloudflare", "cdn", "css"]
-title: "CloudFlareを経由したWebサイトでBackgroundImageが読み込まれない"
+title: "原因はわからないがBackgroundImageが読み込まれない"
 draft: true
 ---
 
