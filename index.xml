@@ -183,9 +183,8 @@ Super easy to get started: just point your domain to our CDN’s IP address&lt;/
 &lt;p&gt;おそらくGitHub Pages上にあるサイトをCDNでキャッシュして、ついでにHTTPSにしてくれるというものだと思う。
 だからこっちでやることは、GitHub PagesのプロジェクトURLを登録したりDNSの向き先を変えたりするくらい。&lt;/p&gt;
 
-&lt;p&gt;せっかくだしやるだけやってみようと思う。&lt;/p&gt;
-
-&lt;p&gt;ちなみにこれまでは、CloudFlareを使ってHTTPS化するのが主流だった模様。&lt;/p&gt;
+&lt;p&gt;せっかくだしやるだけやってみようと思う。
+ちなみにこれまでは、CloudFlareを使ってHTTPS化するのが主流だった模様。&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://konklone.com/post/github-pages-now-sorta-supports-https-so-use-it&#34;&gt;GitHub Pages Now (Sorta) Supports HTTPS, So Use It&lt;/a&gt;&lt;/li&gt;
@@ -195,14 +194,8 @@ Super easy to get started: just point your domain to our CDN’s IP address&lt;/
 
 &lt;h2 id=&#34;対応手順:4d2882a3687d5c7df915f02afec1d585&#34;&gt;対応手順&lt;/h2&gt;
 
-&lt;h3 id=&#34;kloudsecのユーザ登録をする:4d2882a3687d5c7df915f02afec1d585&#34;&gt;Kloudsecのユーザ登録をする&lt;/h3&gt;
-
-&lt;p&gt;このページの下の方から登録出来る。
+&lt;p&gt;ユーザ登録をしてDNSの設定を直すだけ。このページ（&lt;a href=&#34;https://kloudsec.com/github-pages&#34;&gt;Kloudsec&lt;/a&gt;）の下の方から登録出来る。
 GitHub PagesのリポジトリURLを入れることでホスティングしているIPを取得してくれている模様。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://kloudsec.com/github-pages&#34;&gt;Kloudsec&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;dnsの向き先を変える:4d2882a3687d5c7df915f02afec1d585&#34;&gt;DNSの向き先を変える&lt;/h3&gt;
 
 &lt;p&gt;GitHub Pagesでカスタムドメインを使ってる人はCNAMEを設定していると思うので、その辺の設定しなおしをする必要がある。&lt;/p&gt;
 
@@ -212,18 +205,16 @@ GitHub PagesのリポジトリURLを入れることでホスティングして�
 &lt;li&gt;Kloudsecから指定されたTXTレコードを新規登録&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;詰まったところ:4d2882a3687d5c7df915f02afec1d585&#34;&gt;詰まったところ&lt;/h2&gt;
-
-&lt;h3 id=&#34;httpsにならない:4d2882a3687d5c7df915f02afec1d585&#34;&gt;HTTPSにならない&lt;/h3&gt;
+&lt;h2 id=&#34;httpsにならない:4d2882a3687d5c7df915f02afec1d585&#34;&gt;HTTPSにならない&lt;/h2&gt;
 
 &lt;p&gt;KloudsecはLet&amp;rsquo;s EncryptでHTTPS化しているとのこと。
 サイトを登録した直後はHTTPSにならない。というか証明書が取得ペンディングになる。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://letsencrypt.org/&#34;&gt;Let&amp;rsquo;s Encrypt - Free SSL/TLS Certificates&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;これは待ってれば取得完了の旨のメールが届くのでほっとけばよい。&lt;/p&gt;
+&lt;p&gt;これは待ってれば取得完了の旨のメールが届くのでほっとけばよかった。&lt;/p&gt;
 
-&lt;h3 id=&#34;ダッシュボード上のエラーが消えない:4d2882a3687d5c7df915f02afec1d585&#34;&gt;ダッシュボード上のエラーが消えない&lt;/h3&gt;
+&lt;h2 id=&#34;ダッシュボード上のエラーが消えない:4d2882a3687d5c7df915f02afec1d585&#34;&gt;ダッシュボード上のエラーが消えない&lt;/h2&gt;
 
 &lt;p&gt;ダッシュボードのトップにこのエラーメッセージが出てどう対応したら良いのかわからなかった。&lt;/p&gt;
 
@@ -239,11 +230,9 @@ GitHub PagesのリポジトリURLを入れることでホスティングして�
 &lt;p&gt;DNSの設定が終わったらあとは勝手に最適化してくれるらしく、それに時間がかかっていたみたい。
 つまりこれについても、こっちで出来ることは待つだけ。&lt;/p&gt;
 
-&lt;h2 id=&#34;問題点:4d2882a3687d5c7df915f02afec1d585&#34;&gt;問題点&lt;/h2&gt;
+&lt;h2 id=&#34;レスポンスが遅い:4d2882a3687d5c7df915f02afec1d585&#34;&gt;レスポンスが遅い&lt;/h2&gt;
 
-&lt;h3 id=&#34;遅い:4d2882a3687d5c7df915f02afec1d585&#34;&gt;遅い&lt;/h3&gt;
-
-&lt;p&gt;純粋に遅い。
+&lt;p&gt;目に見えて遅かった。
 GitHubにCNAMEを向けていた時の時間を計測していなかったので比較が出来ないけど、
 Kloudsecはスーパーリロードした際に1秒弱かかっている。&lt;/p&gt;
 
@@ -254,7 +243,7 @@ Kloudsecはスーパーリロードした際に1秒弱かかっている。&lt;/
 
 &lt;p&gt;HTMLのレスポンス時点で遅いので、どうしょうもない。&lt;/p&gt;
 
-&lt;h3 id=&#34;page-optimizerがonだとampがinvalidになる:4d2882a3687d5c7df915f02afec1d585&#34;&gt;Page OptimizerがONだとAMPがinvalidになる&lt;/h3&gt;
+&lt;h2 id=&#34;page-optimizerがonだとampがinvalidになる:4d2882a3687d5c7df915f02afec1d585&#34;&gt;Page OptimizerがONだとAMPがinvalidになる&lt;/h2&gt;
 
 &lt;p&gt;KloudsecのPage Optimizerというプラグインはページ速度とかを計るために、ページの末尾にJSを埋め込んでレスポンスを返す。
 また、&lt;code&gt;head&lt;/code&gt;に直接書いたCSSの改行削除等も行っている模様。&lt;/p&gt;
@@ -345,13 +334,10 @@ AMPについてはチーム全体でどうしようか考えてるそうでし�
 &lt;p&gt;&lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt;に&lt;code&gt;amp&lt;/code&gt;もしくは「⚡」を入れることでAMP対応を明示するようです。
 せっかくなので、このブログは絵文字で対応しました。&lt;/p&gt;
 
-&lt;h2 id=&#34;html上の制約:248155386e4621d756694486f44e789c&#34;&gt;HTML上の制約&lt;/h2&gt;
+&lt;h2 id=&#34;imgタグの置き換え:248155386e4621d756694486f44e789c&#34;&gt;IMGタグの置き換え&lt;/h2&gt;
 
-&lt;p&gt;基本的にAMPは機能拡張ではなく制限なので、既存のHTMLの置き換えや削除で対応出来ます。&lt;/p&gt;
-
-&lt;h3 id=&#34;画像の差し込み:248155386e4621d756694486f44e789c&#34;&gt;画像の差し込み&lt;/h3&gt;
-
-&lt;p&gt;まず最初に説明されているのは画像の表示について。&lt;/p&gt;
+&lt;p&gt;基本的にAMPは機能拡張ではなく制限なので、既存のHTMLの置き換えや削除で対応出来ます。
+まず最初に説明されているのは画像の表示について。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;amp-img src=&amp;quot;welcome.jpg&amp;quot; alt=&amp;quot;Welcome&amp;quot; height=&amp;quot;400&amp;quot; width=&amp;quot;800&amp;quot;&amp;gt;&amp;lt;/amp-img&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -363,7 +349,7 @@ AMPについてはチーム全体でどうしようか考えてるそうでし�
 
 &lt;p&gt;サイズを指定しなくても横幅に応じて良きに計らってほしいのですが、僕はその記述をドキュメントから見つけられませんでした。&lt;/p&gt;
 
-&lt;h3 id=&#34;スタイルシート:248155386e4621d756694486f44e789c&#34;&gt;スタイルシート&lt;/h3&gt;
+&lt;h2 id=&#34;スタイルの定義:248155386e4621d756694486f44e789c&#34;&gt;スタイルの定義&lt;/h2&gt;
 
 &lt;p&gt;スタイルシートは&lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;内にベタで置くことになっているようです。&lt;/p&gt;
 
@@ -390,7 +376,7 @@ AMPについてはチーム全体でどうしようか考えてるそうでし�
 
 &lt;p&gt;僕は今回の対応で3rdパーティ系のライブラリはすべて撤去しました。（&lt;code&gt;.container&lt;/code&gt;とグリッドシステムくらいしか使っていなかったので、そもそも不要でした。）&lt;/p&gt;
 
-&lt;h3 id=&#34;javascript:248155386e4621d756694486f44e789c&#34;&gt;JavaScript&lt;/h3&gt;
+&lt;h2 id=&#34;javascriptの排除:248155386e4621d756694486f44e789c&#34;&gt;JavaScriptの排除&lt;/h2&gt;
 
 &lt;p&gt;原則禁止のようです。
 Google Analytics等は専用の記述が用意されていました。こういった例外的な扱いが他にもいくつかあるようです。&lt;/p&gt;
@@ -1026,7 +1012,7 @@ Add `Rails.application.config.assets.precompile += %w( application_target.css )`
 &lt;p&gt;一つわかってるのは、メディアのコアは文章や画像であって、それを如何に見やすくするかが一つの重要なポイントであるということ。
 それに取り組んでいるうちに「文章のデザイン」に興味を持った。&lt;/p&gt;
 
-&lt;h3 id=&#34;検討すべきことを考える:b8d71f99fac6a3ac275ba50d22f78f54&#34;&gt;検討すべきことを考える&lt;/h3&gt;
+&lt;h2 id=&#34;検討すべきことを考える:b8d71f99fac6a3ac275ba50d22f78f54&#34;&gt;検討すべきことを考える&lt;/h2&gt;
 
 &lt;p&gt;文章は見出しや文節、時には画像などで構築される。&lt;/p&gt;
 
@@ -1045,7 +1031,7 @@ Add `Rails.application.config.assets.precompile += %w( application_target.css )`
 &lt;li&gt;1行に表示すべき文字数&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;スマートデバイスの場合:b8d71f99fac6a3ac275ba50d22f78f54&#34;&gt;スマートデバイスの場合&lt;/h3&gt;
+&lt;h2 id=&#34;スマートデバイスの場合:b8d71f99fac6a3ac275ba50d22f78f54&#34;&gt;スマートデバイスの場合&lt;/h2&gt;
 
 &lt;p&gt;最近ではブラウザといってもPCだけじゃなくスマートデバイスの考慮も入れなくちゃいけない。
 レスポンシブデザインはそこまで難しいものじゃないので、実装の手間はそんなに増えない。
@@ -1058,7 +1044,7 @@ Add `Rails.application.config.assets.precompile += %w( application_target.css )`
 なので最近はスマートデバイスの時は文字を小さくして出来るだけ多くの情報を1画面に表示出来るようにしている。
 実際、文字が小さくて目が疲れることはあっても、読みづらいとかいうことはあまりないのかもしれない。&lt;/p&gt;
 
-&lt;h2 id=&#34;僕のエゴ:b8d71f99fac6a3ac275ba50d22f78f54&#34;&gt;僕のエゴ&lt;/h2&gt;
+&lt;h2 id=&#34;装飾としてのデザインは必要なのか:b8d71f99fac6a3ac275ba50d22f78f54&#34;&gt;装飾としてのデザインは必要なのか&lt;/h2&gt;
 
 &lt;p&gt;僕は出来るだけ、このブログは装飾的なデザインを入れないようにしている。
 文章にそれは必要ないと思っているから。&lt;/p&gt;
@@ -1077,8 +1063,6 @@ Add `Rails.application.config.assets.precompile += %w( application_target.css )`
 &lt;li&gt;スタイルというのはブランドとコンテンツを支えるためにある。目的のないスタイルはただのノイズである。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-
-&lt;h3 id=&#34;装飾としてのデザインは必要なのか:b8d71f99fac6a3ac275ba50d22f78f54&#34;&gt;装飾としてのデザインは必要なのか&lt;/h3&gt;
 
 &lt;p&gt;僕が一番長いこと悩んでいるのは「見出しの見やすさ」のこと。&lt;/p&gt;
 

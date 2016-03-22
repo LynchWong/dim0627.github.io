@@ -483,9 +483,8 @@ Super easy to get started: just point your domain to our CDN’s IP address</p>
 <p>おそらくGitHub Pages上にあるサイトをCDNでキャッシュして、ついでにHTTPSにしてくれるというものだと思う。
 だからこっちでやることは、GitHub PagesのプロジェクトURLを登録したりDNSの向き先を変えたりするくらい。</p>
 
-<p>せっかくだしやるだけやってみようと思う。</p>
-
-<p>ちなみにこれまでは、CloudFlareを使ってHTTPS化するのが主流だった模様。</p>
+<p>せっかくだしやるだけやってみようと思う。
+ちなみにこれまでは、CloudFlareを使ってHTTPS化するのが主流だった模様。</p>
 
 <ul>
 <li><a href="https://konklone.com/post/github-pages-now-sorta-supports-https-so-use-it">GitHub Pages Now (Sorta) Supports HTTPS, So Use It</a></li>
@@ -495,14 +494,8 @@ Super easy to get started: just point your domain to our CDN’s IP address</p>
 
 <h2 id="対応手順:4d2882a3687d5c7df915f02afec1d585">対応手順</h2>
 
-<h3 id="kloudsecのユーザ登録をする:4d2882a3687d5c7df915f02afec1d585">Kloudsecのユーザ登録をする</h3>
-
-<p>このページの下の方から登録出来る。
+<p>ユーザ登録をしてDNSの設定を直すだけ。このページ（<a href="https://kloudsec.com/github-pages">Kloudsec</a>）の下の方から登録出来る。
 GitHub PagesのリポジトリURLを入れることでホスティングしているIPを取得してくれている模様。</p>
-
-<p><a href="https://kloudsec.com/github-pages">Kloudsec</a></p>
-
-<h3 id="dnsの向き先を変える:4d2882a3687d5c7df915f02afec1d585">DNSの向き先を変える</h3>
 
 <p>GitHub Pagesでカスタムドメインを使ってる人はCNAMEを設定していると思うので、その辺の設定しなおしをする必要がある。</p>
 
@@ -512,18 +505,16 @@ GitHub PagesのリポジトリURLを入れることでホスティングして�
 <li>Kloudsecから指定されたTXTレコードを新規登録</li>
 </ul>
 
-<h2 id="詰まったところ:4d2882a3687d5c7df915f02afec1d585">詰まったところ</h2>
-
-<h3 id="httpsにならない:4d2882a3687d5c7df915f02afec1d585">HTTPSにならない</h3>
+<h2 id="httpsにならない:4d2882a3687d5c7df915f02afec1d585">HTTPSにならない</h2>
 
 <p>KloudsecはLet&rsquo;s EncryptでHTTPS化しているとのこと。
 サイトを登録した直後はHTTPSにならない。というか証明書が取得ペンディングになる。</p>
 
 <p><a href="https://letsencrypt.org/">Let&rsquo;s Encrypt - Free SSL/TLS Certificates</a></p>
 
-<p>これは待ってれば取得完了の旨のメールが届くのでほっとけばよい。</p>
+<p>これは待ってれば取得完了の旨のメールが届くのでほっとけばよかった。</p>
 
-<h3 id="ダッシュボード上のエラーが消えない:4d2882a3687d5c7df915f02afec1d585">ダッシュボード上のエラーが消えない</h3>
+<h2 id="ダッシュボード上のエラーが消えない:4d2882a3687d5c7df915f02afec1d585">ダッシュボード上のエラーが消えない</h2>
 
 <p>ダッシュボードのトップにこのエラーメッセージが出てどう対応したら良いのかわからなかった。</p>
 
@@ -539,11 +530,9 @@ GitHub PagesのリポジトリURLを入れることでホスティングして�
 <p>DNSの設定が終わったらあとは勝手に最適化してくれるらしく、それに時間がかかっていたみたい。
 つまりこれについても、こっちで出来ることは待つだけ。</p>
 
-<h2 id="問題点:4d2882a3687d5c7df915f02afec1d585">問題点</h2>
+<h2 id="レスポンスが遅い:4d2882a3687d5c7df915f02afec1d585">レスポンスが遅い</h2>
 
-<h3 id="遅い:4d2882a3687d5c7df915f02afec1d585">遅い</h3>
-
-<p>純粋に遅い。
+<p>目に見えて遅かった。
 GitHubにCNAMEを向けていた時の時間を計測していなかったので比較が出来ないけど、
 Kloudsecはスーパーリロードした際に1秒弱かかっている。</p>
 
@@ -554,7 +543,7 @@ Kloudsecはスーパーリロードした際に1秒弱かかっている。</p>
 
 <p>HTMLのレスポンス時点で遅いので、どうしょうもない。</p>
 
-<h3 id="page-optimizerがonだとampがinvalidになる:4d2882a3687d5c7df915f02afec1d585">Page OptimizerがONだとAMPがinvalidになる</h3>
+<h2 id="page-optimizerがonだとampがinvalidになる:4d2882a3687d5c7df915f02afec1d585">Page OptimizerがONだとAMPがinvalidになる</h2>
 
 <p>KloudsecのPage Optimizerというプラグインはページ速度とかを計るために、ページの末尾にJSを埋め込んでレスポンスを返す。
 また、<code>head</code>に直接書いたCSSの改行削除等も行っている模様。</p>
