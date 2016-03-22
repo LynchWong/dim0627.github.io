@@ -13,7 +13,7 @@
 
     <title>AndroidでCSSのBackgroundImageが設定されない - Unresolved</title>
 
-    <link rel="canonical" href="https://yet.unresolved.xyz/blog/2016/03/22/backgroundimage-is-not-worked-on-cloudflare/">
+    <link rel="canonical" href="https://yet.unresolved.xyz/blog/2016/03/22/backgroundimage-is-not-worked/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <meta name="theme-color" content="#2196f3">
 
@@ -50,7 +50,7 @@
       "width": 60
     }
   },
-  "description": "Androidのスマホからアクセスした時に background-image: url(\/images\/bg.png); とかやってる背景画像が読み込まれないっていう現象に陥った。 PCからだと再現しないから全然原因が"
+  "description": "Androidのスマホ（Nexus5 Android 6.0.1）からアクセスした時に background-image: url(\/images\/bg.png); とかやってる背景画像が読み込まれないっていう現象に陥った。 PCから"
 }
     </script>
     
@@ -519,7 +519,7 @@ nav.page a.next {
 
     <div class="body">
 
-<p>Androidのスマホからアクセスした時に</p>
+<p>Androidのスマホ（Nexus5 Android 6.0.1）からアクセスした時に</p>
 
 <pre><code class="language-css">background-image: url(/images/bg.png);
 </code></pre>
@@ -575,13 +575,18 @@ PCからだと再現しないから全然原因が掴めなかったんだけど
 
 <p>これらは全部効果なし。</p>
 
-<h2 id="画像リサイズしたら直った:b1007cf8c68233e41ba39385dd1edaf9">画像リサイズしたら直った</h2>
+<h2 id="画像リサイズしたら直った:c4a8cae708d9ae9be9901a90f98f5ef4">画像リサイズしたら直った</h2>
 
 <p>あまりしっくりくる結論じゃないんだけど、
 僕の手元で再現する条件は「画像を<code>background-size: cover;</code>でアスペクトが違いすぎるblock要素に設定する」でした。</p>
 
 <p>2つのサイトで同様の事象が発生していたんだけど、画像をリサイズしたらこの問題は解決した。
 余裕があれば、もう一度上記の条件を整えて再現するかを確認したいと思う。</p>
+
+<h3 id="追記:c4a8cae708d9ae9be9901a90f98f5ef4">追記</h3>
+
+<p>画像サイズを変えて再現しました。
+なんでなんだ？</p>
 </div>
 
     <aside class="article tags">

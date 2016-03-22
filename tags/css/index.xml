@@ -11,13 +11,13 @@
     
     <item>
       <title>AndroidでCSSのBackgroundImageが設定されない</title>
-      <link>https://yet.unresolved.xyz/blog/2016/03/22/backgroundimage-is-not-worked-on-cloudflare/</link>
+      <link>https://yet.unresolved.xyz/blog/2016/03/22/backgroundimage-is-not-worked/</link>
       <pubDate>Tue, 22 Mar 2016 13:32:47 +0900</pubDate>
       
-      <guid>https://yet.unresolved.xyz/blog/2016/03/22/backgroundimage-is-not-worked-on-cloudflare/</guid>
+      <guid>https://yet.unresolved.xyz/blog/2016/03/22/backgroundimage-is-not-worked/</guid>
       <description>
 
-&lt;p&gt;Androidのスマホからアクセスした時に&lt;/p&gt;
+&lt;p&gt;Androidのスマホ（Nexus5 Android 6.0.1）からアクセスした時に&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;background-image: url(/images/bg.png);
 &lt;/code&gt;&lt;/pre&gt;
@@ -73,13 +73,18 @@ PCからだと再現しないから全然原因が掴めなかったんだけど
 
 &lt;p&gt;これらは全部効果なし。&lt;/p&gt;
 
-&lt;h2 id=&#34;画像リサイズしたら直った:b1007cf8c68233e41ba39385dd1edaf9&#34;&gt;画像リサイズしたら直った&lt;/h2&gt;
+&lt;h2 id=&#34;画像リサイズしたら直った:c4a8cae708d9ae9be9901a90f98f5ef4&#34;&gt;画像リサイズしたら直った&lt;/h2&gt;
 
 &lt;p&gt;あまりしっくりくる結論じゃないんだけど、
 僕の手元で再現する条件は「画像を&lt;code&gt;background-size: cover;&lt;/code&gt;でアスペクトが違いすぎるblock要素に設定する」でした。&lt;/p&gt;
 
 &lt;p&gt;2つのサイトで同様の事象が発生していたんだけど、画像をリサイズしたらこの問題は解決した。
 余裕があれば、もう一度上記の条件を整えて再現するかを確認したいと思う。&lt;/p&gt;
+
+&lt;h3 id=&#34;追記:c4a8cae708d9ae9be9901a90f98f5ef4&#34;&gt;追記&lt;/h3&gt;
+
+&lt;p&gt;画像サイズを変えて再現しました。
+なんでなんだ？&lt;/p&gt;
 </description>
     </item>
     
