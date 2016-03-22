@@ -32,7 +32,10 @@ background: repeat center/auto url(/images/lay.png),
 * [WordPress › Support » CDN Feature Not Loading CSS Background Images](https://wordpress.org/support/topic/cdn-feature-not-loading-css-background-images)
 * [WordPress › Support » Header image not displaying with Cloudflare SSL](https://wordpress.org/support/topic/header-image-not-displaying-with-cloudflare-ssl)
 
-と思ったらiPhoneだと再現しない。
+と思ったらiPhoneだと再現しない。Androidのせいなのか？
+それとも僕が、Androidに対応してないショートハンドで書いてしまってるのか？
+
+
 
 
 
