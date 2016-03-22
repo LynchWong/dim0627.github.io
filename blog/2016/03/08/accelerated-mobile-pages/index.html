@@ -65,12 +65,6 @@ html {
   font-size: 16px;
 }
 
-@media (max-width: 768px) {
-  html {
-    font-size: 14px;
-  }
-}
-
 body {
   font-family: "Open Sans", "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   font-size: inherit;
@@ -110,31 +104,62 @@ h1, h2, h3, h4, h5 ,h6 {
 }
 
  
-header.site {
-  padding: 1rem 0;
-  box-shadow: 0 -1px 0 #cfd8dc inset, 0 2px 0 0 rgba(236,239,241 ,.5);
-  margin-bottom: 1rem;
+.header-wrapper {
+  background: repeat center/auto url(/images/lay.png), no-repeat bottom/cover url(/images/bg.png);
 }
 
-header.site a {
+header.site {
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+header.site .logo {
+  text-align: center;
+}
+
+header.site .logo a {
   display: inline-block;
   font-weight: 700;
   font-size: 1.6rem;
   line-height: 1.5rem;
+  color: #fff;
 }
 
-header.site a:before,
-header.site a:after {
+header.site .logo a:before,
+header.site .logo a:after {
   display: inline-block;
   content: '';
   height: 1.5rem;
 }
 
-header.site a:before {
+header.site .logo a:before {
   vertical-align: 0;
 }
 
-header.site a:after {
+header.site .logo a:after {
+  vertical-align: -.5rem;
+}
+
+header.site article.li {
+  margin-top: 4rem;
+  color: #fff;
+  box-shadow: .25rem 0 0 0 #fff inset;
+  padding: 0 1rem;
+  background-color: rgba(255, 255, 255, .1);
+}
+
+header.site article.li .title {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+
+header.site article.li .title::before,
+header.site article.li .title::after {
+  height: 1.5rem;
+}
+
+header.site article.li .title::after {
   vertical-align: -.5rem;
 }
 
@@ -166,10 +191,6 @@ article.li>a:hover {
 
 article.li>a:hover .title {
   text-decoration: underline;
-}
-
-article.single header {
-  margin-bottom: 2rem;
 }
 
 article .aside {
@@ -451,23 +472,32 @@ nav.page a.next {
       </script>
     </amp-analytics>
 
-    <div class="container">
+    <div class="header-wrapper">
       <header class="site">
-        <a href="https://yet.unresolved.xyz/">Unresolved</a>
+        <div class="logo">
+          <a href="https://yet.unresolved.xyz/">Unresolved</a>
+        </div>
+
+        
+        <div class="container">
+          <article class="li">
+            <div class="title">AMP対応をした</div>
+            <div class="aside">
+              <time class="date">Tue, Mar 8, 2016</time> - <a href="https://yet.unresolved.xyz/technology" class="section">technology</a>
+            </div>
+
+          </article>
+        </div>
+        
       </header>
-
-
-
-<article class="single">
-
-  <header>
-    <div class="aside">
-      <time class="date">Tue, Mar 8, 2016</time> - <a href="https://yet.unresolved.xyz/technology" class="section">technology</a>
     </div>
-    <div class="title">AMP対応をした</div>
-  </header>
 
-  <div class="body">
+    <div class="container">
+
+
+  <article class="single">
+
+    <div class="body">
 
 <p>巷で話題のAMP対応をしました。
 僕のブログはこの規模なので、別ページとして作るのではなく純粋にページ自体を作り変えました。</p>
@@ -599,24 +629,24 @@ Google Analytics等は専用の記述が用意されていました。こうい�
 <p>仕様も今後変わっていくと思うので、その辺も追う元気があれば対応していきたいと思います。</p>
 </div>
 
-  <aside class="article tags">
-    
-    <a href="https://yet.unresolved.xyz/tags/amp">amp</a>
-    
-    <a href="https://yet.unresolved.xyz/tags/google">google</a>
-    
-  </aside>
+    <aside class="article tags">
+      
+      <a href="https://yet.unresolved.xyz/tags/amp">amp</a>
+      
+      <a href="https://yet.unresolved.xyz/tags/google">google</a>
+      
+    </aside>
 
-</article>
+  </article>
 
-<footer class="site">
-  <p>&copy; 2016 Daisuke Tsuji</p>
-  <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
-  <p>Theme <a href="https://github.com/dim0627/hugo_theme_harb" target="_blank">Harb</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
-</footer>
+      <footer class="site">
+        <p>&copy; 2016 Daisuke Tsuji</p>
+        <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
+        <p>Theme <a href="https://github.com/dim0627/hugo_theme_harb" target="_blank">Harb</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+      </footer>
 
-</div>
-
-</body>
+    </div>
+  </body>
 </html>
+
 
