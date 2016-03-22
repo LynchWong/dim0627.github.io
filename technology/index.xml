@@ -6,8 +6,82 @@
     <description>Recent content in Technologies on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Fri, 18 Mar 2016 14:23:38 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 22 Mar 2016 13:32:47 +0900</lastBuildDate>
     <atom:link href="https://yet.unresolved.xyz/technology/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>AndroidでCSSのBackgroundImageが設定されない</title>
+      <link>https://yet.unresolved.xyz/blog/2016/03/22/backgroundimage-is-not-worked-on-cloudflare/</link>
+      <pubDate>Tue, 22 Mar 2016 13:32:47 +0900</pubDate>
+      
+      <guid>https://yet.unresolved.xyz/blog/2016/03/22/backgroundimage-is-not-worked-on-cloudflare/</guid>
+      <description>
+
+&lt;p&gt;Androidのスマホからアクセスした時に&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;background-image: url(/images/bg.png);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;とかやってる背景画像が読み込まれないっていう現象に陥った。
+PCからだと再現しないから全然原因が掴めなかったんだけど、考えられるの原因は以下のものくらいしか考えられなかった。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;AMPの対応をしたせい&lt;/li&gt;
+&lt;li&gt;ショートハンドで複数画像を指定したせい&lt;/li&gt;
+&lt;li&gt;CloudFlareにしたせい&lt;/li&gt;
+&lt;li&gt;Androidのせい&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ショートハンドのはこういうこと。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;background: repeat center/auto url(/images/lay.png),
+            no-repeat bottom/cover url(/images/bg.png);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;まず1つ目のAMP対応の件は、AMP対応してないページでも同一の事象が発生していたので違った。
+ショートハンドも違う書き方をして改善されなかったので、違う。
+というわけでCloudFlareのせい？ちなみにキャッシュクリアは効果がなかった。&lt;/p&gt;
+
+&lt;p&gt;調べてみると似たような記事がいくつか見つかった。
+やっぱりこれが原因なのかな？&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://support.mozilla.org/ja/questions/984143&#34;&gt;Background CSS images not loading in firefox when using a CDN | Firefox サポートフォーラム | Mozilla サポート&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://wordpress.org/support/topic/cdn-feature-not-loading-css-background-images&#34;&gt;WordPress › Support » CDN Feature Not Loading CSS Background Images&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://wordpress.org/support/topic/header-image-not-displaying-with-cloudflare-ssl&#34;&gt;WordPress › Support » Header image not displaying with Cloudflare SSL&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;と思ったらiPhoneだと再現しない。Androidのせいなのか？
+それとも僕が、Androidに対応してないショートハンドで書いてしまってるのか？&lt;/p&gt;
+
+&lt;p&gt;しかし、ショートハンドをやめてみても画像は表示されない。
+それも、小さい画像は表示されて大きな画像が表示されない。
+ファイルサイズの問題なのだろうか？そうするとやはり、CloudFlareが何かやっている？
+まさか相対パスじゃなくて絶対パスじゃなきゃだめ？とも思ったが変えてみても改善されない。
+こうなったら違うサーバに配置してCloudFlareを経由せずにアクセスしてみれば・・・、でもダメ。
+ってことはCloudFlareも関係ない。&lt;/p&gt;
+
+&lt;p&gt;ここまでの対応をまとめてみよう。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;AMPじゃないページで確認&lt;/li&gt;
+&lt;li&gt;ショートハンドをやめて確認&lt;/li&gt;
+&lt;li&gt;キャッシュをクリアして確認&lt;/li&gt;
+&lt;li&gt;絶対パスに変えて確認&lt;/li&gt;
+&lt;li&gt;CloudFlareを経由しないサーバに配置して確認&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;これらは全部効果なし。&lt;/p&gt;
+
+&lt;h2 id=&#34;画像リサイズしたら直った:b1007cf8c68233e41ba39385dd1edaf9&#34;&gt;画像リサイズしたら直った&lt;/h2&gt;
+
+&lt;p&gt;あまりしっくりくる結論じゃないんだけど、
+僕の手元で再現する条件は「画像を&lt;code&gt;background-size: cover;&lt;/code&gt;でアスペクトが違いすぎるblock要素に設定する」でした。&lt;/p&gt;
+
+&lt;p&gt;2つのサイトで同様の事象が発生していたんだけど、画像をリサイズしたらこの問題は解決した。
+余裕があれば、もう一度上記の条件を整えて再現するかを確認したいと思う。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Railsでサービスを作るときに参考にしたサイトのメモ</title>
@@ -1124,43 +1198,6 @@ exec $UWSGI --ini /path/to/wsgi.ini
 &lt;li&gt;&lt;a href=&#34;http://qiita.com/morinokami/items/e0efb2ae2aa04a1b148b&#34;&gt;Flask + uWSGI + Nginx でハローワールドするまで @ さくらのVPS (CentOS 6.6) - Qiita&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://docs.djangoproject.jp/en/latest/howto/deployment/wsgi/uwsgi.html&#34;&gt;uWSGI で Django を使う方法 — Django 1.4 documentation&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>ACCOUNT KILLERというサービスが面白い</title>
-      <link>https://yet.unresolved.xyz/blog/2015/12/17/about-account-killer/</link>
-      <pubDate>Thu, 17 Dec 2015 10:39:55 +0900</pubDate>
-      
-      <guid>https://yet.unresolved.xyz/blog/2015/12/17/about-account-killer/</guid>
-      <description>
-
-&lt;p&gt;WordPress.comとGravatarを退会しようと思ったんだけどなんか退会画面が見つからない。
-いろいろ調べてみるとこの記事に行き着いた。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://d.hatena.ne.jp/m-hiyama/20150915/1442277074&#34;&gt;WordPress.comとGravatarのアカウントは一度登録したら何があっても絶対に削除できない - 檜山正幸のキマイラ飼育記&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;WordPress.comとGravatarのアカウントは一度登録したら何があっても絶対に削除できない！？&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;まじかよ、なんてひどいサービスだ。&lt;/p&gt;
-
-&lt;p&gt;それはまあよくて、どっちにしろWordPressがひどいのは知ってたし。
-この記事で紹介されてるACCOUNT KILLERというサービスが面白かった。&lt;/p&gt;
-
-&lt;h2 id=&#34;account-killer:283d2a7a74a226c22e2344c11ac9de1b&#34;&gt;ACCOUNT KILLER？&lt;/h2&gt;
-
-&lt;p&gt;先の記事を引用させてもらうと、&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;ここは、Webサイト／サービスをホワイトリスト（退会容易）とブラックリスト（退会困難）に分けていて、Gravatarはブラック。ブラックもブラック、なんと退会が不可能なのです。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;世の中の有名なサービスの退会難易度をまとめてくれてるらしい。先にこれ見ときゃよかったなー。
-退会出来ないサービスなんて登録したくないよね。さすがWordPress。&lt;/p&gt;
-
-&lt;h2 id=&#34;参考にさせていただきました:283d2a7a74a226c22e2344c11ac9de1b&#34;&gt;参考にさせていただきました&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://d.hatena.ne.jp/m-hiyama/20150915/1442277074&#34;&gt;WordPress.comとGravatarのアカウントは一度登録したら何があっても絶対に削除できない - 檜山正幸のキマイラ飼育記&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
