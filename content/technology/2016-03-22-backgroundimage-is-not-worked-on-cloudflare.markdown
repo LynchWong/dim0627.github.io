@@ -2,8 +2,7 @@
 date: 2016-03-22T13:32:47+09:00
 slug: "backgroundimage-is-not-worked-on-cloudflare"
 tags: ["cloudflare", "cdn", "css"]
-title: "原因はわからないがBackgroundImageが読み込まれない"
-draft: true
+title: "AndroidでCSSのBackgroundImageが設定されない"
 ---
 
 Androidのスマホからアクセスした時に
@@ -58,7 +57,11 @@ background: repeat center/auto url(/images/lay.png),
 
 これらは全部効果なし。
 
-## 残る可能性はAndroidのみ
+## 画像リサイズしたら直った
 
+あまりしっくりくる結論じゃないんだけど、
+僕の手元で再現する条件は「画像を`background-size: cover;`でアスペクトが違いすぎるblock要素に設定する」でした。
 
+2つのサイトで同様の事象が発生していたんだけど、画像をリサイズしたらこの問題は解決した。
+余裕があれば、もう一度上記の条件を整えて再現するかを確認したいと思う。
 
