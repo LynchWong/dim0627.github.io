@@ -1,8 +1,8 @@
 ---
 date: 2016-03-22T13:32:47+09:00
 slug: "backgroundimage-is-not-worked"
-tags: ["cloudflare", "cdn", "css"]
-title: "AndroidでCSSのBackgroundImageが設定されない"
+tags: ["android", "chrome", "cloudflare", "cdn", "css"]
+title: "AndroidのChromeでCSSのBackgroundImageが設定されない"
 ---
 
 Androidのスマホ（Nexus5 Android 6.0.1）からアクセスした時に
