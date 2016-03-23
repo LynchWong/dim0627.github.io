@@ -6,8 +6,58 @@
     <description>Recent content on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 22 Mar 2016 13:32:47 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 23 Mar 2016 11:32:22 +0900</lastBuildDate>
     <atom:link href="https://yet.unresolved.xyz/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>最近はGolangを書いてる</title>
+      <link>https://yet.unresolved.xyz/blog/2016/03/23/recently-wrote-a-golang/</link>
+      <pubDate>Wed, 23 Mar 2016 11:32:22 +0900</pubDate>
+      
+      <guid>https://yet.unresolved.xyz/blog/2016/03/23/recently-wrote-a-golang/</guid>
+      <description>
+
+&lt;h2 id=&#34;golang:0f99a9d6dfcdbebda907147e27a89650&#34;&gt;Golang&lt;/h2&gt;
+
+&lt;p&gt;もともと苦手意識があったんだけど、最近良く書いてる。
+ポインタもよくわかんないし、長ったらしくなるイメージがあったし、なんか流行りに乗った感があるのも嫌だし、天邪鬼的な感じで敬遠してた。&lt;/p&gt;
+
+&lt;p&gt;なんで書き始めたかというと、少し大きめのバッチを書く機会があったから。
+これまでバッチはPythonで適当に書いてしまうことが多かったんだけど、
+今回実装したのは保守する機会が多そうなレイヤーだったので、しっかり書こうと思った。&lt;/p&gt;
+
+&lt;p&gt;実際書いてみるとまあなんだかんだ好きになった。
+型があるからなのか、Golangは意識しなくても丁寧な実装になるし、そうすると自分でも意識して丁寧にやっていこうという気になる。
+Godocも読みやすいし周辺ツールも揃っていて不自由しない。&lt;/p&gt;
+
+&lt;p&gt;でもやはり入門したてってのもあって、ああすればよかったこうすればよかったと思うところも多くある。
+あと、他の人が書いたソースを読んだり構造を知ったりして、ベストプラクティスなものを学んだり。
+とにかく楽しく書けてるとは思う。&lt;/p&gt;
+
+&lt;h2 id=&#34;vimrc:0f99a9d6dfcdbebda907147e27a89650&#34;&gt;vimrc&lt;/h2&gt;
+
+&lt;p&gt;vimの設定はもうだるくなってしまってちゃんとやってないんだけど、dein.vimへの移行くらいはやった。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/Shougo/dein.vim&#34;&gt;Shougo/dein.vim: Dark powered Vim/Neovim plugin manager&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;それにともなって、使ってないプラグインの撤去とかもした。
+僕の環境でも起動は目に見えて速くなった。&lt;/p&gt;
+
+&lt;h2 id=&#34;ng-japan:0f99a9d6dfcdbebda907147e27a89650&#34;&gt;ng-japan&lt;/h2&gt;
+
+&lt;p&gt;特に使うつもりはないけど、ng-japanに行った。
+案の定MS社はAngularについてではなく自社製品の紹介をしてた。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.visualstudio.com/ja-jp/products/code-vs.aspx&#34;&gt;Microsoft Virtual Academy のご紹介&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://ngjapan.org/&#34;&gt;ng-japan - The Angular conference in Tokyo, Japan (2016/3/21)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;最近いい方向に活動しているのはわかるけど、そういう自社製品の売り方は個人的にいけ好かない。
+でもVisual Studio Codeはよさげだった。vimをやめたら多分こっちに行くだろうなと思う。
+プラグイン開発とかも少し興味が出たので気が向いたらやるかも。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>AndroidのChromeでCSSのBackgroundImageが設定されない</title>
@@ -1039,32 +1089,6 @@ MySQLの設定を変えなきゃいけないと思い込んでいて、RDSを使
 
 &lt;p&gt;正しさのチェックに加えていつ実行されるのかを文章で教えてくれる。
 記法についても注釈があるのでこのサイトで完結してしまう。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Asset Pipelineのコンパイル対象を追加する</title>
-      <link>https://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</link>
-      <pubDate>Wed, 20 Jan 2016 16:15:58 +0900</pubDate>
-      
-      <guid>https://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</guid>
-      <description>&lt;p&gt;デフォルトだと&lt;code&gt;application.css&lt;/code&gt;とかじゃないですか。
-でも例えば管理画面を作ったりとかでごっそりデザインの違うページを作るときに少し困ったんです。&lt;/p&gt;
-
-&lt;p&gt;まあ普通はそういう時、モジュールごと完全に分けるべきなのか・・・。疎結合ね・・・。&lt;/p&gt;
-
-&lt;p&gt;解決方法はエラーに出てました。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ActionView::Template::Error (Asset was not declared to be precompiled in production.
-Add `Rails.application.config.assets.precompile += %w( application_target.css )` to `config/initializers/assets.rb` and restart your server):
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;config/initializers/assets.rb&lt;/code&gt;に追記すればいい。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;Rails.application.config.assets.precompile += %w( application_target.css )
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Rails覚えらんないよー&lt;/p&gt;
 </description>
     </item>
     
