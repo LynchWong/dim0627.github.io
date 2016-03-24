@@ -5,11 +5,8 @@ tags: ['php', 'laravel', 'eloquent-orm', 'database', 'mysql']
 title: "[Laravel5.1]発行されたSQLと実行計画を取得する"
 ---
 
-インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしい。
-
-## SQLの発行をフックする
-
-ここに書いてあるとおり。
+インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしいので、まずSQLの発行をフックする。
+やり方はここに書いてあるとおり。
 
 [Database: Getting Started - Laravel - The PHP Framework For Web Artisans](http://laravel.com/docs/5.1/database#listening-for-query-events)
 
@@ -49,8 +46,6 @@ public function boot()
     });
 }
 ```
-
-こう。
 
 updateとかもフックしちゃうと2回発行されたりして面倒なので、selectだけ。
 selectに絞らないとしても、explainの取得がさらにフックされて・・・ってなるので、何かしら絞る必要はあり。
