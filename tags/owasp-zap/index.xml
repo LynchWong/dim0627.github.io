@@ -17,9 +17,8 @@
       <guid>https://yet.unresolved.xyz/blog/2015/09/30/using-basic-auth-in-owasp-zap/</guid>
       <description>
 
-&lt;p&gt;調べても意外と見つからない。&lt;/p&gt;
-
-&lt;p&gt;要はリクエストヘッダに認証情報をくっつけられればいいんだけどその方法がわからない。&lt;/p&gt;
+&lt;p&gt;調べても意外と見つからない。
+要はリクエストヘッダに認証情報をくっつけられればいいんだけどその方法がわからない。&lt;/p&gt;
 
 &lt;h2 id=&#34;リクエストヘッダに情報を差し込む:6779ddb6118e231a79097670a186005c&#34;&gt;リクエストヘッダに情報を差し込む&lt;/h2&gt;
 

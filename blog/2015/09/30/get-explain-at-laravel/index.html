@@ -50,7 +50,7 @@
       "width": 60
     }
   },
-  "description": "インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしい。 SQLの発行をフックする ここに書いてあるとおり。 Database:"
+  "description": "インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしいので、まずSQLの発行をフックする。 やり方はここに書"
 }
     </script>
     
@@ -485,11 +485,8 @@ nav.page a.next {
 
   <div class="body">
 
-<p>インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしい。</p>
-
-<h2 id="sqlの発行をフックする:f8b9f4d61afe8ca86b89085edc23a796">SQLの発行をフックする</h2>
-
-<p>ここに書いてあるとおり。</p>
+<p>インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしいので、まずSQLの発行をフックする。
+やり方はここに書いてあるとおり。</p>
 
 <p><a href="http://laravel.com/docs/5.1/database#listening-for-query-events">Database: Getting Started - Laravel - The PHP Framework For Web Artisans</a></p>
 
@@ -527,8 +524,6 @@ nav.page a.next {
     });
 }
 </code></pre>
-
-<p>こう。</p>
 
 <p>updateとかもフックしちゃうと2回発行されたりして面倒なので、selectだけ。
 selectに絞らないとしても、explainの取得がさらにフックされて・・・ってなるので、何かしら絞る必要はあり。</p>

@@ -99,11 +99,8 @@
       <guid>https://yet.unresolved.xyz/blog/2015/09/30/get-explain-at-laravel/</guid>
       <description>
 
-&lt;p&gt;インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしい。&lt;/p&gt;
-
-&lt;h2 id=&#34;sqlの発行をフックする:f8b9f4d61afe8ca86b89085edc23a796&#34;&gt;SQLの発行をフックする&lt;/h2&gt;
-
-&lt;p&gt;ここに書いてあるとおり。&lt;/p&gt;
+&lt;p&gt;インデックス設計をするときとか、ORMを通して実際に発行されたSQLとか実行計画がほしいので、まずSQLの発行をフックする。
+やり方はここに書いてあるとおり。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://laravel.com/docs/5.1/database#listening-for-query-events&#34;&gt;Database: Getting Started - Laravel - The PHP Framework For Web Artisans&lt;/a&gt;&lt;/p&gt;
 
@@ -141,8 +138,6 @@
     });
 }
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;こう。&lt;/p&gt;
 
 &lt;p&gt;updateとかもフックしちゃうと2回発行されたりして面倒なので、selectだけ。
 selectに絞らないとしても、explainの取得がさらにフックされて・・・ってなるので、何かしら絞る必要はあり。&lt;/p&gt;
