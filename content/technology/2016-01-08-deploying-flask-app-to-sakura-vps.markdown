@@ -18,7 +18,6 @@ CentOS6.5にプリインストールされているPythonは2.6だと思うの�
 ## uWSGIをインストールする
 
 まあ当然WSGIを使います。PythonをWebアプリとして動かす際のサーバ間仕様ですね。
-
 WSGIで使えるコンテナはWikiを見る限り幾つかあるようです。
 
 [Web Server Gateway Interface - Wikipedia](https://ja.wikipedia.org/wiki/Web_Server_Gateway_Interface)
@@ -38,7 +37,6 @@ WSGIで使えるコンテナはWikiを見る限り幾つかあるようです。
 > Application servers (for various programming languages and protocols), proxies, process managers and monitors are all implemented using a common api and a common configuration style.
 
 アプリケーションサーバですね。
-
 今回はnginxの向こうにuWSGIを置いてサービスを動作させます。
 
 ### インストール
@@ -52,7 +50,6 @@ pip install uwsgi
 ### パラメータオプションでの起動
 
 uWSGIはコマンドから起動設定も含めた起動が出来ます。
-
 例えば、
 
 ``` sh
@@ -61,16 +58,13 @@ uwsgi --socket 0.0.0.0:8000 --protocol=http -w wsgi_app
 
 これで8000ポートで`wsgi_app`がhttp全公開になります。
 nginxと連携させる前に、一度このタイミングでアクセス出来るかを見とくと良いですね。
-
 `-w`オプションはわかりづらいのですが、`main.py`にアプリの起動が記述されてる場合は`main`を指定するみたいですね。
 
 パラメータは公式のこのページが参考になりそうです。
-
-[uWSGI Options — uWSGI 2.0 documentation](http://uwsgi-docs.readthedocs.org/en/latest/Options.html)
-
 ちょっとしたロジックも書ける様子。
 
-[Configuration logic — uWSGI 2.0 documentation](http://uwsgi-docs.readthedocs.org/en/latest/ConfigLogic.html)
+* [uWSGI Options — uWSGI 2.0 documentation](http://uwsgi-docs.readthedocs.org/en/latest/Options.html)
+* [Configuration logic — uWSGI 2.0 documentation](http://uwsgi-docs.readthedocs.org/en/latest/ConfigLogic.html)
 
 ### iniファイルでの起動
 
@@ -93,20 +87,17 @@ gid = www-group
 
 起動は`uwsgi --ini wsgi.ini`みたいな感じ。
 ここでも一度アクセスできるかを確認するといいですね。
-
 chdirはカレントディレクトリの指定です。
 これがないとコマンドでは動くのにupstartから起動したら動かない、なんてことになったり。
 
 socketについてはこの記事が詳しいです。
-
-[Python - ちゃんと運用するときのuWSGI設定メモ - Qiita](http://qiita.com/yasunori/items/64606e63b36b396cf695#etcnginxconfdsample_nginxconf)
-
 プロダクションで使うならその他細かな設定が必要かと思います。
+
+* [Python - ちゃんと運用するときのuWSGI設定メモ - Qiita](http://qiita.com/yasunori/items/64606e63b36b396cf695#etcnginxconfdsample_nginxconf)
 
 ### upstartから起動させる
 
 別に手で起動しても問題ないと思うのですが、多分ナンセンスなので。
-
 `/etc/init/app.conf`を作って、
 
 ``` conf
