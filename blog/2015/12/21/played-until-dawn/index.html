@@ -128,18 +128,18 @@ header.site .logo a {
   line-height: 3rem;
 }
 
-header.site .logo a:before,
-header.site .logo a:after {
+header.site .logo a::before,
+header.site .logo a::after {
   display: inline-block;
   content: '';
   height: 1.5rem;
 }
 
-header.site .logo a:before {
+header.site .logo a::before {
   vertical-align: 0;
 }
 
-header.site .logo a:after {
+header.site .logo a::after {
   vertical-align: -.5rem;
 }
 
@@ -153,10 +153,6 @@ footer.site {
 
 article.li {
   margin-bottom: 1.5rem;
-}
-
-article.li:last-child {
-  margin-bottom: 0;
 }
 
 article.li>a {
