@@ -496,9 +496,8 @@ nav.page a.next {
 
 <h2 id="uwsgiをインストールする:a09f5de2bb121134bcd4cecf283ff09b">uWSGIをインストールする</h2>
 
-<p>まあ当然WSGIを使います。PythonをWebアプリとして動かす際のサーバ間仕様ですね。</p>
-
-<p>WSGIで使えるコンテナはWikiを見る限り幾つかあるようです。</p>
+<p>まあ当然WSGIを使います。PythonをWebアプリとして動かす際のサーバ間仕様ですね。
+WSGIで使えるコンテナはWikiを見る限り幾つかあるようです。</p>
 
 <p><a href="https://ja.wikipedia.org/wiki/Web_Server_Gateway_Interface">Web Server Gateway Interface - Wikipedia</a></p>
 
@@ -520,9 +519,8 @@ nav.page a.next {
 <p>Application servers (for various programming languages and protocols), proxies, process managers and monitors are all implemented using a common api and a common configuration style.</p>
 </blockquote>
 
-<p>アプリケーションサーバですね。</p>
-
-<p>今回はnginxの向こうにuWSGIを置いてサービスを動作させます。</p>
+<p>アプリケーションサーバですね。
+今回はnginxの向こうにuWSGIを置いてサービスを動作させます。</p>
 
 <h3 id="インストール:a09f5de2bb121134bcd4cecf283ff09b">インストール</h3>
 
@@ -533,25 +531,23 @@ nav.page a.next {
 
 <h3 id="パラメータオプションでの起動:a09f5de2bb121134bcd4cecf283ff09b">パラメータオプションでの起動</h3>
 
-<p>uWSGIはコマンドから起動設定も含めた起動が出来ます。</p>
-
-<p>例えば、</p>
+<p>uWSGIはコマンドから起動設定も含めた起動が出来ます。
+例えば、</p>
 
 <pre><code class="language-sh">uwsgi --socket 0.0.0.0:8000 --protocol=http -w wsgi_app
 </code></pre>
 
 <p>これで8000ポートで<code>wsgi_app</code>がhttp全公開になります。
-nginxと連携させる前に、一度このタイミングでアクセス出来るかを見とくと良いですね。</p>
+nginxと連携させる前に、一度このタイミングでアクセス出来るかを見とくと良いですね。
+<code>-w</code>オプションはわかりづらいのですが、<code>main.py</code>にアプリの起動が記述されてる場合は<code>main</code>を指定するみたいですね。</p>
 
-<p><code>-w</code>オプションはわかりづらいのですが、<code>main.py</code>にアプリの起動が記述されてる場合は<code>main</code>を指定するみたいですね。</p>
+<p>パラメータは公式のこのページが参考になりそうです。
+ちょっとしたロジックも書ける様子。</p>
 
-<p>パラメータは公式のこのページが参考になりそうです。</p>
-
-<p><a href="http://uwsgi-docs.readthedocs.org/en/latest/Options.html">uWSGI Options — uWSGI 2.0 documentation</a></p>
-
-<p>ちょっとしたロジックも書ける様子。</p>
-
-<p><a href="http://uwsgi-docs.readthedocs.org/en/latest/ConfigLogic.html">Configuration logic — uWSGI 2.0 documentation</a></p>
+<ul>
+<li><a href="http://uwsgi-docs.readthedocs.org/en/latest/Options.html">uWSGI Options — uWSGI 2.0 documentation</a></li>
+<li><a href="http://uwsgi-docs.readthedocs.org/en/latest/ConfigLogic.html">Configuration logic — uWSGI 2.0 documentation</a></li>
+</ul>
 
 <h3 id="iniファイルでの起動:a09f5de2bb121134bcd4cecf283ff09b">iniファイルでの起動</h3>
 
@@ -572,22 +568,21 @@ gid = www-group
 </code></pre>
 
 <p>起動は<code>uwsgi --ini wsgi.ini</code>みたいな感じ。
-ここでも一度アクセスできるかを確認するといいですね。</p>
-
-<p>chdirはカレントディレクトリの指定です。
+ここでも一度アクセスできるかを確認するといいですね。
+chdirはカレントディレクトリの指定です。
 これがないとコマンドでは動くのにupstartから起動したら動かない、なんてことになったり。</p>
 
-<p>socketについてはこの記事が詳しいです。</p>
+<p>socketについてはこの記事が詳しいです。
+プロダクションで使うならその他細かな設定が必要かと思います。</p>
 
-<p><a href="http://qiita.com/yasunori/items/64606e63b36b396cf695#etcnginxconfdsample_nginxconf">Python - ちゃんと運用するときのuWSGI設定メモ - Qiita</a></p>
-
-<p>プロダクションで使うならその他細かな設定が必要かと思います。</p>
+<ul>
+<li><a href="http://qiita.com/yasunori/items/64606e63b36b396cf695#etcnginxconfdsample_nginxconf">Python - ちゃんと運用するときのuWSGI設定メモ - Qiita</a></li>
+</ul>
 
 <h3 id="upstartから起動させる:a09f5de2bb121134bcd4cecf283ff09b">upstartから起動させる</h3>
 
-<p>別に手で起動しても問題ないと思うのですが、多分ナンセンスなので。</p>
-
-<p><code>/etc/init/app.conf</code>を作って、</p>
+<p>別に手で起動しても問題ないと思うのですが、多分ナンセンスなので。
+<code>/etc/init/app.conf</code>を作って、</p>
 
 <pre><code class="language-conf">description &quot;uWSGI&quot;
 start on runlevel [2345]
