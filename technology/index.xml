@@ -6,8 +6,415 @@
     <description>Recent content in Technologies on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 22 Mar 2016 13:32:47 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 28 Mar 2016 20:56:07 +0900</lastBuildDate>
     <atom:link href="https://yet.unresolved.xyz/technology/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ハイディの魔法の英会話の件を可視化してみようじゃないか</title>
+      <link>https://yet.unresolved.xyz/blog/2016/03/28/hyde-english-of-magic-and-sanddance/</link>
+      <pubDate>Mon, 28 Mar 2016 20:56:07 +0900</pubDate>
+      
+      <guid>https://yet.unresolved.xyz/blog/2016/03/28/hyde-english-of-magic-and-sanddance/</guid>
+      <description>
+
+&lt;p&gt;ひどい教授がいたもんですね。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://waranote.livedoor.biz/archives/48213295.html&#34;&gt;教授「この本買え アマゾンで星5つけろ」学生がamazonレビューで内情を暴露 : ワラノート&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;僕はこんな教授にあたらなくて良かったです。ところでこの本のレビューに以下のような投稿がありました。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;ここには途轍もない量の★5レビューがあると思いますが、暇な人は、横軸に時間(単位は日)、縦軸に1日あたりに書かれた★5レビューの数として、ヒストグラムを取ってみると面白いと思います。(だいたい半年おきに、パルス的なレビュー数の鋭い極大が見られます)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;おお、確かに面白そうだ。やってみましょう。&lt;/p&gt;
+
+&lt;h2 id=&#34;データを取る:70bc05286a8788b4334c382ea3838593&#34;&gt;データを取る&lt;/h2&gt;
+
+&lt;p&gt;Amazonの商品情報はAPIとかがあるんですかね。ちょっと面倒なのでスクレイピングでやらせてください。
+やりたいのは可視化なので、適当に書いちゃいますね。
+標準出力に吐き出したものをリダイレクトでCSVにしちゃいましょう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+from bs4 import BeautifulSoup
+import urllib
+import urllib2
+import time
+import re
+
+BASE_URL = &amp;quot;http://www.amazon.co.jp/product-reviews/4062179350&amp;quot;
+
+def get_max_page_num():
+    html = BeautifulSoup(urllib2.urlopen(BASE_URL + &amp;quot;/ref=cm_cr_dp_see_all_summary&amp;quot;).read(), &#39;lxml&#39;)
+    return int(html.find_all(class_=&amp;quot;page-button&amp;quot;)[-1].string)
+
+def get_comment_list(page_num):
+    html = BeautifulSoup(urllib2.urlopen(BASE_URL + &amp;quot;/ref=cm_cr_arp_d_paging_btm_{0}?pageNumber={0}&amp;quot;.format(page_num)).read(), &#39;lxml&#39;)
+    return html.find(id=&amp;quot;cm_cr-review_list&amp;quot;).find_all(class_=&amp;quot;review&amp;quot;)
+
+def parse_comment_detail(comment):
+    return {&amp;quot;date&amp;quot;: re.sub(u&amp;quot;\d+日&amp;quot;, &amp;quot;&amp;quot;, comment.find(class_=&amp;quot;review-date&amp;quot;).string),
+            &amp;quot;rate&amp;quot;: comment.find(class_=&amp;quot;review-rating&amp;quot;).find(class_=&amp;quot;a-icon-alt&amp;quot;).string}
+
+def wait():
+    time.sleep(5)
+
+max_page_num = get_max_page_num()
+for i in range(max_page_num):
+    wait()
+    page_num = i + 1
+    for comment in get_comment_list(page_num):
+        parsed_comment = parse_comment_detail(comment)
+        print(&amp;quot;{0},{1}&amp;quot;.format(parsed_comment[&amp;quot;date&amp;quot;].encode(&amp;quot;utf-8&amp;quot;), parsed_comment[&amp;quot;rate&amp;quot;].encode(&amp;quot;utf-8&amp;quot;)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こんな感じで取れます。ヘッダもつけておきましょう。
+この時点ではただ吐き出しただけで何も集計していません。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csv&#34;&gt;date,rate
+2015年2月,5つ星のうち1.0
+2014年6月,5つ星のうち1.0
+2014年7月,5つ星のうち1.0
+2016年3月,5つ星のうち1.0
+2015年1月,5つ星のうち1.0
+2016年3月,5つ星のうち1.0
+2016年2月,5つ星のうち1.0
+2016年3月,5つ星のうち1.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;可視化する:70bc05286a8788b4334c382ea3838593&#34;&gt;可視化する&lt;/h2&gt;
+
+&lt;p&gt;何を使おうか迷ったんですが、僕はそもそも可視化とかあんまり詳しくないんですよね。
+ただ、こないだマイクロソフト社から発表された&lt;a href=&#34;https://sanddance.azurewebsites.net/BeachPartyApp/BeachPartyApp.html&#34;&gt;SandDance&lt;/a&gt;というちょうどいいものがあるので、これを使ってみましょう。&lt;/p&gt;
+
+&lt;p&gt;これは何かというと、CSVやらなんたらを乗っけると幾つかのパターンで可視化してくれるというものです。
+ファセットも出来たりして便利なのですが、意外と可視化したいデータってなかったりするんですよね。&lt;/p&gt;
+
+&lt;p&gt;前置きはおいておいて、取り込んでみましょう。
+取り込んだ直後は&lt;code&gt;column&lt;/code&gt;という1つの軸の値の数を表示してくれます。これでいうと、月ごとのレビュー数ですね。&lt;/p&gt;
+
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2016-03-28/after_load.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-28/after_load.png&#34; alt=&#34;after_load&#34; width=1057 height=644 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;/a&gt;
+
+
+&lt;p&gt;これだと評価値がわからないので、、評価ごとに色をつけてみましょう。&lt;/p&gt;
+
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2016-03-28/column_colored.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-28/column_colored.png&#34; alt=&#34;column_colored&#34; width=1262 height=654 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;/a&gt;
+
+
+&lt;p&gt;ピンクが評価5のものです。随分見やすくなりましたね。ほとんどが5評価なのがよくわかります。
+どうやら2014年7月に1度大きな波が来て、その後2014年11月、2014年12月と大量に評価されているようです。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;だいたい半年おきに、パルス的なレビュー数の鋭い極大が見られます&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;半年ごとではなかったですが、何か恣意的なものを感じるグラフなのは確かですね。&lt;/p&gt;
+
+&lt;p&gt;ちなみに月ごとのファセット表示をするとこうなります。
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2016-03-28/column_facet.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-28/column_facet.png&#34; alt=&#34;column_facet&#34; width=1251 height=646 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;/a&gt;
+
+違った表示の仕方も出来たり。
+&lt;a href=&#34;https://yet.unresolved.xyz/images/2016-03-28/density.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-28/density.png&#34; alt=&#34;density&#34; width=1393 height=649 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;/a&gt;
+
+データによってはもっと面白い表示が出来そうですね。&lt;/p&gt;
+
+&lt;p&gt;最後にCSVを貼っておくので、使いたい人がいたらどうぞ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csv&#34;&gt;date,rate
+2015年02月,5つ星のうち1.0
+2014年06月,5つ星のうち1.0
+2014年07月,5つ星のうち1.0
+2016年03月,5つ星のうち1.0
+2015年01月,5つ星のうち1.0
+2016年03月,5つ星のうち1.0
+2016年02月,5つ星のうち1.0
+2016年03月,5つ星のうち1.0
+2016年03月,5つ星のうち1.0
+2016年03月,5つ星のうち2.0
+2016年03月,5つ星のうち1.0
+2016年03月,5つ星のうち1.0
+2016年03月,5つ星のうち1.0
+2016年03月,5つ星のうち1.0
+2016年03月,5つ星のうち1.0
+2016年03月,5つ星のうち1.0
+2014年10月,5つ星のうち3.0
+2016年03月,5つ星のうち1.0
+2016年03月,5つ星のうち1.0
+2014年10月,5つ星のうち3.0
+2013年08月,5つ星のうち3.0
+2013年01月,5つ星のうち5.0
+2012年10月,5つ星のうち5.0
+2015年07月,5つ星のうち4.0
+2013年05月,5つ星のうち5.0
+2016年03月,5つ星のうち3.0
+2014年08月,5つ星のうち4.0
+2014年07月,5つ星のうち5.0
+2013年07月,5つ星のうち5.0
+2013年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2013年01月,5つ星のうち5.0
+2013年07月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2013年01月,5つ星のうち5.0
+2013年01月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2013年01月,5つ星のうち5.0
+2013年01月,5つ星のうち5.0
+2013年07月,5つ星のうち5.0
+2013年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2013年07月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年06月,5つ星のうち5.0
+2013年07月,5つ星のうち5.0
+2013年07月,5つ星のうち5.0
+2013年01月,5つ星のうち5.0
+2013年01月,5つ星のうち5.0
+2013年07月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2013年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年06月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2013年12月,5つ星のうち5.0
+2013年12月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2013年01月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2013年12月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年07月,5つ星のうち4.0
+2014年07月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2013年01月,5つ星のうち5.0
+2014年07月,5つ星のうち4.0
+2014年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2013年12月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2013年12月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年06月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2013年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2013年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2013年07月,5つ星のうち5.0
+2014年06月,5つ星のうち5.0
+2013年12月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2013年07月,5つ星のうち5.0
+2013年12月,5つ星のうち5.0
+2013年07月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年07月,5つ星のうち4.0
+2014年07月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年06月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2013年07月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年06月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年06月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2013年07月,5つ星のうち5.0
+2014年06月,5つ星のうち5.0
+2013年12月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年06月,5つ星のうち5.0
+2013年07月,5つ星のうち5.0
+2013年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2013年07月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2013年01月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2013年06月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2013年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2013年06月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年06月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2013年06月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2013年06月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち4.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年07月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2016年03月,5つ星のうち4.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2015年01月,5つ星のうち5.0
+2014年11月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2015年01月,5つ星のうち5.0
+2015年01月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2015年01月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2015年01月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2015年01月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2015年01月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2014年12月,5つ星のうち5.0
+2015年01月,5つ星のうち5.0
+2015年01月,5つ星のうち5.0
+2015年03月,5つ星のうち5.0
+2015年01月,5つ星のうち5.0
+2015年07月,5つ星のうち5.0
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>AndroidのChromeでCSSのBackgroundImageが設定されない</title>
@@ -1041,162 +1448,6 @@ $ sudo rm /swapfile
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://scissorhands.jpn.org/2011/11/post-260.html&#34;&gt;さくらインターネット「さくらのレンタルサーバ」にSubversionをインストールする。 - ScissorHands&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.wordspeak.org/posts/resolving-build-errors-with-python-lxml.html&#34;&gt;Resolving build errors with python lxml on low memory machines | Wordspeak&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>[Python]Flaskアプリをnginx &#43; uWSGIでさくらVPSにデプロイする</title>
-      <link>https://yet.unresolved.xyz/blog/2016/01/08/deploying-flask-app-to-sakura-vps/</link>
-      <pubDate>Fri, 08 Jan 2016 10:57:35 +0900</pubDate>
-      
-      <guid>https://yet.unresolved.xyz/blog/2016/01/08/deploying-flask-app-to-sakura-vps/</guid>
-      <description>
-
-&lt;p&gt;CentOS6.5、Python2.7でやります。&lt;/p&gt;
-
-&lt;p&gt;CentOS6.5にプリインストールされているPythonは2.6だと思うのですが、Python2.7の導入方法は書きません。
-多分いろいろな環境で動いたり動かなかったりしちゃうと思うので。&lt;/p&gt;
-
-&lt;p&gt;僕はこの記事を参考にしました。非常に簡単かつ完璧に書かれてて助かりました。こんな記事が書けるようになりたい。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://qiita.com/a_yasui/items/5f453297855791ed648d&#34;&gt;CentOS に Python2.7, Python3.3を入れたメモ - Qiita&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;uwsgiをインストールする:a09f5de2bb121134bcd4cecf283ff09b&#34;&gt;uWSGIをインストールする&lt;/h2&gt;
-
-&lt;p&gt;まあ当然WSGIを使います。PythonをWebアプリとして動かす際のサーバ間仕様ですね。
-WSGIで使えるコンテナはWikiを見る限り幾つかあるようです。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/Web_Server_Gateway_Interface&#34;&gt;Web Server Gateway Interface - Wikipedia&lt;/a&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;WSGIアプリケーションコンテナの例としては、uWSGI, Gunicorn, Apacheモジュール (mod_wsgi, mod_pythonなど), Microsoft IIS（isapi-wsgi, PyISAPIe, ASPゲートウェイを使用）などがある。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;今回はuWSGIを使います。&lt;/p&gt;
-
-&lt;h3 id=&#34;uwsgi:a09f5de2bb121134bcd4cecf283ff09b&#34;&gt;uWSGI？&lt;/h3&gt;
-
-&lt;p&gt;公式より引用。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://uwsgi-docs.readthedocs.org/en/latest/&#34;&gt;The uWSGI project — uWSGI 2.0 documentation&lt;/a&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;The uWSGI project aims at developing a full stack for building hosting services.&lt;/p&gt;
-
-&lt;p&gt;Application servers (for various programming languages and protocols), proxies, process managers and monitors are all implemented using a common api and a common configuration style.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;アプリケーションサーバですね。
-今回はnginxの向こうにuWSGIを置いてサービスを動作させます。&lt;/p&gt;
-
-&lt;h3 id=&#34;インストール:a09f5de2bb121134bcd4cecf283ff09b&#34;&gt;インストール&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;pip install uwsgi
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;なんて簡単！&lt;/p&gt;
-
-&lt;h3 id=&#34;パラメータオプションでの起動:a09f5de2bb121134bcd4cecf283ff09b&#34;&gt;パラメータオプションでの起動&lt;/h3&gt;
-
-&lt;p&gt;uWSGIはコマンドから起動設定も含めた起動が出来ます。
-例えば、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;uwsgi --socket 0.0.0.0:8000 --protocol=http -w wsgi_app
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これで8000ポートで&lt;code&gt;wsgi_app&lt;/code&gt;がhttp全公開になります。
-nginxと連携させる前に、一度このタイミングでアクセス出来るかを見とくと良いですね。
-&lt;code&gt;-w&lt;/code&gt;オプションはわかりづらいのですが、&lt;code&gt;main.py&lt;/code&gt;にアプリの起動が記述されてる場合は&lt;code&gt;main&lt;/code&gt;を指定するみたいですね。&lt;/p&gt;
-
-&lt;p&gt;パラメータは公式のこのページが参考になりそうです。
-ちょっとしたロジックも書ける様子。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://uwsgi-docs.readthedocs.org/en/latest/Options.html&#34;&gt;uWSGI Options — uWSGI 2.0 documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://uwsgi-docs.readthedocs.org/en/latest/ConfigLogic.html&#34;&gt;Configuration logic — uWSGI 2.0 documentation&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;iniファイルでの起動:a09f5de2bb121134bcd4cecf283ff09b&#34;&gt;iniファイルでの起動&lt;/h3&gt;
-
-&lt;p&gt;パラメータをたくさんつけるとコマンドが長くなってしまうので&lt;code&gt;ini&lt;/code&gt;に落とし込みました。
-&lt;code&gt;xml&lt;/code&gt;とかその他の形式でも行けるみたいです。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-ini&#34;&gt;[uwsgi]
-chdir = /path/to/src
-module = wsgi
-socket = /path/to/app.sock
-touch-reload = /path/to/reload.trigger
-logto = /var/log/uwsgi.log
-max-requests = 1000
-chmod-socket = 666
-
-uid = www-user
-gid = www-group
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;起動は&lt;code&gt;uwsgi --ini wsgi.ini&lt;/code&gt;みたいな感じ。
-ここでも一度アクセスできるかを確認するといいですね。
-chdirはカレントディレクトリの指定です。
-これがないとコマンドでは動くのにupstartから起動したら動かない、なんてことになったり。&lt;/p&gt;
-
-&lt;p&gt;socketについてはこの記事が詳しいです。
-プロダクションで使うならその他細かな設定が必要かと思います。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://qiita.com/yasunori/items/64606e63b36b396cf695#etcnginxconfdsample_nginxconf&#34;&gt;Python - ちゃんと運用するときのuWSGI設定メモ - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;upstartから起動させる:a09f5de2bb121134bcd4cecf283ff09b&#34;&gt;upstartから起動させる&lt;/h3&gt;
-
-&lt;p&gt;別に手で起動しても問題ないと思うのですが、多分ナンセンスなので。
-&lt;code&gt;/etc/init/app.conf&lt;/code&gt;を作って、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-conf&#34;&gt;description &amp;quot;uWSGI&amp;quot;
-start on runlevel [2345]
-stop on runlevel [06]
-respawn
-
-env UWSGI=/path/to/uwsgi
-exec $UWSGI --ini /path/to/wsgi.ini
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;sudo start app&lt;/code&gt;で起動出来ます。この起動の仕方は初めて知りました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-14-04&#34;&gt;How To Serve Flask Applications with uWSGI and Nginx on Ubuntu 14.04 | DigitalOcean&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://qiita.com/kuni-nakaji/items/f3426bf69be947c594c4&#34;&gt;Linux - upstartでデーモン化してみる - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;nginxとの連携:a09f5de2bb121134bcd4cecf283ff09b&#34;&gt;nginxとの連携&lt;/h2&gt;
-
-&lt;p&gt;インストールは省きます。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-conf&#34;&gt;server {
-    listen       80;
-    server_name  localhost;
-    charset      utf-8;
-
-    location / {
-        try_files $uri @uwsgi;
-    }
-
-    location @uwsgi {
-        include uwsgi_params;
-        uwsgi_pass unix:/path/to/app.sock;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;uWSGIが起動して&lt;code&gt;app.sock&lt;/code&gt;が配備されてる状態であればこれでアクセス出来るはず。&lt;/p&gt;
-
-&lt;h2 id=&#34;参考にさせていただきました:a09f5de2bb121134bcd4cecf283ff09b&#34;&gt;参考にさせていただきました&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://qiita.com/yasunori/items/64606e63b36b396cf695#etcnginxconfdsample_nginxconf&#34;&gt;Python - ちゃんと運用するときのuWSGI設定メモ - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-14-04&#34;&gt;How To Serve Flask Applications with uWSGI and Nginx on Ubuntu 14.04 | DigitalOcean&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://qiita.com/morinokami/items/e0efb2ae2aa04a1b148b&#34;&gt;Flask + uWSGI + Nginx でハローワールドするまで @ さくらのVPS (CentOS 6.6) - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://docs.djangoproject.jp/en/latest/howto/deployment/wsgi/uwsgi.html&#34;&gt;uWSGI で Django を使う方法 — Django 1.4 documentation&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
