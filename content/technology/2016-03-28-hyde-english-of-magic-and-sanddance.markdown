@@ -85,7 +85,7 @@ date,rate
 
 {{% img src="/images/2016-03-28/after_load.png" alt="after_load" w="1057" h="644" %}}
 
-これだと評価値がわからないので、、評価ごとに色をつけてみましょう。
+これだと評価値がわからないので、評価ごとに色をつけてみましょう。
 
 {{% img src="/images/2016-03-28/column_colored.png" alt="column_colored" w="1262" h="654" %}}
 
