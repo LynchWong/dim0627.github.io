@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.16-DEV" />
+    <meta name="generator" content="Hugo 0.15-DEV" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://yet.unresolved.xyz/index.xml">
@@ -36,7 +36,7 @@ html {
 }
 
 body {
-  font-family: "Open Sans", "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-family: "Open Sans", "Hiragino Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Meryo, "メイリオ", Osaka, "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
   font-size: inherit;
   color: #263238;
 }
@@ -438,6 +438,20 @@ nav.page a.next {
   <div class="site">
     
     <article class="li">
+  <a href="https://yet.unresolved.xyz/blog/2016/02/04/libmysqlclient16-not-found/">
+    <header>
+      <div class="aside">
+        <time class="date">Thu, Feb 4, 2016</time> - <span class="section">technology</span>
+      </div>
+      <div class="title">MySQL5.6&#43;ruby-mysql2でlibmysqlclient_16 not found</div>
+    </header>
+
+    <div class="summary">せっかくなのでMySQLを5.5から5.6にして使おうとしたらエラーした。 MySQL5.6のインストールはこの記事が非常に分かりやすかった。...</div>
+  </a>
+</article>
+
+    
+    <article class="li">
   <a href="https://yet.unresolved.xyz/blog/2016/02/04/illegal-mix-of-collations/">
     <header>
       <div class="aside">
@@ -502,7 +516,7 @@ nav.page a.next {
       <div class="title">さくらVPSでpip install lxmlがOOM Killerに殺される</div>
     </header>
 
-    <div class="summary">Python2.7 + BeautifulSoup + lxmlの環境でスクレイピングをしようとしたらlxmlがインストールできなかった。 Installing collected packages: lxml Running setup.py install for lxml Complete output from command /opt/local/bin/python2.7 -c &quot;import setuptools, tokenize;__file__='/tmp/pip-build-9nMFdz/lxml/setup.py';exec(compile(getattr(tokenize, 'open', open)(__file__).read() .replace('\r\n', '\n'), __file__, 'exec'))&quot; install...</div>
+    <div class="summary">Python2.7 + BeautifulSoup + lxmlの環境でスクレイピングをしようとしたらlxmlがインストールできなかった。 Installing collected packages: lxml Running setup.py install for lxml Complete output from command /opt/local/bin/python2.7 -c &quot;import setuptools, tokenize;__file__='/tmp/pip-build-9nMFdz/lxml/setup.py';exec(compile(getattr(tokenize, 'open', open)(__file__).read() .replace('\r\n', '\n'), __file__, 'exec'))&quot; install --record /tmp/pip-8cwa10-record/install-record.txt --single-version-externally-managed --compile: /opt/local/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'bugtrack_url' warnings.warn(msg) Building lxml version 3.4.4....</div>
   </a>
 </article>
 
@@ -559,20 +573,6 @@ nav.page a.next {
     </header>
 
     <div class="summary">あんまり仕事のことは書かないつもりだったんだけど、このブログの生成でもお世話になっているHugoを結構本気で使ったのでそのことをまとめてみま...</div>
-  </a>
-</article>
-
-    
-    <article class="li">
-  <a href="https://yet.unresolved.xyz/blog/2015/11/04/using-https-in-laravel/">
-    <header>
-      <div class="aside">
-        <time class="date">Wed, Nov 4, 2015</time> - <span class="section">technology</span>
-      </div>
-      <div class="title">ELB越しのLaravelでHTTPSを使おうとして困った話</div>
-    </header>
-
-    <div class="summary">SSL証明書はELBに設置する 何が普通なのか知らないけど、今回立ち上げた構成では CLIENT -&gt; ELB(80 or 443) -&gt; WEB(80) っていう構成にしていました（するつもりだった）...</div>
   </a>
 </article>
 

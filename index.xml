@@ -418,6 +418,55 @@ for i in range(max_page_num):
     </item>
     
     <item>
+      <title>swiftでUICollectionViewを扱う</title>
+      <link>https://yet.unresolved.xyz/blog/2016/03/28/uicollection-view-by-swift/</link>
+      <pubDate>Mon, 28 Mar 2016 12:21:32 +0900</pubDate>
+      
+      <guid>https://yet.unresolved.xyz/blog/2016/03/28/uicollection-view-by-swift/</guid>
+      <description>&lt;p&gt;セクションってなにさ&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDataSource_protocol/#//apple_ref/occ/intfm/UICollectionViewDataSource/numberOfSectionsInCollectionView:&#34;&gt;UICollectionViewDataSource Protocol Reference&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Asks your data source object for the number of sections in the collection view.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;コレクションをグループ化することが出来るらしい。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://blogios.stack3.net/archives/932&#34;&gt;UICollectionView その3 セクション | Cyber Passion for iOS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/stack3/UICollectionViewSample&#34;&gt;stack3/UICollectionViewSample&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;セクション数を指定するメソッドはこれ。
+セクション単位にヘッダーを付けたりもできるらしい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -&amp;gt; Int {
+    return 1
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;個々のセルを生成するメソッド。
+CellにIdentifierを設定していないといけない。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -&amp;gt; UICollectionViewCell {
+    let cell:Post = collectionView.dequeueReusableCellWithReuseIdentifier(&amp;quot;postCell&amp;quot;, forIndexPath: indexPath) as! Post
+    return cell
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;1セクションに表示するセル数の定義。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -&amp;gt; Int {
+    return 20
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;swiftもむずいけどXcodeの使い方のほうがむずい。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>最近はGolangを書いてる</title>
       <link>https://yet.unresolved.xyz/blog/2016/03/23/recently-wrote-a-golang/</link>
       <pubDate>Wed, 23 Mar 2016 11:32:22 +0900</pubDate>
@@ -1365,123 +1414,6 @@ MySQLの設定を変えなきゃいけないと思い込んでいて、RDSを使
 &lt;h2 id=&#34;参考にさせていただきました:4b3e93c1f0fc95c9a54247a6e176ec82&#34;&gt;参考にさせていただきました&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://mariadb.com/kb/en/mariadb/setting-character-sets-and-collations/&#34;&gt;Setting Character Sets and Collations - MariaDB Knowledge Base&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>「教養としての日本近現代史」を読んだ</title>
-      <link>https://yet.unresolved.xyz/blog/2016/01/30/japan-modern-history-as-a-liberal-arts/</link>
-      <pubDate>Sat, 30 Jan 2016 19:34:21 +0900</pubDate>
-      
-      <guid>https://yet.unresolved.xyz/blog/2016/01/30/japan-modern-history-as-a-liberal-arts/</guid>
-      <description>
-
-&lt;h2 id=&#34;読もうと思ったきっかけ:cc1194a6412a9c835886261dfc9dd734&#34;&gt;読もうと思ったきっかけ&lt;/h2&gt;
-
-&lt;p&gt;恥ずかしながら歴史とか地理とかの教養が全くなくて、
-社会人として知らなければいけないという意識がずっとあった。
-もちろんニュースとかそういうので得られる知識もあると思うけど、
-そういう前提になってる知識とかも知っておきたいなあと思ったので、本書を読んでみることに。&lt;/p&gt;
-
-&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/4396615485/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4396615485&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;ニュースがよくわかる教養としての日本近現代史&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;事実を列挙するだけじゃない:cc1194a6412a9c835886261dfc9dd734&#34;&gt;事実を列挙するだけじゃない&lt;/h2&gt;
-
-&lt;p&gt;本書はペリー来航から近代の日中問題に至るまで、ざっくりと、でも要点をしっかりと説明している。
-でもそれは事実をなぞっただけではなくて、その時の日本人がどう思ったとか、世界の情勢からの視点とかをまじえて話を進めている。&lt;/p&gt;
-
-&lt;p&gt;それもあったおかげで、下手な小説とか映画よりも感情移入が出来たし、臨場感を味わえてしまう本だと思った。&lt;/p&gt;
-
-&lt;h2 id=&#34;読み返したい-覚えておきたいと思える:cc1194a6412a9c835886261dfc9dd734&#34;&gt;読み返したい、覚えておきたいと思える&lt;/h2&gt;
-
-&lt;p&gt;前述した臨場感もあって、読んでいて退屈さや小難しさを感じることが少なかった。
-もちろん難しい場面がないわけじゃないし、理解できなかったところも多々あったけど。&lt;/p&gt;
-
-&lt;p&gt;だけど良い意味で楽しく読めたから、&lt;strong&gt;日本という国のストーリーをちゃんと知っておきたい&lt;/strong&gt;と思えた。
-だから読んでる途中なのにまた最初から読み返したりもした。
-多分これを書き終わったらまたはじめから読むと思う。&lt;/p&gt;
-
-&lt;h2 id=&#34;著者の感情が邪魔にならない:cc1194a6412a9c835886261dfc9dd734&#34;&gt;著者の感情が邪魔にならない&lt;/h2&gt;
-
-&lt;p&gt;この本は慰安婦問題とかのデリケートな内容にも触れていて、著者の考えも稀に付記されていることがある。
-でもその量も多くないし、書き方も「参考までに」といった書き方をしているので、「あーこういう考えもあるんだな」といった捉え方が出来る。&lt;/p&gt;
-
-&lt;p&gt;こういう問題については強い意志を表明してしまう人もいると思うので、そうでない書き方を出来るのは著者がしっかりと問題を考えているからなんだろうなと思った。&lt;/p&gt;
-
-&lt;p&gt;ちなみに本書に記載されている上記のようなデリケートな問題は以下の通り。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;安保関連法案&lt;/li&gt;
-&lt;li&gt;普天間基地移設問題&lt;/li&gt;
-&lt;li&gt;慰安婦問題&lt;/li&gt;
-&lt;li&gt;南京大虐殺&lt;/li&gt;
-&lt;li&gt;尖閣諸島&lt;/li&gt;
-&lt;li&gt;竹島&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;印象に残った場面:cc1194a6412a9c835886261dfc9dd734&#34;&gt;印象に残った場面&lt;/h2&gt;
-
-&lt;h3 id=&#34;明治のリーダーに学ぶこと:cc1194a6412a9c835886261dfc9dd734&#34;&gt;明治のリーダーに学ぶこと&lt;/h3&gt;
-
-&lt;p&gt;岩倉使節団を欧米に派遣することを政府が決めたことについて。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;新政権ができたばかりで、最高首脳部の半数を長期にわたって国外へ派遣しようというのである。
-明治の人々は何という思い切った決断をしたのだろう。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;僕は岩倉使節団が政府の半数だということも知らなかったし、確かにこういう説明をされると驚きを感じる。
-こういった表現が本書の臨場感を作り上げてるんだと思う。&lt;/p&gt;
-
-&lt;p&gt;著者はこの歴史上の出来事についてこう続けている。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;この決断をした明治のリーダーたちに、今の私たちは見習うべきだろう。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&#34;西郷隆盛の決意:cc1194a6412a9c835886261dfc9dd734&#34;&gt;西郷隆盛の決意&lt;/h3&gt;
-
-&lt;p&gt;朝鮮に対して日本が開国を求めていた際のこと。
-本書によれば、&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;西郷隆盛自身が全権大使として朝鮮へ赴き、そこで相手政府に強引に開国を迫り、
-それでも応じなければ、これを名目に半島へ軍隊を送ろうと考えたのだ。
-場合によって西郷は、激怒した朝鮮人に殺されてもかまわないと思っていた節もある。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;とある。
-今の時代しか知らない僕は、この殺されてもかまわないという感情を理解出来ないし、それが非常に新鮮だった。
-映画やドラマの中のような事態が、実際にあったということが。
-こういった、「起こったこと」に対する周辺事情が本書には多く掲載されている。&lt;/p&gt;
-
-&lt;h3 id=&#34;民権運動:cc1194a6412a9c835886261dfc9dd734&#34;&gt;民権運動&lt;/h3&gt;
-
-&lt;p&gt;1878年に政府が制定した三新法に対して、満足しない国民が自ら憲法草案を作ったのだとか。
-現代でも似たような運動はあるようだけど、こうやって歴史に残るほど大きなことを国民主導で行ったことが驚きだった。&lt;/p&gt;
-
-&lt;p&gt;自分がもしその時代にいたらどうしただろうかと考えてしまう。&lt;/p&gt;
-
-&lt;h3 id=&#34;百田氏の事実誤認:cc1194a6412a9c835886261dfc9dd734&#34;&gt;百田氏の事実誤認&lt;/h3&gt;
-
-&lt;p&gt;作家の百田尚樹氏がした普天間に対する発言について、事実をもとにきちんと誤認であると説明している。
-どちらが正しいかは、僕は僕が受けた印象でしか判断出来ないからなんとも言えない。&lt;/p&gt;
-
-&lt;p&gt;人の発言は立場によって影響力が変わってしまう。
-本書のこの件に対する記載は、「沖縄の人の気持ち」をベースに書かれていて、
-何が正しいとか間違ってるとか以前に、人としてどういう視点を持つべきかを考えさせられたと思う。&lt;/p&gt;
-
-&lt;p&gt;また、そういった歴史についてよく知らない自分はもう少し勉強するべきだとも感じた。&lt;/p&gt;
-
-&lt;h2 id=&#34;終わりに:cc1194a6412a9c835886261dfc9dd734&#34;&gt;終わりに&lt;/h2&gt;
-
-&lt;p&gt;僕は比較的、「調べてわかることは覚えなくてもいいじゃん」という考え方を持っていた。
-もちろん今でもそれは変わっていないけど、歴史についてはその時代の人々が関わってきたことだから、
-それは調べてわかればいいことではなくて、知っておかなければいけないことなのかも、と本書を読んで考え方が変わった。&lt;/p&gt;
-
-&lt;p&gt;もちろん僕はまだまだ無知で知るべきことはたくさんあるんだけど、これから知っていこうという気持ちを持てたのは本書のおかげだと思う。&lt;/p&gt;
-
-&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/4396615485/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4396615485&amp;linkCode=as2&amp;tag=unresolved-22&#34;&gt;ニュースがよくわかる教養としての日本近現代史&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
