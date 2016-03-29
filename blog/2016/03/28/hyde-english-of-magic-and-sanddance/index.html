@@ -503,7 +503,6 @@ nav.page a.next {
 # -*- coding: utf-8 -*-
 
 from bs4 import BeautifulSoup
-import urllib
 import urllib2
 import time
 import re
@@ -525,8 +524,7 @@ def parse_comment_detail(comment):
 def wait():
     time.sleep(5)
 
-max_page_num = get_max_page_num()
-for i in range(max_page_num):
+for i in range(get_max_page_num()):
     wait()
     page_num = i + 1
     for comment in get_comment_list(page_num):
@@ -546,7 +544,11 @@ for i in range(max_page_num):
 2016年3月,5つ星のうち1.0
 2016年2月,5つ星のうち1.0
 2016年3月,5つ星のうち1.0
+  :
+  :
 </code></pre>
+
+<p>あ、一桁の月は0埋めで2桁になるように手動で修正しました。抽出した後に気付いたので、正規表現でうまいことやりました。</p>
 
 <h2 id="可視化する:70bc05286a8788b4334c382ea3838593">可視化する</h2>
 
@@ -557,7 +559,7 @@ for i in range(max_page_num):
 ファセットも出来たりして便利なのですが、意外と可視化したいデータってなかったりするんですよね。</p>
 
 <p>前置きはおいておいて、取り込んでみましょう。
-取り込んだ直後は<code>column</code>という1つの軸の値の数を表示してくれます。これでいうと、月ごとのレビュー数ですね。</p>
+取り込んだ直後はcolumnという形式で表示してくれます。これでいうと、月ごとのレビュー数ですね。</p>
 
 <a href="/images/2016-03-28/after_load.png" target="_blank" rel="nofollow">
   <amp-img src="/images/2016-03-28/after_load.png" alt="after_load" width=1057 height=644 layout="responsive"></amp-img>
@@ -883,6 +885,8 @@ for i in range(max_page_num):
   <aside class="article tags">
     
     <a href="https://yet.unresolved.xyz/tags/sand-dance">sand-dance</a>
+    
+    <a href="https://yet.unresolved.xyz/tags/visualize">visualize</a>
     
   </aside>
 

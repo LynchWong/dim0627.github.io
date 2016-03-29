@@ -39,7 +39,6 @@
 # -*- coding: utf-8 -*-
 
 from bs4 import BeautifulSoup
-import urllib
 import urllib2
 import time
 import re
@@ -61,8 +60,7 @@ def parse_comment_detail(comment):
 def wait():
     time.sleep(5)
 
-max_page_num = get_max_page_num()
-for i in range(max_page_num):
+for i in range(get_max_page_num()):
     wait()
     page_num = i + 1
     for comment in get_comment_list(page_num):
@@ -82,7 +80,11 @@ for i in range(max_page_num):
 2016年3月,5つ星のうち1.0
 2016年2月,5つ星のうち1.0
 2016年3月,5つ星のうち1.0
+  :
+  :
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;あ、一桁の月は0埋めで2桁になるように手動で修正しました。抽出した後に気付いたので、正規表現でうまいことやりました。&lt;/p&gt;
 
 &lt;h2 id=&#34;可視化する:70bc05286a8788b4334c382ea3838593&#34;&gt;可視化する&lt;/h2&gt;
 
@@ -93,7 +95,7 @@ for i in range(max_page_num):
 ファセットも出来たりして便利なのですが、意外と可視化したいデータってなかったりするんですよね。&lt;/p&gt;
 
 &lt;p&gt;前置きはおいておいて、取り込んでみましょう。
-取り込んだ直後は&lt;code&gt;column&lt;/code&gt;という1つの軸の値の数を表示してくれます。これでいうと、月ごとのレビュー数ですね。&lt;/p&gt;
+取り込んだ直後はcolumnという形式で表示してくれます。これでいうと、月ごとのレビュー数ですね。&lt;/p&gt;
 
 &lt;a href=&#34;https://yet.unresolved.xyz/images/2016-03-28/after_load.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
   &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-03-28/after_load.png&#34; alt=&#34;after_load&#34; width=1057 height=644 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
