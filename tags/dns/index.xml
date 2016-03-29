@@ -131,10 +131,10 @@ GitHub Pages recently underwent some improvements (&lt;a href=&#34;https://githu
 &lt;p&gt;最後はまたDNSレコードの追加。
 ここに記載された一覧をそれぞれのType、Dataに応じてTXTレコードのときと同じように追加すればOK。&lt;/p&gt;
 
-&lt;a href=&#34;https://yet.unresolved.xyz/images/2014-10-23/step3.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://yet.unresolved.xyz/images/2014-10-23/step3.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
   &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2014-10-23/step3.png&#34; alt=&#34;step3&#34; width=823 height=313 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
 &lt;/a&gt;
-
+&lt;/p&gt;
 
 &lt;p&gt;あとは待ってればそのうち反映されるはず。&lt;/p&gt;
 </description>
