@@ -19,47 +19,49 @@
 
     
     <script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "BlogPosting",
-  "mainEntityOfPage":{
-    "@type":"WebPage",
-    "@id":"https:\/\/yet.unresolved.xyz\/"
-  },
-  "headline": "Railsでサービスを作るときに参考にしたサイトのメモ - Unresolved",
-  "image": {
-    "@type": "ImageObject",
-    "url": "https:\/\/yet.unresolved.xyz\/images/logo.png",
-    "height": 700,
-    "width": 700
-  },
-  "datePublished": "2016-03-18T14:23:38JST",
-  "dateModified": "2016-03-18T14:23:38JST",
-  "author": {
-    "@type": "Person",
-    "name": "Daisuke Tsuji",
-    "image": "https:\/\/yet.unresolved.xyz\/images/logo.png"
-  },
-   "publisher": {
-    "@type": "Organization",
-    "name": "Daisuke Tsuji",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https:\/\/yet.unresolved.xyz\/images/logo.png",
-      "height": 60,
-      "width": 60
-    }
-  },
-  "description": "メモなのにどっか行ってしまって、後で参考にしたいのにーってことがあったので、もうここに載っけてしまえ。 とりとめもなくメモったもので整形もして"
-}
+      {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage":{
+          "@type":"WebPage",
+          "@id":"https:\/\/yet.unresolved.xyz\/"
+        },
+        "headline": "Railsでサービスを作るときに参考にしたサイトのメモ - Unresolved",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https:\/\/yet.unresolved.xyz\/images/logo.png",
+          "height": 700,
+          "width": 700
+        },
+        "datePublished": "2016-03-18T14:23:38JST",
+        "dateModified": "2016-03-18T14:23:38JST",
+        "author": {
+          "@type": "Person",
+          "name": "Daisuke Tsuji",
+          "image": "https:\/\/yet.unresolved.xyz\/images/logo.png"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Daisuke Tsuji",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/yet.unresolved.xyz\/images/logo.png",
+            "height": 60,
+            "width": 60
+          }
+        },
+        "description": "メモなのにどっか行ってしまって、後で参考にしたいのにーってことがあったので、もうここに載っけてしまえ。 とりとめもなくメモったもので整形もして"
+      }
     </script>
     
 
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-      <script async src="https://cdn.ampproject.org/v0.js"></script>
-      <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 
-      <style amp-custom>
+    <style amp-custom>
+ 
+
  
 html {
   font-size: 16px;
@@ -68,7 +70,7 @@ html {
 body {
   font-family: "Open Sans", "Hiragino Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Meryo, "メイリオ", Osaka, "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
   font-size: inherit;
-  color: #263238;
+  color: #000;
 }
 
 html,
@@ -81,14 +83,15 @@ p {
 }
 
 a {
-  color: #2196f3;
+  color: #ffc107;
   text-decoration: none;
+  transition-duration: .2s;
 }
 
 a:hover,
 a:focus,
 a:active {
-  color: #1976d2;
+  color: #ffb300;
 }
 
 h1, h2, h3, h4, h5 ,h6 {
@@ -108,11 +111,20 @@ h1, h2, h3, h4, h5 ,h6 {
 
  
 header.site {
-  position: relative;
   margin-bottom: 3rem;
-  background: #00c6ff;
-  background: -webkit-linear-gradient(to left, #00c6ff , #0072ff);
-  background: linear-gradient(to left, #00c6ff , #0072ff);
+  background-image: url(/images/lay.png), url(/images/bg.jpg);
+  background-position: center, center;
+  background-size:  auto, cover;
+}
+
+header.site .inner {
+  padding: 5rem 0;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+header.site .logo {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 header.site .logo a {
@@ -136,6 +148,38 @@ header.site .logo a::before {
 
 header.site .logo a::after {
   vertical-align: -.5rem;
+}
+
+header.site .sections {
+  text-align: center;
+}
+
+header.site .sections ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+header.site .sections li {
+  display: inline-block;
+}
+
+header.site .sections a {
+  display: inline-block;
+  color: #fff;
+  font-size: .8rem;
+  box-shadow: 0 0 0 2px #fff;
+  padding: .25rem .5rem;
+  margin: 0 .25rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+header.site .sections a:hover,
+header.site .sections a:focus,
+header.site .sections a:active {
+  color: #ffc107;
+  box-shadow: 0 0 0 2px #ffc107;
 }
 
 footer.site {
@@ -189,6 +233,7 @@ article .title {
   font-weight: 700;
   font-size: 1rem;
   word-break: break-all;
+  color: #000;
 }
 
 article.single header {
@@ -253,6 +298,7 @@ article .body {
 
 article .body a {
   text-decoration: underline;
+  color: #000;
 }
 
 article .body p {
@@ -439,24 +485,43 @@ nav.page a.next {
   <body>
     <amp-analytics type="googleanalytics" id="analytics1">
       <script type="application/json">
-{
-  "vars": {
-    "account": "UA-55005303-1"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
-    }
-  }
-}
+        {
+          "vars": {
+            "account": "UA-55005303-1"
+          },
+          "triggers": {
+            "trackPageview": {
+              "on": "visible",
+              "request": "pageview"
+            }
+          }
+        }
       </script>
     </amp-analytics>
 
     <header class="site">
-      <div class="container">
-        <div class="logo">
-          <a href="https://yet.unresolved.xyz/">Unresolved</a>
+      <div class="inner">
+        <div class="container">
+          <div class="logo">
+            <a href="https://yet.unresolved.xyz/">Unresolved</a>
+          </div>
+          <div class="sections">
+            <ul>
+              
+              
+              <li><a href="https://yet.unresolved.xyz//book">book</a></li>
+              
+              
+              
+              <li><a href="https://yet.unresolved.xyz//diary">diary</a></li>
+              
+              
+              
+              <li><a href="https://yet.unresolved.xyz//technology">technology</a></li>
+              
+              
+            </ul>
+          </div>
         </div>
       </div>
     </header>
