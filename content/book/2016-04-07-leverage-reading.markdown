@@ -7,6 +7,8 @@ title: "「一行残らず読まなくてもいい」 - レバレッジ・リー
 
 <a  href="http://www.amazon.co.jp/gp/product/4492042695/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4492042695&linkCode=as2&tag=unresolved-22">レバレッジ・リーディング</a>
 
+サブタイトルは「100倍の利益を稼ぎだす、ビジネス書多読のすすめ」。
+本をたくさん読むことのメリットや、その手法、実践方法について書かれた本。
 2006年に書かれた本なので、少し時代背景が古い部分もあった。
 が、今でも新鮮に読める本だと思う。
 
