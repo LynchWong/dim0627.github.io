@@ -38,6 +38,10 @@
 &lt;p&gt;これまじでわからん。どこに入るの？
 知ってる人が居たら教えてほしい。&lt;/p&gt;
 
+&lt;h3 id=&#34;追記:bff15c413bfe48d32c6bcf0c0e63e107&#34;&gt;追記&lt;/h3&gt;
+
+&lt;p&gt;普通に&lt;code&gt;GEM_PATH&lt;/code&gt;に入ってた。&lt;/p&gt;
+
 &lt;h2 id=&#34;必要な物だけをimportする:bff15c413bfe48d32c6bcf0c0e63e107&#34;&gt;必要な物だけをimportする&lt;/h2&gt;
 
 &lt;p&gt;bootstrap-sassがどこに入ってるかわからないけど、
