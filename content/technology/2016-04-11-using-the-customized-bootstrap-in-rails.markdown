@@ -23,6 +23,20 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 
 でもBootstrapの全部は要らない。Grid以外なにもいらない。
 
+ちなみに`bootstrap-sprockets`はフォントパスとかの書き換えをやってくれてる。
+
+``` scss
+@function twbs-font-path($path) {
+  @return font-path($path);
+}
+
+@function twbs-image-path($path) {
+  @return image-path($path);
+}
+
+$bootstrap-sass-asset-helper: true;
+```
+
 ## bootstrap-sassはどのディレクトリにインストールされるのか
 
 これまじでわからん。どこに入るの？
