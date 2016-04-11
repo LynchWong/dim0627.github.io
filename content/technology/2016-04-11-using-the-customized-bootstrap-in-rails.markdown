@@ -45,6 +45,18 @@ bootstrap-sassがどこに入ってるかわからないけど、
 @import "bootstrap/grid";
 ```
 
+リセットとかの恩恵もあやかりたい場合はここから、
+
+[bootstrap/bootstrap.less at master · twbs/bootstrap](https://github.com/twbs/bootstrap/blob/master/less/bootstrap.less)
+
+このあたりを入れてしまえばコンポーネントを除外したかたちで利用することが出来る。
+
+* Core variables and mixins
+* Reset and dependencies
+* Core CSS
+
+けどそこまでするならもう全部入れてしまえよ感もあるな・・・。
+
 ひとまずやりたいことは出来たけどなんか気持ち悪いなあ。
 というかBootstrap含めて、出来る限り依存は減らしたい・・・。
 
