@@ -565,6 +565,19 @@ nav.page a.next {
 
 <p>でもBootstrapの全部は要らない。Grid以外なにもいらない。</p>
 
+<p>ちなみに<code>bootstrap-sprockets</code>はフォントパスとかの書き換えをやってくれてる。</p>
+
+<pre><code class="language-scss">@function twbs-font-path($path) {
+  @return font-path($path);
+}
+
+@function twbs-image-path($path) {
+  @return image-path($path);
+}
+
+$bootstrap-sass-asset-helper: true;
+</code></pre>
+
 <h2 id="bootstrap-sassはどのディレクトリにインストールされるのか:bff15c413bfe48d32c6bcf0c0e63e107">bootstrap-sassはどのディレクトリにインストールされるのか</h2>
 
 <p>これまじでわからん。どこに入るの？

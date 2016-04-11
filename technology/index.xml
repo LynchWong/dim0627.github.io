@@ -33,6 +33,19 @@
 
 &lt;p&gt;でもBootstrapの全部は要らない。Grid以外なにもいらない。&lt;/p&gt;
 
+&lt;p&gt;ちなみに&lt;code&gt;bootstrap-sprockets&lt;/code&gt;はフォントパスとかの書き換えをやってくれてる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scss&#34;&gt;@function twbs-font-path($path) {
+  @return font-path($path);
+}
+
+@function twbs-image-path($path) {
+  @return image-path($path);
+}
+
+$bootstrap-sass-asset-helper: true;
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;h2 id=&#34;bootstrap-sassはどのディレクトリにインストールされるのか:bff15c413bfe48d32c6bcf0c0e63e107&#34;&gt;bootstrap-sassはどのディレクトリにインストールされるのか&lt;/h2&gt;
 
 &lt;p&gt;これまじでわからん。どこに入るの？
