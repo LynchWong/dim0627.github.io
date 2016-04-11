@@ -6,8 +6,54 @@
     <description>Recent content in Rails on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Fri, 18 Mar 2016 14:23:38 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 11 Apr 2016 11:37:39 +0900</lastBuildDate>
     <atom:link href="https://yet.unresolved.xyz/tags/rails/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Railsでbootstrap-sassの必要な物だけを使う</title>
+      <link>https://yet.unresolved.xyz/blog/2016/04/11/using-the-customized-bootstrap-in-rails/</link>
+      <pubDate>Mon, 11 Apr 2016 11:37:39 +0900</pubDate>
+      
+      <guid>https://yet.unresolved.xyz/blog/2016/04/11/using-the-customized-bootstrap-in-rails/</guid>
+      <description>
+
+&lt;p&gt;簡単にいうとGridシステムだけが使いたい。
+他のものは全部いらない。&lt;/p&gt;
+
+&lt;p&gt;Bootstrapをgemで入れるのはなんか気持ち悪くて好きじゃないんだけど、今回はしょうがないので使いました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-gemfile&#34;&gt;gem &#39;bootstrap-sass&#39;, &#39;~&amp;gt; 3.3&#39;, &#39;&amp;gt;= 3.3.6&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これで&lt;code&gt;application.css&lt;/code&gt;からBootstrapを読み込むことが出来る。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;@import &amp;quot;bootstrap-sprockets&amp;quot;;
+@import &amp;quot;bootstrap&amp;quot;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;でもBootstrapの全部は要らない。Grid以外なにもいらない。&lt;/p&gt;
+
+&lt;h2 id=&#34;bootstrap-sassはどのディレクトリにインストールされるのか:bff15c413bfe48d32c6bcf0c0e63e107&#34;&gt;bootstrap-sassはどのディレクトリにインストールされるのか&lt;/h2&gt;
+
+&lt;p&gt;これまじでわからん。どこに入るの？
+知ってる人が居たら教えてほしい。&lt;/p&gt;
+
+&lt;h2 id=&#34;必要な物だけをimportする:bff15c413bfe48d32c6bcf0c0e63e107&#34;&gt;必要な物だけをimportする&lt;/h2&gt;
+
+&lt;p&gt;bootstrap-sassがどこに入ってるかわからないけど、
+&lt;code&gt;@import &amp;quot;bootstrap&amp;quot;&lt;/code&gt;で読み込めるってことはコンポーネントをベタ書きしてしまえば行けるはず。
+とはいえコンポーネント間でも依存しているので、Gridシステムだけが欲しくても依存してるコンポーネントを書く必要がある。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;@import &amp;quot;bootstrap-sprockets&amp;quot;;
+@import &amp;quot;bootstrap/variables&amp;quot;;
+@import &amp;quot;bootstrap/mixins&amp;quot;;
+@import &amp;quot;bootstrap/grid&amp;quot;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ひとまずやりたいことは出来たけどなんか気持ち悪いなあ。
+というかBootstrap含めて、出来る限り依存は減らしたい・・・。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Railsでサービスを作るときに参考にしたサイトのメモ</title>

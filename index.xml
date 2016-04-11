@@ -6,8 +6,54 @@
     <description>Recent content on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 07 Apr 2016 12:48:37 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 11 Apr 2016 11:37:39 +0900</lastBuildDate>
     <atom:link href="https://yet.unresolved.xyz/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Railsでbootstrap-sassの必要な物だけを使う</title>
+      <link>https://yet.unresolved.xyz/blog/2016/04/11/using-the-customized-bootstrap-in-rails/</link>
+      <pubDate>Mon, 11 Apr 2016 11:37:39 +0900</pubDate>
+      
+      <guid>https://yet.unresolved.xyz/blog/2016/04/11/using-the-customized-bootstrap-in-rails/</guid>
+      <description>
+
+&lt;p&gt;簡単にいうとGridシステムだけが使いたい。
+他のものは全部いらない。&lt;/p&gt;
+
+&lt;p&gt;Bootstrapをgemで入れるのはなんか気持ち悪くて好きじゃないんだけど、今回はしょうがないので使いました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-gemfile&#34;&gt;gem &#39;bootstrap-sass&#39;, &#39;~&amp;gt; 3.3&#39;, &#39;&amp;gt;= 3.3.6&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これで&lt;code&gt;application.css&lt;/code&gt;からBootstrapを読み込むことが出来る。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;@import &amp;quot;bootstrap-sprockets&amp;quot;;
+@import &amp;quot;bootstrap&amp;quot;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;でもBootstrapの全部は要らない。Grid以外なにもいらない。&lt;/p&gt;
+
+&lt;h2 id=&#34;bootstrap-sassはどのディレクトリにインストールされるのか:bff15c413bfe48d32c6bcf0c0e63e107&#34;&gt;bootstrap-sassはどのディレクトリにインストールされるのか&lt;/h2&gt;
+
+&lt;p&gt;これまじでわからん。どこに入るの？
+知ってる人が居たら教えてほしい。&lt;/p&gt;
+
+&lt;h2 id=&#34;必要な物だけをimportする:bff15c413bfe48d32c6bcf0c0e63e107&#34;&gt;必要な物だけをimportする&lt;/h2&gt;
+
+&lt;p&gt;bootstrap-sassがどこに入ってるかわからないけど、
+&lt;code&gt;@import &amp;quot;bootstrap&amp;quot;&lt;/code&gt;で読み込めるってことはコンポーネントをベタ書きしてしまえば行けるはず。
+とはいえコンポーネント間でも依存しているので、Gridシステムだけが欲しくても依存してるコンポーネントを書く必要がある。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;@import &amp;quot;bootstrap-sprockets&amp;quot;;
+@import &amp;quot;bootstrap/variables&amp;quot;;
+@import &amp;quot;bootstrap/mixins&amp;quot;;
+@import &amp;quot;bootstrap/grid&amp;quot;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ひとまずやりたいことは出来たけどなんか気持ち悪いなあ。
+というかBootstrap含めて、出来る限り依存は減らしたい・・・。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>「一行残らず読まなくてもいい」 - レバレッジ・リーディングを読んだ</title>
@@ -1422,33 +1468,6 @@ Google自身もこう書いている。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;確かに、JSでのレンダリングだと目に見えて遅延するけどね。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>MySQL5.6&#43;ruby-mysql2でlibmysqlclient_16 not found</title>
-      <link>https://yet.unresolved.xyz/blog/2016/02/04/libmysqlclient16-not-found/</link>
-      <pubDate>Thu, 04 Feb 2016 18:00:44 +0900</pubDate>
-      
-      <guid>https://yet.unresolved.xyz/blog/2016/02/04/libmysqlclient16-not-found/</guid>
-      <description>&lt;p&gt;せっかくなのでMySQLを5.5から5.6にして使おうとしたらエラーした。
-MySQL5.6のインストールはこの記事が非常に分かりやすかった。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://blog.ybbo.net/2014/01/22/%E3%80%90%E3%82%B7%E3%83%B3%E3%83%97%E3%83%AB%E3%80%91centos6%E3%81%ABmysql5-6%E3%82%92yum%E3%81%A7%E7%B0%A1%E5%8D%98%E3%81%AB%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B/&#34;&gt;【シンプル】CentOS6にMySQL5.6をyumで簡単にインストールする手順 | 田舎に住みたいエンジニアの日記&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;ところがRails側で&lt;code&gt;ruby-mysql2&lt;/code&gt;と接合させようとするとライブラリ参照でエラー。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;LoadError: /usr/lib64/mysql/libmysqlclient.so.18: version `libmysqlclient_16&#39; not found (required by /var/www/pj/shared/bundle/ruby/2.2.0/extensions/x86_64-linux/2.2.0-static/mysql2-0.3.18/mysql2/mysql2.so) - /var/www/pj/shared/bundle/ruby/2.2.0/extensions/x86_64-linux/2.2.0-static/mysql2-0.3.18/mysql2/mysql2.so
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;困ります。
-どうやら&lt;code&gt;ruby-mysql2&lt;/code&gt;を入れるタイミングで問題があったり、そもそもMySQL5.6のライブラリ側にバグがあるっていう話もあった。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://myfinder.hatenablog.com/entry/2013/04/22/150219&#34;&gt;MySQL5.6 だと ruby-mysql2 が入ったふりをする - まいんだーのはてなブログ&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://qiita.com/pollseed/items/b7d187dbbd64b29820d4&#34;&gt;awsでcapistrano動かす作業ログ - Qiita&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;MySQLを入れたり消したりしてたら直ったので原因も対策も不明。謎。もうやめてね。&lt;/p&gt;
 </description>
     </item>
     

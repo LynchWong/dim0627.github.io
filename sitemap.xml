@@ -3,8 +3,13 @@
   
   <url>
     <loc>https://yet.unresolved.xyz/</loc>
-    <lastmod>2016-04-07T12:48:37+09:00</lastmod>
+    <lastmod>2016-04-11T11:37:39+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yet.unresolved.xyz/blog/2016/04/11/using-the-customized-bootstrap-in-rails/</loc>
+    <lastmod>2016-04-11T11:37:39+09:00</lastmod>
   </url>
   
   <url>

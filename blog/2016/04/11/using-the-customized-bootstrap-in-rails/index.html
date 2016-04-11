@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ⚡>
   <head>
     <meta charset="utf-8">
     <meta name="generator" content="Hugo 0.15-DEV" />
@@ -11,12 +11,48 @@
     
     
 
-    <title>Unresolved</title>
+    <title>Railsでbootstrap-sassの必要な物だけを使う - Unresolved</title>
 
-    <link rel="canonical" href="https://yet.unresolved.xyz/">
+    <link rel="canonical" href="https://yet.unresolved.xyz/blog/2016/04/11/using-the-customized-bootstrap-in-rails/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <meta name="theme-color" content="#2196f3">
 
+    
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage":{
+          "@type":"WebPage",
+          "@id":"https:\/\/yet.unresolved.xyz\/"
+        },
+        "headline": "Railsでbootstrap-sassの必要な物だけを使う - Unresolved",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https:\/\/yet.unresolved.xyz\/images/logo.png",
+          "height": 700,
+          "width": 700
+        },
+        "datePublished": "2016-04-11T11:37:39JST",
+        "dateModified": "2016-04-11T11:37:39JST",
+        "author": {
+          "@type": "Person",
+          "name": "Daisuke Tsuji",
+          "image": "https:\/\/yet.unresolved.xyz\/images/logo.png"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Daisuke Tsuji",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/yet.unresolved.xyz\/images/logo.png",
+            "height": 60,
+            "width": 60
+          }
+        },
+        "description": "簡単にいうとGridシステムだけが使いたい。 他のものは全部いらない。 Bootstrapをgemで入れるのはなんか気持ち悪くて好きじゃないんだ"
+      }
+    </script>
     
 
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -501,162 +537,65 @@ nav.page a.next {
 
     <div class="container">
 
-<div class="index">
 
-  <div class="site">
-    
-    <article class="li">
-  <a href="https://yet.unresolved.xyz/blog/2015/01/25/play-slack-api/">
-    <header>
-      <div class="aside">
-        <time class="date">Sun, Jan 25, 2015</time> - <span class="section">technology</span>
-      </div>
-      <div class="title">SlackAPIで遊ぶ</div>
-    </header>
+<article class="single">
 
-    <div class="summary">SlackのAPIはいくつか種類があるらしい。それぞれトリガとかが変わるっぽい。 Slack Web API 指定したチャンネルの履歴とかユーザの一覧とか、Slac...</div>
-  </a>
-</article>
+  <header>
+    <h1 class="title">Railsでbootstrap-sassの必要な物だけを使う</h1>
+    <div class="aside">
+      <time class="date">Mon, Apr 11, 2016</time> - <a href="https://yet.unresolved.xyz/technology" class="section">technology</a>
+    </div>
+  </header>
 
-    
-    <article class="li">
-  <a href="https://yet.unresolved.xyz/blog/2015/01/25/make-repl-using-the-paizaio/">
-    <header>
-      <div class="aside">
-        <time class="date">Sun, Jan 25, 2015</time> - <span class="section">technology</span>
-      </div>
-      <div class="title">paiza.IOのAPIを使ってreplを作る</div>
-    </header>
+  <div class="body">
 
-    <div class="summary">paizaが面白いAPIを公開してたから、そのうち使ってみたいと思ってたんだよね。 ブラウザでプログラミング・実行ができる「オンライン実行環境...</div>
-  </a>
-</article>
+<p>簡単にいうとGridシステムだけが使いたい。
+他のものは全部いらない。</p>
 
-    
-    <article class="li">
-  <a href="https://yet.unresolved.xyz/blog/2015/01/22/install-postgresql-on-centos/">
-    <header>
-      <div class="aside">
-        <time class="date">Thu, Jan 22, 2015</time> - <span class="section">technology</span>
-      </div>
-      <div class="title">Vagrant &#43; CentOS &#43; PostgreSQLを最速で構築</div>
-    </header>
+<p>Bootstrapをgemで入れるのはなんか気持ち悪くて好きじゃないんだけど、今回はしょうがないので使いました。</p>
 
-    <div class="summary">herokuにのっけるアプリを作るとき、ローカルではSQLite使ってたんだけどもう色々つらい。 なんか整数で定義したカラムに文字列入るし。な...</div>
-  </a>
-</article>
+<pre><code class="language-gemfile">gem 'bootstrap-sass', '~&gt; 3.3', '&gt;= 3.3.6'
+</code></pre>
 
-    
-    <article class="li">
-  <a href="https://yet.unresolved.xyz/blog/2015/01/15/challenged-to-online-hackathon-of-paiza/">
-    <header>
-      <div class="aside">
-        <time class="date">Thu, Jan 15, 2015</time> - <span class="section">technology</span>
-      </div>
-      <div class="title">Clojureで新卒の女の子を射止めた話</div>
-    </header>
+<p>これで<code>application.css</code>からBootstrapを読み込むことが出来る。</p>
 
-    <div class="summary">何やらプログラムの問題を解くと可愛い女の子とハネムーンにいけるとかいう企画をpaizaが開催していたらしい。 マンガ版「エンジニアでも恋がした...</div>
-  </a>
-</article>
+<pre><code class="language-css">@import &quot;bootstrap-sprockets&quot;;
+@import &quot;bootstrap&quot;;
+</code></pre>
 
-    
-    <article class="li">
-  <a href="https://yet.unresolved.xyz/blog/2015/01/14/use-template-engine-in-clojure/">
-    <header>
-      <div class="aside">
-        <time class="date">Wed, Jan 14, 2015</time> - <span class="section">technology</span>
-      </div>
-      <div class="title">Clojureのテンプレートエンジンについて</div>
-    </header>
+<p>でもBootstrapの全部は要らない。Grid以外なにもいらない。</p>
 
-    <div class="summary">練習のためにClojureでいくつかのWebアプリを作ってみたんだけど、どの言語でもなんだかんだ手間になるテンプレートの扱いについてまとめて...</div>
-  </a>
-</article>
+<h2 id="bootstrap-sassはどのディレクトリにインストールされるのか:bff15c413bfe48d32c6bcf0c0e63e107">bootstrap-sassはどのディレクトリにインストールされるのか</h2>
 
-    
-    <article class="li">
-  <a href="https://yet.unresolved.xyz/blog/2015/01/12/use-the-third-party-library-in-python-on-gae/">
-    <header>
-      <div class="aside">
-        <time class="date">Mon, Jan 12, 2015</time> - <span class="section">technology</span>
-      </div>
-      <div class="title">Python on GAEで3rdパーティライブラリを使う</div>
-    </header>
+<p>これまじでわからん。どこに入るの？
+知ってる人が居たら教えてほしい。</p>
 
-    <div class="summary">ひさびさにGoogle App Engineを使おうとしたらGoogle Cloud Platformだかなんだかでいろいろと変わってて戸惑った。 何かというと、...</div>
-  </a>
-</article>
+<h2 id="必要な物だけをimportする:bff15c413bfe48d32c6bcf0c0e63e107">必要な物だけをimportする</h2>
 
-    
-    <article class="li">
-  <a href="https://yet.unresolved.xyz/blog/2015/01/07/how-to-use-multibyte-title-in-hugo/">
-    <header>
-      <div class="aside">
-        <time class="date">Wed, Jan 7, 2015</time> - <span class="section">technology</span>
-      </div>
-      <div class="title">Hugoでマルチバイトのタイトルをうまいこと使う</div>
-    </header>
+<p>bootstrap-sassがどこに入ってるかわからないけど、
+<code>@import &quot;bootstrap&quot;</code>で読み込めるってことはコンポーネントをベタ書きしてしまえば行けるはず。
+とはいえコンポーネント間でも依存しているので、Gridシステムだけが欲しくても依存してるコンポーネントを書く必要がある。</p>
 
-    <div class="summary">Hugoでちょっと困ったことが起きた。 僕はOctopressから移行してきたからなおさらなんだけど、記事のタイトルがURLにされてしまう。 あ...</div>
-  </a>
-</article>
+<pre><code class="language-css">@import &quot;bootstrap-sprockets&quot;;
+@import &quot;bootstrap/variables&quot;;
+@import &quot;bootstrap/mixins&quot;;
+@import &quot;bootstrap/grid&quot;;
+</code></pre>
 
-    
-    <article class="li">
-  <a href="https://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">
-    <header>
-      <div class="aside">
-        <time class="date">Sun, Jan 4, 2015</time> - <span class="section">technology</span>
-      </div>
-      <div class="title">ブログをOctopressからHugoに移行した</div>
-    </header>
-
-    <div class="summary">Octopressでのブログもずいぶん慣れてきたところでHugoに移行しました。 一晩徹夜して、カスタマイズからGitHub Pagesでの公開...</div>
-  </a>
-</article>
-
-    
-    <article class="li">
-  <a href="https://yet.unresolved.xyz/blog/2014/12/31/clojure-on-docker-and-aws-beanstalk/">
-    <header>
-      <div class="aside">
-        <time class="date">Wed, Dec 31, 2014</time> - <span class="section">technology</span>
-      </div>
-      <div class="title">ClojureのWebアプリをDocker &#43; Beanstalkで動かす</div>
-    </header>
-
-    <div class="summary">たぶんこういうのはドキュメント読んでもわからないので、とにかく一通りの流れを実践してみる。 Imageの取得 面倒なのでDocker HubからC...</div>
-  </a>
-</article>
-
-    
-    <article class="li">
-  <a href="https://yet.unresolved.xyz/blog/2014/12/30/could-not-run-docker-in-mac/">
-    <header>
-      <div class="aside">
-        <time class="date">Tue, Dec 30, 2014</time> - <span class="section">technology</span>
-      </div>
-      <div class="title">boot2dockerでCannot connect to the Docker daemon</div>
-    </header>
-
-    <div class="summary">これまでは普通に手で作ったVMのUbuntu上でDockerを触ってたんだけど、なんかあれだしboot2dockerに移行しようかと。 いろい...</div>
-  </a>
-</article>
-
-    
-  </div>
-
-  
-<nav class="page">
-  <a href="/page/5" class="prev">PREV</a>
-  <a href="/page/7" class="next">NEXT</a>
-</nav>
-
-
-
-
+<p>ひとまずやりたいことは出来たけどなんか気持ち悪いなあ。
+というかBootstrap含めて、出来る限り依存は減らしたい・・・。</p>
 </div>
+
+  <aside class="article tags">
+    
+    <a href="https://yet.unresolved.xyz/tags/rails">rails</a>
+    
+    <a href="https://yet.unresolved.xyz/tags/bootstrap">bootstrap</a>
+    
+  </aside>
+
+</article>
+
       <footer class="site">
         <p>&copy; 2016 Daisuke Tsuji</p>
         <p>Powered by <a href="http://gohugo.io" target="_blank" rel="nofollow">Hugo</a>, Theme <a href="https://github.com/dim0627/hugo_theme_harb" target="_blank" rel="nofollow">Harb</a> designed by <a href="http://yet.unresolved.xyz" target="_blank" rel="nofollow">Daisuke Tsuji</a></p>
@@ -665,4 +604,5 @@ nav.page a.next {
     </div>
   </body>
 </html>
+
 
