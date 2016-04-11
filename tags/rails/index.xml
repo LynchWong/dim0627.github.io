@@ -54,6 +54,20 @@
 @import &amp;quot;bootstrap/grid&amp;quot;;
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;リセットとかの恩恵もあやかりたい場合はここから、&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/twbs/bootstrap/blob/master/less/bootstrap.less&#34;&gt;bootstrap/bootstrap.less at master · twbs/bootstrap&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;このあたりを入れてしまえばコンポーネントを除外したかたちで利用することが出来る。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Core variables and mixins&lt;/li&gt;
+&lt;li&gt;Reset and dependencies&lt;/li&gt;
+&lt;li&gt;Core CSS&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;けどそこまでするならもう全部入れてしまえよ感もあるな・・・。&lt;/p&gt;
+
 &lt;p&gt;ひとまずやりたいことは出来たけどなんか気持ち悪いなあ。
 というかBootstrap含めて、出来る限り依存は減らしたい・・・。&lt;/p&gt;
 </description>
