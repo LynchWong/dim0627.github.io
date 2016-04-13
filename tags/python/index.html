@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.16-DEV" />
+    <meta name="generator" content="Hugo 0.15-DEV" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://yet.unresolved.xyz/index.xml">
@@ -438,7 +438,7 @@ aside.article.tags a {
 nav.page {
   position: relative;
   margin-bottom: 2rem;
-  min-height: 1rem;
+  min-height: 3rem;
 }
 
 nav.page a {
@@ -446,6 +446,10 @@ nav.page a {
   display: inline-block;
   font-size: .8rem;
   font-weight: 700;
+  line-height: 3rem;
+  padding: 0 2rem;
+  box-shadow: 0 0 0 1px #eee;
+  color: #999;
 }
 
 nav.page a.next {
@@ -514,7 +518,7 @@ nav.page a.next {
       <div class="title">さくらVPSでpip install lxmlがOOM Killerに殺される</div>
     </header>
 
-    <div class="summary">Python2.7 + BeautifulSoup + lxmlの環境でスクレイピングをしようとしたらlxmlがインストールできなかった。 Installing collected packages: lxml Running setup.py install for lxml Complete output from command /opt/local/bin/python2.7 -c &quot;import setuptools, tokenize;__file__='/tmp/pip-build-9nMFdz/lxml/setup.py';exec(compile(getattr(tokenize, 'open', open)(__file__).read() .replace('\r\n', '\n'), __file__, 'exec'))&quot; install...</div>
+    <div class="summary">Python2.7 + BeautifulSoup + lxmlの環境でスクレイピングをしようとしたらlxmlがインストールできなかった。 Installing collected packages: lxml Running setup.py install for lxml Complete output from command /opt/local/bin/python2.7 -c &quot;import setuptools, tokenize;__file__='/tmp/pip-build-9nMFdz/lxml/setup.py';exec(compile(getattr(tokenize, 'open', open)(__file__).read() .replace('\r\n', '\n'), __file__, 'exec'))&quot; install --record /tmp/pip-8cwa10-record/install-record.txt --single-version-externally-managed --compile: /opt/local/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'bugtrack_url' warnings.warn(msg) Building lxml version 3.4.4....</div>
   </a>
 </article>
 
