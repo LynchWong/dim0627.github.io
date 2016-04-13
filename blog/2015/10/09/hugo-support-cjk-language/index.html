@@ -551,11 +551,9 @@ nav.page a.next {
     </div>
   </header>
 
-  <div class="body"><p>会社のMacにも<a href="https://gohugo.io/">Hugo</a>をセットアップしてあるんだけど、テーマの編集とかの続きを家でやろうとしたら<code>.Summary</code>が異なる挙動をしてることに気づいた。</p>
-
-<p>どうやらHugoのバージョンによって、日本語の解釈がうまくいったりいかなかったりするみたい。</p>
-
-<p>ソースを読んでたらどうやら日本語のサポートもされてるようだ。</p>
+  <div class="body"><p>会社のMacにも<a href="https://gohugo.io/">Hugo</a>をセットアップしてあるんだけど、テーマの編集とかの続きを家でやろうとしたら<code>.Summary</code>が異なる挙動をしてることに気づいた。
+どうやらHugoのバージョンによって、日本語の解釈がうまくいったりいかなかったりするみたい。
+ソースを読んでたらどうやら日本語のサポートもされてるようだ。</p>
 
 <p><a href="https://github.com/spf13/hugo/blob/823334875d396bdc15770c335c2029a01a7ef2ce/hugolib/page.go">hugo/page.go at 823334875d396bdc15770c335c2029a01a7ef2ce · spf13/hugo</a></p>
 
@@ -563,24 +561,19 @@ nav.page a.next {
 
 <p><a href="https://github.com/spf13/hugo/commit/823334875d396bdc15770c335c2029a01a7ef2ce?diff=split">WordCount and Summary support CJK Language · spf13/hugo@8233348</a></p>
 
-<p>PRのコメントを読んでみると、configになんか書けばなんとかなりそうな雰囲気。</p>
-
-<p>でもなんで会社のMacは期待した挙動をしてるんだ？</p>
-
-<p>Goのバージョンが新しいから？</p>
+<p>PRのコメントを読んでみると、configになんか書けばなんとかなりそうな雰囲気。
+でもなんで会社のMacは期待した挙動をしてるんだ？
+Goのバージョンが新しいから？</p>
 
 <p>今のHugoなら<code>config.yaml</code>にこう書けば日本語もきちんと処理をするようになってた。</p>
 
 <pre><code class="language-yaml">HasCJKLanguage: true
 </code></pre>
 
-<p>これできちんと70文字？70word？でSummaryが生成されるようになる。</p>
-
-<p>静的サイトジェネレータも実行環境によって挙動が変わることがあると少し面倒だなあ。</p>
-
-<p>Golangは他人の書いたソースが読みやすくて良い。</p>
-
-<p>書くのはあんまりすきじゃないけど。</p>
+<p>これできちんと70文字？70word？でSummaryが生成されるようになる。
+静的サイトジェネレータも実行環境によって挙動が変わることがあると少し面倒だなあ。
+Golangは他人の書いたソースが読みやすくて良い。
+書くのはあんまりすきじゃないけど。</p>
 
 <p><strong>追記</strong></p>
 
@@ -592,9 +585,8 @@ nav.page a.next {
 
 <p><code>&lt;meta name=&quot;generator&quot; content=&quot;Hugo 0.15-DEV&quot; /&gt;</code></p>
 
-<p>僕のブログのせいで戸惑わせてしまい、大変失礼しました。</p>
-
-<p>このことに伴い、記事のタイトルを</p>
+<p>僕のブログのせいで戸惑わせてしまい、大変失礼しました。
+このことに伴い、記事のタイトルを</p>
 
 <blockquote>
 <p>HugoのSummaryが日本語に対応した</p>

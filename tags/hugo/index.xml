@@ -222,11 +222,9 @@ Make every program a Filter.&lt;/p&gt;
       <pubDate>Fri, 09 Oct 2015 22:15:51 +0900</pubDate>
       
       <guid>https://yet.unresolved.xyz/blog/2015/10/09/hugo-support-cjk-language/</guid>
-      <description>&lt;p&gt;会社のMacにも&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;をセットアップしてあるんだけど、テーマの編集とかの続きを家でやろうとしたら&lt;code&gt;.Summary&lt;/code&gt;が異なる挙動をしてることに気づいた。&lt;/p&gt;
-
-&lt;p&gt;どうやらHugoのバージョンによって、日本語の解釈がうまくいったりいかなかったりするみたい。&lt;/p&gt;
-
-&lt;p&gt;ソースを読んでたらどうやら日本語のサポートもされてるようだ。&lt;/p&gt;
+      <description>&lt;p&gt;会社のMacにも&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;をセットアップしてあるんだけど、テーマの編集とかの続きを家でやろうとしたら&lt;code&gt;.Summary&lt;/code&gt;が異なる挙動をしてることに気づいた。
+どうやらHugoのバージョンによって、日本語の解釈がうまくいったりいかなかったりするみたい。
+ソースを読んでたらどうやら日本語のサポートもされてるようだ。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/spf13/hugo/blob/823334875d396bdc15770c335c2029a01a7ef2ce/hugolib/page.go&#34;&gt;hugo/page.go at 823334875d396bdc15770c335c2029a01a7ef2ce · spf13/hugo&lt;/a&gt;&lt;/p&gt;
 
@@ -234,24 +232,19 @@ Make every program a Filter.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/spf13/hugo/commit/823334875d396bdc15770c335c2029a01a7ef2ce?diff=split&#34;&gt;WordCount and Summary support CJK Language · spf13/hugo@8233348&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;PRのコメントを読んでみると、configになんか書けばなんとかなりそうな雰囲気。&lt;/p&gt;
-
-&lt;p&gt;でもなんで会社のMacは期待した挙動をしてるんだ？&lt;/p&gt;
-
-&lt;p&gt;Goのバージョンが新しいから？&lt;/p&gt;
+&lt;p&gt;PRのコメントを読んでみると、configになんか書けばなんとかなりそうな雰囲気。
+でもなんで会社のMacは期待した挙動をしてるんだ？
+Goのバージョンが新しいから？&lt;/p&gt;
 
 &lt;p&gt;今のHugoなら&lt;code&gt;config.yaml&lt;/code&gt;にこう書けば日本語もきちんと処理をするようになってた。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;HasCJKLanguage: true
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;これできちんと70文字？70word？でSummaryが生成されるようになる。&lt;/p&gt;
-
-&lt;p&gt;静的サイトジェネレータも実行環境によって挙動が変わることがあると少し面倒だなあ。&lt;/p&gt;
-
-&lt;p&gt;Golangは他人の書いたソースが読みやすくて良い。&lt;/p&gt;
-
-&lt;p&gt;書くのはあんまりすきじゃないけど。&lt;/p&gt;
+&lt;p&gt;これできちんと70文字？70word？でSummaryが生成されるようになる。
+静的サイトジェネレータも実行環境によって挙動が変わることがあると少し面倒だなあ。
+Golangは他人の書いたソースが読みやすくて良い。
+書くのはあんまりすきじゃないけど。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;追記&lt;/strong&gt;&lt;/p&gt;
 
@@ -263,9 +256,8 @@ Make every program a Filter.&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;&amp;lt;meta name=&amp;quot;generator&amp;quot; content=&amp;quot;Hugo 0.15-DEV&amp;quot; /&amp;gt;&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;僕のブログのせいで戸惑わせてしまい、大変失礼しました。&lt;/p&gt;
-
-&lt;p&gt;このことに伴い、記事のタイトルを&lt;/p&gt;
+&lt;p&gt;僕のブログのせいで戸惑わせてしまい、大変失礼しました。
+このことに伴い、記事のタイトルを&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;HugoのSummaryが日本語に対応した&lt;/p&gt;
