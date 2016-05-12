@@ -6,8 +6,30 @@
     <description>Recent content in Technologies on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 11 Apr 2016 11:37:39 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 12 May 2016 14:17:48 +0900</lastBuildDate>
     <atom:link href="https://yet.unresolved.xyz/technology/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[Chrome Extention]ページのスクロール位置をパーセントで表示する拡張を作った</title>
+      <link>https://yet.unresolved.xyz/blog/2016/05/12/2016-05-12-make-chrome-extention-for-scroll-analyzing/</link>
+      <pubDate>Thu, 12 May 2016 14:17:48 +0900</pubDate>
+      
+      <guid>https://yet.unresolved.xyz/blog/2016/05/12/2016-05-12-make-chrome-extention-for-scroll-analyzing/</guid>
+      <description>&lt;a href=&#34;https://yet.unresolved.xyz/images/2016-05-12/ext.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-05-12/ext.png&#34; alt=&#34;ext&#34; width=806 height=456 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;/a&gt;
+
+
+&lt;p&gt;Google Analyticsでスクロール率の解析はやってるんだけど、
+結局それがページのどの位置なのよってのがわからなくて困ったので。&lt;/p&gt;
+
+&lt;p&gt;探したけど古めのものしか見つからなくて、それなら自分で作ろうかなと思ってさっと作った。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/adamzap/scroll-progress&#34;&gt;adamzap/scroll-progress: A Chrome extension that reports how far down you&amp;rsquo;ve scrolled down the current page&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;もしかしたら車輪の再発明したかも・・・。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Railsでbootstrap-sassの必要な物だけを使う</title>
@@ -1340,32 +1362,6 @@ MySQLの設定を変えなきゃいけないと思い込んでいて、RDSを使
 
 &lt;p&gt;正しさのチェックに加えていつ実行されるのかを文章で教えてくれる。
 記法についても注釈があるのでこのサイトで完結してしまう。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Asset Pipelineのコンパイル対象を追加する</title>
-      <link>https://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</link>
-      <pubDate>Wed, 20 Jan 2016 16:15:58 +0900</pubDate>
-      
-      <guid>https://yet.unresolved.xyz/blog/2016/01/20/add-compile-target-of-asset-pipeline-at-rails/</guid>
-      <description>&lt;p&gt;デフォルトだと&lt;code&gt;application.css&lt;/code&gt;とかじゃないですか。
-でも例えば管理画面を作ったりとかでごっそりデザインの違うページを作るときに少し困ったんです。&lt;/p&gt;
-
-&lt;p&gt;まあ普通はそういう時、モジュールごと完全に分けるべきなのか・・・。疎結合ね・・・。&lt;/p&gt;
-
-&lt;p&gt;解決方法はエラーに出てました。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ActionView::Template::Error (Asset was not declared to be precompiled in production.
-Add `Rails.application.config.assets.precompile += %w( application_target.css )` to `config/initializers/assets.rb` and restart your server):
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;config/initializers/assets.rb&lt;/code&gt;に追記すればいい。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;Rails.application.config.assets.precompile += %w( application_target.css )
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Rails覚えらんないよー&lt;/p&gt;
 </description>
     </item>
     

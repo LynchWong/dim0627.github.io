@@ -6,8 +6,30 @@
     <description>Recent content on Unresolved</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 11 Apr 2016 11:37:39 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 12 May 2016 14:17:48 +0900</lastBuildDate>
     <atom:link href="https://yet.unresolved.xyz/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[Chrome Extention]ページのスクロール位置をパーセントで表示する拡張を作った</title>
+      <link>https://yet.unresolved.xyz/blog/2016/05/12/2016-05-12-make-chrome-extention-for-scroll-analyzing/</link>
+      <pubDate>Thu, 12 May 2016 14:17:48 +0900</pubDate>
+      
+      <guid>https://yet.unresolved.xyz/blog/2016/05/12/2016-05-12-make-chrome-extention-for-scroll-analyzing/</guid>
+      <description>&lt;a href=&#34;https://yet.unresolved.xyz/images/2016-05-12/ext.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-05-12/ext.png&#34; alt=&#34;ext&#34; width=806 height=456 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
+&lt;/a&gt;
+
+
+&lt;p&gt;Google Analyticsでスクロール率の解析はやってるんだけど、
+結局それがページのどの位置なのよってのがわからなくて困ったので。&lt;/p&gt;
+
+&lt;p&gt;探したけど古めのものしか見つからなくて、それなら自分で作ろうかなと思ってさっと作った。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/adamzap/scroll-progress&#34;&gt;adamzap/scroll-progress: A Chrome extension that reports how far down you&amp;rsquo;ve scrolled down the current page&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;もしかしたら車輪の再発明したかも・・・。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Railsでbootstrap-sassの必要な物だけを使う</title>
@@ -1426,79 +1448,6 @@ CTFは参加する気ないけど・・・。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://followcolor.hatenadiary.jp/entry/2016/02/21/221917&#34;&gt;CTF for Starter in IISEC 感想 - followcolorのブログ&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;勝手に記載。僕なんかよりもセキュリティに造詣が深い方のようなので、参考になりました。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Googleカスタム検索のデザインが崩れる</title>
-      <link>https://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/</link>
-      <pubDate>Fri, 19 Feb 2016 12:44:17 +0900</pubDate>
-      
-      <guid>https://yet.unresolved.xyz/blog/2016/02/19/broken-the-design-of-cse/</guid>
-      <description>
-
-&lt;a href=&#34;https://yet.unresolved.xyz/images/2016-02-19/cse.png&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
-  &lt;amp-img src=&#34;https://yet.unresolved.xyz/images/2016-02-19/cse.png&#34; alt=&#34;cse&#34; width=674 height=150 layout=&#34;responsive&#34;&gt;&lt;/amp-img&gt;
-&lt;/a&gt;
-
-
-&lt;h2 id=&#34;なぜ崩れるのか:823fb9b45a070a4729c0c404dd848b3b&#34;&gt;なぜ崩れるのか&lt;/h2&gt;
-
-&lt;p&gt;結論から言えばCSSの&lt;code&gt;box-sizing&lt;/code&gt;の値によって崩れる。
-特にBootstrapを使ってるサイトで崩れることが多いんじゃないでしょうか。&lt;/p&gt;
-
-&lt;p&gt;なぜならBootstrapはワイルドカードでこういう設定がされているから。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;該当ソースはここでしょうか。Bootstrapの構造がよくわからない。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/twbs/bootstrap/blob/e38f066d8c203c3e032da0ff23cd2d6098ee2dd6/less/scaffolding.less#L12&#34;&gt;bootstrap/scaffolding.less at e38f066d8c203c3e032da0ff23cd2d6098ee2dd6 · twbs/bootstrap&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;border-box&lt;/code&gt;のほうが扱いやすいことが多いので、この設定に対して文句とかはないです。
-こうあるべきだと思う。&lt;/p&gt;
-
-&lt;h2 id=&#34;崩れを直す方法:823fb9b45a070a4729c0c404dd848b3b&#34;&gt;崩れを直す方法&lt;/h2&gt;
-
-&lt;p&gt;というわけで、カスタム検索のスクリプトを特定のタグで囲んで、そのタグに対してワイルドカードで&lt;code&gt;box-sizing&lt;/code&gt;の値を指定してしまえば直る。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;.cse-wrapper * {
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ワイルドカードは使いたくないよね、でもしょうがない。
-ベンダプレフィックスは必要なんだっけ？ちょっとわかんないや。&lt;/p&gt;
-
-&lt;h2 id=&#34;この事象について:823fb9b45a070a4729c0c404dd848b3b&#34;&gt;この事象について&lt;/h2&gt;
-
-&lt;p&gt;結構ありがちな話らしい。
-探せば同様の事象について掲載している記事もあるけど、
-HTMLをベタで書くという解決方法なので、根本的な解決ではないように思う。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://webkaru.net/wordpress/google-custom-search-design/&#34;&gt;HTMLフォームを使用したGoogleカスタム検索のデザイン変更方法 - WordPressの使い方と設定 - Webkaru&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.02320.net/google_custom_search_optout_js/&#34;&gt;超軽量♪Googleカスタム検索はJavaScript外すと改造し放題&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://blog.696.jp/txt/937/&#34;&gt;googleカスタム検索をHTMLに書き換える | 696graphic [BLOG]&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;GoogleもHTMLベタでやっていいよとは言ってるが、Googleカスタム検索の管理画面から発行できるのはコードだし、
-Google自身もこう書いている。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://support.google.com/customsearch/answer/1351747?hl=ja&#34;&gt;HTML フォームを使用した検索ボックスの作成 - カスタム検索 ヘルプ&lt;/a&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;HTML フォームのコードは利便性のためにのみ提供されています。Google カスタム検索ではこの問題に対するサポートは提供しておりません。すべての無料の検索エンジンに Google ブランドを表示する必要があります。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;確かに、JSでのレンダリングだと目に見えて遅延するけどね。&lt;/p&gt;
 </description>
     </item>
     
