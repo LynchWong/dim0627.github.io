@@ -1,8 +1,8 @@
 ---
 date: 2016-05-12T14:17:48+09:00
-slug: "2016-05-12-make-chrome-extention-for-scroll-analyzing"
-tags: ["chrome", "chrome-extention"]
-title: "[Chrome Extention]ページのスクロール位置をパーセントで表示する拡張を作った"
+slug: "2016-05-12-make-chrome-extension-for-scroll-analyzing"
+tags: ["chrome", "chrome-extension"]
+title: "[Chrome Extension]ページのスクロール位置をパーセントで表示する拡張を作った"
 ---
 
 {{% img src="/images/2016-05-12/ext.png" alt="ext" w="806" h="456" %}}
