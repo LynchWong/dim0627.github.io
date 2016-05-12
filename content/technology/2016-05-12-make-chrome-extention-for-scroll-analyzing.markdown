@@ -7,6 +7,8 @@ title: "[Chrome Extention]ページのスクロール位置をパーセントで
 
 {{% img src="/images/2016-05-12/ext.png" alt="ext" w="806" h="456" %}}
 
+[dim0627/crm_ext_scroll_percentage](https://github.com/dim0627/crm_ext_scroll_percentage)
+
 Google Analyticsでスクロール率の解析はやってるんだけど、
 結局それがページのどの位置なのよってのがわからなくて困ったので。
 
