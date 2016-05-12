@@ -5,7 +5,7 @@ tags: ["chrome", "chrome-extension"]
 title: "[Chrome Extension]ページのスクロール位置をパーセントで表示する拡張を作った"
 ---
 
-{{% img src="/images/2016-05-12/ext.png" alt="ext" w="806" h="456" %}}
+{{% img src="/images/2016-05-12/ext.gif" alt="ext" w="586" h="424" %}}
 
 [dim0627/crm_ext_scroll_percentage](https://github.com/dim0627/crm_ext_scroll_percentage)
 
